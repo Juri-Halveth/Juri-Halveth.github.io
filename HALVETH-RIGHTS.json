@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0",
+  "declaration": "HALVETH root project portal rights declaration",
+  "rightsHolder": {"legalName": "Juri Janovski", "publishingName": "Juri Halveth", "github": "https://github.com/Juri-Halveth"},
+  "repository": "https://github.com/Juri-Halveth/Juri-Halveth.github.io",
+  "scope": "Original portal contributions expressly assigned by LICENSES.md, to the extent of rights held; linked repositories are separately licensed",
+  "license": {"id": "LicenseRef-HALVETH-PIRL-2.0", "file": "LICENSE-HALVETH-PIRL-2.0.md", "classification": "SOURCE_AVAILABLE_NOT_OSI_OPEN_SOURCE", "nonCommercialPublicInterestUse": "GRANTED_WITH_CONDITIONS", "commercialUse": "NOT_GRANTED_EXCEPT_EXISTING_EFFECTIVE_PERMISSIONS", "commercialPermission": "SEPARATE_PRIOR_WRITTEN_AGREEMENT"},
+  "textAndDataMining": {"reservation": true, "legalReference": "German Copyright Act, Section 44b(3)", "commercialAIUse": "NOT_GRANTED_EXCEPT_EXISTING_EFFECTIVE_PERMISSIONS", "limits": ["statutory exceptions", "prior effective licenses", "hosting-provider terms"]},
+  "thirdPartyMaterial": "EXCLUDED_AND_RETAINS_ITS_OWN_RIGHTS",
+  "peopleAndIndependentSystems": "NO_OWNERSHIP_OR_CONTROL_CLAIM",
+  "contact": {"email": "security@halveth.de", "purpose": "Rights, corrections and collaboration"},
+  "effectiveFrom": "first public commit containing this declaration",
+  "recordedDate": "2026-09-16"
+}

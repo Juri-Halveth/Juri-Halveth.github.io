@@ -1,0 +1,26 @@
+# Rules apply from the origin root to https://juri-halveth.github.io/.
+# These are crawler directives, not authentication or a technical access barrier.
+# Material licenses, prior grants and statutory rights remain applicable.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: https://juri-halveth.github.io/sitemap.xml
+Sitemap: https://juri-halveth.github.io/halveth-scarlet/sitemap.xml
