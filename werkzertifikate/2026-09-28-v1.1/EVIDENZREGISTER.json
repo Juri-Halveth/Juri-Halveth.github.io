@@ -1,0 +1,1518 @@
+{
+  "schema": "HALVETH_WORK_EVIDENCE_V1",
+  "document_id": "HALVETH-WERK-20260928-V1.1",
+  "created_at": "2026-09-28T11:59:04.833300+00:00",
+  "data_class": "EXTERNAL_MINIMIZED",
+  "publication_state": "PUBLICATION_EDITION",
+  "display_name": "Juri Janovski / Juri Halveth",
+  "studio_label": "HALVETH VERACHEL STUDIOS",
+  "studio_label_source": "User-provided screenshot; public brand label, legal entity status not verified",
+  "account_login": "Juri-Halveth",
+  "account_binding": "Authenticated GitHub connector returned Juri-Halveth; user requested this display name. No civil identity verification.",
+  "method": "Read-only GitHub public repository enumeration; default-branch commit and recursive tree; up to five Actions runs filtered by head_sha and five releases per non-empty repository; 29 selected source files downloaded and SHA-256 computed. No repository code executed.",
+  "coverage": {
+    "public_repositories": 12,
+    "readable_commits": 11,
+    "empty_repositories": 1,
+    "downloaded_files": 29,
+    "repositories_with_successful_returned_run": 8,
+    "private_repositories": "NOT_INSPECTED",
+    "historical_commits": "NOT_ENUMERATED",
+    "all_branches": "NOT_ENUMERATED",
+    "ci_reexecution": "NOT_PERFORMED",
+    "full_code_review": "NOT_PERFORMED",
+    "tree_truncation": false
+  },
+  "repositories": [
+    {
+      "name": "halveth-morrowind-genesis",
+      "full_name": "Juri-Halveth/halveth-morrowind-genesis",
+      "html_url": "https://github.com/Juri-Halveth/halveth-morrowind-genesis",
+      "default_branch": "codex/public-release",
+      "observed_at": "2026-09-28T11:39:13.831948+00:00",
+      "commit_sha": "c2b89a36f6955c2c73caae8d1c0a88f4f754bb2e",
+      "evidence_state": "OBSERVED",
+      "tree_sha": "c52e52e294ae238823a7f7f18b0a7187661b221a",
+      "tree_blob_count": 117,
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/halveth-morrowind-genesis/c2b89a36f6955c2c73caae8d1c0a88f4f754bb2e/README.md",
+          "sha256": "24a14af1379cf3b5cc9b320563892023c7c1e5cbf66ef0a81898142907d8748b",
+          "bytes": 17869,
+          "git_blob_sha": "957564bf78e3133d4bca53ed188972a03c34a566"
+        },
+        {
+          "path": ".github/workflows/test.yml",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/halveth-morrowind-genesis/c2b89a36f6955c2c73caae8d1c0a88f4f754bb2e/.github/workflows/test.yml",
+          "sha256": "2ed77d02950a5a44a5c821ae3925c79bf4bcacf37651ef1db86752c69921a680",
+          "bytes": 1271,
+          "git_blob_sha": "f53aa7aee1cb4698edc5613d00b0ae798fec43ac",
+          "observed_at": "2026-09-28T11:40:18.393002+00:00"
+        },
+        {
+          "path": "tests/integration_paths.py",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/halveth-morrowind-genesis/c2b89a36f6955c2c73caae8d1c0a88f4f754bb2e/tests/integration_paths.py",
+          "sha256": "5305524cab8bed238b1c315249e97709a7310cc87ee5bb3a8411e3b196160d57",
+          "bytes": 13270,
+          "git_blob_sha": "b67da36fdd31794beb75869ef2dd1bb216de3855",
+          "observed_at": "2026-09-28T11:40:18.328710+00:00"
+        }
+      ],
+      "runs": [
+        {
+          "id": 35902186680,
+          "name": "Source checks",
+          "head_sha": "c2b89a36f6955c2c73caae8d1c0a88f4f754bb2e",
+          "html_url": "https://github.com/Juri-Halveth/halveth-morrowind-genesis/actions/runs/35902186680",
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2026-09-23T18:24:01Z",
+          "updated_at": "2026-09-23T18:25:23Z",
+          "path": ".github/workflows/test.yml"
+        },
+        {
+          "id": 35902122215,
+          "name": "Source checks",
+          "head_sha": "c2b89a36f6955c2c73caae8d1c0a88f4f754bb2e",
+          "html_url": "https://github.com/Juri-Halveth/halveth-morrowind-genesis/actions/runs/35902122215",
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2026-09-23T18:23:27Z",
+          "updated_at": "2026-09-23T18:24:55Z",
+          "path": ".github/workflows/test.yml"
+        },
+        {
+          "id": 35901943216,
+          "name": "Source checks",
+          "head_sha": "c2b89a36f6955c2c73caae8d1c0a88f4f754bb2e",
+          "html_url": "https://github.com/Juri-Halveth/halveth-morrowind-genesis/actions/runs/35901943216",
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2026-09-23T18:21:56Z",
+          "updated_at": "2026-09-23T18:23:15Z",
+          "path": ".github/workflows/test.yml"
+        }
+      ],
+      "runs_total_count": 3,
+      "release_observations": [
+        {
+          "tag": "v1.0.6",
+          "url": "https://github.com/Juri-Halveth/halveth-morrowind-genesis/releases/tag/v1.0.6",
+          "published_at": "2026-09-28T11:30:54Z",
+          "assets": [
+            {
+              "name": "HALVETH-Morrowind-Genesis-1.0.6-public-source.zip",
+              "bytes": 96152206,
+              "digest": "sha256:d0e66f6e4f5b38c2f0aa0c176e56ab05ae897dd12c0bd59709c7075032de7c64",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/halveth-morrowind-genesis/releases/download/v1.0.6/HALVETH-Morrowind-Genesis-1.0.6-public-source.zip"
+            },
+            {
+              "name": "HALVETH-Morrowind-Genesis-1.0.6-Setup.exe",
+              "bytes": 162212208,
+              "digest": "sha256:d47e914d1660e011a8321f2f2fd74be1259dd1b34d2bd74ae93d825313b2d913",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/halveth-morrowind-genesis/releases/download/v1.0.6/HALVETH-Morrowind-Genesis-1.0.6-Setup.exe"
+            }
+          ]
+        }
+      ],
+      "release_to_head_equivalence": "NOT_VERIFIED",
+      "authorship": "Repository account association observed; sole personal authorship and individual AI/contributor shares not independently verified.",
+      "title": "Morrowind Genesis",
+      "domain": "Software · Integration · Distribution",
+      "work_description": "Versionierter Quellstand einer OpenMW-Erweiterung mit lokalem Dialogbegleiter, Spielwerkzeugen und Windows-Installer.",
+      "observation": "Die abgerufenen Jobdaten melden Erfolg für vier Testkombinationen: Ubuntu/Windows mit Python 3.11/3.13. Zusätzlich ist ein erfolgreicher öffentlicher Installer-Build mit Manifestprüfung dokumentiert.",
+      "claim_ceiling": "GitHub-CI wurde gelesen, hier nicht erneut ausgeführt. Weder vollständiger Spieldurchlauf noch Gleichheit des jüngsten Release-Binaries mit diesem Quellstand wurden geprüft.",
+      "observed_jobs": [
+        {
+          "id": 107320894137,
+          "name": "public-installer",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 35902186680,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Run actions/setup-dotnet@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Install icon conversion dependency",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Build public setup without game or OpenMW",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Verify embedded setup manifest and source congruence",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Post Run actions/setup-dotnet@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 14
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 15
+            }
+          ]
+        },
+        {
+          "id": 107320894475,
+          "name": "test (ubuntu-latest, 3.13)",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 35902186680,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Unit tests without game or model",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Validate distributable files",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Build and verify source archive",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            }
+          ]
+        },
+        {
+          "id": 107320894737,
+          "name": "test (windows-latest, 3.13)",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 35902186680,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Unit tests without game or model",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Validate distributable files",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Build and verify source archive",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            }
+          ]
+        },
+        {
+          "id": 107320894839,
+          "name": "test (ubuntu-latest, 3.11)",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 35902186680,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Unit tests without game or model",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Validate distributable files",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Build and verify source archive",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            }
+          ]
+        },
+        {
+          "id": 107320894927,
+          "name": "test (windows-latest, 3.11)",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 35902186680,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Unit tests without game or model",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Validate distributable files",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Build and verify source archive",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "halveth-project0-keeper",
+      "full_name": "Juri-Halveth/halveth-project0-keeper",
+      "html_url": "https://github.com/Juri-Halveth/halveth-project0-keeper",
+      "default_branch": "main",
+      "observed_at": "2026-09-28T11:40:17.977804+00:00",
+      "commit_sha": null,
+      "evidence_state": "OBSERVED_EMPTY_REPOSITORY",
+      "tree_sha": null,
+      "tree_blob_count": 0,
+      "files": [],
+      "runs": [],
+      "runs_total_count": null,
+      "release_observations": [],
+      "release_to_head_equivalence": "NOT_VERIFIED",
+      "authorship": "Repository account association observed; sole personal authorship and individual AI/contributor shares not independently verified.",
+      "claim_ceiling": "GitHub commits endpoint returned HTTP 409 with message Git Repository is empty. No work certificate issued."
+    },
+    {
+      "name": "halveth-realms",
+      "full_name": "Juri-Halveth/halveth-realms",
+      "html_url": "https://github.com/Juri-Halveth/halveth-realms",
+      "default_branch": "codex/scarlet-garden",
+      "observed_at": "2026-09-28T11:39:13.832948+00:00",
+      "commit_sha": "e2bd4c64fa75d42a7e5119b97b78b0a9681e1ba1",
+      "evidence_state": "OBSERVED",
+      "tree_sha": "2f0ac09c754645c1b08ecdee30b6521822a79f6d",
+      "tree_blob_count": 55,
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/halveth-realms/e2bd4c64fa75d42a7e5119b97b78b0a9681e1ba1/README.md",
+          "sha256": "9a13c41b81a079338057a2ff52a43b388115d04950c1462283de55b996b4e537",
+          "bytes": 8079,
+          "git_blob_sha": "6d14f2d69cae3e6ccde4d663e987dfd1bdf23faf"
+        },
+        {
+          "path": ".github/workflows/ci.yml",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/halveth-realms/e2bd4c64fa75d42a7e5119b97b78b0a9681e1ba1/.github/workflows/ci.yml",
+          "sha256": "d75a7cd3eac0f5f4fab12f11a483654863b23fb32c708640aca9c139aae8bb8f",
+          "bytes": 1689,
+          "git_blob_sha": "b87cb540302a5719ffa6fd3c8931af6944d0e35c",
+          "observed_at": "2026-09-28T11:40:18.438895+00:00"
+        },
+        {
+          "path": ".github/workflows/content-proposals.yml",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/halveth-realms/e2bd4c64fa75d42a7e5119b97b78b0a9681e1ba1/.github/workflows/content-proposals.yml",
+          "sha256": "9b7bee5ad4f1bb1751bc79f8d0ec1318133f1b8556f883ded3b839fe06cf7f64",
+          "bytes": 994,
+          "git_blob_sha": "0230f5d9c2e658f6a7142a5bee67aa54d04715f6",
+          "observed_at": "2026-09-28T11:40:18.367210+00:00"
+        },
+        {
+          "path": "tests/world.test.mjs",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/halveth-realms/e2bd4c64fa75d42a7e5119b97b78b0a9681e1ba1/tests/world.test.mjs",
+          "sha256": "868ac155b89cb6590a79c61876543cf4689fdc96492afe2e04f26992cceeeda2",
+          "bytes": 2470,
+          "git_blob_sha": "71b9de22cb7ef34a18fecfa78121da53e4228fa9",
+          "observed_at": "2026-09-28T11:40:18.726739+00:00"
+        }
+      ],
+      "runs": [
+        {
+          "id": 36405398466,
+          "name": "Grow reviewable world ideas",
+          "head_sha": "e2bd4c64fa75d42a7e5119b97b78b0a9681e1ba1",
+          "html_url": "https://github.com/Juri-Halveth/halveth-realms/actions/runs/36405398466",
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2026-09-28T09:44:22Z",
+          "updated_at": "2026-09-28T09:44:33Z",
+          "path": ".github/workflows/content-proposals.yml"
+        },
+        {
+          "id": 36308717172,
+          "name": "Grow reviewable world ideas",
+          "head_sha": "e2bd4c64fa75d42a7e5119b97b78b0a9681e1ba1",
+          "html_url": "https://github.com/Juri-Halveth/halveth-realms/actions/runs/36308717172",
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2026-09-27T09:14:09Z",
+          "updated_at": "2026-09-27T09:14:22Z",
+          "path": ".github/workflows/content-proposals.yml"
+        },
+        {
+          "id": 36230179565,
+          "name": "Grow reviewable world ideas",
+          "head_sha": "e2bd4c64fa75d42a7e5119b97b78b0a9681e1ba1",
+          "html_url": "https://github.com/Juri-Halveth/halveth-realms/actions/runs/36230179565",
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2026-09-26T08:34:24Z",
+          "updated_at": "2026-09-26T08:34:36Z",
+          "path": ".github/workflows/content-proposals.yml"
+        },
+        {
+          "id": 36114883406,
+          "name": "Grow reviewable world ideas",
+          "head_sha": "e2bd4c64fa75d42a7e5119b97b78b0a9681e1ba1",
+          "html_url": "https://github.com/Juri-Halveth/halveth-realms/actions/runs/36114883406",
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2026-09-25T08:47:57Z",
+          "updated_at": "2026-09-25T08:48:08Z",
+          "path": ".github/workflows/content-proposals.yml"
+        },
+        {
+          "id": 35975208794,
+          "name": "Grow reviewable world ideas",
+          "head_sha": "e2bd4c64fa75d42a7e5119b97b78b0a9681e1ba1",
+          "html_url": "https://github.com/Juri-Halveth/halveth-realms/actions/runs/35975208794",
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2026-09-24T08:26:02Z",
+          "updated_at": "2026-09-24T08:26:15Z",
+          "path": ".github/workflows/content-proposals.yml"
+        }
+      ],
+      "runs_total_count": 12,
+      "release_observations": [
+        {
+          "tag": "v0.2.0",
+          "url": "https://github.com/Juri-Halveth/halveth-realms/releases/tag/v0.2.0",
+          "published_at": "2026-09-19T00:23:42Z",
+          "assets": [
+            {
+              "name": "HALVETH-Realms-0.2.0.zip",
+              "bytes": 746862,
+              "digest": "sha256:aa704c4f9abde9e11f3701ec7f7b1a7c3a0c52e8363cf700b9963e85d1e621bd",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/halveth-realms/releases/download/v0.2.0/HALVETH-Realms-0.2.0.zip"
+            },
+            {
+              "name": "HALVETH-Realms-0.2.0.zip.sha256",
+              "bytes": 91,
+              "digest": "sha256:17307e4258c6252ce15d1fd7b7344e0ef04a7a73c5d511d8169864082a883007",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/halveth-realms/releases/download/v0.2.0/HALVETH-Realms-0.2.0.zip.sha256"
+            },
+            {
+              "name": "HALVETH-Realms-Setup-0.2.0-x64.exe",
+              "bytes": 112195635,
+              "digest": "sha256:27dd9a9c5167698c0f27d2d923a91bf17e606b543657c0ab088c539596e673ba",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/halveth-realms/releases/download/v0.2.0/HALVETH-Realms-Setup-0.2.0-x64.exe"
+            },
+            {
+              "name": "HALVETH-Realms-Setup-0.2.0-x64.exe.sha256",
+              "bytes": 101,
+              "digest": "sha256:1f3c7cafca974c02860c6dcfd3ddc273656bdaa5ed1810607c4bd700b1bb8f51",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/halveth-realms/releases/download/v0.2.0/HALVETH-Realms-Setup-0.2.0-x64.exe.sha256"
+            }
+          ]
+        }
+      ],
+      "release_to_head_equivalence": "NOT_VERIFIED",
+      "authorship": "Repository account association observed; sole personal authorship and individual AI/contributor shares not independently verified.",
+      "title": "Scarlet Garden / Realms",
+      "domain": "Software · Simulation · Desktop-Prototyp",
+      "work_description": "Versioniertes Spielprojekt mit prozeduraler Welt, lokalem Server und dokumentierter Electron-Distribution.",
+      "observation": "Quellbaum, README, Welt-Testdatei und zwei Workflowdefinitionen wurden gebunden. Die fünf abgerufenen Läufe am Quellstand betreffen den Workflow für Inhaltsvorschläge.",
+      "claim_ceiling": "Ein erfolgreicher Vorschlags-Workflow ist kein Spieltest. Der Build/Test-Workflow ist als Datei vorhanden; sein erfolgreicher Lauf ist in dieser begrenzten Abfrage nicht belegt."
+    },
+    {
+      "name": "halveth-scarlet",
+      "full_name": "Juri-Halveth/halveth-scarlet",
+      "html_url": "https://github.com/Juri-Halveth/halveth-scarlet",
+      "default_branch": "main",
+      "observed_at": "2026-09-28T11:39:13.833450+00:00",
+      "commit_sha": "478fd574af47b1ceb990d16d62e43c9d9e12d4c5",
+      "evidence_state": "OBSERVED",
+      "tree_sha": "f3febc110e7d4fe01eabe95ac6c0f31934f858cf",
+      "tree_blob_count": 325,
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/halveth-scarlet/478fd574af47b1ceb990d16d62e43c9d9e12d4c5/README.md",
+          "sha256": "2b18a07c8c554b364f8edf9ba6a370e1cc0a85e211500c2565dec102f881892b",
+          "bytes": 36137,
+          "git_blob_sha": "319f0245c453cb9d81643312b93eebcfa7b418d0"
+        },
+        {
+          "path": ".github/workflows/pages.yml",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/halveth-scarlet/478fd574af47b1ceb990d16d62e43c9d9e12d4c5/.github/workflows/pages.yml",
+          "sha256": "123729fc922b4a74ab3cda6be14fd94fe4941a4ac9f6e1b1081950ea435f81d5",
+          "bytes": 1459,
+          "git_blob_sha": "933a3f89bf48f35a1f97cb598fded35b9e9788a4",
+          "observed_at": "2026-09-28T11:40:18.640062+00:00"
+        },
+        {
+          "path": "tests/event-clock.test.cjs",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/halveth-scarlet/478fd574af47b1ceb990d16d62e43c9d9e12d4c5/tests/event-clock.test.cjs",
+          "sha256": "9a78275d2e53053a180166875dcd9713462e551687c146dcb1205a6b57f6619d",
+          "bytes": 1935,
+          "git_blob_sha": "08b7a1542f6c4f5b39c60f0c2f426d3641ee3d9d",
+          "observed_at": "2026-09-28T11:40:18.773274+00:00"
+        }
+      ],
+      "runs": [],
+      "runs_total_count": 0,
+      "release_observations": [],
+      "release_to_head_equivalence": "NOT_VERIFIED",
+      "authorship": "Repository account association observed; sole personal authorship and individual AI/contributor shares not independently verified.",
+      "title": "HALVETH Scarlet",
+      "domain": "Web · Interaktion · Forschungsdarstellung",
+      "work_description": "Versioniertes Webprojekt mit Erdvisualisierung, mehrsprachiger Darstellung und Forschungsbereichen.",
+      "observation": "README, Pages-Workflow und ein Ereignisuhr-Test wurden bytegenau gebunden. Der rekursive Git-Baum wurde vollständig zurückgegeben.",
+      "claim_ceiling": "Am gebundenen HEAD lieferte die Workflowabfrage keine Läufe. Ein erfolgreicher aktueller Build oder ein fachlicher Wahrheitsbeweis für Forschungsinhalte folgt daraus nicht."
+    },
+    {
+      "name": "halveth-tresor",
+      "full_name": "Juri-Halveth/halveth-tresor",
+      "html_url": "https://github.com/Juri-Halveth/halveth-tresor",
+      "default_branch": "main",
+      "observed_at": "2026-09-28T11:39:14.183883+00:00",
+      "commit_sha": "15d3d38dc6843f680ed8332a5a55c61fc3e7e96a",
+      "evidence_state": "OBSERVED",
+      "tree_sha": "8f1364ca45ab66a291819f64b2c1b5ea55735570",
+      "tree_blob_count": 43,
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/halveth-tresor/15d3d38dc6843f680ed8332a5a55c61fc3e7e96a/README.md",
+          "sha256": "71c35f9e2c0cb9bd4a2df6e14bddcc0d06c4a1d49b6a9b3018a1ee067cd22a94",
+          "bytes": 10046,
+          "git_blob_sha": "5424635034d9db87efb27c25322060c2895e2fb7"
+        },
+        {
+          "path": ".github/workflows/ci.yml",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/halveth-tresor/15d3d38dc6843f680ed8332a5a55c61fc3e7e96a/.github/workflows/ci.yml",
+          "sha256": "745b0bda63aa480f6f88d39be21523d45870eaa78f45502219d302f55c27ebe2",
+          "bytes": 2057,
+          "git_blob_sha": "72b32c0d2d7309ef19d9eafd5b4bad66ca0a8526",
+          "observed_at": "2026-09-28T11:40:18.771270+00:00"
+        }
+      ],
+      "runs": [
+        {
+          "id": 35592727707,
+          "name": "CodeQL",
+          "head_sha": "15d3d38dc6843f680ed8332a5a55c61fc3e7e96a",
+          "html_url": "https://github.com/Juri-Halveth/halveth-tresor/actions/runs/35592727707",
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2026-09-21T11:11:22Z",
+          "updated_at": "2026-09-21T11:12:33Z",
+          "path": ".github/workflows/codeql.yml"
+        },
+        {
+          "id": 34836123440,
+          "name": "CodeQL",
+          "head_sha": "15d3d38dc6843f680ed8332a5a55c61fc3e7e96a",
+          "html_url": "https://github.com/Juri-Halveth/halveth-tresor/actions/runs/34836123440",
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2026-09-14T11:02:10Z",
+          "updated_at": "2026-09-14T11:03:23Z",
+          "path": ".github/workflows/codeql.yml"
+        },
+        {
+          "id": 34794065286,
+          "name": "CodeQL",
+          "head_sha": "15d3d38dc6843f680ed8332a5a55c61fc3e7e96a",
+          "html_url": "https://github.com/Juri-Halveth/halveth-tresor/actions/runs/34794065286",
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2026-09-14T00:52:39Z",
+          "updated_at": "2026-09-14T00:53:34Z",
+          "path": ".github/workflows/codeql.yml"
+        },
+        {
+          "id": 34794065247,
+          "name": "CI",
+          "head_sha": "15d3d38dc6843f680ed8332a5a55c61fc3e7e96a",
+          "html_url": "https://github.com/Juri-Halveth/halveth-tresor/actions/runs/34794065247",
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2026-09-14T00:52:39Z",
+          "updated_at": "2026-09-14T00:53:42Z",
+          "path": ".github/workflows/ci.yml"
+        }
+      ],
+      "runs_total_count": 4,
+      "release_observations": [
+        {
+          "tag": "v1.8.0",
+          "url": "https://github.com/Juri-Halveth/halveth-tresor/releases/tag/v1.8.0",
+          "published_at": "2026-07-26T14:26:39Z",
+          "assets": [
+            {
+              "name": "Tresor.exe",
+              "bytes": 18968663,
+              "digest": "sha256:a59d4680ad85725a1f6bf98f194a30f37f8388475861fb431cd579d40cae8060",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/halveth-tresor/releases/download/v1.8.0/Tresor.exe"
+            },
+            {
+              "name": "Tresor.exe.sha256",
+              "bytes": 64,
+              "digest": "sha256:1b8c3c50fc2b7fe0609f124641fff69bc32f8b3c82e98f26deb475d44a9dd1b1",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/halveth-tresor/releases/download/v1.8.0/Tresor.exe.sha256"
+            }
+          ]
+        }
+      ],
+      "release_to_head_equivalence": "NOT_VERIFIED",
+      "authorship": "Repository account association observed; sole personal authorship and individual AI/contributor shares not independently verified.",
+      "title": "HALVETH Tresor",
+      "domain": "Software · Desktop · Release-Dokumentation",
+      "work_description": "Öffentliches Windows-Desktopprojekt für eine lokale Zugangsdatenverwaltung mit versionierten Releases.",
+      "observation": "README und CI-Definition wurden gebunden; GitHub meldet erfolgreiche Workflowläufe am Quellstand. Release-Metadaten enthalten eine Windows-EXE und Digestangaben.",
+      "claim_ceiling": "Diese Werkdokumentation umfasst Metadaten und ausgewählte Dateien. Sie ist keine Prüfung der Kryptografie, kein Penetrationstest und kein Sicherheitszertifikat."
+    },
+    {
+      "name": "halveth-unreal",
+      "full_name": "Juri-Halveth/halveth-unreal",
+      "html_url": "https://github.com/Juri-Halveth/halveth-unreal",
+      "default_branch": "codex/knowledge-crafting-0.2",
+      "observed_at": "2026-09-28T11:39:16.877423+00:00",
+      "commit_sha": "0e102fe3ec94b43a9eda244a9f15434c0ebb52bd",
+      "evidence_state": "OBSERVED",
+      "tree_sha": "4c9338f04c1e2048fb37f2a05cb5acf1b456baba",
+      "tree_blob_count": 89,
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/halveth-unreal/0e102fe3ec94b43a9eda244a9f15434c0ebb52bd/README.md",
+          "sha256": "e9e6fb000e089ed553188dc5054a18a1cce2b074504ef140def86146d722b664",
+          "bytes": 14626,
+          "git_blob_sha": "9687a15874b864e295fec7f94a64cd1204304c5b"
+        },
+        {
+          "path": ".github/workflows/source.yml",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/halveth-unreal/0e102fe3ec94b43a9eda244a9f15434c0ebb52bd/.github/workflows/source.yml",
+          "sha256": "f489ccc18c96b37f9eadc90f679bc672c518be9242c42e41442e372986fd4c63",
+          "bytes": 2416,
+          "git_blob_sha": "7a4fdba6b92ea9fbcc09f74ae841d7b15179392a",
+          "observed_at": "2026-09-28T11:40:18.969899+00:00"
+        },
+        {
+          "path": "tests/test_project.py",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/halveth-unreal/0e102fe3ec94b43a9eda244a9f15434c0ebb52bd/tests/test_project.py",
+          "sha256": "6968d82674ad0c359742c6d8e5a4e3f3f611cc32ea054c7a05feec6f4159cc85",
+          "bytes": 1824,
+          "git_blob_sha": "f1d478825caec130d5b1f11ccd7839d6d0025493",
+          "observed_at": "2026-09-28T11:40:19.071495+00:00"
+        }
+      ],
+      "runs": [
+        {
+          "id": 35850688336,
+          "name": "Source contracts",
+          "head_sha": "0e102fe3ec94b43a9eda244a9f15434c0ebb52bd",
+          "html_url": "https://github.com/Juri-Halveth/halveth-unreal/actions/runs/35850688336",
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2026-09-23T10:46:12Z",
+          "updated_at": "2026-09-23T10:46:58Z",
+          "path": ".github/workflows/source.yml"
+        }
+      ],
+      "runs_total_count": 1,
+      "release_observations": [
+        {
+          "tag": "v0.1.0",
+          "url": "https://github.com/Juri-Halveth/halveth-unreal/releases/tag/v0.1.0",
+          "published_at": "2026-09-23T02:04:24Z",
+          "assets": [
+            {
+              "name": "HALVETH-Portal-Garden-0.1.0-source-e64ee381d136.zip",
+              "bytes": 38324112,
+              "digest": "sha256:e5f1aae02345a91ba9c97eaf464e27bee54f22946783af270da33584c802148d",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/halveth-unreal/releases/download/v0.1.0/HALVETH-Portal-Garden-0.1.0-source-e64ee381d136.zip"
+            },
+            {
+              "name": "HALVETH-Portal-Garden-0.1.0-source-e64ee381d136.zip.sha256",
+              "bytes": 119,
+              "digest": "sha256:6eddb5daa987a97adc8210904092979b33fe259ea6e19860ad9833fd7cf9066b",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/halveth-unreal/releases/download/v0.1.0/HALVETH-Portal-Garden-0.1.0-source-e64ee381d136.zip.sha256"
+            },
+            {
+              "name": "HALVETH-Portal-Garden-0.1.0-Windows-portable.zip",
+              "bytes": 405833383,
+              "digest": "sha256:70606c109958806a0fbb44748008129731004b01ecb586584328468ff1cc813d",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/halveth-unreal/releases/download/v0.1.0/HALVETH-Portal-Garden-0.1.0-Windows-portable.zip"
+            },
+            {
+              "name": "HALVETH-Portal-Garden-0.1.0-Windows-portable.zip.sha256",
+              "bytes": 115,
+              "digest": "sha256:fbac95e23e68b714e39b0e23b206937e5bf5329294a814ddb8ec17d9e50047c2",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/halveth-unreal/releases/download/v0.1.0/HALVETH-Portal-Garden-0.1.0-Windows-portable.zip.sha256"
+            },
+            {
+              "name": "HALVETH-Portal-Garden-Setup-0.1.0-x64.exe",
+              "bytes": 328082975,
+              "digest": "sha256:4e3b5f7838c9e213fca23c6c865bf26bd0273e5c88a78ab2b564023f4eb4c03c",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/halveth-unreal/releases/download/v0.1.0/HALVETH-Portal-Garden-Setup-0.1.0-x64.exe"
+            },
+            {
+              "name": "HALVETH-Portal-Garden-Setup-0.1.0-x64.exe.sha256",
+              "bytes": 108,
+              "digest": "sha256:77de552e81946f17144d5e1d281f603061c3db2d16bf0ccfb62222939159d71c",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/halveth-unreal/releases/download/v0.1.0/HALVETH-Portal-Garden-Setup-0.1.0-x64.exe.sha256"
+            },
+            {
+              "name": "INSTALLER-LICENSES.md",
+              "bytes": 3777,
+              "digest": "sha256:cb92877fa017f9e34e8c6ee2ce357e768262ebc757870307bbe6bd975f7425e4",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/halveth-unreal/releases/download/v0.1.0/INSTALLER-LICENSES.md"
+            },
+            {
+              "name": "nsis-3.12-src.tar.bz2",
+              "bytes": 1818389,
+              "digest": "sha256:f3ed7a8e4aa2cf4e8cf47d3b563a02559e0cb4934db2662b2f9661b824e2b186",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/halveth-unreal/releases/download/v0.1.0/nsis-3.12-src.tar.bz2"
+            },
+            {
+              "name": "nsis-3.12-src.tar.bz2.sha256",
+              "bytes": 88,
+              "digest": "sha256:dc885ec36316979ab2bb7de1f527f85a436f67c15758b5447c975ab7e168fec7",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/halveth-unreal/releases/download/v0.1.0/nsis-3.12-src.tar.bz2.sha256"
+            },
+            {
+              "name": "NSIS-COPYING.txt",
+              "bytes": 15632,
+              "digest": "sha256:388357c1215ff403c5ebde3a5ecd273e68f8b79a579996775245d1ee65442aba",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/halveth-unreal/releases/download/v0.1.0/NSIS-COPYING.txt"
+            },
+            {
+              "name": "RELEASE-VALIDATION.json",
+              "bytes": 2344,
+              "digest": "sha256:e3fe49426398f4fe6f48bd5d42efa5c950b1d466bf48be32b2b43c0b4c8a783a",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/halveth-unreal/releases/download/v0.1.0/RELEASE-VALIDATION.json"
+            },
+            {
+              "name": "SHA256SUMS.txt",
+              "bytes": 798,
+              "digest": "sha256:4b362efc20b8fc9bab84099abc2f8d046a347d16c064ebed4b220812fbcac848",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/halveth-unreal/releases/download/v0.1.0/SHA256SUMS.txt"
+            },
+            {
+              "name": "SOURCE-2e9e3a71-VERIFICATION.json",
+              "bytes": 691,
+              "digest": "sha256:05ce980a974ecc0d5285830c3b2dab899ef7d2f2d8094c72ccebda32988b4390",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/halveth-unreal/releases/download/v0.1.0/SOURCE-2e9e3a71-VERIFICATION.json"
+            }
+          ]
+        }
+      ],
+      "release_to_head_equivalence": "NOT_VERIFIED",
+      "authorship": "Repository account association observed; sole personal authorship and individual AI/contributor shares not independently verified.",
+      "title": "HALVETH Portal Garden",
+      "domain": "C++ · Quellprüfungen · Spielprototyp",
+      "work_description": "Versioniertes Unreal-Projekt mit nativer Spielwelt und einer getrennt dokumentierten Distribution.",
+      "observation": "GitHub-Jobdaten melden erfolgreiche Quellprüfungen auf Ubuntu und Windows. GCC- und MSVC-Schritte kompilieren und prüfen portable C++-Layout- und Wissenskomponenten.",
+      "claim_ceiling": "Der gelesene Workflow baut nicht die vollständige Unreal-Engine-Anwendung. README-Version 0.2.0 und jüngstes abgerufenes Release v0.1.0 sind getrennte Stände.",
+      "observed_jobs": [
+        {
+          "id": 107147380512,
+          "name": "Portable source (ubuntu-latest)",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 35850688336,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Check out source",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Set up Python",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Test source and export contracts",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Validate project structure",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Compile and run the production layout with GCC",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Compile and run the production layout with MSVC",
+              "status": "completed",
+              "conclusion": "skipped",
+              "number": 7
+            },
+            {
+              "name": "Verify source export and licensed art hashes",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Post Set up Python",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 15
+            },
+            {
+              "name": "Post Check out source",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 16
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 17
+            }
+          ]
+        },
+        {
+          "id": 107147380870,
+          "name": "Portable source (windows-latest)",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 35850688336,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Check out source",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Set up Python",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Test source and export contracts",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Validate project structure",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Compile and run the production layout with GCC",
+              "status": "completed",
+              "conclusion": "skipped",
+              "number": 6
+            },
+            {
+              "name": "Compile and run the production layout with MSVC",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Verify source export and licensed art hashes",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Post Set up Python",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 15
+            },
+            {
+              "name": "Post Check out source",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 16
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 17
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "halveth-xai-40m-proposal",
+      "full_name": "Juri-Halveth/halveth-xai-40m-proposal",
+      "html_url": "https://github.com/Juri-Halveth/halveth-xai-40m-proposal",
+      "default_branch": "main",
+      "observed_at": "2026-09-28T11:39:17.079631+00:00",
+      "commit_sha": "d476554275c243edff8db77fe42ffe27571ba125",
+      "evidence_state": "OBSERVED",
+      "tree_sha": "ef128c055639a07cfdd2efb88c4a2f0d03cdbfb7",
+      "tree_blob_count": 13,
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/halveth-xai-40m-proposal/d476554275c243edff8db77fe42ffe27571ba125/README.md",
+          "sha256": "df8e7ff2422722ac662f5dc5e3b95217f4ef3fd579917159979c65f4ebf09c8e",
+          "bytes": 2809,
+          "git_blob_sha": "62f4940f43b5d6fcb91bede736011aa44ca6e76a"
+        }
+      ],
+      "runs": [],
+      "runs_total_count": 0,
+      "release_observations": [
+        {
+          "tag": "v1.0.1-proposal",
+          "url": "https://github.com/Juri-Halveth/halveth-xai-40m-proposal/releases/tag/v1.0.1-proposal",
+          "published_at": "2026-09-14T18:50:50Z",
+          "assets": [
+            {
+              "name": "HALVETH_40M_NON_BINDING_TERM_SHEET.pdf",
+              "bytes": 4856,
+              "digest": "sha256:10b474634f59f8e87680e7e12427dfff3b3efcccdeb0e07823fa3b077d032d5d",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/halveth-xai-40m-proposal/releases/download/v1.0.1-proposal/HALVETH_40M_NON_BINDING_TERM_SHEET.pdf"
+            },
+            {
+              "name": "SHA256SUMS.txt",
+              "bytes": 1104,
+              "digest": "sha256:d499116f6a4b3385dcc943242a658ac5813cf7235b1c5c8f849774572f8eb740",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/halveth-xai-40m-proposal/releases/download/v1.0.1-proposal/SHA256SUMS.txt"
+            }
+          ]
+        }
+      ],
+      "release_to_head_equivalence": "NOT_VERIFIED",
+      "authorship": "Repository account association observed; sole personal authorship and individual AI/contributor shares not independently verified.",
+      "title": "HALVETH Kooperationsvorschlag",
+      "domain": "Konzeption · Angebotsstruktur · Dokumentation",
+      "work_description": "Versionierter öffentlicher Vorschlag für eine stufenweise Forschungszusammenarbeit mit begrenztem Gegenstand.",
+      "observation": "README, Commit und Release-Metadaten binden das Vorliegen des Vorschlags und seiner Dokumentausgaben.",
+      "claim_ceiling": "Der genannte Programmrahmen ist ein Vorschlag. Annahme, Finanzierung, Forderung, Unternehmensbewertung und eine Partnerschaft mit xAI sind damit nicht belegt."
+    },
+    {
+      "name": "Juri-Halveth.github.io",
+      "full_name": "Juri-Halveth/Juri-Halveth.github.io",
+      "html_url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io",
+      "default_branch": "main",
+      "observed_at": "2026-09-28T11:39:17.119660+00:00",
+      "commit_sha": "3ad30e10cac511ed168e98e06ea2d0f48f9896f9",
+      "evidence_state": "OBSERVED",
+      "tree_sha": "0c211d9a1ca90132fdcc6313b762f657f6c06338",
+      "tree_blob_count": 12,
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/3ad30e10cac511ed168e98e06ea2d0f48f9896f9/README.md",
+          "sha256": "865306593238c4bff2172e08ffaab05f250669ab9bb55d20a38c11d38f770d1e",
+          "bytes": 1548,
+          "git_blob_sha": "80281a8595c4d05e5e27c79eff6ca4da612824d4"
+        },
+        {
+          "path": "index.html",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/3ad30e10cac511ed168e98e06ea2d0f48f9896f9/index.html",
+          "sha256": "8d90088248b4139d5f5fa48fb0012eb34fc354acc5489f82a1ef8b63727b147c",
+          "bytes": 9063,
+          "git_blob_sha": "f152d1b79740f09e3f02e69710ead8b11fcb364a",
+          "observed_at": "2026-09-28T11:40:19.072703+00:00"
+        }
+      ],
+      "runs": [
+        {
+          "id": 35389832196,
+          "name": "pages build and deployment",
+          "head_sha": "3ad30e10cac511ed168e98e06ea2d0f48f9896f9",
+          "html_url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/actions/runs/35389832196",
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2026-09-18T20:08:39Z",
+          "updated_at": "2026-09-18T20:09:20Z",
+          "path": "dynamic/pages/pages-build-deployment"
+        }
+      ],
+      "runs_total_count": 1,
+      "release_observations": [],
+      "release_to_head_equivalence": "NOT_VERIFIED",
+      "authorship": "Repository account association observed; sole personal authorship and individual AI/contributor shares not independently verified.",
+      "title": "HALVETH Projektportal",
+      "domain": "Web · Navigation · Veröffentlichung",
+      "work_description": "Versioniertes statisches Portal zur Navigation zwischen öffentlichen Projekten.",
+      "observation": "README und HTML-Einstiegsdatei wurden gebunden. GitHub meldet am Quellstand einen erfolgreichen Pages-Build und Deployment-Workflow.",
+      "claim_ceiling": "Der Workflowstatus wurde gelesen. Ein unabhängiger aktueller Browser-Funktionstest oder vollständiger Linktest wurde hier nicht durchgeführt."
+    },
+    {
+      "name": "juri-janovski-these-zur-geburt",
+      "full_name": "Juri-Halveth/juri-janovski-these-zur-geburt",
+      "html_url": "https://github.com/Juri-Halveth/juri-janovski-these-zur-geburt",
+      "default_branch": "main",
+      "observed_at": "2026-09-28T11:39:17.399740+00:00",
+      "commit_sha": "945beaf0d733e1d014b1757722a9900a5435701a",
+      "evidence_state": "OBSERVED",
+      "tree_sha": "f58ec1ff42e340aa20eae115247e6ce246b73c03",
+      "tree_blob_count": 26,
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/juri-janovski-these-zur-geburt/945beaf0d733e1d014b1757722a9900a5435701a/README.md",
+          "sha256": "fd532fea4cca77c28ca7125a11253ef8f81792ab3b92506d53de5f9bb65f3468",
+          "bytes": 9395,
+          "git_blob_sha": "4aa1272f0e7562350238f91a056bb5f95d5aea03"
+        },
+        {
+          "path": ".github/workflows/build-pdf.yml",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/juri-janovski-these-zur-geburt/945beaf0d733e1d014b1757722a9900a5435701a/.github/workflows/build-pdf.yml",
+          "sha256": "8e38d16960de448ecce75bc7e9ad0eedfd02d8d3e597d691edd0dceec3b23faa",
+          "bytes": 1955,
+          "git_blob_sha": "6f34d7f180537b3599f43504cdd11448cf4ec56b",
+          "observed_at": "2026-09-28T11:40:19.179762+00:00"
+        }
+      ],
+      "runs": [
+        {
+          "id": 35895574526,
+          "name": "Build and verify PDF",
+          "head_sha": "945beaf0d733e1d014b1757722a9900a5435701a",
+          "html_url": "https://github.com/Juri-Halveth/juri-janovski-these-zur-geburt/actions/runs/35895574526",
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2026-09-23T17:26:09Z",
+          "updated_at": "2026-09-23T17:26:27Z",
+          "path": ".github/workflows/build-pdf.yml"
+        }
+      ],
+      "runs_total_count": 1,
+      "release_observations": [
+        {
+          "tag": "v1.2.2",
+          "url": "https://github.com/Juri-Halveth/juri-janovski-these-zur-geburt/releases/tag/v1.2.2",
+          "published_at": "2026-09-10T02:01:34Z",
+          "assets": [
+            {
+              "name": "juri-janovski-these-v1.2.2-provenance.json",
+              "bytes": 22418,
+              "digest": "sha256:e57ebec710cd309392d6d750f2576d5c3e63e354da7bccb5ce460b4fb23d4c44",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/juri-janovski-these-zur-geburt/releases/download/v1.2.2/juri-janovski-these-v1.2.2-provenance.json"
+            },
+            {
+              "name": "juri-janovski-these-v1.2.2-source.bundle",
+              "bytes": 177917,
+              "digest": "sha256:22b74ff1039ec3405f185339e907d10e1338894eda6ae158723d4399fed6799d",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/juri-janovski-these-zur-geburt/releases/download/v1.2.2/juri-janovski-these-v1.2.2-source.bundle"
+            },
+            {
+              "name": "JURI_JANOVSKI_THESE_ZUR_GEBURT.pdf",
+              "bytes": 59140,
+              "digest": "sha256:4ff8bf93b75602830982f227a4bfbc330f99c8ad53636058a209cd92610af7d5",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/juri-janovski-these-zur-geburt/releases/download/v1.2.2/JURI_JANOVSKI_THESE_ZUR_GEBURT.pdf"
+            },
+            {
+              "name": "JURI_JANOVSKI_THESE_ZUR_GEBURT.pdf.sha256",
+              "bytes": 101,
+              "digest": "sha256:38e56d5fa17742c32831658d7417a5c014f3686831ce58496fc8cf5e4ada6f8d",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/juri-janovski-these-zur-geburt/releases/download/v1.2.2/JURI_JANOVSKI_THESE_ZUR_GEBURT.pdf.sha256"
+            },
+            {
+              "name": "LICENSES.md",
+              "bytes": 2130,
+              "digest": "sha256:42e65236de5cd7459da3d8a8697775859c67d3875c7a2557f6945d29df9c470a",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/juri-janovski-these-zur-geburt/releases/download/v1.2.2/LICENSES.md"
+            },
+            {
+              "name": "SHA256SUMS",
+              "bytes": 598,
+              "digest": "sha256:fa3cf24c0397c218a5b55fee8038801371b9c0a93c58f5f68476587f0e54a592",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/juri-janovski-these-zur-geburt/releases/download/v1.2.2/SHA256SUMS"
+            },
+            {
+              "name": "THIRD_PARTY_NOTICES.md",
+              "bytes": 4525,
+              "digest": "sha256:ee05574379b6b040a29e097f56b44a5470d9c93e7a63aef6e61bf2a7f020d5df",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/juri-janovski-these-zur-geburt/releases/download/v1.2.2/THIRD_PARTY_NOTICES.md"
+            }
+          ]
+        }
+      ],
+      "release_to_head_equivalence": "NOT_VERIFIED",
+      "authorship": "Repository account association observed; sole personal authorship and individual AI/contributor shares not independently verified.",
+      "title": "These zur Geburt",
+      "domain": "Forschungsfrage · Publikationswerkzeug",
+      "work_description": "Versionierte Forschungsfrage mit Python-gestützter PDF-Erzeugung und Provenienzdokumentation.",
+      "observation": "README und PDF-Workflow wurden gebunden. Der Workflow enthält zwei Builds und einen Bytevergleich; GitHub meldet einen erfolgreichen Lauf am Quellstand.",
+      "claim_ceiling": "Die Beobachtung betrifft Dokumentation und Publikationsprozess. Eine klinische Wirksamkeit, medizinische Produktzulassung oder fachliche Begutachtung wird nicht bescheinigt."
+    },
+    {
+      "name": "lernstudio",
+      "full_name": "Juri-Halveth/lernstudio",
+      "html_url": "https://github.com/Juri-Halveth/lernstudio",
+      "default_branch": "main",
+      "observed_at": "2026-09-28T11:39:19.138572+00:00",
+      "commit_sha": "b930b09f89020b57bb91e29305b7577527a91335",
+      "evidence_state": "OBSERVED",
+      "tree_sha": "999ab781c43b89a1581e9d7b1afa01fb7a23f19f",
+      "tree_blob_count": 106,
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/lernstudio/b930b09f89020b57bb91e29305b7577527a91335/README.md",
+          "sha256": "3c8d2fd92ff2b15b592a2fef58eb295e6f2feb1cd7a112b5701263fc53127083",
+          "bytes": 4959,
+          "git_blob_sha": "d7a0cd55e9de79fd2eec12ddfd8cd23b23289bf7"
+        },
+        {
+          "path": "package.json",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/lernstudio/b930b09f89020b57bb91e29305b7577527a91335/package.json",
+          "sha256": "e65e94640fc49f3a3670edf99810a5422e35fa9910daad817f1f949cfe735bdf",
+          "bytes": 524,
+          "git_blob_sha": "2b714c8afc7485d0a5a86e4f61f1960e8db4e03e",
+          "observed_at": "2026-09-28T11:40:19.312933+00:00"
+        },
+        {
+          "path": "werkzeug/test-free-site.js",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/lernstudio/b930b09f89020b57bb91e29305b7577527a91335/werkzeug/test-free-site.js",
+          "sha256": "769519df747408a0f2685dae7ba48aba91cdec5bd8eb219f9f46e09795e13916",
+          "bytes": 2775,
+          "git_blob_sha": "deaf5bb3c24a7a0b82a61a687436c44766b71723",
+          "observed_at": "2026-09-28T11:40:19.423892+00:00"
+        }
+      ],
+      "runs": [],
+      "runs_total_count": 0,
+      "release_observations": [],
+      "release_to_head_equivalence": "NOT_VERIFIED",
+      "authorship": "Repository account association observed; sole personal authorship and individual AI/contributor shares not independently verified.",
+      "title": "Lernstudio",
+      "domain": "Web · Lernplattform · Testorganisation",
+      "work_description": "Versionierte Lernplattform mit Inhaltskatalog, interaktiven Lektionen und dokumentierten Kontofunktionen.",
+      "observation": "README, Paketkonfiguration und eine Testdatei für die freie Website wurden gebunden. Der Baum enthält weitere nach Funktionsbereichen gegliederte Tests.",
+      "claim_ceiling": "Am HEAD wurden keine GitHub-Actions-Läufe zurückgegeben. Tests wurden hier nicht gestartet; Produktionskonten, Hosting und Lernerfolg wurden nicht geprüft."
+    },
+    {
+      "name": "mein-lernportal",
+      "full_name": "Juri-Halveth/mein-lernportal",
+      "html_url": "https://github.com/Juri-Halveth/mein-lernportal",
+      "default_branch": "main",
+      "observed_at": "2026-09-28T11:39:19.496552+00:00",
+      "commit_sha": "5b46c2206ba408d70017378486cda8ea94f090b2",
+      "evidence_state": "OBSERVED",
+      "tree_sha": "786e0ed5b1f49a34c3b3fce7e526e3c3bc064721",
+      "tree_blob_count": 35,
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/mein-lernportal/5b46c2206ba408d70017378486cda8ea94f090b2/README.md",
+          "sha256": "10c2674c58dc3c72e6d1aab254da8e8e90ca06ab74d451baece5000df4700036",
+          "bytes": 1984,
+          "git_blob_sha": "c6e72ce97dea4b8bf743ba90d5da753949fbaaaa"
+        },
+        {
+          "path": "package.json",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/mein-lernportal/5b46c2206ba408d70017378486cda8ea94f090b2/package.json",
+          "sha256": "eb42f61b880d1b3dbd4573aaa295e7afb2e18f1559879f883296eb1b1f1e9ad4",
+          "bytes": 314,
+          "git_blob_sha": "88e7ea0c1b979f416329b934f9612d4dc25987ca",
+          "observed_at": "2026-09-28T11:40:19.436724+00:00"
+        },
+        {
+          "path": "tests/portal.test.cjs",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/mein-lernportal/5b46c2206ba408d70017378486cda8ea94f090b2/tests/portal.test.cjs",
+          "sha256": "8a3af80df93f966ad94837cbda220677c81c63ed061ba08ed161f4f66cb589b1",
+          "bytes": 7243,
+          "git_blob_sha": "43610c78aec127c3104536d0367e1b74bc15ad0b",
+          "observed_at": "2026-09-28T11:40:19.501704+00:00"
+        }
+      ],
+      "runs": [
+        {
+          "id": 35149116991,
+          "name": "pages build and deployment",
+          "head_sha": "5b46c2206ba408d70017378486cda8ea94f090b2",
+          "html_url": "https://github.com/Juri-Halveth/mein-lernportal/actions/runs/35149116991",
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2026-09-16T20:52:20Z",
+          "updated_at": "2026-09-16T20:52:45Z",
+          "path": "dynamic/pages/pages-build-deployment"
+        }
+      ],
+      "runs_total_count": 1,
+      "release_observations": [],
+      "release_to_head_equivalence": "NOT_VERIFIED",
+      "authorship": "Repository account association observed; sole personal authorship and individual AI/contributor shares not independently verified.",
+      "title": "Mein Lernportal",
+      "domain": "Web · Lernen · Inhaltsverträge",
+      "work_description": "Versioniertes statisches Lernportal mit Suchfunktion und lokaler Fortschrittsverwaltung.",
+      "observation": "Die gelesene Testsuite enthält Sollwerte für 13 Themen, 133 Stufen und 702 eindeutige Lektionen sowie Prüfungen zu Inhaltsdigest, Navigation und lokalem Fortschritt. GitHub meldet ein erfolgreiches Pages-Deployment.",
+      "claim_ceiling": "Die Zahlen sind hier als Test-Sollwerte und README-Angaben belegt, nicht neu am Laufzeitsystem gezählt. Das Deployment belegt keinen ausgeführten npm-Test."
+    },
+    {
+      "name": "open-research-branches",
+      "full_name": "Juri-Halveth/open-research-branches",
+      "html_url": "https://github.com/Juri-Halveth/open-research-branches",
+      "default_branch": "main",
+      "observed_at": "2026-09-28T11:39:19.904049+00:00",
+      "commit_sha": "223000bddcea59ef0653d5e6985e946c443f5ad1",
+      "evidence_state": "OBSERVED",
+      "tree_sha": "e11531be735c2ae577150c799d4eab3575c9bf57",
+      "tree_blob_count": 347,
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/open-research-branches/223000bddcea59ef0653d5e6985e946c443f5ad1/README.md",
+          "sha256": "bbc586898ea60817999935b49dd0a751263249bd280501f0cb284eba45440b58",
+          "bytes": 19944,
+          "git_blob_sha": "2f391a4c25ad82e96ad87e2681df3f220d78f483"
+        },
+        {
+          "path": ".github/workflows/ci.yml",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/open-research-branches/223000bddcea59ef0653d5e6985e946c443f5ad1/.github/workflows/ci.yml",
+          "sha256": "6fa9d395a37795b3c0161231084fbc11969eb803b4e3d93b549518de3fbb19b8",
+          "bytes": 294,
+          "git_blob_sha": "6c5d57fbe02e4bafb84cf9e92b0d2bffc9562511",
+          "observed_at": "2026-09-28T11:40:19.705888+00:00"
+        },
+        {
+          "path": "branches/document-issue-reference-verifier/test/reference-verifier.test.mjs",
+          "url": "https://raw.githubusercontent.com/Juri-Halveth/open-research-branches/223000bddcea59ef0653d5e6985e946c443f5ad1/branches/document-issue-reference-verifier/test/reference-verifier.test.mjs",
+          "sha256": "c48716642cf5b3cf1b8bacc14701c863270e5145fd43c07587af20dac1a17683",
+          "bytes": 5142,
+          "git_blob_sha": "6c55089f0bf8d5521fc2c38e20c2d2cfc99cd4e1",
+          "observed_at": "2026-09-28T11:40:19.837765+00:00"
+        }
+      ],
+      "runs": [
+        {
+          "id": 35894307651,
+          "name": "CI",
+          "head_sha": "223000bddcea59ef0653d5e6985e946c443f5ad1",
+          "html_url": "https://github.com/Juri-Halveth/open-research-branches/actions/runs/35894307651",
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2026-09-23T17:15:05Z",
+          "updated_at": "2026-09-23T17:15:26Z",
+          "path": ".github/workflows/ci.yml"
+        }
+      ],
+      "runs_total_count": 1,
+      "release_observations": [
+        {
+          "tag": "v0.18.0",
+          "url": "https://github.com/Juri-Halveth/open-research-branches/releases/tag/v0.18.0",
+          "published_at": "2026-09-10T11:43:19Z",
+          "assets": [
+            {
+              "name": "Atomwaffen_Abruestung_Quellenueberblick.pptx",
+              "bytes": 50415,
+              "digest": "sha256:8abfaa65c138b2a3de62fd1b0beaec29ae41664df155c13f93cb86e0b15a98f5",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/open-research-branches/releases/download/v0.18.0/Atomwaffen_Abruestung_Quellenueberblick.pptx"
+            },
+            {
+              "name": "Atomwaffen_Macht_und_Geld.docx",
+              "bytes": 188657,
+              "digest": "sha256:297269fdf1d46601b966cc90a1f87a6f6f6620389e73256011420f98f2a224eb",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/open-research-branches/releases/download/v0.18.0/Atomwaffen_Macht_und_Geld.docx"
+            },
+            {
+              "name": "Atomwaffen_Macht_und_Geld.pdf",
+              "bytes": 478234,
+              "digest": "sha256:6ad7b55229b298b64b6b1a2407ea49e88d6cfccd34d754ff501bb0467201c8c3",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/open-research-branches/releases/download/v0.18.0/Atomwaffen_Macht_und_Geld.pdf"
+            },
+            {
+              "name": "Budgetdaten_und_Szenarien.xlsx",
+              "bytes": 8536,
+              "digest": "sha256:2c36a44470e29c200c0d89f95dd7d8955df64ef982a2967dbd0e060475d1327e",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/open-research-branches/releases/download/v0.18.0/Budgetdaten_und_Szenarien.xlsx"
+            },
+            {
+              "name": "open-research-branches-v0.18.0.bundle",
+              "bytes": 2950529,
+              "digest": "sha256:2c6d06bb51608d3b98cf445b0da6be9154a7f3a791079be595dbc54c80bd6fab",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/open-research-branches/releases/download/v0.18.0/open-research-branches-v0.18.0.bundle"
+            },
+            {
+              "name": "provenance.json",
+              "bytes": 305768,
+              "digest": "sha256:ad26c15bdc70e048f26cabef2650ba56ac3de0460056c339718be3e25121eee9",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/open-research-branches/releases/download/v0.18.0/provenance.json"
+            },
+            {
+              "name": "SHA256SUMS.txt",
+              "bytes": 587,
+              "digest": "sha256:e74b2314c5d43fb69422937bb8bec02125376639c8517341e74de3448c8fe7c9",
+              "digest_state": "GITHUB_API_DECLARED_NOT_REHASHED",
+              "url": "https://github.com/Juri-Halveth/open-research-branches/releases/download/v0.18.0/SHA256SUMS.txt"
+            }
+          ]
+        }
+      ],
+      "release_to_head_equivalence": "NOT_VERIFIED",
+      "authorship": "Repository account association observed; sole personal authorship and individual AI/contributor shares not independently verified.",
+      "title": "HALVETH Open Research",
+      "domain": "Forschungsdokumentation · Modelle · Tests",
+      "work_description": "Versionierte Sammlung von Forschungsfragen, Quellen, Modellen und ausführbaren Softwarebeispielen.",
+      "observation": "README, CI-Datei und eine synthetische Referenzprüfungs-Testdatei wurden gebunden. Die CI-Definition startet npm test; GitHub meldet einen erfolgreichen Lauf am Quellstand.",
+      "claim_ceiling": "Eine erfolgreiche Projekttestsuite prüft ihre kodierten Erwartungen. Sie bestätigt weder sämtliche Forschungsbehauptungen noch eine unabhängige wissenschaftliche Begutachtung."
+    }
+  ]
+}

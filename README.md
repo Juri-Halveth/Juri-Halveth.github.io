@@ -1,5 +1,11 @@
 # HALVETH × LUCINET · Projektportal
 
+<!-- HALVETH_WORK_CERTIFICATES_V1_1 -->
+## Juri Halveth / HALVETH · Private Werkzertifikate
+
+[Alle elf privaten Werkzertifikate mit vollständigen Namen, Quellständen und SHA-256-Belegen](https://juri-halveth.github.io/werkzertifikate/). Private, mit Codex erstellte Werkdokumentation; keine ISTQB- oder sonstige Personenzertifizierung.
+<!-- /HALVETH_WORK_CERTIFICATES_V1_1 -->
+
 Das zweisprachige öffentliche Projektportal unter [juri-halveth.github.io](https://juri-halveth.github.io/) verbindet Scarlet, Open Research und Lernstudio.
 
 Statische HTML-, CSS- und JavaScript-Dateien; keine Paketinstallation, externen Schriften oder Analyse-Tracker. `?lang=de` und `?lang=en` wählen die Sprache. Verlinkte Scarlet-Seiten übernehmen die Auswahl.

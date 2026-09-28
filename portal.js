@@ -1,6 +1,7 @@
 "use strict";
 (() => {
   const english = {
+    navCertificates: "Work certificates", workCertificates: "Juri Halveth · View private work certificates",
     skip: "Skip to content", brandSub: "A project by Juri Halveth", brandLabel: "HALVETH home", navLabel: "Main navigation", navProjects: "Projects", navPrinciples: "Approach", navContact: "Contact",
     eyebrow: "Sources. Ideas. Your own path.", heroTitle: "Many perspectives.<br>One place to explore.", heroLead: "Welcome to HALVETH and LUCINET. Creative worlds, traceable research and tools for learning meet here.",
     enterScarlet: 'Explore Scarlet <span aria-hidden="true">↗</span>', allProjects: 'All projects <span aria-hidden="true">↓</span>', heroCaption: "Original contributions. Visible sources. Space for open questions.", coreCaption: "CONNECTIONS", orbitLearn: "LEARNING",
@@ -19,12 +20,12 @@
   const setLanguage = language => {
     const isEnglish = language === "en";
     document.documentElement.lang = isEnglish ? "en" : "de";
-    document.title = isEnglish ? "HALVETH × LUCINET · Projects & Perspectives" : "HALVETH × LUCINET · Projekte & Perspektiven";
+    document.title = isEnglish ? "Juri Janovski / Juri Halveth / HALVETH · Projects and private work certificates" : "Juri Janovski / Juri Halveth / HALVETH · Projekte und private Werkzertifikate";
     nodes.forEach(node => { node.innerHTML = isEnglish ? english[node.dataset.i18n] || german.get(node) : german.get(node); });
     ariaNodes.forEach(node => node.setAttribute("aria-label", isEnglish ? english[node.dataset.i18nAria] || germanAria.get(node) : germanAria.get(node)));
     document.querySelectorAll("[data-lang]").forEach(button => button.setAttribute("aria-pressed", String(button.dataset.lang === language)));
     document.querySelectorAll("[data-lang-target]").forEach(link => { link.href = link.dataset.langTarget + "?lang=" + language; });
-    document.querySelector('meta[name="description"]').content = isEnglish ? "HALVETH × LUCINET — projects, sources, stories and free learning by Juri Halveth." : "HALVETH × LUCINET — Projekte, Quellen, Geschichten und kostenloses Lernen von Juri Halveth.";
+    document.querySelector('meta[name="description"]').content = isEnglish ? "Juri Janovski / Juri Halveth / HALVETH: projects, private work certificates, source revisions and documented software and research work." : "Juri Janovski / Juri Halveth / HALVETH: Projekte, private Werkzertifikate, Quellstände und dokumentierte Software- und Forschungsarbeit.";
   };
   const initial = new URL(location.href).searchParams.get("lang") === "en" ? "en" : "de";
   setLanguage(initial);
