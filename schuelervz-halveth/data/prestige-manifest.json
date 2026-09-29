@@ -1,0 +1,26 @@
+{
+  "schema": "HALVETH_PRESTIGE_FOUR_MANIFEST",
+  "version": "3.5.0",
+  "generated_at": "2026-09-29T13:05:56.934553+00:00",
+  "census_rows": 15000,
+  "unique_urls": 14949,
+  "docs": 1833,
+  "bundled_canonical": 598,
+  "fetch_errors": 35,
+  "route_patterns": 1338,
+  "people_searchable": 1,
+  "github_claims": 0,
+  "search_rows": 609,
+  "graph_nodes": 2299,
+  "graph_edges": 1651,
+  "personal_route_metadata_rows": 11511,
+  "delta_bundled_canonical": 0,
+  "invariants": [
+    "PERSONAL_ROUTE_METADATA_ONLY_BY_DEFAULT",
+    "NO_BULK_LEAKED_PROFILE_REPUBLICATION",
+    "VOLUNTARY_GITHUB_CLAIMS_ARE_SEARCHABLE",
+    "GITHUB_CLAIM != HISTORIC_IDENTITY_PROOF",
+    "UNKNOWN != FALSE",
+    "ARCHIVE_RECORD != CURRENT_PERSON"
+  ]
+}

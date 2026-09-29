@@ -1,0 +1,109 @@
+[
+  {
+    "schema": "HALVETH_PRESTIGE_FOUR_RUN",
+    "version": "3.5.0",
+    "started_at": "2026-09-29T13:05:56.848949+00:00",
+    "baseline": {
+      "census_rows": 15000,
+      "unique_urls": 14949,
+      "bundled_canonical": 598,
+      "docs": 1833,
+      "fetch_errors": 35,
+      "route_patterns": 1338,
+      "classes": {
+        "shell": 18,
+        "public-other": 3447,
+        "personal-route": 11511,
+        "asset": 24
+      },
+      "years": {
+        "2007": 35,
+        "2008": 5430,
+        "2009": 5312,
+        "2010": 3417,
+        "2011": 62,
+        "2012": 120,
+        "2013": 169,
+        "2014": 4,
+        "2015": 14,
+        "2017": 73,
+        "2018": 81,
+        "2019": 102,
+        "2020": 43,
+        "2021": 8,
+        "2022": 17,
+        "2023": 9,
+        "2026": 104
+      }
+    },
+    "rounds": [
+      {
+        "round": 0,
+        "label": "RESUME_COMPILE_ONLY",
+        "candidates": 0,
+        "bundled_added": 0,
+        "errors": 0,
+        "after": {
+          "census_rows": 15000,
+          "unique_urls": 14949,
+          "bundled_canonical": 598,
+          "docs": 1833,
+          "fetch_errors": 35,
+          "route_patterns": 1338,
+          "classes": {
+            "shell": 18,
+            "public-other": 3447,
+            "personal-route": 11511,
+            "asset": 24
+          },
+          "years": {
+            "2007": 35,
+            "2008": 5430,
+            "2009": 5312,
+            "2010": 3417,
+            "2011": 62,
+            "2012": 120,
+            "2013": 169,
+            "2014": 4,
+            "2015": 14,
+            "2017": 73,
+            "2018": 81,
+            "2019": 102,
+            "2020": 43,
+            "2021": 8,
+            "2022": 17,
+            "2023": 9,
+            "2026": 104
+          }
+        }
+      }
+    ],
+    "finished_at": "2026-09-29T13:05:56.941800+00:00",
+    "final": {
+      "schema": "HALVETH_PRESTIGE_FOUR_MANIFEST",
+      "version": "3.5.0",
+      "generated_at": "2026-09-29T13:05:56.934553+00:00",
+      "census_rows": 15000,
+      "unique_urls": 14949,
+      "docs": 1833,
+      "bundled_canonical": 598,
+      "fetch_errors": 35,
+      "route_patterns": 1338,
+      "people_searchable": 1,
+      "github_claims": 0,
+      "search_rows": 609,
+      "graph_nodes": 2299,
+      "graph_edges": 1651,
+      "personal_route_metadata_rows": 11511,
+      "delta_bundled_canonical": 0,
+      "invariants": [
+        "PERSONAL_ROUTE_METADATA_ONLY_BY_DEFAULT",
+        "NO_BULK_LEAKED_PROFILE_REPUBLICATION",
+        "VOLUNTARY_GITHUB_CLAIMS_ARE_SEARCHABLE",
+        "GITHUB_CLAIM != HISTORIC_IDENTITY_PROOF",
+        "UNKNOWN != FALSE",
+        "ARCHIVE_RECORD != CURRENT_PERSON"
+      ]
+    }
+  }
+]
