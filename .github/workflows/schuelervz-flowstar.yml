@@ -1,0 +1,60 @@
+name: schuelerVZ FLOWSTAR
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows:
+      - "schuelerVZ STREAM UNIVERSE"
+      - "schuelerVZ PRESTIGE FOUR 3.5.1"
+    types:
+      - completed
+
+permissions:
+  contents: write
+
+concurrency:
+  group: schuelervz-flowstar
+  cancel-in-progress: false
+
+jobs:
+  flowstar:
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      github.event.workflow_run.conclusion == 'success'
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: FLOWSTAR constellation
+        run: |
+          python schuelervz-halveth/tools/FLOWSTAR_ENGINE.py \
+            --site-root schuelervz-halveth
+
+      - name: Append constellation state
+        run: |
+          git config user.name "halveth-flowstar-bot"
+          git config user.email "actions@users.noreply.github.com"
+
+          git add \
+            schuelervz-halveth/data/flowstar \
+            schuelervz-halveth/FLOWSTAR.md \
+            schuelervz-halveth/tools/FLOWSTAR_ENGINE.py
+
+          if git diff --cached --quiet; then
+            echo "FLOWSTAR unchanged."
+            exit 0
+          fi
+
+          git commit -m "✦ flowstar: append constellation state"
+
+          git pull --rebase origin main
+          git push origin main

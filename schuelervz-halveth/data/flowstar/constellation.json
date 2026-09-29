@@ -1,0 +1,147 @@
+{
+  "schema": "HALVETH_FLOWSTAR_CONSTELLATION_1",
+  "version": "1.0.0",
+  "generated_at": "2026-09-29T14:50:10.017283+00:00",
+  "sign": "✦⇄∞⇄✦",
+  "axiom": "NOT_FROZEN -> STILL_FLOWING",
+  "ladder": [
+    {
+      "level": -4,
+      "name": "TRACE",
+      "meaning": "raw existence / fragment"
+    },
+    {
+      "level": -3,
+      "name": "SOURCE",
+      "meaning": "provenance-bearing source"
+    },
+    {
+      "level": -2,
+      "name": "RELATION",
+      "meaning": "source-to-source relation"
+    },
+    {
+      "level": -1,
+      "name": "MEMORY",
+      "meaning": "reconstruction with uncertainty"
+    },
+    {
+      "level": 0,
+      "name": "FLOW",
+      "meaning": "active evolving universe"
+    },
+    {
+      "level": 1,
+      "name": "VAPOR",
+      "meaning": "distributed clues / discovery frontier"
+    },
+    {
+      "level": 2,
+      "name": "ION",
+      "meaning": "activated evidence nodes"
+    },
+    {
+      "level": 3,
+      "name": "PLASMA",
+      "meaning": "high-connectivity relation field"
+    },
+    {
+      "level": 4,
+      "name": "FUSION",
+      "meaning": "multi-source synthesis with originals preserved"
+    }
+  ],
+  "side_reactions": [
+    {
+      "name": "COMBUSTION",
+      "kind": "CHEMICAL_TRANSFORMATION",
+      "role": "branch / transform / emit evidence",
+      "terminal": false
+    },
+    {
+      "name": "RECOMBINATION",
+      "kind": "PLASMA_TO_GAS_ANALOGY",
+      "role": "reduce activation without deleting provenance",
+      "terminal": false
+    },
+    {
+      "name": "SUBLIMATION",
+      "kind": "DIRECT_SOLID_TO_GAS_ANALOGY",
+      "role": "jump representations without losing the source",
+      "terminal": false
+    }
+  ],
+  "rules": [
+    "NO_TERMINAL_FREEZE",
+    "SNAPSHOT != STOP",
+    "SOURCE_BEFORE_TRANSFORM",
+    "UPDATE = APPEND",
+    "UNKNOWN = PRESERVED",
+    "DIFFERENT = PRESERVED",
+    "UNRESOLVED = PRESERVED",
+    "FUSION_PRESERVES_INPUTS",
+    "COMBUSTION_IS_SIDE_REACTION_NOT_PHASE_RUNG"
+  ],
+  "current_state": {
+    "stream": {
+      "archive_rows": 20000,
+      "feature_counts": {
+        "other": 4022,
+        "messages": 1,
+        "games": 3,
+        "friends": 14965,
+        "profile": 2,
+        "groups": 1007
+      },
+      "states": {
+        "PUBLIC_ARCHIVE": 5030,
+        "PERSONAL_ROUTE_METADATA": 14970
+      }
+    },
+    "prestige": {
+      "unique_urls": 14949,
+      "bundled_canonical": 598,
+      "route_patterns": 1338,
+      "search_rows": 609,
+      "graph_nodes": 2299,
+      "graph_edges": 1651,
+      "personal_route_metadata_rows": 11511
+    }
+  },
+  "audit": [
+    {
+      "id": "FLOW-001",
+      "state": "PASS",
+      "finding": "Public archive and personal-route metadata remain separate.",
+      "evidence": {
+        "archive_rows": 20000,
+        "public_archive": 5030,
+        "personal_route_metadata": 14970
+      }
+    },
+    {
+      "id": "FLOW-002",
+      "state": "PASS",
+      "finding": "Append-oriented evidence can continue evolving without replacing source records.",
+      "evidence": {
+        "unique_urls": 14949,
+        "bundled_canonical": 598,
+        "graph_nodes": 2299,
+        "graph_edges": 1651
+      }
+    },
+    {
+      "id": "FLOW-003",
+      "state": "ACTION",
+      "finding": "Snapshots are T-k anchors, never terminal states.",
+      "effect": "Any snapshot may re-enter RELATION, VAPOR, PLASMA or FUSION later."
+    },
+    {
+      "id": "FLOW-004",
+      "state": "ACTION",
+      "finding": "Combustion is modeled as a side reaction rather than a fake physical phase transition.",
+      "effect": "Branch freely without corrupting the physical metaphor."
+    }
+  ],
+  "constellation_sha256": "fb890850a5065883d00748ad8c08551c7a519edb5b59291594ad0882fb8ebe66"
+}
