@@ -1,0 +1,18 @@
+{
+  "archive_rows": 1200,
+  "bundled_pages": 1175,
+  "fetch_errors": 25,
+  "people": 1,
+  "route_templates": 6,
+  "search_rows": 1215,
+  "categories": {
+    "archive": 25,
+    "press": 6,
+    "robots": 1169
+  },
+  "years": {
+    "2007": 7,
+    "2008": 1193
+  },
+  "sha256_archive_index": "3044f09f77e170676a3e483db467a9d09ea0bf05f6b7b31aeda706dc6703a13e"
+}

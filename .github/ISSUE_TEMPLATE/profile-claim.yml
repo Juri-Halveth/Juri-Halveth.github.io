@@ -5,7 +5,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        Dieses Projekt fragt **niemals** nach alten schülerVZ-Passwörtern. Dein heutiger GitHub-Account ist die Claim-Identität.
+        MYCELIUM fragt **niemals** nach deinem alten schülerVZ-Passwort.
+        Dein heutiger GitHub-Account ist die Claim-Identität.
+        Ein Claim macht aus einer historischen Spur nicht automatisch eine verifizierte Alt-Identität.
   - type: input
     id: display
     attributes:
@@ -13,20 +15,25 @@ body:
     validations:
       required: true
   - type: input
-    id: old_url
+    id: historic_url
     attributes:
-      label: Dein eigener alter öffentlicher Profil-Link (optional)
+      label: Deine eigene alte Profil-URL (optional)
+      description: Nur dein eigenes historisches Profil.
+  - type: input
+    id: historic_id
+    attributes:
+      label: Deine eigene alte opaque Profil-ID (optional)
   - type: input
     id: email_fingerprint
     attributes:
-      label: Optionaler SHA-256-Fingerprint deiner alten E-Mail
+      label: Optionaler SHA-256-Fingerprint der alten E-Mail
       description: Keine Klartext-E-Mail und niemals ein Passwort.
   - type: checkboxes
     id: consent
     attributes:
       label: Einwilligung
       options:
-        - label: Ich beantrage nur die Wiederherstellung meines eigenen Profils.
+        - label: Ich beantrage nur die Rekonstruktion meines eigenen Profils.
           required: true
-        - label: Ich bin mit der Veröffentlichung meines neuen Rekonstruktionsprofils einverstanden.
+        - label: Ich bin mit der Veröffentlichung des neuen Rekonstruktionsprofils einverstanden.
           required: true

@@ -1,11 +1,10 @@
-# schuelerVZ // HALVETH
+# schuelerVZ // HALVETH MYCELIUM 3.2.0
 
-Unofficial nostalgia and public archive reconstruction.
+Public archive + opt-in reconstructed profiles + route archaeology + graph search.
 
-Live:
-https://juri-halveth.github.io/schuelervz-halveth/
+Live: https://juri-halveth.github.io/schuelervz-halveth/
 
-GitHub is the version and publication layer.
-Wayback ingest is restricted to public root/press/security/about/robots pages.
-Archive refresh is resilient: transient Wayback failures do not block publication.
-Old schuelerVZ passwords are never requested or stored.
+MYCELIUM preserves existing archive/ and data/archive-index.json.
+Historic passwords are never requested.
+Route templates are technical evidence, not recovered people.
+Unclaimed historic profiles are not bulk-republished from leaked datasets.

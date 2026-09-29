@@ -1,0 +1,38 @@
+[
+  {
+    "route": "Profile/<ID>",
+    "kind": "PROFILE",
+    "source": "public VZ backup code archaeology",
+    "state": "TECHNICAL_TEMPLATE"
+  },
+  {
+    "route": "Friends/Friends/<ID>",
+    "kind": "FRIENDS",
+    "source": "public VZ backup code archaeology",
+    "state": "TECHNICAL_TEMPLATE"
+  },
+  {
+    "route": "Pinboard/<ID>/p/<PAGE>",
+    "kind": "PINBOARD",
+    "source": "public VZ backup code archaeology",
+    "state": "TECHNICAL_TEMPLATE"
+  },
+  {
+    "route": "Messages/WriteMessage",
+    "kind": "MESSAGES",
+    "source": "public VZ backup code archaeology",
+    "state": "TECHNICAL_TEMPLATE"
+  },
+  {
+    "route": "Groups",
+    "kind": "GROUPS",
+    "source": "public VZ backup code archaeology",
+    "state": "TECHNICAL_TEMPLATE"
+  },
+  {
+    "route": "Albums",
+    "kind": "ALBUMS",
+    "source": "public VZ backup code archaeology",
+    "state": "TECHNICAL_TEMPLATE"
+  }
+]
