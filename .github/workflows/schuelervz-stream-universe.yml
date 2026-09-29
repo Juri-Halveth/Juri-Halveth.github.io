@@ -1,0 +1,54 @@
+name: schuelerVZ STREAM UNIVERSE
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "13 2 * * 0"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: schuelervz-stream-universe
+  cancel-in-progress: false
+
+jobs:
+
+  stream:
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+
+    env:
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Internet -> GitHub reconstruction stream
+        run: |
+          python schuelervz-halveth/tools/STREAM_COLLECTOR.py
+
+      - name: Commit reconstructed public state
+        run: |
+
+          git config user.name "halveth-stream-bot"
+          git config user.email "actions@users.noreply.github.com"
+
+          git add schuelervz-halveth/data/stream
+
+          if git diff --cached --quiet; then
+            echo "No new public archaeology state."
+            exit 0
+          fi
+
+          git commit -m "stream: ingest public schuelerVZ archaeology"
+
+          git pull --rebase origin main
+
+          git push origin main
