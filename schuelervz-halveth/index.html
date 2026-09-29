@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>schülerVZ // HALVETH</title>
+<meta name="description" content="Inoffizielle nostalgische schülerVZ-Rekonstruktion mit öffentlicher Archivforschung.">
+<link rel="stylesheet" href="assets/vz.css">
+</head>
+<body>
+<div class="notice">UNOFFICIAL ARCHIVAL / NOSTALGIA RECONSTRUCTION · NICHT DER EHEMALIGE ORIGINALDIENST</div>
+<div class="site">
+<header class="head">
+  <div class="logo"><span>✦</span><div><b>schüler<span>VZ</span></b><small>DAS HALVETH-SCHÜLERVERZEICHNIS</small></div></div>
+  <div class="pinkbar"><strong>SCHÜLERVERZEICHNIS</strong><nav>
+    <a href="#" data-tool="search">suche</a>
+    <a href="#" data-tool="time">raumzeit</a>
+    <a href="#" data-tool="console">console</a>
+    <a href="https://github.com/Juri-Halveth/Juri-Halveth.github.io/issues/new?template=profile-claim.yml" target="_blank" rel="noopener">mit GitHub beitreten</a>
+  </nav></div>
+</header>
+<div class="layout">
+<aside>
+  <input id="miniSearch" placeholder="Suche">
+  <ul>
+    <li><a href="#" data-page="home">Start</a></li>
+    <li><a href="#" data-page="profile">Meine Seite</a></li>
+    <li><a href="#" data-page="friends">Meine Freunde</a></li>
+    <li><a href="#" data-page="photos">Meine Fotos</a></li>
+    <li><a href="#" data-page="groups">Meine Gruppen</a></li>
+    <li><a href="#" data-page="messages">Nachrichtendienst</a></li>
+    <li><a href="#" data-page="artifacts">Archivsuche</a></li>
+    <li><a href="#" data-page="privacy">Meine Privatsphäre</a></li>
+  </ul>
+  <div class="card tiny"><b>GitHub LIVE</b><span id="liveState">verbinde …</span><span id="liveCommit">—</span></div>
+  <div class="card tiny"><b>Archiv</b><span id="archiveState">Index wird geladen …</span></div>
+</aside>
+<main>
+<section id="page-home" class="page active">
+  <div class="title"><span>Hey Juri!</span><small>T‑0 ⇄ T+n</small></div>
+  <div class="columns"><div>
+    <div class="module"><h3>Was machst du gerade?</h3><textarea id="statusInput" maxlength="140"></textarea><div class="actions"><span id="statusCount">140</span> Zeichen <button id="statusPost">speichern</button></div></div>
+    <div class="module"><h3>Neuigkeiten</h3><div id="newsFeed"></div></div>
+    <div class="module"><h3>Pinnwand</h3><div id="wall"></div><div class="wallform"><input id="wallInput" placeholder="Etwas an die Pinnwand …"><button id="wallPost">eintragen</button></div></div>
+  </div><div>
+    <div class="profile card"><div class="avatar">JH</div><b>Juri Halveth</b><span>HALVETH / Rekonstruktionsraum</span><button id="gruschelBtn">gruscheln</button><small><span id="gruschelCount">111</span> Gruscheln</small></div>
+    <div class="module"><h3>Raumzeit</h3><select id="yearSelect"></select><button id="jumpYear">springen</button><div id="yearInfo"></div></div>
+  </div></div>
+</section>
+<section id="page-profile" class="page"><div class="title">Meine Seite</div><div class="profilePage"><div class="bigAvatar">JH</div><div><h2>Juri Halveth</h2><p id="profileStatus">HALVETH reconstruction account</p><p>Aktuelles Rekonstruktionskonto, nicht als historisches Originalkonto ausgegeben.</p></div></div></section>
+<section id="page-friends" class="page"><div class="title">Meine Freunde</div><div id="friendGrid" class="grid"></div></section>
+<section id="page-photos" class="page"><div class="title">Meine Fotos</div><div id="photoGrid" class="grid"></div></section>
+<section id="page-groups" class="page"><div class="title">Meine Gruppen</div><div id="groupList"></div></section>
+<section id="page-messages" class="page"><div class="title">Nachrichtendienst</div><div id="messageList"></div></section>
+<section id="page-artifacts" class="page">
+  <div class="title">Archivsuche // öffentliche Zeitkapseln</div>
+  <div class="searchbar"><input id="artifactSearch" placeholder="security, press, robots, 2009 …"><button id="artifactGo">suchen</button></div>
+  <div class="archive-note">Der Archive-Builder spiegelt nur öffentliche Root/Press/Security/About/robots-Seiten. Persönliche historische Nutzerprofile werden nicht massenhaft als neue Personendatenbank repliziert.</div>
+  <div id="artifactResults"></div>
+</section>
+<section id="page-privacy" class="page"><div class="title">Meine Privatsphäre</div><div class="module body">
+  <b>GitHub-Claim statt Altpasswort</b>
+  <p>Alte schülerVZ-Passwörter werden niemals abgefragt oder gespeichert. Wer sein eigenes Profil wiederbeleben möchte, beantragt es mit seiner heutigen GitHub-Identität.</p>
+</div></section>
+</main></div></div>
+<div id="modal" class="overlay hidden"><div class="modal"><button id="closeModal">×</button><div id="modalBody"></div></div></div>
+<div id="console" class="console hidden"><div class="consoleHead"><b>VERACHEL :: SCHUELERVZ [TCL]</b><button id="closeConsole">×</button></div><pre id="consoleOut"></pre><form id="consoleForm"><span>&gt;</span><input id="consoleIn" autocomplete="off" placeholder="help"></form></div>
+<div id="noclipHud" class="hud hidden">TCL / NOCLIP ACTIVE</div>
+<script src="assets/vz.js"></script>
+</body></html>

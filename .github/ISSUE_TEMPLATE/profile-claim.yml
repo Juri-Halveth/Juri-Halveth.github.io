@@ -1,0 +1,32 @@
+name: Profil wiederbeleben
+description: Opt-in Claim für ein aktuelles schülerVZ // HALVETH Rekonstruktionsprofil
+title: "[PROFILE CLAIM] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Dieses Projekt fragt **niemals** nach alten schülerVZ-Passwörtern. Dein heutiger GitHub-Account ist die Claim-Identität.
+  - type: input
+    id: display
+    attributes:
+      label: Anzeigename
+    validations:
+      required: true
+  - type: input
+    id: old_url
+    attributes:
+      label: Dein eigener alter öffentlicher Profil-Link (optional)
+  - type: input
+    id: email_fingerprint
+    attributes:
+      label: Optionaler SHA-256-Fingerprint deiner alten E-Mail
+      description: Keine Klartext-E-Mail und niemals ein Passwort.
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Einwilligung
+      options:
+        - label: Ich beantrage nur die Wiederherstellung meines eigenen Profils.
+          required: true
+        - label: Ich bin mit der Veröffentlichung meines neuen Rekonstruktionsprofils einverstanden.
+          required: true

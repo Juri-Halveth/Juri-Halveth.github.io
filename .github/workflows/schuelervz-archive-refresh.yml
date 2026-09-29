@@ -1,0 +1,25 @@
+name: Refresh schuelerVZ public archive
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "23 3 * * 0"
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Refresh public archive
+        continue-on-error: true
+        run: python schuelervz-halveth/tools/ingest_wayback.py --site-root schuelervz-halveth
+      - name: Commit refreshed archive if changed
+        run: |
+          git config user.name "halveth-archive-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add schuelervz-halveth/archive schuelervz-halveth/data/archive-index.json
+          git diff --cached --quiet || git commit -m "archive: refresh public schuelerVZ captures"
+          git push
