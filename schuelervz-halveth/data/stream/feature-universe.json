@@ -1,0 +1,15 @@
+{
+  "archive_rows": 20000,
+  "features": {
+    "other": 4022,
+    "messages": 1,
+    "games": 3,
+    "friends": 14965,
+    "profile": 2,
+    "groups": 1007
+  },
+  "states": {
+    "PUBLIC_ARCHIVE": 5030,
+    "PERSONAL_ROUTE_METADATA": 14970
+  }
+}

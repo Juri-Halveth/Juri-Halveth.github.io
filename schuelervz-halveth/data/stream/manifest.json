@@ -1,0 +1,20 @@
+{
+  "schema": "HALVETH_STREAM_UNIVERSE_1",
+  "archive_rows": 20000,
+  "feature_counts": {
+    "other": 4022,
+    "messages": 1,
+    "games": 3,
+    "friends": 14965,
+    "profile": 2,
+    "groups": 1007
+  },
+  "code_queries": 10,
+  "principle": [
+    "PUBLIC_SOURCE -> PUBLIC_RECONSTRUCTION",
+    "PERSONAL_ROUTE -> STRUCTURAL_METADATA",
+    "OWNER_PRIVATE_DATA -> OWNER_VAULT",
+    "UNKNOWN != FALSE",
+    "SOURCE -> RECEIVE -> RELATE -> PRESERVE -> UPDATE"
+  ]
+}
