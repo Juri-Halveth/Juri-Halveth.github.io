@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>schülerVZ // Menschen finden</title>
+<meta name="description" content="Serverlose opt-in Personensuche für schülerVZ // HALVETH mit GitHub-Claims und öffentlichen Archivtext-Hinweisen.">
+<link rel="stylesheet" href="assets/people.css">
+</head>
+<body>
+<div class="notice">UNOFFICIAL RECONSTRUCTION · SEARCHES OPT-IN CLAIMS + PUBLIC NON-PERSONAL ARCHIVE TEXT · NO LEGACY PASSWORDS</div>
+<div class="wrap">
+<header>
+  <div class="logo"><span>✦</span><div><b>schüler<span>VZ</span></b><small>HALVETH // PEOPLE FINDER 3.4</small></div></div>
+  <nav>
+    <a href="index.html">Start</a>
+    <a href="archaeology.html">Archäologie</a>
+    <a href="https://github.com/Juri-Halveth/Juri-Halveth.github.io/issues/new?template=profile-claim.yml" target="_blank" rel="noopener">Ich bin hier</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero">
+  <h1>Menschen finden, ohne die alte URL zu kennen.</h1>
+  <p>Name, Geburtstag, Ort, Schule, alter Nickname und aktive VZ-Jahre sind jetzt Suchfelder. Treffer kommen aus freiwilligen GitHub-Claims und bereits bestätigten Rekonstruktionsprofilen. Öffentliche Archivtexte können zusätzlich als Hinweis durchsucht werden.</p>
+  <div class="pulse">
+    <span><b id="approvedCount">0</b> bestätigte / lokale Profile</span>
+    <span><b id="claimCount">0</b> GitHub-Claims</span>
+    <span><b id="archiveCount">0</b> öffentliche Archivdokumente</span>
+  </div>
+</section>
+
+<section class="searchbox">
+  <div class="field"><label for="name">Name</label><input id="name" placeholder="Vorname, Nachname oder Teil"></div>
+  <div class="field"><label for="birthday">Geburtstag</label><input id="birthday" placeholder="z.B. 01.02 oder 1995"></div>
+  <div class="field"><label for="city">Ort</label><input id="city" placeholder="Stadt / Region"></div>
+  <div class="field"><label for="school">Schule</label><input id="school" placeholder="Schulname"></div>
+  <div class="field"><label for="nick">Alter Nickname</label><input id="nick" placeholder="Nickname / Alias"></div>
+  <div class="field"><label for="years">VZ-Zeit</label><input id="years" placeholder="z.B. 2008 oder 2008-2011"></div>
+
+  <div class="options">
+    <label><input id="archiveMentions" type="checkbox" checked> öffentliche Archivtexte mitprüfen</label>
+    <label><input id="fuzzy" type="checkbox" checked> tolerante Suche</label>
+  </div>
+
+  <div class="actions">
+    <button id="find">Menschen finden</button>
+    <button id="reset" class="secondary">zurücksetzen</button>
+  </div>
+</section>
+
+<section class="callout">
+  <div>
+    <b>Keine alte Profil-URL mehr?</b>
+    <p>Die URL ist nur noch optionales Beweismittel. Für die neue Community-Suche reichen freiwillig veröffentlichte Angaben wie Name, Ort, Schule oder Geburtstag.</p>
+  </div>
+  <a class="claim" href="https://github.com/Juri-Halveth/Juri-Halveth.github.io/issues/new?template=profile-claim.yml" target="_blank" rel="noopener">Mein Profil eintragen</a>
+</section>
+
+<section>
+  <div class="sectionTitle"><span>Treffer</span><small id="resultMeta">noch keine Suche</small></div>
+  <div id="results"></div>
+</section>
+
+<section class="explain">
+  <h2>Was automatisch durchsucht wird</h2>
+  <div class="explainGrid">
+    <div><b>OPT-IN COMMUNITY</b><p>Menschen, die ihr Profil über GitHub freiwillig veröffentlicht haben.</p></div>
+    <div><b>RECONSTRUCTION PROFILES</b><p>Profile aus <code>people.json</code>, mit klarer Herkunft und Claim-State.</p></div>
+    <div><b>ARCHIVE MENTIONS</b><p>Nur öffentliche, nicht-personale Archivtexte. Ein Namensfund ist ein Hinweis, kein Identitätsbeweis.</p></div>
+  </div>
+</section>
+</main>
+</div>
+<script src="assets/people.js"></script>
+</body>
+</html>

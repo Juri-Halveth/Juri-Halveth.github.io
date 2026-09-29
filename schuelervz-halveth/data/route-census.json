@@ -1,0 +1,6692 @@
+[
+  {
+    "pattern": "/Friends/AddDone/<ID>",
+    "class": "personal-route",
+    "count": 4308
+  },
+  {
+    "pattern": "/Friends/Add/<ID>",
+    "class": "personal-route",
+    "count": 1734
+  },
+  {
+    "pattern": "/Forum/ThreadMessages/<ID>/<ID>",
+    "class": "public-other",
+    "count": 1284
+  },
+  {
+    "pattern": "/Friends/All/<ID>",
+    "class": "personal-route",
+    "count": 1278
+  },
+  {
+    "pattern": "/Friends/All/<ID>/p/<N>",
+    "class": "personal-route",
+    "count": 1206
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/p/<N>",
+    "class": "personal-route",
+    "count": 1113
+  },
+  {
+    "pattern": "/Forum/ThreadMessages/<ID>/<ID>/p/<N>",
+    "class": "public-other",
+    "count": 471
+  },
+  {
+    "pattern": "/Friends/All/<ID>/tid/<N>",
+    "class": "personal-route",
+    "count": 284
+  },
+  {
+    "pattern": "/Friends/Common/<ID>",
+    "class": "personal-route",
+    "count": 270
+  },
+  {
+    "pattern": "/Birthday/DialogHideout/<ID>",
+    "class": "public-other",
+    "count": 259
+  },
+  {
+    "pattern": "/Friends/AddDone/<ID>/tid/<N>",
+    "class": "personal-route",
+    "count": 128
+  },
+  {
+    "pattern": "/Blog/View/<ID>/<ID>",
+    "class": "public-other",
+    "count": 110
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/online/<N>",
+    "class": "personal-route",
+    "count": 103
+  },
+  {
+    "pattern": "/Blog/Read/<ID>",
+    "class": "public-other",
+    "count": 99
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>",
+    "class": "personal-route",
+    "count": 94
+  },
+  {
+    "pattern": "/Friends/Add/<ID>/tid/<N>",
+    "class": "personal-route",
+    "count": 89
+  },
+  {
+    "pattern": "/Friends/Delete/<ID>",
+    "class": "personal-route",
+    "count": 89
+  },
+  {
+    "pattern": "/Friends/Common/<ID>/p/<N>",
+    "class": "personal-route",
+    "count": 83
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/online/<N>/p/<N>",
+    "class": "personal-route",
+    "count": 79
+  },
+  {
+    "pattern": "/Forum/Threads/<ID>",
+    "class": "public-other",
+    "count": 58
+  },
+  {
+    "pattern": "/<ID>",
+    "class": "public-other",
+    "count": 43
+  },
+  {
+    "pattern": "/Forum/NewThread/<ID>",
+    "class": "public-other",
+    "count": 42
+  },
+  {
+    "pattern": "/Account/ChangeEmailVerifyLink/<ID>/<ID>",
+    "class": "public-other",
+    "count": 41
+  },
+  {
+    "pattern": "/Forum/Threads/<ID>/p/<N>",
+    "class": "public-other",
+    "count": 33
+  },
+  {
+    "pattern": "/Forum/EditThreadMessage/<ID>/<ID>/<ID>",
+    "class": "public-other",
+    "count": 24
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/<ID>",
+    "class": "public-other",
+    "count": 23
+  },
+  {
+    "pattern": "/Blog/Read/<ID>/p/<N>",
+    "class": "public-other",
+    "count": 20
+  },
+  {
+    "pattern": "/",
+    "class": "shell",
+    "count": 18
+  },
+  {
+    "pattern": "/Forum/AnswerThread/<ID>/<ID>",
+    "class": "public-other",
+    "count": 18
+  },
+  {
+    "pattern": "/buschfunk/feed/<ID>/items",
+    "class": "public-other",
+    "count": 16
+  },
+  {
+    "pattern": "/Forum/DeleteThreadMessage/<ID>/<ID>/<ID>",
+    "class": "public-other",
+    "count": 16
+  },
+  {
+    "pattern": "/Contact/<N>",
+    "class": "public-other",
+    "count": 15
+  },
+  {
+    "pattern": "/friends.php",
+    "class": "public-other",
+    "count": 11
+  },
+  {
+    "pattern": "/contact.php",
+    "class": "public-other",
+    "count": 9
+  },
+  {
+    "pattern": "/Friends/AddDone/<ID>/<N>",
+    "class": "personal-route",
+    "count": 8
+  },
+  {
+    "pattern": "/<N>/<N>/product/<ID>",
+    "class": "public-other",
+    "count": 7
+  },
+  {
+    "pattern": "/<N>",
+    "class": "public-other",
+    "count": 7
+  },
+  {
+    "pattern": "/<ID>/vz-t.net",
+    "class": "public-other",
+    "count": 7
+  },
+  {
+    "pattern": "/<ID>/vznetz/CP/<ID>",
+    "class": "public-other",
+    "count": 7
+  },
+  {
+    "pattern": "/<ID>/vznetz/CP/vz-t.net",
+    "class": "public-other",
+    "count": 7
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/laura",
+    "class": "personal-route",
+    "count": 7
+  },
+  {
+    "pattern": "/C/<N>",
+    "class": "public-other",
+    "count": 6
+  },
+  {
+    "pattern": "/directory/<ID>",
+    "class": "public-other",
+    "count": 6
+  },
+  {
+    "pattern": "/<ID>/apivz.net",
+    "class": "public-other",
+    "count": 6
+  },
+  {
+    "pattern": "/<ID>/gruppe",
+    "class": "public-other",
+    "count": 6
+  },
+  {
+    "pattern": "/<ID>/schuelervz.net",
+    "class": "public-other",
+    "count": 6
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/lukas",
+    "class": "personal-route",
+    "count": 5
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/lisa",
+    "class": "personal-route",
+    "count": 5
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/sven",
+    "class": "personal-route",
+    "count": 5
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/max",
+    "class": "personal-route",
+    "count": 5
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/tobi",
+    "class": "personal-route",
+    "count": 5
+  },
+  {
+    "pattern": "/<N>/<N>/<ID>",
+    "class": "public-other",
+    "count": 4
+  },
+  {
+    "pattern": "/blog/<N>",
+    "class": "public-other",
+    "count": 4
+  },
+  {
+    "pattern": "/Default",
+    "class": "public-other",
+    "count": 4
+  },
+  {
+    "pattern": "/Friends/AddDone/<N>",
+    "class": "personal-route",
+    "count": 4
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/o/<N>",
+    "class": "personal-route",
+    "count": 4
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/timo",
+    "class": "personal-route",
+    "count": 4
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/pia",
+    "class": "personal-route",
+    "count": 4
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/jan",
+    "class": "personal-route",
+    "count": 4
+  },
+  {
+    "pattern": "/Friends/Friends/<N>/p/<N>",
+    "class": "personal-route",
+    "count": 4
+  },
+  {
+    "pattern": "/assignments/<ID>",
+    "class": "public-other",
+    "count": 3
+  },
+  {
+    "pattern": "/bff",
+    "class": "public-other",
+    "count": 3
+  },
+  {
+    "pattern": "/<ID>/<ID>",
+    "class": "public-other",
+    "count": 3
+  },
+  {
+    "pattern": "/blog/<N>/feed",
+    "class": "public-other",
+    "count": 3
+  },
+  {
+    "pattern": "/blog/static/<N>",
+    "class": "public-other",
+    "count": 3
+  },
+  {
+    "pattern": "/docs/<ID>",
+    "class": "public-other",
+    "count": 3
+  },
+  {
+    "pattern": "/Forum/DeleteThread/<ID>/<ID>",
+    "class": "public-other",
+    "count": 3
+  },
+  {
+    "pattern": "/Forum/ThreadMessages/<ID>/<N>",
+    "class": "public-other",
+    "count": 3
+  },
+  {
+    "pattern": "/Friends/All/<ID>/Img/bg_coffee.jpg",
+    "class": "personal-route",
+    "count": 3
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/leo",
+    "class": "personal-route",
+    "count": 3
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/julia",
+    "class": "personal-route",
+    "count": 3
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/sebastian",
+    "class": "personal-route",
+    "count": 3
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/vanessa",
+    "class": "personal-route",
+    "count": 3
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/franzi",
+    "class": "personal-route",
+    "count": 3
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/sarah",
+    "class": "personal-route",
+    "count": 3
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/chris",
+    "class": "personal-route",
+    "count": 3
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/alex",
+    "class": "personal-route",
+    "count": 3
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Linda",
+    "class": "personal-route",
+    "count": 3
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/christian",
+    "class": "personal-route",
+    "count": 3
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/niklas",
+    "class": "personal-route",
+    "count": 3
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/diana",
+    "class": "personal-route",
+    "count": 3
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/niko",
+    "class": "personal-route",
+    "count": 3
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/nico",
+    "class": "personal-route",
+    "count": 3
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/anna",
+    "class": "personal-route",
+    "count": 3
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/rene",
+    "class": "personal-route",
+    "count": 3
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/jana",
+    "class": "personal-route",
+    "count": 3
+  },
+  {
+    "pattern": "/%20Profile/<ID>",
+    "class": "public-other",
+    "count": 2
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/<ID>/<ID>",
+    "class": "public-other",
+    "count": 2
+  },
+  {
+    "pattern": "/<N>/<N>",
+    "class": "public-other",
+    "count": 2
+  },
+  {
+    "pattern": "/account.php",
+    "class": "public-other",
+    "count": 2
+  },
+  {
+    "pattern": "/articles/<N>/<N>/vids_1.html",
+    "class": "public-other",
+    "count": 2
+  },
+  {
+    "pattern": "/<ID>/<ID>/<ID>",
+    "class": "public-other",
+    "count": 2
+  },
+  {
+    "pattern": "/Blog/Read/vznetz/CP/<ID>",
+    "class": "public-other",
+    "count": 2
+  },
+  {
+    "pattern": "/blogs/<ID>/<N>/<N>/<N>/<ID>",
+    "class": "public-other",
+    "count": 2
+  },
+  {
+    "pattern": "/comments/<N>/<ID>",
+    "class": "public-other",
+    "count": 2
+  },
+  {
+    "pattern": "/community/active/fundraising",
+    "class": "public-other",
+    "count": 2
+  },
+  {
+    "pattern": "/contact/<N>",
+    "class": "public-other",
+    "count": 2
+  },
+  {
+    "pattern": "/contact/vznetz/CP/<ID>",
+    "class": "public-other",
+    "count": 2
+  },
+  {
+    "pattern": "/css/pvz/styles.css",
+    "class": "asset",
+    "count": 2
+  },
+  {
+    "pattern": "/development/<N>/<N>/<ID>",
+    "class": "public-other",
+    "count": 2
+  },
+  {
+    "pattern": "/editalbum.php",
+    "class": "public-other",
+    "count": 2
+  },
+  {
+    "pattern": "/em",
+    "class": "public-other",
+    "count": 2
+  },
+  {
+    "pattern": "/fdsys/search/pagedetails.action",
+    "class": "public-other",
+    "count": 2
+  },
+  {
+    "pattern": "/Feeds/Buschfunk",
+    "class": "public-other",
+    "count": 2
+  },
+  {
+    "pattern": "/forum/topics/<ID>",
+    "class": "public-other",
+    "count": 2
+  },
+  {
+    "pattern": "/forums/list.php",
+    "class": "public-other",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/marius",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/marco",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/patrick",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/k%C3%B6nig",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/sandro",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/felix",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Nina",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Alex",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/sofia",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/basti",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/marie",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/jessica",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/willi",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/eva",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/caaleeb",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Sarah",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/simon",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/cedric",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/monja",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/sina",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/kat",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/sandra",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/kevin",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/dom",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/lena",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/fabian",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/tui",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Julia",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/peter",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/jule",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/andre",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/nadine",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/linda",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/christ",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/charlotte",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/carsten",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/dani",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/maxi",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/lea",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/larissa",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/ruben",
+    "class": "personal-route",
+    "count": 2
+  },
+  {
+    "pattern": "/%22",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/$",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/%20-%20link%20info",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/%20_blank%20undefined",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/%20in",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/%C3%B6fter",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/%D0%B8%D0%B8",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/%E2%80%8E",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/%E4",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/%F2",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/&ei=e3UFSuuRNMektwfkw62LBw&sa=X&oi=spellmeleon_result&resnum=1&ct=result&usg=AFQjCNEJDKFt0PIGYzygPMUbAuZhJi4elA",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/'",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/*",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/+",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/+kde-developers",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/,",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/,%20www.web.de",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/.de",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/.htaccess",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/.ne",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/product/Buy-Aliens-vs.-Predator-Issue-",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/product/Buy-Battle-Mages:-Sign-of-Darkness-Download",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/4Q36U5QA0001125P.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/5QMTQGP3000836P0.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/edelgruppe",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/5S6QCKB3000841D7.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/5S84Q1JH000120GR.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/5S8I066N00873DHR.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/5SC4NL4L00262FK5.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/5SGDC32M009341NR.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/5SGDJ3V8000915BE.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/5SGF37LR00083KON.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/5SI7IKH000051CA1.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/5SIG54HU00051CA1.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/5SIO1SLU00051CA1.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/5SIQFNGS000915BE.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/5SIUVQPN00073SD3.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/5SIV7GH800253B0H.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/5SIVCF2G00313MMT.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/5SJ0UAV00094431K.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/5SJ5SNIU00011SM9.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/5SJ7K4FT00863OB2.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/5SJ8CTGA000120GU.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/5SJK519700051CA1.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/5SK45VGD00051CA1.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/5SK4R47V002534NV.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/5SKDJCD400051CA1.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/5SKIN3FI00051CD5.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/4143078.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/1701073.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/8664307.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/3682417.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/12117.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/3025350.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/7647775.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/1556.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/9891484.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/6285263.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/7283314.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/3387707.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/2469100.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/1213900.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/211642.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/19339.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/1Goal",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/product/Buy-Call-of-Juarez-1-+-2-Bundle-Download",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/cz_05mba_business_schools_gain_calulator.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/stories/2008082459280300.htm",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/dreamforce-20-2.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/most-medicated-states-lifestyle-health-prescription-drugs.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/china-turns-sixty-leadership-prc_land.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/new-study-its-not-easy-be_n_361955.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/princess-di-heath-ledger-brando-personal-finance-investment-guide-2-09-celebrity-estate-mistakes.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/more-news-about-microsoft-courier.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/10-b2b-demand-generation-strategies-for-2010.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/chris-brown-enraged-store_n_390918.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/rubuzzed-iphone-app-tells_n_408310.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/tactile-and-fabric-interface-videos-for.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/billionaire-predictions-2010-wealth-economy-cuban-intro.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/linday-lohans-new-years-r_n_409299.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/build-america-bonds-markets-economy-china.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/december-payrolls-unemployment-markets-economy-job.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/layoff-tracker-unemploymebnt-leadership-careers-report.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/speculative-grade-bonds-markets-weakest-links.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/<N>/unemployment-jobs-payroll-busuiness-beltway-economy.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/does-benihana-mean-birthday-or.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/special-editions-rams-coming.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/tonights-photobomb-feature-ink_07.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/schedule/<ID>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/3411418.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/20284.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/<N>/fileinfo/Dragon-Age:-Origins---Quests-for-Shapeshifter-Items",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/4922814.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/2578120.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/8215459.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/7861882.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/2309515.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/2419731.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/6865276.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/1112023.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/3820337.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/6079216.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/2363141.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/3150732.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/7287819.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/6669619.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/1860370.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/1280689.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/8825280.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/4188696.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/8943594.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/3980503.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/4564170.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/catalog/category.epl",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/361Grad",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/2948410.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/2235583.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/3954172.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/5552060.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/3mzXyczwLEXHSxgtt7m5yg==",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/3NMy1vlVHHcj7G9GEdpTiks1yBCN%208TK0Ffq9XAbxD3g",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/2836149.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/5615460.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/5447274.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/6377336.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/8187860.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/6325098.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/4573223.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/1006881.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/4818887.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/6612379.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/7791100.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/5104164.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/6088644.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/7502277.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/3098988.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/9101119.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/5887087.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/8331571.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/7248769.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/7933895.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/9105212.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/5122053.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/8702863.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/2962307.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/9164447.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/8087724.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/4056183.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/1600181.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/4053315.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/7413565.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/3254905.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/805092.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/5RsG1YU9JOgAhyaWm3n0XQ==",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/4439191.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/8763399.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/7324143.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/6003557.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/1293187.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/4944415.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/6796963.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/7932014.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/9103156.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/7396137.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/5173897.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/8151546.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/8127607.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/8387200.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/3694794.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/5434500.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/6rrI",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/6347285.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/7100.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/5675282.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/2706396.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/7871332.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/2889228.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/4866793.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/4788940.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/9114875.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/8065290.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/8300-31045_1-269.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/8300-31051_1-268.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/8301-19882_3-10429248-250.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/8301-31045_1-10426713-269.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/8301-31045_1-10427442-269.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/8301-31045_1-10428132-269.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/3377343.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/4455644.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/5972629.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/7050443.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/5926417.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/2808721.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/2966252.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/244980.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/5339498.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/5270044.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/982518.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/4369981.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/1172699.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/8853963.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/5955230.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/9784071.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/778629.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/4525677.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/8220632.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/2492676.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/9665039.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/7433041.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/9942588.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/8734669.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/2160725.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/4784479.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/1923979.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<N>/5862682.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/%3C/strong%3E%20Mit%20der%20Schlie%C3%9Fung%20wurden%20alle%20deine%20Inhalte%20und%20Daten%20vollst%C3%A4ndig%20und%20unwiederbringlich%20gel%C3%B6scht.%20Dies%20gilt%20f%C3%BCr%20Bilder,%20Nachrichten,%20Links,%20Pinnwandeintr%C3%A4ge%20und",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/%3C/strong%3E%3C/p%3E",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/[43",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/[object%20Object]",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/%5C",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/]",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/_/lookup.htm",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/_tools/seed&save",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<ID>/cgi-bin/go.cgi/webstore/helpsupport",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/a",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/a/<N>/000440.htm",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/a0O1g+K2YnJLb7tRifarKA==",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/About/FirstGov_Logos.shtml",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/about/legal/mysql_web_privacy_policy.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/about/press",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<ID>/about_olpc_news_post.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/aboutsun/pr/2009-12/sunflash.20091207.1.xml",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/academy/keywords",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/acc_chg_email_s.php",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/acc_chg_pass_s.php",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Account/Account/tid/107ler",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Account/ChangeEmailVerifyLinkConfirmed",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Account/ChangeNam",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Account/ChangeNotification",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Account/Delete",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Account/DeleteConfirmed",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/accounts/aavci",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/accounts/gwoo/messages/<N>",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/AccuseIgnore/AccusePhoto/<ID>/<ID>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/ActionKidz",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/ad_iframe.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Adam%20Levin%20(CEO),%20Michael%20Ross%20Pope%20(COO)%3Cbr%3E",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/add_to/hubdog",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/add_to/<ID>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/addfriend.php",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/addphotos.php",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/adokojo",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/ads/www/delivery/ck.php",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/adv.asp",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Advertising/IframeSource",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/AIFS",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/aime893",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Ajax",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/ajax/pinnwand.php",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/ajax/redirect.php",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/aktiondeutschlandhilft",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/aktionklima",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/aktionklimaSocial",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/alexamsterdam",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/alexanderturovsky",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/all-video-games.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/alltimelow",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/alohafromhell",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/always",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Amtsgericht%20Charlottenburg%20%7C%20Registernummer:%20HRB%20101454%3Cbr%3E",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/amymacdonald",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/AndreNoel/En/Ubuntu",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/annablue",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/announcements/announce-4.4-beta2.php",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/apivz.net",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/apocalyptica",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/apollo3",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Application/Joomla.aspx",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/appventure",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/archive/C11",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/archive/exclusives.php",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/archives/article.php",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/archives/<ID>/<ID>/msg00019.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/article472.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/articles/<N>/<N>/2008-12-22-Life-in-2020.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/articles/view/<ID>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/ashleytalong/<ID>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<ID>/<N>/<N>/Xbackground-28.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/assignments/<ID>/aaa-parameters.xhtml",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/assignments/<ID>/imap-metadata.xhtml",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/assignments/mih/mih.xhtml",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/at",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/atf",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/atzenattacke",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/ausbildungswoche",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/author/coreyg",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/autoPlay=true&fo=true&ica=true&fU=http:/www.wdsmp-content.de/playerFeed/bf04012cd4d675c9cfc4cbce707e58faf7623174&pt=Gangs&loc=URL&vers=v1.0",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/autoPlay=true&fo=true&ica=true&fU=http:/www.wdsmp-content.de/playerFeed/vz-t.net",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/avrillavigneblackstar",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/axeeffekt",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/azubiyo",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/b/list/custom",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<ID>/netdefender/hui/ndhui.js",
+    "class": "asset",
+    "count": 1
+  },
+  {
+    "pattern": "/BABS",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Badges/EditBadges/<ID>/<N>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/badtaste",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/banner.php",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/baozhuangdai",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/barbie",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/basicinfo.php",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/BassSultanHengzt",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/bboard/<ID>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/bcdistro",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/bebegeneration",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/beroobi",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/bestellung/agb.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/bestellung/warenkorb.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/betas/preorder/Page/Reserve_AlanWake.aspx",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/bff2012",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/biaoqianzhi",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/bigFM",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/bigtimerush",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/bin/view/Javapedia/WebHome",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Birthday",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Birthday/DialogHideout",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Birthday/DialogHideout/<N>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Birthday/images/logo_archive-sm.png",
+    "class": "asset",
+    "count": 1
+  },
+  {
+    "pattern": "/blog/category/ubuntu/feed",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/blog/domainpfaendung-finanzamt-darf-domains-pfaenden.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/blog/ergebnis-der-domainliveauktion-auf-der-namescon-2016.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/blog/erhoehte-nachfrage-aus-fernost-chinesische-investoren-decken-sich-mit-domainnamen-ein.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/blog/markenrechtverletzung-durch-zusatz-24-bei-domains-moeglich.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Blog/Read/vz-t.net",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Blog/Read/vznetz/CP/vz-t.net",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Blog/Read/vznetz/CP/vznetz/CP/<ID>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Blog/Read/vznetz/CP/vznetz/CP/vz-t.net",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/blog/share/<N>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/blog/sicherheitsluecke-in-joomla.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/blog/tags/<ID>/feed",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/blog/topleveldomain-shop-fuer-415-millionen-versteigert.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Blog/View/<ID>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<ID>/blog/static/<N>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/blog_this.pyra",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/blogs/feed/atom",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/blyndfold",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/board",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/booklink/click",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/bookmarks/mark",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/botfrei",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/bravo",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/bravotv",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/breakingnews/wires/commodities.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/breakout/guide",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/BrowseSuppliers.aspx",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/bugs/<N>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/bundeswehr",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/buschfunk/feed",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/buschfunk/settings",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/bzga",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/c%D1%8F%CE%B1zy.%D1%84%E2%84%93yi%CE%B7%E2%88%82.%CE%B7%D1%94k%CF%83.%E2",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/caipiao",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/calendar/month.aspx",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/callmobile",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/CampaignHandler/ew_nb",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/campaigns/odf.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/campusanzeigen",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/car/p1/id=00080BSA0BeQ0CTb0JNI.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Carbon+fiber+reinforced+plastic",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/cardinho",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/care",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/carohe",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/caroheins",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/carolinhe",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/categories/<ID>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/category/Entrepreneurs",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/category/kdeamarok/feed",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/category/<ID>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/category/linux/feed",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/category/manchester",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/category/<ID>/feed",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/category/projects/hassleme",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/category/ui-team",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/catherinastuckmann",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/catwalk",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/cbbc",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/cdirectory/browse-cd-sep06.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/cgi-bin/getdoc.cgi",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/cgi-bin/nph-reg3rdpty2.pl/product=27294&cat=&platform=osx&method=sa/<N>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/cgi-bin/svnwiki/default/index.en",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Cha",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/changeset/<N>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/charlee",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/check",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/check2",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/checkin.asp",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/cherylcole",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<ID>/959-chess-databases-post23122.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/christiandurstewitz",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Christina%20Bassek",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/ChristinaBassek",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/christinastuermer",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<ID>/cars/autoinsu/autoinsu.htm",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<ID>/cars/newcar/newcar.htm",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/citations",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/citybank",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/classifieds/employment/<ID>/<N>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/clearasil",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/CNN/Programs/state.of.the.union",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/CO/Denver-weather.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/cobrands/<N>/default.asp",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/cokesoundup",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/colleges",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/column/V5O75D4ND.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/column/V5O75G5P7.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/column/V5QUNN05H.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/comedy/extra",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/comment.g",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/commentary/<ID>/one_laptop_per_child_overview_2009.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/commentary/press",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/commerce",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/committees/security",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/community/GraphicalInstall/Kubuntu",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/community/nav.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/community/sports/cycling",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/community/<ID>/weathercasts-video.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/company/Groupon",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/company/<ID>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/complexes/tuto",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/components/manage/manage.css",
+    "class": "asset",
+    "count": 1
+  },
+  {
+    "pattern": "/CONFIG_URL=http:/intl.esperanto.mtvi.com/player/configuration.jhtml%3Fads%3Dfalse%26uri%3Dmgid%7Ccms%7Cvideo%7Cnick.de%7C956%26css%3DglobalCSS%26full%3Dfalse%26autoPlay%3Dtrue%26continuousPlay%3Dfalse%26sitePath%3Dhttp:/www.nick.de%26playerPath%3D/TurboNICK.2315.html%26resize%3DfullOnly%26screenMode%3Dnormal%26getUrl%3Dfalse%26defaultLang%3Den_UK%26jsMode%3Dfalse%26embed%3Dtrue%26isLive%3Dfalse%26moreVideos%3Dfalse%26endSlate%3Dfalse%26version%3D%26keyValues%3Dpage_sec0%3Dturbonick;page_sec1%3D2315;page_secN%3Dnull;vid_type%3Dnull;show_id%3D1523;artist_id%3Dnull;url%3D/TurboNICK.2315.html;log%3D0;demo%3Dnull;dcove%3Dd;show%3DAnubis-%26subtitles%3Dfalse%26playerQuery%3D%26franchise%3DAnubis-",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/CONFIG_URL=http:/intl.esperanto.mtvi.com/player/configuration.jhtml%3Fads%3Dfalse%26uri%3Dmgid%7Ccms%7Cvideo%7Cnick.de%7C956%26css%3DglobalCSS%26full%3Dfalse%26autoPlay%3Dtrue%26continuousPlay%3Dfalse%26sitePath%3Dhttp:/www.nick.de%26playerPath%3D/TurboNICK.2315.html%26resize%3DfullOnly%26screenMode%3Dnormal%26getUrl%3Dfalse%26defaultLang%3Den_UK%26jsMode%3Dfalse%26embed%3Dtrue%26isLive%3Dfalse%26moreVideos%3Dfalse%26endSlate%3Dfalse%26version%3D%26keyValues%3Dpage_sec0%3Dturbonick;page_sec1%3D2315;page_secN%3Dnull;vid_type%3Dnull;show_id%3D1523;artist_id%3Dnull;url%3D/vz-t.net",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/CONFIG_URL=http:/intl.esperanto.mtvi.com/player/configuration.jhtml%3Fads%3Dfalse%26uri%3Dmgid%7Ccms%7Cvideo%7Cnick.de%7C958%26css%3DglobalCSS%26full%3Dfalse%26autoPlay%3Dfalse%26continuousPlay%3Dfalse%26sitePath%3Dhttp:/www.nick.de%26playerPath%3D/TurboNICK.2315.html%26resize%3DfullOnly%26screenMode%3Dnormal%26getUrl%3Dfalse%26defaultLang%3Den_UK%26jsMode%3Dfalse%26embed%3Dtrue%26isLive%3Dfalse%26moreVideos%3Dfalse%26endSlate%3Dfalse%26version%3D%26keyValues%3Dpage_sec0%3Dturbonick;page_sec1%3D2315;page_secN%3Dnull;vid_type%3Dnull;show_id%3D1523;artist_id%3Dnull;url%3D/TurboNICK.2315.html;log%3D0;demo%3Dnull;dcove%3Dd;show%3DAnubis-%26subtitles%3Dfalse%26playerQuery%3D%26franchise%3DAnubis-",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/CONFIG_URL=http:/intl.esperanto.mtvi.com/player/configuration.jhtml%3Fads%3Dfalse%26uri%3Dmgid%7Ccms%7Cvideo%7Cnick.de%7C958%26css%3DglobalCSS%26full%3Dfalse%26autoPlay%3Dfalse%26continuousPlay%3Dfalse%26sitePath%3Dhttp:/www.nick.de%26playerPath%3D/TurboNICK.2315.html%26resize%3DfullOnly%26screenMode%3Dnormal%26getUrl%3Dfalse%26defaultLang%3Den_UK%26jsMode%3Dfalse%26embed%3Dtrue%26isLive%3Dfalse%26moreVideos%3Dfalse%26endSlate%3Dfalse%26version%3D%26keyValues%3Dpage_sec0%3Dturbonick;page_sec1%3D2315;page_secN%3Dnull;vid_type%3Dnull;show_id%3D1523;artist_id%3Dnull;url%3D/vz-t.net",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/confirminvite.php",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Contact",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Contact.shtml",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Contact/arch/<N>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Contact/ch/<N>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Contact/index",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/contact/landscaperegister",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Contact/Subject/test",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/contact/vz-t.net",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/contact/vznetz/CP/vz-t.net",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/contact/vznetz/CP/vznetz/CP/<ID>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/contact/vznetz/CP/vznetz/CP/vz-t.net",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/contactdata.php",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/contactinfo.php",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/content/education",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/content/education/olpc_map_activity_updated_for.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/content/show.php/Bangarang",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<ID>/<N>/<N>/junta42-top-content-marketing-blogs-released-toprank-on-top.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<ID>/<N>/<N>/social-media-content-marketing-predictions-2010.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<ID>/archives.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/contribute",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/corruption",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/cosmos/search.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/costano",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/countries/ethiopia",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/cp.php",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/cpu",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/crave",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/crazygirl",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/cs/plutimikation",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/csh",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/css/bootstrap.min.css",
+    "class": "asset",
+    "count": 1
+  },
+  {
+    "pattern": "/css/de/styles.css",
+    "class": "asset",
+    "count": 1
+  },
+  {
+    "pattern": "/css/digidip-landing-ea6df91cf1.css",
+    "class": "asset",
+    "count": 1
+  },
+  {
+    "pattern": "/css/final.min.css@1585239532",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/css/jquery.qtip.css",
+    "class": "asset",
+    "count": 1
+  },
+  {
+    "pattern": "/css/jquery.sb.css",
+    "class": "asset",
+    "count": 1
+  },
+  {
+    "pattern": "/Css/Login.css",
+    "class": "asset",
+    "count": 1
+  },
+  {
+    "pattern": "/css/main.css",
+    "class": "asset",
+    "count": 1
+  },
+  {
+    "pattern": "/css/msg.css",
+    "class": "asset",
+    "count": 1
+  },
+  {
+    "pattern": "/css/start.css",
+    "class": "asset",
+    "count": 1
+  },
+  {
+    "pattern": "/css/style.css",
+    "class": "asset",
+    "count": 1
+  },
+  {
+    "pattern": "/css/vendor-landing-b6f70ec003.css",
+    "class": "asset",
+    "count": 1
+  },
+  {
+    "pattern": "/culture",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/culture/art/<ID>/<N>/Design-Real-at-the-Serpentine-review.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/customerservice",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/cxlGiEfXsa7kDb9d2WPJmQ==",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/cymraeg/index.shtml",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/D",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/dak",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/dangerroom",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/daniel.dicks",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/danielschuhmacher",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/dannydoom",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/dasmachtschule",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/dbo37",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/de",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/de/taxonomy/term/<N>/<N>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/DebianIRC",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/DebianScience",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/dedicated-server-hosting.php",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Defaul%20t",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Default%20target=",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Default/Overview",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Default/pointoo",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Defaultwww.gmx.de",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Defaulwww.server3.webkicks.de",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/deinestimme",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Deki/Specs",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/DekiScript/Tutorials",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/del",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/denone",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/DerGestiefelteKater",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/designer/directory",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/desktop-weather.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/detlefdsoost",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/detlefsoost",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/deutscherjugendfotopreis",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/devel/<ID>/stable",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/devel/pango",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Developer",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/developer/media/deepdivemysqljava.jsp",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/developerworks/data",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/developerworks/edu/os-dw-os-php-wiki1.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/development",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/development/category/events",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/development/category/wordcamp",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/DHJCC",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/dialoginternet",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/dieatzen",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/diefraktion",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/diegefaehrten",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/dieorsons",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/digi/<N>/<N>/<N>/5SJ1MFNN0016192R.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/digitaleidentitaet",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/directory",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/directory/<ID>/<ID>/<ID>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/directory/Walking",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/discuss/<ID>/f-48.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/discuss/<ID>/f-65.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/discuss/<ID>/f-85.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/discuss/showthread.php",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/display/IPv6/Home",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/DisplayPage.aspx",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/documentation/Fonctionalit%C3%A9s",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/documents/freesoftware.el.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/documents/freesoftware.fi.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/ac.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/ae.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/ag.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/am.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/asia.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/at.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/be.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/biz.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/bz.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/cc.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/ch.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/cl.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/co.at.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/co.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/co.uk.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/com.au.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/com.br.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/com.de.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/com.hk.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/com.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/cz.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/de.com.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/dk.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/domaincheck-domain-frei.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/domainuebertragung.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/es.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/eu.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/fi.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/fm.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/fr.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/ga.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/gr.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/gs.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/hk.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/hu.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/im.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/info.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/io.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/it.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/jp.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/kg.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/kr.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/la.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/leistungen.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/li.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/lu.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/md.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/me.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/mn.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/mobi.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/ms.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/name.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/net.br.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/net.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/nl.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/no.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/nu.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/ooo.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/org.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/pl.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/pro.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/ro.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/ru.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/sc.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/se.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/sg.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/sh.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/si.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/sk.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/tc.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/tk.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/travel.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/tv.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/tw.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/uk.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/us.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/vc.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/vg.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/domains/ws.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/donate",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/donate/trackback",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<ID>/pc-games-Batman-Arkham-Asylum-17049999-13.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<ID>/pc-games-Strategy-category-17.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/download/0.96.4/tarball",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/download/ISOs/openSUSE-Edu-li-f-e-11.2-latest-i686.iso.torrent",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/dpsg",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<ID>/astrid",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<ID>/hicks",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<ID>/nachtschatten",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/DrBobParsons",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/drupal/taxonomy/term/<N>/<N>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/duhastdiemacht",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/durex",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/e",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/earth/cigarette-butts-tobacco-fish.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/eatpraylove",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/ecom/tms/app/live/promosub",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/edekaner",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Edit",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/education/enter_bug.cgi",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/einloggen",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/eisbaeren",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/eisblume",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/eltern",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/em2012",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/email.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/emp",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/en/Contributing/C",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/en/dev/releases/1.2-alpha-1",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/en/docs/Category:Mozilla_Webclient",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/en/eventos",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/en/faq/hosted",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/en/kids",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/en/<ID>/form",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/en/products/conversion/recommendations",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/endurance/<ID>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/endurance/plans/cycling",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Energiesparmeister",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/EnY+2o06hg103WjlwYt8WQ==",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/epubli",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Error",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/error.php",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Es%20ist%20ein%20Thema,%20das%20mittlerweile%20rund%20um%20den%20Globus%20von%20Bedeutung%20ist.",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Es%20ist%20vorbei.%20sch%C3%BClerVZ%20wurde%20am%2030.%20April%202013%20geschlossen.%3C/br%3E",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/escn-land-and-water-tv-home.php",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/esperanza",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/ESRA",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/evangelisch",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Events",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/events/<N>/<ID>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/events/<ID>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/events/aggregator/RSS",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Events/job-fair.aspx",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/events/track.php",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/everychildmatters/strategy/<ID>/caf/cafframework",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/ew/inside/newsletter/subscribe",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/ew/news/blogs/latest/0,,,00.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/ew/package/0,,20309550,00.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/ew/package/0,,20310286,00.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/ewestp",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/exec/obidos/<N>/XXXX/<ID>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/experts",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/extend/themes/p2",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/f",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/f/f.fbz",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<ID>/netdefender/hui/images/bkg_null.png",
+    "class": "asset",
+    "count": 1
+  },
+  {
+    "pattern": "/<ID>/netdefender/hui/images/status.png",
+    "class": "asset",
+    "count": 1
+  },
+  {
+    "pattern": "/fabianhintzen",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/facebook",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/facemaster.cfm",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/fading/index.cgi",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Fanta",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/faq",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/faq/exhibitorFAQs.asp",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/faq/general",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/faridbang",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/favicon-16x16.png",
+    "class": "asset",
+    "count": 1
+  },
+  {
+    "pattern": "/favicon-32x32.png",
+    "class": "asset",
+    "count": 1
+  },
+  {
+    "pattern": "/favicon-96x96.png",
+    "class": "asset",
+    "count": 1
+  },
+  {
+    "pattern": "/favicon.ico",
+    "class": "asset",
+    "count": 1
+  },
+  {
+    "pattern": "/fcb",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/fdc/subservices.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/fdsys/browse/collection.action",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/feed/tag/PU/rss2",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/feedback",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/feedback/EmailFriendForm.jsp",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Feeds",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/feeds/rss/tags/django",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/ferienfoto",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/fertiglos",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/fes",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/ffn/index.php",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/fh-jena",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/fichiers/simsun.ttc",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Filiz",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/finalists",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/finance/eventcalendar/TodaysConferenceCalls.jhtml",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/finance/funds",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/finder/businesscenter/us/en/software_topic.wss",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/fitinfairplay",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Flash/photobooth.swf",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Flash/swfupload-janitor-0.1.swf",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Flash/undefined",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/fler",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/flights",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/FLPR",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/FoH/xuBGx6+YyebCMqP+Cg==",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/<ID>/2430-now-word-your-moderator-post31939.html",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/forum/content.php",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Forum/EditThreadMessage/<ID>/<ID>/Messages",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Forum/ThreadMessages",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Forum/ThreadMessages/<ID>/Messages",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Forum/ThreadMessages/<ID>/771ad95a487c33%20ab/p/<N>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Forum/ThreadMessages/<ID>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Forum/ThreadMessages/<ID>/<ID>/Img/bg_coffee.jpg",
+    "class": "asset",
+    "count": 1
+  },
+  {
+    "pattern": "/Forum/ThreadMessages/Img/bg_coffee.jpg",
+    "class": "asset",
+    "count": 1
+  },
+  {
+    "pattern": "/forums/content.php",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/foundation/committees",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/fr/<ID>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/fr/print/april",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/fratze",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/FraunhoferFOKUS",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/free/<ID>",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Freunde",
+    "class": "public-other",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Add/<N>",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/AddDone/%A5/doSearch/<N>",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/AddDone/0p/o",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/AddDone/ic/o",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/AddDone/na/o",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/All",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/All/<N>",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/All/[User-ID]/online/<N>",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/All/<ID>/p/Messages",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/All/JE6lVxukkObhttp:/www.schuelervz.net/Profile/<ID>/tid/<N>",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Common/<ID>/online/<N>",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/ConfirmInvit",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Confirminvite",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/<ID>",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/ConfirmInvites",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/girl",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Luca+M",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Marie",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/norina",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/heerwagen",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/clarissa",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/clara",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/cem",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/lia",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/klaus",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/tine",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/jul",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/pedy",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/martina+prinz",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/ahmed",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/caroline",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/wil",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/will",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/louisa",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/stef",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/bianca",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Johanna",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Pat",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Patr",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Patricia",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/mike",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/jose",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/Img/bg_coffee.jpg",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/jocker",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/mara",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Kim",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Vivien",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/lauare",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/%E1%83%A6ka%D1%82%D1%92%C2%B5+%D1%8F%C3%B6%C5%9F%C5%8B%CE%B5%D1%8F%E1%83%A6",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/interso",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/jasmin",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/kiriakos",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/soula",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Lena",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/dennis",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/andy",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/philipp",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/kassi",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/SADE",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/sara",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/sebastian+daust",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/tanja",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/tanjaa",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/tanya",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/carina",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/maren",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/fer",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/ines",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/tobias+wunder",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/anne+klein",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/mentha",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/love",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/adrian+russ",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/anja",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/p/Messages",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/tober",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/selian",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/romina",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/lucas",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/n%C3%BCrnberg",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/engin",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/moja",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/paul",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/maus",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/thomas",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/mirscho",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/sandy",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/stephen",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/sigi",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Christian",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Maleen",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Maleen+Hetzl",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/natascha",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/maria",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/romsederik",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/serkan",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/serkaromsederik",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Franziska",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Dajana",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Ich",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Pascal",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/nathalie",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Tobias+T",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Tobias+T.",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Tobias+Tietz",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/waibel",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/fera",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/rii",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/rik",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/jennifer+w",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/melf+hansen",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/maria+h.",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/katya",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/denise",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/luca",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/natalie",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/kim",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/pascal",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/sascha",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/sasha",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/anil",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/sophia",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/dome",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/jonatan",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Jasmin+Herzinger",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Dana",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/bissig",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/melissa",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/brina",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/hagen",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/pedi",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/janice+w",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/michi",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/christin",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Simon",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/hoffi",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/mary",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/halli",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Name+deroberts+Freundes",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/maike",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/chos+kitty",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/matej",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/thies+hansen",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/amrei",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Lucas",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Lucas+Stedller",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/elle",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/ellina",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Philip",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Ina",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Ina+B",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/elena",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/maxc",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/ana",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/jonas",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/sch%C3%A4fer",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/ketema",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Maxi",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/malina",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/hartmann",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/andreas",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/mark",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Melissa",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/ina",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/ther",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Kraus",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/isabela",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/till",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/katrin",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/hann",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/frie",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/cxhristian/online/<N>",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/hohnke",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/ph+h",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/philip",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/phims",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Niklas+P.",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/roxy",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/lene",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/%60patrick++Z.",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/%60patrick+--%3E+Z.",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/patrick++Z.",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Patrick+Z",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/katja",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/melanie",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/lida",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/ronja",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/alicia",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/steffi",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/alexa",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/kaltrina",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/janine+kirchenkamp",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Marleem",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Karl.f",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/nils",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/vladimir",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/elisa",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/leandra",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/alina",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/tier",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/bian",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/nik",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Dominik",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/medina",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/online",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Martin",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/sin@+j",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/svenii",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/ayseg%C3%BCl",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/alexander",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Thomas+dorch",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/nicolai",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/nick+kp",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/nick+kp...",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Nick...kp",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/deni",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Hen",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/hendrik",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/~~+Katrin+G.+~~",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/ninio",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/charline",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/samira",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/dev",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/devin",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/annemarie",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/annemarie+kubisch",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/annmarie",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/pauline+h",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/pauline+hertz",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/olivia",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/thea",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Rouven",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/burcu",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/jonathan",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Ane",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Anette",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Annette",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/rosen",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/wicky",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/michelle",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Kirsten",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Laura",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Miss+Srilanka",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/c%D1%8F%CE%B1zy.%D1%84%E2%84%93yi%CE%B7%E2%88%82.%CE%B7%D1%94k%CF%83.%E2",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/alena+tedsen",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Sabina",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Maria",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/lara",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/tina",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/adel",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/jens",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/and",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/steven",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Bianca",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Bianca-Olivia+Anna+K.",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/wib",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/pia+g",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/malin",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/marlene",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/tim",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/kef",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/emre",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/fra",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/manon",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/steff",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/simone",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/colin",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Jeanette",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/nic",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/aaron",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/eno",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/vasi",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Vassili",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/mrs",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/viv",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<N>/online/<N>",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/mert",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Yanne",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Yanneck",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/ichel",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/janine",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/phillip",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/%5Ekatha",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/%D0%B8%D0%B8",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/app",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/vann",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/nora",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/andr",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Nils",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/jessi",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/jessy",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/willi+m.",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/janet",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/zakir",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/rit",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/ritchie",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/maurice+willmes",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/man",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/finn",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Manh",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/nhung",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Saigon",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Thi+Thu+Dong",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/aminata",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/joshua",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/arjeta",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/becky",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Andreas",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/anndreas",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/[User-ID]/online/<N>",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/fitz",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/mil",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/sammy",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/c+h",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/marc",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/maximilian",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Max",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/aljona",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/A.n.D.i.Y.e",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/andi",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/andiye",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Chrisdopfer",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/julian",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/harb",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/olga",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Jenifer",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Rischi",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/johanna",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Desiree",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Lisa+B.",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/phil",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/lotta",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Nana",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Lenn",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/mona",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/marco/online/<N>",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/hau",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/nina",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/juan",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/natali",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/andrea",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schn",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schni",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnid",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnie",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnief",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnif",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnil",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schniq",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnir",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnit",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnit%C3%BC",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnita",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schniti",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnito",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitp",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitq",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitt",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitu",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitz",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitza",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitzd",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitze",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitzf",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitzg",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitzh",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitzi",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitzj",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitzk",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitzl",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitzle",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitzler",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitzlers",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitzlq",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitzlw",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitzo",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitzp",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitzq",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitzr",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitzs",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitzt",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitzu",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schnitzw",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schniv",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/schniw",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/daniel",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/B9SFbPLFR_nLZ-W30LVXhSWhX7lIGTpGekino.to_NlEeFRnZo/online/<N>",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/b%C3%BCsra",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/dream",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/anki",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/luc",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/jacky",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/mete",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/wiebke",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/K%C3%BCbra",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/%3E%3EKleener+Russen+Player%3C%3C+G.",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Felix",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Felix/online/<N>",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/yangzi",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Lilla",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Marcel+Brillmayer",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Maxim+Karazhov",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/yoshy",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/leon",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/mich",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/chan",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/sophie",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Sophi",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/esra",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/ilka",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/miguel",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/ste",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/vicky",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/alena",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/kemal",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/iwa",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/deniz",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/megan",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Name+des+Freundeschari",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/shari",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/lars",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/valentina",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/lennart",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/anita+l",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/aich",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/ail",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/ali",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/chr",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/god",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/godl",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/maya",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/marcus",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/vany",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/mari",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Shisha+freak+libo",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/Jacky",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/eli",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/theresa",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/lidii",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/nasti",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/ulli",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/ulr",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/riccardo",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/annika",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/m%C3%BCller",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/marvin",
+    "class": "personal-route",
+    "count": 1
+  },
+  {
+    "pattern": "/Friends/Friends/<ID>/name/regina",
+    "class": "personal-route",
+    "count": 1
+  }
+]

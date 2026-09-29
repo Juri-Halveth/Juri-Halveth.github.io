@@ -1,0 +1,31 @@
+{
+  "version": "3.3.0",
+  "runs": [
+    {
+      "schema": "HALVETH_ARCHAEOLOGY_MANIFEST_3.3",
+      "generated_at": "2026-09-29T11:53:17.929843+00:00",
+      "version": "3.3.0",
+      "census_rows": 15000,
+      "unique_canonical_urls": 14949,
+      "docs": 1593,
+      "bundled_docs": 1562,
+      "fetch_errors": 31,
+      "clusters": 14949,
+      "search_docs": 4776,
+      "personal_route_metadata_rows": 11511,
+      "classes": {
+        "shell": 18,
+        "public-other": 3447,
+        "personal-route": 11511,
+        "asset": 24
+      },
+      "invariants": [
+        "PERSONAL_ROUTE_METADATA_ONLY_BY_DEFAULT",
+        "PUBLIC_NON_PERSONAL_PAGES_MAY_BE_BUNDLED",
+        "OWNER_SUPPLIED_EXACT_PROFILE_URLS_ARE_PROBED_SEPARATELY",
+        "UNKNOWN != FALSE",
+        "ARCHIVE_RECORD != CURRENT_PERSON"
+      ]
+    }
+  ]
+}

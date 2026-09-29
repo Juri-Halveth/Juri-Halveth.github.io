@@ -3,21 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>schülerVZ // HALVETH MYCELIUM</title>
-<meta name="description" content="Inoffizielle schülerVZ-Nostalgie- und Archivrekonstruktion mit öffentlicher Quellenarchäologie, opt-in Profilen und Raumzeitgraph.">
+<title>schÃ¼lerVZ // HALVETH MYCELIUM</title>
+<meta name="description" content="Inoffizielle schÃ¼lerVZ-Nostalgie- und Archivrekonstruktion mit Ã¶ffentlicher QuellenarchÃ¤ologie, opt-in Profilen und Raumzeitgraph.">
 <link rel="stylesheet" href="assets/mycelium.css">
 </head>
 <body>
-<div class="notice">UNOFFICIAL ARCHIVAL / NOSTALGIA RECONSTRUCTION · PUBLIC ARCHIVE + OPT-IN IDENTITIES · NO LEGACY PASSWORD COLLECTION</div>
+<div class="notice">UNOFFICIAL ARCHIVAL / NOSTALGIA RECONSTRUCTION Â· PUBLIC ARCHIVE + OPT-IN IDENTITIES Â· NO LEGACY PASSWORD COLLECTION</div>
 <div class="site">
 <header class="head">
-  <div class="logo"><span class="sigil">✦</span><div><b>schüler<span>VZ</span></b><small>HALVETH // MYCELIUM 3.2.0</small></div></div>
+  <div class="logo"><span class="sigil">âœ¦</span><div><b>schÃ¼ler<span>VZ</span></b><small>HALVETH // MYCELIUM 3.2.0</small></div></div>
   <div class="pinkbar">
-    <strong>SCHÜLERVERZEICHNIS</strong>
+    <strong>SCHÃœLERVERZEICHNIS</strong>
     <nav>
       <a href="#" data-page="search">suche</a>
       <a href="#" data-page="profiles">profile</a>
+      <a href="people.html">menschen finden</a>
       <a href="#" data-page="graph">mycelium</a>
+      <a href="archaeology.html">archaeology</a>
       <a href="#" data-page="time">raumzeit</a>
       <a href="#" data-tool="console">console</a>
       <a href="https://github.com/Juri-Halveth/Juri-Halveth.github.io/issues/new?template=profile-claim.yml" target="_blank" rel="noopener">profil claimen</a>
@@ -27,48 +29,48 @@
 
 <div class="layout">
 <aside>
-  <input id="miniSearch" placeholder="Alles durchsuchen …" autocomplete="off">
+  <input id="miniSearch" placeholder="Alles durchsuchen â€¦" autocomplete="off">
   <ul>
     <li><a href="#" data-page="home">Start</a></li>
     <li><a href="#" data-page="profiles">Profile</a></li>
     <li><a href="#" data-page="search">Archiv + Suche</a></li>
     <li><a href="#" data-page="graph">Mycelium Graph</a></li>
     <li><a href="#" data-page="time">Raumzeit</a></li>
-    <li><a href="#" data-page="privacy">Privatsphäre</a></li>
+    <li><a href="#" data-page="privacy">PrivatsphÃ¤re</a></li>
   </ul>
 
   <div class="card tiny">
     <b>GitHub LIVE</b>
-    <span id="liveState">verbinde …</span>
-    <span id="liveCommit">—</span>
+    <span id="liveState">verbinde â€¦</span>
+    <span id="liveCommit">â€”</span>
   </div>
 
   <div class="card tiny">
     <b>Archiv</b>
-    <span id="archiveState">Index wird geladen …</span>
-    <span id="bundleState">—</span>
+    <span id="archiveState">Index wird geladen â€¦</span>
+    <span id="bundleState">â€”</span>
   </div>
 
   <div class="card tiny">
     <b>Invarianten</b>
     <span>UNKNOWN = PRESERVED</span>
-    <span>ROUTE ≠ PERSON</span>
-    <span>CLAIM ≠ LEGACY LOGIN</span>
+    <span>ROUTE â‰  PERSON</span>
+    <span>CLAIM â‰  LEGACY LOGIN</span>
   </div>
 </aside>
 
 <main>
 <section id="page-home" class="page active">
-  <div class="title"><span>Hey Juri! 💗</span><small>T‑0 ⇄ T+n ⇄ ∞</small></div>
+  <div class="title"><span>Hey Juri! ðŸ’—</span><small>Tâ€‘0 â‡„ T+n â‡„ âˆž</small></div>
 
   <div class="hero">
     <div>
       <h1>MYCELIUM MODE</h1>
-      <p>Archiv, Profile, Zeit und technische Routen werden nicht als starre Liste behandelt, sondern als verzweigter Graph. Ein Fund kann in mehrere Richtungen weiterführen, ohne aus UNKNOWN plötzlich FACT zu machen.</p>
+      <p>Archiv, Profile, Zeit und technische Routen werden nicht als starre Liste behandelt, sondern als verzweigter Graph. Ein Fund kann in mehrere Richtungen weiterfÃ¼hren, ohne aus UNKNOWN plÃ¶tzlich FACT zu machen.</p>
       <div class="heroActions">
-        <button data-page-jump="search">Archiv durchwühlen</button>
+        <button data-page-jump="search">Archiv durchwÃ¼hlen</button>
         <button data-page-jump="profiles">Profile suchen</button>
-        <button data-page-jump="graph">Graph öffnen</button>
+        <button data-page-jump="graph">Graph Ã¶ffnen</button>
       </div>
     </div>
     <div class="pulseCard">
@@ -95,7 +97,7 @@
       <div class="module">
         <h3>Pinnwand</h3>
         <div id="wall"></div>
-        <div class="wallform"><input id="wallInput" placeholder="Etwas an die Pinnwand …"><button id="wallPost">eintragen</button></div>
+        <div class="wallform"><input id="wallInput" placeholder="Etwas an die Pinnwand â€¦"><button id="wallPost">eintragen</button></div>
       </div>
     </div>
 
@@ -121,7 +123,7 @@
 <section id="page-search" class="page">
   <div class="title"><span>Universal Search</span><small>archive + routes + opt-in profiles</small></div>
   <div class="searchbar">
-    <input id="globalSearch" placeholder="z.B. security, 2009, press, Juri, Profile/ …" autocomplete="off">
+    <input id="globalSearch" placeholder="z.B. security, 2009, press, Juri, Profile/ â€¦" autocomplete="off">
     <button id="globalGo">suchen</button>
   </div>
   <div class="filterRow">
@@ -137,11 +139,11 @@
   <div class="title"><span>Profile Archaeology</span><small>exact URL / ID / opt-in identity</small></div>
 
   <div class="module body">
-    <h3>Historische Spur prüfen</h3>
-    <p>Gib eine <b>exakte alte Profil-URL oder opaque Profil-ID</b> ein. Der Browser prüft nur unseren öffentlichen Archivindex und freiwillige Claims. Er enumeriert keine fremden Personen.</p>
+    <h3>Historische Spur prÃ¼fen</h3>
+    <p>Gib eine <b>exakte alte Profil-URL oder opaque Profil-ID</b> ein. Der Browser prÃ¼ft nur unseren Ã¶ffentlichen Archivindex und freiwillige Claims. Er enumeriert keine fremden Personen.</p>
     <div class="searchbar">
-      <input id="profileProbe" placeholder="https://www.schuelervz.net/Profile/… oder alte ID" autocomplete="off">
-      <button id="profileProbeGo">Spur prüfen</button>
+      <input id="profileProbe" placeholder="https://www.schuelervz.net/Profile/â€¦ oder alte ID" autocomplete="off">
+      <button id="profileProbeGo">Spur prÃ¼fen</button>
     </div>
     <div id="profileProbeResult"></div>
   </div>
@@ -153,13 +155,13 @@
 
   <div class="module body">
     <h3>Profil wiederbeleben</h3>
-    <p>Ein heutiger GitHub-Account kann ein eigenes Rekonstruktionsprofil claimen. Alte SchülerVZ-Passwörter werden nicht abgefragt.</p>
-    <a class="claimButton" href="https://github.com/Juri-Halveth/Juri-Halveth.github.io/issues/new?template=profile-claim.yml" target="_blank" rel="noopener">GitHub Profile Claim öffnen</a>
+    <p>Ein heutiger GitHub-Account kann ein eigenes Rekonstruktionsprofil claimen. Alte SchÃ¼lerVZ-PasswÃ¶rter werden nicht abgefragt.</p>
+    <a class="claimButton" href="https://github.com/Juri-Halveth/Juri-Halveth.github.io/issues/new?template=profile-claim.yml" target="_blank" rel="noopener">GitHub Profile Claim Ã¶ffnen</a>
   </div>
 </section>
 
 <section id="page-graph" class="page">
-  <div class="title"><span>Mycelium Graph</span><small>click node → branch</small></div>
+  <div class="title"><span>Mycelium Graph</span><small>click node â†’ branch</small></div>
   <div class="graphToolbar">
     <button id="graphReset">reset</button>
     <button id="graphArchive">archive</button>
@@ -178,14 +180,14 @@
 </section>
 
 <section id="page-privacy" class="page">
-  <div class="title"><span>Privatsphäre + Beweisgrenzen</span><small>preserve uncertainty</small></div>
+  <div class="title"><span>PrivatsphÃ¤re + Beweisgrenzen</span><small>preserve uncertainty</small></div>
   <div class="module body">
     <h3>Regeln des Universums</h3>
-    <p><b>ARCHIVE_RECORD ≠ CURRENT_PERSON</b></p>
-    <p><b>ROUTE_TEMPLATE ≠ RECOVERED_PROFILE</b></p>
-    <p><b>OWNER_CLAIM ≠ LEGACY_LOGIN</b></p>
-    <p><b>UNKNOWN ≠ FALSE</b></p>
-    <p>Historische persönliche Profile werden nicht aus geleakten Datenbanken massenhaft repliziert. Suchbar sind öffentliche Archivartefakte, technische Routenmodelle und freiwillig rekonstruierte Profile.</p>
+    <p><b>ARCHIVE_RECORD â‰  CURRENT_PERSON</b></p>
+    <p><b>ROUTE_TEMPLATE â‰  RECOVERED_PROFILE</b></p>
+    <p><b>OWNER_CLAIM â‰  LEGACY_LOGIN</b></p>
+    <p><b>UNKNOWN â‰  FALSE</b></p>
+    <p>Historische persÃ¶nliche Profile werden nicht aus geleakten Datenbanken massenhaft repliziert. Suchbar sind Ã¶ffentliche Archivartefakte, technische Routenmodelle und freiwillig rekonstruierte Profile.</p>
   </div>
 </section>
 </main>
@@ -194,13 +196,13 @@
 
 <div id="modal" class="overlay hidden">
   <div class="modal">
-    <button id="closeModal">×</button>
+    <button id="closeModal">Ã—</button>
     <div id="modalBody"></div>
   </div>
 </div>
 
 <div id="console" class="console hidden">
-  <div class="consoleHead"><b>VERACHEL :: SCHUELERVZ [MYCELIUM]</b><button id="closeConsole">×</button></div>
+  <div class="consoleHead"><b>VERACHEL :: SCHUELERVZ [MYCELIUM]</b><button id="closeConsole">Ã—</button></div>
   <pre id="consoleOut"></pre>
   <form id="consoleForm"><span>&gt;</span><input id="consoleIn" autocomplete="off" placeholder="help"></form>
 </div>

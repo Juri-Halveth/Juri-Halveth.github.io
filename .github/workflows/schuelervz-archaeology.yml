@@ -1,0 +1,35 @@
+name: schuelerVZ autonomous archaeology
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "31 3 * * 0"
+permissions:
+  contents: write
+concurrency:
+  group: schuelervz-archaeology
+  cancel-in-progress: false
+
+jobs:
+  archaeology:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run archaeology engine
+        continue-on-error: true
+        run: |
+          python schuelervz-halveth/tools/HALVETH_ARCHAEOLOGY_ENGINE.py \
+            --site-root schuelervz-halveth \
+            --max-cdx 15000 \
+            --cdx-pages 30 \
+            --max-fetch 350
+      - name: Commit progressive archive expansion
+        run: |
+          git config user.name "halveth-archaeology-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add schuelervz-halveth
+          git diff --cached --quiet || git commit -m "archive: autonomous archaeology refresh"
+          git push

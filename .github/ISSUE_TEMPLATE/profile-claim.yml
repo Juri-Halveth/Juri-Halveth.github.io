@@ -1,33 +1,56 @@
 name: Profil wiederbeleben
-description: Opt-in Claim für ein aktuelles schülerVZ // HALVETH Rekonstruktionsprofil
+description: Freiwilliges Profil für schülerVZ // HALVETH People Finder
 title: "[PROFILE CLAIM] "
 body:
   - type: markdown
     attributes:
       value: |
-        MYCELIUM fragt **niemals** nach deinem alten schülerVZ-Passwort.
-        Dein heutiger GitHub-Account ist die Claim-Identität.
-        Ein Claim macht aus einer historischen Spur nicht automatisch eine verifizierte Alt-Identität.
+        Dein GitHub-Account ist die heutige Claim-Identität.
+        **Keine alten schülerVZ-Passwörter eingeben.**
+        Alle Angaben in diesem Formular sind öffentlich sichtbar. Trage nur Daten ein, die du selbst veröffentlichen möchtest.
+        Ein Claim ist zunächst `UNVERIFIED_GITHUB_CLAIM` und kein Beweis für eine historische Identität.
   - type: input
     id: display
     attributes:
       label: Anzeigename
+      placeholder: z.B. Vorname Nachname
     validations:
       required: true
+  - type: input
+    id: nickname
+    attributes:
+      label: Alter Nickname (optional)
+      placeholder: damaliger Nickname / Alias
+  - type: input
+    id: birthday
+    attributes:
+      label: Geburtstag - öffentlich, optional
+      description: Am besten nur TT.MM oder Geburtsjahr, wenn du nicht das volle Datum veröffentlichen willst.
+      placeholder: z.B. 01.02 oder 1995
+  - type: input
+    id: city
+    attributes:
+      label: Ort - öffentlich, optional
+      placeholder: Stadt / Region
+  - type: input
+    id: school
+    attributes:
+      label: Schule - öffentlich, optional
+      placeholder: Schulname
+  - type: input
+    id: vz_time
+    attributes:
+      label: VZ-Zeit (optional)
+      placeholder: z.B. 2008-2011
   - type: input
     id: historic_url
     attributes:
       label: Deine eigene alte Profil-URL (optional)
-      description: Nur dein eigenes historisches Profil.
+      description: Nur falls du sie noch kennst. Für die Personensuche ist sie nicht erforderlich.
   - type: input
     id: historic_id
     attributes:
-      label: Deine eigene alte opaque Profil-ID (optional)
-  - type: input
-    id: email_fingerprint
-    attributes:
-      label: Optionaler SHA-256-Fingerprint der alten E-Mail
-      description: Keine Klartext-E-Mail und niemals ein Passwort.
+      label: Deine eigene alte Profil-ID (optional)
   - type: checkboxes
     id: consent
     attributes:
@@ -35,5 +58,5 @@ body:
       options:
         - label: Ich beantrage nur die Rekonstruktion meines eigenen Profils.
           required: true
-        - label: Ich bin mit der Veröffentlichung des neuen Rekonstruktionsprofils einverstanden.
+        - label: Ich weiß, dass meine eingegebenen Suchfelder öffentlich sichtbar sind.
           required: true

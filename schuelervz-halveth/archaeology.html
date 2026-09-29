@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>schülerVZ // HALVETH Archaeology</title>
+<link rel="stylesheet" href="assets/archaeology.css">
+</head>
+<body>
+<header>
+  <div><b>schüler<span>VZ</span></b><small>HALVETH // AUTONOMOUS ARCHAEOLOGY 3.3</small></div>
+  <nav><a href="index.html">← MYCELIUM</a></nav>
+</header>
+<main>
+<section class="hero">
+  <h1>ARCHIVE ENGINE</h1>
+  <p>Kein Mensch soll 1.200 Wayback-Einträge einzeln öffnen. Die Engine baut automatisch URL-Census, Route-Census, Zeitcluster und Volltextsuche.</p>
+  <div id="stats" class="stats"></div>
+</section>
+<section class="controls">
+  <input id="q" placeholder="security, press, login, 2008, route …">
+  <select id="kind">
+    <option value="">alles</option>
+    <option value="archive-cluster">Archiv-Cluster</option>
+    <option value="route-pattern">Routen</option>
+  </select>
+  <button id="go">suchen</button>
+</section>
+<section id="results"></section>
+<section class="panel">
+  <h2>Profile Archaeology</h2>
+  <p>Historische personenbezogene Profile werden nicht massenhaft neu veröffentlicht. Die Engine zählt erkannte persönliche Routen nur als gehashte Metadaten. Für das eigene alte Profil gibt es den Exact-URL-Probe im Paket.</p>
+  <div id="profileStat"></div>
+</section>
+<section class="panel">
+  <h2>Route Census</h2>
+  <div id="routes"></div>
+</section>
+</main>
+<script src="assets/archaeology.js"></script>
+</body></html>
