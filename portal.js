@@ -16,8 +16,11 @@
   let group = 'all', query = '';
   const english = {
     skip:'Skip to content', brandLabel:'Juris Space home', navLabel:'Main navigation', navFocus:'Continue', navProjects:'Project atlas', navCertificates:'Work certificates',
-    theme:'Evening view', eyebrow:'Your ideas. A shared space.', heroTitle:'Everything connected.<br><em>Keep the flow.</em>',
-    heroLead:'Build worlds, find knowledge, try something new. The projects, their sources and your next step stay within reach together.',
+    theme:'Daylight view', eyebrow:'HALVETH / LUCINET · Ideas in motion', heroTitle:'From an impulse<br><em>to a whole world.</em>',
+    heroLead:'Form becomes movement. Knowledge becomes design. We build worlds, connect their stories and bring you into the flow.',
+    motionLabel:'HALVETH animation', motionCanvasLabel:'A light impulse grows into an organic form with orbiting light trails. Use the controls below to adjust time and glow.',
+    motionTime:'Time', motionSpeed:'Speed', motionGlow:'Glow', motionLoop:'Repeat', motionImpulse:'01 Impulse', motionGrow:'02 Grow', motionConnect:'03 Connect', motionTransform:'04 Transform', motionFlow:'05 Flow', motionSource:'Discover the design ↗',
+    motionCaption:'An original space of curves, light and time. Hold the moment, glide back or change its glow.',
     snapshot:'Atlas recorded', focusEyebrow:'Continue here', localNote:'Your focus stays in this browser.', source:'Source collection',
     currentState:'Current state', nextStep:'Next step', related:'Connected routes', projectEyebrow:'The shared collection', projectsTitle:'Your project atlas.',
     projectIntro:'Choose a route. Its state and next step appear above.', filtersLabel:'Project areas', groupAll:'All', groupWorlds:'Worlds', groupLearning:'Learning', groupResearch:'Research', groupTools:'Tools', groupArchive:'Archive & profile',
@@ -111,8 +114,8 @@
     document.documentElement.dataset.theme = state.theme;
     const dark = state.theme === 'dark';
     byId('theme').setAttribute('aria-pressed', String(dark));
-    byId('theme').textContent = state.language === 'en' ? 'Evening view' : 'Abendansicht';
-    document.querySelector('meta[name="theme-color"]').content = dark ? '#14241f' : '#f5f5ee';
+    byId('theme').textContent = state.language === 'en' ? dark ? 'Daylight view' : 'Evening view' : dark ? 'Tagesansicht' : 'Abendansicht';
+    document.querySelector('meta[name="theme-color"]').content = dark ? '#0c0e10' : '#f1eee8';
   }
   document.addEventListener('click', event => {
     const button = event.target.closest('button[data-choose]');
