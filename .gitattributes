@@ -1,3 +1,17 @@
 # Evidence downloads are byte-bound by the PDF and SHA256SUMS.txt.
 # Preserve their original bytes across Git checkout and Pages publication.
 werkzertifikate/2026-09-28-v1.1/* -text
+/index.html text eol=lf
+/portal.css text eol=lf
+/portal.js text eol=lf
+/space-data.js text eol=lf
+/space-model.js text eol=lf
+/SPACE.sh text eol=lf
+/README.md text eol=lf
+/docs/JURIS-SPACE.md text eol=lf
+/data/juris-space.json text eol=lf
+/tools/*space.cjs text eol=lf
+/tests/space.test.cjs text eol=lf
+/.github/workflows/juris-space.yml text eol=lf
+/.gitattributes text eol=lf
+/.gitignore text eol=lf
