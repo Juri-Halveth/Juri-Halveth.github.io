@@ -7,6 +7,7 @@ Copyright (c) 2026 Juri Janovski, publishing as Juri Halveth.
 | Original portal prose, arrangement, HTML, CSS, JavaScript, SVG and rights metadata from the first public commit of this repository | [HALVETH Public-Interest Research License 2.0](LICENSE-HALVETH-PIRL-2.0.md), only to the extent of rights actually held |
 | References, facts, project names, external pages and third-party material | Their respective rights and terms; excluded from this portal's license |
 | License text | Its stated copying permission |
+| New motion renderer: `motion-core.js`, `motion-player.js`, `tools/render-motion.cjs`, `tests/motion*.test.cjs`, `motion/README.md`, and generated `motion/poster.jpg` and `motion/HALVETH_MOTION_20s_1080p.mp4` | [MIT](motion/LICENSE-MIT.txt); earlier portal materials retain their terms |
 
 This portal is **source-available**, with conditional non-commercial
 public-interest permission and a separate written commercial licensing route.

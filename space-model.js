@@ -39,7 +39,7 @@
     try { const parsed = JSON.parse(raw || '{}'); if (parsed && typeof parsed === 'object' && !Array.isArray(parsed) && parsed.version === SETTINGS_VERSION) value = parsed; } catch (_) {}
     const project = data.projects.some(p => p.id === value.project) ? value.project : data.defaultProject;
     const language = ['de', 'en'].includes(urlLanguage) ? urlLanguage : ['de', 'en'].includes(value.language) ? value.language : 'de';
-    const theme = ['light', 'dark'].includes(value.theme) ? value.theme : 'light';
+    const theme = ['light', 'dark'].includes(value.theme) ? value.theme : 'dark';
     return {version: SETTINGS_VERSION, project, language, theme};
   }
   function select(data, id) {

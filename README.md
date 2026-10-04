@@ -21,11 +21,17 @@ bash SPACE.sh build      # Atlasdaten prüfen und statische Karten erzeugen
 bash SPACE.sh check      # Navigations- und Datenverträge prüfen
 bash SPACE.sh preview    # Vorschau auf http://127.0.0.1:4187
 bash SPACE.sh inventory  # Öffentliche eigene Repositories lesen; benötigt gh
+bash SPACE.sh motion --out motion-render  # Optionaler CPU-Bildexport; siehe motion/README.md
 ```
 
 `build` erzeugt `space-data.js` und den markierten Kartenbereich in `index.html` aus `data/juris-space.json`. Die GitHub-Prüfung kontrolliert auch, dass diese Dateien zum Datensatz passen. Entwicklungs-PRs behalten ihren Status als Entwurf; ein Portal-Link ist keine Installation eines Spiels.
 
 ## Rechte und Herkunft
+
+Die neue [Bewegungskomposition](motion/README.md) ergänzt das Portal um
+kontinuierliche Formen, Lichtbahnen und Zeitnavigation. Ihr Renderer und
+Exportwerkzeug sind unter MIT verfügbar. Browser-Playback benötigt keine
+npm-Pakete; nur der optionale CPU-Export verwendet `@napi-rs/canvas`.
 
 Neue eigene Portalbeiträge sind **Source Available** unter HALVETH PIRL 2.0. [LICENSES.md](LICENSES.md) ordnet den Umfang zu. Frühere wirksame Freigaben und Drittanbieterrechte bleiben bestehen. Externe Projektlinks übertragen keine Rechte am Zielinhalt. Kontakt für Quellen, Korrekturen und Lizenzen: **security@halveth.de**.
 

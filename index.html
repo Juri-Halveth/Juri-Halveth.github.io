@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="de" data-theme="light">
+<html lang="de" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#f5f5ee">
+  <meta name="theme-color" content="#0c0e10">
   <meta name="description" content="Juris Space verbindet HALVETH und LUCINET: Welten, Lernen, Forschung und Werkzeuge mit einem klaren Fortsetzungspunkt.">
   <meta name="rights" content="Original portal contributions: HALVETH PIRL 2.0. Prior permissions and third-party rights remain applicable. See LICENSES.md.">
   <meta name="tdm-reservation" content="1">
@@ -14,9 +14,12 @@
   <link rel="alternate" type="application/json" href="data/juris-space.json" title="Juris Space project atlas">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="portal.css">
+  <link rel="stylesheet" href="motion.css">
   <script src="space-data.js" defer></script>
   <script src="space-model.js" defer></script>
   <script src="portal.js" defer></script>
+  <script src="motion-core.js" defer></script>
+  <script src="motion-player.js" defer></script>
   <title>Juris Space · HALVETH / LUCINET</title>
 </head>
 <body>
@@ -36,15 +39,25 @@
   <main id="main">
     <section class="hero wrap" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="dot" aria-hidden="true"></span><span data-i18n="eyebrow">Deine Ideen. Ein gemeinsamer Raum.</span></p>
-        <h1 id="hero-title" data-i18n="heroTitle">Alles verbunden.<br><em>Weiter im Strom.</em></h1>
-        <p class="lead" data-i18n="heroLead">Welten bauen, Wissen finden, Neues ausprobieren. Hier bleiben die Projekte, ihre Quellen und dein nächster Schritt zusammen erreichbar.</p>
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span><span data-i18n="eyebrow">HALVETH / LUCINET · Ideen in Bewegung</span></p>
+        <h1 id="hero-title" data-i18n="heroTitle">Aus einem Impuls<br><em>wird eine ganze Welt.</em></h1>
+        <p class="lead" data-i18n="heroLead">Form wird Bewegung. Wissen wird Gestaltung. Wir bauen Welten, verbinden ihre Geschichten und nehmen dich mit in den Strom.</p>
         <div class="hero-meta"><span class="inventory-pill" id="inventory">15 Repositories · 2 Websites</span><span><span data-i18n="snapshot">Atlas erfasst</span> <time id="snapshot-time">04.10.2026</time></span></div>
       </div>
-      <div class="universe-art" aria-hidden="true">
-        <svg viewBox="0 0 460 300" role="presentation"><defs><radialGradient id="planet"><stop offset="0" stop-color="#e0e9d9"/><stop offset=".7" stop-color="#a6c8b3"/><stop offset="1" stop-color="#688b79"/></radialGradient><linearGradient id="ring"><stop stop-color="#96b7aa"/><stop offset=".6" stop-color="#c7add3"/><stop offset="1" stop-color="#e6b990"/></linearGradient></defs><ellipse class="halo" cx="230" cy="156" rx="189" ry="86" transform="rotate(-18 230 156)"/><ellipse class="halo fine" cx="230" cy="156" rx="146" ry="116" transform="rotate(20 230 156)"/><circle cx="230" cy="156" r="91" fill="url(#planet)"/><path class="planet-land" d="M173 98c31-22 37 15 65 8s25 12 45 18-12 23-2 43-26 18-32 39-44-7-49-27-41-2-32-23 21-14 5-58z"/><ellipse class="ring" cx="230" cy="156" rx="184" ry="44" transform="rotate(-18 230 156)"/><circle class="moon moon-one" cx="69" cy="107" r="9"/><circle class="moon moon-two" cx="388" cy="191" r="13"/><circle class="moon moon-three" cx="301" cy="41" r="5"/><path class="star-path" d="M369 71v12m-6-6h12M107 229v9m-4.5-4.5h9"/></svg>
-        <span class="art-caption">HALVETH · LUCINET · JURI</span>
+      <div class="motion-stage" aria-label="HALVETH Animation" data-i18n-aria="motionLabel">
+        <canvas id="motion-canvas" width="1280" height="720" role="img" aria-label="Ein Lichtimpuls wächst zu einer organischen Form mit umlaufenden Lichtspuren. Zeit und Leuchten lassen sich unten steuern." data-i18n-aria="motionCanvasLabel">Ein Lichtimpuls wächst zu einer organischen Form mit umlaufenden Lichtspuren.</canvas>
+        <div class="motion-controls">
+          <button type="button" id="motion-play" aria-pressed="true">Pause</button>
+          <button type="button" id="motion-reverse" aria-pressed="false">Rückwärts</button>
+          <label class="motion-time-control"><span data-i18n="motionTime">Zeit</span><input id="motion-time" type="range" min="0" max="20" step="0.01" value="0" aria-label="Animationszeit" data-i18n-aria="motionTime"></label>
+          <output id="motion-clock" for="motion-time">0.00 / 20.00 s</output>
+          <label><span data-i18n="motionSpeed">Tempo</span><select id="motion-speed" aria-label="Abspieltempo" data-i18n-aria="motionSpeed"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label>
+          <label class="motion-glow-control"><span data-i18n="motionGlow">Leuchten</span><input id="motion-glow" type="range" min="0" max="2" step="0.05" value="1" aria-label="Lichtstärke" data-i18n-aria="motionGlow"></label>
+          <label><input id="motion-loop" type="checkbox"><span data-i18n="motionLoop">Wiederholen</span></label>
+        </div>
+        <div class="motion-chapters"><button type="button" data-motion-time="0" data-i18n="motionImpulse">01 Impuls</button><button type="button" data-motion-time="3.3" data-i18n="motionGrow">02 Wachsen</button><button type="button" data-motion-time="7" data-i18n="motionConnect">03 Verbinden</button><button type="button" data-motion-time="11" data-i18n="motionTransform">04 Verwandeln</button><button type="button" data-motion-time="15" data-i18n="motionFlow">05 Weiterfließen</button><a href="motion/" data-i18n="motionSource">Die Gestaltung entdecken ↗</a></div>
       </div>
+      <div class="motion-caption"><p data-i18n="motionCaption">Ein eigener Bewegungsraum aus Kurven, Licht und Zeit. Halte den Moment an, gleite zurück oder ändere sein Leuchten.</p><span class="motion-phase" id="motion-phase">Impuls</span></div>
     </section>
     <section class="focus-section wrap" id="focus" aria-labelledby="focus-heading">
       <div class="focus-heading"><p class="eyebrow" data-i18n="focusEyebrow">Hier geht es weiter</p><span class="local-note" id="storage-note" data-i18n="localNote">Dein Fokus bleibt in diesem Browser.</span></div>

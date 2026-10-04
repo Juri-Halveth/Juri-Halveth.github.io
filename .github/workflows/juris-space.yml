@@ -1,9 +1,9 @@
 name: Juris Space contracts
 on:
   push:
-    paths: ['index.html', 'portal.css', 'portal.js', 'space-*.js', 'SPACE.sh', 'data/juris-space.json', 'tools/*space.cjs', 'tests/space.test.cjs', '.github/workflows/juris-space.yml']
+    paths: ['index.html', 'portal.css', 'portal.js', 'motion*', 'motion/**', 'space-*.js', 'SPACE.sh', 'data/juris-space.json', 'tools/*space.cjs', 'tools/*motion.cjs', 'tests/*.test.cjs', '.github/workflows/juris-space.yml']
   pull_request:
-    paths: ['index.html', 'portal.css', 'portal.js', 'space-*.js', 'SPACE.sh', 'data/juris-space.json', 'tools/*space.cjs', 'tests/space.test.cjs', '.github/workflows/juris-space.yml']
+    paths: ['index.html', 'portal.css', 'portal.js', 'motion*', 'motion/**', 'space-*.js', 'SPACE.sh', 'data/juris-space.json', 'tools/*space.cjs', 'tools/*motion.cjs', 'tests/*.test.cjs', '.github/workflows/juris-space.yml']
 permissions:
   contents: read
 jobs:
@@ -17,4 +17,5 @@ jobs:
       - run: bash SPACE.sh build
       - run: git diff --exit-code -- index.html space-data.js
       - run: bash SPACE.sh check
+      - run: node --check motion-player.js
       - run: bash -n SPACE.sh

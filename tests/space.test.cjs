@@ -22,9 +22,9 @@ test('a stored project remains selected across language changes', () => {
   const raw = JSON.stringify({version:1, project:'FORTUNA',language:'de',theme:'dark'});
   assert.deepEqual(M.readSettings(data,raw,'en'),{version:1,project:'FORTUNA',language:'en',theme:'dark'});
 });
-test('invalid storage restores the explicit focus and daylight default', () => {
+test('invalid storage restores the explicit focus and graphite default', () => {
   for (const raw of ['broken','null','[]','{"version":1,"project":"OTHER","theme":"unknown","language":"xx"}','{"version":0,"project":"FORTUNA"}']) {
-    assert.deepEqual(M.readSettings(data,raw,'invalid'),{version:1,project:'UNREAL',language:'de',theme:'light'});
+    assert.deepEqual(M.readSettings(data,raw,'invalid'),{version:1,project:'UNREAL',language:'de',theme:'dark'});
   }
 });
 test('query language takes precedence, saved language is used without a query', () => {

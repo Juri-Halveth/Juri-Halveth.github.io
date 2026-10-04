@@ -1,0 +1,50 @@
+{
+  "schema": "halveth.motion-render.v1",
+  "recordedAt": "2026-10-04T23:32:17.477Z",
+  "renderer": "@napi-rs/canvas CPU",
+  "coreSha256": "093f236adab6da340d0bf097788859608770f4277776652106acbc647d693d24",
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "durationSeconds": 20,
+  "stills": [
+    {
+      "time": 1,
+      "file": "motion-1s.png",
+      "sha256": "92de4c2230a30b68dceec668a66186a49db7abd49e92f098c51a9a43b1a83b44"
+    },
+    {
+      "time": 4,
+      "file": "motion-4s.png",
+      "sha256": "b4dd107fe67edcd66a4f4b229c42ee58289cf986388985860360bbe39390e838"
+    },
+    {
+      "time": 8,
+      "file": "motion-8s.png",
+      "sha256": "8501edd4f80cba17984064c0c7363cba9f29e07a0de8c1f203b95a13c906d934"
+    },
+    {
+      "time": 12,
+      "file": "motion-12s.png",
+      "sha256": "dcf6be85dded34ac3e56c5e3b24e14c6195d77127088648a9d9430d753d7253f"
+    },
+    {
+      "time": 16,
+      "file": "motion-16s.png",
+      "sha256": "9ddcfe1bf4e1ff35041b79fdf00097f13a8bcf5cd83c046cb2ada0a8c466e34c"
+    },
+    {
+      "time": 19.5,
+      "file": "motion-19_5s.png",
+      "sha256": "039e6e80dd1609684ee9d644fb39c06a638283017e5d57b0cf13b47122bfbf7a"
+    }
+  ],
+  "movie": {
+    "file": "HALVETH_MOTION_20s_1080p.mp4",
+    "sha256": "778944c8cf54767343351edec583bbe2a6d44b01b824be3a72582fbb61c612c8",
+    "bytes": 6491223,
+    "frames": 600
+  },
+  "desktopControl": false,
+  "audio": "Original silent composition"
+}
