@@ -1,3 +1,6 @@
+# Evidence downloads are byte-bound by the PDF and SHA256SUMS.txt.
+# Preserve their original bytes across Git checkout and Pages publication.
+werkzertifikate/2026-09-28-v1.1/* -text
 /index.html text eol=lf
 /portal.css text eol=lf
 /portal.js text eol=lf
