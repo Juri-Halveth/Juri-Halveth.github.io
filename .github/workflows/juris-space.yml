@@ -1,9 +1,9 @@
 name: Juris Space contracts
 on:
   push:
-    paths: ['index.html', '404.html', 'portal.css', 'portal.js', 'return.css', 'language.css', 'en/**', 'ru/**', 'package*.json', 'assets/**', 'templates/**', 'arbeiten/**', 'profil/**', 'werkzertifikate/index.html', 'motion*', 'landing-motion.js', 'motion/**', 'SPACE.sh', 'data/**', 'tools/*.cjs', 'tests/*.test.cjs', '.github/workflows/juris-space.yml']
+    paths: ['index.html', '404.html', 'portal.css', 'portal.js', 'return.css', 'language.css', 'handbook.css', 'handbuch/**', 'docs/HANDBUCH.md', 'HUB.sh', 'en/**', 'ru/**', 'package*.json', 'assets/**', 'templates/**', 'arbeiten/**', 'profil/**', 'werkzertifikate/index.html', 'motion*', 'landing-motion.js', 'motion/**', 'SPACE.sh', 'data/**', 'tools/*.cjs', 'tests/*.test.cjs', '.github/workflows/juris-space.yml']
   pull_request:
-    paths: ['index.html', '404.html', 'portal.css', 'portal.js', 'return.css', 'language.css', 'en/**', 'ru/**', 'package*.json', 'assets/**', 'templates/**', 'arbeiten/**', 'profil/**', 'werkzertifikate/index.html', 'motion*', 'landing-motion.js', 'motion/**', 'SPACE.sh', 'data/**', 'tools/*.cjs', 'tests/*.test.cjs', '.github/workflows/juris-space.yml']
+    paths: ['index.html', '404.html', 'portal.css', 'portal.js', 'return.css', 'language.css', 'handbook.css', 'handbuch/**', 'docs/HANDBUCH.md', 'HUB.sh', 'en/**', 'ru/**', 'package*.json', 'assets/**', 'templates/**', 'arbeiten/**', 'profil/**', 'werkzertifikate/index.html', 'motion*', 'landing-motion.js', 'motion/**', 'SPACE.sh', 'data/**', 'tools/*.cjs', 'tests/*.test.cjs', '.github/workflows/juris-space.yml']
 permissions:
   contents: read
 jobs:
@@ -16,9 +16,10 @@ jobs:
           node-version: '22'
       - run: npm ci --ignore-scripts --no-audit --no-fund
       - run: bash SPACE.sh build
-      - run: git diff --exit-code -- index.html arbeiten/index.html profil/index.html profil/CV-Juri-Halveth.md 404.html en ru sitemap.xml
+      - run: git diff --exit-code -- index.html arbeiten/index.html profil/index.html profil/CV-Juri-Halveth.md 404.html handbuch docs/HANDBUCH.md en ru sitemap.xml
       - run: bash SPACE.sh check
       - run: node --check motion-player.js
       - run: node --check portal.js
       - run: node --check landing-motion.js
       - run: bash -n SPACE.sh
+      - run: bash -n HUB.sh

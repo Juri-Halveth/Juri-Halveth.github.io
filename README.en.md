@@ -1,3 +1,5 @@
+[Handbook: What lives where?](https://juri-halveth.github.io/en/handbuch/) · [HTML, Code und Prüfungen / HTML, code and checks / HTML, код и проверки](docs/HANDBUCH.md)
+
 [Original / Deutsch](README.md) · [English](README.en.md) · [Русский](README.ru.md)
 
 # Juri Halveth · Research, Design & Learning

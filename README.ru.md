@@ -1,3 +1,5 @@
+[Руководство: что и где находится?](https://juri-halveth.github.io/ru/handbuch/) · [HTML, Code und Prüfungen / HTML, code and checks / HTML, код и проверки](docs/HANDBUCH.md)
+
 [Original / Deutsch](README.md) · [English](README.en.md) · [Русский](README.ru.md)
 
 # Juri Halveth · Исследования, дизайн и обучение

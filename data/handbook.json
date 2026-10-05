@@ -1,0 +1,2131 @@
+{
+  "schema": "halveth.hub-handbook.v1",
+  "dataClass": "PUBLIC",
+  "recordedAt": "2026-10-05T16:37:14.087Z",
+  "verification": {
+    "recordedAt": "2026-10-05T16:22:42.929Z",
+    "outcome": "LOCAL_BUILDS_AND_TESTS_PASSED",
+    "scope": "Five named local checkouts, their configured builds/tests, and three Fortuna DOM fixtures.",
+    "counts": {
+      "spaceTests": 30,
+      "fortunaModelTests": 12,
+      "fortunaLanguageFixtures": 3,
+      "scarletHtmlPages": 86,
+      "scarletReferences": 1844,
+      "scarletTests": 232,
+      "learningSuites": 19,
+      "learningLessons": 702,
+      "learningStages": 133,
+      "learningTracks": 13,
+      "learningPublicFiles": 105,
+      "portalLanguageTests": 3,
+      "bashRecipes": 75
+    },
+    "skippedTests": 2,
+    "skipReason": "PowerShell 7.3+ wrappers: the required PowerShell version was absent.",
+    "sourceWorkingDiffs": "Empty tracked working-tree diffs in the recorded run; untracked files were outside this digest."
+  },
+  "roles": {
+    "entrance": {
+      "de": "Einstieg und Navigation",
+      "en": "Entrance and navigation",
+      "ru": "Главная и навигация"
+    },
+    "language": {
+      "de": "Sprachfassung derselben Seite",
+      "en": "Language edition of the same page",
+      "ru": "Языковая версия той же страницы"
+    },
+    "profile": {
+      "de": "Eigenes Figurenprofil mit Geschichte und Quellen",
+      "en": "Individual character profile with story and sources",
+      "ru": "Профиль персонажа с историей и источниками"
+    },
+    "research": {
+      "de": "Forschungsnotiz mit zugehörigen Quellen",
+      "en": "Research note with its sources",
+      "ru": "Исследовательская заметка с источниками"
+    },
+    "legal": {
+      "de": "Rechte, Datenschutz oder Kontaktinformation",
+      "en": "Rights, privacy or contact information",
+      "ru": "Права, конфиденциальность или контакты"
+    },
+    "learning": {
+      "de": "Lernzugang, Angebot oder vertiefender Lerntext",
+      "en": "Learning entrance, offering or further reading",
+      "ru": "Доступ к обучению, предложение или дополнительный материал"
+    },
+    "fallback": {
+      "de": "Rückweg oder Offline-Zugang",
+      "en": "Return path or offline entrance",
+      "ru": "Обратный путь или офлайн-доступ"
+    },
+    "motion": {
+      "de": "Bewegung, Gestaltung und Zeitsteuerung",
+      "en": "Motion, design and time controls",
+      "ru": "Движение, дизайн и управление временем"
+    },
+    "archive": {
+      "de": "Öffentliches Archiv und historische Quellen",
+      "en": "Public archive and historical sources",
+      "ru": "Публичный архив и исторические источники"
+    },
+    "evidence": {
+      "de": "Arbeitsprofil, Arbeiten oder Werkdokumentation",
+      "en": "Work profile, works or project documentation",
+      "ru": "Профиль работ, проекты или документация"
+    },
+    "tool": {
+      "de": "Bedienoberfläche oder dokumentierter Zugang",
+      "en": "Interface or documented entrance",
+      "ru": "Интерфейс или документированный доступ"
+    }
+  },
+  "projects": [
+    {
+      "id": "space",
+      "name": "Juri-Halveth.github.io",
+      "repository": "Juri-Halveth/Juri-Halveth.github.io",
+      "commit": "813f97c70e2d8a375f8cd11cc54dab99201f42fa",
+      "live": "https://juri-halveth.github.io/",
+      "title": {
+        "de": "Juris Space · Orientierung",
+        "en": "Juris Space · Navigation",
+        "ru": "Juris Space · Навигация"
+      },
+      "purpose": {
+        "de": "Der Einstieg ordnet Forschung, Gestaltung, Lernen, Software und Nachweise nach ihrem Zweck. Verwandte Angebote teilen sich einen Themenbereich.",
+        "en": "The entrance groups research, design, learning, software and evidence by purpose. Related offerings share one topic.",
+        "ru": "Главная страница группирует исследования, дизайн, обучение, программы и подтверждения по назначению. Связанные проекты объединены в одну тему."
+      },
+      "sources": [
+        {
+          "path": "index.html",
+          "role": "Oberfläche / Entrance / Главная",
+          "commit": "813f97c70e2d8a375f8cd11cc54dab99201f42fa",
+          "sha256": "f1ba43de8bd24054db28c6b5ddea8d11a0225b973cafb540652a58fbba418ab6",
+          "line": 1,
+          "lines": 35,
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/index.html#L1"
+        },
+        {
+          "path": "templates/index.html",
+          "role": "Vorlage / Template / Шаблон",
+          "commit": "813f97c70e2d8a375f8cd11cc54dab99201f42fa",
+          "sha256": "d826616cfcb0fb0f15fa5eaf813e835399f800562c2c527ef77ce22b76142654",
+          "line": 1,
+          "lines": 30,
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/templates/index.html#L1"
+        },
+        {
+          "path": "data/portfolio.json",
+          "role": "Themen / Topics / Темы",
+          "commit": "813f97c70e2d8a375f8cd11cc54dab99201f42fa",
+          "sha256": "273114aa2fb2c8485451440d8bfc8ddca430b166073400d2f59c2156abe0f579",
+          "line": 1,
+          "lines": 70,
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/data/portfolio.json#L1"
+        },
+        {
+          "path": "data/public-sources.json",
+          "role": "Quellenregister / Source register / Реестр источников",
+          "commit": "813f97c70e2d8a375f8cd11cc54dab99201f42fa",
+          "sha256": "e09e0f8b18f3f1c7258b1d604626ca2d893d250700df715b087d55fad413f209",
+          "line": 1,
+          "lines": 731,
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/data/public-sources.json#L1"
+        },
+        {
+          "path": "landing-motion.js",
+          "role": "Automatische Bewegung / Automatic motion / Автоматическое движение",
+          "commit": "813f97c70e2d8a375f8cd11cc54dab99201f42fa",
+          "sha256": "8716e3e0b76b7e36c0ac6817df19eda303b2e6b94124b6c5119d3c7364fe0839",
+          "line": 1,
+          "lines": 48,
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/landing-motion.js#L1"
+        },
+        {
+          "path": "motion-core.js",
+          "role": "Form, Licht und Zeit / Form, light and time / Форма, свет и время",
+          "commit": "813f97c70e2d8a375f8cd11cc54dab99201f42fa",
+          "sha256": "2e16122a3d81422f4dc35a4fc3ef17e27f0ebc3fb152f7cbcc0deb6393337849",
+          "line": 1,
+          "lines": 210,
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/motion-core.js#L1"
+        },
+        {
+          "path": "motion/index.html",
+          "role": "Bewegungsstudie / Motion study / Исследование движения",
+          "commit": "813f97c70e2d8a375f8cd11cc54dab99201f42fa",
+          "sha256": "9cdff70331ece75f32d3df931bc848367122f0f8f44edbfab3d5150a014ccf14",
+          "line": 1,
+          "lines": 5,
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/motion/index.html#L1"
+        },
+        {
+          "path": "tools/build-space.cjs",
+          "role": "Seitenbau / Page builder / Генератор страниц",
+          "commit": "813f97c70e2d8a375f8cd11cc54dab99201f42fa",
+          "sha256": "0b158fde5bceabff36128b8f64050928d20ccb0db3c94c432470b7fc7bedf5f7",
+          "line": 1,
+          "lines": 63,
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/tools/build-space.cjs#L1"
+        },
+        {
+          "path": "tools/build-languages.cjs",
+          "role": "Sprachzugänge / Language entrances / Языковые версии",
+          "commit": "813f97c70e2d8a375f8cd11cc54dab99201f42fa",
+          "sha256": "206d463c01e02f9c5d2e7348c26369f3284ac14d799ba172a5329d685e029524",
+          "line": 1,
+          "lines": 86,
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/tools/build-languages.cjs#L1"
+        }
+      ],
+      "tests": [
+        {
+          "path": "tests/landing.test.cjs",
+          "role": "Themenordnung, Quellenzuordnung und Rückwege / Topic order, source mapping and return paths / Порядок тем, привязка источников и обратные пути",
+          "commit": "813f97c70e2d8a375f8cd11cc54dab99201f42fa",
+          "sha256": "e5fc9688c6dc44449c891db5b66c374275731bdaa4a0962dd9471d74a8cfabdf",
+          "line": 1,
+          "lines": 84,
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/tests/landing.test.cjs#L1"
+        },
+        {
+          "path": "tests/landing-motion.test.cjs",
+          "role": "Automatischer Start, Sichtbarkeit und Bewegungszeit / Automatic start, visibility and animation time / Автоматический запуск, видимость и время движения",
+          "commit": "813f97c70e2d8a375f8cd11cc54dab99201f42fa",
+          "sha256": "169b1178a80592b8350fbd7dc2bd063c685ca562029d8c6d79785490af3bd0e7",
+          "line": 1,
+          "lines": 37,
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/tests/landing-motion.test.cjs#L1"
+        },
+        {
+          "path": "tests/motion.test.cjs",
+          "role": "Reproduzierbare Animationszustände und Zeitnavigation / Reproducible animation states and time navigation / Воспроизводимые состояния анимации и навигация во времени",
+          "commit": "813f97c70e2d8a375f8cd11cc54dab99201f42fa",
+          "sha256": "cb25056ac8aed90bd7a4465feebed61138a8634882786ba450cea6a88fe268fa",
+          "line": 1,
+          "lines": 37,
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/tests/motion.test.cjs#L1"
+        },
+        {
+          "path": "tests/motion-player.test.cjs",
+          "role": "Wiedergabe, Suchposition und Hintergrundverhalten / Playback, seeking and background behaviour / Воспроизведение, перемотка и фоновое поведение",
+          "commit": "813f97c70e2d8a375f8cd11cc54dab99201f42fa",
+          "sha256": "309b593a10236bed8ecbe39bc436e2df7f681618677b3ad3b4a03af826fe22bb",
+          "line": 1,
+          "lines": 50,
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/tests/motion-player.test.cjs#L1"
+        },
+        {
+          "path": "tests/languages.test.cjs",
+          "role": "Sprachwege, unveränderte Quelladressen und Zahlen / Language routes, retained source addresses and numbers / Языковые пути, сохранение адресов источников и чисел",
+          "commit": "813f97c70e2d8a375f8cd11cc54dab99201f42fa",
+          "sha256": "1c1b69e755169b22e183501f7eed0ed71a1df77eaa322d8b9e5bc28f115d306d",
+          "line": 1,
+          "lines": 63,
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/tests/languages.test.cjs#L1"
+        }
+      ],
+      "command": "bash SPACE.sh verify",
+      "result": {
+        "de": "30 Tests bestanden: Themenzuordnung, Rückwege, Sprachzugänge und die kodierten Regeln für Form, Zeit und automatischen Start.",
+        "en": "30 tests passed: topic mapping, return paths, language entrances and the encoded rules for form, time and automatic start.",
+        "ru": "Пройдены 30 тестов: темы, обратные ссылки, языковые версии и заданные правила формы, времени и автоматического запуска."
+      },
+      "pages": [
+        {
+          "path": "404.html",
+          "title": "Zurück zu den Themen · Juri Halveth",
+          "live": "https://juri-halveth.github.io/404.html",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/404.html",
+          "language": "de",
+          "role": "fallback",
+          "sha256": "3568e1d64b48ef6d9196a8a60f873431fd3af3c6e7de98b9ad4bbf7c9f804f85"
+        },
+        {
+          "path": "arbeiten/index.html",
+          "title": "Arbeiten nach Themen · Juri Halveth",
+          "live": "https://juri-halveth.github.io/arbeiten/",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/arbeiten/index.html",
+          "language": "de",
+          "role": "evidence",
+          "sha256": "ffda9c9c83c6dfbe5ade52470dcdc132f833513dfc5f01c8de9c78dbbbdba7fa"
+        },
+        {
+          "path": "en/404.html",
+          "title": "Back to the themes · Yuri Halveth",
+          "live": "https://juri-halveth.github.io/en/404.html",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/en/404.html",
+          "language": "en",
+          "role": "language",
+          "sha256": "a1372258ab7b48230ff8e4416aafa9acc0340a6635413c717a852d076201823f"
+        },
+        {
+          "path": "en/arbeiten/index.html",
+          "title": "Work by topic · Juri Halveth",
+          "live": "https://juri-halveth.github.io/en/arbeiten/",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/en/arbeiten/index.html",
+          "language": "en",
+          "role": "language",
+          "sha256": "582f80eab741bddab4c55f98f29f0447be5052d8b8b5e1b046b2678362b8752c"
+        },
+        {
+          "path": "en/index.html",
+          "title": "Juri Halveth · Research, Design & Open Learning Worlds",
+          "live": "https://juri-halveth.github.io/en/",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/en/index.html",
+          "language": "en",
+          "role": "language",
+          "sha256": "547a84558c080ae07a0b554b9b9ef4717b4166093a0b6693e9e2be8d33de2aaa"
+        },
+        {
+          "path": "en/motion/index.html",
+          "title": "HALVETH · Creating movement",
+          "live": "https://juri-halveth.github.io/en/motion/",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/en/motion/index.html",
+          "language": "en",
+          "role": "language",
+          "sha256": "7cea785612ed7d24a20ca6448a7736a26ae60052bf13935801ed2850790c845b"
+        },
+        {
+          "path": "en/profil/index.html",
+          "title": "Professional profile & documented evidence · Juri Halveth",
+          "live": "https://juri-halveth.github.io/en/profil/",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/en/profil/index.html",
+          "language": "en",
+          "role": "language",
+          "sha256": "db5ccbbc87647e463847d55609dccc8812613d0f74c6319121527fa1dd0c116b"
+        },
+        {
+          "path": "en/schuelervz-halveth/archaeology.html",
+          "title": "schülerVZ // HALVETH Archaeology",
+          "live": "https://juri-halveth.github.io/en/schuelervz-halveth/archaeology.html",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/en/schuelervz-halveth/archaeology.html",
+          "language": "en",
+          "role": "language",
+          "sha256": "6ce460b0c50ab221746558c338d3138a0fdb3df383b11e91b602c18c43b52631"
+        },
+        {
+          "path": "en/schuelervz-halveth/index.html",
+          "title": "schÃƒÂ¼lerVZ // HALVETH MYCELIUM",
+          "live": "https://juri-halveth.github.io/en/schuelervz-halveth/",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/en/schuelervz-halveth/index.html",
+          "language": "en",
+          "role": "language",
+          "sha256": "5c6ba24e560a7a20f510964be778efae2a610b30d9ca2ed5ed0779f1103c1b3a"
+        },
+        {
+          "path": "en/schuelervz-halveth/people.html",
+          "title": "schülerVZ // Finding people",
+          "live": "https://juri-halveth.github.io/en/schuelervz-halveth/people.html",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/en/schuelervz-halveth/people.html",
+          "language": "en",
+          "role": "language",
+          "sha256": "7f9b19721b2215bd5fd3246f3815457b5406fc077a8473ec3f861abf1b816fb3"
+        },
+        {
+          "path": "en/schuelervz-halveth/prestige.html",
+          "title": "schülerVZ // PRESTIGE FOUR",
+          "live": "https://juri-halveth.github.io/en/schuelervz-halveth/prestige.html",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/en/schuelervz-halveth/prestige.html",
+          "language": "en",
+          "role": "language",
+          "sha256": "829e78b58b181492eb5e53918dfc585b6cc11aa4ad6368e7c784d13f34d256be"
+        },
+        {
+          "path": "en/werkzertifikate/index.html",
+          "title": "Juri Janovski / Juri Halveth / HALVETH – Privately issued work certificates and GitHub evidence",
+          "live": "https://juri-halveth.github.io/en/werkzertifikate/",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/en/werkzertifikate/index.html",
+          "language": "en",
+          "role": "language",
+          "sha256": "f345f7e58bc6f7961ef8cdf5d64b826ff7b68c007c686abce30b173d879ebe96"
+        },
+        {
+          "path": "index.html",
+          "title": "Juri Halveth · Forschung, Gestaltung & offene Lernwelten",
+          "live": "https://juri-halveth.github.io/",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/index.html",
+          "language": "de",
+          "role": "entrance",
+          "sha256": "f1ba43de8bd24054db28c6b5ddea8d11a0225b973cafb540652a58fbba418ab6"
+        },
+        {
+          "path": "motion/index.html",
+          "title": "HALVETH · Bewegung gestalten",
+          "live": "https://juri-halveth.github.io/motion/",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/motion/index.html",
+          "language": "de",
+          "role": "motion",
+          "sha256": "9cdff70331ece75f32d3df931bc848367122f0f8f44edbfab3d5150a014ccf14"
+        },
+        {
+          "path": "profil/index.html",
+          "title": "Arbeitsprofil & dokumentierte Nachweise · Juri Halveth",
+          "live": "https://juri-halveth.github.io/profil/",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/profil/index.html",
+          "language": "de",
+          "role": "evidence",
+          "sha256": "615c1453ef887d0657573c7226b9b6dda40ac82c96a17fe6d1faa323d39550e0"
+        },
+        {
+          "path": "ru/404.html",
+          "title": "Назад к теме: Юрий Халвет",
+          "live": "https://juri-halveth.github.io/ru/404.html",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/ru/404.html",
+          "language": "ru",
+          "role": "language",
+          "sha256": "f4f1264d3aa039f156271d1b0ae28bdb6e727a788f3a3ee8d733b0641f79fd59"
+        },
+        {
+          "path": "ru/arbeiten/index.html",
+          "title": "Работы по темам · Juri Halveth",
+          "live": "https://juri-halveth.github.io/ru/arbeiten/",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/ru/arbeiten/index.html",
+          "language": "ru",
+          "role": "language",
+          "sha256": "ff3994091e192d0085de78cf0266b4e1aa3857ec7906c13b57c2eb3ff77f0b6f"
+        },
+        {
+          "path": "ru/index.html",
+          "title": "Juri Halveth · Исследования, дизайн и открытые учебные миры",
+          "live": "https://juri-halveth.github.io/ru/",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/ru/index.html",
+          "language": "ru",
+          "role": "language",
+          "sha256": "cf17cb131fd49f8b540fb45005ac86f5c1600ab9eeb2d35a8072bf77a528039a"
+        },
+        {
+          "path": "ru/motion/index.html",
+          "title": "HALVETH – создание движения",
+          "live": "https://juri-halveth.github.io/ru/motion/",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/ru/motion/index.html",
+          "language": "ru",
+          "role": "language",
+          "sha256": "c0d44ff3f7052b66b78a8e2df9ffcc5042e38289dba2334ef5d0b4e47faa1d53"
+        },
+        {
+          "path": "ru/profil/index.html",
+          "title": "Профессиональный профиль и документированные работы · Juri Halveth",
+          "live": "https://juri-halveth.github.io/ru/profil/",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/ru/profil/index.html",
+          "language": "ru",
+          "role": "language",
+          "sha256": "e22d2c940c45e2df6c1583391f5950a123d92f012e42f19dc869794d6df6228f"
+        },
+        {
+          "path": "ru/schuelervz-halveth/archaeology.html",
+          "title": "schülerVZ // Археология жизни",
+          "live": "https://juri-halveth.github.io/ru/schuelervz-halveth/archaeology.html",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/ru/schuelervz-halveth/archaeology.html",
+          "language": "ru",
+          "role": "language",
+          "sha256": "f6e0a0f693b2860211292f7b5541996bcd1b75180d774daa530ef8687839b8dd"
+        },
+        {
+          "path": "ru/schuelervz-halveth/index.html",
+          "title": "schÃƒÂ¼lerVZ // HALVETH MYCELIUM",
+          "live": "https://juri-halveth.github.io/ru/schuelervz-halveth/",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/ru/schuelervz-halveth/index.html",
+          "language": "ru",
+          "role": "language",
+          "sha256": "74b74b700bb353e2053f39e0c80ffaf2923143a4c3682b62386baa60be1a3a6b"
+        },
+        {
+          "path": "ru/schuelervz-halveth/people.html",
+          "title": "schülerVZ // Поиск людей",
+          "live": "https://juri-halveth.github.io/ru/schuelervz-halveth/people.html",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/ru/schuelervz-halveth/people.html",
+          "language": "ru",
+          "role": "language",
+          "sha256": "e16d55d2301cad0208f28e59079c8de4fed38fc01aef6fdbf2be5f97c721e24a"
+        },
+        {
+          "path": "ru/schuelervz-halveth/prestige.html",
+          "title": "schülerVZ // Престиж четыре",
+          "live": "https://juri-halveth.github.io/ru/schuelervz-halveth/prestige.html",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/ru/schuelervz-halveth/prestige.html",
+          "language": "ru",
+          "role": "language",
+          "sha256": "16d2d4740e25acfa757d362b9acc35cfc0f04de6d54d21d692ad61d166dedcbb"
+        },
+        {
+          "path": "ru/werkzertifikate/index.html",
+          "title": "Juri Janovski / Juri Halveth / HALVETH — Авторские свидетельства о работах и подтверждающие материалы GitHub",
+          "live": "https://juri-halveth.github.io/ru/werkzertifikate/",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/ru/werkzertifikate/index.html",
+          "language": "ru",
+          "role": "language",
+          "sha256": "c613f715650a5c048ad84b5c4cb0f8dce2b65616b1194ebf02ed6cb08036017d"
+        },
+        {
+          "path": "schuelervz-halveth/archaeology.html",
+          "title": "schülerVZ // HALVETH Archaeology",
+          "live": "https://juri-halveth.github.io/schuelervz-halveth/archaeology.html",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/schuelervz-halveth/archaeology.html",
+          "language": "de",
+          "role": "archive",
+          "sha256": "6038c2064957a58247276aa7b4af1f67bf295c500933f5d3ef6267007f102643"
+        },
+        {
+          "path": "schuelervz-halveth/index.html",
+          "title": "schÃƒÂ¼lerVZ // HALVETH MYCELIUM",
+          "live": "https://juri-halveth.github.io/schuelervz-halveth/",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/schuelervz-halveth/index.html",
+          "language": "de",
+          "role": "archive",
+          "sha256": "d64ec02a8ba821839730acc8c973ceabcfb868eb8f514a201df2906b30e168f1"
+        },
+        {
+          "path": "schuelervz-halveth/people.html",
+          "title": "schülerVZ // Menschen finden",
+          "live": "https://juri-halveth.github.io/schuelervz-halveth/people.html",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/schuelervz-halveth/people.html",
+          "language": "de",
+          "role": "archive",
+          "sha256": "ab1b813a2aaa8e8095baad1a81a35039dec1b42b55f37e42c6e1ca11e44a408f"
+        },
+        {
+          "path": "schuelervz-halveth/prestige.html",
+          "title": "schülerVZ // PRESTIGE FOUR",
+          "live": "https://juri-halveth.github.io/schuelervz-halveth/prestige.html",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/schuelervz-halveth/prestige.html",
+          "language": "de",
+          "role": "archive",
+          "sha256": "4df80cefa2e16c59a08786432e5a59bfb94061097603f5d60e523e05a72075e3"
+        },
+        {
+          "path": "werkzertifikate/index.html",
+          "title": "Juri Janovski / Juri Halveth / HALVETH – Private Werkzertifikate und GitHub-Belege",
+          "live": "https://juri-halveth.github.io/werkzertifikate/",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/werkzertifikate/index.html",
+          "language": "de",
+          "role": "evidence",
+          "sha256": "231c4629f06a62c0782b89f4c493f57807ae39ebc03e7c83821f9c612869adc3"
+        }
+      ]
+    },
+    {
+      "id": "fortuna",
+      "name": "fortuna",
+      "repository": "Juri-Halveth/fortuna",
+      "commit": "00a131f429320f3b4a493080d5ea2eb882adc8ba",
+      "live": "https://juri-halveth.github.io/fortuna/",
+      "title": {
+        "de": "FORTUNA · Möglichkeiten vergleichen",
+        "en": "FORTUNA · Compare options",
+        "ru": "FORTUNA · Сравнение вариантов"
+      },
+      "purpose": {
+        "de": "Öffne „Kollektiv /70“, trage eigene Möglichkeiten ein und wähle „Gemeinsam auswählen“. Die Seite zeigt die Eingaben, Gewichte und Einzelentscheidungen. Im Raum bewegen sich 69 regelgesteuerte Figuren; die Auswahl verwendet 70 Profile.",
+        "en": "Open “Collective /70”, enter options and choose “Select together”. The page shows inputs, weights and individual decisions. The room contains 69 rule-driven figures; the selection uses 70 profiles.",
+        "ru": "Откройте «Коллектив /70», введите варианты и нажмите «Выбрать вместе». Страница показывает входные данные, веса и решения профилей. В пространстве находятся 69 персонажей с заданными правилами; выбор использует 70 профилей."
+      },
+      "sources": [
+        {
+          "path": "docs/index.html",
+          "role": "Oberfläche / Interface / Интерфейс",
+          "commit": "00a131f429320f3b4a493080d5ea2eb882adc8ba",
+          "sha256": "4504bf4e87e9314fbcabbdff5235b93f3ae891461d1330fa0158853adf21feec",
+          "line": 1,
+          "lines": 25,
+          "url": "https://github.com/Juri-Halveth/fortuna/blob/00a131f429320f3b4a493080d5ea2eb882adc8ba/docs/index.html#L1"
+        },
+        {
+          "path": "docs/preview.mjs",
+          "role": "Szene / Scene / Сцена",
+          "commit": "00a131f429320f3b4a493080d5ea2eb882adc8ba",
+          "sha256": "446641aee929e9e97bb7c61ae2ab35f2b5f99ffb9f283e97706ac1a44d1d5f01",
+          "line": 1,
+          "lines": 77,
+          "url": "https://github.com/Juri-Halveth/fortuna/blob/00a131f429320f3b4a493080d5ea2eb882adc8ba/docs/preview.mjs#L1"
+        },
+        {
+          "path": "docs/curiosity.mjs",
+          "role": "Erkunden und Bewegung / Exploration and motion / Исследование и движение",
+          "commit": "00a131f429320f3b4a493080d5ea2eb882adc8ba",
+          "sha256": "54baf56e6df2e21c6acc2f6e55a98ce0eb2ab2ddbe9979b01dbaf844d7d277c8",
+          "line": 1,
+          "lines": 76,
+          "url": "https://github.com/Juri-Halveth/fortuna/blob/00a131f429320f3b4a493080d5ea2eb882adc8ba/docs/curiosity.mjs#L1"
+        },
+        {
+          "path": "docs/collective.mjs",
+          "role": "Berechnung / Calculation / Расчёт",
+          "commit": "00a131f429320f3b4a493080d5ea2eb882adc8ba",
+          "sha256": "dd504573d17a20273c2f89c84868aba927a59ef8e2840a109ce50c8e9c62f6ae",
+          "line": 1,
+          "lines": 71,
+          "url": "https://github.com/Juri-Halveth/fortuna/blob/00a131f429320f3b4a493080d5ea2eb882adc8ba/docs/collective.mjs#L1"
+        },
+        {
+          "path": "docs/collective-panel.mjs",
+          "role": "Eingaben und Ergebnisse / Inputs and results / Ввод и результаты",
+          "commit": "00a131f429320f3b4a493080d5ea2eb882adc8ba",
+          "sha256": "ba04e4b58d706717e9be462c617049a70e162a1ddcdac53b39405961a728581a",
+          "line": 1,
+          "lines": 71,
+          "url": "https://github.com/Juri-Halveth/fortuna/blob/00a131f429320f3b4a493080d5ea2eb882adc8ba/docs/collective-panel.mjs#L1"
+        },
+        {
+          "path": "docs/collective-members.json",
+          "role": "70 Profile / 70 profiles / 70 профилей",
+          "commit": "00a131f429320f3b4a493080d5ea2eb882adc8ba",
+          "sha256": "b4152a164736915236e1b140409e6c279d9395d3c92c462106e94301ac7226ba",
+          "line": 1,
+          "lines": 359,
+          "url": "https://github.com/Juri-Halveth/fortuna/blob/00a131f429320f3b4a493080d5ea2eb882adc8ba/docs/collective-members.json#L1"
+        },
+        {
+          "path": "docs/object.json",
+          "role": "Fundstück und Herkunft / Object and origin / Объект и происхождение",
+          "commit": "00a131f429320f3b4a493080d5ea2eb882adc8ba",
+          "sha256": "a96373bb1496c2b08860f0b227777cbdb0daa8f3742bc7c8790175bbcd71cd16",
+          "line": 1,
+          "lines": 44,
+          "url": "https://github.com/Juri-Halveth/fortuna/blob/00a131f429320f3b4a493080d5ea2eb882adc8ba/docs/object.json#L1"
+        },
+        {
+          "path": "docs/NOTICE.md",
+          "role": "Herkunft der übernommenen Komponenten / Component origin / Происхождение компонентов",
+          "commit": "00a131f429320f3b4a493080d5ea2eb882adc8ba",
+          "sha256": "ccefaa61566951bf1d8581131e520819e26d66c91a67c3deef2fc198ffb97056",
+          "line": 1,
+          "lines": 32,
+          "url": "https://github.com/Juri-Halveth/fortuna/blob/00a131f429320f3b4a493080d5ea2eb882adc8ba/docs/NOTICE.md#L1"
+        }
+      ],
+      "tests": [
+        {
+          "path": "docs/curiosity.test.mjs",
+          "role": "69 Figuren: Entdecken, Weiterbewegen und stabile Eingaben / 69 figures: discovery, continued movement and stable inputs / 69 фигур: исследование, продолжение движения и стабильные входные данные",
+          "commit": "00a131f429320f3b4a493080d5ea2eb882adc8ba",
+          "sha256": "47e302ef1a400e76a68d1ef35063c0ff6e94a7cf95cd076cd1754347c3fcf958",
+          "line": 1,
+          "lines": 50,
+          "url": "https://github.com/Juri-Halveth/fortuna/blob/00a131f429320f3b4a493080d5ea2eb882adc8ba/docs/curiosity.test.mjs#L1"
+        },
+        {
+          "path": "docs/collective.test.mjs",
+          "role": "Bewertungen, Gewichtung, Identitäten und offene Gleichstände / Votes, weights, identities and unresolved ties / Оценки, веса, идентичности и нерешённые ничьи",
+          "commit": "00a131f429320f3b4a493080d5ea2eb882adc8ba",
+          "sha256": "e7a8192ee851a6ad3724c25ed656c696cee9738f8f7226e89ea4f5484fcee3ac",
+          "line": 1,
+          "lines": 47,
+          "url": "https://github.com/Juri-Halveth/fortuna/blob/00a131f429320f3b4a493080d5ea2eb882adc8ba/docs/collective.test.mjs#L1"
+        }
+      ],
+      "command": "node --test docs/curiosity.test.mjs docs/collective.test.mjs",
+      "result": {
+        "de": "12 Modelltests bestanden: sieben Verhaltensprüfungen und fünf Prüfungen der gemeinsamen Auswahl. Zusätzlich drei lokale DOM-Prüfungen für Deutsch, Englisch und Russisch.",
+        "en": "12 model tests passed: seven behaviour checks and five collective-selection checks. Three additional local DOM checks covered German, English and Russian.",
+        "ru": "Пройдены 12 тестов модели: семь проверок поведения и пять проверок коллективного выбора. Ещё три локальные DOM-проверки охватывают немецкий, английский и русский языки."
+      },
+      "pages": [
+        {
+          "path": "docs/index.html",
+          "title": "FORTUNA - Fundstueck",
+          "live": "https://juri-halveth.github.io/fortuna/",
+          "code": "https://github.com/Juri-Halveth/fortuna/blob/00a131f429320f3b4a493080d5ea2eb882adc8ba/docs/index.html",
+          "language": "de",
+          "role": "tool",
+          "sha256": "4504bf4e87e9314fbcabbdff5235b93f3ae891461d1330fa0158853adf21feec"
+        }
+      ]
+    },
+    {
+      "id": "scarlet",
+      "name": "halveth-scarlet",
+      "repository": "Juri-Halveth/halveth-scarlet",
+      "commit": "a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3",
+      "live": "https://juri-halveth.github.io/halveth-scarlet/",
+      "title": {
+        "de": "Scarlet · Erde, Figuren und Quellen",
+        "en": "Scarlet · Earth, characters and sources",
+        "ru": "Scarlet · Земля, персонажи и источники"
+      },
+      "purpose": {
+        "de": "Der Browserzugang verbindet Erdansicht, Quellen, Figurenprofile und Forschungsseiten. Unter entities/ öffnet jeder Name sein eigenes Profil; der interaktive Figurenraum liegt im selben Verzeichnis.",
+        "en": "The browser entrance connects an Earth view, sources, character profiles and research pages. Under entities/, each name opens its own profile; the interactive character space is in the same directory.",
+        "ru": "Портал объединяет изображение Земли, источники, профили персонажей и исследовательские страницы. В entities/ каждое имя открывает свой профиль; там же находится интерактивное пространство персонажей."
+      },
+      "sources": [
+        {
+          "path": "index.html",
+          "role": "Portal / Portal / Портал",
+          "commit": "a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3",
+          "sha256": "68ce21f4a226f142e17b8bd51c16e15b54f5523d70b4222c51c72dbc56eb8f15",
+          "line": 1,
+          "lines": 186,
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/index.html#L1"
+        },
+        {
+          "path": "entities/index.html",
+          "role": "Figurenverzeichnis / Character directory / Каталог персонажей",
+          "commit": "a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3",
+          "sha256": "e3cafea7cf96d3aabe41b2e99fd05edb2b0b0f097dab36e9b64e52feb245ed47",
+          "line": 1,
+          "lines": 179,
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/index.html#L1"
+        },
+        {
+          "path": "assets/universe-data.js",
+          "role": "Namen und Profile / Names and profiles / Имена и профили",
+          "commit": "a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3",
+          "sha256": "194bea9dafff82ab2137ae03f98a27110b7c14a982af404dd5b416321978a34f",
+          "line": 1,
+          "lines": 2031,
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/assets/universe-data.js#L1"
+        },
+        {
+          "path": "assets/entity-world.mjs",
+          "role": "Figurenraum / Character space / Пространство персонажей",
+          "commit": "a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3",
+          "sha256": "0b8f55e1929c610b9496f6d23a278981cda5a2b4abc95350fcab3edd0b680c35",
+          "line": 1,
+          "lines": 174,
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/assets/entity-world.mjs#L1"
+        },
+        {
+          "path": "assets/entity-world-motion.mjs",
+          "role": "Laufwege und Zeitzustand / Paths and time state / Траектории и время",
+          "commit": "a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3",
+          "sha256": "3bec10840ca3db8bdadbb981583796adaa3e07db73e4360b9d22d49d82aee13c",
+          "line": 1,
+          "lines": 40,
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/assets/entity-world-motion.mjs#L1"
+        },
+        {
+          "path": "assets/entity-world-scene.mjs",
+          "role": "Darstellung der Szene / Scene rendering / Отображение сцены",
+          "commit": "a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3",
+          "sha256": "afc5ba54cf63df100ae68b25f982b7ba4c516c3e5cf983e79ae4287c794d8030",
+          "line": 1,
+          "lines": 248,
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/assets/entity-world-scene.mjs#L1"
+        },
+        {
+          "path": "tools/build_profiles.mjs",
+          "role": "Profilseiten erzeugen / Generate profiles / Генерация профилей",
+          "commit": "a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3",
+          "sha256": "8f1f9525f2cf4b3a63098b17ffb071015a0d90a5c8f33b6b53b5b15a20aad426",
+          "line": 1,
+          "lines": 87,
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/tools/build_profiles.mjs#L1"
+        },
+        {
+          "path": "tools/build_site.mjs",
+          "role": "Öffentlicher Seitenbau / Public site build / Сборка публичного сайта",
+          "commit": "a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3",
+          "sha256": "e3d5b8a8cc81355ba04e35083da9bf7f14e59de072828c7db5899a1514586c10",
+          "line": 1,
+          "lines": 36,
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/tools/build_site.mjs#L1"
+        },
+        {
+          "path": "tools/check_links.mjs",
+          "role": "Lokale Verweise prüfen / Check local references / Проверка локальных ссылок",
+          "commit": "a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3",
+          "sha256": "3df91be8124b9354cad5c364d9fa6021781bda98950e035ac0a881372058db31",
+          "line": 1,
+          "lines": 54,
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/tools/check_links.mjs#L1"
+        }
+      ],
+      "tests": [
+        {
+          "path": "tests/entity-roaming.test.cjs",
+          "role": "69 Laufwege, Beinbewegung und begrenztes Weltstreaming / 69 roaming paths, leg motion and bounded world streaming / 69 маршрутов, движение ног и ограниченная загрузка мира",
+          "commit": "a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3",
+          "sha256": "66c395c9e100afb3b97e0ae3266ba30e986ebdb8196584f813b8614daae76529",
+          "line": 1,
+          "lines": 93,
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/tests/entity-roaming.test.cjs#L1"
+        },
+        {
+          "path": "tests/entity-profiles.test.cjs",
+          "role": "Profilbau, getrennte IDs und genaue Herkunftslinks / Profile builds, distinct IDs and exact provenance links / Сборка профилей, отдельные ID и точные ссылки на происхождение",
+          "commit": "a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3",
+          "sha256": "ed35c936eda0c5b5d90d47f279873a97dabb9b8c2d8ed28950911ccb1ccca3c8",
+          "line": 1,
+          "lines": 97,
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/tests/entity-profiles.test.cjs#L1"
+        },
+        {
+          "path": "tests/entity-world.test.cjs",
+          "role": "Figurenverzeichnis, Suche und stabile Identitätszuordnung / Figure registry, search and stable identity mapping / Реестр фигур, поиск и стабильная привязка идентичностей",
+          "commit": "a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3",
+          "sha256": "1298954738f85f86eb41ab7795b7d0d314c95a301677b8e6e67fdf26fce6dfb9",
+          "line": 1,
+          "lines": 446,
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/tests/entity-world.test.cjs#L1"
+        },
+        {
+          "path": "tests/portal-shell.test.cjs",
+          "role": "Gemeinsame Seitenhülle, Metadaten und Layout / Shared page shell, metadata and layout / Общая оболочка страниц, метаданные и макет",
+          "commit": "a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3",
+          "sha256": "4c9e58de90a55d70a68575781e788275e07aa22cabc08482445e012b52ab0159",
+          "line": 1,
+          "lines": 132,
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/tests/portal-shell.test.cjs#L1"
+        },
+        {
+          "path": "tests/language-controls.test.cjs",
+          "role": "Russische Navigation, Profilsuche und Beschriftungen / Russian navigation, profile search and labels / Русская навигация, поиск профилей и подписи",
+          "commit": "a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3",
+          "sha256": "72305db5fa68b3fcbe82123846b794f458e1de6f415bf5aa13ac9f703aa43925",
+          "line": 1,
+          "lines": 55,
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/tests/language-controls.test.cjs#L1"
+        }
+      ],
+      "command": "node tools/build_site.mjs\nnode --test tests/*.test.cjs tests/*.test.mjs",
+      "result": {
+        "de": "86 HTML-Seiten gebaut und 1.844 lokale href/src/poster-Verweise geprüft. Anschließend 232 JavaScript-Tests bestanden. 86 ist eine Seitenzahl, 1.844 eine Zahl geprüfter Verweise und 232 eine Testzahl.",
+        "en": "86 HTML pages built and 1,844 local href/src/poster references checked. Then 232 JavaScript tests passed. These are three different measures: pages, checked references and tests.",
+        "ru": "Собраны 86 HTML-страниц и проверены 1 844 локальные ссылки href/src/poster. Затем пройдены 232 JavaScript-теста. Это три разных показателя: страницы, проверенные ссылки и тесты."
+      },
+      "pages": [
+        {
+          "path": "collage/index.html",
+          "title": "HALVETH · Choice Atelier",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/collage/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/collage/index.html",
+          "language": "de",
+          "role": "tool",
+          "sha256": "b8c3215f3bc52cc18865ab41b91157659b0e17dfdad51758d7238bf15f58a758"
+        },
+        {
+          "path": "entities/ali/index.html",
+          "title": "ALI · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/ali/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/ali/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "66b5d27051b584c1d83da2384badf8bada4f230f303ab9112ddf648efe661d9b"
+        },
+        {
+          "path": "entities/alyen/index.html",
+          "title": "ALYEN · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/alyen/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/alyen/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "868d9e05857740344cc3290d6a3c10991c13e2332c68ca6fda1066d42ee8deb1"
+        },
+        {
+          "path": "entities/anti/index.html",
+          "title": "ANTI · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/anti/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/anti/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "2c2ab9c7523684af9d0dc374a3c1a87bcac0d2005fcce00bafb79da530b7a334"
+        },
+        {
+          "path": "entities/aster-chain/index.html",
+          "title": "ASTER · CHAIN? · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/aster-chain/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/aster-chain/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "d65dc7da467d9fc4e37d82580b0badffa1adc4c08aed1c4dfd375312926b6cec"
+        },
+        {
+          "path": "entities/aster/index.html",
+          "title": "ASTER · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/aster/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/aster/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "4f74843aa6cccabf4960b44f5e982b5f58728a94f6defaade9d0886d44691157"
+        },
+        {
+          "path": "entities/brightcast-starlight/index.html",
+          "title": "BRIGHTCAST 001 · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/brightcast-starlight/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/brightcast-starlight/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "85abb671996630ace4cd3aec6960447769671ce6b2f2f4752eef654f7230abcd"
+        },
+        {
+          "path": "entities/celsius/index.html",
+          "title": "CELSIUS · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/celsius/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/celsius/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "65a48a1bb30db9a08bfa338ee9ac24b3efb240cc9bd5ca1390f84a80f8d94adb"
+        },
+        {
+          "path": "entities/choice-atelier/index.html",
+          "title": "CHOICE ATELIER · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/choice-atelier/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/choice-atelier/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "0b8fee848c11eb111a1fc1fe9166200d3926304fa4ac40879f5c8a1219536812"
+        },
+        {
+          "path": "entities/context-prism/index.html",
+          "title": "KONTEXT-PRISMA · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/context-prism/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/context-prism/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "0034c6b8b92db805332a9c3695778d3eb48dcb560ad020806ce71feb7976400b"
+        },
+        {
+          "path": "entities/dormammu/index.html",
+          "title": "DORMAMMU · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/dormammu/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/dormammu/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "5413d1b64504fe5b68235dd93d58a99bf88f30c699b1380b061ea623468c854a"
+        },
+        {
+          "path": "entities/ego/index.html",
+          "title": "EGO · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/ego/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/ego/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "e057ebb17ae40ff22785b7a4abd9c04a009789eacdfcf77977fd3e4035a5e427"
+        },
+        {
+          "path": "entities/elyr/index.html",
+          "title": "ELYR · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/elyr/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/elyr/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "8affbc71f5fe8787f665b00f15f1b0c581380fad25216ec055bfeb07e528854b"
+        },
+        {
+          "path": "entities/eve/index.html",
+          "title": "EVE · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/eve/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/eve/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "6f40b08cdb423e2d6ec32fee25b22493f5d1a7774dda590174b464c2b5bc4587"
+        },
+        {
+          "path": "entities/finn/index.html",
+          "title": "FINN · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/finn/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/finn/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "0521c53c59142fc8f79658f3b86b60b663c4edfe311e4bd373bd6f2585c58d07"
+        },
+        {
+          "path": "entities/gitcoin/index.html",
+          "title": "GITCOIN · GTC · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/gitcoin/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/gitcoin/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "976763a0b2354eeef9fee408da44c0809e4e1e52c0e4585c16571695f5961a5e"
+        },
+        {
+          "path": "entities/guardians/index.html",
+          "title": "GUARDIANS · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/guardians/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/guardians/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "6ca4b8982ceb422d410f0471d5daf93c0aa7790aabf34f08e33432213c2f75f0"
+        },
+        {
+          "path": "entities/halveth/index.html",
+          "title": "HALVETH · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/halveth/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/halveth/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "b32b4a6eea462f4d2748e24b48cfa8bb6b858a275753c103d27b4d68d588e570"
+        },
+        {
+          "path": "entities/index.html",
+          "title": "Die Konstellation · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/index.html",
+          "language": "de",
+          "role": "tool",
+          "sha256": "e3cafea7cf96d3aabe41b2e99fd05edb2b0b0f097dab36e9b64e52feb245ed47"
+        },
+        {
+          "path": "entities/infinity/index.html",
+          "title": "INFINITY · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/infinity/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/infinity/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "a20b91bde08282d4dc323a139afa4a6b5e3503bcdb88f45731f7d1f0c34e981b"
+        },
+        {
+          "path": "entities/ironman/index.html",
+          "title": "IRON MAN · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/ironman/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/ironman/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "8580c2733bfc34ddd8a76ff915029513e3ec7713f3298ce3038bb1fd12d65724"
+        },
+        {
+          "path": "entities/jan/index.html",
+          "title": "JAN · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/jan/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/jan/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "d6fb8390f40a5d9a2ac838be6da2b34d99d385e45c16296d9ca2a37d79218770"
+        },
+        {
+          "path": "entities/jarvis/index.html",
+          "title": "JARVIS · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/jarvis/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/jarvis/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "caceee161264ed2e37109a4a84355a7156feffcf2216ed3a419793d6c487fc81"
+        },
+        {
+          "path": "entities/juno/index.html",
+          "title": "JUNO · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/juno/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/juno/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "dc6a5e59a694a206f0f1b07dd239c4160d2651c0883554f7afc4d8fadac6088c"
+        },
+        {
+          "path": "entities/juri/index.html",
+          "title": "JURI · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/juri/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/juri/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "d1feedcd25b8e8197dadfc24c031e921b1a63441f69145f564c1d15e84235654"
+        },
+        {
+          "path": "entities/k/index.html",
+          "title": "K · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/k/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/k/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "6c00ef14b3e1c1c685c544a378ab00d618c06284ff91d2237c30c67ee65d7de2"
+        },
+        {
+          "path": "entities/koro/index.html",
+          "title": "KORO · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/koro/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/koro/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "c7165ed5b91f6264f34f780f453bf63dd753d485168f97c52e13558c6d558690"
+        },
+        {
+          "path": "entities/leo/index.html",
+          "title": "LEO · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/leo/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/leo/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "a0c93b4a073fa9c50f4cdaa4cbeac798f71589fd6788084e5d824d9478487df1"
+        },
+        {
+          "path": "entities/lia/index.html",
+          "title": "LIA · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/lia/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/lia/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "54066601f313a698d15bd0d7ff84a4310bb535398f63eeef752eae5a9b2306bf"
+        },
+        {
+          "path": "entities/lila/index.html",
+          "title": "LILA · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/lila/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/lila/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "256380448d156e40be133e5f773f22dec77b2e0ce8688477f3f38aca7ae5f97d"
+        },
+        {
+          "path": "entities/loki/index.html",
+          "title": "LOKI · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/loki/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/loki/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "4cc5b10f6a7aa6dfdaabbb4e686e7a3e3605253494cfa679c709c21255178725"
+        },
+        {
+          "path": "entities/lucifer/index.html",
+          "title": "LUCIFER · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/lucifer/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/lucifer/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "493be9bfc73971808acdac7a7740705782ba5156750e49500d5f6ab815948839"
+        },
+        {
+          "path": "entities/lucinet/index.html",
+          "title": "LUCINET · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/lucinet/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/lucinet/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "69881943ffac38fa5ae146ec8612e55a9e483bb55f57164ebfc9b05382990073"
+        },
+        {
+          "path": "entities/manta/index.html",
+          "title": "MANTA · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/manta/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/manta/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "7691e8f52cf423bb1c7db9f0312708e7f0bf2599c35a46bb2d233d5f2c2edd87"
+        },
+        {
+          "path": "entities/mara/index.html",
+          "title": "MARA · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/mara/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/mara/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "75801952f654c3ed17af92bf8a4ac527dc8ad78b6594c1d14a6995863b1c7aa2"
+        },
+        {
+          "path": "entities/mascha/index.html",
+          "title": "MASCHA · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/mascha/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/mascha/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "f85acdcb4bdc5b208c0a968f3d0729a9802b49e19de73cbf9119e77c342bf866"
+        },
+        {
+          "path": "entities/medusa/index.html",
+          "title": "MEDUSA · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/medusa/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/medusa/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "91437ba188be7db69076a083b5f03294e3577c7b3a851407fcec4e0c3ec86b25"
+        },
+        {
+          "path": "entities/mica/index.html",
+          "title": "MICA · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/mica/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/mica/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "5b2286afcc6cfe9bf3a142d73af745c38fc4c42c622e4cab4a33c16889f79ff8"
+        },
+        {
+          "path": "entities/mio/index.html",
+          "title": "MIO · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/mio/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/mio/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "64375e7648e76f343843ccccf60830e44e6c0f7bc04736becc4dc2d3537abb83"
+        },
+        {
+          "path": "entities/mira/index.html",
+          "title": "MIRA · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/mira/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/mira/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "9c8eb3000856604634f746c482801714b5b93899a608d5d96d75c8a4019ee47f"
+        },
+        {
+          "path": "entities/mita/index.html",
+          "title": "MITA · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/mita/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/mita/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "b293d980de5cdcdbb63bf64619f54fefa69258e0f0a1402f376c34817e72e6f5"
+        },
+        {
+          "path": "entities/nara/index.html",
+          "title": "NARA · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/nara/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/nara/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "450eb3060f461532c4337ce0a6bb8f03f17120c9b61220cf466ffc754a0acd53"
+        },
+        {
+          "path": "entities/niko/index.html",
+          "title": "NIKO · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/niko/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/niko/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "548e50dd554883891d589e2979e0b7aefe8d8b53e35426b50a34a8934fdeb30b"
+        },
+        {
+          "path": "entities/omi/index.html",
+          "title": "OMI · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/omi/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/omi/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "de97505d47c44ffbb4c64db48d71645712af4a07b06c38eadf5fe2e900c02074"
+        },
+        {
+          "path": "entities/patch/index.html",
+          "title": "PATCH · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/patch/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/patch/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "30197311637e20e8e89da72219d3495c0e2de56faa02f49fc71a70d2ba0ec481"
+        },
+        {
+          "path": "entities/peter/index.html",
+          "title": "PETER · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/peter/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/peter/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "bb52dbc811adb773d89ed4533d21b7349a4895401379ae4a75120ac4fe147758"
+        },
+        {
+          "path": "entities/pflanze/index.html",
+          "title": "PFLANZE · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/pflanze/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/pflanze/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "271f4fb881da89b749af77a52e2724ec60af524010adeb8157d229ecdbd5e550"
+        },
+        {
+          "path": "entities/pi-treffpunkte/index.html",
+          "title": "π-TREFFPUNKTE · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/pi-treffpunkte/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/pi-treffpunkte/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "172548157edc145c71c78e28e601c31debffb49e2fd917f48c0049ccb774ad5f"
+        },
+        {
+          "path": "entities/rachel/index.html",
+          "title": "RACHEL · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/rachel/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/rachel/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "fde0fda0489cdfa4d4b90418807b1a35c6667e248d73c18be830edcd748c3162"
+        },
+        {
+          "path": "entities/rosa/index.html",
+          "title": "ROSA · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/rosa/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/rosa/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "95c547074b7cb1555b79e9b99151b25de7b41f50b4735998d8b6ec51cf740314"
+        },
+        {
+          "path": "entities/rose/index.html",
+          "title": "ROSE · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/rose/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/rose/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "7a00e40aa21e7b8682a8bfee896cfd64158efb34321e934bd69c985d30a28021"
+        },
+        {
+          "path": "entities/rtx/index.html",
+          "title": "RTX · ? · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/rtx/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/rtx/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "5267e0e91f7e0d18971658387216003eb73784c9aa184b52c0c29be29f6a170a"
+        },
+        {
+          "path": "entities/sael/index.html",
+          "title": "SAEL · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/sael/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/sael/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "380fd165af975a1446aa66fd99bcbf875dbfc2c792c69d538d6127cc0acaf539"
+        },
+        {
+          "path": "entities/sara/index.html",
+          "title": "SARA · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/sara/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/sara/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "9e30c4db0fd406eaaa9ccbbc571f68c9686fcdcf6cc96bdc5bb247dcd89589a9"
+        },
+        {
+          "path": "entities/scarlet/index.html",
+          "title": "SCARLET · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/scarlet/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/scarlet/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "7f3ebfae85c2d5a1ca27cdd3af707e06d0e706b9bf1c4a17b0af411ce68ddd7d"
+        },
+        {
+          "path": "entities/schwamm/index.html",
+          "title": "SCHWAMM · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/schwamm/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/schwamm/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "87cb155010eb2101403a555d3f4b08a5e4210b5c4bc615d4b9bb9efb81b74e92"
+        },
+        {
+          "path": "entities/schwarm/index.html",
+          "title": "SCHWARM · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/schwarm/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/schwarm/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "5919086e6aa5db924978ded885abb4e0611bfc1d76beea3533ee9ef91947113a"
+        },
+        {
+          "path": "entities/sera/index.html",
+          "title": "SERA · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/sera/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/sera/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "d6b5b2e241658f8d906bb831f63a22b9b547b34dfb057992e4b50add452be49b"
+        },
+        {
+          "path": "entities/sina/index.html",
+          "title": "SINA · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/sina/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/sina/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "d92182bb0be6c9cfdd5c9af893676e5b5565a5ff6438aa74e52c44f0c5e4023b"
+        },
+        {
+          "path": "entities/strange/index.html",
+          "title": "DR STRANGE · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/strange/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/strange/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "914521e15a044c1b8786668c2a33fb09615ec0c59965abd9d6859eab1dca5dd2"
+        },
+        {
+          "path": "entities/tess/index.html",
+          "title": "TESS · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/tess/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/tess/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "bcca9d72659ced524d975dd65926f417cdf2eae6cbe44bda4a9ab2433ff02026"
+        },
+        {
+          "path": "entities/thor/index.html",
+          "title": "THOR · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/thor/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/thor/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "6c23c00bff31e35009d05c6813adfe5d010f9559d050f0699e626f666bd1e00d"
+        },
+        {
+          "path": "entities/timo/index.html",
+          "title": "TIMO · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/timo/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/timo/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "b15b59a61177e7a4d4faf6c33eaf2b5a9f8dde299f05db59eab5cd2fe39fa6b2"
+        },
+        {
+          "path": "entities/ultron/index.html",
+          "title": "ULTRON · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/ultron/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/ultron/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "8c7feb221959dde8143384d7af9a9c55c1ef0da04fd906cb31c6b44c8c8cb52f"
+        },
+        {
+          "path": "entities/vael/index.html",
+          "title": "VAEL · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/vael/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/vael/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "48c84e4ecb74e70e24e1df52df3271017089decb57afb41a92ab9695bde87ed0"
+        },
+        {
+          "path": "entities/venara/index.html",
+          "title": "VENARA · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/venara/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/venara/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "8eb8ce9c374ecd177cdb16dd83f9adbc944ffef51f313926e11d4e8ed123bed9"
+        },
+        {
+          "path": "entities/verachel/index.html",
+          "title": "VERACHEL · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/verachel/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/verachel/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "0a32b54f55468461545623a9998b7d581b7bc95505229c3ba8f0a2f34b1ca2c3"
+        },
+        {
+          "path": "entities/vision/index.html",
+          "title": "VISION · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/vision/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/vision/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "6e0597c5e6e8d49f5c196b966f860303269099e2524ad3f53bb688ff400e542e"
+        },
+        {
+          "path": "entities/widow/index.html",
+          "title": "BLACK WIDOW · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/widow/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/widow/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "e8eaf7a1abfb0e1b9fd5befc14e11a18a34dab0e21d1fa239de4f76a19d36202"
+        },
+        {
+          "path": "entities/yuri/index.html",
+          "title": "YURI · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/yuri/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/yuri/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "f3b40fa9d6cad3a42706668bdbd39bd809c1bb86c1d77008a09f259e29e7117a"
+        },
+        {
+          "path": "entities/zuendkerze/index.html",
+          "title": "ZÜNDKERZE · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/zuendkerze/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/zuendkerze/index.html",
+          "language": "de",
+          "role": "profile",
+          "sha256": "f527ed325026a30f58abf9f5c301f527dc45d04afb3ae3cdb047d24deaf4db62"
+        },
+        {
+          "path": "forschung/brightcast-starlight/index.html",
+          "title": "Starlight: Der dritte Weg · HALVETH Brightcast 001",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/forschung/brightcast-starlight/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/forschung/brightcast-starlight/index.html",
+          "language": "de",
+          "role": "research",
+          "sha256": "68c6b36669349da2a9b5068174f7e72f2510e82ebd12356850d982e84aaf3f6e"
+        },
+        {
+          "path": "forschung/de-anker-hela/index.html",
+          "title": "DE → KONTEXT-ANKER · Erinnerungsanker, dann Multiversum",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/forschung/de-anker-hela/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/forschung/de-anker-hela/index.html",
+          "language": "de",
+          "role": "research",
+          "sha256": "d5b3695e466ac2d76314805ca2c8005058626cc398250e00d871c27a731a0cb1"
+        },
+        {
+          "path": "forschung/figuren-und-perspektiven/index.html",
+          "title": "HALVETH · Was wäre, wenn jemand geblieben wäre?",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/forschung/figuren-und-perspektiven/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/forschung/figuren-und-perspektiven/index.html",
+          "language": "de",
+          "role": "research",
+          "sha256": "334b40a8112780ec0b0f2e4bb46a41274f8a20f2770826acf1e4df9b28c77e68"
+        },
+        {
+          "path": "forschung/formen-und-verbindungen/index.html",
+          "title": "Formen und Verbindungen · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/forschung/formen-und-verbindungen/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/forschung/formen-und-verbindungen/index.html",
+          "language": "de",
+          "role": "research",
+          "sha256": "b2fc3b3e1b5d673f97767aca3d5fed015e18283c5e1ee75c42989bc34c5e6b6f"
+        },
+        {
+          "path": "forschung/halveth-research/index.html",
+          "title": "HALVETH Research",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/forschung/halveth-research/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/forschung/halveth-research/index.html",
+          "language": "de",
+          "role": "research",
+          "sha256": "b32ced0632399aa94c44c7048a8e8901b65206fc1cce9f80ea6bed0d0901338d"
+        },
+        {
+          "path": "forschung/handschriftliche-konvergenzen/index.html",
+          "title": "Handschriftliche Konvergenzen · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/forschung/handschriftliche-konvergenzen/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/forschung/handschriftliche-konvergenzen/index.html",
+          "language": "de",
+          "role": "research",
+          "sha256": "e602940e2027a35553455f5b3e229b0a5b924baa24ff07ac7d48c3a3fb4412af"
+        },
+        {
+          "path": "forschung/pi-treffpunkte/index.html",
+          "title": "π-Treffpunkte · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/forschung/pi-treffpunkte/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/forschung/pi-treffpunkte/index.html",
+          "language": "de",
+          "role": "research",
+          "sha256": "fec7232b294ece3ff57cd56fbd7cf5404747c41a52ad3b4c766dc24b71b8163f"
+        },
+        {
+          "path": "forschung/q-notizen/index.html",
+          "title": "HALVETH · Q · 13.09.2026",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/forschung/q-notizen/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/forschung/q-notizen/index.html",
+          "language": "de",
+          "role": "research",
+          "sha256": "c2e0b94258ce5fff3c30b71956905781835e78c40a2660e8ad3c1d038556e3ed"
+        },
+        {
+          "path": "forschung/tagesstand-2026-09-13/index.html",
+          "title": "HALVETH · Tagesstand · 13. September 2026",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/forschung/tagesstand-2026-09-13/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/forschung/tagesstand-2026-09-13/index.html",
+          "language": "de",
+          "role": "research",
+          "sha256": "97355518a0e158db8f924fc9ee91c087f59a03d1b17ee0d37e336665093a6ed4"
+        },
+        {
+          "path": "forschung/transaktionsfluss/index.html",
+          "title": "HALVETH · Transaktionsfluss",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/forschung/transaktionsfluss/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/forschung/transaktionsfluss/index.html",
+          "language": "de",
+          "role": "research",
+          "sha256": "81ed861ae457ceb37fbeef439dcba32590c79d1abce4fd56ca0d38578a01c029"
+        },
+        {
+          "path": "forschung/usdai-sabr-kontext/index.html",
+          "title": "USDAI / SABR Kontext-Prisma · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/forschung/usdai-sabr-kontext/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/forschung/usdai-sabr-kontext/index.html",
+          "language": "de",
+          "role": "research",
+          "sha256": "4778c5938fc6055e2df19950da0f3c80fbfc399f52c83aa2a5e0df321836f557"
+        },
+        {
+          "path": "index.html",
+          "title": "HALVETH · Erde, Herzen & Scarlet Events",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/index.html",
+          "language": "de",
+          "role": "entrance",
+          "sha256": "68ce21f4a226f142e17b8bd51c16e15b54f5523d70b4222c51c72dbc56eb8f15"
+        },
+        {
+          "path": "news/index.html",
+          "title": "Quellen-News · HALVETH",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/news/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/news/index.html",
+          "language": "de",
+          "role": "tool",
+          "sha256": "22c60781d85738fb78dfdd3c9310cf30016af3a7c001948281e1fa3d66af8961"
+        },
+        {
+          "path": "room/index.html",
+          "title": "HALVETH · Raum der Spuren",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/room/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/room/index.html",
+          "language": "de",
+          "role": "tool",
+          "sha256": "7d07f4c8b0a60f7784c0c311c363cc83cda610ffb0b8ca847c462f0878985178"
+        },
+        {
+          "path": "snapshot/index.html",
+          "title": "HALVETH · Snapshot-Studio",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/snapshot/",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/snapshot/index.html",
+          "language": "de",
+          "role": "tool",
+          "sha256": "8bbdc5a761cb5130804aca3fbb06ee00e84beb845d0f00a085617cc028ce3d3b"
+        }
+      ]
+    },
+    {
+      "id": "learning",
+      "name": "lernstudio",
+      "repository": "Juri-Halveth/lernstudio",
+      "commit": "c7a6b1601a67b32596c003031aca878c9f92805d",
+      "live": "https://juri-halveth.github.io/lernstudio/",
+      "title": {
+        "de": "Lernstudio · Die Lernwelt",
+        "en": "Lernstudio · The learning world",
+        "ru": "Lernstudio · Обучение"
+      },
+      "purpose": {
+        "de": "Wähle einen Lernpfad und öffne eine Lektion. Aufgaben, individuelle Hinweise und Fortschritt gehören zur Lernoberfläche. curriculum.js trägt die gemeinsamen Inhalte und stabilen Lektionsadressen.",
+        "en": "Choose a learning track and open a lesson. Tasks, individual hints and progress belong to the learning interface. curriculum.js carries the shared content and stable lesson addresses.",
+        "ru": "Выберите учебный путь и откройте урок. Задания, индивидуальные подсказки и прогресс относятся к учебному интерфейсу. curriculum.js содержит общие материалы и постоянные адреса уроков."
+      },
+      "sources": [
+        {
+          "path": "index.html",
+          "role": "Einstieg / Entrance / Главная",
+          "commit": "c7a6b1601a67b32596c003031aca878c9f92805d",
+          "sha256": "fa507cabcc368cc740d099143ec4261c808f917f57e45b9801dd2e7de10d50b3",
+          "line": 1,
+          "lines": 6,
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/index.html#L1"
+        },
+        {
+          "path": "studio.html",
+          "role": "Lernoberfläche / Learning interface / Учебный интерфейс",
+          "commit": "c7a6b1601a67b32596c003031aca878c9f92805d",
+          "sha256": "17a3c87fe145061a1303f10fa417de6053a31ea2a4170518f06a9cba34c615db",
+          "line": 1,
+          "lines": 6,
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/studio.html#L1"
+        },
+        {
+          "path": "curriculum.js",
+          "role": "702 Lektionen / 702 lessons / 702 урока",
+          "commit": "c7a6b1601a67b32596c003031aca878c9f92805d",
+          "sha256": "6257b0970c0a8dacbc56b01691719e980c7c5bb4d2f2a0f1ed47db00c63db842",
+          "line": 1,
+          "lines": 7424,
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/curriculum.js#L1"
+        },
+        {
+          "path": "app.js",
+          "role": "Lektionsanzeige und Navigation / Lessons and navigation / Уроки и навигация",
+          "commit": "c7a6b1601a67b32596c003031aca878c9f92805d",
+          "sha256": "63229cf1bc4ee8771a99fde66e5d361ccfce5c67f24f5bbdbbd924eb8a34d6c8",
+          "line": 1,
+          "lines": 3528,
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/app.js#L1"
+        },
+        {
+          "path": "lesson-visuals.js",
+          "role": "Denkmodelle / Learning models / Учебные модели",
+          "commit": "c7a6b1601a67b32596c003031aca878c9f92805d",
+          "sha256": "aa72ced408d4f7094e711e0b8941353bf9aaee44f492023b99b1bebb0cfee63b",
+          "line": 1,
+          "lines": 479,
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/lesson-visuals.js#L1"
+        },
+        {
+          "path": "learning-profile.js",
+          "role": "Lokaler Fortschritt / Local progress / Локальный прогресс",
+          "commit": "c7a6b1601a67b32596c003031aca878c9f92805d",
+          "sha256": "b10751317265ea7781fd0b0c72d2def71ea58f89c8937268d369d2072a40bf0b",
+          "line": 1,
+          "lines": 124,
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/learning-profile.js#L1"
+        },
+        {
+          "path": "api/space.json",
+          "role": "Kompakter Inhaltszugang / Compact content entrance / Краткий доступ к материалам",
+          "commit": "c7a6b1601a67b32596c003031aca878c9f92805d",
+          "sha256": "d02c05a00458bb50a01ccff91080d50535df66a7521a2df352021e3c95a1b5dc",
+          "line": 1,
+          "lines": 1,
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/api/space.json#L1"
+        },
+        {
+          "path": "werkzeug/test.js",
+          "role": "Liste der 19 Prüfsuiten / List of 19 suites / Список 19 наборов проверок",
+          "commit": "c7a6b1601a67b32596c003031aca878c9f92805d",
+          "sha256": "7e5f31be4799d31a2c56764b0abd95566ef35d99cbb85db53123d4b6cc55c146",
+          "line": 1,
+          "lines": 7,
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/werkzeug/test.js#L1"
+        },
+        {
+          "path": "werkzeug/website-bauen.js",
+          "role": "Build und Export / Build and export / Сборка и экспорт",
+          "commit": "c7a6b1601a67b32596c003031aca878c9f92805d",
+          "sha256": "587e4f30725f24b1913e86aa6a8ef5685891fa996247cc6b79249c51095cf631",
+          "line": 1,
+          "lines": 38,
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/werkzeug/website-bauen.js#L1"
+        },
+        {
+          "path": "werkzeug/public-files.js",
+          "role": "105 freigegebene Dateien / 105 allowed files / 105 разрешённых файлов",
+          "commit": "c7a6b1601a67b32596c003031aca878c9f92805d",
+          "sha256": "335f80b4bb8b28e2df8d88693a6e5cc46f7ae4d7a2d8366868b9bea7e120b44c",
+          "line": 1,
+          "lines": 23,
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/werkzeug/public-files.js#L1"
+        }
+      ],
+      "tests": [
+        {
+          "path": "werkzeug/test-free-app.js",
+          "role": "Freier Zugang und lokale Browserabläufe / Free access and local browser flows / Свободный доступ и локальные сценарии браузера",
+          "commit": "c7a6b1601a67b32596c003031aca878c9f92805d",
+          "sha256": "543be7346a5c6c23679fa3d046b53b8fa1f8125f15f195688bc3e900011ea1ff",
+          "line": 1,
+          "lines": 133,
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/werkzeug/test-free-app.js#L1"
+        },
+        {
+          "path": "werkzeug/test-lesson-visuals.js",
+          "role": "Lektionsansichten und Darstellung der Inhalte / Lesson views and content presentation / Представления уроков и отображение содержания",
+          "commit": "c7a6b1601a67b32596c003031aca878c9f92805d",
+          "sha256": "a801bd7ac0b7955b044915a13b17d171ad3689a51751357a8e4758fbcf5fc4ae",
+          "line": 1,
+          "lines": 75,
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/werkzeug/test-lesson-visuals.js#L1"
+        },
+        {
+          "path": "werkzeug/test-universal-task-help.js",
+          "role": "Aufgabenhilfe und Hinweise im Lernablauf / Task help and hints in the learning flow / Помощь с заданиями и подсказки в обучении",
+          "commit": "c7a6b1601a67b32596c003031aca878c9f92805d",
+          "sha256": "09f050476f54f80e80f7877559faa9ab27242d7002404b6292b5e7653461e57b",
+          "line": 1,
+          "lines": 116,
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/werkzeug/test-universal-task-help.js#L1"
+        },
+        {
+          "path": "werkzeug/test-agent-space.cjs",
+          "role": "702 Lektionen: begrenzte Abfragen, Quellenbindung und Kontext / 702 lessons: bounded queries, source binding and context / 702 урока: ограниченные запросы, привязка источников и контекст",
+          "commit": "c7a6b1601a67b32596c003031aca878c9f92805d",
+          "sha256": "2c3b7f9407bbe830505100e93d65992588a71259aecdbafba3c3efef00af6fe5",
+          "line": 1,
+          "lines": 633,
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/werkzeug/test-agent-space.cjs#L1"
+        },
+        {
+          "path": "tests/hub-languages.test.cjs",
+          "role": "Deutsche, englische und russische Beschriftungen / German, English and Russian labels / Немецкие, английские и русские подписи",
+          "commit": "c7a6b1601a67b32596c003031aca878c9f92805d",
+          "sha256": "add43c11c6fc98e72b6d0f7d2c0339e6de6b4399f15da115ebc82bf58e848034",
+          "line": 1,
+          "lines": 44,
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/tests/hub-languages.test.cjs#L1"
+        }
+      ],
+      "command": "npm run build",
+      "result": {
+        "de": "19 Prüfsuiten erfolgreich durchlaufen; 702 Lektionen in 133 Stufen und 13 Lernpfaden geprüft; 105 öffentliche Dateien zusammengestellt. Die Lektionen entstehen aus Daten und benötigen jeweils keine eigene HTML-Datei.",
+        "en": "19 verification suites completed successfully; 702 lessons across 133 stages and 13 tracks checked; 105 public files assembled. Lessons are rendered from data and do not each require a separate HTML file.",
+        "ru": "Успешно выполнены 19 наборов проверок: 702 урока в 133 этапах и 13 учебных путях; подготовлены 105 публичных файлов. Уроки отображаются из данных, отдельный HTML-файл для каждого урока не требуется."
+      },
+      "pages": [
+        {
+          "path": "agb.html",
+          "title": "Nutzung des freien Lernstudios – Inhalte und Gemeinschaft",
+          "live": "https://juri-halveth.github.io/lernstudio/agb.html",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/agb.html",
+          "language": "de",
+          "role": "legal",
+          "sha256": "524640fd23e5fd65e5097c9c3e654e67c6076b10f92fbabe40737910046aaec3"
+        },
+        {
+          "path": "angebot.html",
+          "title": "Wissen gehört allen – die Idee hinter Lernstudio",
+          "live": "https://juri-halveth.github.io/lernstudio/angebot.html",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/angebot.html",
+          "language": "de",
+          "role": "learning",
+          "sha256": "eada6291f2d6d1cab91529d85ddf5377f558f6ae9693491ef94307940929617d"
+        },
+        {
+          "path": "community.html",
+          "title": "Lernstudio Gemeinschaft – gemeinsam Fragen weiterdenken",
+          "live": "https://juri-halveth.github.io/lernstudio/community.html",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/community.html",
+          "language": "de",
+          "role": "learning",
+          "sha256": "b7c8f56468c997415be6950c5954ba2b2a79ca5c68cbadcee8fd0bd9e0f402ca"
+        },
+        {
+          "path": "datenschutz.html",
+          "title": "Datenschutz – das freie Lernstudio und deine Daten",
+          "live": "https://juri-halveth.github.io/lernstudio/datenschutz.html",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/datenschutz.html",
+          "language": "de",
+          "role": "legal",
+          "sha256": "c1a318d8a175e1dff3d2d348107859f3ce39f7633d0485440576988eae4611a1"
+        },
+        {
+          "path": "eve.html",
+          "title": "EVE-Labor – Lernen, Wallets und nachvollziehbare Belohnungen",
+          "live": "https://juri-halveth.github.io/lernstudio/eve.html",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/eve.html",
+          "language": "de",
+          "role": "learning",
+          "sha256": "23ba56a043022cda20cb63d70ed2ffc774bb9e3ea6e7aadbae7738b96f59091a"
+        },
+        {
+          "path": "faq.html",
+          "title": "Häufige Fragen – kostenlos und selbstbestimmt lernen",
+          "live": "https://juri-halveth.github.io/lernstudio/faq.html",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/faq.html",
+          "language": "de",
+          "role": "learning",
+          "sha256": "8d406d251fad95248b49b6b3922fac3c646363d00fa2115d758d690aabce4107"
+        },
+        {
+          "path": "genie.html",
+          "title": "TIEFER: Wie prüfst du eine überzeugende Antwort?",
+          "live": "https://juri-halveth.github.io/lernstudio/genie.html",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/genie.html",
+          "language": "de",
+          "role": "learning",
+          "sha256": "ca0ec4422d9548770472a21f33f3a0a8535ece8f897c710166b42bf6035cecee"
+        },
+        {
+          "path": "impressum.html",
+          "title": "Impressum, Lernstudio",
+          "live": "https://juri-halveth.github.io/lernstudio/impressum.html",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/impressum.html",
+          "language": "de",
+          "role": "legal",
+          "sha256": "055c58a32a627731a7c88c946a3551c7d852b8b387b153a936f700999eff882f"
+        },
+        {
+          "path": "index.html",
+          "title": "Lernstudio – kostenlos lernen, entdecken und weiterdenken",
+          "live": "https://juri-halveth.github.io/lernstudio/",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/index.html",
+          "language": "de",
+          "role": "learning",
+          "sha256": "fa507cabcc368cc740d099143ec4261c808f917f57e45b9801dd2e7de10d50b3"
+        },
+        {
+          "path": "inhalte.html",
+          "title": "Lernstudio erleben: Wähle eine Frage und löse eine Aufgabe",
+          "live": "https://juri-halveth.github.io/lernstudio/inhalte.html",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/inhalte.html",
+          "language": "de",
+          "role": "learning",
+          "sha256": "d996f4f82975d244dbc8263691bea75eee932c51c7261972f2e78cb3882d99d2"
+        },
+        {
+          "path": "kontakt.html",
+          "title": "Kontakt zum Lernstudio – Fragen und frühere Verträge",
+          "live": "https://juri-halveth.github.io/lernstudio/kontakt.html",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/kontakt.html",
+          "language": "de",
+          "role": "legal",
+          "sha256": "8b3f3f2d1ee25e780b36451d0d037a898a5fa314ee6cba9894bf491df37b7051"
+        },
+        {
+          "path": "offline.html",
+          "title": "Lernstudio – Verbindung gerade nicht verfügbar",
+          "live": "https://juri-halveth.github.io/lernstudio/offline.html",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/offline.html",
+          "language": "de",
+          "role": "fallback",
+          "sha256": "19d7a953714b197086022f2fb4035f8e0592efa15b656492b360972013d17bec"
+        },
+        {
+          "path": "quellcode.html",
+          "title": "Offener Quellcode – Lernstudio verstehen und weiterentwickeln",
+          "live": "https://juri-halveth.github.io/lernstudio/quellcode.html",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/quellcode.html",
+          "language": "de",
+          "role": "learning",
+          "sha256": "a80d057239b90abb3a5b400bf31adf5aa2ab6c8c5fceee63c5214e8341fd33b2"
+        },
+        {
+          "path": "studio.html",
+          "title": "Dein Lernstudio – alle Lernpfade kostenlos entdecken",
+          "live": "https://juri-halveth.github.io/lernstudio/studio.html",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/studio.html",
+          "language": "de",
+          "role": "learning",
+          "sha256": "17a3c87fe145061a1303f10fa417de6053a31ea2a4170518f06a9cba34c615db"
+        },
+        {
+          "path": "widerruf.html",
+          "title": "Frühere Käufe – Kontakt und erhaltene Vertragsinformationen",
+          "live": "https://juri-halveth.github.io/lernstudio/widerruf.html",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/widerruf.html",
+          "language": "de",
+          "role": "legal",
+          "sha256": "469461fdb031c85eb1a491f29ac1ef45316f73e3735f7ea7f0d88523e4498981"
+        },
+        {
+          "path": "wissen-frage-x-wann-gehoert-wissen-dir.html",
+          "title": "Wann habe ich etwas wirklich verstanden? Einfach erklärt",
+          "live": "https://juri-halveth.github.io/lernstudio/wissen-frage-x-wann-gehoert-wissen-dir.html",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/wissen-frage-x-wann-gehoert-wissen-dir.html",
+          "language": "de",
+          "role": "learning",
+          "sha256": "edeb79153d80fb6dc842c325fffa094259a3f8a99d7ca589d48e1be94c8d703a"
+        },
+        {
+          "path": "wissen-ki-programmieren.html",
+          "title": "Lohnt sich Programmieren lernen noch, wenn KI den Code schreibt?",
+          "live": "https://juri-halveth.github.io/lernstudio/wissen-ki-programmieren.html",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/wissen-ki-programmieren.html",
+          "language": "de",
+          "role": "learning",
+          "sha256": "2f0f958495b9fe5eab22417abc6aae7ac3d71df401558be9fb0b5e8f2437fe6b"
+        },
+        {
+          "path": "wissen-lernen-jedes-alter-ausbildung-beruf.html",
+          "title": "Lernen in jedem Alter: 10 ehrliche Antworten für Anfänger",
+          "live": "https://juri-halveth.github.io/lernstudio/wissen-lernen-jedes-alter-ausbildung-beruf.html",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/wissen-lernen-jedes-alter-ausbildung-beruf.html",
+          "language": "de",
+          "role": "learning",
+          "sha256": "9301e5450ad948d3e289def4b65516088460d188cd418bc4f6f466a83357d960"
+        },
+        {
+          "path": "wissen-marketing-start.html",
+          "title": "Wo fange ich mit Marketing an? Vier Fragen, die es klären",
+          "live": "https://juri-halveth.github.io/lernstudio/wissen-marketing-start.html",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/wissen-marketing-start.html",
+          "language": "de",
+          "role": "learning",
+          "sha256": "dc4357391c0ab30f53c7c00dec61da48c97d279f892173bbd435c56a4a92e541"
+        },
+        {
+          "path": "wissen-studium-und-verstehen.html",
+          "title": "Warum ist Ausprobieren wichtig? Theorie praktisch verstehen",
+          "live": "https://juri-halveth.github.io/lernstudio/wissen-studium-und-verstehen.html",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/wissen-studium-und-verstehen.html",
+          "language": "de",
+          "role": "learning",
+          "sha256": "48e33dcaf0b370fc2dc6e077921e44880293eddded2371fbddadf13f183cc9fb"
+        },
+        {
+          "path": "wissen-verstehen-aber-nicht-anwenden.html",
+          "title": "Warum reicht Lesen allein nicht? Wissen anwenden lernen",
+          "live": "https://juri-halveth.github.io/lernstudio/wissen-verstehen-aber-nicht-anwenden.html",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/wissen-verstehen-aber-nicht-anwenden.html",
+          "language": "de",
+          "role": "learning",
+          "sha256": "c76519dbafc5c8dc03f52499d40ae16b23d1351ecbbee37255cc6585aba6d1e7"
+        },
+        {
+          "path": "wissen-zertifikate.html",
+          "title": "Warum ich mit Absicht keine Zertifikate ausstelle",
+          "live": "https://juri-halveth.github.io/lernstudio/wissen-zertifikate.html",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/wissen-zertifikate.html",
+          "language": "de",
+          "role": "learning",
+          "sha256": "5113310160f84c644ede71b366c809e21e7291895dfb886e53f572068660b484"
+        },
+        {
+          "path": "wissen.html",
+          "title": "Einfache Antworten über Lernen und Technik · Lernstudio",
+          "live": "https://juri-halveth.github.io/lernstudio/wissen.html",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/wissen.html",
+          "language": "de",
+          "role": "learning",
+          "sha256": "b9f8d7231670c79aae22c59df1ebe21010f7b8fc6fa2233a57920876e8559049"
+        }
+      ]
+    },
+    {
+      "id": "bash",
+      "name": "mein-lernportal",
+      "repository": "Juri-Halveth/mein-lernportal",
+      "commit": "d25bad31f480934d60f9ba6b85055ff7ffed78a0",
+      "live": "https://juri-halveth.github.io/mein-lernportal/",
+      "title": {
+        "de": "Bash Big Bang · Code ausprobieren",
+        "en": "Bash Big Bang · Try code",
+        "ru": "Bash Big Bang · Пробуем код"
+      },
+      "purpose": {
+        "de": "Der ergänzende Lernzugang verwendet dieselben 702 Lektionsadressen. Im Bereich big-bang/ führen 13 Themenbrücken zu Bash-Beispielen. Die 75 Rezepte zeigen Befehle und ihre erwartete Ausgabe.",
+        "en": "The additional learning entrance uses the same 702 lesson addresses. In big-bang/, 13 topic bridges lead to Bash examples. The 75 recipes show commands and their expected output.",
+        "ru": "Дополнительный учебный портал использует те же 702 адреса уроков. В big-bang/ 13 тематических связей ведут к примерам Bash. 75 рецептов показывают команды и ожидаемый вывод."
+      },
+      "sources": [
+        {
+          "path": "index.html",
+          "role": "Einstieg / Entrance / Главная",
+          "commit": "d25bad31f480934d60f9ba6b85055ff7ffed78a0",
+          "sha256": "a5bb81e6606716dea833377d5a0e69c914402e1fe7b2e2e35da7c08c2c9992e3",
+          "line": 1,
+          "lines": 40,
+          "url": "https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/index.html#L1"
+        },
+        {
+          "path": "studio.html",
+          "role": "Lektionszugang / Lesson entrance / Доступ к урокам",
+          "commit": "d25bad31f480934d60f9ba6b85055ff7ffed78a0",
+          "sha256": "e268bcd30575cd4a6903d6ae67d1e6b95bde4354e5b36e8edb8a40fa24c78dba",
+          "line": 1,
+          "lines": 39,
+          "url": "https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/studio.html#L1"
+        },
+        {
+          "path": "curriculum.js",
+          "role": "Gemeinsame Lektionen / Shared lessons / Общие уроки",
+          "commit": "d25bad31f480934d60f9ba6b85055ff7ffed78a0",
+          "sha256": "8c40f2071c6a2d67f91c6e759fe2c36de4877321e61001b51020376ffc693432",
+          "line": 1,
+          "lines": 7426,
+          "url": "https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/curriculum.js#L1"
+        },
+        {
+          "path": "big-bang/index.html",
+          "role": "Bash-Oberfläche / Bash interface / Интерфейс Bash",
+          "commit": "d25bad31f480934d60f9ba6b85055ff7ffed78a0",
+          "sha256": "ed04733799a44ed46e5798c4e09de52e62fcb1f42c162eea77aa49f25c943320",
+          "line": 1,
+          "lines": 1,
+          "url": "https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/big-bang/index.html#L1"
+        },
+        {
+          "path": "big-bang/app.js",
+          "role": "Themen und Beispiele anzeigen / Display topics and examples / Показ тем и примеров",
+          "commit": "d25bad31f480934d60f9ba6b85055ff7ffed78a0",
+          "sha256": "81b908a29e714c27df68ae109e848da787d50425b4c5636c3edcb410070d32c7",
+          "line": 1,
+          "lines": 18,
+          "url": "https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/big-bang/app.js#L1"
+        },
+        {
+          "path": "big-bang/catalog.json",
+          "role": "13 Brücken und 75 Rezepte / 13 bridges and 75 recipes / 13 связей и 75 рецептов",
+          "commit": "d25bad31f480934d60f9ba6b85055ff7ffed78a0",
+          "sha256": "ec0d49c640cd7b952695cd7a018543679ec504f6e453c3efcb153d6b70ca6365",
+          "line": 1,
+          "lines": 869,
+          "url": "https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/big-bang/catalog.json#L1"
+        },
+        {
+          "path": "package.json",
+          "role": "Prüfbefehle / Verification commands / Команды проверки",
+          "commit": "d25bad31f480934d60f9ba6b85055ff7ffed78a0",
+          "sha256": "92fb8a00cd776e4c4bea3cbbf0490e1d6ee9996b496e4a0bff2b147bab305d31",
+          "line": 1,
+          "lines": 14,
+          "url": "https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/package.json#L1"
+        }
+      ],
+      "tests": [
+        {
+          "path": "tests/portal.test.cjs",
+          "role": "13 Lernpfade, 133 Stufen, 702 IDs und lokaler Fortschritt / 13 tracks, 133 stages, 702 IDs and local progress / 13 путей, 133 уровня, 702 ID и локальный прогресс",
+          "commit": "d25bad31f480934d60f9ba6b85055ff7ffed78a0",
+          "sha256": "8a3af80df93f966ad94837cbda220677c81c63ed061ba08ed161f4f66cb589b1",
+          "line": 1,
+          "lines": 140,
+          "url": "https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/tests/portal.test.cjs#L1"
+        },
+        {
+          "path": "tests/hub-languages.test.cjs",
+          "role": "Deutsche, englische und russische Beschriftungen / German, English and Russian labels / Немецкие, английские и русские подписи",
+          "commit": "d25bad31f480934d60f9ba6b85055ff7ffed78a0",
+          "sha256": "add43c11c6fc98e72b6d0f7d2c0339e6de6b4399f15da115ebc82bf58e848034",
+          "line": 1,
+          "lines": 44,
+          "url": "https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/tests/hub-languages.test.cjs#L1"
+        },
+        {
+          "path": "tests/big-bang.cjs",
+          "role": "702 Quelllektionen, 13 Brücken und 75 isolierte Bash-/Git-Prüfungen / 702 source lessons, 13 bridges and 75 isolated Bash and Git checks / 702 исходных урока, 13 связей и 75 изолированных проверок Bash и Git",
+          "commit": "d25bad31f480934d60f9ba6b85055ff7ffed78a0",
+          "sha256": "7b10602f1d172f05586b2020ed0c78e0e549853c0771ebaea1998ca2930d851d",
+          "line": 1,
+          "lines": 2,
+          "url": "https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/tests/big-bang.cjs#L1"
+        }
+      ],
+      "command": "npm test\nnode tests/big-bang.cjs",
+      "result": {
+        "de": "Portalprüfung und drei Sprachtests bestanden. Zusätzlich 75 Bash/Git-Rezepte jeweils in einem temporären Verzeichnis ausgeführt und mit ihrer erwarteten Ausgabe verglichen.",
+        "en": "The portal check and three language tests passed. Additionally, 75 Bash/Git recipes ran in individual temporary directories and were compared with their expected output.",
+        "ru": "Пройдены проверка портала и три языковых теста. Ещё 75 рецептов Bash/Git выполнены в отдельных временных каталогах с проверкой ожидаемого вывода."
+      },
+      "pages": [
+        {
+          "path": "404.html",
+          "title": "Zurück ins Lernuniversum",
+          "live": "https://juri-halveth.github.io/mein-lernportal/404.html",
+          "code": "https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/404.html",
+          "language": "de",
+          "role": "fallback",
+          "sha256": "cceb3e5bbba0d267e2991c234a75db466236584161c8a662c622cc306c328b6f"
+        },
+        {
+          "path": "about.html",
+          "title": "Über das Portal – Mein Lernportal",
+          "live": "https://juri-halveth.github.io/mein-lernportal/about.html",
+          "code": "https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/about.html",
+          "language": "de",
+          "role": "legal",
+          "sha256": "0f5274828957ac8599e2eb13c3db98f9981b2eecfaf0fa20a830772eb61715a8"
+        },
+        {
+          "path": "ath/index.html",
+          "title": "ATH Ã‚Â· LEVIATH",
+          "live": "https://juri-halveth.github.io/mein-lernportal/ath/",
+          "code": "https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/ath/index.html",
+          "language": "de",
+          "role": "learning",
+          "sha256": "91bc1fef92a11f130292ab133c90bcaf1b3fa0bb216b14bdae1f5ac02d02422e"
+        },
+        {
+          "path": "big-bang/canonical.html",
+          "title": "BASH DICH DURCH · Lokale Werkstatt",
+          "live": "https://juri-halveth.github.io/mein-lernportal/big-bang/canonical.html",
+          "code": "https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/big-bang/canonical.html",
+          "language": "de",
+          "role": "learning",
+          "sha256": "53127084efe601a7cc6db6ec9ff62e6c5389de8de65243637121c3ec05d0bded"
+        },
+        {
+          "path": "big-bang/index.html",
+          "title": "BASH BIG BANG · Alle Themen, ein Lernraum",
+          "live": "https://juri-halveth.github.io/mein-lernportal/big-bang/",
+          "code": "https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/big-bang/index.html",
+          "language": "de",
+          "role": "learning",
+          "sha256": "ed04733799a44ed46e5798c4e09de52e62fcb1f42c162eea77aa49f25c943320"
+        },
+        {
+          "path": "index.html",
+          "title": "Mein Lernportal – 702 Lektionen, frei für alle",
+          "live": "https://juri-halveth.github.io/mein-lernportal/",
+          "code": "https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/index.html",
+          "language": "de",
+          "role": "learning",
+          "sha256": "a5bb81e6606716dea833377d5a0e69c914402e1fe7b2e2e35da7c08c2c9992e3"
+        },
+        {
+          "path": "privacy.html",
+          "title": "Privatsphäre – Mein Lernportal",
+          "live": "https://juri-halveth.github.io/mein-lernportal/privacy.html",
+          "code": "https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/privacy.html",
+          "language": "de",
+          "role": "legal",
+          "sha256": "6192d1022389bf761a4c2c8cb335a2855336835f6452830e013a232199d024e6"
+        },
+        {
+          "path": "studio.html",
+          "title": "Direkt lernen – Mein Lernportal",
+          "live": "https://juri-halveth.github.io/mein-lernportal/studio.html",
+          "code": "https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/studio.html",
+          "language": "de",
+          "role": "learning",
+          "sha256": "e268bcd30575cd4a6903d6ae67d1e6b95bde4354e5b36e8edb8a40fa24c78dba"
+        }
+      ]
+    }
+  ]
+}
