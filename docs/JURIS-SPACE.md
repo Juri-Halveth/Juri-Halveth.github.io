@@ -1,36 +1,40 @@
-# Juris Space: Bestand und Pflege
+# Themen, Quellen und Pflege
 
-Der Projektatlas ist eine datierte Ansicht des öffentlichen Bestands. Am 4. Oktober 2026 wurden 15 eigene öffentliche GitHub-Repositories und die beiden benannten Sites-Veröffentlichungen erfasst. Weitere, private oder künftig entstehende Projekte gehören erst nach einer eigenen Bestandsprüfung in diesen Datensatz.
+Der Stand vom 05.10.2026 verwandelt den bisherigen Projektatlas in eine thematische Landingpage. Die Reihenfolge lautet Forschung/Sicherheit, Grafik/Spiele, Lernen, Software/Ideen und Fähigkeiten/Nachweise. Der Zweck einer Arbeit steht im sichtbaren Titel; Projektnamen bleiben als Herkunft erhalten.
 
-## Öffentliche Quellen
+## Gebundener öffentlicher Bestand
 
-GitHub lieferte den Bestand über die authentisierte Eigentümerzuordnung (`affiliation=owner`). Der Datensatz enthält öffentliche Projektnamen, URLs, Standardbranches und eigene Beschreibungen. Die Sites-Veröffentlichungen wurden in der verbundenen Projektübersicht geprüft. Private Anhänge, lokale Dateipfade und Gesprächsexporte gehören nicht in diesen Atlas.
-
-| Einstieg | Gebundener Stand am Erfassungstag | Weiterer Weg |
+| Quelle | Umfang | Bindung |
 | --- | --- | --- |
-| [HALVETH Unreal](https://github.com/Juri-Halveth/halveth-unreal) | [Entwurfs-PR #1](https://github.com/Juri-Halveth/halveth-unreal/pull/1), offen | Figuren, Gang und Bodenkontakt im Spiel prüfen |
-| [Morrowind Genesis](https://github.com/Juri-Halveth/halveth-morrowind-genesis) | [Entwurfs-PR #5](https://github.com/Juri-Halveth/halveth-morrowind-genesis/pull/5), offen | Aktuelle Spielentwicklung und Quellbestand öffnen |
-| [Fortuna](https://github.com/Juri-Halveth/fortuna) | [PR #1](https://github.com/Juri-Halveth/fortuna/pull/1), zusammengeführt | Veröffentlichte Oberfläche und Bewertungsmodell prüfen |
-| [Scarlet auf GitHub](https://juri-halveth.github.io/halveth-scarlet/) | Eigener veröffentlichter GitHub-Stand | Figurenraum und Quellen öffnen |
-| [Scarlet Question auf Sites](https://halveth-scarlet-question.juri-janovski.chatgpt.site) | Veröffentlichte Version 12 | Den benannten Sites-Stand öffnen |
-| [Lernstudio auf Sites](https://lernstudio-wissen-fuer-alle.juri-janovski.chatgpt.site) | Veröffentlichte Version 3 | Den benannten Sites-Stand öffnen |
+| Eigene öffentliche Repositories | 15 | Eigentümerzuordnung und Metadaten zum Erfassungszeitpunkt |
+| Benannte Sites-Veröffentlichungen | 2 | Als Alternativzugänge derselben Forschungs- bzw. Lernwelt |
+| Forschungsdokumente | 66 | Alle `branches/*/README.md` und `reports/*.md` im erfassten, vollständigen Git-Baum |
+| Werkzertifikate | 11 | Historische Ausgabe vom 28.09.2026; eigene Dokumentation mit genanntem Prüfumfang |
+| Arbeitsfelder | 6 | Jeweils konkrete öffentliche Arbeitsproben bzw. Werkdokumentation |
 
-Die genaue Erfassungszeit steht in `data/juris-space.json`. Ein geöffneter Entwurf bleibt ein Entwurf, bis sein eigenes Repository die nächste Änderung tatsächlich übernimmt. Die Karten zeigen keine fortlaufend abgefragten Live-Zustände.
+Die Forschungsfassung ist `834352b21a2123137f55fbca22afbfda2be7c7fd`. Die tatsächlich gelesenen Rohtexte wurden mit Pfad, Blob-ID, SHA-256 und Bytezahl gebunden. Das öffentliche Register trägt die Erfassungszeit; die Links bleiben auf die gelesene Commitfassung gerichtet. Eine Berichtsauswahl wird dadurch nicht zum Nachweis sämtlicher privater Arbeiten der vergangenen Monate. Das Profil bezieht seine Aussagen auf die zugeordneten öffentlichen Artefakte.
 
-## Oberfläche
+`data/juris-space.json` bleibt die historische Adresszuordnung. `data/portfolio.json` ordnet diese Adressen verlustfrei den neuen Themen zu. Das Arbeitsverzeichnis faltet die drei Lernadressen in einen Lernwelt-Eintrag und die zwei Scarlet-Zugänge in einen Forschungsvisualisierungs-Eintrag. Alle 66 Forschungsdokumente erscheinen genau einmal.
 
-Fokusauswahl, Suche, Themenfilter, Deutsch/Englisch und Abendansicht verwenden ausschließlich lokale Skripte. Die Auswahl öffnet zunächst den Zusammenhang im selben Raum. Ein eigener Link führt zum Ziel. Gespeicherte Einstellungen tragen die Version 1; unbekannte Werte werden durch gültige Einstellungen ersetzt. Eine ungültige Projekt-ID im Datenmodell wird abgelehnt.
+## Oberfläche und Bewegung
 
-Die Oberfläche nutzt klare Tastaturfokusse, stabile Bedienelemente und eine ruhende SVG-Illustration. Nach einer Auswahl aus den verbundenen Wegen erhält die neue Fokusüberschrift den Tastaturfokus. Eine leere Suche lässt sich mit dem Rücksetzknopf vollständig öffnen. Das ist keine vollständige WCAG-Konformitätsbescheinigung.
+Die Landingpage verwendet statisches HTML für sämtliche Texte und Links. Systemschriften, klare Kapitel, erkennbare Tastaturfokusse und schmale Layouts halten die Oberfläche zugänglich. Der einzige Navigationscode löst frühere Projektadressen auf; es gibt keine gespeicherte Fokusauswahl oder Nutzungsverfolgung.
 
-Die Gestaltung berücksichtigt die [W3C-Erklärung zu interaktionsbedingter Animation](https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html) und die [W3C-Technik zu reduzierter Bewegung](https://www.w3.org/WAI/WCAG22/Techniques/css/C39). Der Standardzustand enthält keine laufenden Animationen.
+`motion-core.js` enthält neben der bestehenden Filmkomposition einen kontinuierlichen Artwork-Modus. Räumliche Formen behalten bei verschiedenen Seitenverhältnissen ihre Proportionen. Rotation, Verformung, Lichtbahnen und Glühen werden aus dem laufenden Zeitwert berechnet. `landing-motion.js` startet die sichtbaren Kompositionen automatisch, begrenzt die Pixeldichte und zeichnet höchstens 30 Bilder pro Sekunde. Verdeckte oder weit außerhalb der Ansicht liegende Kompositionen geben die Rechenzeit frei. Die Systemeinstellung für reduzierte Bewegung erhält eine beleuchtete ruhende Fassung. Ohne aktiven Renderer bleiben Texte und Links sichtbar und eine eigene Grafik hält den Bildbereich lesbar.
 
-## Daten ändern und veröffentlichen
+Die eigenständige Bewegungsstudie unter `/motion/` behält ihre experimentellen Zeitregler. Auf der Landingpage erscheint das Artwork unmittelbar und ohne diese Bedienelemente.
 
-1. Öffentliche Quellen und den konkreten Entwicklungsstand prüfen.
-2. `data/juris-space.json` mit Erfassungszeit, Quelle, gültiger ID, DE/EN-Texten und verbundenen Projekten aktualisieren.
-3. `bash SPACE.sh build` und `bash SPACE.sh check` ausführen.
-4. Die Oberfläche im Browser mit Tastatur und schmaler Ansicht prüfen.
-5. Die Änderung über einen Git-Commit und geprüften Pull Request auf `main` übernehmen; anschließend die veröffentlichte Seite kontrollieren.
+## Rückwege
 
-Die bestehenden Archiv-, Rechte- und Werkzertifikatdateien behalten ihre eigenen Quellen. `LICENSES.md` beschreibt den Lizenzumfang; verlinkte Projekte behalten ihre jeweils geltenden Rechte.
+Arbeitsverzeichnis, Profil und Fehlerseite verlinken zurück zum Ursprung und zum passenden Thema. Werkzertifikate, Bewegungsstudie und die sechs aktiven Archiv-/Medieneingänge tragen einen eigenen Rückweg. Die historische Rohüberlieferung wird dafür nicht umgeschrieben. Externe Quellen öffnen einen eigenen Tab, sodass der thematische Einstieg erhalten bleibt.
+
+## Änderungen durchführen
+
+1. Öffentliche Quelle, Zeitpunkt und behaupteten Arbeitsstand prüfen.
+2. Themen und Quellen in `data/portfolio.json` bzw. `data/public-sources.json` aktualisieren. Jede frühere Adresse bleibt genau einem Thema zugeordnet.
+3. Texte in `templates/index.html`, `tools/build-space.cjs` und den zugehörigen Gestaltungsdateien ändern.
+4. `bash SPACE.sh build` und `bash SPACE.sh check` ausführen. Der zweite Build muss dieselben Seiten erzeugen.
+5. Desktop- und Mobilansicht, sichtbare Bewegung, Browserfehler, Links und Rückwege prüfen.
+6. Über geprüften Commit und Pull Request veröffentlichen. Anschließend die Pages-Veröffentlichung und den tatsächlich ausgelieferten Inhalt im Browser prüfen.
+
+Lokale QA-Screenshots und Prüfprotokolle bleiben außerhalb der Veröffentlichung. Rechte und Lizenzumfang stehen in `LICENSES.md`; die verlinkten Projekte behalten ihre eigenen Freigaben.

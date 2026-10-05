@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="770" viewBox="0 0 760 770">
+<defs><radialGradient id="bg"><stop stop-color="#304c44"/><stop offset="1" stop-color="#142d27"/></radialGradient><linearGradient id="edge" x2="1" y2="1"><stop stop-color="#e4efa7"/><stop offset=".5" stop-color="#a5bf96"/><stop offset="1" stop-color="#597c70"/></linearGradient><path id="c" d="M379 184C472 132 593 208 592 299C592 362 673 390 629 469C584 551 469 568 411 613C351 659 255 590 225 530C202 483 132 453 140 383C149 307 227 299 258 249C285 205 330 211 379 184Z"/></defs>
+<path fill="url(#bg)" d="M0 0h760v770H0z"/>
+<g fill="none" stroke="url(#edge)" stroke-width="1.2">
+<use href="#c" opacity=".2" transform="translate(380 385) scale(1.25) translate(-380 -385)"/>
+<use href="#c" opacity=".35" transform="translate(380 385) scale(1.17) rotate(4) translate(-380 -385)"/>
+<use href="#c" opacity=".55" transform="translate(380 385) scale(1.08) rotate(9) translate(-380 -385)"/>
+<use href="#c" opacity=".8" transform="translate(380 385) rotate(14) translate(-380 -385)"/>
+<use href="#c" transform="translate(380 385) scale(.92) rotate(21) translate(-380 -385)"/>
+<use href="#c" transform="translate(380 385) scale(.84) rotate(29) translate(-380 -385)"/>
+<use href="#c" transform="translate(380 385) scale(.76) rotate(39) translate(-380 -385)"/>
+<use href="#c" transform="translate(380 385) scale(.68) rotate(50) translate(-380 -385)"/>
+<use href="#c" transform="translate(380 385) scale(.6) rotate(62) translate(-380 -385)"/>
+<use href="#c" transform="translate(380 385) scale(.52) rotate(74) translate(-380 -385)"/>
+<use href="#c" transform="translate(380 385) scale(.44) rotate(87) translate(-380 -385)"/>
+<use href="#c" transform="translate(380 385) scale(.36) rotate(101) translate(-380 -385)"/>
+<use href="#c" transform="translate(380 385) scale(.28) rotate(116) translate(-380 -385)"/>
+<use href="#c" transform="translate(380 385) scale(.2) rotate(132) translate(-380 -385)"/>
+</g><g fill="none" stroke="#d9e4b2" stroke-width=".7" opacity=".26"><path d="M83 611L657 185M75 184l592 427M380 89v583M87 385h585"/><circle cx="380" cy="385" r="284" stroke-dasharray="2 12"/></g>
+<g fill="#e9efc2"><circle cx="527" cy="276" r="4"/><circle cx="234" cy="493" r="3"/><circle cx="380" cy="385" r="5"/></g>
+<g fill="#d3ddc2" font-family="system-ui,sans-serif" font-size="12" letter-spacing="2"><text x="44" y="52">HALVETH / OPEN INQUIRY</text><text x="44" y="726">FRAGEN · FORMEN · VERBINDUNGEN</text><text x="637" y="52">01—05</text></g></svg>

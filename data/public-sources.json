@@ -1,0 +1,731 @@
+{
+  "schema": "halveth.public-portfolio-sources.v1",
+  "dataClass": "PUBLIC",
+  "recordedAt": "2026-10-05T11:14:23.983674+00:00",
+  "research": {
+    "repository": "Juri-Halveth/open-research-branches",
+    "commit": "834352b21a2123137f55fbca22afbfda2be7c7fd",
+    "committedAt": "2026-09-28T12:01:04Z",
+    "treeTruncated": false,
+    "selection": "Every top-level branches/*/README.md and reports/*.md in this bound Git tree",
+    "documents": [
+      {
+        "path": "branches/alice-media-referent-and-agency-audit/README.md",
+        "title": "Alice ist nicht nur eine",
+        "blobSha": "44cf0cac6af5b08aba2af0382d5ffd552025ea9f",
+        "contentSha256": "468a45a7f37232c9864a0214f79442b29d5a56bbc27244edf0e80bac78941487",
+        "bytes": 10305,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/alice-media-referent-and-agency-audit/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/aster-provenance-and-secret-garden/README.md",
+        "title": "ASTER ist nicht ASTAR",
+        "blobSha": "80cfd65e67af37bd6ae777644ac22e2288d8852c",
+        "contentSha256": "4016279dfdc56968cd2bad1fcf7e589dd7d1eba915b2631c2f82cc0320fcf9db",
+        "bytes": 10537,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/aster-provenance-and-secret-garden/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/binary-inquiry-loop/README.md",
+        "title": "Binary Inquiry Loop",
+        "blobSha": "a23ee2f160459884bd8fdd1de2931d3651c6a124",
+        "contentSha256": "775ec7408b2d98ae28a3cb36a93cc85cf035f32f4f1ac7beb2afd0b845c80abc",
+        "bytes": 3282,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/binary-inquiry-loop/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/bounded-knowledge-reuse-inventory/README.md",
+        "title": "Bounded Knowledge Reuse Inventory",
+        "blobSha": "6b6c75c6259053daa48e59c55f431119d56f1d6e",
+        "contentSha256": "5f5b3f44bd68f0abed3ce46819096a3219f706032e0dc5de60abbedd34ff368a",
+        "bytes": 3602,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/bounded-knowledge-reuse-inventory/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/browser-extension-claim-reassessment/README.md",
+        "title": "Browser Extension Claim Reassessment",
+        "blobSha": "bfaa6d11cf2b2deda7a80a147d96c3d5ed83d9ed",
+        "contentSha256": "a86e2905e35650d83882b43cd2180e15add64fb0638c5465f4f99d53e0e27923",
+        "bytes": 4820,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/browser-extension-claim-reassessment/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/deidentified-self-observation-protocol/README.md",
+        "title": "De-identified Self-Observation Protocol",
+        "blobSha": "c1ce0af9de7a50013e983370b8610ff0d2342ce5",
+        "contentSha256": "5a232e182e2e20154c84c983e9381117a8ae5f0028f89f3732b10f80b7ab2066",
+        "bytes": 2537,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/deidentified-self-observation-protocol/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/document-issue-reference-verifier/README.md",
+        "title": "Synthetic Document-Issue Reference Verifier",
+        "blobSha": "5428a8cba9a1d8031afe9538379fe62f3ba24b54",
+        "contentSha256": "a7b5f804cb1aef5161ee7c8c643579cd1a17804e2911e3c628a36f404c544f9b",
+        "bytes": 4768,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/document-issue-reference-verifier/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/document-scanner-crypto-modernization/README.md",
+        "title": "Document Scanner Cryptography Modernization",
+        "blobSha": "f5df9877abf96465ff59dbd7eef58d8ef7f2d2f6",
+        "contentSha256": "96ba79aaec1d8e4af11a294ae0a6ef3de0be338e41d0828f21edb5cf3374f8cd",
+        "bytes": 2494,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/document-scanner-crypto-modernization/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/fingertip-spark-esd-spacecraft-audit/README.md",
+        "title": "Fünkchen an den Fingerspitzen × ESD × Raumfahrtelektronik",
+        "blobSha": "b251ddd63cdc2014d708919c25dd5cd287c2b14a",
+        "contentSha256": "f160f47e9d76474384f36191142269b29d2d811bd0ad40a10faf01b8df6a833a",
+        "bytes": 5181,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/fingertip-spark-esd-spacecraft-audit/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/focus-kernel/README.md",
+        "title": "Focus Kernel Research",
+        "blobSha": "1f8377862149ae9cc17927d0ff47264010f61b92",
+        "contentSha256": "3bafc0e9ba992ece64051678d259d54ec47137a9fae6ed48ae1bc486f76c5bd1",
+        "bytes": 3068,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/focus-kernel/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/historical-cipher-decoding-challenge/README.md",
+        "title": "111 · Historical Cipher Decoding Challenge",
+        "blobSha": "5909ec23e8ef08d0e05d236de7d425e5db90dc47",
+        "contentSha256": "694587d6297233ee406be1747dc45b8c141c9d06a75913c491829ad21d740b53",
+        "bytes": 5170,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/historical-cipher-decoding-challenge/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/navier-stokes-credit-value-and-plagiarism-audit/README.md",
+        "title": "Navier–Stokes: Beweis, Priorität, Plagiat und die Million",
+        "blobSha": "aea67686c8b95823a396fefd676ed32714cfb87f",
+        "contentSha256": "abe68a97f64400564cbaf5b9bb8e3a0774bc01901f61690ea815cf3705249dea",
+        "bytes": 14569,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/navier-stokes-credit-value-and-plagiarism-audit/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/nuclear-legacy-disarmament-and-public-value/README.md",
+        "title": "Atomwaffen Macht und Geld",
+        "blobSha": "614260fb163e29cf4b2abd9e54975785be2cae1a",
+        "contentSha256": "449fcfa8bd772f87d9b99bfc53e1e8d55a819a236918e9f3a0179874ac196907",
+        "bytes": 4521,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/nuclear-legacy-disarmament-and-public-value/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/pixel-region-change-observer/README.md",
+        "title": "Pixel Region Change Observer",
+        "blobSha": "5e04e2f3da14420592dd8c52f6be9e273c3a08cb",
+        "contentSha256": "17d3b60c4c90c45e5ae474020b14adddb73bb637d8ec1d017ab7f824e6f4fed8",
+        "bytes": 3815,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/pixel-region-change-observer/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/plant-observation-protocol/README.md",
+        "title": "Plant Observation Protocol",
+        "blobSha": "43ddcb5530820879ddb8e5ea5d3f1f51b2669b63",
+        "contentSha256": "6ea7414d3e828ff065e4f7f90a7896fa9cc5dfba37d6ba6997dd689225d0342a",
+        "bytes": 2385,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/plant-observation-protocol/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/priority-evidence-and-regress-audit/README.md",
+        "title": "Priority, evidence and regress audit",
+        "blobSha": "1f6749a2434437581549573f228415a8799079f6",
+        "contentSha256": "954bce2f2781d32834d7023264764952028384e2ce594ef85e234bb6ded96e18",
+        "bytes": 5405,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/priority-evidence-and-regress-audit/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/public-authority-entry-listening-room/README.md",
+        "title": "Geburtsraum-Prinzip für Behördeneingänge",
+        "blobSha": "893231fdb579e663713d1a7406c28c3796e26b2d",
+        "contentSha256": "8437d0f04383c9fed506837c606cf7e53bc693787c50cd7ad359937bc6d8b7fa",
+        "bytes": 15613,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/public-authority-entry-listening-room/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/quantum-internet-aster-mirror-audit/README.md",
+        "title": "MADE IN GERMANY · 2026",
+        "blobSha": "54c5e1d302b51ff072b81170f2f23be19208b91f",
+        "contentSha256": "b905e18395c2381e0109ca3b0f797a76a1aff04bc55498f33b25599f0c56cd2f",
+        "bytes": 5127,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/quantum-internet-aster-mirror-audit/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/russia-ukraine-information-and-peace-audit/README.md",
+        "title": "Was los?. — Informations- und Friedensaudit zum Russland-Ukraine-Krieg",
+        "blobSha": "c06f02535f378dd3b0771cbd6689d66ff7485315",
+        "contentSha256": "d7858a100ee0891a101e69aca88606e61f6f34dcd6ef58ad686c1a3cbe62fc66",
+        "bytes": 30777,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/russia-ukraine-information-and-peace-audit/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/solar-and-thermal-provenance-audit/README.md",
+        "title": "Modell von HALVETH!!!, KIT-Tri-Generation und Standard Thermal",
+        "blobSha": "ffbdb3d86fa3aa03fd535bd833c4e90b4372e0b5",
+        "contentSha256": "aa9a4ec7f4e416c535dbd9949889788a27be4fff08a4180950b54e89b490fe1d",
+        "bytes": 4512,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/solar-and-thermal-provenance-audit/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/staking-unbonding-transparency-review/README.md",
+        "title": "Staking verstehen: Bindung, Ausstieg und Transparenz",
+        "blobSha": "779c2f1c0761ba9ffc802f55955db5ebdeba226a",
+        "contentSha256": "dd1baa7dbc8042a77808eeb97cf6f76576124817ffc93f68d770495de78dec14",
+        "bytes": 2234,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/staking-unbonding-transparency-review/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/starlight-third-route-brightcast/README.md",
+        "title": "Starlight and the Third Route · HALVETH Brightcast 001",
+        "blobSha": "e46b354c37459505e807cb1303dfe7b74129b4ed",
+        "contentSha256": "20c775e6064c2536995e927192994a8da6e3f742e0f82abea827a2bbc436b8ed",
+        "bytes": 3757,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/starlight-third-route-brightcast/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/steam-coins-wallet-and-leak-audit/README.md",
+        "title": "Steam Coins, Wallet und der gemeldete Achievement-Leak",
+        "blobSha": "d20e46285f0e77d81540a18f4c1abd6639a21016",
+        "contentSha256": "31b51191d57f2869e310d9904103c8f6878732c9e8ffc7a32ea74f4b42871a37",
+        "bytes": 17364,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/steam-coins-wallet-and-leak-audit/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/visual-interpretation-boundary/README.md",
+        "title": "Visual Interpretation Boundary",
+        "blobSha": "c3eed9b4018bd5bb18f9b77dd9e9d34c8fafd638",
+        "contentSha256": "e5d623ced3284bf8debd04f3dd8f9aa7ff78f1bc6379500430ae4db3f2aa2705",
+        "bytes": 2176,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/visual-interpretation-boundary/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/wanen-walkyries-one-map-spectrum-audit/README.md",
+        "title": "Wanen, Walküren, Φ(s)=1 und Spektren",
+        "blobSha": "908ceb04b50d91992473c79de49624d8ac58029b",
+        "contentSha256": "d81c8994ac0e2aeb01fe6de273dc86866de264a5e0076b97ac9d5cd58ac665d0",
+        "bytes": 6358,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/wanen-walkyries-one-map-spectrum-audit/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/water-photonic-open-questions/README.md",
+        "title": "Water and Photonics Open Questions",
+        "blobSha": "eed5da7900367940a9977b70d8f8bd1f403ab535",
+        "contentSha256": "f828c7dae2f117d94619dab3acd32309f9af9bd8f3fc6ff3be604a809752bc6c",
+        "bytes": 2570,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/water-photonic-open-questions/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/wax-crayon-peace-helmet-audit/README.md",
+        "title": "Wax-Crayon Peace Helmet",
+        "blobSha": "3f7cf7044bb5151ff5a4eaec150f356f5c7e7ca0",
+        "contentSha256": "878a3ab9dd514a4778deb865cec490a0d55b4e63c0d8f2e68f68f5828a2f7621",
+        "bytes": 26163,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/wax-crayon-peace-helmet-audit/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/xxxlutz-porta-takeover-and-employee-participation-audit/README.md",
+        "title": "XXXLutz, porta und die Beschäftigten",
+        "blobSha": "b3e0f199590aa072b479b48df711d0f457d76ab0",
+        "contentSha256": "48e4089b95a4b1b50ea7283be620ce16a45f6eef2850ee848fe5627efa75032c",
+        "bytes": 20638,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/xxxlutz-porta-takeover-and-employee-participation-audit/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "branches/youtube-usdai-sabr-context-prism/README.md",
+        "title": "YouTube USDAI/SABR Context Prism",
+        "blobSha": "ec6e5e3927ff78464eb7e21cd55a63d467e76ed8",
+        "contentSha256": "b0213d27c90cde33c1e0a4bac64818186b97cece36ec0dc8d55259037c61f25d",
+        "bytes": 2982,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/youtube-usdai-sabr-context-prism/README.md",
+        "kind": "branch"
+      },
+      {
+        "path": "reports/ATOMIC_LEGAL_READINESS_2026-09-19.md",
+        "title": "Atomic Legal Lens: vorhandener Kern und offene Verbindung",
+        "blobSha": "d30d6e2b5352c5f2b0096847607eccf5435d0139",
+        "contentSha256": "ba81cb593315620e4dd3c9be85383c24e75d72c99b9d55a49b86385fb713c9e6",
+        "bytes": 4212,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/ATOMIC_LEGAL_READINESS_2026-09-19.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/FREE_NEWS_001_IOS_MARKER_AND_401_EDGE.md",
+        "title": "FREE NEWS 001 — iOS-Markierung und vorübergehende 401-Kante",
+        "blobSha": "ac527d09343ae3b2d2226ed0baa560bf54c44a70",
+        "contentSha256": "9bba159fcd28fa6aa46466df04cd571fbd0180be009a42bcfd349b558ff51e43",
+        "bytes": 4280,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/FREE_NEWS_001_IOS_MARKER_AND_401_EDGE.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/FREE_NEWS_002_REACHER_S4E7_DIGITAL_REFOCUS.md",
+        "title": "FREE NEWS 002 — Reacher S4E7: Nachfokussieren ist nicht Neuerfinden",
+        "blobSha": "87ffa6b276cd6e45c8c610401c48b0a1d86e5093",
+        "contentSha256": "133fbbf162ffa02b84552522dd56ab2abd566e9d0ac51fc2d3c1e162b0386ee0",
+        "bytes": 5288,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/FREE_NEWS_002_REACHER_S4E7_DIGITAL_REFOCUS.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/FREE_NEWS_003_CHILD_CONSENT_AND_IRREVERSIBLE_INTERVENTION.md",
+        "title": "FREE NEWS 003 — Wer entscheidet über einen irreversiblen Eingriff am Kind?",
+        "blobSha": "d2125e714465f4ea6eb3b63a8847b2ff0f60c2d8",
+        "contentSha256": "28bfd0c57a40e60016a7d781716583af1325694f909ad79ca6202ddcfde92775",
+        "bytes": 6789,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/FREE_NEWS_003_CHILD_CONSENT_AND_IRREVERSIBLE_INTERVENTION.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/FREE_NEWS_004_CONSENT_COCKPIT_234_INACTIVE_VENDORS.md",
+        "title": "FREE NEWS 004 — Das Consent-Raumschiff mit 234 als inaktiv angezeigten Anbieterzeilen",
+        "blobSha": "91092f69d7f78601cbe79adfdaae058c950b0b6b",
+        "contentSha256": "aec98987c5d3007a74f7234b7c9477f24527d18a89e22d463e3f8a41fe5e76f5",
+        "bytes": 5012,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/FREE_NEWS_004_CONSENT_COCKPIT_234_INACTIVE_VENDORS.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/FREE_NEWS_005_HOW_TO_FISH_IDENTITY_AND_CREATION.md",
+        "title": "FREE NEWS 005 — How to Fish: Leib, Wohl und offene Schöpfungsprovenienz",
+        "blobSha": "02ba5f6f137c22c5c7f353d4e8e88c74d2f4dffb",
+        "contentSha256": "68f697eb9333470ac88c07a67f621447fb906df340c0efc8de0a7d513a9dbff9",
+        "bytes": 9891,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/FREE_NEWS_005_HOW_TO_FISH_IDENTITY_AND_CREATION.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/FREE_NEWS_006_JURI_ENERGY_MODEL_PROVENANCE_AUDIT.md",
+        "title": "FREE NEWS 006 — Was Juri gemacht hat",
+        "blobSha": "9c3bad720ae5d7d2364319f852b1774eeca94c60",
+        "contentSha256": "d5d9e31530622319d96a4c9b27ea0c3b6e9c35ea5ae7b2d4008393edbc771764",
+        "bytes": 9948,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/FREE_NEWS_006_JURI_ENERGY_MODEL_PROVENANCE_AUDIT.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/FREE_NEWS_007_RAVE_GROUP_RULE_AND_CANNABIS_SCOPE.md",
+        "title": "FREE NEWS 007 — Was bedeutet „keine Drogen“?",
+        "blobSha": "0cc278c65f84e50906acd3d36d549489d67fe471",
+        "contentSha256": "7f37337ed718f2bdc5e22ebc50521e3a5cd33450b58b595ab145f1448b05ea17",
+        "bytes": 6618,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/FREE_NEWS_007_RAVE_GROUP_RULE_AND_CANNABIS_SCOPE.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/FREE_NEWS_008_WAX_CRAYON_PEACE_HELMET_AND_IOS_MARKER.md",
+        "title": "FREE NEWS 008 — Der Wachsmalstift-Friedenshelm",
+        "blobSha": "e20be7355331e164ef23b88595bb86cfde83604e",
+        "contentSha256": "f82d24429bdec0d1d321e5f87495414ed9d0461e1e0cfa836da8918924041c38",
+        "bytes": 8182,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/FREE_NEWS_008_WAX_CRAYON_PEACE_HELMET_AND_IOS_MARKER.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/FREE_NEWS_009_GITHUB_CONTRIBUTION_GRAPH_AND_PRIORITY.md",
+        "title": "FREE NEWS 009 — Was bedeuten GitHub-Contributions?",
+        "blobSha": "6611df901255b489242774b3d2e87ea81785e76d",
+        "contentSha256": "cc456097e6a409ddd26c4e87281485cc5127ec9b1513c65f9ead24dfa7b9244a",
+        "bytes": 10567,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/FREE_NEWS_009_GITHUB_CONTRIBUTION_GRAPH_AND_PRIORITY.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/FREE_NEWS_010_MADE_IN_GERMANY_QUANTUM_INTERNET_ASTER_ASTAR_ASTRA.md",
+        "title": "FREE NEWS 010 — MADE IN GERMANY · 2026",
+        "blobSha": "196325824fdec4cb52fd71cac88db0f5b7085d7d",
+        "contentSha256": "b495b7281641c4e2c1cf7949dcef8c4cfa07fdf24763e3bc5dfabf7a2855c778",
+        "bytes": 10415,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/FREE_NEWS_010_MADE_IN_GERMANY_QUANTUM_INTERNET_ASTER_ASTAR_ASTRA.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/FREE_NEWS_011_HISTORICAL_CIPHER_111_DECODING_CHALLENGE.md",
+        "title": "FREE NEWS 011 — JURI 111 GEHEIMSCHRIFT-CHALLENGE",
+        "blobSha": "ac91220d7e30c26648a7fbbf65c16c5bd7a7c39b",
+        "contentSha256": "5b02ecabc97e5435c27395d18bc22dc73b2e0539470021e5ea0eccb20ce908e8",
+        "bytes": 5514,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/FREE_NEWS_011_HISTORICAL_CIPHER_111_DECODING_CHALLENGE.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/FREE_NEWS_012_ALICE_MEDIA_REFERENT_AND_AGENCY_AUDIT.md",
+        "title": "FREE NEWS 012 — ALICE IST NICHT NUR EINE",
+        "blobSha": "9894538d8484423c8e0171935566d514103ff5f6",
+        "contentSha256": "2ca2b44691a271a2711fcf83128edb77afc0b1fa88c726cd6381cd0d716d3d03",
+        "bytes": 18394,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/FREE_NEWS_012_ALICE_MEDIA_REFERENT_AND_AGENCY_AUDIT.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/FREE_NEWS_013_RECIPROCAL_EVIDENCE_AND_INFORMATION_ASYMMETRY.md",
+        "title": "FREE NEWS 013 — Wer besitzt den Beweis?",
+        "blobSha": "57322fc5124e28ee832e58fb03826674cf9405e9",
+        "contentSha256": "94105132fd0e98838ed3fe1e22d319db10a9232b22e717f85a3de2f4b6167fd0",
+        "bytes": 12701,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/FREE_NEWS_013_RECIPROCAL_EVIDENCE_AND_INFORMATION_ASYMMETRY.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/FREE_NEWS_014_FINGERTIP_SPARK_ESD_AND_SPACECRAFT_BRIDGE.md",
+        "title": "FREE NEWS 014 — Fünkchen an den Fingerspitzen",
+        "blobSha": "fd3e4e001f0c240ac84dff372c4a68719d9a3fe5",
+        "contentSha256": "6dd43d8c3e1723603bac2d35e358a2ecc88c7fd2d939e187ef04d46479e8154c",
+        "bytes": 7609,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/FREE_NEWS_014_FINGERTIP_SPARK_ESD_AND_SPACECRAFT_BRIDGE.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/FREE_NEWS_015_PRIORITY_EVIDENCE_AND_REGRESS_ROUTES.md",
+        "title": "FREE NEWS 015 — Was beweist „Ich war zuerst“?",
+        "blobSha": "e71add6c846d096c7fc293812a273f6fd790e9b4",
+        "contentSha256": "7afc50fa7217cf1b1f59cc436e09e380b5e7303853a66268a8f4b073f4a4b40e",
+        "bytes": 16904,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/FREE_NEWS_015_PRIORITY_EVIDENCE_AND_REGRESS_ROUTES.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/FREE_NEWS_016_PUBLIC_GITHUB_PROJECT_CONSTELLATION.md",
+        "title": "FREE NEWS 016 — Juris öffentliche GitHub-Projektkonstellation",
+        "blobSha": "be1834a01c12cd215cab2dd6fee197e8c3270086",
+        "contentSha256": "129ae8f7f9f3dd582d906427223e95ee1e407ad74edaae27ac0b38936d594441",
+        "bytes": 5448,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/FREE_NEWS_016_PUBLIC_GITHUB_PROJECT_CONSTELLATION.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/FREE_NEWS_017_CE_BARCODES_HTTPS_500_AND_SNAPSHOT_MARKERS.md",
+        "title": "FREE NEWS 017 — CE, Strichcodes, HTTPS, HTTP 500 und Snapshot-Marker",
+        "blobSha": "84911e9127688447836eeddff6e9974b4e362b96",
+        "contentSha256": "77760530d3b623bb85bca10aaf26e16dba505614f5f8e7e44405e43b07dc3c4e",
+        "bytes": 5763,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/FREE_NEWS_017_CE_BARCODES_HTTPS_500_AND_SNAPSHOT_MARKERS.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/FREE_NEWS_018_PUBLIC_AUTHORITY_ENTRY_LISTENING_ROOM.md",
+        "title": "FREE NEWS 018 — Nicht nur Security am Eingang",
+        "blobSha": "96bc8a67157e00d0f213652400c8a99c7a226426",
+        "contentSha256": "5ca5b8c793c88f32dfb8bd3502f35a87adc92df61f6de2f9fb850bf2b2f29bb9",
+        "bytes": 8570,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/FREE_NEWS_018_PUBLIC_AUTHORITY_ENTRY_LISTENING_ROOM.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/FREE_NEWS_019_XXXLUTZ_PORTA_TAKEOVER_AND_EMPLOYEE_PARTICIPATION.md",
+        "title": "FREE NEWS 019",
+        "blobSha": "c368199db1e7cd963cf7680a0fd6bee5411dc932",
+        "contentSha256": "57360867cdc94eaf850cf1a3763915e646ac814872ed701c0d207bac87383fdd",
+        "bytes": 4105,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/FREE_NEWS_019_XXXLUTZ_PORTA_TAKEOVER_AND_EMPLOYEE_PARTICIPATION.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/FREE_NEWS_020_STEAM_COINS_WALLET_AND_LEAK_AUDIT.md",
+        "title": "FREE NEWS 020 — Steam Coins, Wallet und der gemeldete Leak",
+        "blobSha": "c01525c745ba93006fb461895f2ddd14c98ef8dc",
+        "contentSha256": "45eb27bedefd0f3377701c8d0864e1ea7ee532d4e5e1bef8c6db41f2b2705f16",
+        "bytes": 2424,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/FREE_NEWS_020_STEAM_COINS_WALLET_AND_LEAK_AUDIT.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/FREE_NEWS_021_STAKING_UNBONDING_AND_TRANSPARENCY.md",
+        "title": "FREE NEWS 021 · 21 Tage bis zur Verfügbarkeit: Staking verständlich erklären",
+        "blobSha": "c6a2a3bdd0ce8e2335a580e62b7e686181b82962",
+        "contentSha256": "ad64795862851b998671226090d0f4a4fdb583213723bb8d8f37ee8d41bb8183",
+        "bytes": 8776,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/FREE_NEWS_021_STAKING_UNBONDING_AND_TRANSPARENCY.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/FREE_NEWS_022_NUCLEAR_LEGACY_POWER_AND_PUBLIC_VALUE.md",
+        "title": "Atomwaffen Macht und Geld",
+        "blobSha": "9a3a6db23ac188d224fb247acac97e04970ac14e",
+        "contentSha256": "d10cbaf2c59b052c43aaaf83e36df77e0ecc87aed8318c88354e627a474b8681",
+        "bytes": 46970,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/FREE_NEWS_022_NUCLEAR_LEGACY_POWER_AND_PUBLIC_VALUE.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/FREE_NEWS_023_ANDREA_BOTEZ_SOS_SOURCE_AUDIT.md",
+        "title": "HALVETH Quellenprüfung: Andrea Botez, „S.O.S.“ und die ersten 20 Sekunden",
+        "blobSha": "4504828f72f7f2ac701082124a1f1403140a4ddc",
+        "contentSha256": "564e1d89044e3b5f2963315b24d9d9d9ef555f1efa899599a3cb62a80c860e48",
+        "bytes": 14351,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/FREE_NEWS_023_ANDREA_BOTEZ_SOS_SOURCE_AUDIT.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/FREE_NEWS_024_SCREENSHOT_SURFACE_AND_VIDEO_ID_AUDIT.md",
+        "title": "FREE NEWS 024 · Screenshot, Oberfläche und Video-ID",
+        "blobSha": "52d78704b2502b1e97deca4c96a557fd68c023d9",
+        "contentSha256": "bc33c194b522c058c1d3e280ea311130c5784ecb62efdd3e22f36a11f66dd61a",
+        "bytes": 7034,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/FREE_NEWS_024_SCREENSHOT_SURFACE_AND_VIDEO_ID_AUDIT.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/FREE_NEWS_025_HALVETH_ALL_SCALES_APERTURE_2026-09-15.md",
+        "title": "FREE NEWS 025 · HALVETH All-Scales Aperture",
+        "blobSha": "3cab251d5149528fc80337bd59d8df3204cf5047",
+        "contentSha256": "859aad4904acd738b823fefd5926bfc43b5823cf26f34565fd3965650c9fba33",
+        "bytes": 7530,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/FREE_NEWS_025_HALVETH_ALL_SCALES_APERTURE_2026-09-15.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/HALVETH_300KB_DEEP_RESEARCH_RIGHTS.md",
+        "title": "HALVETH 300 KB - authorship and rights record",
+        "blobSha": "bba98df48c5080fb4eca0ef5ddfdc6cb7b10a06f",
+        "contentSha256": "a7a25796ee1e65d5a32644d6508d041cf8db6a2adc9061d938dcc124bdd51a5f",
+        "bytes": 1142,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/HALVETH_300KB_DEEP_RESEARCH_RIGHTS.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/HALVETH_MARVEL_PERSPECTIVES.de.md",
+        "title": "Loki, Dormammu und Wanda",
+        "blobSha": "a343f47679313cdc2588aeb6c1c4ae740b7e9e2c",
+        "contentSha256": "ab0ae19d84085c7fe15468de47f38d1d338d22b324c58ff7d38ea1f2cde83922",
+        "bytes": 10285,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/HALVETH_MARVEL_PERSPECTIVES.de.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/HALVETH_MARVEL_PERSPECTIVES.en.md",
+        "title": "Loki Dormammu and Wanda",
+        "blobSha": "6b44bfb589d7e9a6669074765d65ad88f2a3b6e1",
+        "contentSha256": "e74fca892a6c8fc469bd26bdb056690a0468863d318e68722ec0c0f8607cc288",
+        "bytes": 9006,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/HALVETH_MARVEL_PERSPECTIVES.en.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/HALVETH_RESEARCH_2026-09-18.md",
+        "title": "HALVETH Research",
+        "blobSha": "81ec1f3084618bacd336472100402efc670a0970",
+        "contentSha256": "965ee06e6aa601d563fe5fa619cda7d4dd99f0bcf30d623a5098497cc3ef69d2",
+        "bytes": 4550,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/HALVETH_RESEARCH_2026-09-18.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/MAC_OUI_REGISTRY_BOUNDARY.md",
+        "title": "MAC/OUI registry boundary: a prefix is not a device",
+        "blobSha": "ff9a6c78234316720bd1df035c6795764f9eb299",
+        "contentSha256": "7ca697eed520e6c31446d23c9847385ca1e71163125df2de1db3109368fe3ca3",
+        "bytes": 6726,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/MAC_OUI_REGISTRY_BOUNDARY.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/MICROSOFT_PKI_REPOSITORY_PATTERN.md",
+        "title": "Microsoft PKI Repository: public trust records without public write authority",
+        "blobSha": "4942f62d0b3cb6d8ac1740744f71e0653b5cbef1",
+        "contentSha256": "91969317ac5647d50731a059c95b72243cc1e0a20713b82d20414386b8161d91",
+        "bytes": 8900,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/MICROSOFT_PKI_REPOSITORY_PATTERN.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/PROJECT_IDEAS_REVIEW_2026-09-19.md",
+        "title": "HALVETH: Was fehlt zwischen Idee, Prototyp und öffentlichem Projekt?",
+        "blobSha": "83b71dc7b913bc0fa168e1e7afe4148fbb51cce8",
+        "contentSha256": "c5ac37ee19c37697d22ef09ccfa6faf3d487c83625eee454c550ecae14303339",
+        "bytes": 5159,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/PROJECT_IDEAS_REVIEW_2026-09-19.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/PROJECT_NAME_BINDING_2026-09-19.md",
+        "title": "Neue Namen definieren: Solstheim und das Projektsymbol SOL",
+        "blobSha": "ad40198cf81fe36c9a0ade29d87d6ad5724ed49e",
+        "contentSha256": "72be95aefda20285bf57bd03eb2e7e2e4638346ba03777066c439e0bc2a2e0f3",
+        "bytes": 6278,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/PROJECT_NAME_BINDING_2026-09-19.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/README.md",
+        "title": "Release artifacts",
+        "blobSha": "7b03a7627112ea193a72a1a39c21fcee16a3fc09",
+        "contentSha256": "02f7669370b30bd7b238aeaae07b700b72379ed1c38c9076799835e27b65ce1e",
+        "bytes": 8338,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/README.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/TECHNOLOGY_ROADMAP_2026-09-19.md",
+        "title": "HALVETH · Technologie-Roadmap",
+        "blobSha": "26091a499a4b779c5fec08c6dfffc33353e51a8c",
+        "contentSha256": "7cdc953a2b2e51be9070b61728f7fc891dbb135f662d8d3336a4274df7ba3e39",
+        "bytes": 9930,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/TECHNOLOGY_ROADMAP_2026-09-19.md",
+        "kind": "report"
+      },
+      {
+        "path": "reports/WIFI6_STANDARD_AND_CONNECTION_2026-09-19.md",
+        "title": "Wi-Fi 6: Standard, Gerätefähigkeit und aktuelle Verbindung",
+        "blobSha": "db1c94832e506fbafb6f9077c2698a06a9a2aebe",
+        "contentSha256": "bbfb769abbe3ad5ecc737ccc1baa230ac15bb93470a060ca2f40e4447d277952",
+        "bytes": 6881,
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/834352b21a2123137f55fbca22afbfda2be7c7fd/reports/WIFI6_STANDARD_AND_CONNECTION_2026-09-19.md",
+        "kind": "report"
+      }
+    ]
+  },
+  "repositories": [
+    {
+      "name": "halveth-scarlet",
+      "html_url": "https://github.com/Juri-Halveth/halveth-scarlet",
+      "default_branch": "main",
+      "description": "HALVETH SCARLET — interactive Earth, daily ring and sourced research notes",
+      "pushed_at": "2026-10-05T07:06:24Z",
+      "created_at": "2026-09-11T21:35:19Z"
+    },
+    {
+      "name": "Juri-Halveth.github.io",
+      "html_url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io",
+      "default_branch": "main",
+      "description": null,
+      "pushed_at": "2026-10-04T23:38:35Z",
+      "created_at": "2026-09-16T14:14:14Z"
+    },
+    {
+      "name": "halveth-morrowind-genesis",
+      "html_url": "https://github.com/Juri-Halveth/halveth-morrowind-genesis",
+      "default_branch": "codex/public-release",
+      "description": "OpenMW companion with local NPC dialogue, character memory, native F8 tools and original Scarlet LOVE art. MIT code; CC0 banner.",
+      "pushed_at": "2026-10-03T17:21:31Z",
+      "created_at": "2026-09-23T01:25:35Z"
+    },
+    {
+      "name": "fortuna",
+      "html_url": "https://github.com/Juri-Halveth/fortuna",
+      "default_branch": "main",
+      "description": "FORTUNA Desktop: lokale Fenstersteuerung, transparente Bewertung und ein erkundbares Weltobjekt.",
+      "pushed_at": "2026-10-03T14:54:44Z",
+      "created_at": "2026-10-02T19:31:47Z"
+    },
+    {
+      "name": "mein-lernportal",
+      "html_url": "https://github.com/Juri-Halveth/mein-lernportal",
+      "default_branch": "main",
+      "description": "702 freie Lektionen ohne Konto, Paywall oder Werbung.",
+      "pushed_at": "2026-10-03T00:21:07Z",
+      "created_at": "2026-09-16T20:45:41Z"
+    },
+    {
+      "name": "lernstudio",
+      "html_url": "https://github.com/Juri-Halveth/lernstudio",
+      "default_branch": "main",
+      "description": "Kostenlos KI, Programmieren, Mathe und Marketing lernen. E-Mail-Konten, synchronisierter Fortschritt und offener Quellcode.",
+      "pushed_at": "2026-10-02T12:28:16Z",
+      "created_at": "2026-09-08T10:47:47Z"
+    },
+    {
+      "name": "admon395-public-safe-evidence-kit",
+      "html_url": "https://github.com/Juri-Halveth/admon395-public-safe-evidence-kit",
+      "default_branch": "master",
+      "description": "Public-safe ADMON395 evidence and reading kit",
+      "pushed_at": "2026-10-01T00:13:20Z",
+      "created_at": "2026-09-30T23:59:25Z"
+    },
+    {
+      "name": "halveth-xai-40m-proposal",
+      "html_url": "https://github.com/Juri-Halveth/halveth-xai-40m-proposal",
+      "default_branch": "main",
+      "description": "Public, non-binding USD 40M HALVETH bounded collaboration proposal for xAI or an authorized Musk-affiliated entity.",
+      "pushed_at": "2026-09-28T12:00:53Z",
+      "created_at": "2026-09-14T18:48:59Z"
+    },
+    {
+      "name": "halveth-realms",
+      "html_url": "https://github.com/Juri-Halveth/halveth-realms",
+      "default_branch": "codex/scarlet-garden",
+      "description": "Scarlet Garden: an original offline-first fantasy sandbox with local NPC dialogue, seeded worlds and shared exploration. MIT licensed.",
+      "pushed_at": "2026-09-28T12:00:41Z",
+      "created_at": "2026-09-18T23:49:52Z"
+    },
+    {
+      "name": "halveth-unreal",
+      "html_url": "https://github.com/Juri-Halveth/halveth-unreal",
+      "default_branch": "codex/knowledge-crafting-0.2",
+      "description": "HALVETH Portal Garden: original native Unreal Engine 5.8 C++ portal worlds, LOVE magic and a reproducible Windows preview. MIT project code.",
+      "pushed_at": "2026-10-04T22:04:07Z",
+      "created_at": "2026-09-23T01:49:20Z"
+    },
+    {
+      "name": "halveth-project0-keeper",
+      "html_url": "https://github.com/Juri-Halveth/halveth-project0-keeper",
+      "default_branch": "main",
+      "description": "HALVETH autonomous Project 0 receivership keeper for Solana",
+      "pushed_at": "2026-09-29T21:21:56Z",
+      "created_at": "2026-09-21T11:10:20Z"
+    },
+    {
+      "name": "Juri-Halveth",
+      "html_url": "https://github.com/Juri-Halveth/Juri-Halveth",
+      "default_branch": "main",
+      "description": "Juri Janovski / Juri Halveth – HALVETH VERACHEL STUDIOS: dokumentierte Projekte und private Werkzertifikate",
+      "pushed_at": "2026-09-29T17:47:06Z",
+      "created_at": "2026-09-28T12:00:31Z"
+    },
+    {
+      "name": "open-research-branches",
+      "html_url": "https://github.com/Juri-Halveth/open-research-branches",
+      "default_branch": "main",
+      "description": "HALVETH! · Open Research: Themenwiki, Code, Thesen, Quellen und offene Diskussionen.",
+      "pushed_at": "2026-10-01T12:43:22Z",
+      "created_at": "2026-09-09T14:54:31Z"
+    },
+    {
+      "name": "juri-janovski-these-zur-geburt",
+      "html_url": "https://github.com/Juri-Halveth/juri-janovski-these-zur-geburt",
+      "default_branch": "main",
+      "description": "Öffentliche Forschungsfrage zu einer selbstbestimmten, ruhigen und klinisch sicheren Geburtsumgebung.",
+      "pushed_at": "2026-09-28T12:00:55Z",
+      "created_at": "2026-09-09T13:45:00Z"
+    },
+    {
+      "name": "halveth-tresor",
+      "html_url": "https://github.com/Juri-Halveth/halveth-tresor",
+      "default_branch": "main",
+      "description": null,
+      "pushed_at": "2026-09-28T12:00:47Z",
+      "created_at": "2026-07-10T18:17:42Z"
+    }
+  ],
+  "coverage": "Public repository metadata and selected research document byte streams. Private cases, private messages, unpublished reports, full code trees and third-party certification claims are outside this public inventory."
+}
