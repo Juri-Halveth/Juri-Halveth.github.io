@@ -14,17 +14,17 @@ GitHub: https://github.com/Juri-Halveth
 
 Подтверждение: [Обзор открытых источников расширений браузера](https://github.com/Juri-Halveth/open-research-branches/tree/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/browser-extension-claim-reassessment)
 
-### Получения и воспроизводимость
+### Подтверждающие материалы и воспроизводимость
 
 Соберите вместе статусы источников, хэши файлов, временные ссылки и читаемые пакеты квитанций.
 
-Подтверждение: [Пакет публичных доказательств с чек-скриптами](https://github.com/Juri-Halveth/admon395-public-safe-evidence-kit)
+Подтверждение: [Публичный пакет подтверждающих материалов со скриптами проверки](https://github.com/Juri-Halveth/admon395-public-safe-evidence-kit)
 
 ### Интеграция программного обеспечения и тестирование
 
 Документы Python, JavaScript и портативный C++ работают через тесты и потоки сборки.
 
-Подтверждение: [Сертификаты работы для интеграции и проверки источников C++](https://juri-halveth.github.io/werkzertifikate/#werk-halveth-unreal)
+Подтверждение: [Свидетельства о работах по интеграции и проверке исходного кода C++](https://juri-halveth.github.io/werkzertifikate/#werk-halveth-unreal)
 
 ### Графика и движение
 

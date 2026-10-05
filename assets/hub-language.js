@@ -20,12 +20,21 @@
   const trimmed=value.trim();if(!trimmed)return value;
   let translated=t(trimmed);
   if(translated===trimmed){
-   const count=trimmed.match(/^(\d[\d.,]*)\s+(.+)$/);
-   if(count&&t(count[2])!==count[2])translated=count[1]+' '+t(count[2]);
-   else{
-    const colon=trimmed.indexOf(': ');
-    if(colon>0&&t(trimmed.slice(0,colon))!==trimmed.slice(0,colon))translated=t(trimmed.slice(0,colon))+trimmed.slice(colon);
-   }
+   const piece=part=>{
+    const key=part.trim(),exact=t(key);if(exact!==key)return part.replace(key,exact);
+    const decorated=key.match(/^([^\p{L}\p{N}]+)(.+)$/u);
+    if(decorated&&t(decorated[2])!==decorated[2])return part.replace(key,decorated[1]+t(decorated[2]));
+    const punctuation=key.match(/^(.+?)([.!?…])$/u);
+    if(punctuation&&t(punctuation[1])!==punctuation[1])return part.replace(key,t(punctuation[1])+punctuation[2]);
+    const count=key.match(/^(\d[\d.,]*(?:\s*\/\s*\d[\d.,]*)?)\s+(.+)$/);
+    if(count&&t(count[2])!==count[2])return part.replace(key,count[1]+' '+t(count[2]));
+    const tail=key.match(/^(.+?)\s+(\d[\d.,]*(?:\s*\/\s*\d[\d.,]*)?)$/);
+    if(tail&&t(tail[1])!==tail[1])return part.replace(key,t(tail[1])+' '+tail[2]);
+    const progress=key.match(/^Fortschritt\s+(.+)$/);
+    if(progress)return part.replace(key,t('Fortschritt')+' '+t(progress[1]));
+    return part;
+   };
+   translated=trimmed.split(/(\s*·\s*|:\s+)/).map(piece).join('');
   }
   return value.replace(trimmed,translated);
  }

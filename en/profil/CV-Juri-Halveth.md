@@ -14,17 +14,17 @@ Examine permissions, trust models and technical claims in a comprehensible way.
 
 Evidence: [Public source review of browser extensions](https://github.com/Juri-Halveth/open-research-branches/tree/834352b21a2123137f55fbca22afbfda2be7c7fd/branches/browser-extension-claim-reassessment)
 
-### Receipts and reproducibility
+### Evidence and reproducibility
 
 Bring together source statuses, file hashes, time references and readable receipt packages.
 
-Evidence: [Public Evidence Package with Check Scripts](https://github.com/Juri-Halveth/admon395-public-safe-evidence-kit)
+Evidence: [Public evidence package with verification scripts](https://github.com/Juri-Halveth/admon395-public-safe-evidence-kit)
 
 ### Software integration and testing
 
 Document Python, JavaScript and portable C++ work through tests and build flows.
 
-Evidence: [Work Certificates for Integration and C++ Source Examinations](https://juri-halveth.github.io/werkzertifikate/#werk-halveth-unreal)
+Evidence: [Work certificates for integration and C++ source-code checks](https://juri-halveth.github.io/werkzertifikate/#werk-halveth-unreal)
 
 ### Graphics and movement
 

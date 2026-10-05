@@ -169,8 +169,8 @@
       "ru": "18px Ариал"
     },
     "19 Erweiterungs-IDs, ihre Funktionen und die berichteten versteckten Steuerwege im Quellenvergleich.": {
-      "en": "19 extension IDs, their functions and the reported hidden control paths in the source comparison.",
-      "ru": "19 идентификаторов расширений, их функции и сообщенные скрытые пути управления в сравнении с источником."
+      "en": "19 extension IDs, their capabilities and reported hidden control paths compared against their sources.",
+      "ru": "19 идентификаторов расширений, их функции и сообщения о скрытых путях управления в сопоставлении с источниками."
     },
     "64px Arial": {
       "en": "64px Arial",
@@ -269,8 +269,8 @@
       "ru": "Астер — это не звезда"
     },
     "AUSGEWÄHLTE ÖFFENTLICHE ARBEITEN": {
-      "en": "SELECTED PUBLIC WORKS",
-      "ru": "Избранные общественные работы"
+      "en": "SELECTED PUBLIC WORK",
+      "ru": "ИЗБРАННЫЕ ПУБЛИЧНЫЕ РАБОТЫ"
     },
     "AUTOMATISIERUNG · EXPERIMENT": {
       "en": "AUTOMATISATION · EXPERIMENT",
@@ -305,12 +305,12 @@
       "ru": "Все исследования и источники"
     },
     "Alle Werkzertifikate als PDF": {
-      "en": "All work certificates as PDF",
-      "ru": "Все сертификаты работы в формате PDF"
+      "en": "All project work certificates as PDF",
+      "ru": "Все свидетельства о проектных работах в PDF"
     },
     "Alle elf Werkzertifikate →": {
-      "en": "All eleven certificates of work",
-      "ru": "Все одиннадцать свидетельств о работе"
+      "en": "All eleven project work certificates →",
+      "ru": "Все одиннадцать свидетельств о проектных работах →"
     },
     "Alle veröffentlichten Arbeiten →": {
       "en": "All published works →",
@@ -513,8 +513,8 @@
       "ru": "Бутстрап"
     },
     "BROWSER · BERECHTIGUNGEN · QUELLENREVIEW": {
-      "en": "BROWSER · RATINGS · SOURCE REVIEW",
-      "ru": "BROWSER · RATINGS · ИСТОЧНИК"
+      "en": "BROWSER · PERMISSIONS · SOURCE REVIEW",
+      "ru": "БРАУЗЕР · РАЗРЕШЕНИЯ · ОБЗОР ИСТОЧНИКОВ"
     },
     "Bash & Code entdecken ↗": {
       "en": "Discover Bash & Code ↗",
@@ -529,20 +529,20 @@
       "ru": "Раздел Bash ↗"
     },
     "Belege": {
-      "en": "Supporting documents",
-      "ru": "Вспомогательные документы"
+      "en": "Evidence",
+      "ru": "Подтверждающие материалы"
     },
     "Belege & Reproduzierbarkeit": {
-      "en": "Receipts and reproducibility",
-      "ru": "Получения и воспроизводимость"
+      "en": "Evidence and reproducibility",
+      "ru": "Подтверждающие материалы и воспроизводимость"
     },
     "Belege priorisieren und offene Prüfwege erhalten": {
-      "en": "Prioritize evidence and receive open test paths",
-      "ru": "Приоритетность доказательств и получение открытых тестовых путей"
+      "en": "Prioritize evidence and preserve open review paths",
+      "ru": "Ставить подтверждающие материалы в приоритет и сохранять открытые пути проверки"
     },
     "Belege priorisieren und offene Prüfwege erhalten ↗": {
-      "en": "Prioritize documents and receive open test paths ↗",
-      "ru": "Приоритет документов и получение открытых тестовых путей"
+      "en": "Prioritize evidence and preserve open review paths ↗",
+      "ru": "Ставить подтверждающие материалы в приоритет и сохранять открытые пути проверки ↗"
     },
     "Beobachtungen mit einem anonymisierten Protokoll dokumentieren": {
       "en": "Document observations with an anonymized protocol",
@@ -621,8 +621,8 @@
       "ru": "Расширения браузера: функции, разрешения и скрытые элементы управления"
     },
     "C++ · Quellprüfungen · Spielprototyp": {
-      "en": "C++ · Source checks · Game prototype",
-      "ru": "C++ · Проверка источников · Прототип игры"
+      "en": "C++ · Source-code checks · Game prototype",
+      "ru": "C++ · Проверки исходного кода · Прототип игры"
     },
     "CLAIM Ã¢â€°Â  LEGACY LOGIN": {
       "en": "CLAIM Ã¢â€Â LEGACY LOGIN",
@@ -657,8 +657,8 @@
       "ru": "Публичное государство"
     },
     "Das Belegpaket lesen": {
-      "en": "Reading the receipt package",
-      "ru": "Читать квитанционный пакет"
+      "en": "Read the evidence package",
+      "ru": "Прочитать пакет подтверждающих материалов"
     },
     "Dateien mit SHA-256": {
       "en": "Files with SHA-256",
@@ -737,8 +737,8 @@
       "ru": "URL-адрес теперь является лишь необязательным доказательством, и для нового поиска сообщества достаточно добровольно опубликованной информации, такой как имя, местоположение, школа или день рождения."
     },
     "Die Zahlen sind hier als Test-Sollwerte und README-Angaben belegt, nicht neu am Laufzeitsystem gezählt. Das Deployment belegt keinen ausgeführten npm-Test.": {
-      "en": "The numbers are used here as test setpoint values and README data, not recounted on the runtime system.",
-      "ru": "Цифры используются здесь в качестве значений тестовых заданий и данных README, не пересчитываемых в системе времени выполнения."
+      "en": "The figures are documented here as test expectations and README statements; they were not recounted in the running system. Deployment does not establish that an npm test ran.",
+      "ru": "Эти числа здесь документированы как ожидаемые значения в тестах и сведения из README; в работающей системе они заново не подсчитывались. Развёртывание не подтверждает выполнение теста npm."
     },
     "Die Zuordnung folgt dem Nutzerauftrag und dem verbundenen GitHub-Konto Juri-Halveth. Alleinurheberschaft, individuelle KI- oder Mitwirkendenanteile und eine persönliche Kompetenzstufe wurden nicht unabhängig geprüft. Die GitHub-Workflows wurden gelesen und hier nicht neu ausgeführt. Hashes binden Dateiinhalte; sie sind keine Leistungsnote.": {
       "en": "The assignment follows the user assignment and the associated GitHub account Juri-Halveth. Sole copyright, individual AI or contributor shares and a personal skill level have not been independently verified. The GitHub workflows have been read and not re-run here. Hashes bind file contents; they are not a performance grade.",
@@ -765,8 +765,8 @@
       "ru": "Одиннадцать авторских свидетельств HALVETH — это самостоятельно подготовленная с помощью ИИ документация проектов. В каждом указаны проект, версия исходников, результат и объём проверки. Контекст издателя и вид подтверждения приведены у соответствующего источника."
     },
     "Die gelesene Testsuite enthält Sollwerte für 13 Themen, 133 Stufen und 702 eindeutige Lektionen sowie Prüfungen zu Inhaltsdigest, Navigation und lokalem Fortschritt. GitHub meldet ein erfolgreiches Pages-Deployment.": {
-      "en": "The test suite read contains target values for 13 topics, 133 levels and 702 unique lessons, as well as exams on content digest, navigation and local progress. GitHub reports a successful page deployment.",
-      "ru": "Тестовый набор содержит целевые значения для 13 тем, 133 уровней и 702 уникальных уроков, а также экзамены по дайджесту контента, навигации и локальному прогрессу. GitHub сообщает об успешном развертывании страницы."
+      "en": "The inspected test suite specifies 13 topics, 133 stages and 702 unique lessons, with checks for the content digest, navigation and local progress. GitHub reports a successful Pages deployment.",
+      "ru": "Просмотренный набор тестов задаёт ожидаемые значения: 13 тем, 133 этапа и 702 уникальных урока, а также проверки хеша содержимого, навигации и локального прогресса. GitHub сообщает об успешном развёртывании Pages."
     },
     "Die gesuchte Adresse ist in dieser Veröffentlichung anders eingeordnet. Wähle das passende Thema oder öffne das Arbeitsverzeichnis.": {
       "en": "The desired address is arranged differently in this publication. Select the appropriate topic or open the working directory.",
@@ -873,16 +873,16 @@
       "ru": "Пульс света вырастает в органическую форму."
     },
     "Ein Review öffentlicher PKI-Strukturen, Zertifikatsdokumentation und übertragbarer Prüfverfahren.": {
-      "en": "A review of public PKI structures, certificate documentation and transferable test methods.",
-      "ru": "Обзор публичных структур ИПК, документации на сертификаты и переносимых методов испытаний."
+      "en": "A review of public PKI structures, certificate documentation and reusable verification methods.",
+      "ru": "Обзор публичных структур PKI, документации о сертификатах и применимых методов проверки."
     },
     "Ein Rollenspiel neu gestalten": {
       "en": "Redesigning a role-playing game",
       "ru": "Перепроектирование ролевой игры"
     },
     "Ein Windows-Projekt für lokale Zugangsdatenverwaltung, mit versioniertem Quellstand und dokumentierten Releases.": {
-      "en": "A Windows project for local access data management, with versioned source status and documented releases.",
-      "ru": "Проект Windows для управления данными локального доступа с статусом источника версий и документированными релизами."
+      "en": "A Windows project for local credential management, with versioned source code and documented releases.",
+      "ru": "Проект Windows для локального управления учётными данными с версионированным исходным кодом и документированными релизами."
     },
     "Ein bestehendes Rollenspiel mit OpenMW weiterentwickeln": {
       "en": "Further develop an existing role-playing game with OpenMW",
@@ -897,24 +897,24 @@
       "ru": "Собственная фэнтезийная ветка песочницы с процедурным миром, локальным диалогом и документированным дистрибутивом рабочего стола."
     },
     "Ein erfolgreicher Vorschlags-Workflow ist kein Spieltest. Der Build/Test-Workflow ist als Datei vorhanden; sein erfolgreicher Lauf ist in dieser begrenzten Abfrage nicht belegt.": {
-      "en": "A successful suggestion workflow is not a game test. The build/test workflow is present as a file; its successful run is not occupied in this limited query.",
-      "ru": "Успешный рабочий процесс предложения не является игровым тестом. Рабочий процесс сборки/тестирования присутствует в виде файла; его успешный запуск не занят в этом ограниченном запросе."
+      "en": "A successful proposal workflow is not a game test. A build/test workflow file exists; this limited query does not establish a successful run of that workflow.",
+      "ru": "Успешное выполнение рабочего процесса предложений не является тестом игры. Файл рабочего процесса сборки и тестирования существует; этот ограниченный запрос не подтверждает его успешное выполнение."
     },
     "Ein fachliches Profil mit konkreten Arbeitsproben. Die elf privaten HALVETH-Werkzertifikate dokumentieren Projekte, Quellstände und den jeweiligen Prüfumfang.": {
       "en": "A professional profile with concrete work samples. The eleven privately issued HALVETH work certificates document projects, source revisions and the scope of each review.",
       "ru": "Профессиональный профиль с конкретными примерами работ. Одиннадцать авторских свидетельств HALVETH документируют проекты, версии исходников и объём каждой проверки."
     },
     "Ein heutiger GitHub-Account kann ein eigenes Rekonstruktionsprofil claimen. Alte SchÃƒÂ¼lerVZ-PasswÃƒÂ¶rter werden nicht abgefragt.": {
-      "en": "Today's GitHub account can claim its own reconstruction profile. Old SchÃƒ⁄4lerVZ passport holders are not queried.",
+      "en": "Ein heutiger GitHub-Account kann ein eigenes Rekonstruktionsprofil claimen. Alte SchÃƒÂ¼lerVZ-PasswÃƒÂ¶rter werden nicht abgefragt.",
       "ru": "Сегодняшний аккаунт GitHub может претендовать на собственный профиль реконструкции. Старые владельцы паспортов Sch?lerVZ не запрашиваются."
     },
     "Ein öffentlicher Werkzeugzweig für Solana. Aufbau, Aufgaben und aktueller Quellstand stehen im Repository.": {
-      "en": "A public tool branch for Solana. The structure, tasks and current source status are in the repository.",
-      "ru": "Отделение общедоступных инструментов для Solana. Структура, задачи и текущий статус источника находятся в хранилище."
+      "en": "A public tools branch for Solana. Its repository documents the structure, tasks and current source revision.",
+      "ru": "Публичная ветка инструментов для Solana. В репозитории документированы структура, задачи и текущая версия исходников."
     },
     "Ein öffentliches Belegpaket verbindet eine minimierte Quellfassung, Dateihashes, eine Beweismatrix und ausführbare Prüfskripte.": {
-      "en": "A public receipt package combines a minimized source, file hashes, a proof matrix, and executable check scripts.",
-      "ru": "Пакет публичных квитанций сочетает в себе минимизированный источник, хэши файлов, матрицу доказательств и исполняемые скрипты проверки."
+      "en": "A public evidence package combines a minimized source version, file hashes, an evidence matrix and runnable verification scripts.",
+      "ru": "Публичный пакет подтверждающих материалов объединяет минимизированную версию источника, хеши файлов, матрицу доказательств и запускаемые скрипты проверки."
     },
     "Eine Frage darf weiterwachsen.": {
       "en": "One question can continue to grow.",
@@ -1353,12 +1353,12 @@
       "ru": "Садовый сад"
     },
     "Gebundener Quellstand": {
-      "en": "bound source status",
-      "ru": "связанный исходный статус"
+      "en": "Bound source revision",
+      "ru": "Закреплённая версия исходников"
     },
     "Gebundener Quellstand ↗": {
-      "en": "bound source status ↗",
-      "ru": "статус связанного источника  ⁇"
+      "en": "Bound source revision ↗",
+      "ru": "Закреплённая версия исходников ↗"
     },
     "Geburtsraum-Prinzip für Behördeneingänge": {
       "en": "Birth space principle for administrative entrances",
@@ -1405,16 +1405,16 @@
       "ru": "Претензия к профилю GitHub"
     },
     "GitHub-CI wurde gelesen, hier nicht erneut ausgeführt. Weder vollständiger Spieldurchlauf noch Gleichheit des jüngsten Release-Binaries mit diesem Quellstand wurden geprüft.": {
-      "en": "GitHub-CI has been read, not re-executed here. Neither full playthrough nor equality of the recent release binary with this source status has been verified.",
-      "ru": "GitHub-CI был прочитан, а не перевыполнен здесь. Ни полное прохождение, ни равенство недавнего бинарного релиза с этим исходным статусом не было проверено."
+      "en": "GitHub-CI records were read; CI was not rerun here. Neither a complete playthrough nor equivalence of the latest release binary to this source revision was checked.",
+      "ru": "Записи GitHub-CI были прочитаны; здесь CI повторно не запускалась. Ни полное прохождение игры, ни соответствие последнего бинарного релиза этой версии исходников не проверялись."
     },
     "GitHub-Claims": {
       "en": "GitHub claims",
       "ru": "GitHub утверждает"
     },
     "GitHub-Jobdaten melden erfolgreiche Quellprüfungen auf Ubuntu und Windows. GCC- und MSVC-Schritte kompilieren und prüfen portable C++-Layout- und Wissenskomponenten.": {
-      "en": "GitHub job data reports successful source checks on Ubuntu and Windows. GCC and MSVC steps compile and check portable C++ layout and knowledge components.",
-      "ru": "Данные о вакансиях GitHub сообщают об успешных проверках источников на Ubuntu и Windows. Шаги GCC и MSVC компилируют и проверяют портативные компоненты компоновки и знаний C++."
+      "en": "GitHub workflow job records report successful source-code checks on Ubuntu and Windows. GCC and MSVC steps compile and check portable C++ layout and knowledge components.",
+      "ru": "Записи заданий рабочего процесса GitHub сообщают об успешных проверках исходного кода в Ubuntu и Windows. Шаги GCC и MSVC компилируют и проверяют переносимые компоненты компоновки и знаний на C++."
     },
     "Glow outside 0..2": {
       "en": "Glow outside 0.2",
@@ -1634,7 +1634,7 @@
     },
     "Herkunft: öffentliches ADMON395-Lesepaket": {
       "en": "Source: public ADMON395 reading package",
-      "ru": "Источник: Публичный пакет чтения ADMON395"
+      "ru": "Источник: публичный пакет материалов ADMON395"
     },
     "Hey Juri! Ã°Å¸â€™â€”": {
       "en": "Hey Yuri! Ã°Å ̃””",
@@ -1665,7 +1665,7 @@
       "ru": "Сравните исторические названия и интерпретации с источниками."
     },
     "Historische Spur prÃƒÂ¼fen": {
-      "en": "Historical trace prÃƒÂ1⁄4fen",
+      "en": "Historische Spur prÃƒÂ¼fen",
       "ru": "Исторический след pr???????"
     },
     "Historische personenbezogene Profile werden nicht massenhaft neu veröffentlicht. Die Engine zählt erkannte persönliche Routen nur als gehashte Metadaten. Für das eigene alte Profil gibt es den Exact-URL-Probe im Paket.": {
@@ -1789,16 +1789,16 @@
       "ru": "Juri Halveth: исследования и этичная проверка безопасности, графика и игры, бесплатное обучение, программы и документированные работы. Понятные темы с прямыми ссылками на источники."
     },
     "Juri Janovski / Juri Halveth / HALVETH – Private Werkzertifikate": {
-      "en": "Yuri Janovski / Yuri Halveth / HALVETH – Private Work Certificates",
-      "ru": "Юрий Яновский / Юрий Халвет / HALVETH - Частные сертификаты работы"
+      "en": "Juri Janovski / Juri Halveth / HALVETH – Privately issued work certificates",
+      "ru": "Juri Janovski / Juri Halveth / HALVETH — Авторские свидетельства о работах"
     },
     "Juri Janovski / Juri Halveth / HALVETH – Private Werkzertifikate und GitHub-Belege": {
-      "en": "Juri Janovski / Juri Halveth / HALVETH – Private Work Certificates and GitHub Receipts",
-      "ru": "Juri Janovski / Juri Halveth / HALVETH - Частные сертификаты работы и квитанции GitHub"
+      "en": "Juri Janovski / Juri Halveth / HALVETH – Privately issued work certificates and GitHub evidence",
+      "ru": "Juri Janovski / Juri Halveth / HALVETH — Авторские свидетельства о работах и подтверждающие материалы GitHub"
     },
     "Juri Janovski / Juri Halveth – HALVETH VERACHEL STUDIOS: dokumentierte Projekte und private Werkzertifikate": {
-      "en": "Juri Janovski / Juri Halveth – HALVETH VERACHEL STUDIOS: documented projects and private works certificates",
-      "ru": "Юрий Яновский / Юрий Халвет - HALVETH VERACHEL STUDIOS: документированные проекты и сертификаты частных работ"
+      "en": "Juri Janovski / Juri Halveth – HALVETH VERACHEL STUDIOS: documented projects and privately issued work certificates",
+      "ru": "Juri Janovski / Juri Halveth — HALVETH VERACHEL STUDIOS: документированные проекты и авторские свидетельства о работах"
     },
     "Juri Janovski führt das Portfolio öffentlich als Juri Halveth unter HALVETH / HALVETH VERACHEL STUDIOS. Die Studiobezeichnung ist eine Nutzerangabe; ein rechtlicher Unternehmensstatus wird damit nicht festgestellt. VERACHEL Native Shell ist eine vom Nutzer gezeigte Systembezeichnung. LUCINET und Scarlet sind benannte Projektzusammenhänge. Projekt- und Werkzeugnamen bezeichnen ihre jeweilige Funktion. Sie sind keine weiteren zertifizierten Personen.": {
       "en": "Juri Janovski presents the public portfolio as Juri Halveth under HALVETH / HALVETH VERACHEL STUDIOS. The studio name is a user-provided designation; a legal company status requires its own evidence. VERACHEL Native Shell is the system name shown by the user. LUCINET and Scarlet are named project contexts. Project and tool names refer to their respective functions and do not certify additional people.",
@@ -1818,7 +1818,7 @@
     },
     "KRYPTOGRAFIE · VERTRAUEN · DOKUMENTATION": {
       "en": "CRYPTOGRAPHY · TRUST · DOCUMENTATION",
-      "ru": "КРИПТОГРАФИЯ · ПРАВДА · ДОКУМЕНТАЦИЯ"
+      "ru": "КРИПТОГРАФИЯ · ДОВЕРИЕ · ДОКУМЕНТАЦИЯ"
     },
     "Keep the": {
       "en": "Keep the",
@@ -2082,11 +2082,11 @@
     },
     "Microsoft PKI Repository: public trust records without public write authority": {
       "en": "Microsoft PKI Repository: public trust records without public write authority",
-      "ru": "Microsoft PKI Repository: публичные трастовые записи без публичного авторского права"
+      "ru": "Microsoft PKI Repository: публичные записи доверия без общедоступного права записи"
     },
     "Microsoft PKI Repository: public trust records without public write authority ↗": {
-      "en": "Microsoft PKI Repository: public trust records without public write authority",
-      "ru": "Microsoft PKI Repository: публичные трастовые записи без публичного авторского права"
+      "en": "Microsoft PKI Repository: public trust records without public write authority ↗",
+      "ru": "Microsoft PKI Repository: публичные записи доверия без общедоступного права записи ↗"
     },
     "Mio": {
       "en": "Millions",
@@ -2230,7 +2230,7 @@
     },
     "PLATTFORMEN · TRANSPARENZ · QUELLENAUDIT": {
       "en": "PLATFORMS · TRANSPARENCY · SOURCE AUDIT",
-      "ru": "ПЛАТФОРМЫ · ТРАНСПАРЕНЦИЯ · ИСТОЧНИК АУДИТ"
+      "ru": "ПЛАТФОРМЫ · ПРОЗРАЧНОСТЬ · АУДИТ ИСТОЧНИКОВ"
     },
     "PRESTIGE": {
       "en": "PRESENT",
@@ -2329,20 +2329,20 @@
       "ru": "Частный сертификат HALVETH Work: документированная учебная платформа и организация тестирования"
     },
     "Privates HALVETH-Werkzertifikat: Dokumentierte Softwareintegration, automatisierte Quellprüfungen und Installer-Build – Morrowind Genesis": {
-      "en": "Private HALVETH Work Certificate: Documented Software Integration, Automated Source Checks and Installer Build – Morrowind Genesis",
-      "ru": "Частный сертификат HALVETH Work: интеграция с документированным программным обеспечением, автоматическая проверка источников и сборка установщика - Morrowind Genesis"
+      "en": "Privately issued HALVETH work certificate: documented software integration, automated source-code checks and installer build – Morrowind Genesis",
+      "ru": "Авторское свидетельство HALVETH о работе: документированная интеграция программ, автоматизированные проверки исходного кода и сборка установщика — Morrowind Genesis"
     },
     "Privates HALVETH-Werkzertifikat: Dokumentierte Weboberfläche und Forschungsdarstellung – HALVETH Scarlet": {
       "en": "Private HALVETH Work Certificate: Documented Web Interface and Research Presentation – HALVETH Scarlet",
       "ru": "Частный сертификат HALVETH Work: документированный веб-интерфейс и презентация исследований - HALVETH Scarlet"
     },
     "Privates HALVETH-Werkzertifikat: Dokumentierte portable C++-Quellprüfungen – HALVETH Portal Garden": {
-      "en": "Private HALVETH Work Certificate: Documented Portable C++ Source Exams – HALVETH Portal Garden",
-      "ru": "Частный сертификат HALVETH Work: задокументированные экзамены на исходный код C++ - HALVETH Portal Garden"
+      "en": "Privately issued HALVETH work certificate: documented portable C++ source-code checks – HALVETH Portal Garden",
+      "ru": "Авторское свидетельство HALVETH о работе: документированные переносимые проверки исходного кода C++ — HALVETH Portal Garden"
     },
     "Privates HALVETH-Werkzertifikat: Dokumentierter Desktop-Quellstand und Release-Prozess – HALVETH Tresor": {
-      "en": "Private HALVETH Work Certificate: Documented Desktop Source and Release Process – HALVETH Tresor",
-      "ru": "Частный сертификат HALVETH Work: документированный процесс отправки и выпуска настольных компьютеров - HALVETH Tresor"
+      "en": "Privately issued HALVETH work certificate: documented desktop source revision and release process – HALVETH Tresor",
+      "ru": "Авторское свидетельство HALVETH о работе: документированная версия исходников настольного приложения и процесс выпуска — HALVETH Tresor"
     },
     "Privates HALVETH-Werkzertifikat: Dokumentierter Forschungs- und Kooperationsvorschlag – HALVETH": {
       "en": "Private HALVETH Work Certificate: Documented Research and Cooperation Proposal – HALVETH",
@@ -2357,8 +2357,8 @@
       "ru": "Частный сертификат HALVETH Work: документированный прототип игры и настольный дистрибутив - Scarlet Garden / Realms"
     },
     "Privates HALVETH-Werkzertifikat: Dokumentiertes Lernportal, Inhaltsverträge und Pages-Deployment – Mein Lernportal": {
-      "en": "Private HALVETH Work Certificate: Documented Learning Portal, Content Contracts and Pages Deployment – My Learning Portal",
-      "ru": "Частный сертификат HALVETH Work: документированный учебный портал, контент-контракты и развертывание страниц - мой учебный портал"
+      "en": "Privately issued HALVETH work certificate: documented learning portal, content contracts and Pages deployment – Mein Lernportal",
+      "ru": "Авторское свидетельство HALVETH о работе: документированный учебный портал, контракты содержимого и развёртывание Pages — Mein Lernportal"
     },
     "Privates HALVETH-Werkzertifikat: Dokumentiertes Projektportal und Pages-Deployment – HALVETH": {
       "en": "Private HALVETH Work Certificate: Documented Project Portal and Pages Deployment – HALVETH",
@@ -2501,16 +2501,16 @@
       "ru": "Определение README и CI было связано; GitHub сообщает об успешных рабочих процессах в источнике. метаданные релиза включают спецификации Windows EXE и дайджеста."
     },
     "README und HTML-Einstiegsdatei wurden gebunden. GitHub meldet am Quellstand einen erfolgreichen Pages-Build und Deployment-Workflow.": {
-      "en": "README and HTML entry file have been bound. GitHub reports a successful page build and deployment workflow at source.",
-      "ru": "README и файл ввода HTML были связаны. GitHub сообщает об успешном рабочем процессе создания и развертывания страниц в источнике."
+      "en": "The README and HTML entry file are bound to the reviewed source. GitHub reports a successful Pages build and deployment workflow for that source revision.",
+      "ru": "README и входной файл HTML привязаны к проверенной версии исходников. GitHub сообщает об успешной сборке Pages и выполнении рабочего процесса развёртывания для этой версии."
     },
     "README und PDF-Workflow wurden gebunden. Der Workflow enthält zwei Builds und einen Bytevergleich; GitHub meldet einen erfolgreichen Lauf am Quellstand.": {
-      "en": "The workflow includes two builds and a byte comparison; GitHub reports a successful run at the source.",
-      "ru": "Рабочий процесс включает в себя две сборки и сравнение байтов; GitHub сообщает об успешном запуске в источнике."
+      "en": "The README and PDF workflow are bound to the reviewed source. The workflow includes two builds and a byte comparison; GitHub reports a successful run for that source revision.",
+      "ru": "README и рабочий процесс PDF привязаны к проверенной версии исходников. Рабочий процесс включает две сборки и сравнение байтов; GitHub сообщает об успешном выполнении для этой версии."
     },
     "README, CI-Datei und eine synthetische Referenzprüfungs-Testdatei wurden gebunden. Die CI-Definition startet npm test; GitHub meldet einen erfolgreichen Lauf am Quellstand.": {
-      "en": "README, CI file and a synthetic reference check test file have been bound. The CI definition starts npm test; GitHub reports a successful run at the source.",
-      "ru": "README, CI файл и синтетический файл проверки ссылок были связаны. Определение CI начинается с npm-теста; GitHub сообщает об успешном запуске в источнике."
+      "en": "The README, CI file and a synthetic reference-check test file are bound to the reviewed source. The CI definition starts npm test; GitHub reports a successful run for that source revision.",
+      "ru": "README, файл CI и файл синтетического теста проверки ссылок привязаны к проверенной версии исходников. Определение CI запускает npm test; GitHub сообщает об успешном выполнении для этой версии."
     },
     "README, Commit und Release-Metadaten binden das Vorliegen des Vorschlags und seiner Dokumentausgaben.": {
       "en": "README, commit and release metadata bind the existence of the proposal and its document editions.",
@@ -2633,7 +2633,7 @@
       "ru": "Пространственные формы, световые пути и зависящее от времени движение в качестве исполняемого кода."
     },
     "Rückwärts": {
-      "en": "Reverse",
+      "en": "Backward",
       "ru": "Назад"
     },
     "SCARLET": {
@@ -2793,8 +2793,8 @@
       "ru": "Звездный свет и третий маршрут · HALVETH Brightcast 001"
     },
     "Start": {
-      "en": "Start",
-      "ru": "Начинать"
+      "en": "Home",
+      "ru": "Главная"
     },
     "Startseite": {
       "en": "Home",
@@ -2805,8 +2805,8 @@
       "ru": "Steam Coins, Wallet and the Reported Achievement"
     },
     "Steam-Inventare, Handel und eine gemeldete Datenoffenlegung anhand ihrer jeweiligen Quellen untersuchen.": {
-      "en": "Investigate Steam inventories, trade and a reported data disclosure against their respective sources.",
-      "ru": "Исследуйте запасы Steam, торговлю и раскрытие данных в отношении их соответствующих источников."
+      "en": "Examine Steam inventories, trading and a reported data disclosure against their respective sources.",
+      "ru": "Исследование инвентарей Steam, торговли и сообщения о раскрытии данных с опорой на соответствующие источники."
     },
     "Steam: Gegenstände, Guthaben und gemeldete Datenoffenlegung prüfen": {
       "en": "Steam: Check Items, Balances and Reported Data Disclosure",
@@ -3073,8 +3073,8 @@
       "ru": "Версионный сборник вопросов исследований, источников, моделей и примеров исполняемого программного обеспечения."
     },
     "Versionierter Quellstand einer OpenMW-Erweiterung mit lokalem Dialogbegleiter, Spielwerkzeugen und Windows-Installer.": {
-      "en": "Versioned source status of an OpenMW extension with local dialog companion, game tools and Windows installer.",
-      "ru": "Статус источника версии расширения OpenMW с локальным диалоговым спутником, игровыми инструментами и установщиком Windows."
+      "en": "Versioned source revision of an OpenMW extension with a local dialogue companion, game tools and a Windows installer.",
+      "ru": "Версия исходников расширения OpenMW с локальным помощником для диалогов, игровыми инструментами и установщиком Windows."
     },
     "Versionierter öffentlicher Vorschlag für eine stufenweise Forschungszusammenarbeit mit begrenztem Gegenstand.": {
       "en": "Versioned public proposal for gradual research collaboration with limited subject matter.",
@@ -3341,8 +3341,8 @@
       "ru": "Способы обзора"
     },
     "Weiter": {
-      "en": "Zoom out",
-      "ru": "Отдалить"
+      "en": "Further",
+      "ru": "Дальше"
     },
     "Weitere Informationen": {
       "en": "Further information",
@@ -3425,12 +3425,12 @@
       "ru": "Свидетельства о работах"
     },
     "Werkzertifikate zu Integration und C++-Quellprüfungen": {
-      "en": "Work Certificates for Integration and C++ Source Examinations",
-      "ru": "Сертификаты работы для интеграции и проверки источников C++"
+      "en": "Work certificates for integration and C++ source-code checks",
+      "ru": "Свидетельства о работах по интеграции и проверке исходного кода C++"
     },
     "Werkzertifikate zu Integration und C++-Quellprüfungen ↗": {
-      "en": "Work certificates for integration and C++ source examinations ↗",
-      "ru": "Сертификаты работы для интеграции и исходные экзамены C++"
+      "en": "Work certificates for integration and C++ source-code checks ↗",
+      "ru": "Свидетельства о работах по интеграции и проверке исходного кода C++ ↗"
     },
     "Werkzertifikatsmappe als PDF ↗": {
       "en": "Project documentation as PDF ↗",
@@ -3809,8 +3809,8 @@
       "ru": "Полтора часа."
     },
     "schÃƒÂ¼lerVZ // HALVETH MYCELIUM": {
-      "en": "schÃƒÂ1⁄4lerVZ // HALVETH MYCELIUM",
-      "ru": "sché1⁄4lerVZ // МИЦЕЛИЙ ЗАЩИТА"
+      "en": "schÃƒÂ¼lerVZ // HALVETH MYCELIUM",
+      "ru": "schÃƒÂ¼lerVZ // HALVETH MYCELIUM"
     },
     "schüler": {
       "en": "Students",
@@ -4005,8 +4005,8 @@
       "ru": "Обзор открытых источников расширений браузера  ⁇"
     },
     "Öffentlicher Quellenstand · 05.10.2026 · Gestaltung & Code aus eigenen Projekten.": {
-      "en": "Public source status · 05.10.2026 · Design & code from own projects.",
-      "ru": "Статус государственного источника · 05.10.2026 · Дизайн и код из собственных проектов."
+      "en": "Public source snapshot · 05.10.2026 · Design and code from original projects.",
+      "ru": "Публичный снимок исходных материалов · 05.10.2026 · Дизайн и код из собственных проектов."
     },
     "Öffentliches Arbeitsprofil unter HALVETH / LUCINET. Software, Quellenanalysen, digitale Gestaltung und Lernangebote sind durch veröffentlichte Projekte und Dokumentationen zugeordnet.": {
       "en": "Public work profile under HALVETH / LUCINET. Software, source analyses, digital design and learning opportunities are assigned through published projects and documentation.",
@@ -4017,12 +4017,12 @@
       "ru": "Исследуйте публичные архивы"
     },
     "Öffentliches Belegpaket mit Prüfskripten": {
-      "en": "Public Evidence Package with Check Scripts",
-      "ru": "Пакет публичных доказательств с чек-скриптами"
+      "en": "Public evidence package with verification scripts",
+      "ru": "Публичный пакет подтверждающих материалов со скриптами проверки"
     },
     "Öffentliches Belegpaket mit Prüfskripten ↗": {
-      "en": "Public receipt package with check scripts ↗",
-      "ru": "Публичный квитанционный пакет с чеками  ⁇"
+      "en": "Public evidence package with verification scripts ↗",
+      "ru": "Публичный пакет подтверждающих материалов со скриптами проверки ↗"
     },
     "Öffentliches GitHub-Profil ↗": {
       "en": "Public GitHub profile ↗",
@@ -4609,8 +4609,8 @@
       "ru": "CHOICE ATELIER"
     },
     "Näher": {
-      "en": "Zoom in",
-      "ru": "Приблизить"
+      "en": "Closer",
+      "ru": "Ближе"
     },
     "Links": {
       "en": "Left",
@@ -4667,6 +4667,258 @@
     "Bewegung fortsetzen": {
       "en": "Resume movement",
       "ru": "Продолжить движение"
+    },
+    "Lernpfad öffnen": {
+      "en": "Open learning path",
+      "ru": "Открыть учебный маршрут"
+    },
+    "Lernpfade": {
+      "en": "Learning paths",
+      "ru": "Учебные маршруты"
+    },
+    "Lernpfad": {
+      "en": "Learning path",
+      "ru": "Учебный маршрут"
+    },
+    "Lektion": {
+      "en": "Lesson",
+      "ru": "Урок"
+    },
+    "Lektionen": {
+      "en": "Lessons",
+      "ru": "Уроки"
+    },
+    "LEKTIONEN": {
+      "en": "LESSONS",
+      "ru": "УРОКИ"
+    },
+    "abgeschlossen": {
+      "en": "completed",
+      "ru": "завершено"
+    },
+    "Abgeschlossen": {
+      "en": "Completed",
+      "ru": "Завершено"
+    },
+    "Stufe": {
+      "en": "Stage",
+      "ru": "Этап"
+    },
+    "Stufen": {
+      "en": "Stages",
+      "ru": "Этапы"
+    },
+    "Master": {
+      "en": "Master",
+      "ru": "Мастер"
+    },
+    "Fortschritt": {
+      "en": "Progress",
+      "ru": "Прогресс"
+    },
+    "Loslernen": {
+      "en": "Start learning",
+      "ru": "Начать учиться"
+    },
+    "Los": {
+      "en": "Start",
+      "ru": "Начать"
+    },
+    "Zurück": {
+      "en": "Back",
+      "ru": "Назад"
+    },
+    "Code-Werkstatt": {
+      "en": "Code workshop",
+      "ru": "Мастерская кода"
+    },
+    "Impressum": {
+      "en": "Legal notice",
+      "ru": "Юридическая информация"
+    },
+    "Datenschutzerklärung": {
+      "en": "Privacy policy",
+      "ru": "Политика конфиденциальности"
+    },
+    "Nach links": {
+      "en": "Left",
+      "ru": "Влево"
+    },
+    "Nach rechts": {
+      "en": "Right",
+      "ru": "Вправо"
+    },
+    "Aufsteigen": {
+      "en": "Ascend",
+      "ru": "Подняться"
+    },
+    "Absteigen": {
+      "en": "Descend",
+      "ru": "Опуститься"
+    },
+    "Nach links (A)": {
+      "en": "Left (A)",
+      "ru": "Влево (A)"
+    },
+    "Nach rechts (D)": {
+      "en": "Right (D)",
+      "ru": "Вправо (D)"
+    },
+    "Aufsteigen (E)": {
+      "en": "Ascend (E)",
+      "ru": "Подняться (E)"
+    },
+    "Absteigen (Q)": {
+      "en": "Descend (Q)",
+      "ru": "Опуститься (Q)"
+    },
+    "Vorwärts (W)": {
+      "en": "Forward (W)",
+      "ru": "Вперёд (W)"
+    },
+    "Rückwärts (S)": {
+      "en": "Backward (S)",
+      "ru": "Назад (S)"
+    },
+    "Kamera zurücksetzen": {
+      "en": "Reset camera",
+      "ru": "Сбросить положение камеры"
+    },
+    "WASD / arrows: move; Q / E: down / up; Shift: faster": {
+      "en": "WASD / arrows: move; Q / E: down / up; Shift: faster",
+      "ru": "WASD / стрелки: движение; Q / E: вниз / вверх; Shift: быстрее"
+    },
+    "Öffnen": {
+      "en": "Open",
+      "ru": "Открывай"
+    },
+    "Suchen": {
+      "en": "Search",
+      "ru": "Ищи"
+    },
+    "Quiz": {
+      "en": "Quiz",
+      "ru": "Тест"
+    },
+    "Quiz: Ganz von vorne": {
+      "en": "Quiz: Starting from scratch",
+      "ru": "Тест: с самого начала"
+    },
+    "Ganz von vorne: Was ist das alles?": {
+      "en": "Starting from scratch: What is all this?",
+      "ru": "С самого начала: что всё это такое?"
+    },
+    "Wenn es klemmt: Probleme selbst lösen": {
+      "en": "When things get stuck: Solve problems yourself",
+      "ru": "Когда что-то зависает: решаем проблемы самостоятельно"
+    },
+    "Master: KI bedienen und dokumentieren": {
+      "en": "Master: Use AI and document your work",
+      "ru": "Мастер: работать с ИИ и документировать результаты"
+    },
+    "Vom ersten Kabel bis sicher im Netz. Ganz von vorne, in winzigen Schritten, für alle ohne Vorwissen.": {
+      "en": "From your first cable to staying safe online. Start from scratch, in small steps, with no prior knowledge needed.",
+      "ru": "От первого кабеля до безопасной работы в интернете. С самого начала, небольшими шагами, без предварительных знаний."
+    },
+    "Die Seele der Mathematik": {
+      "en": "The soul of mathematics",
+      "ru": "Душа математики"
+    },
+    "Mathematik zum Anfassen": {
+      "en": "Hands-on mathematics",
+      "ru": "Наглядная математика"
+    },
+    "Es läggt: warum, und was zuerst hilft": {
+      "en": "It is lagging: Why, and what helps first",
+      "ru": "Всё тормозит: почему и что помогает в первую очередь"
+    },
+    "Ein Programm hängt: der Task-Manager": {
+      "en": "A program has frozen: Task Manager",
+      "ru": "Программа зависла: диспетчер задач"
+    },
+    "Der Neustart, das ehrliche Wundermittel": {
+      "en": "Restarting: A simple remedy that often works",
+      "ru": "Перезапуск: простой способ, который часто помогает"
+    },
+    "Dunkles Farbschema": {
+      "en": "Dark colour scheme",
+      "ru": "Тёмная цветовая схема"
+    },
+    "Farbschema umschalten zwischen Gelb-auf-Schwarz und Hell": {
+      "en": "Switch between yellow-on-black and light colour schemes",
+      "ru": "Переключить жёлтый текст на чёрном фоне и светлую цветовую схему"
+    },
+    "Dein Tierchen": {
+      "en": "Your companion",
+      "ru": "Твой спутник"
+    },
+    "FREI · OHNE KONTO · OHNE WERBUNG": {
+      "en": "FREE · NO ACCOUNT REQUIRED · NO ADVERTISING",
+      "ru": "БЕСПЛАТНО · БЕЗ ОБЯЗАТЕЛЬНОГО АККАУНТА · БЕЗ РЕКЛАМЫ"
+    },
+    "Alle 702 Lektionen öffnen sich direkt. Ohne Konto, ohne Paywall, ohne Werbung. Dein Lernstand bleibt auf diesem Gerät.": {
+      "en": "All 702 lessons open directly. No account required, no paywall, no advertising. Your learning progress stays on this device.",
+      "ru": "Все 702 урока открываются напрямую. Без обязательного аккаунта, платного доступа и рекламы. Твой прогресс сохраняется на этом устройстве."
+    },
+    "von 702 Lektionen entdeckt": {
+      "en": "of 702 lessons discovered",
+      "ru": "из 702 уроков открыто"
+    },
+    "XP gesammelt": {
+      "en": "XP earned",
+      "ru": "XP получено"
+    },
+    "kein Konto": {
+      "en": "no account required",
+      "ru": "без обязательного аккаунта"
+    },
+    "Dein Lernbegleiter – Bleibt auf diesem Gerät – lokales Profil gestalten": {
+      "en": "Your learning companion – Stays on this device – Customize your local profile",
+      "ru": "Твой спутник в обучении — остаётся на этом устройстве — настрой локальный профиль"
+    },
+    "Lernender – Bleibt auf diesem Gerät – lokales Profil gestalten": {
+      "en": "Learner – Stays on this device – Customize your local profile",
+      "ru": "Ученик — остаётся на этом устройстве — настрой локальный профиль"
+    },
+    "Browser-Speicher nicht verfügbar oder bisheriger Lernstand nicht lesbar. Originaldaten bleiben erhalten. Sichere deinen aktuellen Stand im Lernprofil.": {
+      "en": "Browser storage is unavailable or the previous learning progress could not be read. Original data is retained. Save your current progress from the learning profile.",
+      "ru": "Хранилище браузера недоступно или прежний прогресс не удалось прочитать. Исходные данные сохранены. Сохрани текущий прогресс в учебном профиле."
+    },
+    "passende Lektionen": {
+      "en": "matching lessons",
+      "ru": "подходящих уроков"
+    },
+    "passende Ergebnisse": {
+      "en": "matching results",
+      "ru": "подходящих результатов"
+    },
+    "angezeigt": {
+      "en": "shown",
+      "ru": "показано"
+    },
+    "Noch offen": {
+      "en": "Still to do",
+      "ru": "Ещё предстоит"
+    },
+    "Min.": {
+      "en": "min.",
+      "ru": "мин."
+    },
+    "Öffnen.": {
+      "en": "Open.",
+      "ru": "Открывай."
+    },
+    "Suchen.": {
+      "en": "Search.",
+      "ru": "Ищи."
+    },
+    "Lernen.": {
+      "en": "Learn.",
+      "ru": "Учись."
+    },
+    "Mathe zum Anfassen": {
+      "en": "Hands-on mathematics",
+      "ru": "Наглядная математика"
     }
   }
 }
