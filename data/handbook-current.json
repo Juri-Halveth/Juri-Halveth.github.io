@@ -1,0 +1,1588 @@
+{
+  "schema": "halveth.hub-handbook-navigation.v1",
+  "dataClass": "PUBLIC",
+  "sourcePolicy": "MOVING_MAIN_LINKS_NOT_TEST_RESULTS",
+  "historicalReceipt": "/data/handbook.json",
+  "roles": {
+    "entrance": {
+      "de": "Einstieg und Navigation",
+      "en": "Entrance and navigation",
+      "ru": "Главная и навигация"
+    },
+    "language": {
+      "de": "Sprachfassung derselben Seite",
+      "en": "Language edition of the same page",
+      "ru": "Языковая версия той же страницы"
+    },
+    "profile": {
+      "de": "Eigenes Figurenprofil mit Geschichte und Quellen",
+      "en": "Individual character profile with story and sources",
+      "ru": "Профиль персонажа с историей и источниками"
+    },
+    "research": {
+      "de": "Forschungsnotiz mit zugehörigen Quellen",
+      "en": "Research note with its sources",
+      "ru": "Исследовательская заметка с источниками"
+    },
+    "legal": {
+      "de": "Rechte, Datenschutz oder Kontaktinformation",
+      "en": "Rights, privacy or contact information",
+      "ru": "Права, конфиденциальность или контакты"
+    },
+    "learning": {
+      "de": "Lernzugang, Angebot oder vertiefender Lerntext",
+      "en": "Learning entrance, offering or further reading",
+      "ru": "Доступ к обучению, предложение или дополнительный материал"
+    },
+    "fallback": {
+      "de": "Rückweg oder Offline-Zugang",
+      "en": "Return path or offline entrance",
+      "ru": "Обратный путь или офлайн-доступ"
+    },
+    "motion": {
+      "de": "Bewegung, Gestaltung und Zeitsteuerung",
+      "en": "Motion, design and time controls",
+      "ru": "Движение, дизайн и управление временем"
+    },
+    "archive": {
+      "de": "Öffentliches Archiv und historische Quellen",
+      "en": "Public archive and historical sources",
+      "ru": "Публичный архив и исторические источники"
+    },
+    "evidence": {
+      "de": "Arbeitsprofil, Arbeiten oder Werkdokumentation",
+      "en": "Work profile, works or project documentation",
+      "ru": "Профиль работ, проекты или документация"
+    },
+    "tool": {
+      "de": "Bedienoberfläche oder dokumentierter Zugang",
+      "en": "Interface or documented entrance",
+      "ru": "Интерфейс или документированный доступ"
+    }
+  },
+  "projects": [
+    {
+      "id": "space",
+      "name": "Juri-Halveth.github.io",
+      "title": {
+        "de": "Juris Space · Orientierung",
+        "en": "Juris Space · Navigation",
+        "ru": "Juris Space · Навигация"
+      },
+      "repository": "Juri-Halveth/Juri-Halveth.github.io",
+      "live": "https://juri-halveth.github.io/",
+      "command": "bash SPACE.sh verify",
+      "purpose": {
+        "de": "Themen, Arbeiten und Quellen an einem gemeinsamen Einstieg finden.",
+        "en": "Find topics, works and sources through a shared entrance.",
+        "ru": "Находить темы, работы и источники через общий вход."
+      },
+      "result": {
+        "de": "Die verlinkten Prüfdateien beschreiben den aktuellen Prüfweg. Ein neues Ergebnis entsteht beim Ausführen; das frühere Ergebnis steht im datierten Archiv.",
+        "en": "The linked test files describe the current verification method. A new result comes from running them; the earlier result remains in the dated archive.",
+        "ru": "Связанные файлы описывают текущий способ проверки. Новый результат появляется при запуске; прежний результат остаётся в датированном архиве."
+      },
+      "sources": [
+        {
+          "path": "index.html",
+          "role": "Oberfläche / Entrance / Главная",
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/index.html"
+        },
+        {
+          "path": "templates/index.html",
+          "role": "Vorlage / Template / Шаблон",
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/templates/index.html"
+        },
+        {
+          "path": "data/portfolio.json",
+          "role": "Themen / Topics / Темы",
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/data/portfolio.json"
+        },
+        {
+          "path": "data/public-sources.json",
+          "role": "Quellenregister / Source register / Реестр источников",
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/data/public-sources.json"
+        },
+        {
+          "path": "landing-motion.js",
+          "role": "Automatische Bewegung / Automatic motion / Автоматическое движение",
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/landing-motion.js"
+        },
+        {
+          "path": "motion-core.js",
+          "role": "Form, Licht und Zeit / Form, light and time / Форма, свет и время",
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/motion-core.js"
+        },
+        {
+          "path": "motion/index.html",
+          "role": "Bewegungsstudie / Motion study / Исследование движения",
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/motion/index.html"
+        },
+        {
+          "path": "tools/build-space.cjs",
+          "role": "Seitenbau / Page builder / Генератор страниц",
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/tools/build-space.cjs"
+        },
+        {
+          "path": "tools/build-languages.cjs",
+          "role": "Sprachzugänge / Language entrances / Языковые версии",
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/tools/build-languages.cjs"
+        }
+      ],
+      "tests": [
+        {
+          "path": "tests/landing.test.cjs",
+          "role": "Themenordnung, Quellenzuordnung und Rückwege / Topic order, source mapping and return paths / Порядок тем, привязка источников и обратные пути",
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/tests/landing.test.cjs"
+        },
+        {
+          "path": "tests/landing-motion.test.cjs",
+          "role": "Automatischer Start, Sichtbarkeit und Bewegungszeit / Automatic start, visibility and animation time / Автоматический запуск, видимость и время движения",
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/tests/landing-motion.test.cjs"
+        },
+        {
+          "path": "tests/motion.test.cjs",
+          "role": "Reproduzierbare Animationszustände und Zeitnavigation / Reproducible animation states and time navigation / Воспроизводимые состояния анимации и навигация во времени",
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/tests/motion.test.cjs"
+        },
+        {
+          "path": "tests/motion-player.test.cjs",
+          "role": "Wiedergabe, Suchposition und Hintergrundverhalten / Playback, seeking and background behaviour / Воспроизведение, перемотка и фоновое поведение",
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/tests/motion-player.test.cjs"
+        },
+        {
+          "path": "tests/languages.test.cjs",
+          "role": "Sprachwege, unveränderte Quelladressen und Zahlen / Language routes, retained source addresses and numbers / Языковые пути, сохранение адресов источников и чисел",
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/tests/languages.test.cjs"
+        }
+      ],
+      "pages": [
+        {
+          "path": "404.html",
+          "role": "fallback",
+          "live": "https://juri-halveth.github.io/404.html",
+          "title": "Zurück zu den Themen · Juri Halveth",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/404.html"
+        },
+        {
+          "path": "arbeiten/index.html",
+          "role": "evidence",
+          "live": "https://juri-halveth.github.io/arbeiten/",
+          "title": "Arbeiten nach Themen · Juri Halveth",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/arbeiten/index.html"
+        },
+        {
+          "path": "en/404.html",
+          "role": "language",
+          "live": "https://juri-halveth.github.io/en/404.html",
+          "title": "Back to the themes · Yuri Halveth",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/en/404.html"
+        },
+        {
+          "path": "en/arbeiten/index.html",
+          "role": "language",
+          "live": "https://juri-halveth.github.io/en/arbeiten/",
+          "title": "Work by topic · Juri Halveth",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/en/arbeiten/index.html"
+        },
+        {
+          "path": "en/index.html",
+          "role": "language",
+          "live": "https://juri-halveth.github.io/en/",
+          "title": "Juri Halveth · Research, Design & Open Learning Worlds",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/en/index.html"
+        },
+        {
+          "path": "en/motion/index.html",
+          "role": "language",
+          "live": "https://juri-halveth.github.io/en/motion/",
+          "title": "HALVETH · Creating movement",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/en/motion/index.html"
+        },
+        {
+          "path": "en/profil/index.html",
+          "role": "language",
+          "live": "https://juri-halveth.github.io/en/profil/",
+          "title": "Professional profile & documented evidence · Juri Halveth",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/en/profil/index.html"
+        },
+        {
+          "path": "en/schuelervz-halveth/archaeology.html",
+          "role": "language",
+          "live": "https://juri-halveth.github.io/en/schuelervz-halveth/archaeology.html",
+          "title": "schülerVZ // HALVETH Archaeology",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/en/schuelervz-halveth/archaeology.html"
+        },
+        {
+          "path": "en/schuelervz-halveth/index.html",
+          "role": "language",
+          "live": "https://juri-halveth.github.io/en/schuelervz-halveth/",
+          "title": "schÃƒÂ¼lerVZ // HALVETH MYCELIUM",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/en/schuelervz-halveth/index.html"
+        },
+        {
+          "path": "en/schuelervz-halveth/people.html",
+          "role": "language",
+          "live": "https://juri-halveth.github.io/en/schuelervz-halveth/people.html",
+          "title": "schülerVZ // Finding people",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/en/schuelervz-halveth/people.html"
+        },
+        {
+          "path": "en/schuelervz-halveth/prestige.html",
+          "role": "language",
+          "live": "https://juri-halveth.github.io/en/schuelervz-halveth/prestige.html",
+          "title": "schülerVZ // PRESTIGE FOUR",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/en/schuelervz-halveth/prestige.html"
+        },
+        {
+          "path": "en/werkzertifikate/index.html",
+          "role": "language",
+          "live": "https://juri-halveth.github.io/en/werkzertifikate/",
+          "title": "Juri Janovski / Juri Halveth / HALVETH – Privately issued work certificates and GitHub evidence",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/en/werkzertifikate/index.html"
+        },
+        {
+          "path": "index.html",
+          "role": "entrance",
+          "live": "https://juri-halveth.github.io/",
+          "title": "Juri Halveth · Forschung, Gestaltung & offene Lernwelten",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/index.html"
+        },
+        {
+          "path": "motion/index.html",
+          "role": "motion",
+          "live": "https://juri-halveth.github.io/motion/",
+          "title": "HALVETH · Bewegung gestalten",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/motion/index.html"
+        },
+        {
+          "path": "profil/index.html",
+          "role": "evidence",
+          "live": "https://juri-halveth.github.io/profil/",
+          "title": "Arbeitsprofil & dokumentierte Nachweise · Juri Halveth",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/profil/index.html"
+        },
+        {
+          "path": "ru/404.html",
+          "role": "language",
+          "live": "https://juri-halveth.github.io/ru/404.html",
+          "title": "Назад к теме: Юрий Халвет",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/ru/404.html"
+        },
+        {
+          "path": "ru/arbeiten/index.html",
+          "role": "language",
+          "live": "https://juri-halveth.github.io/ru/arbeiten/",
+          "title": "Работы по темам · Juri Halveth",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/ru/arbeiten/index.html"
+        },
+        {
+          "path": "ru/index.html",
+          "role": "language",
+          "live": "https://juri-halveth.github.io/ru/",
+          "title": "Juri Halveth · Исследования, дизайн и открытые учебные миры",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/ru/index.html"
+        },
+        {
+          "path": "ru/motion/index.html",
+          "role": "language",
+          "live": "https://juri-halveth.github.io/ru/motion/",
+          "title": "HALVETH – создание движения",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/ru/motion/index.html"
+        },
+        {
+          "path": "ru/profil/index.html",
+          "role": "language",
+          "live": "https://juri-halveth.github.io/ru/profil/",
+          "title": "Профессиональный профиль и документированные работы · Juri Halveth",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/ru/profil/index.html"
+        },
+        {
+          "path": "ru/schuelervz-halveth/archaeology.html",
+          "role": "language",
+          "live": "https://juri-halveth.github.io/ru/schuelervz-halveth/archaeology.html",
+          "title": "schülerVZ // Археология жизни",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/ru/schuelervz-halveth/archaeology.html"
+        },
+        {
+          "path": "ru/schuelervz-halveth/index.html",
+          "role": "language",
+          "live": "https://juri-halveth.github.io/ru/schuelervz-halveth/",
+          "title": "schÃƒÂ¼lerVZ // HALVETH MYCELIUM",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/ru/schuelervz-halveth/index.html"
+        },
+        {
+          "path": "ru/schuelervz-halveth/people.html",
+          "role": "language",
+          "live": "https://juri-halveth.github.io/ru/schuelervz-halveth/people.html",
+          "title": "schülerVZ // Поиск людей",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/ru/schuelervz-halveth/people.html"
+        },
+        {
+          "path": "ru/schuelervz-halveth/prestige.html",
+          "role": "language",
+          "live": "https://juri-halveth.github.io/ru/schuelervz-halveth/prestige.html",
+          "title": "schülerVZ // Престиж четыре",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/ru/schuelervz-halveth/prestige.html"
+        },
+        {
+          "path": "ru/werkzertifikate/index.html",
+          "role": "language",
+          "live": "https://juri-halveth.github.io/ru/werkzertifikate/",
+          "title": "Juri Janovski / Juri Halveth / HALVETH — Авторские свидетельства о работах и подтверждающие материалы GitHub",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/ru/werkzertifikate/index.html"
+        },
+        {
+          "path": "schuelervz-halveth/archaeology.html",
+          "role": "archive",
+          "live": "https://juri-halveth.github.io/schuelervz-halveth/archaeology.html",
+          "title": "schülerVZ // HALVETH Archaeology",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/schuelervz-halveth/archaeology.html"
+        },
+        {
+          "path": "schuelervz-halveth/index.html",
+          "role": "archive",
+          "live": "https://juri-halveth.github.io/schuelervz-halveth/",
+          "title": "schÃƒÂ¼lerVZ // HALVETH MYCELIUM",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/schuelervz-halveth/index.html"
+        },
+        {
+          "path": "schuelervz-halveth/people.html",
+          "role": "archive",
+          "live": "https://juri-halveth.github.io/schuelervz-halveth/people.html",
+          "title": "schülerVZ // Menschen finden",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/schuelervz-halveth/people.html"
+        },
+        {
+          "path": "schuelervz-halveth/prestige.html",
+          "role": "archive",
+          "live": "https://juri-halveth.github.io/schuelervz-halveth/prestige.html",
+          "title": "schülerVZ // PRESTIGE FOUR",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/schuelervz-halveth/prestige.html"
+        },
+        {
+          "path": "werkzertifikate/index.html",
+          "role": "evidence",
+          "live": "https://juri-halveth.github.io/werkzertifikate/",
+          "title": "Juri Janovski / Juri Halveth / HALVETH – Private Werkzertifikate und GitHub-Belege",
+          "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/werkzertifikate/index.html"
+        }
+      ]
+    },
+    {
+      "id": "fortuna",
+      "name": "fortuna",
+      "title": {
+        "de": "FORTUNA · Möglichkeiten vergleichen",
+        "en": "FORTUNA · Compare options",
+        "ru": "FORTUNA · Сравнение вариантов"
+      },
+      "repository": "Juri-Halveth/fortuna",
+      "live": "https://juri-halveth.github.io/fortuna/",
+      "command": "node --test docs/curiosity.test.mjs docs/collective.test.mjs",
+      "purpose": {
+        "de": "Möglichkeiten, Bewertungsprofile und bewegte Zustände erkunden.",
+        "en": "Explore options, assessment profiles and moving states.",
+        "ru": "Исследовать варианты, профили оценки и меняющиеся состояния."
+      },
+      "result": {
+        "de": "Die verlinkten Prüfdateien beschreiben den aktuellen Prüfweg. Ein neues Ergebnis entsteht beim Ausführen; das frühere Ergebnis steht im datierten Archiv.",
+        "en": "The linked test files describe the current verification method. A new result comes from running them; the earlier result remains in the dated archive.",
+        "ru": "Связанные файлы описывают текущий способ проверки. Новый результат появляется при запуске; прежний результат остаётся в датированном архиве."
+      },
+      "sources": [
+        {
+          "path": "docs/index.html",
+          "role": "Oberfläche / Interface / Интерфейс",
+          "url": "https://github.com/Juri-Halveth/fortuna/blob/main/docs/index.html"
+        },
+        {
+          "path": "docs/preview.mjs",
+          "role": "Szene / Scene / Сцена",
+          "url": "https://github.com/Juri-Halveth/fortuna/blob/main/docs/preview.mjs"
+        },
+        {
+          "path": "docs/curiosity.mjs",
+          "role": "Erkunden und Bewegung / Exploration and motion / Исследование и движение",
+          "url": "https://github.com/Juri-Halveth/fortuna/blob/main/docs/curiosity.mjs"
+        },
+        {
+          "path": "docs/collective.mjs",
+          "role": "Berechnung / Calculation / Расчёт",
+          "url": "https://github.com/Juri-Halveth/fortuna/blob/main/docs/collective.mjs"
+        },
+        {
+          "path": "docs/collective-panel.mjs",
+          "role": "Eingaben und Ergebnisse / Inputs and results / Ввод и результаты",
+          "url": "https://github.com/Juri-Halveth/fortuna/blob/main/docs/collective-panel.mjs"
+        },
+        {
+          "path": "docs/collective-members.json",
+          "role": "Profile / profiles / профилей",
+          "url": "https://github.com/Juri-Halveth/fortuna/blob/main/docs/collective-members.json"
+        },
+        {
+          "path": "docs/object.json",
+          "role": "Fundstück und Herkunft / Object and origin / Объект и происхождение",
+          "url": "https://github.com/Juri-Halveth/fortuna/blob/main/docs/object.json"
+        },
+        {
+          "path": "docs/NOTICE.md",
+          "role": "Herkunft der übernommenen Komponenten / Component origin / Происхождение компонентов",
+          "url": "https://github.com/Juri-Halveth/fortuna/blob/main/docs/NOTICE.md"
+        }
+      ],
+      "tests": [
+        {
+          "path": "docs/curiosity.test.mjs",
+          "role": "Figuren: Entdecken, Weiterbewegen und stabile Eingaben / figures: discovery, continued movement and stable inputs / фигур: исследование, продолжение движения и стабильные входные данные",
+          "url": "https://github.com/Juri-Halveth/fortuna/blob/main/docs/curiosity.test.mjs"
+        },
+        {
+          "path": "docs/collective.test.mjs",
+          "role": "Bewertungen, Gewichtung, Identitäten und offene Gleichstände / Votes, weights, identities and unresolved ties / Оценки, веса, идентичности и нерешённые ничьи",
+          "url": "https://github.com/Juri-Halveth/fortuna/blob/main/docs/collective.test.mjs"
+        }
+      ],
+      "pages": [
+        {
+          "path": "docs/index.html",
+          "role": "tool",
+          "live": "https://juri-halveth.github.io/fortuna/",
+          "title": "FORTUNA - Fundstueck",
+          "code": "https://github.com/Juri-Halveth/fortuna/blob/main/docs/index.html"
+        }
+      ]
+    },
+    {
+      "id": "scarlet",
+      "name": "halveth-scarlet",
+      "title": {
+        "de": "Scarlet · Erde, Figuren und Quellen",
+        "en": "Scarlet · Earth, characters and sources",
+        "ru": "Scarlet · Земля, персонажи и источники"
+      },
+      "repository": "Juri-Halveth/halveth-scarlet",
+      "live": "https://juri-halveth.github.io/halveth-scarlet/",
+      "command": "node tools/build_site.mjs\nnode --test tests/*.test.cjs tests/*.test.mjs",
+      "purpose": {
+        "de": "Erde, Figuren und Forschung über ihre eigenen Quellen erkunden.",
+        "en": "Explore Earth, characters and research through their sources.",
+        "ru": "Исследовать Землю, персонажей и исследования через их источники."
+      },
+      "result": {
+        "de": "Die verlinkten Prüfdateien beschreiben den aktuellen Prüfweg. Ein neues Ergebnis entsteht beim Ausführen; das frühere Ergebnis steht im datierten Archiv.",
+        "en": "The linked test files describe the current verification method. A new result comes from running them; the earlier result remains in the dated archive.",
+        "ru": "Связанные файлы описывают текущий способ проверки. Новый результат появляется при запуске; прежний результат остаётся в датированном архиве."
+      },
+      "sources": [
+        {
+          "path": "index.html",
+          "role": "Portal / Portal / Портал",
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/index.html"
+        },
+        {
+          "path": "entities/index.html",
+          "role": "Figurenverzeichnis / Character directory / Каталог персонажей",
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/index.html"
+        },
+        {
+          "path": "assets/universe-data.js",
+          "role": "Namen und Profile / Names and profiles / Имена и профили",
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/assets/universe-data.js"
+        },
+        {
+          "path": "assets/entity-world.mjs",
+          "role": "Figurenraum / Character space / Пространство персонажей",
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/assets/entity-world.mjs"
+        },
+        {
+          "path": "assets/entity-world-motion.mjs",
+          "role": "Laufwege und Zeitzustand / Paths and time state / Траектории и время",
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/assets/entity-world-motion.mjs"
+        },
+        {
+          "path": "assets/entity-world-scene.mjs",
+          "role": "Darstellung der Szene / Scene rendering / Отображение сцены",
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/assets/entity-world-scene.mjs"
+        },
+        {
+          "path": "tools/build_profiles.mjs",
+          "role": "Profilseiten erzeugen / Generate profiles / Генерация профилей",
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/tools/build_profiles.mjs"
+        },
+        {
+          "path": "tools/build_site.mjs",
+          "role": "Öffentlicher Seitenbau / Public site build / Сборка публичного сайта",
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/tools/build_site.mjs"
+        },
+        {
+          "path": "tools/check_links.mjs",
+          "role": "Lokale Verweise prüfen / Check local references / Проверка локальных ссылок",
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/tools/check_links.mjs"
+        }
+      ],
+      "tests": [
+        {
+          "path": "tests/entity-roaming.test.cjs",
+          "role": "Laufwege, Beinbewegung und begrenztes Weltstreaming / roaming paths, leg motion and bounded world streaming / маршрутов, движение ног и ограниченная загрузка мира",
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/tests/entity-roaming.test.cjs"
+        },
+        {
+          "path": "tests/entity-profiles.test.cjs",
+          "role": "Profilbau, getrennte IDs und genaue Herkunftslinks / Profile builds, distinct IDs and exact provenance links / Сборка профилей, отдельные ID и точные ссылки на происхождение",
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/tests/entity-profiles.test.cjs"
+        },
+        {
+          "path": "tests/entity-world.test.cjs",
+          "role": "Figurenverzeichnis, Suche und stabile Identitätszuordnung / Figure registry, search and stable identity mapping / Реестр фигур, поиск и стабильная привязка идентичностей",
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/tests/entity-world.test.cjs"
+        },
+        {
+          "path": "tests/portal-shell.test.cjs",
+          "role": "Gemeinsame Seitenhülle, Metadaten und Layout / Shared page shell, metadata and layout / Общая оболочка страниц, метаданные и макет",
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/tests/portal-shell.test.cjs"
+        },
+        {
+          "path": "tests/language-controls.test.cjs",
+          "role": "Russische Navigation, Profilsuche und Beschriftungen / Russian navigation, profile search and labels / Русская навигация, поиск профилей и подписи",
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/tests/language-controls.test.cjs"
+        }
+      ],
+      "pages": [
+        {
+          "path": "collage/index.html",
+          "role": "tool",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/collage/",
+          "title": "HALVETH · Choice Atelier",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/collage/index.html"
+        },
+        {
+          "path": "entities/ali/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/ali/",
+          "title": "ALI · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/ali/index.html"
+        },
+        {
+          "path": "entities/alyen/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/alyen/",
+          "title": "ALYEN · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/alyen/index.html"
+        },
+        {
+          "path": "entities/anti/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/anti/",
+          "title": "ANTI · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/anti/index.html"
+        },
+        {
+          "path": "entities/aster-chain/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/aster-chain/",
+          "title": "ASTER · CHAIN? · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/aster-chain/index.html"
+        },
+        {
+          "path": "entities/aster/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/aster/",
+          "title": "ASTER · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/aster/index.html"
+        },
+        {
+          "path": "entities/brightcast-starlight/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/brightcast-starlight/",
+          "title": "",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/brightcast-starlight/index.html"
+        },
+        {
+          "path": "entities/celsius/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/celsius/",
+          "title": "CELSIUS · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/celsius/index.html"
+        },
+        {
+          "path": "entities/choice-atelier/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/choice-atelier/",
+          "title": "CHOICE ATELIER · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/choice-atelier/index.html"
+        },
+        {
+          "path": "entities/context-prism/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/context-prism/",
+          "title": "KONTEXT-PRISMA · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/context-prism/index.html"
+        },
+        {
+          "path": "entities/dormammu/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/dormammu/",
+          "title": "DORMAMMU · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/dormammu/index.html"
+        },
+        {
+          "path": "entities/ego/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/ego/",
+          "title": "EGO · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/ego/index.html"
+        },
+        {
+          "path": "entities/elyr/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/elyr/",
+          "title": "ELYR · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/elyr/index.html"
+        },
+        {
+          "path": "entities/eve/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/eve/",
+          "title": "EVE · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/eve/index.html"
+        },
+        {
+          "path": "entities/finn/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/finn/",
+          "title": "FINN · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/finn/index.html"
+        },
+        {
+          "path": "entities/gitcoin/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/gitcoin/",
+          "title": "GITCOIN · GTC · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/gitcoin/index.html"
+        },
+        {
+          "path": "entities/guardians/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/guardians/",
+          "title": "GUARDIANS · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/guardians/index.html"
+        },
+        {
+          "path": "entities/halveth/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/halveth/",
+          "title": "HALVETH · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/halveth/index.html"
+        },
+        {
+          "path": "entities/index.html",
+          "role": "tool",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/",
+          "title": "Die Konstellation · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/index.html"
+        },
+        {
+          "path": "entities/infinity/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/infinity/",
+          "title": "INFINITY · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/infinity/index.html"
+        },
+        {
+          "path": "entities/ironman/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/ironman/",
+          "title": "IRON MAN · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/ironman/index.html"
+        },
+        {
+          "path": "entities/jan/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/jan/",
+          "title": "JAN · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/jan/index.html"
+        },
+        {
+          "path": "entities/jarvis/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/jarvis/",
+          "title": "JARVIS · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/jarvis/index.html"
+        },
+        {
+          "path": "entities/juno/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/juno/",
+          "title": "JUNO · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/juno/index.html"
+        },
+        {
+          "path": "entities/juri/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/juri/",
+          "title": "JURI · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/juri/index.html"
+        },
+        {
+          "path": "entities/k/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/k/",
+          "title": "K · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/k/index.html"
+        },
+        {
+          "path": "entities/koro/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/koro/",
+          "title": "KORO · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/koro/index.html"
+        },
+        {
+          "path": "entities/leo/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/leo/",
+          "title": "LEO · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/leo/index.html"
+        },
+        {
+          "path": "entities/lia/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/lia/",
+          "title": "LIA · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/lia/index.html"
+        },
+        {
+          "path": "entities/lila/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/lila/",
+          "title": "LILA · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/lila/index.html"
+        },
+        {
+          "path": "entities/loki/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/loki/",
+          "title": "LOKI · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/loki/index.html"
+        },
+        {
+          "path": "entities/lucifer/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/lucifer/",
+          "title": "LUCIFER · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/lucifer/index.html"
+        },
+        {
+          "path": "entities/lucinet/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/lucinet/",
+          "title": "LUCINET · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/lucinet/index.html"
+        },
+        {
+          "path": "entities/manta/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/manta/",
+          "title": "MANTA · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/manta/index.html"
+        },
+        {
+          "path": "entities/mara/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/mara/",
+          "title": "MARA · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/mara/index.html"
+        },
+        {
+          "path": "entities/mascha/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/mascha/",
+          "title": "MASCHA · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/mascha/index.html"
+        },
+        {
+          "path": "entities/medusa/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/medusa/",
+          "title": "MEDUSA · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/medusa/index.html"
+        },
+        {
+          "path": "entities/mica/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/mica/",
+          "title": "MICA · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/mica/index.html"
+        },
+        {
+          "path": "entities/mio/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/mio/",
+          "title": "MIO · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/mio/index.html"
+        },
+        {
+          "path": "entities/mira/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/mira/",
+          "title": "MIRA · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/mira/index.html"
+        },
+        {
+          "path": "entities/mita/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/mita/",
+          "title": "MITA · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/mita/index.html"
+        },
+        {
+          "path": "entities/nara/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/nara/",
+          "title": "NARA · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/nara/index.html"
+        },
+        {
+          "path": "entities/niko/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/niko/",
+          "title": "NIKO · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/niko/index.html"
+        },
+        {
+          "path": "entities/omi/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/omi/",
+          "title": "OMI · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/omi/index.html"
+        },
+        {
+          "path": "entities/patch/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/patch/",
+          "title": "PATCH · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/patch/index.html"
+        },
+        {
+          "path": "entities/peter/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/peter/",
+          "title": "PETER · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/peter/index.html"
+        },
+        {
+          "path": "entities/pflanze/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/pflanze/",
+          "title": "PFLANZE · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/pflanze/index.html"
+        },
+        {
+          "path": "entities/pi-treffpunkte/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/pi-treffpunkte/",
+          "title": "π-TREFFPUNKTE · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/pi-treffpunkte/index.html"
+        },
+        {
+          "path": "entities/rachel/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/rachel/",
+          "title": "RACHEL · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/rachel/index.html"
+        },
+        {
+          "path": "entities/rosa/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/rosa/",
+          "title": "ROSA · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/rosa/index.html"
+        },
+        {
+          "path": "entities/rose/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/rose/",
+          "title": "ROSE · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/rose/index.html"
+        },
+        {
+          "path": "entities/rtx/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/rtx/",
+          "title": "RTX · ? · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/rtx/index.html"
+        },
+        {
+          "path": "entities/sael/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/sael/",
+          "title": "SAEL · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/sael/index.html"
+        },
+        {
+          "path": "entities/sara/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/sara/",
+          "title": "SARA · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/sara/index.html"
+        },
+        {
+          "path": "entities/scarlet/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/scarlet/",
+          "title": "SCARLET · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/scarlet/index.html"
+        },
+        {
+          "path": "entities/schwamm/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/schwamm/",
+          "title": "SCHWAMM · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/schwamm/index.html"
+        },
+        {
+          "path": "entities/schwarm/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/schwarm/",
+          "title": "SCHWARM · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/schwarm/index.html"
+        },
+        {
+          "path": "entities/sera/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/sera/",
+          "title": "SERA · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/sera/index.html"
+        },
+        {
+          "path": "entities/sina/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/sina/",
+          "title": "SINA · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/sina/index.html"
+        },
+        {
+          "path": "entities/strange/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/strange/",
+          "title": "DR STRANGE · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/strange/index.html"
+        },
+        {
+          "path": "entities/tess/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/tess/",
+          "title": "TESS · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/tess/index.html"
+        },
+        {
+          "path": "entities/thor/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/thor/",
+          "title": "THOR · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/thor/index.html"
+        },
+        {
+          "path": "entities/timo/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/timo/",
+          "title": "TIMO · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/timo/index.html"
+        },
+        {
+          "path": "entities/ultron/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/ultron/",
+          "title": "ULTRON · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/ultron/index.html"
+        },
+        {
+          "path": "entities/vael/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/vael/",
+          "title": "VAEL · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/vael/index.html"
+        },
+        {
+          "path": "entities/venara/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/venara/",
+          "title": "VENARA · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/venara/index.html"
+        },
+        {
+          "path": "entities/verachel/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/verachel/",
+          "title": "VERACHEL · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/verachel/index.html"
+        },
+        {
+          "path": "entities/vision/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/vision/",
+          "title": "VISION · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/vision/index.html"
+        },
+        {
+          "path": "entities/widow/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/widow/",
+          "title": "BLACK WIDOW · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/widow/index.html"
+        },
+        {
+          "path": "entities/yuri/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/yuri/",
+          "title": "YURI · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/yuri/index.html"
+        },
+        {
+          "path": "entities/zuendkerze/index.html",
+          "role": "profile",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/entities/zuendkerze/",
+          "title": "ZÜNDKERZE · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/zuendkerze/index.html"
+        },
+        {
+          "path": "forschung/brightcast-starlight/index.html",
+          "role": "research",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/forschung/brightcast-starlight/",
+          "title": "",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/forschung/brightcast-starlight/index.html"
+        },
+        {
+          "path": "forschung/de-anker-hela/index.html",
+          "role": "research",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/forschung/de-anker-hela/",
+          "title": "DE → KONTEXT-ANKER · Erinnerungsanker, dann Multiversum",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/forschung/de-anker-hela/index.html"
+        },
+        {
+          "path": "forschung/figuren-und-perspektiven/index.html",
+          "role": "research",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/forschung/figuren-und-perspektiven/",
+          "title": "HALVETH · Was wäre, wenn jemand geblieben wäre?",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/forschung/figuren-und-perspektiven/index.html"
+        },
+        {
+          "path": "forschung/formen-und-verbindungen/index.html",
+          "role": "research",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/forschung/formen-und-verbindungen/",
+          "title": "Formen und Verbindungen · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/forschung/formen-und-verbindungen/index.html"
+        },
+        {
+          "path": "forschung/halveth-research/index.html",
+          "role": "research",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/forschung/halveth-research/",
+          "title": "HALVETH Research",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/forschung/halveth-research/index.html"
+        },
+        {
+          "path": "forschung/handschriftliche-konvergenzen/index.html",
+          "role": "research",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/forschung/handschriftliche-konvergenzen/",
+          "title": "Handschriftliche Konvergenzen · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/forschung/handschriftliche-konvergenzen/index.html"
+        },
+        {
+          "path": "forschung/pi-treffpunkte/index.html",
+          "role": "research",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/forschung/pi-treffpunkte/",
+          "title": "π-Treffpunkte · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/forschung/pi-treffpunkte/index.html"
+        },
+        {
+          "path": "forschung/q-notizen/index.html",
+          "role": "research",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/forschung/q-notizen/",
+          "title": "",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/forschung/q-notizen/index.html"
+        },
+        {
+          "path": "forschung/tagesstand-2026-09-13/index.html",
+          "role": "research",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/forschung/tagesstand-2026-09-13/",
+          "title": "",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/forschung/tagesstand-2026-09-13/index.html"
+        },
+        {
+          "path": "forschung/transaktionsfluss/index.html",
+          "role": "research",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/forschung/transaktionsfluss/",
+          "title": "HALVETH · Transaktionsfluss",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/forschung/transaktionsfluss/index.html"
+        },
+        {
+          "path": "forschung/usdai-sabr-kontext/index.html",
+          "role": "research",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/forschung/usdai-sabr-kontext/",
+          "title": "USDAI / SABR Kontext-Prisma · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/forschung/usdai-sabr-kontext/index.html"
+        },
+        {
+          "path": "index.html",
+          "role": "entrance",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/",
+          "title": "HALVETH · Erde, Herzen & Scarlet Events",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/index.html"
+        },
+        {
+          "path": "news/index.html",
+          "role": "tool",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/news/",
+          "title": "Quellen-News · HALVETH",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/news/index.html"
+        },
+        {
+          "path": "room/index.html",
+          "role": "tool",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/room/",
+          "title": "HALVETH · Raum der Spuren",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/room/index.html"
+        },
+        {
+          "path": "snapshot/index.html",
+          "role": "tool",
+          "live": "https://juri-halveth.github.io/halveth-scarlet/snapshot/",
+          "title": "HALVETH · Snapshot-Studio",
+          "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/snapshot/index.html"
+        }
+      ]
+    },
+    {
+      "id": "learning",
+      "name": "lernstudio",
+      "title": {
+        "de": "Lernstudio · Die Lernwelt",
+        "en": "Lernstudio · The learning world",
+        "ru": "Lernstudio · Обучение"
+      },
+      "repository": "Juri-Halveth/lernstudio",
+      "live": "https://juri-halveth.github.io/lernstudio/",
+      "command": "npm run build",
+      "purpose": {
+        "de": "Lernwege, Alltag am Computer und praktische Übungen. Der russische Elternmodus hat einen eigenen einfachen Eingang.",
+        "en": "Learning paths, everyday computer use and practical exercises. The Russian parent mode has its own simple entrance.",
+        "ru": "Учебные пути, повседневные дела за компьютером и упражнения. Для родителей и старших есть отдельный понятный вход."
+      },
+      "result": {
+        "de": "Die verlinkten Prüfdateien beschreiben den aktuellen Prüfweg. Ein neues Ergebnis entsteht beim Ausführen; das frühere Ergebnis steht im datierten Archiv.",
+        "en": "The linked test files describe the current verification method. A new result comes from running them; the earlier result remains in the dated archive.",
+        "ru": "Связанные файлы описывают текущий способ проверки. Новый результат появляется при запуске; прежний результат остаётся в датированном архиве."
+      },
+      "sources": [
+        {
+          "path": "index.html",
+          "role": "Einstieg / Entrance / Главная",
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/main/index.html"
+        },
+        {
+          "path": "studio.html",
+          "role": "Lernoberfläche / Learning interface / Учебный интерфейс",
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/main/studio.html"
+        },
+        {
+          "path": "curriculum.js",
+          "role": "Lektionen / lessons / урока",
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/main/curriculum.js"
+        },
+        {
+          "path": "app.js",
+          "role": "Lektionsanzeige und Navigation / Lessons and navigation / Уроки и навигация",
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/main/app.js"
+        },
+        {
+          "path": "lesson-visuals.js",
+          "role": "Denkmodelle / Learning models / Учебные модели",
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/main/lesson-visuals.js"
+        },
+        {
+          "path": "learning-profile.js",
+          "role": "Lokaler Fortschritt / Local progress / Локальный прогресс",
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/main/learning-profile.js"
+        },
+        {
+          "path": "api/space.json",
+          "role": "Kompakter Inhaltszugang / Compact content entrance / Краткий доступ к материалам",
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/main/api/space.json"
+        },
+        {
+          "path": "werkzeug/test.js",
+          "role": "Liste der Prüfsuiten / List of suites / Список наборов проверок",
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/main/werkzeug/test.js"
+        },
+        {
+          "path": "werkzeug/website-bauen.js",
+          "role": "Build und Export / Build and export / Сборка и экспорт",
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/main/werkzeug/website-bauen.js"
+        },
+        {
+          "path": "werkzeug/public-files.js",
+          "role": "freigegebene Dateien / allowed files / разрешённых файлов",
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/main/werkzeug/public-files.js"
+        },
+        {
+          "path": "eltern/index.html",
+          "role": "Russischer Elternmodus / Russian parent mode / Русский учебный вход",
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/main/eltern/index.html"
+        },
+        {
+          "path": "eltern/lessons.js",
+          "role": "Alltagsübungen / Everyday exercises / Повседневные задания",
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/main/eltern/lessons.js"
+        },
+        {
+          "path": "eltern/progress.js",
+          "role": "Fortschritt und Import / Progress and import / Прогресс и импорт",
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/main/eltern/progress.js"
+        },
+        {
+          "path": "eltern/app.js",
+          "role": "Bedienung und Übungssimulation / Interaction and practice simulation / Интерфейс и учебные модели",
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/main/eltern/app.js"
+        }
+      ],
+      "tests": [
+        {
+          "path": "werkzeug/test-free-app.js",
+          "role": "Freier Zugang und lokale Browserabläufe / Free access and local browser flows / Свободный доступ и локальные сценарии браузера",
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/main/werkzeug/test-free-app.js"
+        },
+        {
+          "path": "werkzeug/test-lesson-visuals.js",
+          "role": "Lektionsansichten und Darstellung der Inhalte / Lesson views and content presentation / Представления уроков и отображение содержания",
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/main/werkzeug/test-lesson-visuals.js"
+        },
+        {
+          "path": "werkzeug/test-universal-task-help.js",
+          "role": "Aufgabenhilfe und Hinweise im Lernablauf / Task help and hints in the learning flow / Помощь с заданиями и подсказки в обучении",
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/main/werkzeug/test-universal-task-help.js"
+        },
+        {
+          "path": "werkzeug/test-agent-space.cjs",
+          "role": "Lektionen: begrenzte Abfragen, Quellenbindung und Kontext / lessons: bounded queries, source binding and context / урока: ограниченные запросы, привязка источников и контекст",
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/main/werkzeug/test-agent-space.cjs"
+        },
+        {
+          "path": "tests/hub-languages.test.cjs",
+          "role": "Deutsche, englische und russische Beschriftungen / German, English and Russian labels / Немецкие, английские и русские подписи",
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/main/tests/hub-languages.test.cjs"
+        },
+        {
+          "path": "tests/elternmodus.test.cjs",
+          "role": "Alltagswege, Speichern und Wiederaufnahme / Everyday paths, persistence and resume / Учебные маршруты, сохранение и продолжение",
+          "url": "https://github.com/Juri-Halveth/lernstudio/blob/main/tests/elternmodus.test.cjs"
+        }
+      ],
+      "pages": [
+        {
+          "path": "agb.html",
+          "role": "legal",
+          "live": "https://juri-halveth.github.io/lernstudio/agb.html",
+          "title": "Nutzung des freien Lernstudios – Inhalte und Gemeinschaft",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/main/agb.html"
+        },
+        {
+          "path": "angebot.html",
+          "role": "learning",
+          "live": "https://juri-halveth.github.io/lernstudio/angebot.html",
+          "title": "Wissen gehört allen – die Idee hinter Lernstudio",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/main/angebot.html"
+        },
+        {
+          "path": "community.html",
+          "role": "learning",
+          "live": "https://juri-halveth.github.io/lernstudio/community.html",
+          "title": "Lernstudio Gemeinschaft – gemeinsam Fragen weiterdenken",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/main/community.html"
+        },
+        {
+          "path": "datenschutz.html",
+          "role": "legal",
+          "live": "https://juri-halveth.github.io/lernstudio/datenschutz.html",
+          "title": "Datenschutz – das freie Lernstudio und deine Daten",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/main/datenschutz.html"
+        },
+        {
+          "path": "eve.html",
+          "role": "learning",
+          "live": "https://juri-halveth.github.io/lernstudio/eve.html",
+          "title": "EVE-Labor – Lernen, Wallets und nachvollziehbare Belohnungen",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/main/eve.html"
+        },
+        {
+          "path": "faq.html",
+          "role": "learning",
+          "live": "https://juri-halveth.github.io/lernstudio/faq.html",
+          "title": "Häufige Fragen – kostenlos und selbstbestimmt lernen",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/main/faq.html"
+        },
+        {
+          "path": "genie.html",
+          "role": "learning",
+          "live": "https://juri-halveth.github.io/lernstudio/genie.html",
+          "title": "TIEFER: Wie prüfst du eine überzeugende Antwort?",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/main/genie.html"
+        },
+        {
+          "path": "impressum.html",
+          "role": "legal",
+          "live": "https://juri-halveth.github.io/lernstudio/impressum.html",
+          "title": "Impressum, Lernstudio",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/main/impressum.html"
+        },
+        {
+          "path": "index.html",
+          "role": "learning",
+          "live": "https://juri-halveth.github.io/lernstudio/",
+          "title": "Lernstudio – kostenlos lernen, entdecken und weiterdenken",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/main/index.html"
+        },
+        {
+          "path": "inhalte.html",
+          "role": "learning",
+          "live": "https://juri-halveth.github.io/lernstudio/inhalte.html",
+          "title": "Lernstudio erleben: Wähle eine Frage und löse eine Aufgabe",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/main/inhalte.html"
+        },
+        {
+          "path": "kontakt.html",
+          "role": "legal",
+          "live": "https://juri-halveth.github.io/lernstudio/kontakt.html",
+          "title": "Kontakt zum Lernstudio – Fragen und frühere Verträge",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/main/kontakt.html"
+        },
+        {
+          "path": "offline.html",
+          "role": "fallback",
+          "live": "https://juri-halveth.github.io/lernstudio/offline.html",
+          "title": "Lernstudio – Verbindung gerade nicht verfügbar",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/main/offline.html"
+        },
+        {
+          "path": "quellcode.html",
+          "role": "learning",
+          "live": "https://juri-halveth.github.io/lernstudio/quellcode.html",
+          "title": "Offener Quellcode – Lernstudio verstehen und weiterentwickeln",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/main/quellcode.html"
+        },
+        {
+          "path": "studio.html",
+          "role": "learning",
+          "live": "https://juri-halveth.github.io/lernstudio/studio.html",
+          "title": "Dein Lernstudio – alle Lernpfade kostenlos entdecken",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/main/studio.html"
+        },
+        {
+          "path": "widerruf.html",
+          "role": "legal",
+          "live": "https://juri-halveth.github.io/lernstudio/widerruf.html",
+          "title": "Frühere Käufe – Kontakt und erhaltene Vertragsinformationen",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/main/widerruf.html"
+        },
+        {
+          "path": "wissen-frage-x-wann-gehoert-wissen-dir.html",
+          "role": "learning",
+          "live": "https://juri-halveth.github.io/lernstudio/wissen-frage-x-wann-gehoert-wissen-dir.html",
+          "title": "Wann habe ich etwas wirklich verstanden? Einfach erklärt",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/main/wissen-frage-x-wann-gehoert-wissen-dir.html"
+        },
+        {
+          "path": "wissen-ki-programmieren.html",
+          "role": "learning",
+          "live": "https://juri-halveth.github.io/lernstudio/wissen-ki-programmieren.html",
+          "title": "Lohnt sich Programmieren lernen noch, wenn KI den Code schreibt?",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/main/wissen-ki-programmieren.html"
+        },
+        {
+          "path": "wissen-lernen-jedes-alter-ausbildung-beruf.html",
+          "role": "learning",
+          "live": "https://juri-halveth.github.io/lernstudio/wissen-lernen-jedes-alter-ausbildung-beruf.html",
+          "title": "",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/main/wissen-lernen-jedes-alter-ausbildung-beruf.html"
+        },
+        {
+          "path": "wissen-marketing-start.html",
+          "role": "learning",
+          "live": "https://juri-halveth.github.io/lernstudio/wissen-marketing-start.html",
+          "title": "Wo fange ich mit Marketing an? Vier Fragen, die es klären",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/main/wissen-marketing-start.html"
+        },
+        {
+          "path": "wissen-studium-und-verstehen.html",
+          "role": "learning",
+          "live": "https://juri-halveth.github.io/lernstudio/wissen-studium-und-verstehen.html",
+          "title": "Warum ist Ausprobieren wichtig? Theorie praktisch verstehen",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/main/wissen-studium-und-verstehen.html"
+        },
+        {
+          "path": "wissen-verstehen-aber-nicht-anwenden.html",
+          "role": "learning",
+          "live": "https://juri-halveth.github.io/lernstudio/wissen-verstehen-aber-nicht-anwenden.html",
+          "title": "Warum reicht Lesen allein nicht? Wissen anwenden lernen",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/main/wissen-verstehen-aber-nicht-anwenden.html"
+        },
+        {
+          "path": "wissen-zertifikate.html",
+          "role": "learning",
+          "live": "https://juri-halveth.github.io/lernstudio/wissen-zertifikate.html",
+          "title": "Warum ich mit Absicht keine Zertifikate ausstelle",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/main/wissen-zertifikate.html"
+        },
+        {
+          "path": "wissen.html",
+          "role": "learning",
+          "live": "https://juri-halveth.github.io/lernstudio/wissen.html",
+          "title": "Einfache Antworten über Lernen und Technik · Lernstudio",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/main/wissen.html"
+        },
+        {
+          "path": "eltern/index.html",
+          "title": "Компьютер — без паники",
+          "role": "learning",
+          "live": "https://juri-halveth.github.io/lernstudio/eltern/",
+          "code": "https://github.com/Juri-Halveth/lernstudio/blob/main/eltern/index.html"
+        }
+      ]
+    },
+    {
+      "id": "bash",
+      "name": "mein-lernportal",
+      "title": {
+        "de": "Bash Big Bang · Code ausprobieren",
+        "en": "Bash Big Bang · Try code",
+        "ru": "Bash Big Bang · Пробуем код"
+      },
+      "repository": "Juri-Halveth/mein-lernportal",
+      "live": "https://juri-halveth.github.io/mein-lernportal/",
+      "command": "npm test\nnode tests/big-bang.cjs",
+      "purpose": {
+        "de": "Git Bash, Code und weitere Themen über Übungen verbinden.",
+        "en": "Connect Git Bash, code and other topics through exercises.",
+        "ru": "Связать Git Bash, код и другие темы через упражнения."
+      },
+      "result": {
+        "de": "Die verlinkten Prüfdateien beschreiben den aktuellen Prüfweg. Ein neues Ergebnis entsteht beim Ausführen; das frühere Ergebnis steht im datierten Archiv.",
+        "en": "The linked test files describe the current verification method. A new result comes from running them; the earlier result remains in the dated archive.",
+        "ru": "Связанные файлы описывают текущий способ проверки. Новый результат появляется при запуске; прежний результат остаётся в датированном архиве."
+      },
+      "sources": [
+        {
+          "path": "index.html",
+          "role": "Einstieg / Entrance / Главная",
+          "url": "https://github.com/Juri-Halveth/mein-lernportal/blob/main/index.html"
+        },
+        {
+          "path": "studio.html",
+          "role": "Lektionszugang / Lesson entrance / Доступ к урокам",
+          "url": "https://github.com/Juri-Halveth/mein-lernportal/blob/main/studio.html"
+        },
+        {
+          "path": "curriculum.js",
+          "role": "Gemeinsame Lektionen / Shared lessons / Общие уроки",
+          "url": "https://github.com/Juri-Halveth/mein-lernportal/blob/main/curriculum.js"
+        },
+        {
+          "path": "big-bang/index.html",
+          "role": "Bash-Oberfläche / Bash interface / Интерфейс Bash",
+          "url": "https://github.com/Juri-Halveth/mein-lernportal/blob/main/big-bang/index.html"
+        },
+        {
+          "path": "big-bang/app.js",
+          "role": "Themen und Beispiele anzeigen / Display topics and examples / Показ тем и примеров",
+          "url": "https://github.com/Juri-Halveth/mein-lernportal/blob/main/big-bang/app.js"
+        },
+        {
+          "path": "big-bang/catalog.json",
+          "role": "Brücken und Rezepte / bridges and recipes / связей и рецептов",
+          "url": "https://github.com/Juri-Halveth/mein-lernportal/blob/main/big-bang/catalog.json"
+        },
+        {
+          "path": "package.json",
+          "role": "Prüfbefehle / Verification commands / Команды проверки",
+          "url": "https://github.com/Juri-Halveth/mein-lernportal/blob/main/package.json"
+        }
+      ],
+      "tests": [
+        {
+          "path": "tests/portal.test.cjs",
+          "role": "Lernpfade, Stufen, IDs und lokaler Fortschritt / tracks, stages, IDs and local progress / путей, уровня, ID и локальный прогресс",
+          "url": "https://github.com/Juri-Halveth/mein-lernportal/blob/main/tests/portal.test.cjs"
+        },
+        {
+          "path": "tests/hub-languages.test.cjs",
+          "role": "Deutsche, englische und russische Beschriftungen / German, English and Russian labels / Немецкие, английские и русские подписи",
+          "url": "https://github.com/Juri-Halveth/mein-lernportal/blob/main/tests/hub-languages.test.cjs"
+        },
+        {
+          "path": "tests/big-bang.cjs",
+          "role": "Quelllektionen, Brücken und isolierte Bash-/Git-Prüfungen / source lessons, bridges and isolated Bash and Git checks / исходных урока, связей и изолированных проверок Bash и Git",
+          "url": "https://github.com/Juri-Halveth/mein-lernportal/blob/main/tests/big-bang.cjs"
+        }
+      ],
+      "pages": [
+        {
+          "path": "404.html",
+          "role": "fallback",
+          "live": "https://juri-halveth.github.io/mein-lernportal/404.html",
+          "title": "Zurück ins Lernuniversum",
+          "code": "https://github.com/Juri-Halveth/mein-lernportal/blob/main/404.html"
+        },
+        {
+          "path": "about.html",
+          "role": "legal",
+          "live": "https://juri-halveth.github.io/mein-lernportal/about.html",
+          "title": "Über das Portal – Mein Lernportal",
+          "code": "https://github.com/Juri-Halveth/mein-lernportal/blob/main/about.html"
+        },
+        {
+          "path": "ath/index.html",
+          "role": "learning",
+          "live": "https://juri-halveth.github.io/mein-lernportal/ath/",
+          "title": "ATH Ã‚Â· LEVIATH",
+          "code": "https://github.com/Juri-Halveth/mein-lernportal/blob/main/ath/index.html"
+        },
+        {
+          "path": "big-bang/canonical.html",
+          "role": "learning",
+          "live": "https://juri-halveth.github.io/mein-lernportal/big-bang/canonical.html",
+          "title": "BASH DICH DURCH · Lokale Werkstatt",
+          "code": "https://github.com/Juri-Halveth/mein-lernportal/blob/main/big-bang/canonical.html"
+        },
+        {
+          "path": "big-bang/index.html",
+          "role": "learning",
+          "live": "https://juri-halveth.github.io/mein-lernportal/big-bang/",
+          "title": "BASH BIG BANG · Alle Themen, ein Lernraum",
+          "code": "https://github.com/Juri-Halveth/mein-lernportal/blob/main/big-bang/index.html"
+        },
+        {
+          "path": "index.html",
+          "role": "learning",
+          "live": "https://juri-halveth.github.io/mein-lernportal/",
+          "title": "",
+          "code": "https://github.com/Juri-Halveth/mein-lernportal/blob/main/index.html"
+        },
+        {
+          "path": "privacy.html",
+          "role": "legal",
+          "live": "https://juri-halveth.github.io/mein-lernportal/privacy.html",
+          "title": "Privatsphäre – Mein Lernportal",
+          "code": "https://github.com/Juri-Halveth/mein-lernportal/blob/main/privacy.html"
+        },
+        {
+          "path": "studio.html",
+          "role": "learning",
+          "live": "https://juri-halveth.github.io/mein-lernportal/studio.html",
+          "title": "Direkt lernen – Mein Lernportal",
+          "code": "https://github.com/Juri-Halveth/mein-lernportal/blob/main/studio.html"
+        }
+      ]
+    }
+  ]
+}

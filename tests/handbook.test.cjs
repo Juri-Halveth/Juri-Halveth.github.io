@@ -2,6 +2,7 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),cp=require('node:child_process');
 const {JSDOM}=require('jsdom'),root=path.resolve(__dirname,'..'),data=require('../data/handbook.json');
 const read=p=>fs.readFileSync(path.join(root,p),'utf8');
+const current=require('../data/handbook-current.json');
 test('handbook binds the quoted run and preserves its five source versions',()=>{
  assert.equal(data.schema,'halveth.hub-handbook.v1');assert.equal(data.dataClass,'PUBLIC');
  assert.equal(data.verification.recordedAt,'2026-10-05T16:22:42.929Z');
@@ -29,7 +30,7 @@ test('three handbook editions expose every source and page with working return a
   assert.equal(doc.querySelectorAll('[data-language-link][aria-current=page]').length,1);
   const ids=[...doc.querySelectorAll('[id]')].map(n=>n.id);assert.equal(new Set(ids).size,ids.length);
   const links=[...doc.querySelectorAll('a')].map(a=>a.href);
-  for(const p of data.projects){for(const s of [...p.sources,...p.tests])assert(links.includes(s.url));for(const page of p.pages){assert(links.includes(page.live));assert(links.includes(page.code));}}
+  for(const p of current.projects){for(const s of [...p.sources,...p.tests])assert(links.includes(s.url));for(const page of p.pages){assert(links.includes(page.live));assert(links.includes(page.code));}}
   for(const el of doc.querySelectorAll('a,link[rel=stylesheet],script[src],img[src]')){
    const u=new URL(el.getAttribute(el.tagName==='SCRIPT'||el.tagName==='IMG'?'src':'href'),dom.window.location.href);
    assert.equal(u.username,'');assert.equal(u.password,'');assert.equal(u.protocol,'https:');
@@ -48,4 +49,19 @@ test('handbook publishes source addresses and quoted counts without private host
 test('handbook rebuild preserves all three editions and the source-bound text guide exactly',()=>{
  const files=['handbuch/index.html','en/handbuch/index.html','ru/handbuch/index.html','docs/HANDBUCH.md','data/handbook.json'],before=files.map(read);
  cp.execFileSync(process.execPath,['tools/build-handbook.cjs'],{cwd:root});assert.deepEqual(files.map(read),before);
+});
+test('active navigation follows moving source branches and connects the Russian parent mode without frozen result counters',()=>{
+ assert.equal(current.sourcePolicy,'MOVING_MAIN_LINKS_NOT_TEST_RESULTS');
+ for(const project of current.projects){
+  assert(!Object.hasOwn(project,'commit'));assert(!Object.hasOwn(project,'verification'));
+  for(const source of [...project.sources,...project.tests]){assert.equal(source.url,'https://github.com/'+project.repository+'/blob/main/'+source.path);assert.doesNotMatch(source.role,/\b(?:69|70|702|105|75)\b/);}
+ }
+ for(const lang of ['de','en','ru']){
+  const prefix=lang==='de'?'':lang+'/',html=read(prefix+'handbuch/index.html'),doc=new JSDOM(html).window.document;
+  assert(doc.querySelector('a[href="https://juri-halveth.github.io/lernstudio/eltern/"]'));
+  assert(doc.querySelector('a[href="/data/handbook-current.json"]'));
+  assert(doc.querySelector('a[href="/data/handbook.json"]'),'Dated audit remains available');
+  assert.doesNotMatch(doc.querySelector('.handbook-hero').textContent,/\b(?:148|63)\b/);
+  assert.doesNotMatch(html,/702 Lektionen|702 lessons|702 урока|105 freigegebene|232 Tests|30 Tests/);
+ }
 });
