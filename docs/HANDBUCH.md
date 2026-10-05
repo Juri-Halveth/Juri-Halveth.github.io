@@ -4,172 +4,177 @@
 
 Öffnen, verstehen, weiterbauen. Jede Oberfläche führt zu ihrem Quellcode, den zugehörigen Daten und den Prüfungen. Die Namen erhalten hier einen Zweck und eine Adresse.
 
-Die Zahlen sind an den lokalen Lauf vom 05.10.2026 um 18:22:42 MESZ und die verlinkten Commitfassungen gebunden. Spätere Änderungen haben einen eigenen Prüfstand.
+Dateiverweise öffnen den aktuellen main-Zweig des jeweiligen Projekts. Inhalte und Prüfergebnisse können sich weiterentwickeln. Das ursprüngliche Quellenregister bewahrt seine datierten Fassungen und Ergebnisse.
 
 ## Juris Space · Orientierung
 
-Der Einstieg ordnet Forschung, Gestaltung, Lernen, Software und Nachweise nach ihrem Zweck. Verwandte Angebote teilen sich einen Themenbereich.
+Themen, Arbeiten und Quellen an einem gemeinsamen Einstieg finden.
 
 [Oberfläche](https://juri-halveth.github.io/) · [Repository](https://github.com/Juri-Halveth/Juri-Halveth.github.io)
 
 ### Oberfläche, Daten, Verhalten und Build
 
-- [index.html](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/index.html#L1): Oberfläche
-- [templates/index.html](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/templates/index.html#L1): Vorlage
-- [data/portfolio.json](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/data/portfolio.json#L1): Themen
-- [data/public-sources.json](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/data/public-sources.json#L1): Quellenregister
-- [landing-motion.js](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/landing-motion.js#L1): Automatische Bewegung
-- [motion-core.js](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/motion-core.js#L1): Form, Licht und Zeit
-- [motion/index.html](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/motion/index.html#L1): Bewegungsstudie
-- [tools/build-space.cjs](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/tools/build-space.cjs#L1): Seitenbau
-- [tools/build-languages.cjs](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/tools/build-languages.cjs#L1): Sprachzugänge
+- [index.html](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/index.html): Oberfläche
+- [templates/index.html](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/templates/index.html): Vorlage
+- [data/portfolio.json](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/data/portfolio.json): Themen
+- [data/public-sources.json](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/data/public-sources.json): Quellenregister
+- [landing-motion.js](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/landing-motion.js): Automatische Bewegung
+- [motion-core.js](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/motion-core.js): Form, Licht und Zeit
+- [motion/index.html](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/motion/index.html): Bewegungsstudie
+- [tools/build-space.cjs](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/tools/build-space.cjs): Seitenbau
+- [tools/build-languages.cjs](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/tools/build-languages.cjs): Sprachzugänge
 
 ### Prüfungen
 
-- [tests/landing.test.cjs](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/tests/landing.test.cjs#L1)
-- [tests/landing-motion.test.cjs](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/tests/landing-motion.test.cjs#L1)
-- [tests/motion.test.cjs](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/tests/motion.test.cjs#L1)
-- [tests/motion-player.test.cjs](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/tests/motion-player.test.cjs#L1)
-- [tests/languages.test.cjs](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/813f97c70e2d8a375f8cd11cc54dab99201f42fa/tests/languages.test.cjs#L1)
+- [tests/landing.test.cjs](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/tests/landing.test.cjs)
+- [tests/landing-motion.test.cjs](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/tests/landing-motion.test.cjs)
+- [tests/motion.test.cjs](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/tests/motion.test.cjs)
+- [tests/motion-player.test.cjs](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/tests/motion-player.test.cjs)
+- [tests/languages.test.cjs](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/tests/languages.test.cjs)
 
 ```bash
 bash SPACE.sh verify
 ```
 
-30 Tests bestanden: Themenzuordnung, Rückwege, Sprachzugänge und die kodierten Regeln für Form, Zeit und automatischen Start.
+Die verlinkten Prüfdateien beschreiben den aktuellen Prüfweg. Ein neues Ergebnis entsteht beim Ausführen; das frühere Ergebnis steht im datierten Archiv.
 
-Quellstand: `813f97c70e2d8a375f8cd11cc54dab99201f42fa`. Das [HTML-Seitenregister](https://juri-halveth.github.io/handbuch/#space) führt jede der 30 erfassten Seiten zu ihrem Zweck, ihrer öffentlichen Adresse und ihrer Quellfassung.
+Aktueller Code: `main`. Das [HTML-Seitenregister](https://juri-halveth.github.io/handbuch/#space) führt die erfassten Seiten zu ihrem Zweck, ihrer öffentlichen Adresse und ihrer Quellfassung.
 
 ## FORTUNA · Möglichkeiten vergleichen
 
-Öffne „Kollektiv /70“, trage eigene Möglichkeiten ein und wähle „Gemeinsam auswählen“. Die Seite zeigt die Eingaben, Gewichte und Einzelentscheidungen. Im Raum bewegen sich 69 regelgesteuerte Figuren; die Auswahl verwendet 70 Profile.
+Möglichkeiten, Bewertungsprofile und bewegte Zustände erkunden.
 
 [Oberfläche](https://juri-halveth.github.io/fortuna/) · [Repository](https://github.com/Juri-Halveth/fortuna)
 
 ### Oberfläche, Daten, Verhalten und Build
 
-- [docs/index.html](https://github.com/Juri-Halveth/fortuna/blob/00a131f429320f3b4a493080d5ea2eb882adc8ba/docs/index.html#L1): Oberfläche
-- [docs/preview.mjs](https://github.com/Juri-Halveth/fortuna/blob/00a131f429320f3b4a493080d5ea2eb882adc8ba/docs/preview.mjs#L1): Szene
-- [docs/curiosity.mjs](https://github.com/Juri-Halveth/fortuna/blob/00a131f429320f3b4a493080d5ea2eb882adc8ba/docs/curiosity.mjs#L1): Erkunden und Bewegung
-- [docs/collective.mjs](https://github.com/Juri-Halveth/fortuna/blob/00a131f429320f3b4a493080d5ea2eb882adc8ba/docs/collective.mjs#L1): Berechnung
-- [docs/collective-panel.mjs](https://github.com/Juri-Halveth/fortuna/blob/00a131f429320f3b4a493080d5ea2eb882adc8ba/docs/collective-panel.mjs#L1): Eingaben und Ergebnisse
-- [docs/collective-members.json](https://github.com/Juri-Halveth/fortuna/blob/00a131f429320f3b4a493080d5ea2eb882adc8ba/docs/collective-members.json#L1): 70 Profile
-- [docs/object.json](https://github.com/Juri-Halveth/fortuna/blob/00a131f429320f3b4a493080d5ea2eb882adc8ba/docs/object.json#L1): Fundstück und Herkunft
-- [docs/NOTICE.md](https://github.com/Juri-Halveth/fortuna/blob/00a131f429320f3b4a493080d5ea2eb882adc8ba/docs/NOTICE.md#L1): Herkunft der übernommenen Komponenten
+- [docs/index.html](https://github.com/Juri-Halveth/fortuna/blob/main/docs/index.html): Oberfläche
+- [docs/preview.mjs](https://github.com/Juri-Halveth/fortuna/blob/main/docs/preview.mjs): Szene
+- [docs/curiosity.mjs](https://github.com/Juri-Halveth/fortuna/blob/main/docs/curiosity.mjs): Erkunden und Bewegung
+- [docs/collective.mjs](https://github.com/Juri-Halveth/fortuna/blob/main/docs/collective.mjs): Berechnung
+- [docs/collective-panel.mjs](https://github.com/Juri-Halveth/fortuna/blob/main/docs/collective-panel.mjs): Eingaben und Ergebnisse
+- [docs/collective-members.json](https://github.com/Juri-Halveth/fortuna/blob/main/docs/collective-members.json): Profile
+- [docs/object.json](https://github.com/Juri-Halveth/fortuna/blob/main/docs/object.json): Fundstück und Herkunft
+- [docs/NOTICE.md](https://github.com/Juri-Halveth/fortuna/blob/main/docs/NOTICE.md): Herkunft der übernommenen Komponenten
 
 ### Prüfungen
 
-- [docs/curiosity.test.mjs](https://github.com/Juri-Halveth/fortuna/blob/00a131f429320f3b4a493080d5ea2eb882adc8ba/docs/curiosity.test.mjs#L1)
-- [docs/collective.test.mjs](https://github.com/Juri-Halveth/fortuna/blob/00a131f429320f3b4a493080d5ea2eb882adc8ba/docs/collective.test.mjs#L1)
+- [docs/curiosity.test.mjs](https://github.com/Juri-Halveth/fortuna/blob/main/docs/curiosity.test.mjs)
+- [docs/collective.test.mjs](https://github.com/Juri-Halveth/fortuna/blob/main/docs/collective.test.mjs)
 
 ```bash
 node --test docs/curiosity.test.mjs docs/collective.test.mjs
 ```
 
-12 Modelltests bestanden: sieben Verhaltensprüfungen und fünf Prüfungen der gemeinsamen Auswahl. Zusätzlich drei lokale DOM-Prüfungen für Deutsch, Englisch und Russisch.
+Die verlinkten Prüfdateien beschreiben den aktuellen Prüfweg. Ein neues Ergebnis entsteht beim Ausführen; das frühere Ergebnis steht im datierten Archiv.
 
-Quellstand: `00a131f429320f3b4a493080d5ea2eb882adc8ba`. Das [HTML-Seitenregister](https://juri-halveth.github.io/handbuch/#fortuna) führt jede der 1 erfassten Seiten zu ihrem Zweck, ihrer öffentlichen Adresse und ihrer Quellfassung.
+Aktueller Code: `main`. Das [HTML-Seitenregister](https://juri-halveth.github.io/handbuch/#fortuna) führt die erfassten Seiten zu ihrem Zweck, ihrer öffentlichen Adresse und ihrer Quellfassung.
 
 ## Scarlet · Erde, Figuren und Quellen
 
-Der Browserzugang verbindet Erdansicht, Quellen, Figurenprofile und Forschungsseiten. Unter entities/ öffnet jeder Name sein eigenes Profil; der interaktive Figurenraum liegt im selben Verzeichnis.
+Erde, Figuren und Forschung über ihre eigenen Quellen erkunden.
 
 [Oberfläche](https://juri-halveth.github.io/halveth-scarlet/) · [Repository](https://github.com/Juri-Halveth/halveth-scarlet)
 
 ### Oberfläche, Daten, Verhalten und Build
 
-- [index.html](https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/index.html#L1): Portal
-- [entities/index.html](https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/entities/index.html#L1): Figurenverzeichnis
-- [assets/universe-data.js](https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/assets/universe-data.js#L1): Namen und Profile
-- [assets/entity-world.mjs](https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/assets/entity-world.mjs#L1): Figurenraum
-- [assets/entity-world-motion.mjs](https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/assets/entity-world-motion.mjs#L1): Laufwege und Zeitzustand
-- [assets/entity-world-scene.mjs](https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/assets/entity-world-scene.mjs#L1): Darstellung der Szene
-- [tools/build_profiles.mjs](https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/tools/build_profiles.mjs#L1): Profilseiten erzeugen
-- [tools/build_site.mjs](https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/tools/build_site.mjs#L1): Öffentlicher Seitenbau
-- [tools/check_links.mjs](https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/tools/check_links.mjs#L1): Lokale Verweise prüfen
+- [index.html](https://github.com/Juri-Halveth/halveth-scarlet/blob/main/index.html): Portal
+- [entities/index.html](https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/index.html): Figurenverzeichnis
+- [assets/universe-data.js](https://github.com/Juri-Halveth/halveth-scarlet/blob/main/assets/universe-data.js): Namen und Profile
+- [assets/entity-world.mjs](https://github.com/Juri-Halveth/halveth-scarlet/blob/main/assets/entity-world.mjs): Figurenraum
+- [assets/entity-world-motion.mjs](https://github.com/Juri-Halveth/halveth-scarlet/blob/main/assets/entity-world-motion.mjs): Laufwege und Zeitzustand
+- [assets/entity-world-scene.mjs](https://github.com/Juri-Halveth/halveth-scarlet/blob/main/assets/entity-world-scene.mjs): Darstellung der Szene
+- [tools/build_profiles.mjs](https://github.com/Juri-Halveth/halveth-scarlet/blob/main/tools/build_profiles.mjs): Profilseiten erzeugen
+- [tools/build_site.mjs](https://github.com/Juri-Halveth/halveth-scarlet/blob/main/tools/build_site.mjs): Öffentlicher Seitenbau
+- [tools/check_links.mjs](https://github.com/Juri-Halveth/halveth-scarlet/blob/main/tools/check_links.mjs): Lokale Verweise prüfen
 
 ### Prüfungen
 
-- [tests/entity-roaming.test.cjs](https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/tests/entity-roaming.test.cjs#L1)
-- [tests/entity-profiles.test.cjs](https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/tests/entity-profiles.test.cjs#L1)
-- [tests/entity-world.test.cjs](https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/tests/entity-world.test.cjs#L1)
-- [tests/portal-shell.test.cjs](https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/tests/portal-shell.test.cjs#L1)
-- [tests/language-controls.test.cjs](https://github.com/Juri-Halveth/halveth-scarlet/blob/a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3/tests/language-controls.test.cjs#L1)
+- [tests/entity-roaming.test.cjs](https://github.com/Juri-Halveth/halveth-scarlet/blob/main/tests/entity-roaming.test.cjs)
+- [tests/entity-profiles.test.cjs](https://github.com/Juri-Halveth/halveth-scarlet/blob/main/tests/entity-profiles.test.cjs)
+- [tests/entity-world.test.cjs](https://github.com/Juri-Halveth/halveth-scarlet/blob/main/tests/entity-world.test.cjs)
+- [tests/portal-shell.test.cjs](https://github.com/Juri-Halveth/halveth-scarlet/blob/main/tests/portal-shell.test.cjs)
+- [tests/language-controls.test.cjs](https://github.com/Juri-Halveth/halveth-scarlet/blob/main/tests/language-controls.test.cjs)
 
 ```bash
 node tools/build_site.mjs
 node --test tests/*.test.cjs tests/*.test.mjs
 ```
 
-86 HTML-Seiten gebaut und 1.844 lokale href/src/poster-Verweise geprüft. Anschließend 232 JavaScript-Tests bestanden. 86 ist eine Seitenzahl, 1.844 eine Zahl geprüfter Verweise und 232 eine Testzahl.
+Die verlinkten Prüfdateien beschreiben den aktuellen Prüfweg. Ein neues Ergebnis entsteht beim Ausführen; das frühere Ergebnis steht im datierten Archiv.
 
-Quellstand: `a1ad8b1bf1d1af02ef74f58b6097a2fdc437f2c3`. Das [HTML-Seitenregister](https://juri-halveth.github.io/handbuch/#scarlet) führt jede der 86 erfassten Seiten zu ihrem Zweck, ihrer öffentlichen Adresse und ihrer Quellfassung.
+Aktueller Code: `main`. Das [HTML-Seitenregister](https://juri-halveth.github.io/handbuch/#scarlet) führt die erfassten Seiten zu ihrem Zweck, ihrer öffentlichen Adresse und ihrer Quellfassung.
 
 ## Lernstudio · Die Lernwelt
 
-Wähle einen Lernpfad und öffne eine Lektion. Aufgaben, individuelle Hinweise und Fortschritt gehören zur Lernoberfläche. curriculum.js trägt die gemeinsamen Inhalte und stabilen Lektionsadressen.
+Lernwege, Alltag am Computer und praktische Übungen. Der russische Elternmodus hat einen eigenen einfachen Eingang.
 
 [Oberfläche](https://juri-halveth.github.io/lernstudio/) · [Repository](https://github.com/Juri-Halveth/lernstudio)
 
 ### Oberfläche, Daten, Verhalten und Build
 
-- [index.html](https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/index.html#L1): Einstieg
-- [studio.html](https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/studio.html#L1): Lernoberfläche
-- [curriculum.js](https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/curriculum.js#L1): 702 Lektionen
-- [app.js](https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/app.js#L1): Lektionsanzeige und Navigation
-- [lesson-visuals.js](https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/lesson-visuals.js#L1): Denkmodelle
-- [learning-profile.js](https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/learning-profile.js#L1): Lokaler Fortschritt
-- [api/space.json](https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/api/space.json#L1): Kompakter Inhaltszugang
-- [werkzeug/test.js](https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/werkzeug/test.js#L1): Liste der 19 Prüfsuiten
-- [werkzeug/website-bauen.js](https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/werkzeug/website-bauen.js#L1): Build und Export
-- [werkzeug/public-files.js](https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/werkzeug/public-files.js#L1): 105 freigegebene Dateien
+- [index.html](https://github.com/Juri-Halveth/lernstudio/blob/main/index.html): Einstieg
+- [studio.html](https://github.com/Juri-Halveth/lernstudio/blob/main/studio.html): Lernoberfläche
+- [curriculum.js](https://github.com/Juri-Halveth/lernstudio/blob/main/curriculum.js): Lektionen
+- [app.js](https://github.com/Juri-Halveth/lernstudio/blob/main/app.js): Lektionsanzeige und Navigation
+- [lesson-visuals.js](https://github.com/Juri-Halveth/lernstudio/blob/main/lesson-visuals.js): Denkmodelle
+- [learning-profile.js](https://github.com/Juri-Halveth/lernstudio/blob/main/learning-profile.js): Lokaler Fortschritt
+- [api/space.json](https://github.com/Juri-Halveth/lernstudio/blob/main/api/space.json): Kompakter Inhaltszugang
+- [werkzeug/test.js](https://github.com/Juri-Halveth/lernstudio/blob/main/werkzeug/test.js): Liste der Prüfsuiten
+- [werkzeug/website-bauen.js](https://github.com/Juri-Halveth/lernstudio/blob/main/werkzeug/website-bauen.js): Build und Export
+- [werkzeug/public-files.js](https://github.com/Juri-Halveth/lernstudio/blob/main/werkzeug/public-files.js): freigegebene Dateien
+- [eltern/index.html](https://github.com/Juri-Halveth/lernstudio/blob/main/eltern/index.html): Russischer Elternmodus
+- [eltern/lessons.js](https://github.com/Juri-Halveth/lernstudio/blob/main/eltern/lessons.js): Alltagsübungen
+- [eltern/progress.js](https://github.com/Juri-Halveth/lernstudio/blob/main/eltern/progress.js): Fortschritt und Import
+- [eltern/app.js](https://github.com/Juri-Halveth/lernstudio/blob/main/eltern/app.js): Bedienung und Übungssimulation
 
 ### Prüfungen
 
-- [werkzeug/test-free-app.js](https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/werkzeug/test-free-app.js#L1)
-- [werkzeug/test-lesson-visuals.js](https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/werkzeug/test-lesson-visuals.js#L1)
-- [werkzeug/test-universal-task-help.js](https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/werkzeug/test-universal-task-help.js#L1)
-- [werkzeug/test-agent-space.cjs](https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/werkzeug/test-agent-space.cjs#L1)
-- [tests/hub-languages.test.cjs](https://github.com/Juri-Halveth/lernstudio/blob/c7a6b1601a67b32596c003031aca878c9f92805d/tests/hub-languages.test.cjs#L1)
+- [werkzeug/test-free-app.js](https://github.com/Juri-Halveth/lernstudio/blob/main/werkzeug/test-free-app.js)
+- [werkzeug/test-lesson-visuals.js](https://github.com/Juri-Halveth/lernstudio/blob/main/werkzeug/test-lesson-visuals.js)
+- [werkzeug/test-universal-task-help.js](https://github.com/Juri-Halveth/lernstudio/blob/main/werkzeug/test-universal-task-help.js)
+- [werkzeug/test-agent-space.cjs](https://github.com/Juri-Halveth/lernstudio/blob/main/werkzeug/test-agent-space.cjs)
+- [tests/hub-languages.test.cjs](https://github.com/Juri-Halveth/lernstudio/blob/main/tests/hub-languages.test.cjs)
+- [tests/elternmodus.test.cjs](https://github.com/Juri-Halveth/lernstudio/blob/main/tests/elternmodus.test.cjs)
 
 ```bash
 npm run build
 ```
 
-19 Prüfsuiten erfolgreich durchlaufen; 702 Lektionen in 133 Stufen und 13 Lernpfaden geprüft; 105 öffentliche Dateien zusammengestellt. Die Lektionen entstehen aus Daten und benötigen jeweils keine eigene HTML-Datei.
+Die verlinkten Prüfdateien beschreiben den aktuellen Prüfweg. Ein neues Ergebnis entsteht beim Ausführen; das frühere Ergebnis steht im datierten Archiv.
 
-Quellstand: `c7a6b1601a67b32596c003031aca878c9f92805d`. Das [HTML-Seitenregister](https://juri-halveth.github.io/handbuch/#learning) führt jede der 23 erfassten Seiten zu ihrem Zweck, ihrer öffentlichen Adresse und ihrer Quellfassung.
+Aktueller Code: `main`. Das [HTML-Seitenregister](https://juri-halveth.github.io/handbuch/#learning) führt die erfassten Seiten zu ihrem Zweck, ihrer öffentlichen Adresse und ihrer Quellfassung.
 
 ## Bash Big Bang · Code ausprobieren
 
-Der ergänzende Lernzugang verwendet dieselben 702 Lektionsadressen. Im Bereich big-bang/ führen 13 Themenbrücken zu Bash-Beispielen. Die 75 Rezepte zeigen Befehle und ihre erwartete Ausgabe.
+Git Bash, Code und weitere Themen über Übungen verbinden.
 
 [Oberfläche](https://juri-halveth.github.io/mein-lernportal/) · [Repository](https://github.com/Juri-Halveth/mein-lernportal)
 
 ### Oberfläche, Daten, Verhalten und Build
 
-- [index.html](https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/index.html#L1): Einstieg
-- [studio.html](https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/studio.html#L1): Lektionszugang
-- [curriculum.js](https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/curriculum.js#L1): Gemeinsame Lektionen
-- [big-bang/index.html](https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/big-bang/index.html#L1): Bash-Oberfläche
-- [big-bang/app.js](https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/big-bang/app.js#L1): Themen und Beispiele anzeigen
-- [big-bang/catalog.json](https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/big-bang/catalog.json#L1): 13 Brücken und 75 Rezepte
-- [package.json](https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/package.json#L1): Prüfbefehle
+- [index.html](https://github.com/Juri-Halveth/mein-lernportal/blob/main/index.html): Einstieg
+- [studio.html](https://github.com/Juri-Halveth/mein-lernportal/blob/main/studio.html): Lektionszugang
+- [curriculum.js](https://github.com/Juri-Halveth/mein-lernportal/blob/main/curriculum.js): Gemeinsame Lektionen
+- [big-bang/index.html](https://github.com/Juri-Halveth/mein-lernportal/blob/main/big-bang/index.html): Bash-Oberfläche
+- [big-bang/app.js](https://github.com/Juri-Halveth/mein-lernportal/blob/main/big-bang/app.js): Themen und Beispiele anzeigen
+- [big-bang/catalog.json](https://github.com/Juri-Halveth/mein-lernportal/blob/main/big-bang/catalog.json): Brücken und Rezepte
+- [package.json](https://github.com/Juri-Halveth/mein-lernportal/blob/main/package.json): Prüfbefehle
 
 ### Prüfungen
 
-- [tests/portal.test.cjs](https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/tests/portal.test.cjs#L1)
-- [tests/hub-languages.test.cjs](https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/tests/hub-languages.test.cjs#L1)
-- [tests/big-bang.cjs](https://github.com/Juri-Halveth/mein-lernportal/blob/d25bad31f480934d60f9ba6b85055ff7ffed78a0/tests/big-bang.cjs#L1)
+- [tests/portal.test.cjs](https://github.com/Juri-Halveth/mein-lernportal/blob/main/tests/portal.test.cjs)
+- [tests/hub-languages.test.cjs](https://github.com/Juri-Halveth/mein-lernportal/blob/main/tests/hub-languages.test.cjs)
+- [tests/big-bang.cjs](https://github.com/Juri-Halveth/mein-lernportal/blob/main/tests/big-bang.cjs)
 
 ```bash
 npm test
 node tests/big-bang.cjs
 ```
 
-Portalprüfung und drei Sprachtests bestanden. Zusätzlich 75 Bash/Git-Rezepte jeweils in einem temporären Verzeichnis ausgeführt und mit ihrer erwarteten Ausgabe verglichen.
+Die verlinkten Prüfdateien beschreiben den aktuellen Prüfweg. Ein neues Ergebnis entsteht beim Ausführen; das frühere Ergebnis steht im datierten Archiv.
 
-Quellstand: `d25bad31f480934d60f9ba6b85055ff7ffed78a0`. Das [HTML-Seitenregister](https://juri-halveth.github.io/handbuch/#bash) führt jede der 8 erfassten Seiten zu ihrem Zweck, ihrer öffentlichen Adresse und ihrer Quellfassung.
+Aktueller Code: `main`. Das [HTML-Seitenregister](https://juri-halveth.github.io/handbuch/#bash) führt die erfassten Seiten zu ihrem Zweck, ihrer öffentlichen Adresse und ihrer Quellfassung.
 
 ## Normales Greifen und Zusammenhang
 
@@ -179,11 +184,11 @@ Aufnehmen, tragen, drehen, ansehen und ablegen: Derselbe Gegenstand bleibt erhal
 node examples/world-grip.mjs
 ```
 
-[Greifmodell](../examples/world-grip.mjs) · [Sieben Modellprüfungen](../examples/world-grip.test.mjs)
+[Greifmodell](../examples/world-grip.mjs) · [Modellprüfungen](../examples/world-grip.test.mjs)
 
 ## Der ganze Ablauf in Git Bash
 
-HUB.sh verwendet dieses Hub-Repository und die vier angegebenen Quellordner. Es führt Builds und Tests aus und schreibt die neue lokale Quittung unter .space-local/. Die Befehle unten holen die öffentlichen Quellen und installieren ihre vorhandenen Prüfabhängigkeiten.
+HUB.sh verwendet dieses Hub-Repository und die angegebenen Quellordner. Es führt Builds und Tests aus und schreibt eine neue lokale Quittung unter .space-local/. Die Befehle unten holen die öffentlichen Quellen und installieren ihre vorhandenen Prüfabhängigkeiten.
 
 ```bash
 git clone https://github.com/Juri-Halveth/Juri-Halveth.github.io.git hub
@@ -200,13 +205,13 @@ bash hub/HUB.sh verify hub-quellen
 
 [Veröffentlichter Operator](../HUB.sh) · [Quellenregister](../data/handbook.json)
 
-Der veröffentlichte Operator ist die portable Fassung des bisherigen lokalen Ablaufs. Die oben dokumentierten Zahlen gehören zum früheren, zeitgebundenen Lauf.
+Der Operator schreibt bei jedem Lauf eine neue lokale Quittung. Datierte Archivwerte bleiben bei ihrem Lauf; sie werden als Verlauf erhalten.
 
 ## Was der Prüflauf abdeckt
 
-Zwei einzelne PowerShell-Aufrufprüfungen wurden mangels PowerShell 7.3+ übersprungen. Browser- und Kontotests verwenden zum Teil lokale Testdoppel. Visuelle Qualität im laufenden Morrowind wird in einer eigenen Spielprüfung beurteilt.
+Der aktuelle Quellweg und ein tatsächlich ausgeführter Prüflauf sind verschiedene Stände. Das Archiv nennt die damalige Fassung, den Umfang und die offenen Prüfungen.
 
-Die fünf hier geprüften Bereiche sind Webprojekte. Die Restaurierung in OpenMW und die native Unreal-Entwicklung führen ihren eigenen Quellcode und ihre eigenen Builds. Der Browserraum und seine Figuren sind als solche bezeichnet.
+Die hier beschriebenen Bereiche sind Webprojekte. OpenMW und Unreal führen ihre eigenen Quellen, Builds und Prüfwege.
 
 [OpenMW / Morrowind](https://github.com/Juri-Halveth/halveth-morrowind-genesis) · [Unreal](https://github.com/Juri-Halveth/halveth-unreal)
 
