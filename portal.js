@@ -8,10 +8,12 @@
     FORTUNA:'software',VAULT:'software',KEEPER:'software',BIRTH:'software',PROPOSAL:'software',
     PROFILE:'nachweise',SPACE:'anfang'
   };
-  const project=new URLSearchParams(window.location.search).get('project');
-  if(project && Object.hasOwn(topics,project)){
-    const url=new URL(window.location.href);
-    url.searchParams.delete('project');url.hash=topics[project];
-    window.location.replace(url.href);
+  const url=new URL(window.location.href),project=url.searchParams.get('project'),language=url.searchParams.get('lang');
+  let changed=false;
+  if(project && Object.hasOwn(topics,project)){url.searchParams.delete('project');url.hash=topics[project];changed=true;}
+  if(['de','en','ru'].includes(language)){
+    url.pathname=url.pathname.replace(/^\/(?:en\/|ru\/)?/,'/'+(language==='de'?'':language+'/'));
+    url.searchParams.delete('lang');changed=true;
   }
+  if(changed)window.location.replace(url.href);
 }());

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru" data-language-static="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>schülerVZ // Поиск людей</title>
+<meta name="description" content="Безсерверный личный поиск по schülerVZ // HALVETH с претензиями GitHub и текстовыми заметками из публичного архива.">
+<link rel="stylesheet" href="/schuelervz-halveth/assets/people.css">
+<link rel="stylesheet" href="/return.css"><link rel="stylesheet" href="/language.css"><!-- HUB_ALTERNATES_START --><link rel="canonical" href="https://juri-halveth.github.io/ru/schuelervz-halveth/people.html"><link rel="alternate" hreflang="de" href="https://juri-halveth.github.io/schuelervz-halveth/people.html"><link rel="alternate" hreflang="en" href="https://juri-halveth.github.io/en/schuelervz-halveth/people.html"><link rel="alternate" hreflang="ru" href="https://juri-halveth.github.io/ru/schuelervz-halveth/people.html"><link rel="alternate" hreflang="x-default" href="https://juri-halveth.github.io/schuelervz-halveth/people.html"><!-- HUB_ALTERNATES_END --><!-- HUB_RUNTIME_START --><script src="/assets/hub-catalog.js" defer></script><script src="/assets/hub-language.js" defer></script><link rel="stylesheet" href="/assets/hub-language.css"><!-- HUB_RUNTIME_END --></head>
+<body><!-- HUB_LANGUAGE_START --><nav class="language-links shell" aria-label="Язык"><a data-language-link href="/schuelervz-halveth/people.html" lang="de" hreflang="de">Deutsch</a><a data-language-link href="/en/schuelervz-halveth/people.html" lang="en" hreflang="en">English</a><a data-language-link href="/ru/schuelervz-halveth/people.html" lang="ru" hreflang="ru" aria-current="page">Русский</a></nav><!-- HUB_LANGUAGE_END --><!-- PORTFOLIO_RETURN_START --><nav class="return-bar" aria-label="Вернуться к обзору"><a href="/ru/">← Главная / обзор тем</a><a href="/ru/arbeiten/">Все работы</a><a href="/ru/profil/">Профиль и примеры работ</a></nav><!-- PORTFOLIO_RETURN_END -->
+<div class="notice">НЕОФФИЦИАЛЬНАЯ РЕКОНСТРУКЦИЯ · ИССЛЕДОВАНИЕ ОТВЕТСТВЕННЫХ ЗАЯВЛЕНИЙ + ПУБЛИЧЕСКИЙ НЕ-СТАФЛОВЫЙ АРХИВНЫЙ ТЕСТ · НЕТ ПАССВОРОВ ЛИЧНОСТИ</div>
+<div class="wrap">
+<header>
+  <div class="logo"><span>✦</span><div><b>Студенты<span>ВЗЗ</span></b><small>HALVETH // ФИНДЕР 3.4</small></div></div>
+  <nav>
+    <a href="/schuelervz-halveth/index.html">Начинать</a>
+    <a href="/ru/schuelervz-halveth/archaeology.html">археология</a>
+    <a href="https://github.com/Juri-Halveth/Juri-Halveth.github.io/issues/new?template=profile-claim.yml" target="_blank" rel="noopener">Я здесь.</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero">
+  <h1>Найдите людей, не зная старого URL.</h1>
+  <p>Имя, день рождения, местоположение, школа, старое прозвище и активные годы VZ теперь являются поисковыми полями. Хиты исходят из добровольных претензий GitHub и уже подтвержденных профилей реконструкции. Публичные архивные тексты также можно искать в качестве подсказки.</p>
+  <div class="pulse">
+    <span><b id="approvedCount">0</b> Подтвержденные / локальные профили</span>
+    <span><b id="claimCount">0</b> GitHub утверждает</span>
+    <span><b id="archiveCount">0</b> Публичные архивные документы</span>
+  </div>
+</section>
+
+<section class="searchbox">
+  <div class="field"><label for="name">Имя имени</label><input id="name" placeholder="Имя, фамилия или часть"></div>
+  <div class="field"><label for="birthday">День рождения</label><input id="birthday" placeholder="Например, 01.02 или 1995"></div>
+  <div class="field"><label for="city">Местоположение</label><input id="city" placeholder="Город / регион"></div>
+  <div class="field"><label for="school">Школа</label><input id="school" placeholder="Школьное имя"></div>
+  <div class="field"><label for="nick">Старое прозвище</label><input id="nick" placeholder="Прозвища / Alias"></div>
+  <div class="field"><label for="years">Время VZ</label><input id="years" placeholder="например, 2008 или 2008-2011 годы"></div>
+
+  <div class="options">
+    <label><input id="archiveMentions" type="checkbox" checked> Проверка текстов публичных архивов</label>
+    <label><input id="fuzzy" type="checkbox" checked> толерантный поиск</label>
+  </div>
+
+  <div class="actions">
+    <button id="find">Найти людей</button>
+    <button id="reset" class="secondary">Сброс</button>
+  </div>
+</section>
+
+<section class="callout">
+  <div>
+    <b>Больше никаких старых URL-адресов?</b>
+    <p>URL-адрес теперь является лишь необязательным доказательством, и для нового поиска сообщества достаточно добровольно опубликованной информации, такой как имя, местоположение, школа или день рождения.</p>
+  </div>
+  <a class="claim" href="https://github.com/Juri-Halveth/Juri-Halveth.github.io/issues/new?template=profile-claim.yml" target="_blank" rel="noopener">Введите мой профиль</a>
+</section>
+
+<section>
+  <div class="sectionTitle"><span>результатов</span><small id="resultMeta">Еще не искали</small></div>
+  <div id="results"></div>
+</section>
+
+<section class="explain">
+  <h2>Что ищется автоматически</h2>
+  <div class="explainGrid">
+    <div><b>ОПТ-ИН СОЕДИНЕННОСТЬ</b><p>Люди, которые добровольно разместили свой профиль через GitHub.</p></div>
+    <div><b>ПРОФИЛЫ РАЗРУШЕНИЯ</b><p>Профили: <code>people.json</code>с четким происхождением и претензионным состоянием.</p></div>
+    <div><b>АРХИВНЫЕ МЕНЕНЦИИ</b><p>Только публичные, неличные архивные тексты. Находка имени - это подсказка, а не удостоверение личности.</p></div>
+  </div>
+</section>
+</main>
+</div>
+<script src="/schuelervz-halveth/assets/people.js"></script>
+</body>
+</html>
