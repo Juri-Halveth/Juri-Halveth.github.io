@@ -171,6 +171,16 @@ Portalprüfung und drei Sprachtests bestanden. Zusätzlich 75 Bash/Git-Rezepte j
 
 Quellstand: `d25bad31f480934d60f9ba6b85055ff7ffed78a0`. Das [HTML-Seitenregister](https://juri-halveth.github.io/handbuch/#bash) führt jede der 8 erfassten Seiten zu ihrem Zweck, ihrer öffentlichen Adresse und ihrer Quellfassung.
 
+## Normales Greifen und Zusammenhang
+
+Aufnehmen, tragen, drehen, ansehen und ablegen: Derselbe Gegenstand bleibt erhalten. Der Codeversuch führt eine Tasse durch diese Aktionen und bewahrt Material, Umgebung und Zustandsverlauf. Rendering, Handanimation und physikalischer Kontakt bekommen darauf aufbauend ihren eigenen Integrationsschritt.
+
+```bash
+node examples/world-grip.mjs
+```
+
+[Greifmodell](../examples/world-grip.mjs) · [Sieben Modellprüfungen](../examples/world-grip.test.mjs)
+
 ## Der ganze Ablauf in Git Bash
 
 HUB.sh verwendet dieses Hub-Repository und die vier angegebenen Quellordner. Es führt Builds und Tests aus und schreibt die neue lokale Quittung unter .space-local/. Die Befehle unten holen die öffentlichen Quellen und installieren ihre vorhandenen Prüfabhängigkeiten.
