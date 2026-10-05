@@ -1,2 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://juri-halveth.github.io/</loc><lastmod>2026-10-05</lastmod></url><url><loc>https://juri-halveth.github.io/arbeiten/</loc><lastmod>2026-10-05</lastmod></url><url><loc>https://juri-halveth.github.io/profil/</loc><lastmod>2026-10-05</lastmod></url><url><loc>https://juri-halveth.github.io/motion/</loc><lastmod>2026-10-05</lastmod></url><url><loc>https://juri-halveth.github.io/werkzertifikate/</loc><lastmod>2026-09-28</lastmod></url></urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://juri-halveth.github.io/</loc></url>
+  <url><loc>https://juri-halveth.github.io/arbeiten/</loc></url>
+  <url><loc>https://juri-halveth.github.io/profil/</loc></url>
+  <url><loc>https://juri-halveth.github.io/motion/</loc></url>
+  <url><loc>https://juri-halveth.github.io/werkzertifikate/</loc></url>
+  <url><loc>https://juri-halveth.github.io/schuelervz-halveth/</loc></url>
+  <url><loc>https://juri-halveth.github.io/schuelervz-halveth/people.html</loc></url>
+  <url><loc>https://juri-halveth.github.io/schuelervz-halveth/archaeology.html</loc></url>
+  <url><loc>https://juri-halveth.github.io/schuelervz-halveth/prestige.html</loc></url>
+  <url><loc>https://juri-halveth.github.io/en/</loc></url>
+  <url><loc>https://juri-halveth.github.io/en/arbeiten/</loc></url>
+  <url><loc>https://juri-halveth.github.io/en/profil/</loc></url>
+  <url><loc>https://juri-halveth.github.io/en/motion/</loc></url>
+  <url><loc>https://juri-halveth.github.io/en/werkzertifikate/</loc></url>
+  <url><loc>https://juri-halveth.github.io/en/schuelervz-halveth/</loc></url>
+  <url><loc>https://juri-halveth.github.io/en/schuelervz-halveth/people.html</loc></url>
+  <url><loc>https://juri-halveth.github.io/en/schuelervz-halveth/archaeology.html</loc></url>
+  <url><loc>https://juri-halveth.github.io/en/schuelervz-halveth/prestige.html</loc></url>
+  <url><loc>https://juri-halveth.github.io/ru/</loc></url>
+  <url><loc>https://juri-halveth.github.io/ru/arbeiten/</loc></url>
+  <url><loc>https://juri-halveth.github.io/ru/profil/</loc></url>
+  <url><loc>https://juri-halveth.github.io/ru/motion/</loc></url>
+  <url><loc>https://juri-halveth.github.io/ru/werkzertifikate/</loc></url>
+  <url><loc>https://juri-halveth.github.io/ru/schuelervz-halveth/</loc></url>
+  <url><loc>https://juri-halveth.github.io/ru/schuelervz-halveth/people.html</loc></url>
+  <url><loc>https://juri-halveth.github.io/ru/schuelervz-halveth/archaeology.html</loc></url>
+  <url><loc>https://juri-halveth.github.io/ru/schuelervz-halveth/prestige.html</loc></url>
+</urlset>

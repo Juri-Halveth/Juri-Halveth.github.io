@@ -28,6 +28,14 @@ Die eigenständige Bewegungsstudie unter `/motion/` behält ihre experimentellen
 
 Arbeitsverzeichnis, Profil und Fehlerseite verlinken zurück zum Ursprung und zum passenden Thema. Werkzertifikate, Bewegungsstudie und die sechs aktiven Archiv-/Medieneingänge tragen einen eigenen Rückweg. Die historische Rohüberlieferung wird dafür nicht umgeschrieben. Externe Quellen öffnen einen eigenen Tab, sodass der thematische Einstieg erhalten bleibt.
 
+## Drei Sprachen
+
+Die zehn aktiven Zugänge besitzen deutsche, englische und russische Ansichten. Der Build erzeugt für Englisch und Russisch eigene HTML-Dateien unter `/en/` und `/ru/`, jeweils mit kanonischer Adresse und Sprachverweisen. Die drei Sprachlinks sind normale Navigation. Die übrigen vier Websites verwenden den gemeinsamen lokalen Darstellungsadapter und den Parameter `lang=de`, `lang=en` oder `lang=ru`.
+
+Übersetzte Oberfläche und historische Quelle behalten ihre jeweilige Herkunft: Quellcode, Nutzereingaben, Roharchive, Original-PDFs, IDs und gebundene Quelladressen behalten ihre Originaldarstellung. Die lokalen Übersetzungsmodelle benötigen redaktionelle Prüfung; fehlende Katalogeinträge und eine strukturell gültige Ausgabe beweisen keine Bedeutungsgleichheit. Die Themenübersicht und ihre Arbeitsprofil-Aussagen wurden redaktionell bearbeitet.
+
+Für die DOM-Prüfungen wird `jsdom` als Entwicklungsabhängigkeit installiert: `npm ci --ignore-scripts --no-audit --no-fund`. Der gemeinsame Aufruf `bash SPACE.sh verify` erzeugt die Seiten und führt die Navigations-, Quellen-, Sprach- und Bewegungstests aus. Der Browserclient verwendet dafür keine zusätzliche Laufzeitbibliothek.
+
 ## Änderungen durchführen
 
 1. Öffentliche Quelle, Zeitpunkt und behaupteten Arbeitsstand prüfen.

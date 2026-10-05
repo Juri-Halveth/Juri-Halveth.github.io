@@ -10,14 +10,14 @@
   let requestId=null;
   const play=byId('motion-play'), reverse=byId('motion-reverse'), seek=byId('motion-time'), rate=byId('motion-speed'), light=byId('motion-glow'), loop=byId('motion-loop');
   function labels(){
-    const en=document.documentElement.lang==='en';
-    play.textContent=playing?(en?'Pause':'Pause'):(en?'Play':'Abspielen');
+    const lang=document.documentElement.lang,en=lang==='en',ru=lang==='ru';
+    play.textContent=playing?(ru?'Пауза':'Pause'):(ru?'Запуск':en?'Play':'Abspielen');
     play.setAttribute('aria-pressed',String(playing));
-    reverse.textContent=speed<0?(en?'Forward':'Vorwärts'):(en?'Reverse':'Rückwärts');
+    reverse.textContent=speed<0?(ru?'Вперёд':en?'Forward':'Vorwärts'):(ru?'Назад':en?'Reverse':'Rückwärts');
     reverse.setAttribute('aria-pressed',String(speed<0));
-    seek.setAttribute('aria-valuetext',time.toFixed(2)+(en?' seconds':' Sekunden'));
+    seek.setAttribute('aria-valuetext',time.toFixed(2)+(ru?' секунд':en?' seconds':' Sekunden'));
     byId('motion-clock').textContent=time.toFixed(2)+' / '+M.DURATION.toFixed(2)+' s';
-    byId('motion-phase').textContent=M.chapters[M.stateAt(time).chapter][en?'en':'de'];
+    byId('motion-phase').textContent=M.chapters[M.stateAt(time).chapter][ru?'ru':en?'en':'de'];
   }
   function draw(){
     const r=canvas.getBoundingClientRect(), d=Math.min(devicePixelRatio||1,2), w=Math.max(1,Math.round(r.width*d)), h=Math.max(1,Math.round(r.height*d));

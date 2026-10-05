@@ -8,9 +8,9 @@
   const DURATION = 20;
   const TAU = Math.PI * 2;
   const chapters = [
-    {time:0, de:'Impuls', en:'Impulse'}, {time:3.3, de:'Wachsen', en:'Grow'},
-    {time:7, de:'Verbinden', en:'Connect'}, {time:11, de:'Verwandeln', en:'Transform'},
-    {time:15, de:'Weiterfließen', en:'Flow'}
+    {time:0, de:'Impuls', en:'Impulse', ru:'Импульс'}, {time:3.3, de:'Wachsen', en:'Grow', ru:'Рост'},
+    {time:7, de:'Verbinden', en:'Connect', ru:'Соединение'}, {time:11, de:'Verwandeln', en:'Transform', ru:'Преобразование'},
+    {time:15, de:'Weiterfließen', en:'Flow', ru:'Поток'}
   ];
   const clamp = (v, a=0, b=1) => Math.max(a, Math.min(b, v));
   function finite(v, name) { if (!Number.isFinite(v)) throw new TypeError('Finite '+name+' required'); return v; }
@@ -66,7 +66,7 @@
     ctx.beginPath(); ctx.arc(x,y,r*.45,0,TAU);ctx.fillStyle='#ffe3c2';ctx.fill();
   }
   function render(ctx, width, height, time, options={}) {
-    const s=stateAt(time,options), language=options.language==='en'?'en':'de';
+    const s=stateAt(time,options), language=['de','en','ru'].includes(options.language)?options.language:'de';
     finite(width,'width'); finite(height,'height');
     if(width<=0 || height<=0) throw new RangeError('Positive render dimensions required');
     ctx.save(); ctx.setTransform(width/1280,0,0,height/720,0,0);
@@ -130,7 +130,7 @@
     dim.addColorStop(0,'rgba(12,12,13,.85)');dim.addColorStop(.45,'rgba(12,12,13,.30)');dim.addColorStop(1,'rgba(12,12,13,0)');
     ctx.fillStyle=dim;ctx.fillRect(cx-R,cy-R,R*2,R*2);
     // Kinetic typography is staggered by line, using smooth velocity at both ends.
-    const titles=language==='en'?[['An impulse.','A whole world.'],['Form becomes','movement.'],['Keep the','flow.']]:[['Ein Impuls.','Eine ganze Welt.'],['Form wird','Bewegung.'],['Weiter','im Strom.']];
+    const titles=language==='ru'?[['Импульс.','Целый мир.'],['Форма','в движении.'],['Дальше','в потоке.']]:language==='en'?[['An impulse.','A whole world.'],['Form becomes','movement.'],['Keep the','flow.']]:[['Ein Impuls.','Eine ganze Welt.'],['Form wird','Bewegung.'],['Weiter','im Strom.']];
     let title=0,local=s.time;
     if(s.time>=6.5){title=1;local=s.time-6.5;} if(s.time>=13.3){title=2;local=s.time-13.3;}
     const end=title===0?6.5:title===1?6.8:20;
@@ -140,9 +140,9 @@
       ctx.save();ctx.globalAlpha=alpha;ctx.fillStyle=i?'#ee9d68':'#f2ece4';
       ctx.font=(i?'500 ':'600 ')+'64px Arial';ctx.fillText(titles[title][i],54,294+i*78+(1-enter)*28);ctx.restore();
     }
-    const paragraph=language==='en'?'Time shapes movement. Light makes it visible.':'Zeit formt Bewegung. Licht macht sie sichtbar.';
+    const paragraph=language==='ru'?'Время задаёт движение. Свет делает его видимым.':language==='en'?'Time shapes movement. Light makes it visible.':'Zeit formt Bewegung. Licht macht sie sichtbar.';
     ctx.fillStyle='#aca29a';ctx.font='18px Arial';ctx.fillText(paragraph,57,438);
-    ctx.fillStyle='#786c63';ctx.font='12px Arial';ctx.fillText(language==='en'?'AN ORIGINAL, CODE-DRIVEN COMPOSITION':'EINE EIGENE, DURCH CODE GESTALTETE KOMPOSITION',57,486);
+    ctx.fillStyle='#786c63';ctx.font='12px Arial';ctx.fillText(language==='ru'?'АВТОРСКАЯ КОМПОЗИЦИЯ, СОЗДАННАЯ КОДОМ':language==='en'?'AN ORIGINAL, CODE-DRIVEN COMPOSITION':'EINE EIGENE, DURCH CODE GESTALTETE KOMPOSITION',57,486);
     ctx.strokeStyle='#31251f';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(54,598);ctx.lineTo(1226,598);ctx.stroke();
     ctx.fillStyle='#fb9c56';ctx.fillRect(54,598,1172*time/DURATION,1.5);
     ctx.font='12px Arial';ctx.fillStyle='#a99685';ctx.fillText(chapters[s.chapter][language].toUpperCase(),54,626);

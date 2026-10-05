@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en" data-language-static="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>schÃƒÂ¼lerVZ // HALVETH MYCELIUM</title>
+<meta name="description" content="Unofficial photovoltaic nostalgia and archival reconstruction with public source archeology, opt-in profiles and space-time graph.">
+<link rel="stylesheet" href="/schuelervz-halveth/assets/mycelium.css">
+<link rel="stylesheet" href="/return.css"><link rel="stylesheet" href="/language.css"><!-- HUB_ALTERNATES_START --><link rel="canonical" href="https://juri-halveth.github.io/en/schuelervz-halveth/"><link rel="alternate" hreflang="de" href="https://juri-halveth.github.io/schuelervz-halveth/"><link rel="alternate" hreflang="en" href="https://juri-halveth.github.io/en/schuelervz-halveth/"><link rel="alternate" hreflang="ru" href="https://juri-halveth.github.io/ru/schuelervz-halveth/"><link rel="alternate" hreflang="x-default" href="https://juri-halveth.github.io/schuelervz-halveth/"><!-- HUB_ALTERNATES_END --><!-- HUB_RUNTIME_START --><script src="/assets/hub-catalog.js" defer></script><script src="/assets/hub-language.js" defer></script><link rel="stylesheet" href="/assets/hub-language.css"><!-- HUB_RUNTIME_END --></head>
+<body><!-- HUB_LANGUAGE_START --><nav class="language-links shell" aria-label="Language"><a data-language-link href="/schuelervz-halveth/" lang="de" hreflang="de">Deutsch</a><a data-language-link href="/en/schuelervz-halveth/" lang="en" hreflang="en" aria-current="page">English</a><a data-language-link href="/ru/schuelervz-halveth/" lang="ru" hreflang="ru">Русский</a></nav><!-- HUB_LANGUAGE_END --><!-- PORTFOLIO_RETURN_START --><nav class="return-bar" aria-label="Back to the overview"><a href="/en/">← Home / topic overview</a><a href="/en/arbeiten/">All work</a><a href="/en/profil/">Profile &amp; evidence</a></nav><!-- PORTFOLIO_RETURN_END -->
+<div class="notice">UNOFFICIAL ARCHIVAL / NOSTALGIA RECONSTRUCTION Ã“PUBLIC ARCHIVE + OPT-IN IDENTITIES Ã“NO LEGACY PASSWORD COLLECTION</div>
+<div class="site">
+<header class="head">
+  <div class="logo"><span class="sigil">Ã¢Å“Â¦</span><div><b>The one-and-a-half<span>VZ</span></b><small>HALVETH // MYCELIUM 3.2.0</small></div></div>
+  <div class="pinkbar">
+    <strong>SCHÃƒÅ “LERVERVERLIST”</strong>
+    <nav>
+      <a href="#" data-page="search">suche</a>
+      <a href="#" data-page="profiles">profile</a>
+      <a href="/en/schuelervz-halveth/people.html">Finding people</a>
+      <a href="#" data-page="graph">mycelium</a>
+      <a href="/en/schuelervz-halveth/archaeology.html">archaeology</a>
+      <a href="/en/schuelervz-halveth/prestige.html">PRESENT</a>
+      <a href="#" data-page="time">raumzeit</a>
+      <a href="#" data-tool="console">console</a>
+      <a href="https://github.com/Juri-Halveth/Juri-Halveth.github.io/issues/new?template=profile-claim.yml" target="_blank" rel="noopener">Profile claims</a>
+    </nav>
+  </div>
+</header>
+
+<div class="layout">
+<aside>
+  <input id="miniSearch" placeholder="Searching for everything." autocomplete="off">
+  <ul>
+    <li><a href="#" data-page="home">Home</a></li>
+    <li><a href="#" data-page="profiles">Profiles</a></li>
+    <li><a href="#" data-page="search">Archive + Search</a></li>
+    <li><a href="#" data-page="graph">Mycelium graphite</a></li>
+    <li><a href="#" data-page="time">Space-time</a></li>
+    <li><a href="#" data-page="privacy">Private education</a></li>
+  </ul>
+
+  <div class="card tiny">
+    <b>GitHub Live</b>
+    <span id="liveState">Combine them together.</span>
+    <span id="liveCommit">Ã¢â‚¬â€</span>
+  </div>
+
+  <div class="card tiny">
+    <b>Archives</b>
+    <span id="archiveState">The index is loaded.</span>
+    <span id="bundleState">Ã¢â‚¬â€</span>
+  </div>
+
+  <div class="card tiny">
+    <b>Invariant</b>
+    <span>UNKNOWN = PRESERVED</span>
+    <span>ROUTE Ã¢Â PERSON</span>
+    <span>CLAIM Ã¢â€Â LEGACY LOGIN</span>
+  </div>
+</aside>
+
+<main>
+<section id="page-home" class="page active">
+  <div class="title"><span>Hey Yuri! Ã°Å ̃””</span><small>TÃ¢â‚¬â€˜0 Ã¢â€¡â€ž T+n Ã¢â€¡â€ž Ã¢Ë†Å¾</small></div>
+
+  <div class="hero">
+    <div>
+      <h1>MYCELIUM MODE</h1>
+      <p>Archive, profiles, time and technical routes are not treated as a rigid list, but as a branched graph. A find can go on in several directions without making UNKNOWN plÃ¶¶lich FACT.</p>
+      <div class="heroActions">
+        <button data-page-jump="search">The archive is divided into</button>
+        <button data-page-jump="profiles">Search for profiles</button>
+        <button data-page-jump="graph">Graph ÃƒÂ¶Open</button>
+      </div>
+    </div>
+    <div class="pulseCard">
+      <b>LIVE PULS</b>
+      <strong id="pulseArchive">0</strong><span>Archive objects</span>
+      <strong id="pulsePeople">0</strong><span>opt-in profiles</span>
+      <strong id="pulseRoutes">0</strong><span>Route models</span>
+    </div>
+  </div>
+
+  <div class="columns">
+    <div>
+      <div class="module">
+        <h3>What are you doing right now?</h3>
+        <textarea id="statusInput" maxlength="180"></textarea>
+        <div class="actions"><span id="statusCount">180</span> Characters <button id="statusPost">speichern</button></div>
+      </div>
+
+      <div class="module">
+        <h3>Mycelium feed</h3>
+        <div id="newsFeed"></div>
+      </div>
+
+      <div class="module">
+        <h3>Pin wall</h3>
+        <div id="wall"></div>
+        <div class="wallform"><input id="wallInput" placeholder="Something on the wall."><button id="wallPost">eintragen</button></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="profile card">
+        <div class="avatar">JH</div>
+        <b>Juri Halveth</b>
+        <span>HALVETH / Reconstruction room</span>
+        <button id="gruschelBtn">gruscheln</button>
+        <small><span id="gruschelCount">111</span> Greetings</small>
+      </div>
+
+      <div class="module">
+        <h3>Space-time jump</h3>
+        <select id="yearSelect"></select>
+        <button id="jumpYear">springen</button>
+        <div id="yearInfo"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="page-search" class="page">
+  <div class="title"><span>Universal search engine</span><small>archive + routes + opt-in profiles</small></div>
+  <div class="searchbar">
+    <input id="globalSearch" placeholder="e.g. security, 2009, press, Juri, Profile/" autocomplete="off">
+    <button id="globalGo">suchen</button>
+  </div>
+  <div class="filterRow">
+    <label><input type="checkbox" class="scopeCheck" value="archive" checked> Archives</label>
+    <label><input type="checkbox" class="scopeCheck" value="profile" checked> Profiles</label>
+    <label><input type="checkbox" class="scopeCheck" value="route" checked> Routes</label>
+    <label><input type="checkbox" class="scopeCheck" value="timeline" checked> Space-time</label>
+  </div>
+  <div id="globalResults"></div>
+</section>
+
+<section id="page-profiles" class="page">
+  <div class="title"><span>Profile Archaeology</span><small>exact URL / ID / opt-in identity</small></div>
+
+  <div class="module body">
+    <h3>Historische Spur prÃƒÂ¼fen</h3>
+    <p>Give one <b>Exact old profile URL or opaque profile ID</b> The browser only checks our public archive index and voluntary claims. It doesn&#39;t enumerate strangers.</p>
+    <div class="searchbar">
+      <input id="profileProbe" placeholder="https://www.schuelervz.net/Profile/Ã¢â‚¬Â¦ oder alte ID" autocomplete="off">
+      <button id="profileProbeGo">And then there is a trail.</button>
+    </div>
+    <div id="profileProbeResult"></div>
+  </div>
+
+  <div class="module">
+    <h3>Opt-in Profiles</h3>
+    <div id="profileGrid" class="grid"></div>
+  </div>
+
+  <div class="module body">
+    <h3>Resurrect profile</h3>
+    <p>Ein heutiger GitHub-Account kann ein eigenes Rekonstruktionsprofil claimen. Alte SchÃƒÂ¼lerVZ-PasswÃƒÂ¶rter werden nicht abgefragt.</p>
+    <a class="claimButton" href="https://github.com/Juri-Halveth/Juri-Halveth.github.io/issues/new?template=profile-claim.yml" target="_blank" rel="noopener">GitHub Profile Claim</a>
+  </div>
+</section>
+
+<section id="page-graph" class="page">
+  <div class="title"><span>Mycelium graphite</span><small>click node Ã¢â€TM branch</small></div>
+  <div class="graphToolbar">
+    <button id="graphReset">reset</button>
+    <button id="graphArchive">archive</button>
+    <button id="graphProfiles">profiles</button>
+    <button id="graphRoutes">routes</button>
+  </div>
+  <div class="graphWrap">
+    <svg id="graphSvg" viewBox="0 0 900 520" role="img" aria-label="Interactive reconstruction graph"></svg>
+  </div>
+  <div id="graphDetail" class="graphDetail">Click on a node.</div>
+</section>
+
+<section id="page-time" class="page">
+  <div class="title"><span>Space-time</span><small>time slices, no merge-by-vibe</small></div>
+  <div id="timeline"></div>
+</section>
+
+<section id="page-privacy" class="page">
+  <div class="title"><span>Private domain + limits of evidence</span><small>preserve uncertainty</small></div>
+  <div class="module body">
+    <h3>Rules of the Universe</h3>
+    <p><b>ARCHIVE_RECORD Ã¢â€°Â CURRENT_PERSON</b></p>
+    <p><b>ROUTE_TEMPLATE Ã¢Â RECOVERED_PROFILE</b></p>
+    <p><b>OWNER_CLAIM Ã¢€°Â LEGACY_LOGIN</b></p>
+    <p><b>UNKNOWN Ã¢â€Â FALSE</b></p>
+    <p>Historical personal profiles are not replicated en masse from leaked databases. Searchable are public archive artifacts, technical route models and voluntarily reconstructed profiles.</p>
+  </div>
+</section>
+</main>
+</div>
+</div>
+
+<div id="modal" class="overlay hidden">
+  <div class="modal">
+    <button id="closeModal">Ãƒâ€”</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<div id="console" class="console hidden">
+  <div class="consoleHead"><b>VERACHEL :: SCHUELERVZ [MYCELIUM]</b><button id="closeConsole">Ãƒâ€”</button></div>
+  <pre id="consoleOut"></pre>
+  <form id="consoleForm"><span>&gt;</span><input id="consoleIn" autocomplete="off" placeholder="help"></form>
+</div>
+
+<div id="noclipHud" class="hud hidden">TCL/NOCLIP ACTIVE</div>
+<script src="/schuelervz-halveth/assets/mycelium.js"></script>
+</body>
+</html>

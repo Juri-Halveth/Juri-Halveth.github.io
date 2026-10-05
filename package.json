@@ -1,0 +1,9 @@
+{
+  "name": "juris-space",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Topic landing page and local multilingual presentation checks",
+  "license": "SEE LICENSE IN LICENSES.md",
+  "scripts": { "test": "bash SPACE.sh check", "build": "bash SPACE.sh build" },
+  "devDependencies": { "jsdom": "26.1.0" }
+}

@@ -59,4 +59,5 @@ const cv='# Juri Halveth · HALVETH / LUCINET\n\nÖffentliches Arbeitsprofil · 
 write('profil/CV-Juri-Halveth.md',cv.trim());
 write('404.html',page('Zurück zu den Themen','/404.html','<p class="eyebrow">DER FADEN BLEIBT</p><h1>Dieser Weg führt<br><em>zurück zum Anfang.</em></h1><p class="lead">Die gesuchte Adresse ist in dieser Veröffentlichung anders eingeordnet. Wähle das passende Thema oder öffne das Arbeitsverzeichnis.</p><nav class="section-jumps" aria-label="Wege zur Übersicht">'+portfolio.sections.map(s=>a('/#'+s.id,s.title)).join('')+'</nav>'+a('/','Zur Startseite →','text-link')+'<p>'+a('/arbeiten/','Alle Arbeiten durchsuchen →')+'</p>'));
 require('./add-return-navigation.cjs');
+require('./build-languages.cjs');
 console.log(JSON.stringify({state:'TOPIC_LANDING_BUILT',topics:5,sourceAliases:inventory.projects.length,researchDocuments:snapshot.research.documents.length,workCertificates:certificates.length,sourceSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'data/public-sources.json'))).digest('hex')}));

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" data-language-static="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>schülerVZ // Finding people</title>
+<meta name="description" content="Serverless opt-in person search for schülerVZ // HALVETH with GitHub claims and public archive text notes.">
+<link rel="stylesheet" href="/schuelervz-halveth/assets/people.css">
+<link rel="stylesheet" href="/return.css"><link rel="stylesheet" href="/language.css"><!-- HUB_ALTERNATES_START --><link rel="canonical" href="https://juri-halveth.github.io/en/schuelervz-halveth/people.html"><link rel="alternate" hreflang="de" href="https://juri-halveth.github.io/schuelervz-halveth/people.html"><link rel="alternate" hreflang="en" href="https://juri-halveth.github.io/en/schuelervz-halveth/people.html"><link rel="alternate" hreflang="ru" href="https://juri-halveth.github.io/ru/schuelervz-halveth/people.html"><link rel="alternate" hreflang="x-default" href="https://juri-halveth.github.io/schuelervz-halveth/people.html"><!-- HUB_ALTERNATES_END --><!-- HUB_RUNTIME_START --><script src="/assets/hub-catalog.js" defer></script><script src="/assets/hub-language.js" defer></script><link rel="stylesheet" href="/assets/hub-language.css"><!-- HUB_RUNTIME_END --></head>
+<body><!-- HUB_LANGUAGE_START --><nav class="language-links shell" aria-label="Language"><a data-language-link href="/schuelervz-halveth/people.html" lang="de" hreflang="de">Deutsch</a><a data-language-link href="/en/schuelervz-halveth/people.html" lang="en" hreflang="en" aria-current="page">English</a><a data-language-link href="/ru/schuelervz-halveth/people.html" lang="ru" hreflang="ru">Русский</a></nav><!-- HUB_LANGUAGE_END --><!-- PORTFOLIO_RETURN_START --><nav class="return-bar" aria-label="Back to the overview"><a href="/en/">← Home / topic overview</a><a href="/en/arbeiten/">All work</a><a href="/en/profil/">Profile &amp; evidence</a></nav><!-- PORTFOLIO_RETURN_END -->
+<div class="notice">UNOFFICIAL RECONSTRUCTION · SEARCHES OPT-IN CLAIMS + PUBLIC NON-STAFF ARCHIVE TEXT · NO LEGACY PASSWORDS</div>
+<div class="wrap">
+<header>
+  <div class="logo"><span>✦</span><div><b>Students<span>VZ</span></b><small>HALVETH // PEOPLE FINDER 3.4</small></div></div>
+  <nav>
+    <a href="/schuelervz-halveth/index.html">Home</a>
+    <a href="/en/schuelervz-halveth/archaeology.html">Archaeology</a>
+    <a href="https://github.com/Juri-Halveth/Juri-Halveth.github.io/issues/new?template=profile-claim.yml" target="_blank" rel="noopener">I&#39;m here</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero">
+  <h1>Find people without knowing the old URL.</h1>
+  <p>Name, birthday, location, school, old nickname and active VZ years are now search fields. Hits come from voluntary GitHub claims and already confirmed reconstruction profiles. Public archive texts can also be searched as a hint.</p>
+  <div class="pulse">
+    <span><b id="approvedCount">0</b> Confirmed / local profiles</span>
+    <span><b id="claimCount">0</b> GitHub claims</span>
+    <span><b id="archiveCount">0</b> Public archival documents</span>
+  </div>
+</section>
+
+<section class="searchbox">
+  <div class="field"><label for="name">Name of name</label><input id="name" placeholder="First name, surname or part"></div>
+  <div class="field"><label for="birthday">Birthday</label><input id="birthday" placeholder="e.g. 01.02 or 1995"></div>
+  <div class="field"><label for="city">Location</label><input id="city" placeholder="City / Region"></div>
+  <div class="field"><label for="school">School</label><input id="school" placeholder="School name"></div>
+  <div class="field"><label for="nick">Old nickname</label><input id="nick" placeholder="Nickname / Alias"></div>
+  <div class="field"><label for="years">VZ time</label><input id="years" placeholder="e.g. 2008 or 2008-2011"></div>
+
+  <div class="options">
+    <label><input id="archiveMentions" type="checkbox" checked> Checking public archive texts</label>
+    <label><input id="fuzzy" type="checkbox" checked> A tolerant search</label>
+  </div>
+
+  <div class="actions">
+    <button id="find">Finding people</button>
+    <button id="reset" class="secondary">Reset</button>
+  </div>
+</section>
+
+<section class="callout">
+  <div>
+    <b>No more old profile URLs?</b>
+    <p>The URL is now only an optional piece of evidence, and for the new community search, voluntarily published information such as name, location, school or birthday is sufficient.</p>
+  </div>
+  <a class="claim" href="https://github.com/Juri-Halveth/Juri-Halveth.github.io/issues/new?template=profile-claim.yml" target="_blank" rel="noopener">Enter my profile</a>
+</section>
+
+<section>
+  <div class="sectionTitle"><span>results</span><small id="resultMeta">Not yet searching</small></div>
+  <div id="results"></div>
+</section>
+
+<section class="explain">
+  <h2>What is automatically searched</h2>
+  <div class="explainGrid">
+    <div><b>OPT-IN COMMUNITY</b><p>People who have voluntarily posted their profile through GitHub.</p></div>
+    <div><b>RECONSTRUCTION PROFILES</b><p>Profiles of: <code>people.json</code>, with clear origin and claim-state.</p></div>
+    <div><b>ARCHIVE MENTIONS</b><p>Only public, non-personal archival texts. A name find is a clue, not an identity proof.</p></div>
+  </div>
+</section>
+</main>
+</div>
+<script src="/schuelervz-halveth/assets/people.js"></script>
+</body>
+</html>
