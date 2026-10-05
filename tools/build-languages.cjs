@@ -57,7 +57,7 @@ function decorate(html,source,language){
  }
  return html;
 }
-const cv=fs.readFileSync(path.join(root,'profil/CV-Juri-Halveth.md'),'utf8');
+const cv=fs.readFileSync(path.join(root,'profil/CV-Juri-Halveth.md'),'utf8').replace(/\r\n/g,'\n');
 for(const language of ['en','ru']){
  const localized=cv.split('\n').map(line=>{
   if(/https?:\/\//.test(line)&&!line.includes(']('))return line;
@@ -70,7 +70,7 @@ for(const language of ['en','ru']){
  fs.writeFileSync(path.join(root,language,'profil/CV-Juri-Halveth.md'),localized);
 }
 for(const source of pages){
- const file=path.join(root,source);let original=fs.readFileSync(file,'utf8');
+ const file=path.join(root,source);let original=fs.readFileSync(file,'utf8').replace(/\r\n/g,'\n');
  original=original.replace(/<!-- HUB_LANGUAGE_START -->[\s\S]*?<!-- HUB_LANGUAGE_END -->/g,'').replace(/<!-- HUB_ALTERNATES_START -->[\s\S]*?<!-- HUB_ALTERNATES_END -->/g,'');
  original=original.replace(/<link rel="canonical"[^>]*>/g,'');
  fs.writeFileSync(file,decorate(original,source,'de'));
