@@ -149,5 +149,62 @@
     ctx.textAlign='right';ctx.fillText(time.toFixed(2)+' / 20.00 s',1226,626);ctx.textAlign='left';
     ctx.restore();return s;
   }
-  return Object.freeze({DURATION,chapters,stateAt,advance,smoother,render});
+  function artworkStateAt(time) {
+    finite(time,'artwork time');
+    if(time<0)throw new RangeError('Artwork time must be positive');
+    return {time,glow:1.35,grow:1,connect:.7+.3*Math.sin(time*.11)**2,
+      morph:.35+.3*Math.sin(time*.14),breathe:1+.028*Math.sin(time*.75),
+      rotation:time*.13,energy:.6+.4*Math.sin(time*.37)**2};
+  }
+  // The landing artwork has its own continuous clock, isotropic geometry,
+  // and no title cards, progress bars or 20-second reset.
+  function renderArtwork(ctx,width,height,time) {
+    const s=artworkStateAt(time);
+    finite(width,'width');finite(height,'height');
+    if(width<=0||height<=0)throw new RangeError('Positive render dimensions required');
+    const scale=Math.min(width,height)/720,cx=width*.5,cy=height*.5,R=183*scale*s.breathe;
+    ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.globalAlpha=1;
+    ctx.globalCompositeOperation='source-over';ctx.shadowBlur=0;
+    ctx.fillStyle='#0b1515';ctx.fillRect(0,0,width,height);
+    const halo=ctx.createRadialGradient(cx,cy,0,cx,cy,Math.max(width,height)*.6);
+    halo.addColorStop(0,'#352019');halo.addColorStop(.43,'#19221d');halo.addColorStop(1,'#0b1515');
+    ctx.fillStyle=halo;ctx.fillRect(0,0,width,height);
+    const cloud=ctx.createRadialGradient(cx,cy,R*.12,cx,cy,R*1.72);
+    cloud.addColorStop(0,'rgba(255,172,107,.03)');cloud.addColorStop(.5,'rgba(236,113,49,.12)');cloud.addColorStop(1,'rgba(236,113,49,0)');
+    ctx.fillStyle=cloud;ctx.fillRect(0,0,width,height);
+    for(let k=0;k<68;k++){
+      const u=k/68*TAU,pts=[];let depth=0;
+      for(let j=0;j<=64;j++){
+        const v=-1.49+j/64*2.98,p=path3(u+.13*Math.sin(v*3+s.time*.28),v,s);
+        depth+=p.z;pts.push(project(p,cx,cy,R));
+      }
+      trail(ctx,pts,'rgba(255,152,87,'+clamp(.32-depth/65*.21,.09,.6)+')',.9*scale,2*scale);
+    }
+    for(let k=0;k<13;k++){
+      const v=-1.42+k/12*2.84,pts=[];
+      for(let j=0;j<=120;j++)pts.push(project(path3(j/120*TAU,v,s),cx,cy,R));
+      trail(ctx,pts,'rgba(247,184,125,.2)',.8*scale,0);
+    }
+    for(let k=0;k<9;k++){
+      const seed=k*.79,orbit=fraction=>{
+        const a=fraction*TAU,bend=.7+.09*Math.sin(2*a+seed+s.time*.21);
+        return {x:cx+Math.cos(a+seed*.15)*(R+38*scale)*bend*1.65,
+          y:cy+Math.sin(a)*(R+75*scale)*.46+Math.sin(a+seed)*(18+36*s.connect)*scale};
+      };
+      const line=[],tail=[],head=s.time*.037+k*.13;
+      for(let j=0;j<=88;j++)line.push(orbit(j/88));
+      for(let j=0;j<24;j++)tail.push(orbit(head-j/110));
+      trail(ctx,line,'rgba(236,161,95,.13)',.8*scale,0);
+      trail(ctx,tail,'rgba(255,177,99,.42)',1.65*scale,13*scale);
+      const q=orbit(head);glowPoint(ctx,q.x,q.y,3.7*scale,.9);
+    }
+    for(let k=0;k<26;k++){
+      const a=k*2.399963+s.time*.017,r=(245+40*Math.sin(k*1.7+s.time*.13))*scale;
+      const x=cx+Math.cos(a)*r,y=cy+Math.sin(a)*r*.85;
+      ctx.fillStyle='rgba(203,227,184,'+(.12+.22*Math.sin(s.time*.48+k)**2)+')';
+      ctx.beginPath();ctx.arc(x,y,(.7+.45*Math.sin(k)**2)*scale,0,TAU);ctx.fill();
+    }
+    ctx.restore();return s;
+  }
+  return Object.freeze({DURATION,chapters,stateAt,advance,smoother,render,artworkStateAt,renderArtwork});
 }));

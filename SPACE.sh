@@ -3,7 +3,7 @@ set -euo pipefail
 cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
 case "${1:-check}" in
   build) node tools/build-space.cjs ;;
-  check) node --test tests/space.test.cjs tests/motion.test.cjs tests/motion-player.test.cjs ;;
+  check) node --test tests/landing.test.cjs tests/motion.test.cjs tests/motion-player.test.cjs tests/landing-motion.test.cjs ;;
   motion) shift; node tools/render-motion.cjs "$@" ;;
   preview) node tools/serve-space.cjs ;;
   inventory)
