@@ -3,6 +3,7 @@ const fs=require('node:fs'),path=require('node:path');
 const root=path.resolve(__dirname,'..'),catalog=require('../data/languages.json');
 const pages=['index.html','arbeiten/index.html','profil/index.html','404.html','motion/index.html','werkzertifikate/index.html','schuelervz-halveth/index.html','schuelervz-halveth/people.html','schuelervz-halveth/archaeology.html','schuelervz-halveth/prestige.html'];
 const routes=new Set(pages.map(file=>'/'+file.replace(/index\.html$/,'')));
+routes.add('/handbuch/');
 const decode=s=>s.replace(/&(?:amp|lt|gt|quot|#39|#x([0-9a-f]+)|#([0-9]+));/gi,(m,x,n)=>x?String.fromCodePoint(parseInt(x,16)):n?String.fromCodePoint(Number(n)):({'&amp;':'&','&lt;':'<','&gt;':'>','&quot;':'"','&#39;':"'"}[m]||m));
 const escape=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function text(value,language){
@@ -81,6 +82,7 @@ for(const source of pages){
 }
 const urls=[];
 for(const language of ['de','en','ru'])for(const source of pages.filter(p=>p!=='404.html'))urls.push('https://juri-halveth.github.io/'+(language==='de'?'':language+'/')+source.replace(/index\.html$/,''));
+for(const language of ['de','en','ru'])urls.push('https://juri-halveth.github.io/'+(language==='de'?'':language+'/')+'handbuch/');
 fs.writeFileSync(path.join(root,'sitemap.xml'),'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+urls.map(u=>'  <url><loc>'+u+'</loc></url>').join('\n')+'\n</urlset>\n');
 console.log(JSON.stringify({state:'LANGUAGE_PAGES_BUILT',languages:3,pages:pages.length*3,catalogStrings:Object.keys(catalog.strings).length}));
 module.exports={translate,text,url,pages};

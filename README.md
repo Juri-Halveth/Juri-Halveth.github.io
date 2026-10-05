@@ -1,3 +1,5 @@
+[Handbuch: Was steht wo?](https://juri-halveth.github.io/handbuch/) · [HTML, Code und Prüfungen / HTML, code and checks / HTML, код и проверки](docs/HANDBUCH.md)
+
 <!-- HUB_LANGUAGES_V1 -->
 [Original / Deutsch](README.md) · [English](README.en.md) · [Русский](README.ru.md)
 <!-- /HUB_LANGUAGES_V1 -->
