@@ -4931,6 +4931,418 @@
     "Für Eltern & ältere Menschen · auf Russisch ↗": {
       "en": "For parents & older adults · in Russian ↗",
       "ru": "Для родителей и старших · по-русски ↗"
+    },
+    "Zertifikate & Claims": {
+      "en": "Certificates & claims",
+      "ru": "Сертификаты и claims"
+    },
+    "Modelle & Tests": {
+      "en": "Models & tests",
+      "ru": "Модели и тесты"
+    },
+    "Claims mit Nachweisen.": {
+      "en": "Claims with evidence.",
+      "ru": "Claims с материалами."
+    },
+    "Neun Zertifikats-Claims. Elf HALVETH-Werkzertifikate. Software, Forschung und Simulationen mit direkten Quellen und Prüfungen.": {
+      "en": "Nine certification claims. Eleven HALVETH work certificates. Software, research and simulations with direct sources and checks.",
+      "ru": "Девять сертификационных claims. Одиннадцать сертификатов работ HALVETH. Программы, исследования и симуляции с прямыми источниками и проверками."
+    },
+    "Zertifikate & Claims ansehen": {
+      "en": "View certificates & claims",
+      "ru": "Открыть сертификаты и claims"
+    },
+    "ZERTIFIKATE BEIM NAMEN": {
+      "en": "CERTIFICATES BY NAME",
+      "ru": "СЕРТИФИКАТЫ ПО НАЗВАНИЮ"
+    },
+    "Die Nachweise daneben.": {
+      "en": "Evidence alongside.",
+      "ru": "Материалы рядом."
+    },
+    "Die neun Portfolioansprüche stehen sichtbar bei ihrem Zertifikats-Referenzrahmen. Jeder Claim führt direkt zu seinem Dossier.": {
+      "en": "The nine portfolio claims appear alongside their certification reference frameworks. Each claim links directly to its dossier.",
+      "ru": "Девять claims портфолио видны рядом с их сертификационными ориентирами. Каждый claim ведёт прямо к своему досье."
+    },
+    "✓ CLAIMED · Dokumentierter Portfolioanspruch.": {
+      "en": "✓ CLAIMED · Documented portfolio claim.",
+      "ru": "✓ CLAIMED · Документированный claim портфолио."
+    },
+    "Juri Halveth macht seine Arbeitsproben in den benannten Zertifikats-Referenzfeldern ausdrücklich geltend. Die Dossiers zeigen Belegabdeckung und offene Nachweise. Eine Verleihung durch den Zertifikatsherausgeber führt ihren eigenen Originalbeleg und Status.": {
+      "en": "Juri Halveth explicitly asserts his work samples in the named certification reference fields. Dossiers record evidence coverage and open requirements. An issuer award has its own original evidence and status.",
+      "ru": "Juri Halveth явно заявляет свои образцы работ в названных сертификационных областях. Досье показывают объём материалов и открытые вопросы. Выдача сертификата издателем имеет собственные оригинальные подтверждения и статус."
+    },
+    "Dossier & Nachweise ↗": {
+      "en": "Dossier & evidence ↗",
+      "ru": "Досье и материалы ↗"
+    },
+    "Zertifikats-Referenzgeber ·": {
+      "en": "Certification reference issuer ·",
+      "ru": "Издатель сертификационного ориентира ·"
+    },
+    "Alle Claims & Belegumfänge →": {
+      "en": "All claims & evidence coverage →",
+      "ru": "Все claims и объём материалов →"
+    },
+    "Banane, Auge & FEGEFEUER →": {
+      "en": "Banana, eye & FEGEFEUER →",
+      "ru": "Банан, глаз и FEGEFEUER →"
+    },
+    "Claims & offene Arbeiten auf GitHub ↗": {
+      "en": "Claims & open work on GitHub ↗",
+      "ru": "Claims и открытые работы на GitHub ↗"
+    },
+    "CLAIMED / ZDA · Definition ↗": {
+      "en": "CLAIMED / ZDA · Definition ↗",
+      "ru": "CLAIMED / ZDA · Определение ↗"
+    },
+    "Benchmark-Matrix ↗": {
+      "en": "Benchmark matrix ↗",
+      "ru": "Матрица ориентиров ↗"
+    },
+    "Projektbelege ↗": {
+      "en": "Project evidence ↗",
+      "ru": "Проектные материалы ↗"
+    },
+    "Testbelege ↗": {
+      "en": "Testing evidence ↗",
+      "ru": "Материалы тестирования ↗"
+    },
+    "Elf HALVETH-Werkzertifikate · Aussteller: HALVETH VERACHEL STUDIOS": {
+      "en": "Eleven HALVETH work certificates · Issuer: HALVETH VERACHEL STUDIOS",
+      "ru": "Одиннадцать сертификатов работ HALVETH · Издатель: HALVETH VERACHEL STUDIOS"
+    },
+    "Eigene, mit Codex erstellte Werkdokumentation · Ausgabe 28.09.2026 · Projekte, Quellstände und Prüfungen.": {
+      "en": "Own work documentation created with Codex · Edition 28.09.2026 · Projects, source versions and checks.",
+      "ru": "Собственная документация работ, созданная с Codex · Выпуск 28.09.2026 · Проекты, версии и проверки."
+    },
+    "Zertifikatsgalerie & Originaldokumente →": {
+      "en": "Certificate gallery & original documents →",
+      "ru": "Галерея сертификатов и оригинальные документы →"
+    },
+    "VOM GEDANKEN ZUM PRÜFBAREN MODELL": {
+      "en": "FROM AN IDEA TO A TESTABLE MODEL",
+      "ru": "ОТ ИДЕИ К ПРОВЕРЯЕМОЙ МОДЕЛИ"
+    },
+    "Banane. Auge. FEGEFEUER.": {
+      "en": "Banana. Eye. FEGEFEUER.",
+      "ru": "Банан. Глаз. FEGEFEUER."
+    },
+    "Übergänge darstellen, Lichtbrechung berechnen und Zustände mit erhaltener Herkunft wandeln. Die Modellübersicht verbindet Simulation, Quellcode, Tests und nächste Forschungsfragen.": {
+      "en": "Visualise transitions, calculate refraction and transform states while retaining provenance. The model overview connects simulations, source code, tests and next research questions.",
+      "ru": "Визуализировать переходы, рассчитывать преломление и преобразовывать состояния с сохранением происхождения. Обзор моделей связывает симуляции, код, тесты и следующие исследовательские вопросы."
+    },
+    "Modelle & Nachweise öffnen →": {
+      "en": "Open models & evidence →",
+      "ru": "Открыть модели и материалы →"
+    },
+    "Zertifikate · CLAIMED · Nachweise": {
+      "en": "Certificates · CLAIMED · Evidence",
+      "ru": "Сертификаты · CLAIMED · Материалы"
+    },
+    "Zertifikate.": {
+      "en": "Certificates.",
+      "ru": "Сертификаты."
+    },
+    "Claims mit einer Spur.": {
+      "en": "Claims with a trace.",
+      "ru": "Claims со следом."
+    },
+    "CLAIMED / ZDA · SICHTBAR DOKUMENTIERT": {
+      "en": "CLAIMED / ZDA · VISIBLY DOCUMENTED",
+      "ru": "CLAIMED / ZDA · ВИДИМО ДОКУМЕНТИРОВАНО"
+    },
+    "Offene Nachweise:": {
+      "en": "Open evidence:",
+      "ru": "Открытые материалы:"
+    },
+    "Elf HALVETH-Werkzertifikate": {
+      "en": "Eleven HALVETH work certificates",
+      "ru": "Одиннадцать сертификатов работ HALVETH"
+    },
+    "Aussteller: HALVETH VERACHEL STUDIOS. Eigene, mit Codex erstellte Werkdokumentation, Ausgabe 28.09.2026. Die Originale binden Projekt, Quellstand, Ergebnis und Prüfumfang.": {
+      "en": "Issuer: HALVETH VERACHEL STUDIOS. Own work documentation created with Codex, edition 28.09.2026. Originals bind the project, source version, result and scope of checks.",
+      "ru": "Издатель: HALVETH VERACHEL STUDIOS. Собственная документация, созданная с Codex, выпуск 28.09.2026. Оригиналы привязывают проект, версию, результат и объём проверок."
+    },
+    "Zertifikatsgalerie & Prüfumfang →": {
+      "en": "Certificate gallery & check scope →",
+      "ru": "Галерея сертификатов и объём проверок →"
+    },
+    "Werkzertifikatsmappe · PDF ↗": {
+      "en": "Work certificate collection · PDF ↗",
+      "ru": "Сборник сертификатов работ · PDF ↗"
+    },
+    "Modelle · Simulationen · Prüfungen": {
+      "en": "Models · Simulations · Checks",
+      "ru": "Модели · Симуляции · Проверки"
+    },
+    "Eine Idee.": {
+      "en": "An idea.",
+      "ru": "Идея."
+    },
+    "Eine prüfbare Vorhersage.": {
+      "en": "A testable prediction.",
+      "ru": "Проверяемое предсказание."
+    },
+    "Jedes Modell führt zu seiner Oberfläche, seinem Quellstand und seinen Prüfungen. Eine neue Darstellung macht die bestehende Arbeit sichtbar und öffnet konkrete nächste Fragen.": {
+      "en": "Each model links to its interface, source version and checks. The presentation makes existing work visible and opens specific next questions.",
+      "ru": "Каждая модель ведёт к интерфейсу, версии исходных материалов и проверкам. Представление делает существующую работу видимой и открывает конкретные следующие вопросы."
+    },
+    "Nächste Forschungsfrage:": {
+      "en": "Next research question:",
+      "ru": "Следующий исследовательский вопрос:"
+    },
+    "Simulation öffnen →": {
+      "en": "Open simulation →",
+      "ru": "Открыть симуляцию →"
+    },
+    "Modell & Quellcode ↗": {
+      "en": "Model & source code ↗",
+      "ru": "Модель и исходный код ↗"
+    },
+    "Ausführbare Tests ↗": {
+      "en": "Executable tests ↗",
+      "ru": "Исполняемые тесты ↗"
+    },
+    "Quellen & Prüfstand": {
+      "en": "Sources & checks",
+      "ru": "Источники и проверки"
+    },
+    "Öffentliche Modelle mit datierten Quellen. Der Registerstand vom 06.10.2026 bindet Codefassungen und Testmethoden; neue Prüfläufe führen ihre eigenen Ergebnisse.": {
+      "en": "Public models with dated sources. The register of 06.10.2026 binds code versions and test methods; new test runs record their own results.",
+      "ru": "Публичные модели с датированными источниками. Реестр от 06.10.2026 привязывает версии кода и методы; новые проверки имеют собственные результаты."
+    },
+    "Modellregister mit Dateihashes ↗": {
+      "en": "Model register with file hashes ↗",
+      "ru": "Реестр моделей с хешами файлов ↗"
+    },
+    "Modelle": {
+      "en": "Models",
+      "ru": "Модели"
+    },
+    "Startseite / Zertifikate": {
+      "en": "Home / Certificates",
+      "ru": "Главная / Сертификаты"
+    },
+    "Konkrete Arbeitsproben": {
+      "en": "Concrete work samples",
+      "ru": "Конкретные образцы работ"
+    },
+    "Teilbereiche mit Arbeitsproben": {
+      "en": "Selected areas with work samples",
+      "ru": "Отдельные области с образцами работ"
+    },
+    "Architekturbezug; Anbieterpraxis offen": {
+      "en": "Architecture mapping; provider practice open",
+      "ru": "Архитектурное сопоставление; практика провайдера открыта"
+    },
+    "Prozessbezug; Wirkungsmessung offen": {
+      "en": "Process mapping; impact measurement open",
+      "ru": "Сопоставление процессов; измерение эффекта открыто"
+    },
+    "Spezifischer Leistungsnachweis offen": {
+      "en": "Specific performance evidence open",
+      "ru": "Специальные доказательства результатов открыты"
+    },
+    "ISTQB Certified Tester Advanced Level Test Analyst (CTAL-TA) v4.0": {
+      "en": "ISTQB Certified Tester Advanced Level Test Analyst (CTAL-TA) v4.0",
+      "ru": "ISTQB Certified Tester Advanced Level Test Analyst (CTAL-TA) v4.0"
+    },
+    "Zertifikats-Referenzgeber · ISTQB": {
+      "en": "Certification reference issuer · ISTQB",
+      "ru": "Издатель сертификационного ориентира · ISTQB"
+    },
+    "Microsoft Certified: Cybersecurity Architect Expert": {
+      "en": "Microsoft Certified: Cybersecurity Architect Expert",
+      "ru": "Microsoft Certified: Cybersecurity Architect Expert"
+    },
+    "Zertifikats-Referenzgeber · Microsoft": {
+      "en": "Certification reference issuer · Microsoft",
+      "ru": "Издатель сертификационного ориентира · Microsoft"
+    },
+    "Microsoft Certified: DevOps Engineer Expert": {
+      "en": "Microsoft Certified: DevOps Engineer Expert",
+      "ru": "Microsoft Certified: DevOps Engineer Expert"
+    },
+    "CISSP — Certified Information Systems Security Professional": {
+      "en": "CISSP — Certified Information Systems Security Professional",
+      "ru": "CISSP — Certified Information Systems Security Professional"
+    },
+    "Zertifikats-Referenzgeber · ISC2": {
+      "en": "Certification reference issuer · ISC2",
+      "ru": "Издатель сертификационного ориентира · ISC2"
+    },
+    "AWS Certified Solutions Architect – Professional": {
+      "en": "AWS Certified Solutions Architect – Professional",
+      "ru": "AWS Certified Solutions Architect – Professional"
+    },
+    "Zertifikats-Referenzgeber · AWS": {
+      "en": "Certification reference issuer · AWS",
+      "ru": "Издатель сертификационного ориентира · AWS"
+    },
+    "ISTQB Certified Tester Expert Level Improving the Test Process (CTEL-ITP)": {
+      "en": "ISTQB Certified Tester Expert Level Improving the Test Process (CTEL-ITP)",
+      "ru": "ISTQB Certified Tester Expert Level Improving the Test Process (CTEL-ITP)"
+    },
+    "OffSec Certified Expert³ (OSCE³)": {
+      "en": "OffSec Certified Expert³ (OSCE³)",
+      "ru": "OffSec Certified Expert³ (OSCE³)"
+    },
+    "Zertifikats-Referenzgeber · OffSec": {
+      "en": "Certification reference issuer · OffSec",
+      "ru": "Издатель сертификационного ориентира · OffSec"
+    },
+    "Cisco Certified Internetwork Expert (CCIE) Enterprise Infrastructure": {
+      "en": "Cisco Certified Internetwork Expert (CCIE) Enterprise Infrastructure",
+      "ru": "Cisco Certified Internetwork Expert (CCIE) Enterprise Infrastructure"
+    },
+    "Zertifikats-Referenzgeber · Cisco": {
+      "en": "Certification reference issuer · Cisco",
+      "ru": "Издатель сертификационного ориентира · Cisco"
+    },
+    "Google Cloud Professional Cloud Architect": {
+      "en": "Google Cloud Professional Cloud Architect",
+      "ru": "Google Cloud Professional Cloud Architect"
+    },
+    "Zertifikats-Referenzgeber · Google Cloud": {
+      "en": "Certification reference issuer · Google Cloud",
+      "ru": "Издатель сертификационного ориентира · Google Cloud"
+    },
+    "Privates Arbeitsboard auf GitHub ↗": {
+      "en": "Private work board on GitHub ↗",
+      "ru": "Личное рабочее Project на GitHub ↗"
+    },
+    "Aussteller: HALVETH VERACHEL STUDIOS. Eigene, mit Codex erstellte Werkdokumentation mit gebundenen Quellständen und Prüfumfängen. Die neun Zertifikats-Claims stehen mit ihren Dossiers im Claim-Register.": {
+      "en": "Issuer: HALVETH VERACHEL STUDIOS. Own work documentation created with Codex, with bound source versions and check scopes. The nine certification claims and their dossiers appear in the claim register.",
+      "ru": "Издатель: HALVETH VERACHEL STUDIOS. Собственная документация, созданная с Codex, с привязанными версиями и объёмом проверок. Девять сертификационных claims и их досье находятся в реестре."
+    },
+    "✓ CLAIMED · Die neun Zertifikatsnamen & Dossiers →": {
+      "en": "✓ CLAIMED · The nine certificate names & dossiers →",
+      "ru": "✓ CLAIMED · Девять названий сертификатов и досье →"
+    },
+    "BANANE · AUGE · FEGEFEUER": {
+      "en": "BANANA · EYE · FEGEFEUER",
+      "ru": "БАНАН · ГЛАЗ · FEGEFEUER"
+    },
+    "Negativkontrollen, persistente Zustände, Wiederherstellung und versionierte Prüfbelege.": {
+      "en": "Negative controls, persistent states, recovery and versioned test evidence.",
+      "ru": "Отрицательные контроли, постоянные состояния, восстановление и версионированные материалы проверок."
+    },
+    "CTFL, Prüfungsergebnis und vollständige Abdeckung der Lernziele separat nachweisen.": {
+      "en": "CTFL, exam result and full learning-objective coverage need separate evidence.",
+      "ru": "CTFL, результат экзамена и полное покрытие учебных целей требуют отдельных материалов."
+    },
+    "Explizite Zustands- und Autoritätsgrenzen sowie nachvollziehbare Softwareprüfungen.": {
+      "en": "Explicit state and authority boundaries and traceable software checks.",
+      "ru": "Явные границы состояний и полномочий, прослеживаемые проверки программ."
+    },
+    "Microsoft-spezifische Architektur, Implementierung, Betrieb und Verleihungsnachweis offen.": {
+      "en": "Microsoft-specific architecture, implementation, operation and award evidence remain open.",
+      "ru": "Архитектура, реализация, эксплуатация Microsoft и подтверждение выдачи остаются открытыми."
+    },
+    "Commitgebundene CI, Windows-Patch mit Rückrollweg und getrennte Build-/Installationsbelege.": {
+      "en": "Commit-bound CI, a Windows patch with rollback and separate build and installation evidence.",
+      "ru": "CI, привязанный к коммиту, Windows-патч с откатом и отдельные материалы сборки и установки."
+    },
+    "Azure-/Azure-DevOps-Betrieb, Associate-Abschluss und AZ-400-Ergebnis nicht durch GitHub-Runs ersetzt.": {
+      "en": "Azure and Azure DevOps operation, the Associate credential and the AZ-400 result require their own evidence. GitHub runs do not replace them.",
+      "ru": "Эксплуатация Azure и Azure DevOps, квалификация Associate и результат AZ-400 требуют собственных материалов. Запуски GitHub их не заменяют."
+    },
+    "Quellenbindung, Privacy, Test- und Prüfstrategie als ausgewählte fachliche Anknüpfungen.": {
+      "en": "Source binding, privacy and testing strategies as selected professional connections.",
+      "ru": "Привязка источников, приватность и стратегии тестирования как отдельные профессиональные связи."
+    },
+    "Berufliche Dauer und Domänenbreite, Prüfung und Endorsement benötigen eigene Nachweise.": {
+      "en": "Professional duration, domain breadth, exam and endorsement require their own evidence.",
+      "ru": "Длительность опыта, охват областей, экзамен и endorsement требуют собственных материалов."
+    },
+    "Versionierte Schnittstellen, Zustandsverwaltung und Recovery lassen sich fachlich diskutieren.": {
+      "en": "Versioned interfaces, state management and recovery provide material for architectural discussion.",
+      "ru": "Версионированные интерфейсы, управление состояниями и восстановление дают материал для архитектурного обсуждения."
+    },
+    "AWS-Deployment, Betriebsmetriken, konkrete Architekturentscheidungen und Prüfung offen.": {
+      "en": "AWS deployment, operational metrics, specific architecture decisions and exam evidence remain open.",
+      "ru": "Развёртывание AWS, эксплуатационные метрики, конкретные архитектурные решения и экзамен остаются открытыми."
+    },
+    "Standardisierte Prüfbelege, Gegenproben, Rückrollwege und revisionsgebundene Ergebnisse.": {
+      "en": "Standardised test records, counterchecks, rollback routes and revision-bound results.",
+      "ru": "Стандартизированные записи проверок, контрпробы, пути отката и результаты с привязкой к версии."
+    },
+    "Organisatorische Verbesserungswirkung, Erfahrungsdauer und beide Prüfungen offen; CTAL-TA und CTEL bleiben eigenständige Benchmarks.": {
+      "en": "Organisational improvement, experience duration and both exams remain open; CTAL-TA and CTEL are separate benchmarks.",
+      "ru": "Организационные улучшения, длительность опыта и оба экзамена остаются открытыми; CTAL-TA и CTEL — отдельные ориентиры."
+    },
+    "Vorhandene Forschungsarbeit kann nach gesonderter Quellenprüfung einzelne Analysefähigkeiten zeigen.": {
+      "en": "Existing research may show individual analytical skills after a separate source review.",
+      "ru": "Существующие исследования могут показать отдельные аналитические навыки после отдельной проверки источников."
+    },
+    "Die drei bestandenen Prüfungen und vergleichbare praktische Aufgabenabdeckung sind nicht in diesem Belegsatz enthalten.": {
+      "en": "The three passed exams and comparable practical-task coverage are not contained in this evidence set.",
+      "ru": "Три сданных экзамена и сопоставимое покрытие практических задач отсутствуют в этом наборе материалов."
+    },
+    "Ein lokales Netzwerkprotokoll allein deckt die Cisco-Laboranforderungen nicht ab.": {
+      "en": "A local network log alone does not cover the Cisco lab requirements.",
+      "ru": "Один локальный сетевой журнал не покрывает требования лаборатории Cisco."
+    },
+    "Reproduzierte Enterprise-Topologie, Konfiguration, Messwerte und Prüfungsergebnisse offen.": {
+      "en": "A reproduced enterprise topology, configuration, measurements and exam results remain open.",
+      "ru": "Воспроизведённая корпоративная топология, конфигурация, измерения и результаты экзаменов остаются открытыми."
+    },
+    "Nachvollziehbare Architektur- und Provenienzmodelle bieten fachliche Gesprächspunkte.": {
+      "en": "Traceable architecture and provenance models offer material for professional discussion.",
+      "ru": "Прослеживаемые модели архитектуры и происхождения дают материал для профессионального обсуждения."
+    },
+    "Google-Cloud-Ausführung, Betriebsverantwortung, Erfahrungsdauer und Prüfungsergebnis offen.": {
+      "en": "Google Cloud execution, operational responsibility, experience duration and exam result remain open.",
+      "ru": "Работа в Google Cloud, ответственность за эксплуатацию, длительность опыта и результат экзамена остаются открытыми."
+    },
+    "INTERAKTIVES ÜBERGANGSFELD": {
+      "en": "INTERACTIVE TRANSITION FIELD",
+      "ru": "ИНТЕРАКТИВНОЕ ПОЛЕ ПЕРЕХОДОВ"
+    },
+    "Automatische Materialdemonstration und ein sichtbares Forschungsnetz für Zustandsübergänge.": {
+      "en": "Automatic material demonstration and a visible research network for state transitions.",
+      "ru": "Автоматическая демонстрация материала и видимая исследовательская сеть для переходов состояний."
+    },
+    "Die Oberfläche verbindet Modelle, Variationen und offene biologische Fragen. Aufnahme und Mikrobiom führen ihre eigenen Forschungs- und Belegpfade.": {
+      "en": "The interface connects models, variations and open biological questions. Uptake and microbiome retain their own research and evidence paths.",
+      "ru": "Интерфейс связывает модели, варианты и открытые биологические вопросы. Усвоение и микробиом имеют свои исследовательские пути и материалы."
+    },
+    "Welche unterscheidbare Beobachtung verbindet die Materialdarstellung mit einem biologischen Aufnahmeprozess?": {
+      "en": "Which discriminating observation connects the material display to a biological uptake process?",
+      "ru": "Какое различающее наблюдение связывает представление материала с биологическим процессом усвоения?"
+    },
+    "GEOMETRISCHE OPTIK · SYNTHETISCHE VORHERSAGE": {
+      "en": "GEOMETRIC OPTICS · SYNTHETIC PREDICTION",
+      "ru": "ГЕОМЕТРИЧЕСКАЯ ОПТИКА · СИНТЕТИЧЕСКОЕ ПРЕДСКАЗАНИЕ"
+    },
+    "Lichtbrechung an einer Ersatzfläche, zwei Hauptschnitte und kausale Bewegungsextrapolation als interaktive Simulation.": {
+      "en": "Refraction at a reduced surface, two principal sections and causal motion extrapolation in an interactive simulation.",
+      "ru": "Преломление на упрощённой поверхности, два главных сечения и причинная экстраполяция движения в интерактивной симуляции."
+    },
+    "5 automatisierte Modelltests: Snell und Symmetrie an 60 Strahlen, paraxiale Referenz, getrennte Foki, Vorhersage-Gegenbeispiel und Nullverzögerung. Die Werte beziehen sich auf die synthetische Versuchsanordnung.": {
+      "en": "5 automated model tests: Snell and symmetry across 60 rays, paraxial reference, separated foci, a prediction counterexample and zero delay. Values belong to the synthetic experiment.",
+      "ru": "5 автоматизированных тестов модели: Snell и симметрия на 60 лучах, параксиальный ориентир, разделённые фокусы, контрпример предсказания и нулевая задержка. Значения относятся к синтетическому эксперименту."
+    },
+    "Eine zweite brechende Fläche und Wellenoptik mit einer gebundenen Referenzgeometrie vergleichen.": {
+      "en": "Compare a second refracting surface and wave optics against a bound reference geometry.",
+      "ru": "Сравнить вторую преломляющую поверхность и волновую оптику с привязанной эталонной геометрией."
+    },
+    "LOKALER SOFTWAREPROTOTYP · PROVENIENZ": {
+      "en": "LOCAL SOFTWARE PROTOTYPE · PROVENANCE",
+      "ru": "ЛОКАЛЬНЫЙ ПРОТОТИП ПРОГРАММЫ · ПРОИСХОЖДЕНИЕ"
+    },
+    "Ereignisse aufnehmen, Herkunft erhalten, Kandidaten prüfen und Zustandsänderungen mit Delta und Receipt übernehmen.": {
+      "en": "Receive events, retain provenance, review candidates and commit state changes with delta and receipt.",
+      "ru": "Принимать события, сохранять происхождение, проверять кандидатов и фиксировать изменения состояния с дельтой и квитанцией."
+    },
+    "17 automatisierte Python-Tests prüfen Ereignisidentität, Zyklen, 25er-Baumgrenzen, UNKNOWN gegenüber leerer Nachbarschaft, RETURN/REOPEN und die Abweisung veralteter Patches. Der Kern arbeitet im Speicher.": {
+      "en": "17 automated Python tests check event identity, cycles, 25-branch tree bounds, UNKNOWN versus empty neighbourhoods, RETURN/REOPEN and stale-patch rejection. The core operates in memory.",
+      "ru": "17 автоматизированных Python-тестов проверяют идентичность событий, циклы, границы дерева с 25 ветвями, UNKNOWN и пустые соседства, RETURN/REOPEN и отклонение устаревших патчей. Ядро работает в памяти."
+    },
+    "Eine neue Operatorfamilie mit festgelegten Invarianten und dauerhafter Speicherung ergänzen.": {
+      "en": "Add a new operator family with defined invariants and persistent storage.",
+      "ru": "Добавить новое семейство операторов с определёнными инвариантами и постоянным хранением."
     }
   }
 }

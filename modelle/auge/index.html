@@ -1,0 +1,37 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'"><link rel="stylesheet" href="style.css"><script type="module" src="view.mjs"></script><title>Auge · Optik & kausale Vorhersage · HALVETH</title></head><body><header><a href="https://juri-halveth.github.io/modelle/#auge">← Modelle & Nachweise im HALVETH Hub</a></header><main><h1>Auge · Optik & kausale Vorhersage</h1><p>Ändere Krümmung, Netzhautabstand oder Korrektur und vergleiche die Modellvorhersagen. Im zweiten Tab wird sichtbar, wann Extrapolation hilft und wann eine plötzliche Umkehr sie widerlegt.</p><div id="eye-time-lab">
+  
+  <div class="nav nav-pills" role="tablist" aria-label="Modell auswählen">
+    <button class="nav-link active" id="eye-tab" role="tab" aria-controls="eye-panel" aria-selected="true" type="button">Licht im Auge</button>
+    <button class="nav-link" id="time-tab" role="tab" aria-controls="time-panel" aria-selected="false" type="button">Zeitliche Vorhersage</button>
+  </div>
+  <section class="lab-panel" id="eye-panel" role="tabpanel" aria-labelledby="eye-tab">
+    <div class="text-small text-muted">Reduziertes Strahlenmodell · fernes Punktobjekt · zwei Hauptschnitte</div>
+    <svg class="lab-diagram" id="eye-drawing" role="img" aria-label="Lichtstrahlen durch eine brechende Ersatzfläche bis zur Netzhaut"></svg>
+    <div class="lab-legend text-small"><span><i class="lab-key"></i>Hauptschnitt A</span><span><i class="lab-key second"></i>Hauptschnitt B</span></div>
+    <div class="text-small text-muted">Fokus: achsennah · + hinter / − vor der Netzhaut · Höhen überhöht</div>
+    <div class="lab-result tabular-nums" id="eye-result" aria-live="polite"></div>
+    <div class="text-small tabular-nums" id="eye-width"></div>
+    <div class="lab-fields">
+      <label class="form-label" for="radius">Radius A <span class="lab-value tabular-nums" id="radius-value"></span><input class="form-range" id="radius" type="range" min="4.8" max="6.8" step="0.01" value="5.6"></label>
+      <label class="form-label" for="retina">Netzhautabstand <span class="lab-value tabular-nums" id="retina-value"></span><input class="form-range" id="retina" type="range" min="20" max="26" step="0.01" value="22.27"></label>
+      <label class="form-label" for="delta">Radius B minus A <span class="lab-value tabular-nums" id="delta-value"></span><input class="form-range" id="delta" type="range" min="-0.5" max="0.5" step="0.01" value="0"></label>
+      <label class="form-label" for="correction">Korrekturglas <span class="lab-value tabular-nums" id="correction-value"></span><input class="form-range" id="correction" type="range" min="-8" max="8" step="0.1" value="0"></label>
+      <label class="form-label" for="pupil">Strahlenbündel am Glas <span class="lab-value tabular-nums" id="pupil-value"></span><input class="form-range" id="pupil" type="range" min="1" max="6" step="0.1" value="2"></label>
+    </div>
+    <div class="text-small text-muted">Ersatzfläche: Luft 1,000 → Innenmedium 1,336 · Glasabstand 3 mm · keine Brillenverordnung</div>
+  </section>
+  <section class="lab-panel" id="time-panel" role="tabpanel" aria-labelledby="time-tab" hidden>
+    <div class="text-small text-muted">Synthetisches Bewegungsmodell · keine Simulation einer Diagnose</div>
+    <svg class="lab-diagram" id="time-drawing" role="img" aria-label="Vergleich von aktueller Position, verzögertem Signal und linearer Vorhersage"></svg>
+    <div class="lab-result tabular-nums" id="time-result" aria-live="polite"></div>
+    <div class="lab-fields">
+      <label class="form-label" for="moment">Beobachtungszeit <span class="lab-value tabular-nums" id="moment-value"></span><input class="form-range" id="moment" type="range" min="300" max="1700" step="10" value="1040"></label>
+      <label class="form-label" for="delay">Signalverzögerung <span class="lab-value tabular-nums" id="delay-value"></span><input class="form-range" id="delay" type="range" min="0" max="200" step="10" value="100"></label>
+      <label class="form-label" for="gain">Extrapolation <span class="lab-value tabular-nums" id="gain-value"></span><input class="form-range" id="gain" type="range" min="0" max="2" step="0.1" value="1"></label>
+      <label class="form-label" for="motion">Bewegung<select class="form-select" id="motion"><option value="straight">Gleichförmig</option><option value="turn">Plötzliche Umkehr bei 1.000 ms</option></select></label>
+    </div>
+    <div class="text-small text-muted">Vorhersage verwendet nur das verzögerte Signal und die vorangegangenen 20 ms.</div>
+  </section>
+  
+</div>
+</main><footer>Geometrisches Lehrmodell mit einer Ersatzfläche und synthetischer Bewegung. Die Hauptschnitte bilden keine vollständige 3D-Augenanatomie oder Wellenoptik ab. Medizinische Messwerte und Diagnosen benötigen eigene Daten und Verfahren. <a href="https://github.com/Juri-Halveth/open-research-branches/tree/main/branches/eye-optics-and-prediction">Quellcode, Tests & Quellen</a></footer></body></html>
