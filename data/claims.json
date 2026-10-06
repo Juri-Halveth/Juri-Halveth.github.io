@@ -1,0 +1,157 @@
+{
+  "schema": "halveth.portfolio-claims.v1",
+  "dataClass": "PUBLIC",
+  "recordedAt": "2026-10-06",
+  "claimDefinition": "HALVETH_PORTFOLIO_BENCHMARK_CLAIM_V1",
+  "claimMeaning": "Von Juri Halveth ausdrücklich geltend gemachter, dokumentierter Portfolioanspruch.",
+  "issuerAwardStatus": "ISSUER_AWARD_NOT_VERIFIED_IN_REVIEWED_MATERIAL",
+  "definitionUrl": "https://github.com/Juri-Halveth/Juri-Halveth/blob/be0b5a387db837272166bc6011a9f208abc48c15/portfolio/2026-09-28-v1.0.2/KORREKTUR_CLAIMED_ZDA.md",
+  "matrixUrl": "https://github.com/Juri-Halveth/Juri-Halveth/blob/be0b5a387db837272166bc6011a9f208abc48c15/portfolio/2026-09-28-v1.0.2/CERTIFICATE_BENCHMARK_MATRIX.md",
+  "evidenceUrl": "https://github.com/Juri-Halveth/Juri-Halveth/blob/be0b5a387db837272166bc6011a9f208abc48c15/portfolio/2026-09-28-v1.0.2/PROJECT_EVIDENCE_REGISTER.md",
+  "testingUrl": "https://github.com/Juri-Halveth/Juri-Halveth/blob/be0b5a387db837272166bc6011a9f208abc48c15/portfolio/2026-09-28-v1.0.2/TESTING_EVIDENCE_REGISTER.md",
+  "sourceCommit": "be0b5a387db837272166bc6011a9f208abc48c15",
+  "sourcePath": "portfolio/2026-09-28-v1.0.2/CERTIFICATE_BENCHMARK_MATRIX.json",
+  "sourceSha256": "08a6f9aed67bc22538275ad79963dbe89966f949519a9e17d3ea7dfee1b3663c",
+  "claims": [
+    {
+      "id": "B01",
+      "title": "ISTQB Certified Tester Advanced Level Test Analyst (CTAL-TA) v4.0",
+      "frameworkIssuer": "ISTQB",
+      "status": "CLAIMED",
+      "filingStatus": "ZDA",
+      "mapping": "Konkrete Arbeitsproben",
+      "supports": "Negativkontrollen, persistente Zustände, Wiederherstellung und versionierte Prüfbelege.",
+      "openEvidence": "CTFL, Prüfungsergebnis und vollständige Abdeckung der Lernziele separat nachweisen.",
+      "evidenceRefs": [
+        "E-MW-NATIVE",
+        "E-MW-CI",
+        "E-T0"
+      ],
+      "dossier": "https://github.com/Juri-Halveth/Juri-Halveth/blob/be0b5a387db837272166bc6011a9f208abc48c15/portfolio/2026-09-28-v1.0.2/certificates/01_ISTQB_CTAL_TA_PORTFOLIO_BENCHMARK.md",
+      "issuerAwardStatus": "ISSUER_AWARD_NOT_VERIFIED_IN_REVIEWED_MATERIAL"
+    },
+    {
+      "id": "B02",
+      "title": "Microsoft Certified: Cybersecurity Architect Expert",
+      "frameworkIssuer": "Microsoft",
+      "status": "CLAIMED",
+      "filingStatus": "ZDA",
+      "mapping": "Teilbereiche mit Arbeitsproben",
+      "supports": "Explizite Zustands- und Autoritätsgrenzen sowie nachvollziehbare Softwareprüfungen.",
+      "openEvidence": "Microsoft-spezifische Architektur, Implementierung, Betrieb und Verleihungsnachweis offen.",
+      "evidenceRefs": [
+        "E-OPEN-SOURCE",
+        "E-TRESOR-SOURCE"
+      ],
+      "dossier": "https://github.com/Juri-Halveth/Juri-Halveth/blob/be0b5a387db837272166bc6011a9f208abc48c15/portfolio/2026-09-28-v1.0.2/certificates/02_MICROSOFT_CYBERSECURITY_ARCHITECT_EXPERT_BENCHMARK.md",
+      "issuerAwardStatus": "ISSUER_AWARD_NOT_VERIFIED_IN_REVIEWED_MATERIAL"
+    },
+    {
+      "id": "B03",
+      "title": "Microsoft Certified: DevOps Engineer Expert",
+      "frameworkIssuer": "Microsoft",
+      "status": "CLAIMED",
+      "filingStatus": "ZDA",
+      "mapping": "Konkrete Arbeitsproben",
+      "supports": "Commitgebundene CI, Windows-Patch mit Rückrollweg und getrennte Build-/Installationsbelege.",
+      "openEvidence": "Azure-/Azure-DevOps-Betrieb, Associate-Abschluss und AZ-400-Ergebnis nicht durch GitHub-Runs ersetzt.",
+      "evidenceRefs": [
+        "E-MW-CI",
+        "E-OPEN-CI",
+        "E-TRESOR-CI",
+        "E-SCARLET-CI"
+      ],
+      "dossier": "https://github.com/Juri-Halveth/Juri-Halveth/blob/be0b5a387db837272166bc6011a9f208abc48c15/portfolio/2026-09-28-v1.0.2/certificates/03_MICROSOFT_DEVOPS_ENGINEER_EXPERT_BENCHMARK.md",
+      "issuerAwardStatus": "ISSUER_AWARD_NOT_VERIFIED_IN_REVIEWED_MATERIAL"
+    },
+    {
+      "id": "B04",
+      "title": "CISSP — Certified Information Systems Security Professional",
+      "frameworkIssuer": "ISC2",
+      "status": "CLAIMED",
+      "filingStatus": "ZDA",
+      "mapping": "Teilbereiche mit Arbeitsproben",
+      "supports": "Quellenbindung, Privacy, Test- und Prüfstrategie als ausgewählte fachliche Anknüpfungen.",
+      "openEvidence": "Berufliche Dauer und Domänenbreite, Prüfung und Endorsement benötigen eigene Nachweise.",
+      "evidenceRefs": [
+        "E-OPEN-SOURCE",
+        "E-TRESOR-SOURCE"
+      ],
+      "dossier": "https://github.com/Juri-Halveth/Juri-Halveth/blob/be0b5a387db837272166bc6011a9f208abc48c15/portfolio/2026-09-28-v1.0.2/certificates/04_CISSP_PORTFOLIO_BENCHMARK.md",
+      "issuerAwardStatus": "ISSUER_AWARD_NOT_VERIFIED_IN_REVIEWED_MATERIAL"
+    },
+    {
+      "id": "B05",
+      "title": "AWS Certified Solutions Architect – Professional",
+      "frameworkIssuer": "AWS",
+      "status": "CLAIMED",
+      "filingStatus": "ZDA",
+      "mapping": "Architekturbezug; Anbieterpraxis offen",
+      "supports": "Versionierte Schnittstellen, Zustandsverwaltung und Recovery lassen sich fachlich diskutieren.",
+      "openEvidence": "AWS-Deployment, Betriebsmetriken, konkrete Architekturentscheidungen und Prüfung offen.",
+      "evidenceRefs": [
+        "E-MW-NATIVE",
+        "E-OPEN-SOURCE"
+      ],
+      "dossier": "https://github.com/Juri-Halveth/Juri-Halveth/blob/be0b5a387db837272166bc6011a9f208abc48c15/portfolio/2026-09-28-v1.0.2/certificates/05_AWS_SOLUTIONS_ARCHITECT_PROFESSIONAL_BENCHMARK.md",
+      "issuerAwardStatus": "ISSUER_AWARD_NOT_VERIFIED_IN_REVIEWED_MATERIAL"
+    },
+    {
+      "id": "B06",
+      "title": "ISTQB Certified Tester Expert Level Improving the Test Process (CTEL-ITP)",
+      "frameworkIssuer": "ISTQB",
+      "status": "CLAIMED",
+      "filingStatus": "ZDA",
+      "mapping": "Prozessbezug; Wirkungsmessung offen",
+      "supports": "Standardisierte Prüfbelege, Gegenproben, Rückrollwege und revisionsgebundene Ergebnisse.",
+      "openEvidence": "Organisatorische Verbesserungswirkung, Erfahrungsdauer und beide Prüfungen offen; CTAL-TA und CTEL bleiben eigenständige Benchmarks.",
+      "evidenceRefs": [
+        "E-MW-NATIVE",
+        "E-OPEN-SOURCE"
+      ],
+      "dossier": "https://github.com/Juri-Halveth/Juri-Halveth/blob/be0b5a387db837272166bc6011a9f208abc48c15/portfolio/2026-09-28-v1.0.2/certificates/06_ISTQB_CTEL_ITP_BENCHMARK.md",
+      "issuerAwardStatus": "ISSUER_AWARD_NOT_VERIFIED_IN_REVIEWED_MATERIAL"
+    },
+    {
+      "id": "B07",
+      "title": "OffSec Certified Expert³ (OSCE³)",
+      "frameworkIssuer": "OffSec",
+      "status": "CLAIMED",
+      "filingStatus": "ZDA",
+      "mapping": "Spezifischer Leistungsnachweis offen",
+      "supports": "Vorhandene Forschungsarbeit kann nach gesonderter Quellenprüfung einzelne Analysefähigkeiten zeigen.",
+      "openEvidence": "Die drei bestandenen Prüfungen und vergleichbare praktische Aufgabenabdeckung sind nicht in diesem Belegsatz enthalten.",
+      "evidenceRefs": [],
+      "dossier": "https://github.com/Juri-Halveth/Juri-Halveth/blob/be0b5a387db837272166bc6011a9f208abc48c15/portfolio/2026-09-28-v1.0.2/certificates/07_OFFSEC_OSCE3_BENCHMARK.md",
+      "issuerAwardStatus": "ISSUER_AWARD_NOT_VERIFIED_IN_REVIEWED_MATERIAL"
+    },
+    {
+      "id": "B08",
+      "title": "Cisco Certified Internetwork Expert (CCIE) Enterprise Infrastructure",
+      "frameworkIssuer": "Cisco",
+      "status": "CLAIMED",
+      "filingStatus": "ZDA",
+      "mapping": "Spezifischer Leistungsnachweis offen",
+      "supports": "Ein lokales Netzwerkprotokoll allein deckt die Cisco-Laboranforderungen nicht ab.",
+      "openEvidence": "Reproduzierte Enterprise-Topologie, Konfiguration, Messwerte und Prüfungsergebnisse offen.",
+      "evidenceRefs": [],
+      "dossier": "https://github.com/Juri-Halveth/Juri-Halveth/blob/be0b5a387db837272166bc6011a9f208abc48c15/portfolio/2026-09-28-v1.0.2/certificates/08_CISCO_CCIE_ENTERPRISE_INFRASTRUCTURE_BENCHMARK.md",
+      "issuerAwardStatus": "ISSUER_AWARD_NOT_VERIFIED_IN_REVIEWED_MATERIAL"
+    },
+    {
+      "id": "B09",
+      "title": "Google Cloud Professional Cloud Architect",
+      "frameworkIssuer": "Google Cloud",
+      "status": "CLAIMED",
+      "filingStatus": "ZDA",
+      "mapping": "Architekturbezug; Anbieterpraxis offen",
+      "supports": "Nachvollziehbare Architektur- und Provenienzmodelle bieten fachliche Gesprächspunkte.",
+      "openEvidence": "Google-Cloud-Ausführung, Betriebsverantwortung, Erfahrungsdauer und Prüfungsergebnis offen.",
+      "evidenceRefs": [
+        "E-OPEN-SOURCE"
+      ],
+      "dossier": "https://github.com/Juri-Halveth/Juri-Halveth/blob/be0b5a387db837272166bc6011a9f208abc48c15/portfolio/2026-09-28-v1.0.2/certificates/09_GOOGLE_CLOUD_PROFESSIONAL_CLOUD_ARCHITECT_BENCHMARK.md",
+      "issuerAwardStatus": "ISSUER_AWARD_NOT_VERIFIED_IN_REVIEWED_MATERIAL"
+    }
+  ]
+}

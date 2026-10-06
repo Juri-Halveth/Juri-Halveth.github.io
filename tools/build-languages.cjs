@@ -1,7 +1,7 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path');
 const root=path.resolve(__dirname,'..'),catalog=require('../data/languages.json');
-const pages=['index.html','arbeiten/index.html','profil/index.html','404.html','motion/index.html','werkzertifikate/index.html','schuelervz-halveth/index.html','schuelervz-halveth/people.html','schuelervz-halveth/archaeology.html','schuelervz-halveth/prestige.html'];
+const pages=['zertifikate/index.html','modelle/index.html','index.html','arbeiten/index.html','profil/index.html','404.html','motion/index.html','werkzertifikate/index.html','schuelervz-halveth/index.html','schuelervz-halveth/people.html','schuelervz-halveth/archaeology.html','schuelervz-halveth/prestige.html'];
 const routes=new Set(pages.map(file=>'/'+file.replace(/index\.html$/,'')));
 routes.add('/handbuch/');
 const decode=s=>s.replace(/&(?:amp|lt|gt|quot|#39|#x([0-9a-f]+)|#([0-9]+));/gi,(m,x,n)=>x?String.fromCodePoint(parseInt(x,16)):n?String.fromCodePoint(Number(n)):({'&amp;':'&','&lt;':'<','&gt;':'>','&quot;':'"','&#39;':"'"}[m]||m));
@@ -14,8 +14,10 @@ function url(value,source,language){
  if(value.startsWith('#'))return value;
  const parsed=new URL(decode(value),'https://juri-halveth.github.io/'+source);
  if(parsed.hostname!=='juri-halveth.github.io')return value;
- if(routes.has(parsed.pathname)||parsed.pathname==='/profil/CV-Juri-Halveth.md')parsed.pathname='/'+(language==='de'?'':language+'/')+parsed.pathname.slice(1);
+ const ownRoute=routes.has(parsed.pathname)||parsed.pathname==='/profil/CV-Juri-Halveth.md';
+ if(ownRoute)parsed.pathname='/'+(language==='de'?'':language+'/')+parsed.pathname.slice(1);
  else if(/^\/(?:fortuna|lernstudio|mein-lernportal|halveth-scarlet)\//.test(parsed.pathname)&&/\/$|\.html$/.test(parsed.pathname))parsed.searchParams.set('lang',language);
+ if(/^https?:\/\//.test(value)&&!ownRoute)return escape(parsed.href);
  return escape(parsed.pathname+parsed.search+parsed.hash);
 }
 function translate(html,source,language){

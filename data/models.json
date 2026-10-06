@@ -1,0 +1,49 @@
+{
+  "schema": "halveth.public-models.v1",
+  "dataClass": "PUBLIC",
+  "recordedAt": "2026-10-06",
+  "models": [
+    {
+      "id": "banane",
+      "title": "Banana Transition Field",
+      "kind": "INTERAKTIVES ÜBERGANGSFELD",
+      "result": "Automatische Materialdemonstration und ein sichtbares Forschungsnetz für Zustandsübergänge.",
+      "scope": "Die Oberfläche verbindet Modelle, Variationen und offene biologische Fragen. Aufnahme und Mikrobiom führen ihre eigenen Forschungs- und Belegpfade.",
+      "demo": "https://juri-halveth.github.io/open-research-branches/",
+      "source": "https://github.com/Juri-Halveth/open-research-branches/tree/4576d8cbdf99257f24d91df7671cf4a48fa0899a/branches/banana-transition-field",
+      "tests": "https://github.com/Juri-Halveth/open-research-branches/tree/4576d8cbdf99257f24d91df7671cf4a48fa0899a/branches/banana-transition-field",
+      "next": "Welche unterscheidbare Beobachtung verbindet die Materialdarstellung mit einem biologischen Aufnahmeprozess?"
+    },
+    {
+      "id": "auge",
+      "title": "Auge · Eye Optics & Prediction",
+      "kind": "GEOMETRISCHE OPTIK · SYNTHETISCHE VORHERSAGE",
+      "result": "Lichtbrechung an einer Ersatzfläche, zwei Hauptschnitte und kausale Bewegungsextrapolation als interaktive Simulation.",
+      "scope": "5 automatisierte Modelltests: Snell und Symmetrie an 60 Strahlen, paraxiale Referenz, getrennte Foki, Vorhersage-Gegenbeispiel und Nullverzögerung. Die Werte beziehen sich auf die synthetische Versuchsanordnung.",
+      "demo": "/modelle/auge/",
+      "source": "https://github.com/Juri-Halveth/open-research-branches/tree/81e238e0af01eeb548cb9a88c618d3d33fb7eea4/branches/eye-optics-and-prediction",
+      "tests": "https://github.com/Juri-Halveth/open-research-branches/blob/81e238e0af01eeb548cb9a88c618d3d33fb7eea4/branches/eye-optics-and-prediction/model.test.mjs",
+      "next": "Eine zweite brechende Fläche und Wellenoptik mit einer gebundenen Referenzgeometrie vergleichen.",
+      "sourceCommit": "81e238e0af01eeb548cb9a88c618d3d33fb7eea4",
+      "browserFileSha256": {
+        "index.html": "7ee8140531d95d476022810070872e06c951d8e1b306473ec1bb05316fd1317c",
+        "style.css": "979d92a8e1fa81da41459e3ffd1ffacab15410945829f5c9683b68e99fbeafbc",
+        "view.mjs": "c855442cb798273856155e1cbd72267b794153c95ae4cf991e5a169e4ccf7dc4",
+        "model.mjs": "2e71d12bd2a898379dae06db12ab9b3c4efd3c0ba29b47965d2530c7beb0ac38"
+      }
+    },
+    {
+      "id": "fegefeuer",
+      "title": "FEGEFEUER · Zustands-Transduktor",
+      "kind": "LOKALER SOFTWAREPROTOTYP · PROVENIENZ",
+      "result": "Ereignisse aufnehmen, Herkunft erhalten, Kandidaten prüfen und Zustandsänderungen mit Delta und Receipt übernehmen.",
+      "scope": "17 automatisierte Python-Tests prüfen Ereignisidentität, Zyklen, 25er-Baumgrenzen, UNKNOWN gegenüber leerer Nachbarschaft, RETURN/REOPEN und die Abweisung veralteter Patches. Der Kern arbeitet im Speicher.",
+      "demo": null,
+      "source": "https://github.com/Juri-Halveth/open-research-branches/tree/81e238e0af01eeb548cb9a88c618d3d33fb7eea4/branches/fegefeuer-provenance-transducer",
+      "tests": "https://github.com/Juri-Halveth/open-research-branches/blob/81e238e0af01eeb548cb9a88c618d3d33fb7eea4/branches/fegefeuer-provenance-transducer/test_fegefeuer_core.py",
+      "next": "Eine neue Operatorfamilie mit festgelegten Invarianten und dauerhafter Speicherung ergänzen.",
+      "sourceCommit": "81e238e0af01eeb548cb9a88c618d3d33fb7eea4",
+      "coreSha256": "bacd152c7e98b70901a241d3ef712d897ee4a3c84e2dcfbc2369aaf5b03b07eb"
+    }
+  ]
+}

@@ -33,3 +33,11 @@ werkzertifikate/2026-09-28-v1.1/* -text
 /schuelervz-halveth/prestige.html text eol=lf
 /sitemap.xml text eol=lf
 /werkzertifikate/index.html text eol=lf
+
+# New model copies and generated certificate entrances bind exact LF bytes.
+/modelle/** text eol=lf
+/zertifikate/** text eol=lf
+/data/claims.json text eol=lf
+/data/models.json text eol=lf
+/tools/certificates.cjs text eol=lf
+/tests/certificate-claims.test.cjs text eol=lf
