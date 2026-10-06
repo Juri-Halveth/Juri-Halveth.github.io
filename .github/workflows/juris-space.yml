@@ -1,19 +1,20 @@
 name: Juris Space contracts
 on:
   push:
-    paths: ['index.html', '404.html', 'portal.css', 'portal.js', 'return.css', 'language.css', 'handbook.css', 'handbuch/**', 'docs/HANDBUCH.md', 'HUB.sh', 'examples/**', 'en/**', 'ru/**', 'package*.json', 'assets/**', 'templates/**', 'arbeiten/**', 'profil/**', 'werkzertifikate/index.html', 'motion*', 'landing-motion.js', 'motion/**', 'SPACE.sh', 'data/**', 'tools/*.cjs', 'tests/*.test.cjs', '.github/workflows/juris-space.yml']
+    paths: ['.gitattributes', 'sitemap.xml', 'index.html', '404.html', 'portal.css', 'portal.js', 'return.css', 'language.css', 'handbook.css', 'handbuch/**', 'docs/HANDBUCH.md', 'HUB.sh', 'examples/**', 'en/**', 'ru/**', 'package*.json', 'assets/**', 'templates/**', 'arbeiten/**', 'profil/**', 'werkzertifikate/index.html', 'motion*', 'landing-motion.js', 'motion/**', 'SPACE.sh', 'data/**', 'tools/*.cjs', 'tests/*.test.cjs', '.github/workflows/juris-space.yml']
   pull_request:
-    paths: ['index.html', '404.html', 'portal.css', 'portal.js', 'return.css', 'language.css', 'handbook.css', 'handbuch/**', 'docs/HANDBUCH.md', 'HUB.sh', 'examples/**', 'en/**', 'ru/**', 'package*.json', 'assets/**', 'templates/**', 'arbeiten/**', 'profil/**', 'werkzertifikate/index.html', 'motion*', 'landing-motion.js', 'motion/**', 'SPACE.sh', 'data/**', 'tools/*.cjs', 'tests/*.test.cjs', '.github/workflows/juris-space.yml']
+    paths: ['.gitattributes', 'sitemap.xml', 'index.html', '404.html', 'portal.css', 'portal.js', 'return.css', 'language.css', 'handbook.css', 'handbuch/**', 'docs/HANDBUCH.md', 'HUB.sh', 'examples/**', 'en/**', 'ru/**', 'package*.json', 'assets/**', 'templates/**', 'arbeiten/**', 'profil/**', 'werkzertifikate/index.html', 'motion*', 'landing-motion.js', 'motion/**', 'SPACE.sh', 'data/**', 'tools/*.cjs', 'tests/*.test.cjs', '.github/workflows/juris-space.yml']
 permissions:
   contents: read
 jobs:
   navigation:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
-          node-version: '22'
+          node-version: '24'
+          package-manager-cache: false
       - run: npm ci --ignore-scripts --no-audit --no-fund
       - run: bash SPACE.sh build
       - run: git diff --exit-code -- index.html arbeiten/index.html profil/index.html profil/CV-Juri-Halveth.md 404.html handbuch docs/HANDBUCH.md en ru sitemap.xml

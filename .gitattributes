@@ -18,3 +18,18 @@ werkzertifikate/2026-09-28-v1.1/* -text
 /en/** text eol=lf
 /ru/** text eol=lf
 /tools/build-languages.cjs text eol=lf
+
+# Keep all generated text stable across Windows and Linux checkouts.
+/404.html text eol=lf
+/arbeiten/index.html text eol=lf
+/docs/HANDBUCH.md text eol=lf
+/handbuch/index.html text eol=lf
+/motion/index.html text eol=lf
+/profil/CV-Juri-Halveth.md text eol=lf
+/profil/index.html text eol=lf
+/schuelervz-halveth/archaeology.html text eol=lf
+/schuelervz-halveth/index.html text eol=lf
+/schuelervz-halveth/people.html text eol=lf
+/schuelervz-halveth/prestige.html text eol=lf
+/sitemap.xml text eol=lf
+/werkzertifikate/index.html text eol=lf
