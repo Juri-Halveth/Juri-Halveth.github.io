@@ -1,0 +1,55 @@
+name: Publish website
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths: ['.github/workflows/pages.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: website-pages-${{ github.event_name == 'pull_request' && github.ref || 'production' }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: bash SPACE.sh build
+      - run: git diff --exit-code
+      - run: bash SPACE.sh check
+      - uses: actions/configure-pages@v6
+      - name: Stage committed static website
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/website"
+          git archive HEAD | tar -x -C "$RUNNER_TEMP/website"
+          test -f "$RUNNER_TEMP/website/.nojekyll"
+          test -f "$RUNNER_TEMP/website/index.html"
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: ${{ runner.temp }}/website
+          # Preserve the existing static publication, including .nojekyll.
+          include-hidden-files: true
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v5
+        id: deployment
