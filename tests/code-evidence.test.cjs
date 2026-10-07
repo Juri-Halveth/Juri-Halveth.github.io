@@ -8,6 +8,11 @@ test('changed code, source versions and unsupported award claims fail the bindin
   const d=structuredClone(data);mutate(d);assert.throws(()=>E.validate(d));
  }
 });
+test('a relation cannot silently import another function, endpoint digest or framework',()=>{
+ for(const mutate of [d=>d.relations[0].left.id='F01',d=>d.relations[0].left.digest='0'.repeat(64),d=>d.relations[0].right.address='https://example.com/another-framework',d=>d.relations[0].authorityEffect='ADMIN']){
+  const d=structuredClone(data);mutate(d);assert.throws(()=>E.validate(d));
+ }
+});
 test('all source excerpts remain byte exact and inert through every language rendering',()=>{
  for(const lang of ['','en/','ru/']){
   const dom=new JSDOM(read(lang+'koennen/index.html')),doc=dom.window.document;

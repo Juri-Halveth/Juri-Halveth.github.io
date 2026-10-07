@@ -22,6 +22,13 @@ function validate(data){
   benchmarks.add(b.id);
   if(new URL(b.frameworkSource).protocol!=='https:'||!b.scope||!b.frameworkVersion)throw new Error('Unbound framework source');
  }
+ if(data.relations.length!==9)throw new Error('Incomplete relation aperture');
+ const relationIds=new Set();
+ for(const r of data.relations){
+  const b=data.benchmarks.find(b=>b.id===r.right.id),p=b&&proofs.get(b.primaryProof);
+  if(!b||relationIds.has(r.id)||r.id!=='MAP_'+b.id||r.relationType!=='SELECTED_COMPETENCE_TOPIC_COMPARISON'||r.left.kind!=='SOURCE_EXCERPT'||r.left.id!==p.id||r.left.digest!==p.source.excerptSha256||r.left.address!==p.source.url||r.right.kind!=='FRAMEWORK_TOPIC'||r.right.digest!==b.definitionDigest||r.right.address!==b.frameworkSource||r.direction!=='SOURCE_TO_SELECTED_TOPIC'||r.evidenceState!=='INFERRED'||r.authorityEffect!=='NONE')throw new Error('Relation endpoint or comparison type changed');
+  relationIds.add(r.id);
+ }
  const repos=new Set();
  for(const c of data.projectCertificates){
   if(repos.has(c.repository)||!proofs.has(c.proof)||proofs.get(c.proof).source.repository!=='Juri-Halveth/'+c.repository)throw new Error('Project source mismatched');
