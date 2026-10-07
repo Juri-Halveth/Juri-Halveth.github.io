@@ -1,6 +1,6 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
-const {JSDOM}=require('jsdom'),C=require('../tools/certificates.cjs'),models=require('../data/models.json');
+const {JSDOM}=require('jsdom'),C=require('../tools/certificates.cjs'),V=require('../tools/visitor.cjs'),models=require('../data/models.json');
 const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8');
 test('every certificate claim keeps its name, issuer reference and dated evidence on every entrance',()=>{
  for(const lang of ['','en/','ru/'])for(const page of ['index.html','zertifikate/index.html','profil/index.html']){
@@ -8,10 +8,13 @@ test('every certificate claim keeps its name, issuer reference and dated evidenc
   assert.equal(doc.querySelectorAll('[data-claim]').length,9);
   for(const c of C.claims.claims){
    const card=doc.querySelector('[data-claim="'+c.id+'"]');
-   assert.equal(card.querySelector('.certificate-name').textContent,c.title);
+   assert.equal(card.querySelector('.certificate-name').textContent,V.claim(c.id).name);
+   assert.equal(card.querySelector('.certificate-name').getAttribute('title'),c.title);
    assert.match(card.querySelector('.claim-badge').textContent,/✓ CLAIMED/);
    assert.ok(card.textContent.includes(c.frameworkIssuer));
-   assert.equal(card.querySelector('a').href,c.dossier);
+   const proof=V.claim(c.id).proof;
+   assert.equal(card.querySelector('a').getAttribute('href'),proof.startsWith('/')?'/'+lang+proof.slice(1):proof);
+   assert.ok([...card.querySelectorAll('a')].some(a=>a.href===c.dossier));
   }
   assert.match(doc.querySelector('.claim-definition').textContent,/Portfolio|portfolio|портфолио/);
   const firstTopic=doc.querySelector('[data-topic]'),claim=doc.querySelector('[data-claim]');

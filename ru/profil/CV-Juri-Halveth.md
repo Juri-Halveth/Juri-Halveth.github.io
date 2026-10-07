@@ -54,7 +54,7 @@ Dokumentierter Portfolioanspruch von Juri Halveth. Die Verleihung durch einen Ze
 
 Подтверждение: [Документированная обучающая платформа и контент-контракты](https://juri-halveth.github.io/werkzertifikate/#werk-mein-lernportal)
 
-### Исследовательская документация
+### Документирование исследований
 
 Связывание вопросов, контр-моделей, источников и результатов в версионных публикациях.
 

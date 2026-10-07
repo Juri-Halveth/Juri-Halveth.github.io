@@ -32,7 +32,7 @@ test('every bound research document appears once and keeps its exact source URL'
 });
 test('formal qualifications are not fabricated from private work certificates',()=>{
   assert.equal(data.certificates.kind,'PRIVATE_WORK_DOCUMENTATION');
-  assert.equal(certs.length,11);assert.match(read('profil/index.html'),/eigene, KI-gestützt erstellte Werkdokumentationen/);
+  assert.equal(certs.length,11);assert.match(read('profil/index.html'),/Elf eigene Projektzertifikate dokumentieren Ergebnisse, Quellstände und Prüfungen/);
   assert.match(read('profil/index.html'),/Institutionell ausgestellte Qualifikationsnachweise führen eine eigene Aussteller-/);
   for(const c of certs)assert.ok(read('profil/index.html').includes('/werkzertifikate/#'+c.anchor));
 });
