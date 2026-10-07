@@ -1,7 +1,7 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path');
 const root=path.resolve(__dirname,'..'),catalog=require('../data/languages.json');
-const pages=['lernen/index.html','audits/index.html','zertifikate/index.html','modelle/index.html','index.html','arbeiten/index.html','profil/index.html','404.html','motion/index.html','werkzertifikate/index.html','schuelervz-halveth/index.html','schuelervz-halveth/people.html','schuelervz-halveth/archaeology.html','schuelervz-halveth/prestige.html'];
+const pages=['koennen/index.html','lernen/index.html','audits/index.html','zertifikate/index.html','modelle/index.html','index.html','arbeiten/index.html','profil/index.html','404.html','motion/index.html','werkzertifikate/index.html','schuelervz-halveth/index.html','schuelervz-halveth/people.html','schuelervz-halveth/archaeology.html','schuelervz-halveth/prestige.html'];
 const routes=new Set(pages.map(file=>'/'+file.replace(/index\.html$/,'')));
 routes.add('/handbuch/');
 const decode=s=>s.replace(/&(?:amp|lt|gt|quot|#39|#x([0-9a-f]+)|#([0-9]+));/gi,(m,x,n)=>x?String.fromCodePoint(parseInt(x,16)):n?String.fromCodePoint(Number(n)):({'&amp;':'&','&lt;':'<','&gt;':'>','&quot;':'"','&#39;':"'"}[m]||m));

@@ -19,6 +19,8 @@ const works={
  'mein-lernportal':['Freies Lernportal','702 Lektionen','ISTQB'],
  'open-research-branches':['Forschung & Modelle','Open Research','ISTQB · Security']
 };
+for(const id of Object.keys(claims))claims[id].proof='/koennen/#'+id.toLowerCase();
+const evidence=require('../data/competence-evidence.json');
 function claim(id){if(!claims[id])throw new Error('Unbound visitor claim ID');return claims[id];}
-function work(name){if(!works[name])throw new Error('Unbound visitor project certificate');const [label,project,reference]=works[name];return {label,project,reference};}
+function work(name){if(!works[name])throw new Error('Unbound visitor project certificate');const [label,project,reference]=works[name];const bound=evidence.projectCertificates.find(c=>c.repository===name);if(!bound)throw new Error('Missing project code evidence');return {label,project,reference,proof:'/koennen/#'+bound.proof};}
 module.exports={claim,work,claims,works,definition:'SHORT_VISITOR_LABELS_OVER_PRESERVED_SOURCE_RECORDS_V1'};

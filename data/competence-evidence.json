@@ -1,0 +1,968 @@
+{
+  "schema": "halveth.code-competence-evidence.v1",
+  "version": "1.0.0",
+  "dataClass": "PUBLIC",
+  "recordedAt": "2026-10-07T13:38:54.225290+00:00",
+  "claimCeiling": "EXACT_SOURCE_EXCERPTS_AND_SELECTED_TOPIC_COMPARISONS",
+  "scope": "Public own source excerpts and declared test links; no official certificate grant, third-party access authority or full-framework equivalence",
+  "proofs": [
+    {
+      "id": "F01",
+      "title": "Auge · Lichtbrechung",
+      "kind": "CODE",
+      "inputType": "Radius, Strahlhöhe, Korrektur",
+      "operator": "ray",
+      "outputType": "gebrochener Strahl und Projektion",
+      "invariant": "Snell-Beziehung und Spiegelung werden an 60 synthetischen Strahlen geprüft.",
+      "source": {
+        "repository": "Juri-Halveth/open-research-branches",
+        "commit": "075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7",
+        "path": "branches/eye-optics-and-prediction/model.mjs",
+        "fileSha256": "2e71d12bd2a898379dae06db12ab9b3c4efd3c0ba29b47965d2530c7beb0ac38",
+        "startLine": 1,
+        "endLine": 18,
+        "startByte": 0,
+        "endByte": 894,
+        "excerptSha256": "f1bca31e975728961e3b1093073739eaa66ae73a267b203395fa801aedbcce3f",
+        "excerpt": "function ray(radius, height, correction) {\n  const start = {x: -3, y: height};\n  const slope = -correction * height / 1000;\n  const norm = Math.hypot(1, slope);\n  const ix = 1 / norm, iy = slope / norm;\n  const ox = start.x - radius, oy = start.y;\n  const b = ox * ix + oy * iy;\n  const discriminant = b * b - (ox * ox + oy * oy - radius * radius);\n  if (discriminant < 0) throw new Error('Ray misses the reduced surface');\n  const travel = -b - Math.sqrt(discriminant);\n  const x = start.x + travel * ix, y = start.y + travel * iy;\n  const nx = (x - radius) / radius, ny = y / radius;\n  const cosi = -(ix * nx + iy * ny), eta = 1 / 1.336;\n  const factor = eta * cosi - Math.sqrt(1 - eta * eta * (1 - cosi * cosi));\n  const tx = eta * ix + factor * nx, ty = eta * iy + factor * ny;\n  return {x, y, tx, ty, at: plane => y + (plane - x) * ty / tx};\n}\nfunction paraxialFocus(radius, correction) {\n",
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/branches/eye-optics-and-prediction/model.mjs#L1-L18",
+        "coverage": "EXACT_EXCERPT_WITH_COMPLETE_SOURCE_LINK"
+      },
+      "testUrl": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/branches/eye-optics-and-prediction/model.test.mjs",
+      "testGroup": "EYE",
+      "testExecution": "SOURCE_LINKED_NOT_EXECUTED_IN_THIS_RUN",
+      "evidenceState": "OBSERVED_SOURCE_BYTES",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "F02",
+      "title": "FEGEFEUER · Ereignisidentität",
+      "kind": "CODE",
+      "inputType": "getyptes Event mit Identität und Herkunft",
+      "operator": "Fegefeuer.arrive",
+      "outputType": "Archiv, Pending-Zustand und Receipt",
+      "invariant": "Ein identisches Ereignis wird einmal aufgenommen; widersprüchliche Herkunft unter derselben ID wird abgewiesen.",
+      "source": {
+        "repository": "Juri-Halveth/open-research-branches",
+        "commit": "075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7",
+        "path": "branches/fegefeuer-provenance-transducer/fegefeuer_core.py",
+        "fileSha256": "bacd152c7e98b70901a241d3ef712d897ee4a3c84e2dcfbc2369aaf5b03b07eb",
+        "startLine": 145,
+        "endLine": 161,
+        "startByte": 4850,
+        "endByte": 5605,
+        "excerptSha256": "e5c791eb72e263c8ce2a937d62825360d218524d2724af0b72e364822f25fdfc",
+        "excerpt": "    def arrive(self, event):\n        if type(event) is not Event:\n            raise TypeError(\"Typed Event required\")\n        existing = self._archive.get(event.event_id)\n        if existing is not None:\n            if existing.binding != event.binding:\n                raise ValueError(\"Existing event ID has conflicting provenance\")\n            return False  # exact same occurrence, no duplicate materialization\n        if len(self._archive) >= MAX_EVENTS:\n            raise ValueError(\"Event budget reached\")\n        self._ensure_ledger_capacity()\n        before = self.core_digest\n        self._archive[event.event_id] = event\n        self._pending.add(event.event_id)\n        self._record(\"ARRIVED\", event.event_id, before, [])\n        return True\n\n",
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/branches/fegefeuer-provenance-transducer/fegefeuer_core.py#L145-L161",
+        "coverage": "EXACT_EXCERPT_WITH_COMPLETE_SOURCE_LINK"
+      },
+      "testUrl": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/branches/fegefeuer-provenance-transducer/test_fegefeuer_core.py",
+      "testGroup": "FEGEFEUER",
+      "testExecution": "SOURCE_LINKED_NOT_EXECUTED_IN_THIS_RUN",
+      "evidenceState": "OBSERVED_SOURCE_BYTES",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "F03",
+      "title": "FEGEFEUER · mathematische Baumgrenze",
+      "kind": "CODE",
+      "inputType": "Tiefe und Verzweigung",
+      "operator": "tree_bound",
+      "outputType": "kumulative obere Knotengrenze",
+      "invariant": "Bis Tiefe d wird die Summe der Schichten berechnet, nicht nur die letzte Schicht.",
+      "source": {
+        "repository": "Juri-Halveth/open-research-branches",
+        "commit": "075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7",
+        "path": "branches/fegefeuer-provenance-transducer/fegefeuer_core.py",
+        "fileSha256": "bacd152c7e98b70901a241d3ef712d897ee4a3c84e2dcfbc2369aaf5b03b07eb",
+        "startLine": 230,
+        "endLine": 234,
+        "startByte": 8941,
+        "endByte": 9222,
+        "excerptSha256": "00346656ffb32b02612baea7d5e81ee2194c8cf15b20b7f70a6c2d4ce36b752f",
+        "excerpt": "def tree_bound(depth, branching=25):\n    if type(depth) is not int or type(branching) is not int or not 0 <= depth <= 20 or not 1 <= branching <= 25:\n        raise ValueError(\"Bounded integer depth and branching required\")\n    return sum(branching ** i for i in range(depth + 1))\n\n",
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/branches/fegefeuer-provenance-transducer/fegefeuer_core.py#L230-L234",
+        "coverage": "EXACT_EXCERPT_WITH_COMPLETE_SOURCE_LINK"
+      },
+      "testUrl": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/branches/fegefeuer-provenance-transducer/test_fegefeuer_core.py",
+      "testGroup": "FEGEFEUER",
+      "testExecution": "SOURCE_LINKED_NOT_EXECUTED_IN_THIS_RUN",
+      "evidenceState": "OBSERVED_SOURCE_BYTES",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "F04",
+      "title": "NORMENWERK · Regeln auswerten",
+      "kind": "CODE",
+      "inputType": "quellengebundenes lokales Regelmodell",
+      "operator": "evaluate",
+      "outputType": "Konflikt-, Offen- oder Modellentscheidung",
+      "invariant": "UNKNOWN bleibt als Zustand erhalten; Regelvorrang wird über einen expliziten Graphen verarbeitet.",
+      "source": {
+        "repository": "Juri-Halveth/open-research-branches",
+        "commit": "075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7",
+        "path": "branches/normenwerk-rule-universe/normenkern.py",
+        "fileSha256": "84dc83b2b6b93e1735b054e50f4c314a8e0e097fa5479a6ee5f773f2cdebea18",
+        "startLine": 125,
+        "endLine": 149,
+        "startByte": 7893,
+        "endByte": 9587,
+        "excerptSha256": "004fc3e8fd8b16756842f3e65978601f77919a1457b0d3ce317a88aff746cea0",
+        "excerpt": "def evaluate(raw):\n    model=parse(raw); at=timestamp(model['referenceTime'])\n    facts={f['id']:f['value'] if _within(f,at) else 'UNKNOWN' for f in model['facts']}\n    trace=[]; active={}; uncertain=[]; norms={n['id']:n for n in model['norms']}\n    for n in sorted(model['norms'], key=lambda n:n['id']):\n        applicable=n['scope']==model['scope'] and n['action']==model['query']['action'] and _within(n,at)\n        truth=condition(n['when'],facts) if applicable else 'NOT_APPLICABLE'\n        trace.append(dict(norm=n['id'],source=n['source'],conditionValue=truth,effect=n['effect'],status='ACTIVE' if truth=='TRUE' else 'UNRESOLVED' if truth=='UNKNOWN' else 'INACTIVE'))\n        if truth=='TRUE': active[n['id']]=n\n        if truth=='UNKNOWN': uncertain.append(n['id'])\n    priorities=[p for p in model['priorities'] if _within(p,at)]\n    order,outgoing=_topological(norms,priorities)\n    defeated={}; retained=[]\n    for i in order:\n        if i not in active or i in defeated: continue\n        retained.append(i)\n        for weaker in outgoing[i]:\n            if weaker in active: defeated.setdefault(weaker,i)\n    for item in trace:\n        if item['norm'] in defeated: item.update(status='DEFEATED',defeatedBy=defeated[item['norm']])\n    support=sorted(i for i in retained if active[i]['effect']=='SUPPORT')\n    oppose=sorted(i for i in retained if active[i]['effect']=='OPPOSE')\n    outcome='CONFLICT' if support and oppose else 'OPEN' if uncertain or not retained else 'MODEL_SUPPORTED' if support else 'MODEL_OPPOSED'\n    nodes=[]\n    for kind,rows in [('SOURCE',model['sources']),('STATE',model['facts']),('NORM',model['norms']),('PRIORITY',priorities),('QUERY',[model['query']])]:\n",
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/branches/normenwerk-rule-universe/normenkern.py#L125-L149",
+        "coverage": "EXACT_EXCERPT_WITH_COMPLETE_SOURCE_LINK"
+      },
+      "testUrl": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/branches/normenwerk-rule-universe/test_normenkern.py",
+      "testGroup": "NORMENWERK",
+      "testExecution": "SOURCE_LINKED_NOT_EXECUTED_IN_THIS_RUN",
+      "evidenceState": "OBSERVED_SOURCE_BYTES",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "F05",
+      "title": "Banane · Materialbilanz",
+      "kind": "CODE",
+      "inputType": "illustrativer Materialzustand und Zeitschritt",
+      "operator": "advance",
+      "outputType": "neuer illustrativer Zustand",
+      "invariant": "Die Stoffanteile bleiben in den deklarierten Gleichungen erhalten; falsche Werte werden abgewiesen.",
+      "source": {
+        "repository": "Juri-Halveth/open-research-branches",
+        "commit": "075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7",
+        "path": "branches/banana-transition-field/model.mjs",
+        "fileSha256": "f3ffe2596778037ee44ac5a0fc3d1c321a0b6aa0b60dcb93aae95f8cda53c5f8",
+        "startLine": 24,
+        "endLine": 36,
+        "startByte": 2140,
+        "endByte": 2973,
+        "excerptSha256": "21f8667ede91fcd84930c4c20e63a010e2b98d74e1e0c7409df8d7257a13d73e",
+        "excerpt": "export function advance(state, dt, rate = .18) {\n  finite(dt, 'dt', 0, 100); finite(rate, 'rate', 0, 1);\n  for (const key of ['starch', 'sugar', 'other', 'ethylene', 'firmness', 'aroma']) finite(state[key], key, 0, 1);\n  finite(state.time, 'time');\n  if (Math.abs(state.starch + state.sugar + state.other - 1) > 1e-9) throw new RangeError('material balance must total one');\n  if (dt === 0) return { ...state };\n  const ethylene = 1 - (1 - state.ethylene) * Math.exp(-rate * dt);\n  const flux = state.starch * (1 - Math.exp(-rate * (.3 + (ethylene + state.ethylene) / 2) * dt));\n  return { time: state.time + dt, starch: state.starch - flux,\n    sugar: state.sugar + .75 * flux, other: state.other + .25 * flux, ethylene,\n    firmness: state.firmness * Math.exp(-.08 * dt),\n    aroma: 1 - (1 - state.aroma) * Math.exp(-.1 * dt) };\n}\n",
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/branches/banana-transition-field/model.mjs#L24-L36",
+        "coverage": "EXACT_EXCERPT_WITH_COMPLETE_SOURCE_LINK"
+      },
+      "testUrl": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/branches/banana-transition-field/model.test.mjs",
+      "testGroup": "BANANA",
+      "testExecution": "SOURCE_LINKED_NOT_EXECUTED_IN_THIS_RUN",
+      "evidenceState": "OBSERVED_SOURCE_BYTES",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "F06",
+      "title": "DevOps · veröffentlichte Dateien binden",
+      "kind": "CODE",
+      "inputType": "gebundener Git-Snapshot und Positivliste",
+      "operator": "validatePublicManifest",
+      "outputType": "Commit-/Tree-/Datei-Receipt",
+      "invariant": "Die Liste und der tatsächlich getrackte Git-Baum müssen dieselben Dateien enthalten.",
+      "source": {
+        "repository": "Juri-Halveth/open-research-branches",
+        "commit": "075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7",
+        "path": "scripts/release-gate-lib.mjs",
+        "fileSha256": "c484adc1105e92d3622223e6e1466975b31ff96d5147921346027f8949072356",
+        "startLine": 220,
+        "endLine": 237,
+        "startByte": 9539,
+        "endByte": 10605,
+        "excerptSha256": "38fdd589508f32f7f01b797f3599c76df7215f49276f20858b06bd21d3dfb156",
+        "excerpt": "export function validatePublicManifest(snapshot) {\n  const publicFiles = parsePublicManifest(snapshot.readBlob(MANIFEST_PATH));\n  const unsupported = snapshot.entries.filter((entry) => entry.type !== \"blob\");\n  if (unsupported.length) {\n    throw new ReleaseGateError(`public release contains unsupported non-blob tree entries: ${unsupported.map((entry) => entry.path).join(\", \")}`);\n  }\n  const tracked = snapshot.entries.map((entry) => entry.path).sort(comparePaths);\n  if (JSON.stringify(tracked) !== JSON.stringify(publicFiles)) {\n    const expectedSet = new Set(publicFiles);\n    const trackedSet = new Set(tracked);\n    const missing = publicFiles.filter((item) => !trackedSet.has(item));\n    const unexpected = tracked.filter((item) => !expectedSet.has(item));\n    throw new ReleaseGateError(\n      `public manifest mismatch\\nmissing: ${missing.join(\", \") || \"<none>\"}\\nunexpected: ${unexpected.join(\", \") || \"<none>\"}`\n    );\n  }\n  return Object.freeze({ commitId: snapshot.commitId, treeId: snapshot.treeId, fileCount: publicFiles.length, publicFiles });\n}\n",
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/scripts/release-gate-lib.mjs#L220-L237",
+        "coverage": "EXACT_EXCERPT_WITH_COMPLETE_SOURCE_LINK"
+      },
+      "testUrl": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/scripts/release-gate.test.mjs",
+      "testGroup": "RELEASE",
+      "testExecution": "SOURCE_LINKED_NOT_EXECUTED_IN_THIS_RUN",
+      "evidenceState": "OBSERVED_SOURCE_BYTES",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "F07",
+      "title": "JSON · strikte Eingabeprüfung",
+      "kind": "CODE",
+      "inputType": "begrenzte UTF-8-Bytes",
+      "operator": "parse",
+      "outputType": "validiertes Modell",
+      "invariant": "Nichtendliche Werte, ungültiges Unicode und doppelte JSON-Schlüssel werden zurückgewiesen.",
+      "source": {
+        "repository": "Juri-Halveth/open-research-branches",
+        "commit": "075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7",
+        "path": "branches/normenwerk-rule-universe/normenkern.py",
+        "fileSha256": "84dc83b2b6b93e1735b054e50f4c314a8e0e097fa5479a6ee5f773f2cdebea18",
+        "startLine": 38,
+        "endLine": 48,
+        "startByte": 1581,
+        "endByte": 2224,
+        "excerptSha256": "e7ea85607cf4399e9ee5775c7a928b26e07eb3a847d1dd30c394fe543329ca23",
+        "excerpt": "def parse(raw):\n    require(type(raw) is bytes and len(raw) <= MAX_BYTES, 'input byte limit exceeded')\n    try:\n        text=raw.decode('utf-8'); text.encode('utf-8', errors='strict')\n        value=json.loads(text, object_pairs_hook=_pairs, parse_constant=lambda _: (_ for _ in ()).throw(ModelError('nonfinite JSON value')))\n        # Escaped unpaired surrogates are invalid even if the original bytes decode.\n        canonical(value).decode('utf-8')\n    except (UnicodeError, json.JSONDecodeError, RecursionError) as e: raise ModelError('invalid Unicode or JSON') from e\n    validate(value)\n    return value\ndef _list(value, label, lower=0):\n",
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/branches/normenwerk-rule-universe/normenkern.py#L38-L48",
+        "coverage": "EXACT_EXCERPT_WITH_COMPLETE_SOURCE_LINK"
+      },
+      "testUrl": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/branches/normenwerk-rule-universe/test_normenkern.py",
+      "testGroup": "NORMENWERK",
+      "testExecution": "SOURCE_LINKED_NOT_EXECUTED_IN_THIS_RUN",
+      "evidenceState": "OBSERVED_SOURCE_BYTES",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "F08",
+      "title": "Security · Auswirkung differenzieren",
+      "kind": "CODE",
+      "inputType": "deklarierte synthetische Fakten und Quellen",
+      "operator": "assess",
+      "outputType": "gebundene Modellroute mit offenen Achsen",
+      "invariant": "Öffentliche Oberfläche, geschützte Eigenschaft, unerlaubte Wirkung und Produktbindung sind getrennte Achsen.",
+      "source": {
+        "repository": "Juri-Halveth/open-research-branches",
+        "commit": "075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7",
+        "path": "branches/security-impact-learning/impact-model.mjs",
+        "fileSha256": "f8fdc612d06b3e6386ae82ce59c857443ada8a409e5971121c53fff04408d58a",
+        "startLine": 31,
+        "endLine": 47,
+        "startByte": 2625,
+        "endByte": 3898,
+        "excerptSha256": "d43464437202830130386ba86baa9884bdbddcef6c89165911fffc1f51f8066d",
+        "excerpt": "  const state = key => candidate.axes[key].state;\n  const conflicts = [];\n  if (state('expectedPublic') === 'SUPPORTED' && state('unauthorizedEffect') === 'SUPPORTED') conflicts.push('PUBLIC_POLICY_AND_UNAUTHORIZED_EFFECT_REQUIRE_DISCRIMINATION');\n  if (candidate.effectKind === 'NONE' && state('unauthorizedEffect') === 'SUPPORTED') conflicts.push('EFFECT_KIND_CONFLICT');\n  let route;\n  if (conflicts.length) route = 'CONFLICT_REVIEW';\n  else if (state('unauthorizedEffect') === 'SUPPORTED' && state('protectedProperty') === 'SUPPORTED') route = state('productBinding') === 'SUPPORTED' ? 'BOUND_IMPACT_CANDIDATE_REVIEW' : 'LOCAL_MODEL_HARDENING_REVIEW';\n  else if (state('expectedPublic') === 'SUPPORTED' && state('unauthorizedEffect') === 'CONTRADICTED') route = 'PUBLIC_BEHAVIOR_WITHIN_BOUND_FIXTURE';\n  else route = 'HOLD_CLAIM_CONTINUE_SOURCE_REVIEW';\n  return {\n    candidateId: candidate.id, referent: candidate.referent, scope: candidate.scope,\n    route, conflicts, openAxes: AXES.filter(key => state(key) === 'UNKNOWN'),\n    inputClass: 'DECLARED_SYNTHETIC_FACTS', truthVerified: false,\n    independentSourceProof: false, severity: 'NOT_ASSIGNED', publication: 'NO_ACTION',\n    externalEffects: 0, claimCeiling: 'MODEL_DECISION_WITHIN_BOUND_FIXTURE_ONLY'\n  };\n}\n",
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/branches/security-impact-learning/impact-model.mjs#L31-L47",
+        "coverage": "EXACT_EXCERPT_WITH_COMPLETE_SOURCE_LINK"
+      },
+      "testUrl": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/branches/security-impact-learning/impact-model.test.mjs",
+      "testGroup": "IMPACT",
+      "testExecution": "SOURCE_LINKED_NOT_EXECUTED_IN_THIS_RUN",
+      "evidenceState": "OBSERVED_SOURCE_BYTES",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "P01",
+      "title": "Morrowind · Figurenzustand",
+      "kind": "CODE",
+      "inputType": "NPC-Daten und Gesprächshistorie",
+      "operator": "profile",
+      "outputType": "reproduzierbares Figurenprofil",
+      "invariant": "Die Identität bindet einen stabilen Seed; aktuelle Fakten werden getrennt übernommen.",
+      "source": {
+        "repository": "Juri-Halveth/halveth-morrowind-genesis",
+        "commit": "2bcf09650cb0f4e5464301bec17475a3dc8ae2a8",
+        "path": "character_profile.py",
+        "fileSha256": "90b5184cbb47fddaf9500f5a92603d5827d043bc3400f1d99e0b1aca334cf4fc",
+        "startLine": 24,
+        "endLine": 42,
+        "startByte": 886,
+        "endByte": 2072,
+        "excerptSha256": "e956b735dcc90fcf8fb94e81997370e7fdfd7fb848b869c8ec28e7a2d48d30a0",
+        "excerpt": "def profile(npc, history=()):\n    \"\"\"Return a stable creative direction plus current, explicitly bound facts.\"\"\"\n    if not isinstance(npc, dict):\n        return None\n    identity = '\\0'.join(str(npc.get(key, '')) for key in ('worldId', 'id', 'recordId'))\n    seed = hashlib.sha256(identity.encode('utf-8')).digest()\n    services = npc.get('services', [])\n    services = services if isinstance(services, list) else []\n    disposition = npc.get('disposition')\n    if isinstance(disposition, (int, float)) and not isinstance(disposition, bool):\n        attitude = 'zurueckhaltend' if disposition < 35 else 'zugewandt' if disposition >= 70 else 'abwartend'\n    else:\n        attitude = 'aus der aktuellen Begegnung noch offen'\n    health = npc.get('health')\n    wounded = (isinstance(health, dict) and isinstance(health.get('current'), (int, float))\n               and isinstance(health.get('max'), (int, float)) and health['max'] > 0\n               and health['current'] < health['max'] * .5)\n    facts = {key: npc[key] for key in ('name', 'recordId', 'kind', 'cell', 'raceName',\n             'className', 'classDescription', 'factions', 'disposition', 'health', 'isDead') if key in npc}\n",
+        "url": "https://github.com/Juri-Halveth/halveth-morrowind-genesis/blob/2bcf09650cb0f4e5464301bec17475a3dc8ae2a8/character_profile.py#L24-L42",
+        "coverage": "EXACT_EXCERPT_WITH_COMPLETE_SOURCE_LINK"
+      },
+      "testUrl": "https://github.com/Juri-Halveth/halveth-morrowind-genesis/blob/2bcf09650cb0f4e5464301bec17475a3dc8ae2a8/tests/test_character_profile.py",
+      "testGroup": null,
+      "testExecution": "SOURCE_LINKED_NOT_EXECUTED_IN_THIS_RUN",
+      "evidenceState": "OBSERVED_SOURCE_BYTES",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "P02",
+      "title": "Scarlet Garden · Grafikeinstellungen",
+      "kind": "CODE",
+      "inputType": "deklarierte Grafikeinstellungen",
+      "operator": "validatePreferences",
+      "outputType": "geprüftes Einstellungsobjekt",
+      "invariant": "Exakte Felder, Zahlenbereiche und erlaubte Auflösungs-/Bildratenwerte werden geprüft.",
+      "source": {
+        "repository": "Juri-Halveth/halveth-realms",
+        "commit": "157c5b4cc44e24e3de015f036180107cec17c5fe",
+        "path": "desktop/preferences.cjs",
+        "fileSha256": "0c61d433a90f6177a044a0aa8e7e8d496f2556b121acf813b63c3a2798211af7",
+        "startLine": 3,
+        "endLine": 12,
+        "startByte": 138,
+        "endByte": 986,
+        "excerptSha256": "60e3bc30dd307ff2d348d500787dc4a8af0ee06b53ef4af0a05dd0c6e197a2ef",
+        "excerpt": "function validatePreferences(value) {\n  if (!value || typeof value !== 'object' || Array.isArray(value)\n    || Object.keys(value).length !== 5 || Object.keys(value).some(key => !Object.hasOwn(defaults, key))\n    || value.schemaVersion !== 1 || typeof value.resolutionScale !== 'number'\n    || !Number.isFinite(value.resolutionScale) || value.resolutionScale < .5 || value.resolutionScale > 1.25\n    || Math.abs(value.resolutionScale * 20 - Math.round(value.resolutionScale * 20)) > 1e-8\n    || ![0, 1024, 2048, 4096].includes(value.shadowSize) || ![0, 30, 60, 120].includes(value.frameLimit)\n    || typeof value.showFps !== 'boolean') throw new TypeError('Ungültige Grafikeinstellungen.');\n  return { schemaVersion: 1, resolutionScale: value.resolutionScale, shadowSize: value.shadowSize, frameLimit: value.frameLimit, showFps: value.showFps };\n}\n",
+        "url": "https://github.com/Juri-Halveth/halveth-realms/blob/157c5b4cc44e24e3de015f036180107cec17c5fe/desktop/preferences.cjs#L3-L12",
+        "coverage": "EXACT_EXCERPT_WITH_COMPLETE_SOURCE_LINK"
+      },
+      "testUrl": "https://github.com/Juri-Halveth/halveth-realms/blob/157c5b4cc44e24e3de015f036180107cec17c5fe/desktop/tests/preferences.test.cjs",
+      "testGroup": null,
+      "testExecution": "SOURCE_LINKED_NOT_EXECUTED_IN_THIS_RUN",
+      "evidenceState": "OBSERVED_SOURCE_BYTES",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "P03",
+      "title": "Scarlet · Entitäten räumlich anordnen",
+      "kind": "CODE",
+      "inputType": "Index und Anzahl der Entitäten",
+      "operator": "galleryPosition",
+      "outputType": "X/Y/Z-Koordinate im Darstellungsmodell",
+      "invariant": "Die Anzahl bestimmt Reihen und Spalten; der Index erhält eine reproduzierbare Position.",
+      "source": {
+        "repository": "Juri-Halveth/halveth-scarlet",
+        "commit": "324987d0a24769fc1de83cb7326669ce03636941",
+        "path": "assets/entity-world-model.mjs",
+        "fileSha256": "3e1dd1b8987046fadd0eb299f8578317dc6f6db8d1afc29b1bad955e9b367bb1",
+        "startLine": 55,
+        "endLine": 59,
+        "startByte": 2744,
+        "endByte": 3004,
+        "excerptSha256": "2df1c2d47e183d951ae904fd66368d81099f4f5bed76fcf99cc0b76762f7a206",
+        "excerpt": "export function galleryPosition(index, count) {\n  const columns = Math.ceil(Math.sqrt(count * 1.35));\n  const rows = Math.ceil(count / columns);\n  return [(index % columns - (columns - 1) / 2) * 3.3, 0, (Math.floor(index / columns) - (rows - 1) / 2) * 4.2];\n}\n",
+        "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/324987d0a24769fc1de83cb7326669ce03636941/assets/entity-world-model.mjs#L55-L59",
+        "coverage": "EXACT_EXCERPT_WITH_COMPLETE_SOURCE_LINK"
+      },
+      "testUrl": "https://github.com/Juri-Halveth/halveth-scarlet/blob/324987d0a24769fc1de83cb7326669ce03636941/tests/entity-world.test.cjs",
+      "testGroup": null,
+      "testExecution": "SOURCE_LINKED_NOT_EXECUTED_IN_THIS_RUN",
+      "evidenceState": "OBSERVED_SOURCE_BYTES",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "P04",
+      "title": "Tresor · Schlüsselableitung",
+      "kind": "CODE",
+      "inputType": "normalisierte Passwort-/PIN-Felder und KDF-Parameter",
+      "operator": "kdf_input / derive_kek",
+      "outputType": "Scrypt-abgeleiteter Schlüssel",
+      "invariant": "Ein Längenpräfix trennt die normalisierten Felder; die KDF ist konkret im Code gebunden.",
+      "source": {
+        "repository": "Juri-Halveth/halveth-tresor",
+        "commit": "9233a6f16fca23e87340787b2e57d00573698506",
+        "path": "src/tresor/vault.py",
+        "fileSha256": "60ea61e42187b1586aa2bc9d4e62c18d0ec84e00bce9826ddda4a99b23c5856c",
+        "startLine": 85,
+        "endLine": 100,
+        "startByte": 2945,
+        "endByte": 3561,
+        "excerptSha256": "7805976a71061fedcf75cba85a943e5ae32ca4dada0f14e3ce02983e1c4755e2",
+        "excerpt": "def kdf_input(master: str, pin: str) -> bytes:\n    \"\"\"\n    Combine password and PIN into ONE KDF input with a length prefix, so that\n    ('ab', '123') can never collide with ('ab1', '23').\n    \"\"\"\n    m = _norm(master).encode(\"utf-8\")\n    p = _norm(pin).encode(\"utf-8\")\n    return len(m).to_bytes(4, \"big\") + m + p\n\n\ndef derive_kek(\n    master: str, pin: str, salt: bytes, n: int, r: int = SCRYPT_R, p: int = SCRYPT_P\n) -> bytes:\n    \"\"\"Derive the 256-bit key-encryption key from (password + PIN) via Scrypt.\"\"\"\n    kdf = Scrypt(salt=salt, length=KEYLEN, n=n, r=r, p=p)\n    return kdf.derive(kdf_input(master, pin))\n",
+        "url": "https://github.com/Juri-Halveth/halveth-tresor/blob/9233a6f16fca23e87340787b2e57d00573698506/src/tresor/vault.py#L85-L100",
+        "coverage": "EXACT_EXCERPT_WITH_COMPLETE_SOURCE_LINK"
+      },
+      "testUrl": "https://github.com/Juri-Halveth/halveth-tresor/blob/9233a6f16fca23e87340787b2e57d00573698506/tests/test_vault.py",
+      "testGroup": null,
+      "testExecution": "SOURCE_LINKED_NOT_EXECUTED_IN_THIS_RUN",
+      "evidenceState": "OBSERVED_SOURCE_BYTES",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "P05",
+      "title": "Portal Garden · C++ Zustandsgrenze",
+      "kind": "CODE",
+      "inputType": "JSON-Feld, erlaubter Zahlenbereich",
+      "operator": "Integer",
+      "outputType": "getrennter Annahme-/Ablehnungswert",
+      "invariant": "Die Quelle fordert endliche, ganzzahlige Werte im erlaubten Bereich.",
+      "source": {
+        "repository": "Juri-Halveth/halveth-unreal",
+        "commit": "8196c2fb5b67b3e6a0ea492d1b8f9a61d9d764d0",
+        "path": "Source/HALVETHRealms/Private/HALVETHKnowledgeComponent.cpp",
+        "fileSha256": "86aa7478a48bf6dea6fbe9ad3a18b1112adffaee508acc14d8c02f50c9f952a3",
+        "startLine": 148,
+        "endLine": 152,
+        "startByte": 5375,
+        "endByte": 5672,
+        "excerptSha256": "3d45efcd14fc963a3ef04fab610fee8e9dbc86609a528718c11d613e4d4ee68c",
+        "excerpt": "    bool Integer(const TSharedPtr<FJsonObject>& Object, const TCHAR* Key, double Low, double High, double& Out)\n    {\n        return Object.IsValid() && Object->TryGetNumberField(Key, Out) && FMath::IsFinite(Out)\n            && Out >= Low && Out <= High && Out == FMath::FloorToDouble(Out);\n    }\n",
+        "url": "https://github.com/Juri-Halveth/halveth-unreal/blob/8196c2fb5b67b3e6a0ea492d1b8f9a61d9d764d0/Source/HALVETHRealms/Private/HALVETHKnowledgeComponent.cpp#L148-L152",
+        "coverage": "EXACT_EXCERPT_WITH_COMPLETE_SOURCE_LINK"
+      },
+      "testUrl": "https://github.com/Juri-Halveth/halveth-unreal/blob/8196c2fb5b67b3e6a0ea492d1b8f9a61d9d764d0/tests/test_project.py",
+      "testGroup": null,
+      "testExecution": "SOURCE_LINKED_NOT_EXECUTED_IN_THIS_RUN",
+      "evidenceState": "OBSERVED_SOURCE_BYTES",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "P06",
+      "title": "Kooperationskonzept · Forschungsplanung",
+      "kind": "DOCUMENT",
+      "inputType": "veröffentlichte Forschungsplanung",
+      "operator": "DOCUMENTED_PROPOSAL",
+      "outputType": "dokumentierter Vorschlag",
+      "invariant": "Dieser Eintrag zeigt Planungsarbeit; im erfassten öffentlichen Quellstand gibt es dafür keinen ausführbaren Code. ",
+      "source": {
+        "repository": "Juri-Halveth/halveth-xai-40m-proposal",
+        "commit": "be61c1c4c2c2520b5fe058f17d4ff65eff1dff28",
+        "path": "README.md",
+        "fileSha256": "39a15bb3199e7c9dd176da2f1bf3ffac65739f042843fcaa314aa556259ab5d5",
+        "startLine": 16,
+        "endLine": 18,
+        "startByte": 747,
+        "endByte": 984,
+        "excerptSha256": "092fb2ccbc19fcdac80c4f894200c1636bed18ad76cde54e0eab4268ac1810a2",
+        "excerpt": "**Public proposal by Juri Janovski, publishing as Juri Halveth.**\n\nHALVETH invites xAI or another expressly authorized Musk-affiliated entity to discuss a staged research collaboration with a total program ceiling of **USD 40,000,000**.\n",
+        "url": "https://github.com/Juri-Halveth/halveth-xai-40m-proposal/blob/be61c1c4c2c2520b5fe058f17d4ff65eff1dff28/README.md#L16-L18",
+        "coverage": "EXACT_EXCERPT_WITH_COMPLETE_SOURCE_LINK"
+      },
+      "testUrl": null,
+      "testGroup": null,
+      "testExecution": "NO_RUNTIME_TEST_CLAIM",
+      "evidenceState": "OBSERVED_SOURCE_BYTES",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "P07",
+      "title": "Portfolio · sprachgebundene Darstellung",
+      "kind": "CODE",
+      "inputType": "gebundener Text und gewählte Sprache",
+      "operator": "text",
+      "outputType": "übersetzte Darstellung oder erhaltene Quelle",
+      "invariant": "Übersetzungen kommen aus dem Katalog; Rohcode bleibt im separaten Darstellungsvertrag erhalten.",
+      "source": {
+        "repository": "Juri-Halveth/Juri-Halveth.github.io",
+        "commit": "47c218c9528b0a8774bc34eaab492fa6d1effdfa",
+        "path": "tools/build-languages.cjs",
+        "fileSha256": "438187c395b4346aad7b742ef32dd1bd0a1cc39df52ae84effe6a7a3c928ca3c",
+        "startLine": 9,
+        "endLine": 14,
+        "startByte": 948,
+        "endByte": 1255,
+        "excerptSha256": "da4ad94a01c4c602c5dc3b605746a3b7333321542022342ab5e6badecc892c58",
+        "excerpt": "function text(value,language){\n const plain=decode(value),key=plain.trim();if(!key||language==='de')return value;\n const translated=catalog.strings[key]?.[language];return translated?escape(plain.replace(key,translated)):value;\n}\nfunction url(value,source,language){\n if(value.startsWith('#'))return value;\n",
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/47c218c9528b0a8774bc34eaab492fa6d1effdfa/tools/build-languages.cjs#L9-L14",
+        "coverage": "EXACT_EXCERPT_WITH_COMPLETE_SOURCE_LINK"
+      },
+      "testUrl": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/47c218c9528b0a8774bc34eaab492fa6d1effdfa/tests/languages.test.cjs",
+      "testGroup": "WEBSITE",
+      "testExecution": "SOURCE_LINKED_NOT_EXECUTED_IN_THIS_RUN",
+      "evidenceState": "OBSERVED_SOURCE_BYTES",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "P08",
+      "title": "Geburtsforschung · Quellpfade prüfen",
+      "kind": "CODE",
+      "inputType": "deklarierter relativer Git-Pfad",
+      "operator": "validate_git_path",
+      "outputType": "gültiger Pfad oder expliziter Fehler",
+      "invariant": "Pfad und Quellenadresse werden vor dem Snapshot validiert. Dies ist Dokumentationssoftware.",
+      "source": {
+        "repository": "Juri-Halveth/juri-janovski-these-zur-geburt",
+        "commit": "d18d11422b5cadbf12822a309ea7ff00920c6a44",
+        "path": "scripts/code_zeitwaertszurueck.py",
+        "fileSha256": "4c32f5644f8b0f940452cbe2831140ca098e61a87bf069203d1589e550994745",
+        "startLine": 125,
+        "endLine": 146,
+        "startByte": 4030,
+        "endByte": 5241,
+        "excerptSha256": "7a78bf2861c74a505c474521cf0aa679358bc3c7ca3da89b241921ba9c027ad3",
+        "excerpt": "def validate_git_path(relative_path: str) -> str:\n    \"\"\"Validate the exact UTF-8 path carried by a Git tree and JSON manifest.\"\"\"\n\n    if not isinstance(relative_path, str) or not relative_path:\n        raise ProvenanceError(\"Git path must be a non-empty string\")\n    if \"\\x00\" in relative_path or \"\\\\\" in relative_path:\n        raise ProvenanceError(f\"unsafe Git path: {relative_path!r}\")\n    if relative_path.startswith(\"/\") or re.match(r\"^[A-Za-z]:\", relative_path):\n        raise ProvenanceError(f\"absolute Git path is forbidden: {relative_path!r}\")\n    path = PurePosixPath(relative_path)\n    if str(path) != relative_path:\n        raise ProvenanceError(f\"non-canonical Git path: {relative_path!r}\")\n    if any(part in (\"\", \".\", \"..\") for part in path.parts):\n        raise ProvenanceError(f\"traversing Git path is forbidden: {relative_path!r}\")\n    if any(part.casefold() == \".git\" for part in path.parts):\n        raise ProvenanceError(f\".git path component is forbidden: {relative_path!r}\")\n    try:\n        relative_path.encode(\"utf-8\", \"strict\")\n    except UnicodeEncodeError as exc:\n        raise ProvenanceError(f\"Git path is not valid UTF-8: {relative_path!r}\") from exc\n    return relative_path\n\n",
+        "url": "https://github.com/Juri-Halveth/juri-janovski-these-zur-geburt/blob/d18d11422b5cadbf12822a309ea7ff00920c6a44/scripts/code_zeitwaertszurueck.py#L125-L146",
+        "coverage": "EXACT_EXCERPT_WITH_COMPLETE_SOURCE_LINK"
+      },
+      "testUrl": "https://github.com/Juri-Halveth/juri-janovski-these-zur-geburt/blob/d18d11422b5cadbf12822a309ea7ff00920c6a44/tests/test_code_zeitwaertszurueck.py",
+      "testGroup": null,
+      "testExecution": "SOURCE_LINKED_NOT_EXECUTED_IN_THIS_RUN",
+      "evidenceState": "OBSERVED_SOURCE_BYTES",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "P09",
+      "title": "Lernstudio · Quellenintegrität",
+      "kind": "CODE",
+      "inputType": "gebundene Quelldateien und erwartete Hashes",
+      "operator": "endpointIntegrity",
+      "outputType": "Vergleichsrecord pro Quelle",
+      "invariant": "Aktuelle Dateibytes werden mit den erwarteten Digests verglichen.",
+      "source": {
+        "repository": "Juri-Halveth/lernstudio",
+        "commit": "e6b5b741e030e5182217973961ab3fbcc35ff81c",
+        "path": "contracts/lib/runtime.cjs",
+        "fileSha256": "d717b4225130d70546787adb9c8c450bbfdd0ac27e545c06b6c2b7d94e1ce426",
+        "startLine": 81,
+        "endLine": 86,
+        "startByte": 4100,
+        "endByte": 4362,
+        "excerptSha256": "767ed5568214be073899dc19e05c8b555b8b77a44d3f8eada50bf26c6e61e422",
+        "excerpt": "function endpointIntegrity(sources) {\n  return sources.map(source => {\n    const actual = sha256(fs.readFileSync(boundSourceFiles.get(source.name)));\n    return { name: source.name, expected: source.sha256, actual, unchanged: source.sha256 === actual };\n  });\n}\n",
+        "url": "https://github.com/Juri-Halveth/lernstudio/blob/e6b5b741e030e5182217973961ab3fbcc35ff81c/contracts/lib/runtime.cjs#L81-L86",
+        "coverage": "EXACT_EXCERPT_WITH_COMPLETE_SOURCE_LINK"
+      },
+      "testUrl": "https://github.com/Juri-Halveth/lernstudio/blob/e6b5b741e030e5182217973961ab3fbcc35ff81c/contracts/test/local-contract.test.cjs",
+      "testGroup": null,
+      "testExecution": "SOURCE_LINKED_NOT_EXECUTED_IN_THIS_RUN",
+      "evidenceState": "OBSERVED_SOURCE_BYTES",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "P10",
+      "title": "Lernkatalog · Profilzustand prüfen",
+      "kind": "CODE",
+      "inputType": "lokales Lernprofil und Schema-Modus",
+      "operator": "validate",
+      "outputType": "geprüfter lokaler Profilzustand",
+      "invariant": "Schema, Feldmenge, Generation, Name und Einstellungen haben benannte Prüfungen.",
+      "source": {
+        "repository": "Juri-Halveth/mein-lernportal",
+        "commit": "91726c7cb12d9c9360be7ba42c5039b582ca12a1",
+        "path": "learning-profile.js",
+        "fileSha256": "b10751317265ea7781fd0b0c72d2def71ea58f89c8937268d369d2072a40bf0b",
+        "startLine": 20,
+        "endLine": 35,
+        "startByte": 1285,
+        "endByte": 2599,
+        "excerptSha256": "5fe86a714fdfd01b2654319f6b3e0677856ef99b329923a10d7f30343b1dcb08",
+        "excerpt": "    function validate(value, legacy) {\n      if (!plain(value) || !plain(value.done)) throw new Error(\"Ungültiges Lernprofil.\");\n      if (!legacy && value.version !== 1) throw new Error(\"Diese Profilversion wird noch nicht unterstützt.\");\n      const clean = defaults();\n      const allowed = new Set(Object.keys(clean));\n      if (!legacy && Object.keys(value).some(k => !allowed.has(k))) throw new Error(\"Die Datei enthält unbekannte Profilfelder.\");\n      if (!legacy && (typeof value.generation !== \"string\" || !/^g_[a-zA-Z0-9-]{1,80}$/.test(value.generation))) throw new Error(\"Ungültige Profilgeneration.\");\n      if (!legacy) clean.generation = value.generation;\n      if (typeof value.name !== \"string\" || value.name.length > 28) throw new Error(\"Der Profilname ist ungültig.\");\n      clean.name = value.name;\n      if (!legacy && !ANIMALS.includes(value.avatar)) throw new Error(\"Unbekanntes Tierchen.\");\n      clean.avatar = ANIMALS.includes(value.avatar) ? value.avatar : \"🦊\";\n      for (const [field, values] of [[\"color\", COLORS], [\"accessory\", ACCESSORIES], [\"theme\", [\"light\", \"dark\"]]]) {\n        if (value[field] === undefined && legacy) continue;\n        if (!values.includes(value[field])) throw new Error(\"Ungültige Profileinstellung: \" + field);\n        clean[field] = value[field];\n",
+        "url": "https://github.com/Juri-Halveth/mein-lernportal/blob/91726c7cb12d9c9360be7ba42c5039b582ca12a1/learning-profile.js#L20-L35",
+        "coverage": "EXACT_EXCERPT_WITH_COMPLETE_SOURCE_LINK"
+      },
+      "testUrl": "https://github.com/Juri-Halveth/mein-lernportal/blob/91726c7cb12d9c9360be7ba42c5039b582ca12a1/tests/portal.test.cjs",
+      "testGroup": null,
+      "testExecution": "SOURCE_LINKED_NOT_EXECUTED_IN_THIS_RUN",
+      "evidenceState": "OBSERVED_SOURCE_BYTES",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "P11",
+      "title": "Open Research · Lesecoverage",
+      "kind": "CODE",
+      "inputType": "Git-Index und deklarierte Byte-Lesespans",
+      "operator": "validateReadLedger",
+      "outputType": "gelesene und verbleibende Bytes je Datei",
+      "invariant": "Pfad, Hash und Bytebereich werden an denselben Snapshot gebunden.",
+      "source": {
+        "repository": "Juri-Halveth/open-research-branches",
+        "commit": "075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7",
+        "path": "scripts/build-ai-bootstrap-index.mjs",
+        "fileSha256": "429dd30267b52a856ae741512a715c88d5b908d39653cd32fcbef21f3ee7434c",
+        "startLine": 61,
+        "endLine": 78,
+        "startByte": 4879,
+        "endByte": 6539,
+        "excerptSha256": "555094f1e7725b8e2177b2dfb5e393fbf1ad47a5a5e4d7679c4d9e092aefa401",
+        "excerpt": "export function validateReadLedger(index,records){\n  if(index?.schema!=='halveth.ai-bootstrap-index.v1'||!Array.isArray(index.files)||!Array.isArray(records))throw new TypeError('index and declared read ledger required');\n  const files=new Map(index.files.map(f=>[f.path,f])),ranges=new Map();\n  for(const r of records){\n    if(!r||Object.keys(r).sort().join('|')!=='endByte|path|sha256|startByte')throw new TypeError('exact byte-read fields required');\n    const f=files.get(r.path);if(!f||f.type!=='blob'||r.sha256!==f.sha256)throw new Error('read source binding mismatch');\n    if(!Number.isSafeInteger(r.startByte)||!Number.isSafeInteger(r.endByte)||r.startByte<0||r.endByte<r.startByte||r.endByte>f.byteLength||(r.endByte===r.startByte&&f.byteLength!==0))throw new Error('read range invalid');\n    const list=ranges.get(r.path)??[];list.push([r.startByte,r.endByte]);ranges.set(r.path,list);\n  }\n  const coverage=index.files.filter(f=>f.type==='blob').map(f=>{\n    const list=(ranges.get(f.path)??[]).sort((a,b)=>a[0]-b[0]);let covered=0,start=null,end=null;\n    for(const [a,b] of list){if(start===null){start=a;end=b;}else if(a<=end)end=Math.max(end,b);else{covered+=end-start;start=a;end=b;}}\n    if(start!==null)covered+=end-start;\n    return {path:f.path,declaredReadBytes:covered,remainingBytes:f.byteLength-covered,state:ranges.has(f.path)&&covered===f.byteLength?'DECLARED_FULL_BYTE_READ':covered?'DECLARED_PARTIAL_BYTE_READ':'UNREAD'};\n  });\n  return {sourceCommit:index.source.commit,coverage,claimCeiling:'DECLARED_BYTE_READ_COVERAGE_ONLY',semanticUnderstandingProven:false};\n}\nconst invoked=process.argv[1]?path.resolve(process.argv[1]):null;\n",
+        "url": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/scripts/build-ai-bootstrap-index.mjs#L61-L78",
+        "coverage": "EXACT_EXCERPT_WITH_COMPLETE_SOURCE_LINK"
+      },
+      "testUrl": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/scripts/ai-bootstrap-index.test.mjs",
+      "testGroup": "INDEX",
+      "testExecution": "SOURCE_LINKED_NOT_EXECUTED_IN_THIS_RUN",
+      "evidenceState": "OBSERVED_SOURCE_BYTES",
+      "authorityEffect": "NONE"
+    }
+  ],
+  "benchmarks": [
+    {
+      "id": "B01",
+      "name": "ISTQB CTAL-TA",
+      "primaryProof": "F02",
+      "relatedProofs": [
+        "F01",
+        "F03",
+        "F05"
+      ],
+      "mappingLabel": "Konkrete Testmethoden",
+      "topics": "Zustandsübergänge, Negativkontrollen und modellbasierte Gegenproben.",
+      "frameworkVersion": "CTAL-TA v4.0",
+      "frameworkSource": "https://istqb.org/wp-content/uploads/sdm-uploads/ISTQB-CTAL-TA-Syllabus-v4.0-EN-4.pdf",
+      "scope": "Ausgewählte Testthemen sind zugeordnet; vollständige Lernzielabdeckung und Prüfungsbeleg führen eigene Nachweise.",
+      "mappingEvidenceState": "INFERRED_TOPIC_COMPARISON",
+      "fullCertificationCoverage": "NOT_ESTABLISHED",
+      "issuerAwardStatus": "NOT_VERIFIED",
+      "authorityEffect": "NONE",
+      "definitionDigest": "676b354d469ea4329933883d67b01c32c7cc7c7e5c98b52d4649af964520cf2b"
+    },
+    {
+      "id": "B02",
+      "name": "Microsoft Cybersecurity Architect",
+      "primaryProof": "F04",
+      "relatedProofs": [
+        "F02",
+        "P04"
+      ],
+      "mappingLabel": "Architekturmethoden",
+      "topics": "Identität, Autoritätsgrenzen, Regelkonflikte und nachvollziehbare Zustandsentscheidungen.",
+      "frameworkVersion": "SC-100; abgerufener Leitfaden kündigt 21.10.2026 an",
+      "frameworkSource": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-100",
+      "scope": "Die gezeigten eigenen Modelle sind an Architekturthemen angeknüpft. Microsoft-spezifischer Betrieb ist ein separater Scope.",
+      "mappingEvidenceState": "INFERRED_TOPIC_COMPARISON",
+      "fullCertificationCoverage": "NOT_ESTABLISHED",
+      "issuerAwardStatus": "NOT_VERIFIED",
+      "authorityEffect": "NONE",
+      "definitionDigest": "07da3dd98afbd1ae710d283091961eab2e076019672568343054024f6142fc49"
+    },
+    {
+      "id": "B03",
+      "name": "Microsoft DevOps Engineer",
+      "primaryProof": "F06",
+      "relatedProofs": [
+        "P07",
+        "P11"
+      ],
+      "mappingLabel": "Konkrete Release-Arbeit",
+      "topics": "Versionsbindung, automatisierte Qualitätsgates, Quellkontrolle und veröffentlichte Prüfungen.",
+      "frameworkVersion": "AZ-400, Skills measured 27.07.2026",
+      "frameworkSource": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-400",
+      "scope": "GitHub- und Release-Arbeit ist konkret belegt. Azure-spezifische Aufgaben und die Verleihung bleiben getrennt.",
+      "mappingEvidenceState": "INFERRED_TOPIC_COMPARISON",
+      "fullCertificationCoverage": "NOT_ESTABLISHED",
+      "issuerAwardStatus": "NOT_VERIFIED",
+      "authorityEffect": "NONE",
+      "definitionDigest": "6773f2b66902219ca29b817b513fa8517aa231396ad4eb1bd98cf76ace67f04e"
+    },
+    {
+      "id": "B04",
+      "name": "CISSP",
+      "primaryProof": "P04",
+      "relatedProofs": [
+        "F04",
+        "F08"
+      ],
+      "mappingLabel": "Ausgewählte Sicherheitsdomänen",
+      "topics": "Datenrepräsentation, Schlüsselableitung, Softwareprüfungen und Zugriffskonzepte.",
+      "frameworkVersion": "CISSP Exam Outline, abgerufen 07.10.2026",
+      "frameworkSource": "https://www.isc2.org/certifications/cissp/cissp-certification-exam-outline",
+      "scope": "Der Bezug betrifft ausgewählte Themen aus Architektur, Prüfung und Software Security; Erfahrung und Endorsement sind eigene Belege.",
+      "mappingEvidenceState": "INFERRED_TOPIC_COMPARISON",
+      "fullCertificationCoverage": "NOT_ESTABLISHED",
+      "issuerAwardStatus": "NOT_VERIFIED",
+      "authorityEffect": "NONE",
+      "definitionDigest": "cb5bdc7e468bf3e5b8b721aac7791d40b592286448019e358465b044c47c859f"
+    },
+    {
+      "id": "B05",
+      "name": "AWS Solutions Architect Professional",
+      "primaryProof": "F03",
+      "relatedProofs": [
+        "F02",
+        "F06"
+      ],
+      "mappingLabel": "Architekturmethoden",
+      "topics": "Begrenzte Zustandsräume, deterministische Verarbeitung, Integrität und wiederaufnehmbare Prozesse.",
+      "frameworkVersion": "SAP-C02 Exam Guide",
+      "frameworkSource": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-professional-02/solutions-architect-professional-02.html",
+      "scope": "Die Quelle zeigt eigene Architekturbausteine. Eine implementierte AWS-Lösung wurde damit nicht nachgebaut.",
+      "mappingEvidenceState": "INFERRED_TOPIC_COMPARISON",
+      "fullCertificationCoverage": "NOT_ESTABLISHED",
+      "issuerAwardStatus": "NOT_VERIFIED",
+      "authorityEffect": "NONE",
+      "definitionDigest": "d43419f538a8663e1b5e218c338d172947d66bba35ff5f44ee4d40b8f39ccc5a"
+    },
+    {
+      "id": "B06",
+      "name": "ISTQB CTEL-ITP",
+      "primaryProof": "F06",
+      "relatedProofs": [
+        "F08",
+        "F02"
+      ],
+      "mappingLabel": "Prozessverbesserung",
+      "topics": "Explizite Qualitätsgates und rückblickend identifizierte Einreichungsfehler werden in prüfbare Regeln umgesetzt.",
+      "frameworkVersion": "CTEL-ITP Assessing Test Processes",
+      "frameworkSource": "https://istqb.org/certifications/certified-tester-expert-level-assessing-test-processes-ctel-itp-atp/",
+      "scope": "Der Vergleich betrifft konkrete Prozessbausteine; organisatorische Verbesserungswirkung und die zwei Prüfungen sind separat.",
+      "mappingEvidenceState": "INFERRED_TOPIC_COMPARISON",
+      "fullCertificationCoverage": "NOT_ESTABLISHED",
+      "issuerAwardStatus": "NOT_VERIFIED",
+      "authorityEffect": "NONE",
+      "definitionDigest": "34ffb04254c40cf4037cfa623d16b08b97713ffc31bbd1436b5caf47ab290b64"
+    },
+    {
+      "id": "B07",
+      "name": "OffSec OSCE³",
+      "primaryProof": "F08",
+      "relatedProofs": [
+        "F07",
+        "F04"
+      ],
+      "mappingLabel": "Verwandte Analysearbeit",
+      "topics": "Quellgebundene Auswirkungsprüfung, Parser-/Typgrenzen und Gegenhypothesen im eigenen Modell.",
+      "frameworkVersion": "OffSec OSCE³ FAQ, aktualisiert 15.05.2026",
+      "frameworkSource": "https://help.offsec.com/hc/en-us/articles/4403282452628-OSCE-FAQ",
+      "scope": "OSCE³ setzt OSED, OSEP und OSWE voraus. Die gezeigte Analysearbeit ist kein Nachbau dieser drei praktischen Aufgabenbereiche.",
+      "mappingEvidenceState": "INFERRED_TOPIC_COMPARISON",
+      "fullCertificationCoverage": "NOT_ESTABLISHED",
+      "issuerAwardStatus": "NOT_VERIFIED",
+      "authorityEffect": "NONE",
+      "definitionDigest": "f8a44f43792cffde41c2dbdb0872038eb8de8c21a7ccd1f519d85763d1990c56"
+    },
+    {
+      "id": "B08",
+      "name": "Cisco CCIE Enterprise",
+      "primaryProof": "F07",
+      "relatedProofs": [
+        "P08",
+        "P11"
+      ],
+      "mappingLabel": "Ausgewählte Programmiergrundlagen",
+      "topics": "JSON-Datenverarbeitung und reproduzierbare Python-/JavaScript-Prüfungen.",
+      "frameworkVersion": "CCIE Enterprise Infrastructure v1.1, Abschnitt 5.1",
+      "frameworkSource": "https://learningcontent.cisco.com/documents/marketing/exam-topics/CCIE_EI_v1.1_Blue_Print.pdf",
+      "scope": "Der konkrete Themenbezug ist Datenencoding und Programmierung. Cisco-Routing, Dual-Stack-Topologie und das Labor sind eigene Aufgaben.",
+      "mappingEvidenceState": "INFERRED_TOPIC_COMPARISON",
+      "fullCertificationCoverage": "NOT_ESTABLISHED",
+      "issuerAwardStatus": "NOT_VERIFIED",
+      "authorityEffect": "NONE",
+      "definitionDigest": "ebcf24d55d629ea4fc878540c834f1f0e7486a7a321119ea952d148613a9f649"
+    },
+    {
+      "id": "B09",
+      "name": "Google Cloud Architect",
+      "primaryProof": "F02",
+      "relatedProofs": [
+        "F04",
+        "F06"
+      ],
+      "mappingLabel": "Architekturmethoden",
+      "topics": "Quellengebundene Zustände, Sicherheitsanforderungen, Wiederaufnahme und überprüfbare Implementierung.",
+      "frameworkVersion": "Professional Cloud Architect exam guide",
+      "frameworkSource": "https://cloud.google.com/learn/certification/guides/professional-cloud-architect",
+      "scope": "Die eigenen Softwarebausteine zeigen einen Architekturbezug; Google-Cloud-Provisionierung und Betrieb bleiben eigene Nachweise.",
+      "mappingEvidenceState": "INFERRED_TOPIC_COMPARISON",
+      "fullCertificationCoverage": "NOT_ESTABLISHED",
+      "issuerAwardStatus": "NOT_VERIFIED",
+      "authorityEffect": "NONE",
+      "definitionDigest": "74aed1e5881452dcc5d4d0b388e65e38bf74d7dff754611d15246cb0fb66e178"
+    }
+  ],
+  "projectCertificates": [
+    {
+      "repository": "halveth-morrowind-genesis",
+      "proof": "P01"
+    },
+    {
+      "repository": "halveth-realms",
+      "proof": "P02"
+    },
+    {
+      "repository": "halveth-scarlet",
+      "proof": "P03"
+    },
+    {
+      "repository": "halveth-tresor",
+      "proof": "P04"
+    },
+    {
+      "repository": "halveth-unreal",
+      "proof": "P05"
+    },
+    {
+      "repository": "halveth-xai-40m-proposal",
+      "proof": "P06"
+    },
+    {
+      "repository": "Juri-Halveth.github.io",
+      "proof": "P07"
+    },
+    {
+      "repository": "juri-janovski-these-zur-geburt",
+      "proof": "P08"
+    },
+    {
+      "repository": "lernstudio",
+      "proof": "P09"
+    },
+    {
+      "repository": "mein-lernportal",
+      "proof": "P10"
+    },
+    {
+      "repository": "open-research-branches",
+      "proof": "P11"
+    }
+  ],
+  "relations": [
+    {
+      "id": "MAP_B01",
+      "relationType": "SELECTED_COMPETENCE_TOPIC_COMPARISON",
+      "left": {
+        "kind": "SOURCE_EXCERPT",
+        "id": "F02",
+        "digest": "e5c791eb72e263c8ce2a937d62825360d218524d2724af0b72e364822f25fdfc",
+        "address": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/branches/fegefeuer-provenance-transducer/fegefeuer_core.py#L145-L161"
+      },
+      "right": {
+        "kind": "FRAMEWORK_TOPIC",
+        "id": "B01",
+        "digest": "676b354d469ea4329933883d67b01c32c7cc7c7e5c98b52d4649af964520cf2b",
+        "address": "https://istqb.org/wp-content/uploads/sdm-uploads/ISTQB-CTAL-TA-Syllabus-v4.0-EN-4.pdf"
+      },
+      "direction": "SOURCE_TO_SELECTED_TOPIC",
+      "scope": "Selected topics in publicly published own artifacts only",
+      "eventTime": "UNKNOWN_FOR_ORIGINAL_AUTHORS",
+      "recordedAt": "2026-10-07T13:38:54.225290+00:00",
+      "evidenceState": "INFERRED",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "MAP_B02",
+      "relationType": "SELECTED_COMPETENCE_TOPIC_COMPARISON",
+      "left": {
+        "kind": "SOURCE_EXCERPT",
+        "id": "F04",
+        "digest": "004fc3e8fd8b16756842f3e65978601f77919a1457b0d3ce317a88aff746cea0",
+        "address": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/branches/normenwerk-rule-universe/normenkern.py#L125-L149"
+      },
+      "right": {
+        "kind": "FRAMEWORK_TOPIC",
+        "id": "B02",
+        "digest": "07da3dd98afbd1ae710d283091961eab2e076019672568343054024f6142fc49",
+        "address": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-100"
+      },
+      "direction": "SOURCE_TO_SELECTED_TOPIC",
+      "scope": "Selected topics in publicly published own artifacts only",
+      "eventTime": "UNKNOWN_FOR_ORIGINAL_AUTHORS",
+      "recordedAt": "2026-10-07T13:38:54.225290+00:00",
+      "evidenceState": "INFERRED",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "MAP_B03",
+      "relationType": "SELECTED_COMPETENCE_TOPIC_COMPARISON",
+      "left": {
+        "kind": "SOURCE_EXCERPT",
+        "id": "F06",
+        "digest": "38fdd589508f32f7f01b797f3599c76df7215f49276f20858b06bd21d3dfb156",
+        "address": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/scripts/release-gate-lib.mjs#L220-L237"
+      },
+      "right": {
+        "kind": "FRAMEWORK_TOPIC",
+        "id": "B03",
+        "digest": "6773f2b66902219ca29b817b513fa8517aa231396ad4eb1bd98cf76ace67f04e",
+        "address": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-400"
+      },
+      "direction": "SOURCE_TO_SELECTED_TOPIC",
+      "scope": "Selected topics in publicly published own artifacts only",
+      "eventTime": "UNKNOWN_FOR_ORIGINAL_AUTHORS",
+      "recordedAt": "2026-10-07T13:38:54.225290+00:00",
+      "evidenceState": "INFERRED",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "MAP_B04",
+      "relationType": "SELECTED_COMPETENCE_TOPIC_COMPARISON",
+      "left": {
+        "kind": "SOURCE_EXCERPT",
+        "id": "P04",
+        "digest": "7805976a71061fedcf75cba85a943e5ae32ca4dada0f14e3ce02983e1c4755e2",
+        "address": "https://github.com/Juri-Halveth/halveth-tresor/blob/9233a6f16fca23e87340787b2e57d00573698506/src/tresor/vault.py#L85-L100"
+      },
+      "right": {
+        "kind": "FRAMEWORK_TOPIC",
+        "id": "B04",
+        "digest": "cb5bdc7e468bf3e5b8b721aac7791d40b592286448019e358465b044c47c859f",
+        "address": "https://www.isc2.org/certifications/cissp/cissp-certification-exam-outline"
+      },
+      "direction": "SOURCE_TO_SELECTED_TOPIC",
+      "scope": "Selected topics in publicly published own artifacts only",
+      "eventTime": "UNKNOWN_FOR_ORIGINAL_AUTHORS",
+      "recordedAt": "2026-10-07T13:38:54.225290+00:00",
+      "evidenceState": "INFERRED",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "MAP_B05",
+      "relationType": "SELECTED_COMPETENCE_TOPIC_COMPARISON",
+      "left": {
+        "kind": "SOURCE_EXCERPT",
+        "id": "F03",
+        "digest": "00346656ffb32b02612baea7d5e81ee2194c8cf15b20b7f70a6c2d4ce36b752f",
+        "address": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/branches/fegefeuer-provenance-transducer/fegefeuer_core.py#L230-L234"
+      },
+      "right": {
+        "kind": "FRAMEWORK_TOPIC",
+        "id": "B05",
+        "digest": "d43419f538a8663e1b5e218c338d172947d66bba35ff5f44ee4d40b8f39ccc5a",
+        "address": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-professional-02/solutions-architect-professional-02.html"
+      },
+      "direction": "SOURCE_TO_SELECTED_TOPIC",
+      "scope": "Selected topics in publicly published own artifacts only",
+      "eventTime": "UNKNOWN_FOR_ORIGINAL_AUTHORS",
+      "recordedAt": "2026-10-07T13:38:54.225290+00:00",
+      "evidenceState": "INFERRED",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "MAP_B06",
+      "relationType": "SELECTED_COMPETENCE_TOPIC_COMPARISON",
+      "left": {
+        "kind": "SOURCE_EXCERPT",
+        "id": "F06",
+        "digest": "38fdd589508f32f7f01b797f3599c76df7215f49276f20858b06bd21d3dfb156",
+        "address": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/scripts/release-gate-lib.mjs#L220-L237"
+      },
+      "right": {
+        "kind": "FRAMEWORK_TOPIC",
+        "id": "B06",
+        "digest": "34ffb04254c40cf4037cfa623d16b08b97713ffc31bbd1436b5caf47ab290b64",
+        "address": "https://istqb.org/certifications/certified-tester-expert-level-assessing-test-processes-ctel-itp-atp/"
+      },
+      "direction": "SOURCE_TO_SELECTED_TOPIC",
+      "scope": "Selected topics in publicly published own artifacts only",
+      "eventTime": "UNKNOWN_FOR_ORIGINAL_AUTHORS",
+      "recordedAt": "2026-10-07T13:38:54.225290+00:00",
+      "evidenceState": "INFERRED",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "MAP_B07",
+      "relationType": "SELECTED_COMPETENCE_TOPIC_COMPARISON",
+      "left": {
+        "kind": "SOURCE_EXCERPT",
+        "id": "F08",
+        "digest": "d43464437202830130386ba86baa9884bdbddcef6c89165911fffc1f51f8066d",
+        "address": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/branches/security-impact-learning/impact-model.mjs#L31-L47"
+      },
+      "right": {
+        "kind": "FRAMEWORK_TOPIC",
+        "id": "B07",
+        "digest": "f8a44f43792cffde41c2dbdb0872038eb8de8c21a7ccd1f519d85763d1990c56",
+        "address": "https://help.offsec.com/hc/en-us/articles/4403282452628-OSCE-FAQ"
+      },
+      "direction": "SOURCE_TO_SELECTED_TOPIC",
+      "scope": "Selected topics in publicly published own artifacts only",
+      "eventTime": "UNKNOWN_FOR_ORIGINAL_AUTHORS",
+      "recordedAt": "2026-10-07T13:38:54.225290+00:00",
+      "evidenceState": "INFERRED",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "MAP_B08",
+      "relationType": "SELECTED_COMPETENCE_TOPIC_COMPARISON",
+      "left": {
+        "kind": "SOURCE_EXCERPT",
+        "id": "F07",
+        "digest": "e7ea85607cf4399e9ee5775c7a928b26e07eb3a847d1dd30c394fe543329ca23",
+        "address": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/branches/normenwerk-rule-universe/normenkern.py#L38-L48"
+      },
+      "right": {
+        "kind": "FRAMEWORK_TOPIC",
+        "id": "B08",
+        "digest": "ebcf24d55d629ea4fc878540c834f1f0e7486a7a321119ea952d148613a9f649",
+        "address": "https://learningcontent.cisco.com/documents/marketing/exam-topics/CCIE_EI_v1.1_Blue_Print.pdf"
+      },
+      "direction": "SOURCE_TO_SELECTED_TOPIC",
+      "scope": "Selected topics in publicly published own artifacts only",
+      "eventTime": "UNKNOWN_FOR_ORIGINAL_AUTHORS",
+      "recordedAt": "2026-10-07T13:38:54.225290+00:00",
+      "evidenceState": "INFERRED",
+      "authorityEffect": "NONE"
+    },
+    {
+      "id": "MAP_B09",
+      "relationType": "SELECTED_COMPETENCE_TOPIC_COMPARISON",
+      "left": {
+        "kind": "SOURCE_EXCERPT",
+        "id": "F02",
+        "digest": "e5c791eb72e263c8ce2a937d62825360d218524d2724af0b72e364822f25fdfc",
+        "address": "https://github.com/Juri-Halveth/open-research-branches/blob/075d9eec0f9bdd726eebf4b4768b2ecebbb5b1b7/branches/fegefeuer-provenance-transducer/fegefeuer_core.py#L145-L161"
+      },
+      "right": {
+        "kind": "FRAMEWORK_TOPIC",
+        "id": "B09",
+        "digest": "74aed1e5881452dcc5d4d0b388e65e38bf74d7dff754611d15246cb0fb66e178",
+        "address": "https://cloud.google.com/learn/certification/guides/professional-cloud-architect"
+      },
+      "direction": "SOURCE_TO_SELECTED_TOPIC",
+      "scope": "Selected topics in publicly published own artifacts only",
+      "eventTime": "UNKNOWN_FOR_ORIGINAL_AUTHORS",
+      "recordedAt": "2026-10-07T13:38:54.225290+00:00",
+      "evidenceState": "INFERRED",
+      "authorityEffect": "NONE"
+    }
+  ],
+  "discovery": {
+    "repositories": 15,
+    "codePaths": 476,
+    "testPaths": 163,
+    "sourceCoverage": "Returned path inventories and selected acquired source files only"
+  }
+}

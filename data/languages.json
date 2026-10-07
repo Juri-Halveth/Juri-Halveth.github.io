@@ -5667,6 +5667,162 @@
     "Softwareintegration, Architektur und Sicherheitsanalyse mit zugeordneten Arbeitsproben.": {
       "en": "Software integration, architecture and security analysis with linked work samples.",
       "ru": "Интеграция ПО, архитектура и анализ безопасности с примерами работ."
+    },
+    "Code & Können": {
+      "en": "Code & capabilities",
+      "ru": "Код и возможности"
+    },
+    "FUNKTIONEN · MATHEMATIK · QUELLEN": {
+      "en": "FUNCTIONS · MATHEMATICS · SOURCES",
+      "ru": "ФУНКЦИИ · МАТЕМАТИКА · ИСТОЧНИКИ"
+    },
+    "Code. Modelle.": {
+      "en": "Code. Models.",
+      "ru": "Код. Модели."
+    },
+    "Können.": {
+      "en": "Capabilities.",
+      "ru": "Возможности."
+    },
+    "Licht brechen. Ereignisse unterscheiden. Regeln prüfen. Zustände erhalten. Hier steht die konkrete Arbeit: Funktion, Ergebnisregel, Quellzeilen und Testdefinition.": {
+      "en": "Refract light. Distinguish events. Evaluate rules. Preserve state. Inspect the actual work: functions, invariants, source lines and test definitions.",
+      "ru": "Преломлять свет. Различать события. Проверять правила. Сохранять состояние. Здесь показана конкретная работа: функции, инварианты, строки исходного кода и определения тестов."
+    },
+    "Auge · FEGEFEUER · NORMENWERK · Banane": {
+      "en": "Eye · FEGEFEUER · NORMENWERK · Banana",
+      "ru": "Глаз · FEGEFEUER · NORMENWERK · Банан"
+    },
+    "Neun Zertifikatsreferenzen": {
+      "en": "Nine certification references",
+      "ru": "Девять сертификационных ориентиров"
+    },
+    "Elf Projektbelege": {
+      "en": "Eleven project examples",
+      "ru": "Одиннадцать проектных примеров"
+    },
+    "Umgebung zuerst.": {
+      "en": "Environment first.",
+      "ru": "Сначала среда."
+    },
+    "Umgebung zuerst": {
+      "en": "Environment first",
+      "ru": "Сначала среда"
+    },
+    "18 Codeausschnitte · 1 Forschungsdokument · 9 Themenzuordnungen": {
+      "en": "18 code excerpts · 1 research document · 9 topic mappings",
+      "ru": "18 фрагментов кода · 1 исследовательский документ · 9 тематических сопоставлений"
+    },
+    "Die Zertifikatsreferenzen führen zu ausgewählten Themen und konkreten Arbeitsproben. Die Originaldossiers bleiben bei den jeweiligen Zertifikatseinträgen erreichbar.": {
+      "en": "Certification references connect selected topics with actual work. The original dossiers remain available from each certification entry.",
+      "ru": "Сертификационные ориентиры связывают выбранные темы с конкретными работами. Оригинальные досье доступны из соответствующих записей."
+    },
+    "Unsere Modelle, als Funktion sichtbar.": {
+      "en": "Our models, visible as functions.",
+      "ru": "Наши модели в виде функций."
+    },
+    "Worauf stützt sich die Referenz?": {
+      "en": "What supports this reference?",
+      "ru": "На чём основано сопоставление?"
+    },
+    "Jede Zuordnung nennt die konkrete Arbeit und die offizielle Themenquelle.": {
+      "en": "Every mapping identifies actual work and the official topic source.",
+      "ru": "Каждое сопоставление указывает конкретную работу и официальный источник тем."
+    },
+    "Projektarbeit bis zur Quellzeile.": {
+      "en": "Project work down to the source line.",
+      "ru": "Проектная работа до строки исходного кода."
+    },
+    "NEU · AUS FEHLERN LERNEN": {
+      "en": "NEW · LEARNING FROM MISTAKES",
+      "ru": "НОВОЕ · УЧИМСЯ НА ОШИБКАХ"
+    },
+    "26 frühere Voraussetzungen sind als Fehlerliste dokumentiert. Der Vorabprüfer erfasst lokal auflösbare Befehlsnamen, bevor Werkzeuge ausgewählt werden.": {
+      "en": "26 earlier assumptions are documented as a lessons list. The preflight inspector records locally resolvable command names before tools are selected.",
+      "ru": "26 прежних предположений документированы в списке ошибок. Предварительная проверка фиксирует доступные имена команд до выбора инструментов."
+    },
+    "Fehlerliste & Korrektur ↗": {
+      "en": "Lessons & correction ↗",
+      "ru": "Ошибки и исправления ↗"
+    },
+    "Vorabprüfer ansehen ↗": {
+      "en": "Inspect the preflight tool ↗",
+      "ru": "Посмотреть инструмент проверки ↗"
+    },
+    "Quellenstand, Coverage & nächste Prüfung": {
+      "en": "Source state, coverage & next review",
+      "ru": "Состояние источников, охват и следующая проверка"
+    },
+    "15 öffentliche Repository-Heads wurden auf Pfade inventarisiert: 476 Codepfade und 163 Testpfade. Die hier gezeigten Ausschnitte wurden gezielt erworben. Die übrigen Dateien und historischen Fassungen bleiben außerhalb dieser Textprüfung.": {
+      "en": "15 public repository heads were inventoried by path: 476 code paths and 163 test paths. The excerpts shown here were acquired selectively. Other files and historical versions remain outside this text review.",
+      "ru": "Проведена инвентаризация путей 15 публичных репозиториев: 476 путей кода и 163 пути тестов. Показанные фрагменты получены выборочно. Остальные файлы и исторические версии находятся за пределами этой текстовой проверки."
+    },
+    "Die aktuelle Ausführung der Repository-Prüfungen steht in den CI-Läufen. Externe Projekte führen eigene Laufzeitnachweise.": {
+      "en": "Current repository test executions are recorded in CI runs. Other projects have separate runtime evidence.",
+      "ru": "Текущие запуски проверок репозитория зафиксированы в CI. Другие проекты имеют отдельные свидетельства выполнения."
+    },
+    "Strukturiertes Belegregister ↗": {
+      "en": "Structured evidence register ↗",
+      "ru": "Структурированный реестр доказательств ↗"
+    },
+    "Research-Prüfläufe ↗": {
+      "en": "Research CI runs ↗",
+      "ru": "Проверки Research ↗"
+    },
+    "Website-Prüfläufe ↗": {
+      "en": "Website CI runs ↗",
+      "ru": "Проверки сайта ↗"
+    },
+    "Eingabe": {
+      "en": "Input",
+      "ru": "Вход"
+    },
+    "Operator": {
+      "en": "Operator",
+      "ru": "Оператор"
+    },
+    "Ausgabe": {
+      "en": "Output",
+      "ru": "Выход"
+    },
+    "Quellausschnitt": {
+      "en": "Source excerpt",
+      "ru": "Фрагмент исходного кода"
+    },
+    "Exakte Quellzeilen ↗": {
+      "en": "Exact source lines ↗",
+      "ru": "Точные строки исходного кода ↗"
+    },
+    "Testdefinition ↗": {
+      "en": "Test definition ↗",
+      "ru": "Определение теста ↗"
+    },
+    "Herkunft & Prüfumfang": {
+      "en": "Provenance & review scope",
+      "ru": "Происхождение и объём проверки"
+    },
+    "Der Ausschnitt bindet unveränderte öffentliche Quellbytes. Eine verlinkte Testdefinition hat einen eigenen Ausführungsbeleg.": {
+      "en": "The excerpt binds unchanged public source bytes. A linked test definition has a separate execution receipt.",
+      "ru": "Фрагмент связан с неизменёнными публичными исходными байтами. Запуск указанного теста подтверждается отдельным свидетельством."
+    },
+    "Vollständige Quelldatei ↗": {
+      "en": "Complete source file ↗",
+      "ru": "Полный исходный файл ↗"
+    },
+    "Themenquelle & genaue Zuordnung": {
+      "en": "Topic source & precise mapping",
+      "ru": "Источник тем и точное сопоставление"
+    },
+    "Offizielle Themenquelle ↗": {
+      "en": "Official topic source ↗",
+      "ru": "Официальный источник тем ↗"
+    },
+    "Funktion & Quellzeilen →": {
+      "en": "Function & source lines →",
+      "ru": "Функция и строки кода →"
+    },
+    "Originaldokument ↗": {
+      "en": "Original document ↗",
+      "ru": "Оригинальный документ ↗"
     }
   }
 }
