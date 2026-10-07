@@ -1,9 +1,9 @@
 name: Juris Space contracts
 on:
   push:
-    paths: ['.gitattributes', 'sitemap.xml', 'index.html', '404.html', 'portal.css', 'portal.js', 'return.css', 'language.css', 'handbook.css', 'handbuch/**', 'docs/HANDBUCH.md', 'HUB.sh', 'examples/**', 'en/**', 'ru/**', 'package*.json', 'assets/**', 'templates/**', 'arbeiten/**', 'profil/**', 'werkzertifikate/index.html', 'motion*', 'landing-motion.js', 'motion/**', 'SPACE.sh', 'data/**', 'tools/*.cjs', 'tests/*.test.cjs', '.github/workflows/juris-space.yml']
+    paths: ['.gitattributes', 'sitemap.xml', 'index.html', '404.html', 'portal.css', 'portal.js', 'return.css', 'language.css', 'handbook.css', 'handbuch/**', 'docs/HANDBUCH.md', 'HUB.sh', 'examples/**', 'en/**', 'ru/**', 'package*.json', 'assets/**', 'templates/**', 'arbeiten/**', 'koennen/**', 'profil/**', 'werkzertifikate/index.html', 'motion*', 'landing-motion.js', 'motion/**', 'SPACE.sh', 'data/**', 'tools/*.cjs', 'tests/*.test.cjs', '.github/workflows/juris-space.yml']
   pull_request:
-    paths: ['.gitattributes', 'sitemap.xml', 'index.html', '404.html', 'portal.css', 'portal.js', 'return.css', 'language.css', 'handbook.css', 'handbuch/**', 'docs/HANDBUCH.md', 'HUB.sh', 'examples/**', 'en/**', 'ru/**', 'package*.json', 'assets/**', 'templates/**', 'arbeiten/**', 'profil/**', 'werkzertifikate/index.html', 'motion*', 'landing-motion.js', 'motion/**', 'SPACE.sh', 'data/**', 'tools/*.cjs', 'tests/*.test.cjs', '.github/workflows/juris-space.yml']
+    paths: ['.gitattributes', 'sitemap.xml', 'index.html', '404.html', 'portal.css', 'portal.js', 'return.css', 'language.css', 'handbook.css', 'handbuch/**', 'docs/HANDBUCH.md', 'HUB.sh', 'examples/**', 'en/**', 'ru/**', 'package*.json', 'assets/**', 'templates/**', 'arbeiten/**', 'koennen/**', 'profil/**', 'werkzertifikate/index.html', 'motion*', 'landing-motion.js', 'motion/**', 'SPACE.sh', 'data/**', 'tools/*.cjs', 'tests/*.test.cjs', '.github/workflows/juris-space.yml']
 permissions:
   contents: read
 jobs:
