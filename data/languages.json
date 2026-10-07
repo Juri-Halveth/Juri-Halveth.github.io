@@ -1274,7 +1274,7 @@
     },
     "Forschungsdokumentation": {
       "en": "Research documentation",
-      "ru": "Исследовательская документация"
+      "ru": "Документирование исследований"
     },
     "Forschungsdokumentation · Modelle · Tests": {
       "en": "Research documentation · Models · Tests",
@@ -5343,6 +5343,330 @@
     "Eine neue Operatorfamilie mit festgelegten Invarianten und dauerhafter Speicherung ergänzen.": {
       "en": "Add a new operator family with defined invariants and persistent storage.",
       "ru": "Добавить новое семейство операторов с определёнными инвариантами и постоянным хранением."
+    },
+    "Software. Forschung. Lernen.": {
+      "en": "Software. Research. Learning.",
+      "ru": "Разработка. Исследования. Обучение."
+    },
+    "Zertifikatsreferenzen.": {
+      "en": "Certification references.",
+      "ru": "Сертификационные ориентиры."
+    },
+    "Arbeitsproben daneben.": {
+      "en": "Work samples alongside.",
+      "ru": "Примеры работ рядом."
+    },
+    "Zertifikatsreferenzen · Portfolio-Claims": {
+      "en": "Certification references · Portfolio claims",
+      "ru": "Сертификационные ориентиры · портфолио"
+    },
+    "Technik & Arbeitsproben →": {
+      "en": "Technology & work samples →",
+      "ru": "Технологии и примеры работ →"
+    },
+    "Portfolio-Dossier ↗": {
+      "en": "Portfolio dossier ↗",
+      "ru": "Досье портфолио ↗"
+    },
+    "Elf Projektzertifikate": {
+      "en": "Eleven project certificates",
+      "ru": "Одиннадцать проектных сертификатов"
+    },
+    "Lernen für Erwachsene": {
+      "en": "Learning for adults",
+      "ru": "Обучение для взрослых"
+    },
+    "Auditmethodik": {
+      "en": "Audit methods",
+      "ru": "Методы аудита"
+    },
+    "Erwachsene & ältere Menschen": {
+      "en": "Adults & older learners",
+      "ru": "Взрослые и пожилые люди"
+    },
+    "In Ruhe lernen.": {
+      "en": "Learn at your own pace.",
+      "ru": "Учитесь в своём темпе."
+    },
+    "Schritt für Schritt.": {
+      "en": "Step by step.",
+      "ru": "Шаг за шагом."
+    },
+    "Dein einfacher Einstieg": {
+      "en": "Your easy start",
+      "ru": "Простой первый шаг"
+    },
+    "Ohne Konto loslernen →": {
+      "en": "Start without an account →",
+      "ru": "Начать без регистрации →"
+    },
+    "Was möchtest du lernen?": {
+      "en": "What would you like to learn?",
+      "ru": "Что вы хотите изучить?"
+    },
+    "Computer & Internet": {
+      "en": "Computers & the internet",
+      "ru": "Компьютер и интернет"
+    },
+    "Digitale Sicherheit": {
+      "en": "Digital security",
+      "ru": "Цифровая безопасность"
+    },
+    "KI verstehen": {
+      "en": "Understanding AI",
+      "ru": "Понимание ИИ"
+    },
+    "Mathe & Programmieren": {
+      "en": "Maths & programming",
+      "ru": "Математика и программирование"
+    },
+    "Du möchtest lieber spielerisch lernen?": {
+      "en": "Would you prefer playful learning?",
+      "ru": "Предпочитаете учиться в игровой форме?"
+    },
+    "ERWACHSENE · ÄLTERE MENSCHEN · ALLTAG": {
+      "en": "ADULTS · OLDER LEARNERS · EVERYDAY LIFE",
+      "ru": "ВЗРОСЛЫЕ · ПОЖИЛЫЕ ЛЮДИ · ПОВСЕДНЕВНАЯ ЖИЗНЬ"
+    },
+    "Computer, Internet, digitale Sicherheit und neue Technik verständlich kennenlernen. Große Schrift, klare Wege und Lernen im eigenen Tempo.": {
+      "en": "Understand computers, the internet, digital security and new technology. Large text, clear steps and learning at your own pace.",
+      "ru": "Понятное знакомство с компьютером, интернетом, цифровой безопасностью и новыми технологиями. Крупный текст, ясные шаги и свой темп обучения."
+    },
+    "Öffne den Lernkatalog.": {
+      "en": "Open the learning catalogue.",
+      "ru": "Откройте каталог уроков."
+    },
+    "Wähle „Einstieg & Alltag“ oder suche dein Thema.": {
+      "en": "Choose “Getting started & everyday life” or search for your topic.",
+      "ru": "Выберите «Начало и повседневная жизнь» или найдите свою тему."
+    },
+    "Lies eine kurze Lektion und probiere die Übung.": {
+      "en": "Read a short lesson and try the exercise.",
+      "ru": "Прочитайте короткий урок и попробуйте упражнение."
+    },
+    "702 freie Lektionen. Dein Lernstand bleibt auf diesem Gerät.": {
+      "en": "702 free lessons. Your progress stays on this device.",
+      "ru": "702 бесплатных урока. Прогресс остаётся на этом устройстве."
+    },
+    "Grundlagen und erste Schritte für den Alltag.": {
+      "en": "Basics and first steps for everyday life.",
+      "ru": "Основы и первые шаги для повседневной жизни."
+    },
+    "Passwörter, persönliche Daten und sichere Entscheidungen.": {
+      "en": "Passwords, personal data and safe decisions.",
+      "ru": "Пароли, личные данные и безопасные решения."
+    },
+    "Was künstliche Intelligenz kann und wie du Antworten prüfst.": {
+      "en": "What AI can do and how to check its answers.",
+      "ru": "Что умеет ИИ и как проверять его ответы."
+    },
+    "Anschauliche Erklärungen und Übungen für deinen nächsten Schritt.": {
+      "en": "Clear explanations and exercises for your next step.",
+      "ru": "Наглядные объяснения и упражнения для следующего шага."
+    },
+    "Das Lernstudio bietet Spielmissionen, eine Lernkarte und optional ein Lernkonto. Es verwendet denselben Ausgangslehrplan und wird eigenständig weiterentwickelt.": {
+      "en": "Lernstudio offers game missions, a learning map and an optional account. It shares the initial curriculum and develops independently.",
+      "ru": "Lernstudio предлагает игровые задания, карту обучения и необязательную учётную запись. Исходная программа общая; дальнейшее развитие самостоятельное."
+    },
+    "Interaktives Lernstudio öffnen ↗": {
+      "en": "Open interactive Lernstudio ↗",
+      "ru": "Открыть интерактивный Lernstudio ↗"
+    },
+    "Öffentlich diskutieren ↗": {
+      "en": "Discuss publicly ↗",
+      "ru": "Обсудить публично ↗"
+    },
+    "SECURITY RESEARCH · QUELLEN · PRÜFUNGEN": {
+      "en": "SECURITY RESEARCH · SOURCES · CHECKS",
+      "ru": "ИССЛЕДОВАНИЕ БЕЗОПАСНОСТИ · ИСТОЧНИКИ · ПРОВЕРКИ"
+    },
+    "Ein Befund.": {
+      "en": "A finding.",
+      "ru": "Один результат."
+    },
+    "Eine nachvollziehbare Prüfung.": {
+      "en": "A traceable review.",
+      "ru": "Проверка, которую можно проследить."
+    },
+    "Sieben konkrete Prüffragen für Sicherheitsberichte: vom gebundenen Quellstand bis zur belegten Wirkung.": {
+      "en": "Seven concrete review questions for security reports: from a bound source version to an evidenced effect.",
+      "ru": "Семь конкретных вопросов для отчётов по безопасности: от версии источника до подтверждённого эффекта."
+    },
+    "Aktuelle Berechtigung": {
+      "en": "Current authority",
+      "ru": "Актуальные полномочия"
+    },
+    "Welche Quelle gilt zum Zeitpunkt der Entscheidung?": {
+      "en": "Which source applies when the decision is made?",
+      "ru": "Какой источник действует в момент решения?"
+    },
+    "Formatvertrag": {
+      "en": "Format contract",
+      "ru": "Контракт формата"
+    },
+    "Welche Darstellung verwenden Produzent und Verbraucher tatsächlich?": {
+      "en": "Which representation do producer and consumer actually use?",
+      "ru": "Какое представление используют производитель и потребитель?"
+    },
+    "Lebenszyklus": {
+      "en": "Lifecycle",
+      "ru": "Жизненный цикл"
+    },
+    "Welche Wirkung haben Entfernung, Deaktivierung und Widerruf?": {
+      "en": "What effects do removal, deactivation and revocation have?",
+      "ru": "Каковы последствия удаления, деактивации и отзыва?"
+    },
+    "Vollständige Beobachtung": {
+      "en": "Complete observation",
+      "ru": "Полное наблюдение"
+    },
+    "Sind Beobachtung, Eingabe und Auslöser konkret ausgefüllt?": {
+      "en": "Are observation, input and trigger filled in concretely?",
+      "ru": "Конкретно ли заполнены наблюдение, ввод и условие запуска?"
+    },
+    "Eintritt & Wirkung": {
+      "en": "Entry & effect",
+      "ru": "Вход и эффект"
+    },
+    "Ist der strittige Eintritt belegt oder nur die Folge berechnet?": {
+      "en": "Is the disputed entry evidenced, or is only the consequence calculated?",
+      "ru": "Подтверждён ли спорный вход или рассчитано лишь последствие?"
+    },
+    "Test & Produkt": {
+      "en": "Test & product",
+      "ru": "Тест и продукт"
+    },
+    "Welche Fähigkeit stammt aus dem eigenen Testmodell?": {
+      "en": "Which capability comes from the own test model?",
+      "ru": "Какая возможность происходит из собственной тестовой модели?"
+    },
+    "Quelle & Deployment": {
+      "en": "Source & deployment",
+      "ru": "Источник и развёртывание"
+    },
+    "Welche Version und Konfiguration wurden tatsächlich geprüft?": {
+      "en": "Which version and configuration were actually reviewed?",
+      "ru": "Какие версия и конфигурация действительно проверены?"
+    },
+    "Technik & Arbeitsproben": {
+      "en": "Technology & work samples",
+      "ru": "Технологии и примеры работ"
+    },
+    "Interaktive Methodenansicht öffnen ↗": {
+      "en": "Open interactive method view ↗",
+      "ru": "Открыть интерактивные методы ↗"
+    },
+    "Prüfcode für Berichtsentwürfe ↗": {
+      "en": "Draft review code ↗",
+      "ru": "Код проверки черновиков ↗"
+    },
+    "Ausführbare Gegenproben ↗": {
+      "en": "Runnable counterchecks ↗",
+      "ru": "Исполняемые контрольные проверки ↗"
+    },
+    "Technologien öffentlich diskutieren ↗": {
+      "en": "Discuss technologies publicly ↗",
+      "ru": "Публично обсудить технологии ↗"
+    },
+    "Methoden mit Quellen": {
+      "en": "Methods with sources",
+      "ru": "Методы с источниками"
+    },
+    "Die öffentlichen Beispiele sind neu verfasste Methodik und eigene synthetische Prüfungen. Konkrete vertrauliche Reportakten führen ihre eigene Freigabe und Quellenbindung.": {
+      "en": "Public examples are newly written methods and own synthetic checks. Specific confidential report files retain separate permission and source binding.",
+      "ru": "Публичные примеры — новые описания методов и собственные синтетические проверки. Конфиденциальные дела имеют отдельное разрешение и привязку к источникам."
+    },
+    "Methoden, Quellen und Fortsetzung ↗": {
+      "en": "Methods, sources and continuation ↗",
+      "ru": "Методы, источники и продолжение ↗"
+    },
+    "03 / LERNEN IM EIGENEN TEMPO": {
+      "en": "03 / LEARN AT YOUR OWN PACE",
+      "ru": "03 / ОБУЧЕНИЕ В СВОЁМ ТЕМПЕ"
+    },
+    "Verständlich.": {
+      "en": "Clearly explained.",
+      "ru": "Понятно."
+    },
+    "Ein klarer Einstieg für Erwachsene und ältere Menschen. Computer, Internet, KI und digitale Sicherheit mit kurzen Lektionen und Übungen kennenlernen.": {
+      "en": "A clear starting point for adults and older learners. Learn about computers, the internet, AI and digital security through short lessons and exercises.",
+      "ru": "Понятный старт для взрослых и пожилых людей. Компьютер, интернет, ИИ и цифровая безопасность в коротких уроках и упражнениях."
+    },
+    "Zum einfachen Lerneinstieg →": {
+      "en": "Start learning step by step →",
+      "ru": "Начать обучение шаг за шагом →"
+    },
+    "FREI ZUGÄNGLICH": {
+      "en": "OPEN ACCESS",
+      "ru": "СВОБОДНЫЙ ДОСТУП"
+    },
+    "Der Lernkatalog bietet 702 Lektionen ohne Pflichtkonto. Für Spielmissionen und eine Lernkarte gibt es das interaktive Lernstudio.": {
+      "en": "The catalogue offers 702 lessons without a mandatory account. Interactive Lernstudio offers game missions and a learning map.",
+      "ru": "Каталог содержит 702 урока без обязательной регистрации. Игровые задания и карта обучения доступны в интерактивном Lernstudio."
+    },
+    "Lernkatalog öffnen ↗": {
+      "en": "Open learning catalogue ↗",
+      "ru": "Открыть каталог уроков ↗"
+    },
+    "Interaktives Lernstudio ↗": {
+      "en": "Interactive Lernstudio ↗",
+      "ru": "Интерактивный Lernstudio ↗"
+    },
+    "Elf Projektzertifikate führen zu den Ergebnissen, Quellen und Prüfungen.": {
+      "en": "Eleven project certificates link to results, sources and checks.",
+      "ru": "Одиннадцать проектных сертификатов ведут к результатам, источникам и проверкам."
+    },
+    "Softwareintegration": {
+      "en": "Software integration",
+      "ru": "Интеграция ПО"
+    },
+    "Spielentwicklung": {
+      "en": "Game development",
+      "ru": "Разработка игр"
+    },
+    "Webentwicklung": {
+      "en": "Web development",
+      "ru": "Веб-разработка"
+    },
+    "Desktopsoftware": {
+      "en": "Desktop software",
+      "ru": "Настольное ПО"
+    },
+    "Forschungsplanung": {
+      "en": "Research planning",
+      "ru": "Планирование исследований"
+    },
+    "Webportal": {
+      "en": "Web portal",
+      "ru": "Веб-портал"
+    },
+    "Lernplattform": {
+      "en": "Learning platform",
+      "ru": "Учебная платформа"
+    },
+    "Freies Lernportal": {
+      "en": "Open learning portal",
+      "ru": "Открытый учебный портал"
+    },
+    "Forschung & Modelle": {
+      "en": "Research & models",
+      "ru": "Исследования и модели"
+    },
+    "Freier Lernkatalog ↗": {
+      "en": "Open learning catalogue ↗",
+      "ru": "Открытый каталог уроков ↗"
+    },
+    "Code des Lernkatalogs ↗": {
+      "en": "Learning catalogue code ↗",
+      "ru": "Код каталога уроков ↗"
+    },
+    "Arbeitsproben.": {
+      "en": "Work samples.",
+      "ru": "Примеры работ."
+    },
+    "Softwareintegration, Architektur und Sicherheitsanalyse mit zugeordneten Arbeitsproben.": {
+      "en": "Software integration, architecture and security analysis with linked work samples.",
+      "ru": "Интеграция ПО, архитектура и анализ безопасности с примерами работ."
     }
   }
 }

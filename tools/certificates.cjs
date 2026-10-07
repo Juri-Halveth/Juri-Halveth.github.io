@@ -1,6 +1,6 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path');
-const P=require('./portfolio.cjs');
+const P=require('./portfolio.cjs'),V=require('./visitor.cjs');
 const claims=require('../data/claims.json');
 const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const link=(url,text)=>'<a href="'+esc(P.publicLink(url))+'"'+(url.startsWith('https:')?' target="_blank" rel="noopener"':'')+'>'+esc(text)+'</a>';
@@ -20,12 +20,12 @@ function validateClaims(data){
   return true;
 }
 validateClaims(claims);
-const legend='<p class="claim-definition"><strong>✓ CLAIMED · Dokumentierter Portfolioanspruch.</strong> Juri Halveth macht seine Arbeitsproben in den benannten Zertifikats-Referenzfeldern ausdrücklich geltend. Die Dossiers zeigen Belegabdeckung und offene Nachweise. Eine Verleihung durch den Zertifikatsherausgeber führt ihren eigenen Originalbeleg und Status.</p>';
+const legend='<p class="claim-definition">Zertifikatsreferenzen · Portfolio-Claims</p>';
 const evidenceLinks='<div class="source-links">'+link(claims.definitionUrl,'CLAIMED / ZDA · Definition ↗')+link(claims.matrixUrl,'Benchmark-Matrix ↗')+link(claims.evidenceUrl,'Projektbelege ↗')+link(claims.testingUrl,'Testbelege ↗')+'</div>';
 function renderClaims(detailed=false){
-  return '<div class="claim-grid">'+claims.claims.map(c=>'<article class="claim-card" data-claim="'+c.id+'"><span class="claim-badge" aria-label="CLAIMED: dokumentierter Portfolioanspruch"><span aria-hidden="true">✓</span> CLAIMED</span><h3 class="certificate-name">'+esc(c.title)+'</h3><p class="claim-issuer">Zertifikats-Referenzgeber · '+esc(c.frameworkIssuer)+'</p><p class="claim-coverage">'+esc(c.mapping)+'</p>'+(detailed?'<p>'+esc(c.supports)+'</p><p class="claim-open"><strong>Offene Nachweise:</strong> '+esc(c.openEvidence)+'</p>':'')+link(c.dossier,'Dossier & Nachweise ↗')+'</article>').join('')+'</div>';
+  return '<div class="claim-grid">'+claims.claims.map(c=>'<article class="claim-card" data-claim="'+c.id+'"><span class="claim-badge" aria-label="CLAIMED: dokumentierter Portfolioanspruch"><span aria-hidden="true">✓</span> CLAIMED</span><h3 class="certificate-name" title="'+esc(c.title)+'">'+esc(V.claim(c.id).name)+'</h3><p class="claim-issuer">Referenz · '+esc(c.frameworkIssuer)+'</p><p class="claim-coverage">'+esc(c.mapping)+'</p>'+(detailed?'<p>'+esc(c.supports)+'</p><p class="claim-open"><strong>Offene Nachweise:</strong> '+esc(c.openEvidence)+'</p>':'')+'<div class="source-links">'+link(V.claim(c.id).proof,'Technik & Arbeitsproben →')+link(c.dossier,'Portfolio-Dossier ↗')+'</div>'+'</article>').join('')+'</div>';
 }
 function renderWorks(certs){
-  return '<ul class="work-certificate-grid">'+certs.map(c=>'<li>'+link('/werkzertifikate/#'+c.anchor,c.title)+'<small>'+esc(c.name)+' · HALVETH VERACHEL STUDIOS · 28.09.2026</small></li>').join('')+'</ul>';
+  return '<ul class="work-certificate-grid">'+certs.map(c=>'<li>'+link('/werkzertifikate/#'+c.anchor,V.work(c.name).label)+'<small>'+esc(V.work(c.name).project)+' · Bezug: '+esc(V.work(c.name).reference)+'</small></li>').join('')+'</ul>';
 }
 module.exports={claims,validateClaims,renderClaims,renderWorks,legend,evidenceLinks};
