@@ -29,6 +29,22 @@ test('public source links and original raw assets stay exact in translated entry
   assert.match(read(lang+'/motion/index.html'),/src="\/motion-core\.js"/);
  }
 });
+test('HALVETH is the translated public brand while the named profile stays on the CV page',()=>{
+ const intro={
+  en:'Software, security research and open learning. Explore technology, work samples and tests.',
+  ru:'Программное обеспечение, исследования безопасности и открытое обучение. Изучайте технологии, примеры работ и проверки.'
+ };
+ for(const lang of ['en','ru']){
+  const home=new JSDOM(read(lang+'/index.html')).window.document;
+  assert.equal(home.title.startsWith('HALVETH'),true);
+  assert.equal(home.querySelector('.brand > span:last-child').textContent.trim(),'HALVETH');
+  assert.ok(home.body.textContent.includes(intro[lang]));
+  assert.equal(home.querySelectorAll('[data-claim]').length,0);
+  const profile=new JSDOM(read(lang+'/profil/index.html')).window.document;
+  assert.match(profile.title,/Juri Halveth/);
+  assert.match(profile.querySelector('h1').textContent,/Juri Halveth/);
+ }
+});
 test('the shared runtime translates new UI text while retaining user input, source code and raw records',async()=>{
  for(const lang of ['de','en','ru']){
   const dom=new JSDOM('<!doctype html><html lang="de"><body><h1>Lernen</h1><input value="Lernen"><textarea>Lernen</textarea><code>Lernen</code><div data-user-content>Lernen</div><div class="trace-body">Lernen</div><a id="topic" href="https://juri-halveth.github.io/lernstudio/#T002">Lernen</a><a id="source" href="https://github.com/Juri-Halveth/lernstudio/blob/main/README.md">Lernen</a><a id="pdf" href="/original.pdf">Lernen</a></body></html>',{url:'https://juri-halveth.github.io/schuelervz-halveth/?lang='+lang,runScripts:'outside-only'});

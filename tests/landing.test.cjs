@@ -17,6 +17,20 @@ test('a landing page presents the five topics without playback or focus controls
   assert.match(html,/White-Hat-Research/);assert.match(html,/connect-src 'none'/);
   assert.equal((html.match(/<h1 /g)||[]).length,1);
 });
+test('the public surface uses HALVETH and keeps the named certificate profile on its own page',()=>{
+  const home=read('index.html'),profile=read('profil/index.html');
+  assert.match(home,/<title>HALVETH · Forschung, Gestaltung & offene Lernwelten<\/title>/);
+  assert.match(home,/<a class="brand" href="\/"[^>]*><span class="brand-mark"[^>]*>H<\/span><span>HALVETH<\/span><\/a>/);
+  assert.match(home,/<h1 id="hero-title">HALVETH\./);
+  assert.doesNotMatch(home,/Juri Halveth|Juri Janovski|data-claim=/);
+  assert.match(home,/<section class="certificate-front shell" id="zertifikate"[\s\S]*?href="\/profil\/"/);
+  assert.match(profile,/<title>Arbeitsprofil &amp; dokumentierte Nachweise · Juri Halveth<\/title>/);
+  assert.match(profile,/<h1>Juri Halveth\./);
+  assert.match(profile,/profile-claims/);
+  for(const file of ['arbeiten/index.html','404.html','audits/index.html','koennen/index.html','lernen/index.html','modelle/index.html','motion/index.html','werkzertifikate/index.html','zertifikate/index.html','en/index.html','ru/index.html']){
+    assert.doesNotMatch(read(file),/<title>[^<]*(?:Juri|Yuri|Юрий)/i,file+' exposes a personal name in its title');
+  }
+});
 test('learn websites and code are folded into one source entry',()=>{
   const html=read('arbeiten/index.html');
   assert.equal((html.match(/data-source="LEARNSTUDIO LEARNPORTAL LEARNSTUDIO_SITE"/g)||[]).length,1);

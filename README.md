@@ -4,7 +4,7 @@
 [Original / Deutsch](README.md) · [English](README.en.md) · [Русский](README.ru.md)
 <!-- /HUB_LANGUAGES_V1 -->
 
-# Juri Halveth · Forschung, Gestaltung & Wissen
+# HALVETH · Forschung, Gestaltung & Wissen
 
 Die öffentliche Startseite [juri-halveth.github.io](https://juri-halveth.github.io/) erschließt die Arbeiten nach ihrem Zweck: **Forschung und Sicherheit**, **Grafik und Spiele**, **Lernen**, **Software und Ideen**, **Fähigkeiten und Nachweise**. Zusammengehörige Websites und Codebestände teilen sich einen thematischen Eintrag. Die Lernwelt enthält ihre Website, den Bash-Bereich und die zugehörigen Quellen.
 
