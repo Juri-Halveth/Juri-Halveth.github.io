@@ -30,7 +30,7 @@ test('all source excerpts remain byte exact and inert through every language ren
 test('certificate and project entry links terminate at their declared concrete evidence',()=>{
  for(const lang of ['','en/','ru/']){
   const proof=new JSDOM(read(lang+'koennen/index.html')).window.document;
-  for(const entry of ['index.html','zertifikate/index.html','profil/index.html']){
+  for(const entry of ['zertifikate/index.html','profil/index.html']){
    const dom=new JSDOM(read(lang+entry)),doc=dom.window.document;
    for(const b of data.benchmarks){
     const link=doc.querySelector('[data-claim="'+b.id+'"] a');

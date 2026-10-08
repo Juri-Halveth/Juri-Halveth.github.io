@@ -2,7 +2,7 @@
 
 [Original / Deutsch](README.md) · [English](README.en.md) · [Русский](README.ru.md)
 
-# Juri Halveth · Research, Design & Learning
+# HALVETH · Research, Design & Learning
 
 **Concise project guide · EN / RU**
 

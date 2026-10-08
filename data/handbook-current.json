@@ -161,14 +161,14 @@
           "path": "404.html",
           "role": "fallback",
           "live": "https://juri-halveth.github.io/404.html",
-          "title": "Zurück zu den Themen · Juri Halveth",
+          "title": "Zurück zu den Themen · HALVETH",
           "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/404.html"
         },
         {
           "path": "arbeiten/index.html",
           "role": "evidence",
           "live": "https://juri-halveth.github.io/arbeiten/",
-          "title": "Arbeiten nach Themen · Juri Halveth",
+          "title": "Arbeiten nach Themen · HALVETH",
           "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/arbeiten/index.html"
         },
         {
@@ -182,14 +182,14 @@
           "path": "en/arbeiten/index.html",
           "role": "language",
           "live": "https://juri-halveth.github.io/en/arbeiten/",
-          "title": "Work by topic · Juri Halveth",
+          "title": "Work by topic · HALVETH",
           "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/en/arbeiten/index.html"
         },
         {
           "path": "en/index.html",
           "role": "language",
           "live": "https://juri-halveth.github.io/en/",
-          "title": "Juri Halveth · Research, Design & Open Learning Worlds",
+          "title": "HALVETH · Research, Design & Open Learning Worlds",
           "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/en/index.html"
         },
         {
@@ -238,14 +238,14 @@
           "path": "en/werkzertifikate/index.html",
           "role": "language",
           "live": "https://juri-halveth.github.io/en/werkzertifikate/",
-          "title": "Juri Janovski / Juri Halveth / HALVETH – Privately issued work certificates and GitHub evidence",
+          "title": "HALVETH – Private work certificates and GitHub evidence",
           "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/en/werkzertifikate/index.html"
         },
         {
           "path": "index.html",
           "role": "entrance",
           "live": "https://juri-halveth.github.io/",
-          "title": "Juri Halveth · Forschung, Gestaltung & offene Lernwelten",
+          "title": "HALVETH · Forschung, Gestaltung & offene Lernwelten",
           "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/index.html"
         },
         {
@@ -280,7 +280,7 @@
           "path": "ru/index.html",
           "role": "language",
           "live": "https://juri-halveth.github.io/ru/",
-          "title": "Juri Halveth · Исследования, дизайн и открытые учебные миры",
+          "title": "HALVETH · Исследования, дизайн и открытые учебные миры",
           "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/ru/index.html"
         },
         {
@@ -329,7 +329,7 @@
           "path": "ru/werkzertifikate/index.html",
           "role": "language",
           "live": "https://juri-halveth.github.io/ru/werkzertifikate/",
-          "title": "Juri Janovski / Juri Halveth / HALVETH — Авторские свидетельства о работах и подтверждающие материалы GitHub",
+          "title": "HALVETH — Частные свидетельства о работах и материалы GitHub",
           "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/ru/werkzertifikate/index.html"
         },
         {
@@ -364,7 +364,7 @@
           "path": "werkzertifikate/index.html",
           "role": "evidence",
           "live": "https://juri-halveth.github.io/werkzertifikate/",
-          "title": "Juri Janovski / Juri Halveth / HALVETH – Private Werkzertifikate und GitHub-Belege",
+          "title": "HALVETH – Private Werkzertifikate und GitHub-Belege",
           "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/werkzertifikate/index.html"
         }
       ]

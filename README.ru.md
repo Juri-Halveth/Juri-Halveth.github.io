@@ -2,7 +2,7 @@
 
 [Original / Deutsch](README.md) · [English](README.en.md) · [Русский](README.ru.md)
 
-# Juri Halveth · Исследования, дизайн и обучение
+# HALVETH · Исследования, дизайн и обучение
 
 **Краткий путеводитель по проекту · EN / RU**
 

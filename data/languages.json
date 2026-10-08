@@ -5823,6 +5823,118 @@
     "Originaldokument ↗": {
       "en": "Original document ↗",
       "ru": "Оригинальный документ ↗"
+    },
+    "HALVETH – Startseite": {
+      "en": "HALVETH – homepage",
+      "ru": "HALVETH — главная"
+    },
+    "HALVETH.": {
+      "en": "HALVETH.",
+      "ru": "HALVETH."
+    },
+    "HALVETH · Forschung, Gestaltung & offene Lernwelten": {
+      "en": "HALVETH · Research, Design & Open Learning Worlds",
+      "ru": "HALVETH · Исследования, дизайн и открытые учебные миры"
+    },
+    "HALVETH · Forschung. Gestaltung. Wissen.": {
+      "en": "HALVETH · Research. Design. Knowledge.",
+      "ru": "HALVETH · Исследования. Дизайн. Знание."
+    },
+    "HALVETH bündelt Forschung, Gestaltung, offene Lernangebote, Software und Quellen an einem gemeinsamen Einstieg.": {
+      "en": "HALVETH brings research, design, open learning, software and sources together in one place.",
+      "ru": "HALVETH объединяет исследования, дизайн, открытое обучение, программное обеспечение и источники в одном месте."
+    },
+    "Arbeitsprofil & Zertifikate": {
+      "en": "Profile & certificates",
+      "ru": "Профиль и сертификаты"
+    },
+    "Arbeitsprofil ansehen": {
+      "en": "View work profile",
+      "ru": "Посмотреть профиль работ"
+    },
+    "HALVETH · ARBEITSPROFIL": {
+      "en": "HALVETH · WORK PROFILE",
+      "ru": "HALVETH · ПРОФИЛЬ РАБОТ"
+    },
+    "Arbeitsprofil.": {
+      "en": "Work profile.",
+      "ru": "Профиль работ."
+    },
+    "Quellen & Zertifikate.": {
+      "en": "Sources & certificates.",
+      "ru": "Источники и сертификаты."
+    },
+    "Arbeitsproben, Quellen und Zertifikate sind im persönlichen Profil gebündelt.": {
+      "en": "Work samples, sources and certificates are brought together on the personal profile page.",
+      "ru": "Примеры работ, источники и сертификаты собраны на персональной странице профиля."
+    },
+    "Zum Arbeitsprofil & Lebenslauf →": {
+      "en": "Open the profile & CV →",
+      "ru": "Открыть профиль и резюме →"
+    },
+    "HALVETH baut.": {
+      "en": "HALVETH builds.",
+      "ru": "HALVETH создаёт."
+    },
+    "HALVETH bündelt konkrete Arbeitsproben, Quellen und Prüfungen in thematischen Bereichen. Das Arbeitsprofil steht auf einer eigenen Seite.": {
+      "en": "HALVETH brings practical work, sources and verification together by topic. The work profile has its own page.",
+      "ru": "HALVETH объединяет практические работы, источники и проверки по темам. Профиль работ размещён на отдельной странице."
+    },
+    "HALVETH · Arbeitsprofil": {
+      "en": "HALVETH · Work profile",
+      "ru": "HALVETH · Профиль работ"
+    },
+    "Arbeitsprofil & Zertifikate ansehen →": {
+      "en": "View work profile & certificates →",
+      "ru": "Посмотреть профиль и сертификаты →"
+    },
+    "Arbeiten nach Themen · HALVETH": {
+      "en": "Work by topic · HALVETH",
+      "ru": "Работы по темам · HALVETH"
+    },
+    "Zurück zu den Themen · HALVETH": {
+      "en": "Back to the topics · HALVETH",
+      "ru": "Назад к темам · HALVETH"
+    },
+    "Modelle · Simulationen · Prüfungen · HALVETH": {
+      "en": "Models · Simulations · Tests · HALVETH",
+      "ru": "Модели · Симуляции · Проверки · HALVETH"
+    },
+    "Zertifikate · CLAIMED · Nachweise · HALVETH": {
+      "en": "Certificates · CLAIMED · Evidence · HALVETH",
+      "ru": "Сертификаты · CLAIMED · Материалы · HALVETH"
+    },
+    "Code & Können · HALVETH": {
+      "en": "Code & capabilities · HALVETH",
+      "ru": "Код и навыки · HALVETH"
+    },
+    "Lernen für Erwachsene · HALVETH": {
+      "en": "Learning for adults · HALVETH",
+      "ru": "Обучение для взрослых · HALVETH"
+    },
+    "Security Research & Auditmethodik · HALVETH": {
+      "en": "Security research & audit methods · HALVETH",
+      "ru": "Исследования безопасности и аудит · HALVETH"
+    },
+    "HALVETH – Private Werkzertifikate und GitHub-Belege": {
+      "en": "HALVETH – Private work certificates and GitHub evidence",
+      "ru": "HALVETH — Частные свидетельства о работах и материалы GitHub"
+    },
+    "HALVETH – Private Werkzertifikate": {
+      "en": "HALVETH – Private work certificates",
+      "ru": "HALVETH — Частные свидетельства о работах"
+    },
+    "HALVETH-Werkzertifikate: elf dokumentierte Software- und Forschungsprojekte, 29 Dateihashes, Quellstände und GitHub-Workflows.": {
+      "en": "HALVETH work certificates: eleven documented software and research projects, 29 file hashes, source revisions and GitHub workflows.",
+      "ru": "Рабочие свидетельства HALVETH: одиннадцать документированных программных и исследовательских проектов, 29 хешей файлов, версии исходников и процессы GitHub."
+    },
+    "Werkzertifikate.": {
+      "en": "Work certificates.",
+      "ru": "Свидетельства о работах."
+    },
+    "Software, Security Research und offene Lernangebote. Entdecke die Technik, Arbeitsproben und Prüfungen.": {
+      "en": "Software, security research and open learning. Explore technology, work samples and tests.",
+      "ru": "Программное обеспечение, исследования безопасности и открытое обучение. Изучайте технологии, примеры работ и проверки."
     }
   }
 }

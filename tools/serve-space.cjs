@@ -25,4 +25,4 @@ http.createServer((req,res) => {
     res.writeHead(404, {'Content-Type':'text/html; charset=utf-8'});
     res.end(fs.existsSync(fallback)?fs.readFileSync(fallback):'Not found');
   }
-}).listen(port, '127.0.0.1', () => console.log('Juris Space preview http://127.0.0.1:' + port));
+}).listen(port, '127.0.0.1', () => console.log('HALVETH preview http://127.0.0.1:' + port));
