@@ -1072,14 +1072,6 @@
       "en": "FREE NEWS 005 — How to Fish: Body, Well-being and Open Provenance of Creation ↗",
       "ru": "005 Как ловить рыбу: тело, благополучие и открытое доказательство Творения"
     },
-    "FREE NEWS 006 — Was Juri gemacht hat": {
-      "en": "FREE NEWS 006 — What Yuri did",
-      "ru": "006 - Что сделал Юрий"
-    },
-    "FREE NEWS 006 — Was Juri gemacht hat ↗": {
-      "en": "FREE NEWS 006 — What Yuri did ↗",
-      "ru": "006 - Что сделал Юрий"
-    },
     "FREE NEWS 007 — Was bedeutet „keine Drogen“?": {
       "en": "FREE NEWS 007 — What does “no drugs” mean?",
       "ru": "007 — Что означает «без наркотиков»?"
@@ -1112,14 +1104,6 @@
       "en": "FREE NEWS 010 — MADE IN GERMANY · 2026 ↗",
       "ru": "Бесплатные новости 010 - Сделано в Германии · 2026"
     },
-    "FREE NEWS 011 — JURI 111 GEHEIMSCHRIFT-CHALLENGE": {
-      "en": "FREE NEWS 011 — JURI 111 SECURITY CHALLENGE",
-      "ru": "БЕСПЛАТНЫЕ НОВОСТИ 011 - ЮРИ 111 ЦЕЛЬ БЕЗОПАСНОСТИ"
-    },
-    "FREE NEWS 011 — JURI 111 GEHEIMSCHRIFT-CHALLENGE ↗": {
-      "en": "FREE NEWS 011 — JURI 111 SECRET CHALLENGE ↗",
-      "ru": "БЕСПЛАТНЫЕ НОВОСТИ 011 - ЮРИ 111 СЕКРЕТНЫЙ КАЛЕНДЖ"
-    },
     "FREE NEWS 012 — ALICE IST NICHT NUR EINE": {
       "en": "FREE NEWS 012 — ALICE IS NOT ONLY ONE",
       "ru": "Бесплатные новости 012 - Алиса не только одна"
@@ -1151,14 +1135,6 @@
     "FREE NEWS 015 — Was beweist „Ich war zuerst“? ↗": {
       "en": "FREE NEWS 015 — What proves “I was first”? ↗",
       "ru": "015 Что доказывает «Я был первым»?"
-    },
-    "FREE NEWS 016 — Juris öffentliche GitHub-Projektkonstellation": {
-      "en": "FREE NEWS 016 — Juris public GitHub project constellation",
-      "ru": "Бесплатные новости 016 - Созвездие проекта Juris Public GitHub"
-    },
-    "FREE NEWS 016 — Juris öffentliche GitHub-Projektkonstellation ↗": {
-      "en": "FREE NEWS 016 — Juris public GitHub project constellation ↗",
-      "ru": "Бесплатные новости 016 — Juris Public GitHub Project"
     },
     "FREE NEWS 017 — CE, Strichcodes, HTTPS, HTTP 500 und Snapshot-Marker": {
       "en": "FREE NEWS 017 — CE, barcodes, HTTPS, HTTP 500 and snapshot markers",
@@ -5935,6 +5911,34 @@
     "Software, Security Research und offene Lernangebote. Entdecke die Technik, Arbeitsproben und Prüfungen.": {
       "en": "Software, security research and open learning. Explore technology, work samples and tests.",
       "ru": "Программное обеспечение, исследования безопасности и открытое обучение. Изучайте технологии, примеры работ и проверки."
+    },
+    "FREE NEWS 006 — Energie-Modell: Quellen und Provenienz": {
+      "en": "FREE NEWS 006 — Energy model: sources and provenance",
+      "ru": "БЕСПЛАТНЫЕ НОВОСТИ 006 — Энергетическая модель: источники и происхождение"
+    },
+    "FREE NEWS 006 — Energie-Modell: Quellen und Provenienz ↗": {
+      "en": "FREE NEWS 006 — Energy model: sources and provenance ↗",
+      "ru": "БЕСПЛАТНЫЕ НОВОСТИ 006 — Энергетическая модель: источники и происхождение ↗"
+    },
+    "FREE NEWS 011 — Historische Chiffre 111": {
+      "en": "FREE NEWS 011 — Historical cipher 111",
+      "ru": "БЕСПЛАТНЫЕ НОВОСТИ 011 — Исторический шифр 111"
+    },
+    "FREE NEWS 011 — Historische Chiffre 111 ↗": {
+      "en": "FREE NEWS 011 — Historical cipher 111 ↗",
+      "ru": "БЕСПЛАТНЫЕ НОВОСТИ 011 — Исторический шифр 111 ↗"
+    },
+    "FREE NEWS 016 — Öffentliche GitHub-Projektkonstellation": {
+      "en": "FREE NEWS 016 — Public GitHub project constellation",
+      "ru": "БЕСПЛАТНЫЕ НОВОСТИ 016 — Публичная структура проектов GitHub"
+    },
+    "FREE NEWS 016 — Öffentliche GitHub-Projektkonstellation ↗": {
+      "en": "FREE NEWS 016 — Public GitHub project constellation ↗",
+      "ru": "БЕСПЛАТНЫЕ НОВОСТИ 016 — Публичная структура проектов GitHub ↗"
+    },
+    "Herkunft · HALVETH": {
+      "en": "Source · HALVETH",
+      "ru": "Источник · HALVETH"
     }
   }
 }

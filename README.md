@@ -6,7 +6,7 @@
 
 # HALVETH · Forschung, Gestaltung & Wissen
 
-Die öffentliche Startseite [juri-halveth.github.io](https://juri-halveth.github.io/) erschließt die Arbeiten nach ihrem Zweck: **Forschung und Sicherheit**, **Grafik und Spiele**, **Lernen**, **Software und Ideen**, **Fähigkeiten und Nachweise**. Zusammengehörige Websites und Codebestände teilen sich einen thematischen Eintrag. Die Lernwelt enthält ihre Website, den Bash-Bereich und die zugehörigen Quellen.
+Die öffentliche Startseite [HALVETH](https://juri-halveth.github.io/) erschließt die Arbeiten nach ihrem Zweck: **Forschung und Sicherheit**, **Grafik und Spiele**, **Lernen**, **Software und Ideen**, **Fähigkeiten und Nachweise**. Zusammengehörige Websites und Codebestände teilen sich einen thematischen Eintrag. Die Lernwelt enthält ihre Website, den Bash-Bereich und die zugehörigen Quellen.
 
 Die leuchtende Bewegungskomposition startet direkt auf der Startseite. Organische Kurven, räumliche Rotation und wandernde Lichtpunkte werden zur Laufzeit gezeichnet. Der kontinuierliche Kompositionsmodus hat keine Titelkarten, Abspielregler oder Zeitleiste. Sichtbarkeit und die Systemeinstellung für reduzierte Bewegung steuern den Rechenaufwand; Text und Links bleiben vollständig zugänglich.
 

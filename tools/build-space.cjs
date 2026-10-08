@@ -1,6 +1,6 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
-const P=require('./portfolio.cjs'),C=require('./certificates.cjs'),V=require('./visitor.cjs'),root=path.resolve(__dirname,'..');
+const P=require('./portfolio.cjs'),C=require('./certificates.cjs'),V=require('./visitor.cjs'),B=require('./public-brand.cjs'),root=path.resolve(__dirname,'..');
 const load=f=>JSON.parse(fs.readFileSync(path.join(root,f),'utf8'));
 const portfolio=load('data/portfolio.json'),inventory=load('data/juris-space.json'),snapshot=load('data/public-sources.json');
 const certificates=load('werkzertifikate/2026-09-28-v1.1/ZERTIFIKATNAMEN.json');
@@ -35,12 +35,12 @@ function sourceLinks(p){
 function repositoryList(section){
   return section.sourceIds.filter(id=>!folded.has(id)).map(id=>{
     const p=inventory.projects.find(v=>v.id===id);
-    return '<li data-source="'+[id,...(aliases[id]||[])].join(' ')+'"><strong>'+esc(portfolio.sourceTitles[id])+'</strong><small>Herkunft · '+esc(p.fullName||p.name)+'</small><div class="source-links">'+sourceLinks(p)+'</div></li>';
+    return '<li data-source="'+[id,...(aliases[id]||[])].join(' ')+'"><strong>'+esc(portfolio.sourceTitles[id])+'</strong><small>Herkunft · '+esc(B.repositoryLabel(p.fullName||p.name))+'</small><div class="source-links">'+sourceLinks(p)+'</div></li>';
   }).join('');
 }
 function documentList(docs){
   return docs.map(d=>{
-    const key=d.path.split('/')[1],title=portfolio.researchTitles[key]||d.title;
+    const key=d.path.split('/')[1],title=B.researchTitle(d.path,portfolio.researchTitles[key]||d.title);
     return '<li data-document="'+esc(d.path)+'">'+a(d.url,title+' ↗')+'<small>'+(d.kind==='branch'?'Forschungszweig':'Veröffentlichter Bericht')+' · Quellfassung '+snapshot.research.commit.slice(0,7)+'</small></li>';
   }).join('');
 }

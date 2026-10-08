@@ -1,14 +1,16 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path');
-const root=path.resolve(__dirname,'..'),catalog=require('../data/languages.json');
+const root=path.resolve(__dirname,'..'),catalog=require('../data/languages.json'),B=require('./public-brand.cjs');
 const pages=['koennen/index.html','lernen/index.html','audits/index.html','zertifikate/index.html','modelle/index.html','index.html','arbeiten/index.html','profil/index.html','404.html','motion/index.html','werkzertifikate/index.html','schuelervz-halveth/index.html','schuelervz-halveth/people.html','schuelervz-halveth/archaeology.html','schuelervz-halveth/prestige.html'];
 const routes=new Set(pages.map(file=>'/'+file.replace(/index\.html$/,'')));
 routes.add('/handbuch/');
 const decode=s=>s.replace(/&(?:amp|lt|gt|quot|#39|#x([0-9a-f]+)|#([0-9]+));/gi,(m,x,n)=>x?String.fromCodePoint(parseInt(x,16)):n?String.fromCodePoint(Number(n)):({'&amp;':'&','&lt;':'<','&gt;':'>','&quot;':'"','&#39;':"'"}[m]||m));
 const escape=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function text(value,language){
- const plain=decode(value),key=plain.trim();if(!key||language==='de')return value;
- const translated=catalog.strings[key]?.[language];return translated?escape(plain.replace(key,translated)):value;
+function text(value,language,source){
+ const plain=decode(value),key=plain.trim();if(!key)return value;
+ const translated=language==='de'?null:(B.researchTranslation(key,language)||catalog.strings[key]?.[language]);
+ const result=translated?plain.replace(key,translated):plain;
+ return escape(source==='profil/index.html'||source==='werkzertifikate/index.html'?result:B.publicText(result,language));
 }
 function url(value,source,language){
  if(value.startsWith('#'))return value;
@@ -34,10 +36,10 @@ function translate(html,source,language){
    return part.replace(/\b(href|src|alt|title|aria-label|placeholder|aria-valuetext|content)="([^"]*)"/g,(match,attr,value)=>{
     if(attr==='href'||attr==='src')return attr+'="'+url(value,source,language)+'"';
     if(attr==='content'&&!/^<meta\b/.test(part)||attr==='content'&&!/name="description"|property="og:(?:title|description)"/.test(part))return match;
-    return attr+'="'+text(value,language)+'"';
+    return attr+'="'+text(value,language,source)+'"';
    });
   }
-  return excluded?part:text(part,language);
+  return excluded?part:text(part,language,source);
  });
  return output;
 }

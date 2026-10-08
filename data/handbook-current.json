@@ -63,11 +63,11 @@
   "projects": [
     {
       "id": "space",
-      "name": "Juri-Halveth.github.io",
+      "name": "HALVETH",
       "title": {
-        "de": "Juris Space · Orientierung",
-        "en": "Juris Space · Navigation",
-        "ru": "Juris Space · Навигация"
+        "de": "HALVETH · Orientierung",
+        "en": "HALVETH · Navigation",
+        "ru": "HALVETH · Навигация"
       },
       "repository": "Juri-Halveth/Juri-Halveth.github.io",
       "live": "https://juri-halveth.github.io/",
@@ -203,7 +203,7 @@
           "path": "en/profil/index.html",
           "role": "language",
           "live": "https://juri-halveth.github.io/en/profil/",
-          "title": "Professional profile & documented evidence · Juri Halveth",
+          "title": "Professional profile & documented evidence · HALVETH",
           "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/en/profil/index.html"
         },
         {
@@ -259,21 +259,21 @@
           "path": "profil/index.html",
           "role": "evidence",
           "live": "https://juri-halveth.github.io/profil/",
-          "title": "Arbeitsprofil & dokumentierte Nachweise · Juri Halveth",
+          "title": "Arbeitsprofil & dokumentierte Nachweise · HALVETH",
           "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/profil/index.html"
         },
         {
           "path": "ru/404.html",
           "role": "language",
           "live": "https://juri-halveth.github.io/ru/404.html",
-          "title": "Назад к теме: Юрий Халвет",
+          "title": "Назад к теме: HALVETH",
           "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/ru/404.html"
         },
         {
           "path": "ru/arbeiten/index.html",
           "role": "language",
           "live": "https://juri-halveth.github.io/ru/arbeiten/",
-          "title": "Работы по темам · Juri Halveth",
+          "title": "Работы по темам · HALVETH",
           "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/ru/arbeiten/index.html"
         },
         {
@@ -294,7 +294,7 @@
           "path": "ru/profil/index.html",
           "role": "language",
           "live": "https://juri-halveth.github.io/ru/profil/",
-          "title": "Профессиональный профиль и документированные работы · Juri Halveth",
+          "title": "Профессиональный профиль и документированные работы · HALVETH",
           "code": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/ru/profil/index.html"
         },
         {
@@ -722,7 +722,7 @@
           "path": "entities/juri/index.html",
           "role": "profile",
           "live": "https://juri-halveth.github.io/halveth-scarlet/entities/juri/",
-          "title": "JURI · HALVETH",
+          "title": "HALVETH · Figurenprofil",
           "code": "https://github.com/Juri-Halveth/halveth-scarlet/blob/main/entities/juri/index.html"
         },
         {

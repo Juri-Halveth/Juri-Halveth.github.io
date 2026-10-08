@@ -6,7 +6,7 @@
 
 Dateiverweise öffnen den aktuellen main-Zweig des jeweiligen Projekts. Inhalte und Prüfergebnisse können sich weiterentwickeln. Das ursprüngliche Quellenregister bewahrt seine datierten Fassungen und Ergebnisse.
 
-## Juris Space · Orientierung
+## HALVETH · Orientierung
 
 Themen, Arbeiten und Quellen an einem gemeinsamen Einstieg finden.
 
