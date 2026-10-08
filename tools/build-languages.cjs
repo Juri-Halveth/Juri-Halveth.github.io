@@ -10,7 +10,7 @@ function text(value,language,source){
  const plain=decode(value),key=plain.trim();if(!key)return value;
  const translated=language==='de'?null:(B.researchTranslation(key,language)||catalog.strings[key]?.[language]);
  const result=translated?plain.replace(key,translated):plain;
- return escape(source==='profil/index.html'||source==='werkzertifikate/index.html'?result:B.publicText(result,language));
+ return escape(source==='profil/index.html'?result:B.publicText(result,language));
 }
 function url(value,source,language){
  if(value.startsWith('#'))return value;
@@ -78,7 +78,8 @@ for(const source of pages){
  const file=path.join(root,source);let original=fs.readFileSync(file,'utf8').replace(/\r\n/g,'\n');
  original=original.replace(/<!-- HUB_LANGUAGE_START -->[\s\S]*?<!-- HUB_LANGUAGE_END -->/g,'').replace(/<!-- HUB_ALTERNATES_START -->[\s\S]*?<!-- HUB_ALTERNATES_END -->/g,'');
  original=original.replace(/<link rel="canonical"[^>]*>/g,'');
- fs.writeFileSync(file,decorate(original,source,'de'));
+ const german=source==='werkzertifikate/index.html'?translate(original,source,'de'):original;
+ fs.writeFileSync(file,decorate(german,source,'de'));
  for(const language of ['en','ru']){
   const destination=path.join(root,language,source);fs.mkdirSync(path.dirname(destination),{recursive:true});
   fs.writeFileSync(destination,decorate(translate(original,source,language),source,language));

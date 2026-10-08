@@ -16,7 +16,7 @@ const sourcePages=[
 ];
 const pages=['', 'en/', 'ru/'].flatMap(prefix=>sourcePages.map(file=>prefix+file));
 const namedPages=new Set(['profil/index.html','en/profil/index.html','ru/profil/index.html',
-  'werkzertifikate/index.html','en/werkzertifikate/index.html','ru/werkzertifikate/index.html']);
+]);
 const personalName=/(?:\bJuri(?:s)?\b|Juri[- ](?:Halveth|Janovski)|\bJURI\b|Юри[йяюи]|juri-halveth\.github\.io)/iu;
 
 function visibleSurface(file){
@@ -30,12 +30,23 @@ function visibleSurface(file){
   return [document.title,...meta,...attrs,document.body?.textContent||''].join(' ');
 }
 
-test('all public page labels use HALVETH while CV and work-certificate attribution remains',()=>{
+test('all public page labels use HALVETH while the CV keeps its personal attribution',()=>{
   for(const file of pages){
     if(namedPages.has(file))continue;
     assert.doesNotMatch(visibleSurface(file),personalName,file+' exposes a personal name in its public display');
   }
   for(const file of namedPages)assert.match(visibleSurface(file),/Juri Halveth|Juri Janovski/iu,file+' should retain certificate attribution');
+});
+
+test('work-certificate pages use HALVETH while the bound evidence register stays unchanged',()=>{
+  for(const file of ['werkzertifikate/index.html','en/werkzertifikate/index.html','ru/werkzertifikate/index.html']){
+    const surface=visibleSurface(file);
+    assert.doesNotMatch(surface,personalName,file+' exposes a personal name outside the CV');
+    assert.match(surface,/HALVETH/iu,file+' should retain the public brand');
+  }
+  const evidence=JSON.parse(read('werkzertifikate/2026-09-28-v1.1/EVIDENZREGISTER.json'));
+  assert.equal(evidence.display_name,'Juri Janovski / Juri Halveth');
+  assert.equal(evidence.account_login,'Juri-Halveth');
 });
 
 test('non-profile proposal display omits the personal attribution and preserves the exact source evidence',()=>{
