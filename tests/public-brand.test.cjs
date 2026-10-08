@@ -38,6 +38,26 @@ test('all public page labels use HALVETH while CV and work-certificate attributi
   for(const file of namedPages)assert.match(visibleSurface(file),/Juri Halveth|Juri Janovski/iu,file+' should retain certificate attribution');
 });
 
+test('non-profile proposal display omits the personal attribution and preserves the exact source evidence',()=>{
+  const evidence=JSON.parse(read('data/competence-evidence.json'));
+  const proposal=evidence.proofs.find(proof=>proof.id==='P06');
+  assert.ok(proposal);
+  assert.ok(proposal.source.excerpt.startsWith('**Public proposal by '));
+  require('../tools/code-evidence.cjs').validate(evidence);
+  const notes={
+    '':'Namenszeile ausgelassen; Originaltext unverändert verlinkt.',
+    'en/':'Author line omitted; original text remains unchanged at the source link.',
+    'ru/':'Строка с именем автора пропущена; оригинальный текст доступен по ссылке без изменений.'
+  };
+  for(const [prefix,noteText] of Object.entries(notes)){
+    const document=new JSDOM(read(prefix+'koennen/index.html')).window.document;
+    const source=document.querySelector('[data-proof="P06"] .source-code');
+    assert.ok(source,prefix+'P06 source excerpt exists');
+    assert.equal(source.querySelector('.source-attribution-note')?.textContent,noteText);
+    assert.doesNotMatch(source.querySelector('pre')?.textContent||'',personalName);
+  }
+});
+
 test('display-name cleanup preserves the exact source links and repository identity',()=>{
   const work=read('arbeiten/index.html');
   assert.match(work,/href="https:\/\/github\.com\/Juri-Halveth\/open-research-branches/);

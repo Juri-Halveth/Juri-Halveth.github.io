@@ -13,14 +13,29 @@ test('a relation cannot silently import another function, endpoint digest or fra
   const d=structuredClone(data);mutate(d);assert.throws(()=>E.validate(d));
  }
 });
-test('all source excerpts remain byte exact and inert through every language rendering',()=>{
+test('source excerpts stay evidence-bound; the proposal view marks its attribution omission',()=>{
+ assert.equal(E.validate(data),true);
  for(const lang of ['','en/','ru/']){
   const dom=new JSDOM(read(lang+'koennen/index.html')),doc=dom.window.document;
   assert.equal(doc.querySelectorAll('[data-proof]').length,19);
   assert.equal(doc.querySelectorAll('[data-benchmark]').length,9);
   assert.equal(doc.querySelectorAll('script,iframe,object').length,0);
   for(const p of data.proofs){
-   const article=doc.getElementById(p.id);assert.equal(article.querySelector('pre code').textContent,p.source.excerpt);
+   const article=doc.getElementById(p.id),display=article.querySelector('pre code').textContent;
+   if(p.id==='P06'){
+    const sourceLines=p.source.excerpt.split(String.fromCharCode(10));
+    assert.match(sourceLines[0],/^\*\*Public proposal by .+\.\*\*$/u);
+    assert.equal(display,sourceLines.slice(2).join('\n'));
+    assert.ok(article.querySelector('.source-attribution-note'));
+    const binding=article.querySelector('.source-binding').textContent;
+    assert.match(binding,/SHA-256/u);
+    const linkedTestNotice={
+     '':'Eine verlinkte Testdefinition hat einen eigenen Ausführungsbeleg.',
+     'en/':'A linked test definition has a separate execution receipt.',
+     'ru/':'Определение связанного теста имеет отдельное подтверждение выполнения.'
+    }[lang];
+    assert.ok(binding.includes(linkedTestNotice));
+   }else assert.equal(display,p.source.excerpt);
    assert.ok([...article.querySelectorAll('a')].some(a=>a.href===p.source.url));
    assert.equal(article.querySelector('pre').getAttribute('tabindex'),'0');
   }

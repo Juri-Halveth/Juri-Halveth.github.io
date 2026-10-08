@@ -34,10 +34,28 @@ function researchTranslation(value,language){
 }
 
 function publicText(value,language='de'){
+  const sourceDisplayNotes={
+    'Namenszeile ausgelassen; Originaltext unverändert verlinkt.':{
+      en:'Author line omitted; original text remains unchanged at the source link.',
+      ru:'Строка с именем автора пропущена; оригинальный текст доступен по ссылке без изменений.'
+    },
+    'Der SHA-256 bindet den vollständigen Originalauszug; die Namenszeile ist in dieser Anzeige ausgelassen.':{
+      en:'The SHA-256 binds the complete original excerpt; the author line is omitted from this display.',
+      ru:'SHA-256 относится к полному исходному фрагменту; строка с именем автора скрыта в этом отображении.'
+    },
+    'Eine verlinkte Testdefinition hat einen eigenen Ausführungsbeleg.':{
+      en:'A linked test definition has a separate execution receipt.',
+      ru:'Определение связанного теста имеет отдельное подтверждение выполнения.'
+    }
+  };
   const figureTitle={de:'HALVETH · Figurenprofil',en:'HALVETH · Character profile',ru:'HALVETH · Профиль персонажа'}[language]||'HALVETH';
   const profileFile={de:'Arbeitsprofil (Lebenslauf)',en:'Professional profile (CV)',ru:'Профессиональный профиль (резюме)'}[language]||'HALVETH';
   const birthThesis={de:'Geburtsthese',en:'Birth thesis',ru:'Тезис о рождении'}[language]||'HALVETH';
-  return String(value)
+  let result=String(value);
+  for(const [source,translations] of Object.entries(sourceDisplayNotes)){
+    result=result.replaceAll(source,translations[language]||source);
+  }
+  return result
     .replace(/JURI\s*[·:]\s*HALVETH/giu,figureTitle)
     .replace(/entities\/juri\/index\.html/giu,figureTitle)
     .replace(/profil\/CV-Juri-Halveth\.md/giu,profileFile)
