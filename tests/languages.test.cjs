@@ -2,7 +2,7 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const {JSDOM}=require('jsdom');
 const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8');
-const pages=['zertifikate/index.html','modelle/index.html','index.html','arbeiten/index.html','profil/index.html','404.html','motion/index.html','werkzertifikate/index.html','schuelervz-halveth/index.html','schuelervz-halveth/people.html','schuelervz-halveth/archaeology.html','schuelervz-halveth/prestige.html'];
+const pages=['zertifikate/index.html','modelle/index.html','index.html','arbeiten/index.html','profil/index.html','404.html','motion/index.html','universum/index.html','werkzertifikate/index.html','schuelervz-halveth/index.html','schuelervz-halveth/people.html','schuelervz-halveth/archaeology.html','schuelervz-halveth/prestige.html'];
 test('all language entrances keep source IDs, one selected language and their own canonical route',()=>{
  for(const source of pages){
   const original=new JSDOM(read(source)),ids=[...original.window.document.querySelectorAll('[id]')].map(n=>n.id);

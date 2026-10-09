@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="Ein beweglicher Blick in die echten Dateien, Hashes, Beziehungen und Commit-Zeiten des HALVETH-Portals.">
+  <meta name="tdm-reservation" content="1">
+  <meta name="theme-color" content="#050912">
+  <link rel="icon" href="/favicon.svg">
+  <link rel="stylesheet" href="/universum/universum.css">
+  <title>Source Universe · HALVETH</title>
+</head>
+<body class="universe-page">
+  <a class="universe-skip" href="#universe-main">Zum Universum</a>
+  <header class="universe-header">
+    <a class="universe-brand" href="/" aria-label="HALVETH Startseite"><span class="universe-sigil" aria-hidden="true">H</span><span>HALVETH <b>×</b> VERACHEL</span></a>
+    <div class="universe-header-meta"><span class="live-orb" aria-hidden="true"></span><span id="snapshot-label">GitHub-Quellstand</span><a href="/HALVETH-RIGHTS.md">Rechte &amp; Herkunft ↗</a></div>
+  </header>
+  <main id="universe-main" class="universe-shell">
+    <section class="universe-intro" aria-labelledby="universe-title">
+      <div><p class="universe-eyebrow">HALVETH SOURCE UNIVERSE · GITHUB</p><h1 id="universe-title">Der Quellraum.<br><em>In Bewegung.</em></h1></div>
+      <p class="universe-intro-copy">Dateien, Ordner, Commit-Spuren und sichtbare Codeverweise wachsen aus dem gebundenen Repository-Stand. Greif hinein, drehe den Blick und öffne einzelne Knoten.</p>
+    </section>
+    <section id="source-universe" class="universe-frame" aria-label="Interaktive Repository-Visualisierung">
+      <div class="universe-topline"><div><span class="signal-dot" aria-hidden="true"></span><span id="world-status">Quellraum wird geöffnet …</span></div><div class="universe-metrics"><span><b id="node-count">—</b> KNOTEN</span><span><b id="relation-count">—</b> BEZIEHUNGEN</span><span><b id="fps-count">—</b> FPS</span></div></div>
+      <div class="universe-stage" id="universe-stage">
+        <canvas id="universe-canvas" tabindex="0" role="img" aria-label="Drehbare 4D-Projektion der im Repository erfassten Dateien und Beziehungen. X, Y und Z bilden die räumliche Anordnung; W bindet beobachtete Commit-Zeit."></canvas>
+        <div class="stage-vignette" aria-hidden="true"></div>
+        <div class="stage-label stage-label-left"><span class="stage-label-kicker">DER KERN</span><strong id="repo-label">HALVETH / SOURCE</strong><small>Beziehungen formen die Bahnen</small></div>
+        <div class="stage-label stage-label-right"><span class="stage-label-kicker">4D-PROJEKTION</span><strong>X · Y · Z · W</strong><small>W = Commit-Zeit</small></div>
+        <div id="loading-state" class="loading-state"><span class="loading-ring" aria-hidden="true"></span><strong>Der Quellraum entsteht.</strong><small>GitHub-Dateien · Prüfsummen · Beziehungen</small></div>
+        <div id="error-state" class="error-state" hidden></div>
+      </div>
+      <div class="universe-controls">
+        <label class="search-control"><span aria-hidden="true">⌕</span><span class="sr-only">Datei oder Beziehung suchen</span><input id="universe-search" type="search" autocomplete="off" placeholder="Datei, Ordner, Hash oder Workflow suchen"><kbd>ENTER</kbd></label>
+        <div class="timeline-control"><div class="timeline-heading"><label for="time-lens">ZEITLINSE <span id="timeline-date">—</span></label><span id="history-note">Commits im gebundenen Ausschnitt</span></div><input id="time-lens" type="range" min="0" max="1000" value="1000" step="1" aria-label="Commit-Zeit durchlaufen"><div class="timeline-endpoints"><span id="oldest-date">—</span><span>W →</span><span id="newest-date">—</span></div></div>
+        <div class="view-controls" aria-label="Ansicht bewegen"><button id="zoom-out" type="button" aria-label="Herauszoomen">−</button><button id="reset-view" type="button" aria-label="Ansicht zurücksetzen">0</button><button id="zoom-in" type="button" aria-label="Hineinzoomen">+</button></div>
+      </div>
+      <div class="universe-hint"><span>MAUS ZIEHEN · ORBIT</span><span>SHIFT + PFEILE · ZEIT W</span><span>PFEILE · DREHEN</span><span>SCROLL · ZOOM</span></div>
+    </section>
+    <section class="universe-lower" aria-label="Quellraumdetails">
+      <div class="universe-legend"><p class="universe-eyebrow">DIE BEZIEHUNGEN</p><div><span><i class="legend-file"></i>Datei / Code</span><span><i class="legend-commit"></i>Commit</span><span><i class="legend-folder"></i>Ordner</span><span><i class="legend-action"></i>Action</span><span><i class="legend-hash"></i>Hash-Übereinstimmung</span></div><p class="universe-boundary">Statische Quellverweise sind als abgeleitete Beziehungen markiert. Die Zeitlinse filtert beobachtete Commits; sie rekonstruiert keine alten Datei-Inhalte.</p></div>
+      <aside class="node-inspector" aria-live="polite" aria-atomic="true"><p class="universe-eyebrow">AUSGEWÄHLTER KNOTEN</p><div id="node-detail"><strong>Berühre einen Knoten.</strong><span>Die Quelle und ihre Hash-Spur erscheinen hier.</span></div></aside>
+    </section>
+    <footer class="universe-footer"><span id="source-footer">Quelle: öffentliches GitHub-Repository · Dateiinhalte werden nicht in den Quellraum geschrieben.</span><nav aria-label="Weitere HALVETH-Seiten"><a href="/">Startseite</a><a href="/LICENSES.md">Lizenzen</a><a href="https://github.com/Juri-Halveth/Juri-Halveth.github.io" rel="noopener">Repository ↗</a></nav></footer>
+  </main>
+  <script src="/universum/core.js" defer></script>
+  <script src="/universum/app.js" defer></script>
+</body>
+</html>

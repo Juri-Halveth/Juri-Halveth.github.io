@@ -1,2 +1,3 @@
 .space-local/
 node_modules/
+/data/source-universe.json

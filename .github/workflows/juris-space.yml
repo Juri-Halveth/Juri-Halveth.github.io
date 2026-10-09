@@ -1,17 +1,19 @@
 name: HALVETH portal contracts
 on:
   push:
-    paths: ['.gitattributes', 'sitemap.xml', 'index.html', '404.html', 'portal.css', 'portal.js', 'return.css', 'language.css', 'handbook.css', 'handbuch/**', 'docs/HANDBUCH.md', 'HUB.sh', 'examples/**', 'en/**', 'ru/**', 'package*.json', 'assets/**', 'templates/**', 'arbeiten/**', 'koennen/**', 'profil/**', 'werkzertifikate/index.html', 'motion*', 'landing-motion.js', 'motion/**', 'SPACE.sh', 'data/**', 'tools/*.cjs', 'tests/*.test.cjs', '.github/workflows/juris-space.yml']
+    paths: ['**']
   pull_request:
-    paths: ['.gitattributes', 'sitemap.xml', 'index.html', '404.html', 'portal.css', 'portal.js', 'return.css', 'language.css', 'handbook.css', 'handbuch/**', 'docs/HANDBUCH.md', 'HUB.sh', 'examples/**', 'en/**', 'ru/**', 'package*.json', 'assets/**', 'templates/**', 'arbeiten/**', 'koennen/**', 'profil/**', 'werkzertifikate/index.html', 'motion*', 'landing-motion.js', 'motion/**', 'SPACE.sh', 'data/**', 'tools/*.cjs', 'tests/*.test.cjs', '.github/workflows/juris-space.yml']
+    paths: ['**']
 permissions:
   contents: read
 jobs:
   navigation:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
           node-version: '24'
           package-manager-cache: false
@@ -22,5 +24,9 @@ jobs:
       - run: node --check motion-player.js
       - run: node --check portal.js
       - run: node --check landing-motion.js
+      - run: node --check universum/core.js
+      - run: node --check universum/app.js
+      - run: node --check tools/build-source-universe.cjs
+      - run: node --check tools/build-universe-page.cjs
       - run: bash -n SPACE.sh
       - run: bash -n HUB.sh

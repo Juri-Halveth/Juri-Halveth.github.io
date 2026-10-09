@@ -5939,6 +5939,154 @@
     "Herkunft · HALVETH": {
       "en": "Source · HALVETH",
       "ru": "Источник · HALVETH"
+    },
+    "GITHUB SOURCE UNIVERSE": {
+      "en": "GITHUB SOURCE UNIVERSE",
+      "ru": "ВСЕЛЕННАЯ ИСХОДНОГО КОДА GITHUB"
+    },
+    "Schau in den": {
+      "en": "Look into the",
+      "ru": "Загляни в"
+    },
+    "Quellraum.": {
+      "en": "source universe.",
+      "ru": "пространство исходников."
+    },
+    "Dateien, Hashes, Beziehungen und Commit-Zeit werden zu einer beweglichen Karte des öffentlichen HALVETH-Portals.": {
+      "en": "Files, hashes, relations and commit time form a moving map of the public HALVETH portal.",
+      "ru": "Файлы, хеши, связи и время коммитов образуют движущуюся карту публичного портала HALVETH."
+    },
+    "Das GitHub-Universum öffnen →": {
+      "en": "Open the GitHub universe →",
+      "ru": "Открыть вселенную GitHub →"
+    },
+    "Source Universe · HALVETH": {
+      "en": "Source Universe · HALVETH",
+      "ru": "Вселенная исходного кода · HALVETH"
+    },
+    "Ein beweglicher Blick in die echten Dateien, Hashes, Beziehungen und Commit-Zeiten des HALVETH-Portals.": {
+      "en": "A moving view of the real files, hashes, relations and commit times in the HALVETH portal.",
+      "ru": "Движущийся обзор реальных файлов, хешей, связей и времени коммитов портала HALVETH."
+    },
+    "Zum Universum": {
+      "en": "Go to the universe",
+      "ru": "Перейти во вселенную"
+    },
+    "GitHub-Quellstand": {
+      "en": "GitHub source snapshot",
+      "ru": "Снимок исходников GitHub"
+    },
+    "HALVETH SOURCE UNIVERSE · GITHUB": {
+      "en": "HALVETH SOURCE UNIVERSE · GITHUB",
+      "ru": "ВСЕЛЕННАЯ ИСХОДНОГО КОДА HALVETH · GITHUB"
+    },
+    "Der Quellraum.": {
+      "en": "The source universe.",
+      "ru": "Пространство исходников."
+    },
+    "In Bewegung.": {
+      "en": "In motion.",
+      "ru": "В движении."
+    },
+    "Dateien, Ordner, Commit-Spuren und sichtbare Codeverweise wachsen aus dem gebundenen Repository-Stand. Greif hinein, drehe den Blick und öffne einzelne Knoten.": {
+      "en": "Files, folders, commit traces and visible code references grow from the bound repository snapshot. Reach in, turn the view and open individual nodes.",
+      "ru": "Файлы, папки, следы коммитов и ссылки в коде растут из зафиксированного снимка репозитория. Поверни обзор и открой отдельные узлы."
+    },
+    "Interaktive Repository-Visualisierung": {
+      "en": "Interactive repository visualization",
+      "ru": "Интерактивная визуализация репозитория"
+    },
+    "Quellraum wird geöffnet …": {
+      "en": "Opening source universe …",
+      "ru": "Открываем пространство исходников …"
+    },
+    "KNOTEN": {
+      "en": "NODES",
+      "ru": "УЗЛЫ"
+    },
+    "BEZIEHUNGEN": {
+      "en": "RELATIONS",
+      "ru": "СВЯЗИ"
+    },
+    "DER KERN": {
+      "en": "THE CORE",
+      "ru": "ЯДРО"
+    },
+    "Beziehungen formen die Bahnen": {
+      "en": "Relations shape the paths",
+      "ru": "Связи формируют траектории"
+    },
+    "4D-PROJEKTION": {
+      "en": "4D PROJECTION",
+      "ru": "4D-ПРОЕКЦИЯ"
+    },
+    "Datei oder Beziehung suchen": {
+      "en": "Search files or relations",
+      "ru": "Поиск файлов или связей"
+    },
+    "Datei, Ordner, Hash oder Workflow suchen": {
+      "en": "Search files, folders, hashes or workflows",
+      "ru": "Поиск файлов, папок, хешей или workflows"
+    },
+    "ZEITLINSE": {
+      "en": "TIME LENS",
+      "ru": "ЛИНЗА ВРЕМЕНИ"
+    },
+    "Commits im gebundenen Ausschnitt": {
+      "en": "Commits in the bounded snapshot",
+      "ru": "Коммиты в ограниченном снимке"
+    },
+    "Commit-Zeit durchlaufen": {
+      "en": "Traverse commit time",
+      "ru": "Перемещение по времени коммитов"
+    },
+    "MAUS ZIEHEN · ORBIT": {
+      "en": "DRAG · ORBIT",
+      "ru": "ПЕРЕТАСКИВАНИЕ · ОРБИТА"
+    },
+    "SHIFT + PFEILE · ZEIT W": {
+      "en": "SHIFT + ARROWS · TIME W",
+      "ru": "SHIFT + СТРЕЛКИ · ВРЕМЯ W"
+    },
+    "PFEILE · DREHEN": {
+      "en": "ARROWS · ROTATE",
+      "ru": "СТРЕЛКИ · ПОВОРОТ"
+    },
+    "SCROLL · ZOOM": {
+      "en": "SCROLL · ZOOM",
+      "ru": "ПРОКРУТКА · МАСШТАБ"
+    },
+    "DIE BEZIEHUNGEN": {
+      "en": "THE RELATIONS",
+      "ru": "СВЯЗИ"
+    },
+    "Hash-Übereinstimmung": {
+      "en": "Hash match",
+      "ru": "Совпадение хеша"
+    },
+    "Statische Quellverweise sind als abgeleitete Beziehungen markiert. Die Zeitlinse filtert beobachtete Commits; sie rekonstruiert keine alten Datei-Inhalte.": {
+      "en": "Static source references are marked as derived relations. The time lens filters observed commits; it does not reconstruct historical file contents.",
+      "ru": "Статические ссылки в исходниках отмечены как выведенные связи. Линза времени фильтрует наблюдаемые коммиты, но не восстанавливает старое содержимое файлов."
+    },
+    "AUSGEWÄHLTER KNOTEN": {
+      "en": "SELECTED NODE",
+      "ru": "ВЫБРАННЫЙ УЗЕЛ"
+    },
+    "Berühre einen Knoten.": {
+      "en": "Select a node.",
+      "ru": "Выбери узел."
+    },
+    "Die Quelle und ihre Hash-Spur erscheinen hier.": {
+      "en": "Its source and hash trail appear here.",
+      "ru": "Здесь появятся источник и след хеша."
+    },
+    "Repository ↗": {
+      "en": "Repository ↗",
+      "ru": "Репозиторий ↗"
+    },
+    "Datei-Inhalte werden nicht in den Quellraum geschrieben.": {
+      "en": "File contents are not stored in the source universe.",
+      "ru": "Содержимое файлов не сохраняется во вселенной исходников."
     }
   }
 }

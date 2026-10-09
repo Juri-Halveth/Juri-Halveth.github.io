@@ -68,9 +68,11 @@ const modelSections=models.models.map(m=>'<section class="model-proof" id="'+m.i
 write('modelle/index.html',page('Modelle · Simulationen · Prüfungen','/modelle/',
   '<p class="breadcrumbs"><a href="/">Startseite</a> / Modelle</p><p class="eyebrow">BANANE · AUGE · FEGEFEUER</p><h1>Eine Idee.<br><em>Eine prüfbare Vorhersage.</em></h1><p class="lead">Jedes Modell führt zu seiner Oberfläche, seinem Quellstand und seinen Prüfungen. Eine neue Darstellung macht die bestehende Arbeit sichtbar und öffnet konkrete nächste Fragen.</p><nav class="section-jumps" aria-label="Modelle">'+models.models.map(m=>a('#'+m.id,m.title)).join('')+'</nav>'+modelSections+'<section class="directory-section"><h2>Quellen & Prüfstand</h2><p>Öffentliche Modelle mit datierten Quellen. Der Registerstand vom 06.10.2026 bindet Codefassungen und Testmethoden; neue Prüfläufe führen ihre eigenen Ergebnisse.</p>'+a('/data/models.json','Modellregister mit Dateihashes ↗')+'</section>'));
 
+require('./build-universe-page.cjs');
 require('./add-return-navigation.cjs');
 require('./build-handbook.cjs');
 require('./build-visitor-pages.cjs');
 require('./build-code-evidence.cjs');
 require('./build-languages.cjs');
+require('./build-source-universe.cjs').write();
 console.log(JSON.stringify({state:'TOPIC_LANDING_BUILT',topics:5,sourceAliases:inventory.projects.length,researchDocuments:snapshot.research.documents.length,workCertificates:certificates.length,sourceSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'data/public-sources.json'))).digest('hex')}));
