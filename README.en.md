@@ -28,6 +28,10 @@ bash SPACE.sh verify
 - [Open the website](https://juri-halveth.github.io/)
 - [Licences and sources](LICENSES.md)
 
+## Security and agents
+
+[Report a vulnerability](SECURITY.md) · [Agent working rules](AGENTS.md). This repository does not offer a public bug-bounty program.
+
 ## Rights and scope
 
 Use the original rights and licence notices for the relevant files and versions. This guide grants no additional licence.

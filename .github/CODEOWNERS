@@ -1,2 +1,9 @@
-# Review routing only. This file does not establish copyright, authorship, or title.
+# Suggested reviewers only. This file does not establish copyright, authorship, or title.
+# Merge enforcement requires branch protection or a ruleset.
 * @Juri-Halveth
+/AGENTS.md @Juri-Halveth
+/SECURITY.md @Juri-Halveth
+/LICENSES.md @Juri-Halveth
+/LICENSE-HALVETH-PIRL-2.0.md @Juri-Halveth
+/.github/ @Juri-Halveth
+/tests/ @Juri-Halveth

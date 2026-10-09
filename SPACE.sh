@@ -4,7 +4,7 @@ cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
 case "${1:-check}" in
   build) node tools/build-space.cjs ;;
   verify) node tools/build-space.cjs; bash "${BASH_SOURCE[0]}" check ;;
-  check) node --test --test-concurrency=1 tests/code-evidence.test.cjs tests/certificate-claims.test.cjs tests/landing.test.cjs tests/public-brand.test.cjs tests/motion.test.cjs tests/motion-player.test.cjs tests/landing-motion.test.cjs tests/languages.test.cjs tests/handbook.test.cjs examples/world-grip.test.mjs tests/source-universe.test.cjs ;;
+  check) node --test --test-concurrency=1 tests/code-evidence.test.cjs tests/certificate-claims.test.cjs tests/landing.test.cjs tests/public-brand.test.cjs tests/motion.test.cjs tests/motion-player.test.cjs tests/landing-motion.test.cjs tests/languages.test.cjs tests/handbook.test.cjs tests/governance.test.cjs examples/world-grip.test.mjs tests/source-universe.test.cjs ;;
   motion) shift; node tools/render-motion.cjs "$@" ;;
   preview) node tools/serve-space.cjs ;;
   inventory)
