@@ -38,6 +38,10 @@ Normale Links führen direkt zu Themen, Arbeiten und Quellen. Frühere `?project
 
 GitHub Pages veröffentlicht `main` aus dem Repository-Wurzelverzeichnis. Die verlinkten Lern-, Forschungs-, Software- und Spielprojekte besitzen ihre eigenen Quellen und Entwicklungsstände. Ein offener Spielentwicklungszweig wird auf der Website als Entwicklung bezeichnet.
 
+## Sicherheit und Agenten
+
+[Sicherheitsmeldung](SECURITY.md) · [Arbeitsregeln für Agenten](AGENTS.md). Dieses Repository bietet kein öffentliches Bug-Bounty-Programm.
+
 ## Rechte und Herkunft
 
 Eigene Portaltexte, Anordnung und Oberflächencode sind **Source Available** unter [HALVETH PIRL 2.0](LICENSE-HALVETH-PIRL-2.0.md). Die eigenen Bewegungsrenderer und zugeordneten Dateien stehen unter [MIT](motion/LICENSE-MIT.txt). [LICENSES.md](LICENSES.md) ordnet den Umfang und die früheren Freigaben zu. Verlinkte Inhalte behalten ihre eigenen Rechte. Kontakt: **security@halveth.de**.
