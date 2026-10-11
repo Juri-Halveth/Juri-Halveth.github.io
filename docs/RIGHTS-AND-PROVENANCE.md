@@ -42,12 +42,15 @@ Herkunftsbelege veröffentlicht.
 
 Das Repository ist öffentlich. Die GitHub-Bedingungen erlauben anderen
 Nutzern, öffentliche Repositories anzusehen und über die GitHub-Funktion zu
-forken; zugleich erhält GitHub die für Betrieb und Darstellung des Dienstes
-vorgesehenen Nutzungsrechte. Die Repository-Lizenz kann weitere Rechte
-einräumen. Eine spätere Umstellung auf privat beseitigt bestehende Forks und
-lokale Kopien nicht. Die HALVETH PIRL 2.0, `LICENSES.md` und diese Erläuterung
-ändern keine zwingenden Plattformbedingungen oder früher wirksam erteilten
-Rechte.
+forken. Sie räumen GitHub und verbundenen Unternehmen außerdem Rechte zum
+Speichern, Hosten, Archivieren, Parsen, Darstellen und Analysieren ein, soweit
+das für den Dienst erforderlich ist; die aktuellen Bedingungen nennen auch
+Entwicklung, Verbesserung und Training von KI- und Machine-Learning-Funktionen.
+Die Repository-Lizenz kann Nutzern zusätzliche Rechte einräumen. Eine spätere
+Umstellung auf privat beseitigt bestehende Forks und lokale Kopien nicht. Die
+HALVETH PIRL 2.0, `LICENSES.md` und diese Erläuterung widerrufen keine bereits
+erteilten Plattformrechte und ändern keine zwingenden gesetzlichen
+Nutzungsrechte.
 
 ### Herkunftsprüfung vor Aufnahme
 
@@ -115,11 +118,14 @@ conversation histories are not published as public provenance evidence.
 ### Public GitHub repository
 
 This repository is public. GitHub's terms allow other users to view public
-repositories and fork them through GitHub's functionality, and grant GitHub
-the rights needed to operate and display the service. A repository licence
-may grant additional rights. Making a repository private later does not remove
-existing forks or local copies. HALVETH PIRL 2.0, `LICENSES.md`, and this
-document do not override mandatory platform terms or earlier effective grants.
+repositories and fork them through GitHub's functionality. They also grant
+GitHub and its affiliates rights to store, host, archive, parse, display, and
+analyse content as needed for the service; the current terms also cover
+developing, improving, and training AI and machine-learning features. A
+repository licence may grant users additional rights. Making a repository private later does not
+remove existing forks or local copies. HALVETH PIRL 2.0, `LICENSES.md`, and
+this document do not revoke platform rights already granted or override
+mandatory statutory permissions.
 
 ### Provenance review before adding material
 
