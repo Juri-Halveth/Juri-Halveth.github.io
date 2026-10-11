@@ -1,6 +1,6 @@
 {
   "schema": "HALVETH_FLOWSTAR_AUDIT_1",
-  "generated_at": "2026-10-11T08:48:16.995249+00:00",
+  "generated_at": "2026-10-11T11:44:18.530636+00:00",
   "sign": "✦⇄∞⇄✦",
   "rules": [
     "NO_TERMINAL_FREEZE",
@@ -30,9 +30,9 @@
       "finding": "Append-oriented evidence can continue evolving without replacing source records.",
       "evidence": {
         "unique_urls": 14949,
-        "bundled_canonical": 723,
-        "graph_nodes": 2424,
-        "graph_edges": 1907
+        "bundled_canonical": 856,
+        "graph_nodes": 2557,
+        "graph_edges": 1974
       }
     },
     {
@@ -48,5 +48,5 @@
       "effect": "Branch freely without corrupting the physical metaphor."
     }
   ],
-  "constellation_sha256": "c88b3ee4ee8459a995ce413ca97626631fd6fd7425d2883f8d21f5c6e9a174ff"
+  "constellation_sha256": "ba4482505dafaf2114664030125d0fa78b01026ef100a1f2028f48b288874e9b"
 }
