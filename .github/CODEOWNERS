@@ -1,0 +1,7 @@
+# Suggested reviewers only; merge enforcement requires branch protection or a ruleset.
+/AGENTS.md @Juri-Halveth
+/SECURITY.md @Juri-Halveth
+/LICENSES.md @Juri-Halveth
+/LICENSE-HALVETH-PIRL-2.0.md @Juri-Halveth
+/.github/ @Juri-Halveth
+/tests/ @Juri-Halveth
