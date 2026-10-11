@@ -72,5 +72,6 @@ require('./add-return-navigation.cjs');
 require('./build-handbook.cjs');
 require('./build-visitor-pages.cjs');
 require('./build-code-evidence.cjs');
+require('./build-pulsar.cjs');
 require('./build-languages.cjs');
 console.log(JSON.stringify({state:'TOPIC_LANDING_BUILT',topics:5,sourceAliases:inventory.projects.length,researchDocuments:snapshot.research.documents.length,workCertificates:certificates.length,sourceSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'data/public-sources.json'))).digest('hex')}));

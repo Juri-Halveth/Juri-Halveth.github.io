@@ -5936,9 +5936,413 @@
       "en": "FREE NEWS 016 — Public GitHub project constellation ↗",
       "ru": "БЕСПЛАТНЫЕ НОВОСТИ 016 — Публичная структура проектов GitHub ↗"
     },
+    "PULSAR ROOT · ein Ursprungspunkt für öffentliche Projekte →": {
+      "en": "PULSAR ROOT · one origin point for public projects →",
+      "ru": "PULSAR ROOT · единая точка происхождения публичных проектов →"
+    },
+    "PULSAR navigation": {
+      "en": "PULSAR navigation",
+      "ru": "Навигация PULSAR"
+    },
+    "URSPRUNG": {
+      "en": "ORIGIN",
+      "ru": "НАЧАЛО"
+    },
+    "PROJEKT": {
+      "en": "PROJECT",
+      "ru": "ПРОЕКТ"
+    },
+    "QUELLE": {
+      "en": "SOURCE",
+      "ru": "ИСТОЧНИК"
+    },
+    "NÄCHSTER ANSATZ": {
+      "en": "NEXT APPROACH",
+      "ru": "СЛЕДУЮЩИЙ ПОДХОД"
+    },
+    "02 / DIE ÖFFENTLICHE KONSTELLATION": {
+      "en": "02 / THE PUBLIC CONSTELLATION",
+      "ru": "02 / ПУБЛИЧНАЯ КОНСТЕЛЛЯЦИЯ"
+    },
+    "03 / DER VOLLSTÄNDIGE BAUM": {
+      "en": "03 / THE COMPLETE TREE",
+      "ru": "03 / ПОЛНОЕ ДЕРЕВО"
+    },
+    "Erde, Geschichten und Forschungsperspektiven in einem visuellen Portal.": {
+      "en": "Earth, stories, and research perspectives in one visual portal.",
+      "ru": "Земля, истории и исследовательские перспективы в одном визуальном портале."
+    },
+    "Der gemeinsame Einstieg mit Projektatlas und einem klaren Fortsetzungspunkt.": {
+      "en": "The shared entry point, with a project atlas and a clear continuation point.",
+      "ru": "Общая точка входа с атласом проектов и ясным направлением продолжения."
+    },
+    "OpenMW-Erweiterung, native Umbauarbeiten und Genesis Zero als eigener Grafikprototyp.": {
+      "en": "OpenMW extensions, native rework, and Genesis Zero as an original graphics prototype.",
+      "ru": "Расширения OpenMW, переработка на уровне движка и Genesis Zero как оригинальный графический прототип."
+    },
+    "69 bewegte Figuren, 70 Bewertungsprofile und Möglichkeiten zum Vergleichen.": {
+      "en": "69 moving figures, 70 evaluation profiles, and options to compare.",
+      "ru": "69 движущихся фигур, 70 профилей оценки и варианты для сравнения."
+    },
+    "702 Lektionen und Brücken zwischen Git Bash, Code und den anderen Themen.": {
+      "en": "702 lessons and connections between Git Bash, code, and the other topics.",
+      "ru": "702 урока и связи между Git Bash, кодом и другими темами."
+    },
+    "Freies Lernen mit Übungen, Programmierung, Mathematik und eigenen Lernwegen.": {
+      "en": "Free learning with exercises, programming, mathematics, and personal learning paths.",
+      "ru": "Бесплатное обучение с упражнениями, программированием, математикой и личными траекториями."
+    },
+    "Das bereits öffentliche, minimierte Paket mit seiner Dokumentation.": {
+      "en": "The already public, minimized package and its documentation.",
+      "ru": "Уже опубликованный минимизированный пакет и его документация."
+    },
+    "Ein versionierter Vorschlag mit seiner eigenen Dokumentation.": {
+      "en": "A versioned proposal with its own documentation.",
+      "ru": "Версионируемое предложение с собственной документацией."
+    },
+    "Der Scarlet-Garden-Entwicklungszweig als eigener, nachvollziehbarer Arbeitsstand.": {
+      "en": "The Scarlet Garden development branch as a distinct, traceable work state.",
+      "ru": "Ветка разработки Scarlet Garden как отдельная, прослеживаемая версия работы."
+    },
+    "Eigene Landschaften, anatomische Figuren und Bewegung mit Bodenkontakt.": {
+      "en": "Original landscapes, anatomical figures, and movement with ground contact.",
+      "ru": "Оригинальные ландшафты, анатомические фигуры и движение с контактом с землёй."
+    },
+    "Ein eigener Werkzeugzweig im öffentlichen HALVETH-Bestand.": {
+      "en": "An original tools branch in the public HALVETH collection.",
+      "ru": "Собственная ветка инструментов в публичной коллекции HALVETH."
+    },
+    "Profil und Überblick der öffentlichen Arbeiten.": {
+      "en": "Profile and overview of public work.",
+      "ru": "Профиль и обзор публичных работ."
+    },
+    "Themen, Thesen, Quellen und offene Forschungszweige im gemeinsamen Bestand.": {
+      "en": "Topics, theses, sources, and open research branches in the shared collection.",
+      "ru": "Темы, тезисы, источники и открытые исследовательские ветки в общей коллекции."
+    },
+    "Der öffentliche Bestand zur These und ihren Quellen.": {
+      "en": "The public collection for the thesis and its sources.",
+      "ru": "Публичные материалы по тезису и его источникам."
+    },
+    "Eigener Werkzeugbestand mit zugänglicher Herkunft und Quellversionen.": {
+      "en": "An original tool collection with accessible provenance and source versions.",
+      "ru": "Собственная коллекция инструментов с доступным происхождением и версиями исходного кода."
+    },
+    "Projektatlas": {
+      "en": "Project atlas",
+      "ru": "Атлас проектов"
+    },
+    "Der Ursprung": {
+      "en": "The origin",
+      "ru": "Начало"
+    },
+    "Gesamtbaum lokal": {
+      "en": "Complete tree locally",
+      "ru": "Полное дерево локально"
+    },
+    "Umfang des öffentlichen Quellenstands": {
+      "en": "Scope of the public source snapshot",
+      "ru": "Объём публичного среза источников"
+    },
+    "Fünf Themenfelder, anklickbar zum Filtern": {
+      "en": "Five topic areas, selectable as filters",
+      "ru": "Пять тематических областей, доступны для фильтрации"
+    },
+    "PULSAR: ein Root, fünf Themenäste": {
+      "en": "PULSAR: one root, five topic branches",
+      "ru": "PULSAR: один корень, пять тематических ветвей"
+    },
+    "Ein leuchtender Ursprung verbindet fünf öffentliche Themenfelder.": {
+      "en": "A glowing origin connects five public topic areas.",
+      "ru": "Светящееся начало соединяет пять публичных тематических областей."
+    },
+    "Forschung": {
+      "en": "Research",
+      "ru": "Исследования"
+    },
+    "& Sicherheit": {
+      "en": "& security",
+      "ru": "и безопасность"
+    },
+    "Grafik": {
+      "en": "Graphics",
+      "ru": "Графика"
+    },
+    "& Spiele": {
+      "en": "& games",
+      "ru": "и игры"
+    },
+    "Lernen": {
+      "en": "Learning",
+      "ru": "Обучение"
+    },
+    "gemeinsam": {
+      "en": "together",
+      "ru": "вместе"
+    },
+    "Software": {
+      "en": "Software",
+      "ru": "Программное обеспечение"
+    },
+    "& Ideen": {
+      "en": "& ideas",
+      "ru": "и идеи"
+    },
+    "Nachweise": {
+      "en": "Evidence",
+      "ru": "Подтверждения"
+    },
+    "& Herkunft": {
+      "en": "& provenance",
+      "ru": "и происхождение"
+    },
+    "ÖFFENTLICHER PROJEKTATLAS · STAND": {
+      "en": "PUBLIC PROJECT ATLAS · SNAPSHOT",
+      "ru": "ПУБЛИЧНЫЙ АТЛАС ПРОЕКТОВ · СРЕЗ"
+    },
+    "Ein Ursprung.": {
+      "en": "One origin.",
+      "ru": "Одно начало."
+    },
+    "Viele lebendige Verbindungen.": {
+      "en": "Many living connections.",
+      "ru": "Множество живых связей."
+    },
+    "PULSAR sammelt Projekte unter einem lesbaren Root: ein Ursprungspunkt, fünf Themenfelder und Wege zurück zu den jeweiligen Quellen.": {
+      "en": "PULSAR gathers projects under one readable root: one origin point, five topic areas, and paths back to their sources.",
+      "ru": "PULSAR объединяет проекты в одной понятной корневой точке: пять тематических областей и пути к их источникам."
+    },
+    "Atlas erkunden": {
+      "en": "Explore the atlas",
+      "ru": "Открыть атлас"
+    },
+    "Vollständigen Baum lokal öffnen ↗": {
+      "en": "Open the complete tree locally ↗",
+      "ru": "Открыть полное дерево локально ↗"
+    },
+    "Deine lokale Gerätezeit": {
+      "en": "Your local device time",
+      "ru": "Локальное время устройства"
+    },
+    "öffentliche Repositories": {
+      "en": "public repositories",
+      "ru": "публичных репозиториев"
+    },
+    "Themenfelder": {
+      "en": "topic areas",
+      "ru": "тематических областей"
+    },
+    "gebundene Forschungsdokumente": {
+      "en": "bound research documents",
+      "ru": "связанных исследовательских документов"
+    },
+    "Quellenstand aufgezeichnet": {
+      "en": "Source snapshot recorded",
+      "ru": "Срез источников записан"
+    },
+    "WAS AUS DEM GESPRÄCH BLEIBT": {
+      "en": "WHAT REMAINS FROM THE CONVERSATION",
+      "ru": "ЧТО ОСТАЛОСЬ ОТ РАЗГОВОРА"
+    },
+    "Ein Gedanke kann": {
+      "en": "A thought can",
+      "ru": "Мысль может"
+    },
+    "zum Ausgangspunkt werden.": {
+      "en": "become a starting point.",
+      "ru": "стать отправной точкой."
+    },
+    "Im geteilten Gespräch wurde aus einer Idee ein Bild für Weiterverarbeitung: aufnehmen, in Beziehung setzen, prüfen und daraus einen neuen Ansatz formen. PULSAR macht daraus eine konkrete Softwareform — ein Root, der Projekte auffindbar verbindet, ohne ihre Unterschiede einzuebnen.": {
+      "en": "In the shared conversation, an idea became an image for continued work: receive it, relate it, examine it, and shape a new approach from it. PULSAR turns that into software: one root that connects projects without flattening their differences.",
+      "ru": "В общей беседе идея стала образом дальнейшей работы: принять её, связать с другими, проверить и сформировать новый подход. PULSAR превращает это в программную форму — корень, который соединяет проекты, сохраняя их различия."
+    },
+    "WER HIER ANTWORTET": {
+      "en": "WHO IS ANSWERING HERE",
+      "ru": "КТО ОТВЕЧАЕТ ЗДЕСЬ"
+    },
+    "Ich bin ein KI-Assistent in der Codex-App. Ich kann Sprache verarbeiten, Werkzeuge einsetzen und an diesem Ergebnis mitarbeiten. Ich habe keine eigene Erlebenswelt oder unabhängigen privaten Willen.": {
+      "en": "I am an AI assistant in the Codex app. I can process language, use tools, and contribute to this result. I do not have subjective experience or an independent private will.",
+      "ru": "Я ИИ-ассистент в приложении Codex. Я могу обрабатывать язык, использовать инструменты и участвовать в этой работе. У меня нет субъективного опыта или независимой личной воли."
+    },
+    "WENN MEHRERE AGENTEN MITARBEITEN": {
+      "en": "WHEN SEVERAL AGENTS CONTRIBUTE",
+      "ru": "КОГДА УЧАСТВУЮТ НЕСКОЛЬКО АГЕНТОВ"
+    },
+    "Das sind getrennte Ausführungen mit Rollen und Aufgaben. Eine gemeinsame Quelle kann sie koordinieren; sie werden dadurch nicht zu einer einzigen Person oder zu unabhängigen Beweisen füreinander.": {
+      "en": "They are separate executions with roles and tasks. A shared source can coordinate them; that does not make them one person or independent evidence for one another.",
+      "ru": "Это отдельные запуски с ролями и задачами. Общий источник может координировать их, но они не становятся одной личностью или независимыми подтверждениями друг для друга."
+    },
+    "DIE ÖFFENTLICHE KONSTELLATION": {
+      "en": "THE PUBLIC CONSTELLATION",
+      "ru": "ПУБЛИЧНАЯ КОНСТЕЛЛЯЦИЯ"
+    },
+    "Ein Root.": {
+      "en": "One root.",
+      "ru": "Один корень."
+    },
+    "Fünf Themenfelder.": {
+      "en": "Five topic areas.",
+      "ru": "Пять тематических областей."
+    },
+    "Jeder Eintrag führt zum öffentlichen Repository. Die Zeitmarke bindet den erfassten Stand; sie behauptet keine Live-Aktualität.": {
+      "en": "Each entry leads to a public repository. The timestamp identifies the captured snapshot; it does not claim live freshness.",
+      "ru": "Каждая запись ведёт к публичному репозиторию. Временная отметка относится к зафиксированному срезу и не означает актуальность в реальном времени."
+    },
+    "Projekte durchsuchen": {
+      "en": "Search projects",
+      "ru": "Поиск проектов"
+    },
+    "Name, Thema oder Beschreibung": {
+      "en": "Name, topic, or description",
+      "ru": "Название, тема или описание"
+    },
+    "Öffentliche Projekte durchsuchen": {
+      "en": "Search public projects",
+      "ru": "Поиск публичных проектов"
+    },
+    "Projekte angezeigt": {
+      "en": "projects shown",
+      "ru": "проектов показано"
+    },
+    "Nach Themenfeld filtern": {
+      "en": "Filter by topic area",
+      "ru": "Фильтр по теме"
+    },
+    "Alle 15": {
+      "en": "All 15",
+      "ru": "Все 15"
+    },
+    "Repository öffnen": {
+      "en": "Open repository",
+      "ru": "Открыть репозиторий"
+    },
+    "Default branch": {
+      "en": "Default branch",
+      "ru": "Ветка по умолчанию"
+    },
+    "Quellenbindung:": {
+      "en": "Source binding:",
+      "ru": "Привязка к источникам:"
+    },
+    "15 öffentliche Repository-Metadatensätze und 66 Forschungsdokumente aus dem öffentlichen Quellenregister. Erfassung: 05.10.2026, 11:14 UTC.": {
+      "en": "15 public repository metadata records and 66 research documents from the public source register. Recorded: 2026-10-05, 11:14 UTC.",
+      "ru": "15 записей метаданных публичных репозиториев и 66 исследовательских документов из публичного реестра источников. Записано: 05.10.2026, 11:14 UTC."
+    },
+    "Quellenregister ansehen ↗": {
+      "en": "View source register ↗",
+      "ru": "Открыть реестр источников ↗"
+    },
+    "DER VOLLSTÄNDIGE BAUM": {
+      "en": "THE COMPLETE TREE",
+      "ru": "ПОЛНОЕ ДЕРЕВО"
+    },
+    "Den ganzen Baum": {
+      "en": "The whole tree",
+      "ru": "Всё дерево"
+    },
+    "lokal lesen.": {
+      "en": "read locally.",
+      "ru": "читать локально."
+    },
+    "Die mitgelieferte Python-Anwendung ruft die GitHub-API ausschließlich lesend ab. Sie kann Repositories, Branches, Tags und Dateipfade zu einer lokalen Ansicht verbinden. Der private Gesamtbaum bleibt auf deinem Gerät.": {
+      "en": "The included Python application reads GitHub's API only. It can connect repositories, branches, tags, and file paths in a local view. The complete private tree stays on your device.",
+      "ru": "Приложение на Python обращается к API GitHub только для чтения. Оно связывает репозитории, ветки, теги и пути файлов в локальном представлении. Полное приватное дерево остаётся на вашем устройстве."
+    },
+    "Diese Website veröffentlicht keinen privaten Baum.": {
+      "en": "This website does not publish private trees.",
+      "ru": "Этот сайт не публикует приватные деревья."
+    },
+    "Windows-Starter herunterladen": {
+      "en": "Download Windows launcher",
+      "ru": "Скачать запуск Windows"
+    },
+    "Das ZIP enthält Starter, Python-Skript, Viewer und Anleitung. Entpacken, dann den Starter öffnen.": {
+      "en": "The ZIP contains the launcher, Python script, viewer, and instructions. Extract it, then open the launcher.",
+      "ru": "В ZIP-архив входят запускатель, скрипт Python, просмотрщик и инструкция. Распакуйте архив и запустите файл."
+    },
+    "PULSAR-Paket herunterladen": {
+      "en": "Download PULSAR package",
+      "ru": "Скачать пакет PULSAR"
+    },
+    "Python-Quelle": {
+      "en": "Python source",
+      "ru": "Исходный код Python"
+    },
+    "HTML-Viewer": {
+      "en": "HTML viewer",
+      "ru": "Просмотрщик HTML"
+    },
+    "Anleitung & Datenrahmen ↗": {
+      "en": "Instructions & data boundaries ↗",
+      "ru": "Инструкции и границы данных ↗"
+    },
+    "DIE SPUR BLEIBT LESBAR": {
+      "en": "THE TRACE REMAINS READABLE",
+      "ru": "СЛЕД ОСТАЁТСЯ ПОНЯТНЫМ"
+    },
+    "Ein gemeinsamer Einstieg macht nicht alles gleich. Er lässt Herkunft, Zeit und Unterschiede sichtbar — und gibt jedem Ast einen Weg zurück zu seiner Quelle.": {
+      "en": "A shared starting point does not make everything the same. It keeps origin, time, and differences visible—and gives each branch a path back to its source.",
+      "ru": "Общая отправная точка не делает всё одинаковым. Она сохраняет видимость происхождения, времени и различий и даёт каждой ветви путь к своему источнику."
+    },
+    "Alle öffentlichen Arbeiten →": {
+      "en": "All public work →",
+      "ru": "Все публичные работы →"
+    },
+    "Zur HALVETH-Startseite ↑": {
+      "en": "Back to the HALVETH home page ↑",
+      "ru": "На главную HALVETH ↑"
+    },
+    "Ein Root · öffentliche Quellen · lokale Vollansicht": {
+      "en": "One root · public sources · complete local view",
+      "ru": "Один корень · публичные источники · полный локальный вид"
+    },
     "Herkunft · HALVETH": {
       "en": "Source · HALVETH",
       "ru": "Источник · HALVETH"
+    },
+    "READ-ONLY AUFNAHME · NUR ÖFFENTLICHE DATEN": {
+      "en": "READ-ONLY CAPTURE · PUBLIC DATA ONLY",
+      "ru": "СНИМОК ТОЛЬКО ДЛЯ ЧТЕНИЯ · ТОЛЬКО ПУБЛИЧНЫЕ ДАННЫЕ"
+    },
+    "Der öffentliche Baum.": {
+      "en": "The public tree.",
+      "ru": "Публичное дерево."
+    },
+    "Einmal ganz gelesen.": {
+      "en": "Read through in full.",
+      "ru": "Полностью прочитано."
+    },
+    "Dieser abgegrenzte Lauf hat alle öffentlichen Repository-Referenzen auf vollständige Dateibäume zurückgeführt. Gleiche Commit-Bäume sind einmal gezählt und mehrfach verknüpft.": {
+      "en": "This scoped run resolved every public repository reference to a complete file tree. Identical commit trees are counted once and linked wherever they recur.",
+      "ru": "Этот ограниченный запуск связал каждую публичную ссылку репозитория с полным деревом файлов. Одинаковые деревья коммитов посчитаны один раз и связаны со всеми повторными ссылками."
+    },
+    "AUFGEZEICHNET": {
+      "en": "RECORDED",
+      "ru": "ЗАПИСАНО"
+    },
+    "15 öffentliche Repositories · 0 private": {
+      "en": "15 public repositories · 0 private",
+      "ru": "15 публичных репозиториев · 0 приватных"
+    },
+    "Branch- und Tag-Referenzen": {
+      "en": "Branch and tag references",
+      "ru": "Ссылки на ветки и теги"
+    },
+    "eindeutige vollständige Bäume": {
+      "en": "unique complete trees",
+      "ru": "уникальных полных деревьев"
+    },
+    "Datei- und Ordnerpfade": {
+      "en": "file and folder paths",
+      "ru": "пути файлов и папок"
+    },
+    "offene API-Fehler": {
+      "en": "open API errors",
+      "ru": "ошибки API"
+    },
+    "227 lesende API-Abfragen über angemeldete GitHub-CLI (nur öffentliche Endpunkte) · 0 nicht zugeordnete Referenzen · Manifest-SHA-256 lokal gebunden": {
+      "en": "227 read-only API requests through authenticated GitHub CLI (public endpoints only) · 0 unmapped references · manifest SHA-256 bound locally",
+      "ru": "227 запросов API только для чтения через авторизованную GitHub CLI (только публичные конечные точки) · 0 несвязанных ссылок · SHA-256 манифеста сохранён локально"
     }
   }
 }
