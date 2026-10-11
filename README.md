@@ -10,6 +10,8 @@ Die öffentliche Startseite [HALVETH](https://juri-halveth.github.io/) erschlie�
 
 Die leuchtende Bewegungskomposition startet direkt auf der Startseite. Organische Kurven, räumliche Rotation und wandernde Lichtpunkte werden zur Laufzeit gezeichnet. Der kontinuierliche Kompositionsmodus hat keine Titelkarten, Abspielregler oder Zeitleiste. Sichtbarkeit und die Systemeinstellung für reduzierte Bewegung steuern den Rechenaufwand; Text und Links bleiben vollständig zugänglich.
 
+Der [PULSAR ROOT](https://juri-halveth.github.io/pulsar/) setzt einen gemeinsamen Einstiegspunkt für den datierten öffentlichen Projektatlas. Der vollständige Branch-, Tag- und Dateibaum wird vom beiliegenden, rein lesenden Python-Werkzeug lokal erzeugt; ein Baum mit privaten Repositories oder Pfaden gehört nicht in diese Website.
+
 [Alle öffentlichen Arbeiten](https://juri-halveth.github.io/arbeiten/) · [Arbeitsprofil mit Nachweisen](https://juri-halveth.github.io/profil/) · [Elf private Werkzertifikate](https://juri-halveth.github.io/werkzertifikate/)
 
 ## Quellen und Arbeitsprofil
@@ -44,6 +46,6 @@ GitHub Pages veröffentlicht `main` aus dem Repository-Wurzelverzeichnis. Die ve
 
 ## Rechte und Herkunft
 
-Eigene Portaltexte, Anordnung und Oberflächencode sind **Source Available** unter [HALVETH PIRL 2.0](LICENSE-HALVETH-PIRL-2.0.md). Die eigenen Bewegungsrenderer und zugeordneten Dateien stehen unter [MIT](motion/LICENSE-MIT.txt). [LICENSES.md](LICENSES.md) ordnet den Umfang und die früheren Freigaben zu. Verlinkte Inhalte behalten ihre eigenen Rechte. Kontakt: **security@halveth.de**.
+Eigene Portaltexte, Anordnung und Oberflächencode sind **Source Available** unter [HALVETH PIRL 2.0](LICENSE-HALVETH-PIRL-2.0.md). Die eigenen Bewegungsrenderer und zugeordneten Dateien stehen unter [MIT](motion/LICENSE-MIT.txt). [LICENSES.md](LICENSES.md) ordnet den Umfang und die früheren Freigaben zu. [Rechte- und Herkunftsrichtlinie](docs/RIGHTS-AND-PROVENANCE.md) und [Beitragsregeln](CONTRIBUTING.md) halten Urheber, Lizenzumfang und Belege getrennt. Verlinkte Inhalte behalten ihre eigenen Rechte. Kontakt: **security@halveth.de**.
 
 [Aufbau, Pflege und Quellenumfang](docs/JURIS-SPACE.md)
