@@ -1,6 +1,6 @@
 {
   "schema": "HALVETH_FLOWSTAR_AUDIT_1",
-  "generated_at": "2026-10-04T11:04:53.230795+00:00",
+  "generated_at": "2026-10-11T08:48:16.995249+00:00",
   "sign": "✦⇄∞⇄✦",
   "rules": [
     "NO_TERMINAL_FREEZE",
@@ -48,5 +48,5 @@
       "effect": "Branch freely without corrupting the physical metaphor."
     }
   ],
-  "constellation_sha256": "a5c2976b279becdfa357c581c45bd0227743bf3ee46940ef55141a12309e4456"
+  "constellation_sha256": "c88b3ee4ee8459a995ce413ca97626631fd6fd7425d2883f8d21f5c6e9a174ff"
 }
