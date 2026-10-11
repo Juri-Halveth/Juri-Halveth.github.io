@@ -9,7 +9,7 @@ Copyright (c) 2026 Juri Janovski, publishing as Juri Halveth.
 | License text | Its stated copying permission |
 | New motion renderer: `motion-core.js`, `motion-player.js`, `landing-motion.js`, `tests/landing-motion.test.cjs`, `tools/render-motion.cjs`, `tests/motion*.test.cjs`, `motion/README.md`, and generated `motion/poster.jpg` and `motion/HALVETH_MOTION_20s_1080p.mp4` | [MIT](motion/LICENSE-MIT.txt); earlier portal materials retain their terms |
 | New shared language runtime `assets/hub-language.js`, `assets/hub-language.css`, and its language regression tests | [MIT](motion/LICENSE-MIT.txt); source texts and linked works retain their existing terms |
-| New PULSAR public atlas, source builder and local GitHub tree navigator under `pulsar/` and `tools/pulsar-one-root/` | [HALVETH PIRL 2.0](LICENSE-HALVETH-PIRL-2.0.md), only to the extent of rights actually held; linked repositories and GitHub metadata retain their respective terms |
+| AI-assisted PULSAR public atlas, source builder and local GitHub tree navigator under `pulsar/` and `tools/pulsar-one-root/` | [HALVETH PIRL 2.0](LICENSE-HALVETH-PIRL-2.0.md), only to the extent of protectable rights actually held; no blanket authorship or rights claim over AI output, linked repositories, GitHub metadata, or third-party material; see [rights and provenance](docs/RIGHTS-AND-PROVENANCE.md) |
 
 This portal is **source-available**, with conditional non-commercial
 public-interest permission and a separate written commercial licensing route.

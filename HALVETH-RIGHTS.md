@@ -7,8 +7,10 @@
 
 Dieses Portal verbindet öffentliche HALVETH-Projekte. Eigene schutzfähige
 Texte, Auswahl, Anordnung, Gestaltung und Codebeiträge stehen nach der
-Pfadkarte in [LICENSES.md](LICENSES.md) unter HALVETH PIRL 2.0. Der Quelltext
-ist öffentlich einsehbar; das Lizenzmodell ist source-available.
+Pfadkarte in [LICENSES.md](LICENSES.md) unter HALVETH PIRL 2.0, soweit die
+jeweiligen Rechte tatsächlich gehalten werden. Die Zuordnung bezeichnet eine
+Lizenz, keine Übertragung des Urheberrechts. Der Quelltext ist öffentlich
+einsehbar; das Lizenzmodell ist source-available.
 
 Verlinkte Projekte behalten ihre eigenen Bedingungen. Frühere wirksame
 Freigaben und Rechte Dritter bleiben bestehen. Quellenverweise, Namen, Ideen,
@@ -23,9 +25,11 @@ vereinbart. Ein Seitenbesuch oder Download ist kein kostenpflichtiger Vertrag.
 ## English
 
 This portal connects public HALVETH projects. Protectable original prose,
-selection, arrangement, design and code contributions are assigned to HALVETH
-PIRL 2.0 by [LICENSES.md](LICENSES.md). Its source is publicly viewable and the
-license model is source-available.
+selection, arrangement, design and code contributions are licensed under
+HALVETH PIRL 2.0 as mapped by [LICENSES.md](LICENSES.md), only to the extent
+the applicable rights are actually held. This is a licence designation, not a
+transfer of copyright. Its source is publicly viewable and the licence model
+is source-available.
 
 Linked projects retain their own terms. Earlier effective grants and
 third-party rights remain applicable. References, names, ideas, facts and
@@ -39,5 +43,7 @@ or downloading the portal does not create a paid contract.
 ## Machine-readable declaration
 
 [HALVETH-RIGHTS.json](HALVETH-RIGHTS.json) records this declaration and the
-qualified text-and-data-mining reservation. The file and crawler directives do
-not override earlier licenses, statutory permissions or GitHub's terms.
+qualified text-and-data-mining reservation. The
+[rights and provenance policy](docs/RIGHTS-AND-PROVENANCE.md) explains the
+work-specific evidence process. These records and crawler directives do not
+override earlier licenses, statutory permissions or GitHub's terms.

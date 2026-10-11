@@ -34,4 +34,4 @@ bash SPACE.sh verify
 
 ## Rights and scope
 
-Use the original rights and licence notices for the relevant files and versions. This guide grants no additional licence.
+Use the original rights and licence notices for the relevant files and versions. See [rights and provenance](docs/RIGHTS-AND-PROVENANCE.md) and [contribution rules](CONTRIBUTING.md). This guide grants no additional licence.
