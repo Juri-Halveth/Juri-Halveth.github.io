@@ -39,5 +39,10 @@ werkzertifikate/2026-09-28-v1.1/* -text
 /zertifikate/** text eol=lf
 /data/claims.json text eol=lf
 /data/models.json text eol=lf
+/data/model-atlas-translations.json text eol=lf
 /tools/certificates.cjs text eol=lf
 /tests/certificate-claims.test.cjs text eol=lf
+/tests/governance.test.cjs text eol=lf
+/tests/models-atlas.test.cjs text eol=lf
+/.github/workflows/pages.yml text eol=lf
+/docs/MODEL-ATLAS.md text eol=lf

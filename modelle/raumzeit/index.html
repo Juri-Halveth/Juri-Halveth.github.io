@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Zustandsatlas: acht interaktive HALVETH-Modelle zu Beziehung, Wellen, Layern, Strudeln, Teilung und Beobachtung.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <link rel="canonical" href="https://juri-halveth.github.io/modelle/raumzeit/">
+  <link rel="icon" href="/favicon.svg">
+  <link rel="stylesheet" href="/portal.css">
+  <link rel="stylesheet" href="atlas.css">
+  <script type="module" src="view.mjs"></script>
+  <title>Zustandsatlas · HALVETH Modelle</title>
+</head>
+<body class="atlas-page">
+  <a class="skip-link" href="#main">Zum Inhalt</a>
+  <header class="site-header shell">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">H</span><span>HALVETH</span></a>
+    <nav aria-label="Navigation">
+      <a href="/modelle/">Alle Modelle</a>
+      <a href="/arbeiten/">Arbeiten</a>
+      <a href="/handbuch/">Handbuch</a>
+      <a href="/">Zur Startseite</a>
+    </nav>
+  </header>
+  <main id="main" class="atlas-shell">
+    <header class="atlas-hero">
+      <p class="eyebrow">MODELLFAMILIE · NEU AUFGEBAUT · 2026</p>
+      <p class="atlas-kicker">Zustand / Relation / Übergang</p>
+      <h1>Ein Atlas für<br><em>das Dazwischen.</em></h1>
+      <p class="atlas-lead">Acht eigenständige Sehweisen aus der HALVETH-Forschungsfamilie: als bewegliche Karten neu aufgebaut, auf Quellcode zurückgeführt und mit offenen Fragen verbunden.</p>
+      <div class="atlas-hero-links">
+        <a href="#state-atlas">Atlas erleben ↓</a>
+        <a href="https://github.com/Juri-Halveth/Juri-Halveth.github.io/tree/main/modelle/raumzeit/" target="_blank" rel="noopener">Quellcode ↗</a>
+        <a href="https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/modelle/raumzeit/core.test.mjs" target="_blank" rel="noopener">Prüfungen ↗</a>
+      </div>
+    </header>
+    <section class="atlas-stage-section" aria-labelledby="atlas-stage-title">
+      <div class="atlas-stage-heading">
+        <p class="eyebrow">LIVE MODELLFLÄCHE</p>
+        <h2 id="atlas-stage-title">Wähle eine Bahn.<br><em>Der Raum antwortet sichtbar.</em></h2>
+      </div>
+      <div class="atlas-canvas-frame">
+        <canvas id="state-atlas" width="1200" height="720" role="img" aria-label="Animierte Modellfläche mit Linien, Ringen und Knoten"></canvas>
+      </div>
+      <div class="atlas-now" aria-live="polite">
+        <span id="scene-index">01</span>
+        <div><p id="scene-kind">Gegenphasen · Beziehung</p><h3 id="scene-title">Erste Regel · Plus / Minus</h3></div>
+        <p id="scene-formula">Δ = Beziehung(−, +)</p>
+      </div>
+      <nav class="scene-switcher" aria-label="Modell im Zustandsatlas auswählen">
+        <button type="button" data-scene="erste-regel" aria-pressed="true"><span>01</span> Erste Regel</button>
+        <button type="button" data-scene="wellenfeld" aria-pressed="false"><span>02</span> Wellenfeld</button>
+        <button type="button" data-scene="dimensionen" aria-pressed="false"><span>03</span> Dimensionen</button>
+        <button type="button" data-scene="schichten" aria-pressed="false"><span>04</span> Schichten</button>
+        <button type="button" data-scene="strudel-3d" aria-pressed="false"><span>05</span> Strudel 3D</button>
+        <button type="button" data-scene="strudel-2d" aria-pressed="false"><span>06</span> Zeitbahn</button>
+        <button type="button" data-scene="zwischenraum" aria-pressed="false"><span>07</span> Teilung</button>
+        <button type="button" data-scene="beobachterraum" aria-pressed="false"><span>08</span> Beobachterraum</button>
+      </nav>
+    </section>
+    <section class="atlas-reading" aria-labelledby="reading-title">
+      <p class="eyebrow">TIEFE LESESPUR</p>
+      <h2 id="reading-title">Nicht nur sehen.<br><em>Den Modellvertrag lesen.</em></h2>
+      <p class="atlas-reading-lead">Jede Karte bindet eine Darstellung an ihren Zweck. Sie bleibt eine eigenständige Modelloberfläche – ohne eine physische Messung oder eine allgemeine Weltbehauptung daraus zu machen.</p>
+      <article class="scene-reading" id="erste-regel" data-scene-reading="erste-regel">
+        <p class="scene-number">01 / AUSGANG</p><h3>Erste Regel · Plus / Minus</h3>
+        <p>Die Oberfläche beginnt mit zwei gegenläufigen, gleichwertig dargestellten Phasen. Erst die sichtbare Kopplung erzeugt die Mitte. Der Code modelliert eine Beziehung zwischen gezeichneten Kurven; er setzt keine Teilchenerzeugung voraus.</p>
+        <dl><div><dt>Darstellung</dt><dd>zwei sinusförmige Wege, ein Kopplungsring, drei Knoten</dd></div><div><dt>Offene Kante</dt><dd>Welche messbare Erhaltung oder Symmetrie würde eine konkrete physikalische Hypothese tragen?</dd></div></dl>
+      </article>
+      <article class="scene-reading" id="wellenfeld" data-scene-reading="wellenfeld" hidden>
+        <p class="scene-number">02 / KONTAKT</p><h3>Wellenfeld · erster Kontakt</h3>
+        <p>Mehrere Bahnen nähern sich, schwingen in der Begegnung und beruhigen sich im Rhythmus. Die Animation verwendet nur mathematisch definierte Phasen und Dämpfung; sie ist eine Lesefläche für Relation und Übergang.</p>
+        <dl><div><dt>Darstellung</dt><dd>sechs Phasenbahnen, wandernde Punkte und ein Kontaktkern</dd></div><div><dt>Offene Kante</dt><dd>Eine reale Kettenreaktion braucht beobachtbare Größen, Messfenster und ein Gegenmodell.</dd></div></dl>
+      </article>
+      <article class="scene-reading" id="dimensionen" data-scene-reading="dimensionen" hidden>
+        <p class="scene-number">03 / ANSICHT</p><h3>Dimensionen · Layer-Live-Modell</h3>
+        <p>Hier sind Zeit, Drehung und Zoom Bedienachsen einer Ansicht. Die Szene macht sichtbar, wie sich ein Objekt über mehrere Perspektiven ordnen lässt. Sie führt damit keine Messung zusätzlicher physischer Dimensionen aus.</p>
+        <dl><div><dt>Darstellung</dt><dd>verschachtelte Ringe, Bahnen und Knoten</dd></div><div><dt>Offene Kante</dt><dd>Eine Dimension im fachlichen Sinn benötigt unabhängige Koordinaten und eine definierte Messbrücke.</dd></div></dl>
+      </article>
+      <article class="scene-reading" id="schichten" data-scene-reading="schichten" hidden>
+        <p class="scene-number">04 / ÜBERGANG</p><h3>Schichten · Zwischenräume</h3>
+        <p>Das Modell zeigt Ebenen als getrennte Horizonte und die Zwischenräume als eigene Orte der Veränderung. Seine Zahlen und Abstände sind bewusst Darstellungsgrößen, nicht Messwerte von Naturprozessen.</p>
+        <dl><div><dt>Darstellung</dt><dd>sieben Schichten, Durchläufe und Übergangslinien</dd></div><div><dt>Offene Kante</dt><dd>Welche Daten beschreiben Zustand, Übergang und Unsicherheit ohne sie zu vermischen?</dd></div></dl>
+      </article>
+      <article class="scene-reading" id="strudel-3d" data-scene-reading="strudel-3d" hidden>
+        <p class="scene-number">05 / TIEFE</p><h3>Strudel · räumliche Projektion</h3>
+        <p>Die räumliche Wirkung entsteht in einer zweidimensionalen Projektion. Mehrere Spiralen, Größen und Verschiebungen bilden eine navigierbare Tiefe, ohne daraus Raumzeitmessung oder eine zusätzliche Naturdimension zu behaupten.</p>
+        <dl><div><dt>Darstellung</dt><dd>vier perspektivische Spiralen mit verdichteten Knoten</dd></div><div><dt>Offene Kante</dt><dd>Welche Invarianten überstehen Perspektivwechsel und welche sind bloße Erscheinung?</dd></div></dl>
+      </article>
+      <article class="scene-reading" id="strudel-2d" data-scene-reading="strudel-2d" hidden>
+        <p class="scene-number">06 / ZEIT</p><h3>Strudel · Zeitbahn</h3>
+        <p>Eine Spirale ordnet Stationen, Rückwege und offene Übergänge. Die Bahn ist eine Modellchronologie; eine reale Zeitbehauptung würde eigene Ereigniszeiten, Beobachtungsfenster und Coverage benötigen.</p>
+        <dl><div><dt>Darstellung</dt><dd>eine fortlaufende Spirale, neun Stationen und zwei Referenzringe</dd></div><div><dt>Offene Kante</dt><dd>Welche Daten könnten eine hypothetische Zeitbahn von einer ansprechenden Narration unterscheiden?</dd></div></dl>
+      </article>
+      <article class="scene-reading" id="zwischenraum" data-scene-reading="zwischenraum" hidden>
+        <p class="scene-number">07 / VERFEINERUNG</p><h3>Zwischenraum · Teilung</h3>
+        <p>Die Teilung greift eine endliche Strecke immer wieder auf. Jede Stufe ist adressierbar, während der Rahmen erhalten bleibt. Das ist eine ausführbare Visualisierung von <code>dₙ = L / 2ⁿ</code>.</p>
+        <dl><div><dt>Darstellung</dt><dd>64 gleich große Teilintervalle, pulsierende Mittelpunkte und ein gemeinsamer Rahmen</dd></div><div><dt>Offene Kante</dt><dd>Bei welcher Skala ändert sich der passende Begriff von Abstand, Kontakt oder Grenze?</dd></div></dl>
+      </article>
+      <article class="scene-reading" id="beobachterraum" data-scene-reading="beobachterraum" hidden>
+        <p class="scene-number">08 / AUSSCHNITT</p><h3>Beobachterraum</h3>
+        <p>Quelle, Blickrichtung und Ausschnitt bleiben getrennt. Das Modell zeigt, dass eine sichtbare Ansicht nicht automatisch den gesamten zugrunde liegenden Zustand enthält.</p>
+        <dl><div><dt>Darstellung</dt><dd>Quelle, Blickknoten, neun Sichtlinien und ein dynamischer Ausschnittring</dd></div><div><dt>Offene Kante</dt><dd>Welche Quelle und welches Messverfahren trennen eine Beobachtung von ihrer Deutung?</dd></div></dl>
+      </article>
+    </section>
+    <section class="atlas-source-panel" aria-labelledby="atlas-source-title">
+      <p class="eyebrow">QUELLE · CODE · PRÜFUNG</p>
+      <h2 id="atlas-source-title">Die Karte hat<br><em>einen lesbaren Kern.</em></h2>
+      <p>Die Szenen liegen in einer kleinen, DOM-freien Rechenebene. Sie erzeugt nur Zeichenprimitive für die Browseransicht. Der Testlauf prüft eindeutige Modell-IDs, endliche Zeichenwerte über einen ganzen Animationszyklus und die lückenfreie rekursive Teilung des Einheitsintervalls.</p>
+      <div class="atlas-source-links"><a href="core.mjs">Kern ansehen →</a><a href="core.test.mjs">Prüfung ansehen →</a><a href="/docs/MODEL-ATLAS.md">Modellkarte lesen →</a><a href="/modelle/">Alle 11 Modelle →</a></div>
+    </section>
+  </main>
+  <footer class="site-footer shell">
+    <div><a class="footer-name" href="/modelle/">Zur Modellübersicht ↑</a><p>Modelle, Quellen &amp; Entwicklung</p></div>
+    <nav aria-label="Weitere Informationen"><a href="/handbuch/">Handbuch</a><a href="/LICENSES.md">Rechte &amp; Quellen</a><a href="/">Startseite</a></nav>
+  </footer>
+</body>
+</html>
