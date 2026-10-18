@@ -42,13 +42,4 @@ jobs:
 
           git add schuelervz-halveth/data/stream
 
-          if git diff --cached --quiet; then
-            echo "No new public archaeology state."
-            exit 0
-          fi
-
-          git commit -m "stream: ingest public schuelerVZ archaeology"
-
-          git pull --rebase origin main
-
-          git push origin main
+          bash schuelervz-halveth/tools/push_refresh_commit.sh "stream: ingest public schuelerVZ archaeology"

@@ -50,12 +50,4 @@ jobs:
             schuelervz-halveth/FLOWSTAR.md \
             schuelervz-halveth/tools/FLOWSTAR_ENGINE.py
 
-          if git diff --cached --quiet; then
-            echo "FLOWSTAR unchanged."
-            exit 0
-          fi
-
-          git commit -m "✦ flowstar: append constellation state"
-
-          git pull --rebase origin main
-          git push origin main
+          bash schuelervz-halveth/tools/push_refresh_commit.sh "✦ flowstar: append constellation state"

@@ -21,5 +21,4 @@ jobs:
           git config user.name "halveth-archive-bot"
           git config user.email "actions@users.noreply.github.com"
           git add schuelervz-halveth/archive schuelervz-halveth/data/archive-index.json
-          git diff --cached --quiet || git commit -m "archive: refresh public schuelerVZ captures"
-          git push
+          bash schuelervz-halveth/tools/push_refresh_commit.sh "archive: refresh public schuelerVZ captures"

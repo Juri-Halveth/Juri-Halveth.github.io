@@ -45,6 +45,4 @@ jobs:
           git config user.name "halveth-prestige-bot"
           git config user.email "actions@users.noreply.github.com"
           git add schuelervz-halveth
-          git diff --cached --quiet || git commit -m "prestige: autonomous four-step refresh"
-          git pull --rebase origin main
-          git push origin main
+          bash schuelervz-halveth/tools/push_refresh_commit.sh "prestige: autonomous four-step refresh"
