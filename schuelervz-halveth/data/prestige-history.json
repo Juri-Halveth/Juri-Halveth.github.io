@@ -559,5 +559,232 @@
         "ARCHIVE_RECORD != CURRENT_PERSON"
       ]
     }
+  },
+  {
+    "schema": "HALVETH_PRESTIGE_FOUR_RUN",
+    "version": "3.5.0",
+    "started_at": "2026-10-18T09:06:41.951791+00:00",
+    "baseline": {
+      "census_rows": 15000,
+      "unique_urls": 14949,
+      "bundled_canonical": 856,
+      "docs": 2113,
+      "fetch_errors": 57,
+      "route_patterns": 1338,
+      "classes": {
+        "shell": 18,
+        "public-other": 3447,
+        "personal-route": 11511,
+        "asset": 24
+      },
+      "years": {
+        "2007": 35,
+        "2008": 5430,
+        "2009": 5312,
+        "2010": 3417,
+        "2011": 62,
+        "2012": 120,
+        "2013": 169,
+        "2014": 4,
+        "2015": 14,
+        "2017": 73,
+        "2018": 81,
+        "2019": 102,
+        "2020": 43,
+        "2021": 8,
+        "2022": 17,
+        "2023": 9,
+        "2026": 104
+      }
+    },
+    "rounds": [
+      {
+        "round": 1,
+        "label": "RARE ROUTE ENTROPY",
+        "candidates": 35,
+        "bundled_added": 32,
+        "errors": 3,
+        "after": {
+          "census_rows": 15000,
+          "unique_urls": 14949,
+          "bundled_canonical": 888,
+          "docs": 2148,
+          "fetch_errors": 60,
+          "route_patterns": 1338,
+          "classes": {
+            "shell": 18,
+            "public-other": 3447,
+            "personal-route": 11511,
+            "asset": 24
+          },
+          "years": {
+            "2007": 35,
+            "2008": 5430,
+            "2009": 5312,
+            "2010": 3417,
+            "2011": 62,
+            "2012": 120,
+            "2013": 169,
+            "2014": 4,
+            "2015": 14,
+            "2017": 73,
+            "2018": 81,
+            "2019": 102,
+            "2020": 43,
+            "2021": 8,
+            "2022": 17,
+            "2023": 9,
+            "2026": 104
+          }
+        }
+      },
+      {
+        "round": 2,
+        "label": "TEMPORAL GAPS",
+        "candidates": 35,
+        "bundled_added": 29,
+        "errors": 6,
+        "after": {
+          "census_rows": 15000,
+          "unique_urls": 14949,
+          "bundled_canonical": 917,
+          "docs": 2183,
+          "fetch_errors": 66,
+          "route_patterns": 1338,
+          "classes": {
+            "shell": 18,
+            "public-other": 3447,
+            "personal-route": 11511,
+            "asset": 24
+          },
+          "years": {
+            "2007": 35,
+            "2008": 5430,
+            "2009": 5312,
+            "2010": 3417,
+            "2011": 62,
+            "2012": 120,
+            "2013": 169,
+            "2014": 4,
+            "2015": 14,
+            "2017": 73,
+            "2018": 81,
+            "2019": 102,
+            "2020": 43,
+            "2021": 8,
+            "2022": 17,
+            "2023": 9,
+            "2026": 104
+          }
+        }
+      },
+      {
+        "round": 3,
+        "label": "PUBLIC ROUTE BREADTH",
+        "candidates": 35,
+        "bundled_added": 32,
+        "errors": 3,
+        "after": {
+          "census_rows": 15000,
+          "unique_urls": 14949,
+          "bundled_canonical": 949,
+          "docs": 2218,
+          "fetch_errors": 69,
+          "route_patterns": 1338,
+          "classes": {
+            "shell": 18,
+            "public-other": 3447,
+            "personal-route": 11511,
+            "asset": 24
+          },
+          "years": {
+            "2007": 35,
+            "2008": 5430,
+            "2009": 5312,
+            "2010": 3417,
+            "2011": 62,
+            "2012": 120,
+            "2013": 169,
+            "2014": 4,
+            "2015": 14,
+            "2017": 73,
+            "2018": 81,
+            "2019": 102,
+            "2020": 43,
+            "2021": 8,
+            "2022": 17,
+            "2023": 9,
+            "2026": 104
+          }
+        }
+      },
+      {
+        "round": 4,
+        "label": "BEST REMAINING FRONTIER",
+        "candidates": 35,
+        "bundled_added": 33,
+        "errors": 2,
+        "after": {
+          "census_rows": 15000,
+          "unique_urls": 14949,
+          "bundled_canonical": 982,
+          "docs": 2253,
+          "fetch_errors": 71,
+          "route_patterns": 1338,
+          "classes": {
+            "shell": 18,
+            "public-other": 3447,
+            "personal-route": 11511,
+            "asset": 24
+          },
+          "years": {
+            "2007": 35,
+            "2008": 5430,
+            "2009": 5312,
+            "2010": 3417,
+            "2011": 62,
+            "2012": 120,
+            "2013": 169,
+            "2014": 4,
+            "2015": 14,
+            "2017": 73,
+            "2018": 81,
+            "2019": 102,
+            "2020": 43,
+            "2021": 8,
+            "2022": 17,
+            "2023": 9,
+            "2026": 104
+          }
+        }
+      }
+    ],
+    "finished_at": "2026-10-18T09:28:34.279361+00:00",
+    "final": {
+      "schema": "HALVETH_PRESTIGE_FOUR_MANIFEST",
+      "version": "3.5.0",
+      "generated_at": "2026-10-18T09:28:34.272662+00:00",
+      "census_rows": 15000,
+      "unique_urls": 14949,
+      "docs": 2253,
+      "bundled_canonical": 982,
+      "fetch_errors": 71,
+      "route_patterns": 1338,
+      "people_searchable": 1,
+      "github_claims": 0,
+      "search_rows": 1029,
+      "graph_nodes": 2683,
+      "graph_edges": 3967,
+      "personal_route_metadata_rows": 11511,
+      "delta_bundled_canonical": 126,
+      "invariants": [
+        "PERSONAL_ROUTE_METADATA_ONLY_BY_DEFAULT",
+        "NO_BULK_LEAKED_PROFILE_REPUBLICATION",
+        "VOLUNTARY_GITHUB_CLAIMS_ARE_SEARCHABLE",
+        "GITHUB_CLAIM != HISTORIC_IDENTITY_PROOF",
+        "UNKNOWN != FALSE",
+        "ARCHIVE_RECORD != CURRENT_PERSON"
+      ]
+    }
   }
 ]

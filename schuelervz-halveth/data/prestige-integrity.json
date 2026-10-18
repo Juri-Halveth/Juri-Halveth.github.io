@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-10-11T11:44:05.236766+00:00",
+  "generated_at": "2026-10-18T09:28:34.273100+00:00",
   "version": "3.5.0",
   "files": {
     "data/archaeology-docs.json": {
-      "sha256": "536def8b1200bb71ee325b21272697aa119ad9c707faaaa3b8dd117ff962b9ba",
-      "bytes": 3907950
+      "sha256": "6ad8c26457c41fe4bcc34c3509501008244da52f8812b8b3a08aafd31a6c0ab4",
+      "bytes": 5457455
     },
     "data/prestige-search.json": {
-      "sha256": "93f9914b3d366d68ad7b22dc33fd7a9163c0c2d87f5280d1d9026ebdafedb099",
-      "bytes": 1054932
+      "sha256": "3d9104f0950bc3c0a35bd9e19b5d653b0e82ef22a2eb0c1c2704ecd81e317e12",
+      "bytes": 2016274
     },
     "data/prestige-graph.json": {
-      "sha256": "d11606f08982ff739474cde04167c22e951d810be4294a0741aa59ca43709319",
-      "bytes": 655122
+      "sha256": "b217cb32f8104e4d6f58435460aabfc7dd35505a166450cfb8c516e3d2e1f67b",
+      "bytes": 817322
     },
     "data/prestige-people.json": {
       "sha256": "fa1b5908084cc0e8567e0bee641de6385c5b6e921c943e953cd6bf660b638a10",
@@ -23,8 +23,8 @@
       "bytes": 2196903
     },
     "data/prestige-manifest.json": {
-      "sha256": "6e1fb073543d973998f085d3cb630a0a3884def7ef1fde995c67d7f10f52c969",
-      "bytes": 725
+      "sha256": "625071b3302674d7394f72eab59904f17f484a8b90bf6a37bc884cbb15666376",
+      "bytes": 726
     }
   }
 }
