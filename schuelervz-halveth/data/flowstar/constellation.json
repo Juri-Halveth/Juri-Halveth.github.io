@@ -1,7 +1,7 @@
 {
   "schema": "HALVETH_FLOWSTAR_CONSTELLATION_1",
   "version": "1.0.0",
-  "generated_at": "2026-10-18T07:22:43.065606+00:00",
+  "generated_at": "2026-10-18T09:28:48.173937+00:00",
   "sign": "✦⇄∞⇄✦",
   "axiom": "NOT_FROZEN -> STILL_FLOWING",
   "ladder": [
@@ -90,11 +90,11 @@
     },
     "prestige": {
       "unique_urls": 14949,
-      "bundled_canonical": 856,
+      "bundled_canonical": 982,
       "route_patterns": 1338,
-      "search_rows": 889,
-      "graph_nodes": 2557,
-      "graph_edges": 1974,
+      "search_rows": 1029,
+      "graph_nodes": 2683,
+      "graph_edges": 3967,
       "personal_route_metadata_rows": 11511
     }
   },
@@ -115,9 +115,9 @@
       "finding": "Append-oriented evidence can continue evolving without replacing source records.",
       "evidence": {
         "unique_urls": 14949,
-        "bundled_canonical": 856,
-        "graph_nodes": 2557,
-        "graph_edges": 1974
+        "bundled_canonical": 982,
+        "graph_nodes": 2683,
+        "graph_edges": 3967
       }
     },
     {
@@ -133,5 +133,5 @@
       "effect": "Branch freely without corrupting the physical metaphor."
     }
   ],
-  "constellation_sha256": "2062a200250848f8e881cb287778adba42cadc21f742e9931977479c29847fa3"
+  "constellation_sha256": "2db29bdf44db568ab757d1391f92de94631f6771eb69bf1c16a3d8ab2dfaec96"
 }
