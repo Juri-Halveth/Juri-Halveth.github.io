@@ -6340,6 +6340,38 @@
       "en": "open API errors",
       "ru": "ошибки API"
     },
+    "ASHBOUND · NATIVE SPIELWELT": {
+      "en": "ASHBOUND · NATIVE GAME WORLD",
+      "ru": "ASHBOUND · НАТИВНЫЙ ИГРОВОЙ МИР"
+    },
+    "Eine Welt, die trägt.": {
+      "en": "A world with solid ground.",
+      "ru": "Мир с твёрдой почвой."
+    },
+    "Eine eigenständige 3D-Spielwelt entsteht in Unreal. Boden, Vegetation und eine Spiegel-Begegnung werden als getrennte Bausteine entwickelt und geprüft.": {
+      "en": "An original 3D game world is taking shape in Unreal. Ground, vegetation and a mirror encounter are developed and tested as separate building blocks.",
+      "ru": "В Unreal создаётся оригинальный 3D-игровой мир. Почва, растительность и встреча у зеркала разрабатываются и проверяются как отдельные части."
+    },
+    "ASHBOUND Entwicklungsstände": {
+      "en": "ASHBOUND development stages",
+      "ru": "Этапы разработки ASHBOUND"
+    },
+    "Windows-Vorschau v0.4.2 ↗": {
+      "en": "Windows preview v0.4.2 ↗",
+      "ru": "Предварительная версия для Windows v0.4.2 ↗"
+    },
+    "Welt- und Bodenentwicklung ↗": {
+      "en": "World and ground development ↗",
+      "ru": "Разработка мира и почвы ↗"
+    },
+    "Spiegel-Szene ↗": {
+      "en": "Mirror scene ↗",
+      "ru": "Сцена с зеркалом ↗"
+    },
+    "Die öffentliche Vorschau und die neueren Entwurfs-PRs zeigen unterschiedliche Entwicklungsstände.": {
+      "en": "The public preview and the newer draft PRs represent different development stages.",
+      "ru": "Публичная предварительная версия и более новые черновые запросы на слияние показывают разные этапы разработки."
+    },
     "227 lesende API-Abfragen über angemeldete GitHub-CLI (nur öffentliche Endpunkte) · 0 nicht zugeordnete Referenzen · Manifest-SHA-256 lokal gebunden": {
       "en": "227 read-only API requests through authenticated GitHub CLI (public endpoints only) · 0 unmapped references · manifest SHA-256 bound locally",
       "ru": "227 запросов API только для чтения через авторизованную GitHub CLI (только публичные конечные точки) · 0 несвязанных ссылок · SHA-256 манифеста сохранён локально"

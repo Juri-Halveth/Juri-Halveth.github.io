@@ -13,6 +13,23 @@
 @media(max-width:760px){.profile-intro .capability-grid{grid-template-columns:1fr}}
 @media print{.site-header nav,.hero-art,.chapter-strip,.contact-section{display:none}.shell,.wrap{width:100%}.section{padding-block:25px}.section-heading{margin-bottom:22px}.dark-section,.learning-section,.evidence-section{background:white;color:black;--muted:#333;--line:#999}.dark-section em,.dark-section .work-kind,.dark-section .eyebrow{color:black}.capability-grid{grid-template-columns:repeat(2,1fr)}a{overflow-wrap:anywhere}.hero{display:block}.site-footer{display:block}}
 
+.ashbound-feature{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(240px,.95fr);min-height:360px;margin-top:64px;overflow:hidden;border:1px solid #657b72;background:linear-gradient(135deg,#0b2022 0%,#162a31 55%,#26372c 100%);color:#f5f4e9}
+.ashbound-feature-copy{position:relative;z-index:1;padding:clamp(28px,4vw,55px)}
+.ashbound-feature .work-kind{color:#d4ee9b;margin-bottom:14px}
+.ashbound-feature h3{font:400 clamp(34px,3.4vw,56px)/1.04 var(--serif);letter-spacing:-.035em;margin-bottom:20px}
+.ashbound-feature-copy>p:not(.work-kind){max-width:520px;font-size:16px;line-height:1.6;color:#d4ded5}
+.ashbound-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.ashbound-links a{display:inline-flex;align-items:center;padding:9px 13px;border:1px solid #8da99a;color:#f5f4e9;text-decoration:none;font-size:13px;line-height:1.35}
+.ashbound-links a:hover,.ashbound-links a:focus-visible{background:#d4ee9b;color:#10241c}
+.ashbound-feature .ashbound-status{margin:17px 0 0;font-size:12px;line-height:1.5;color:#c4d2c6}
+.ashbound-feature-art{position:relative;min-height:360px;overflow:hidden;background:radial-gradient(ellipse at 55% 43%,#dcbd7988 0%,#90b4b333 13%,transparent 48%),radial-gradient(ellipse at 60% 80%,#72947c77,transparent 66%)}
+.ashbound-ring{position:absolute;left:50%;top:48%;width:62%;aspect-ratio:1;border:1px solid #d2e9c899;border-radius:50%;transform:translate(-50%,-50%) rotateX(60deg) rotate(-22deg);box-shadow:0 0 60px #8ab4a344,inset 0 0 36px #d4ee9b22}
+.ashbound-ring-two{width:83%;top:53%;border-color:#d9b67888;transform:translate(-50%,-50%) rotateX(66deg) rotate(24deg)}
+.ashbound-horizon{position:absolute;inset:auto -10% 0;height:46%;background:linear-gradient(155deg,transparent 36%,#152c26 36.4%,#193729 60%,#0d1b20 61%),linear-gradient(20deg,transparent 46%,#324f3f 46.4%,#11221f 70%);clip-path:polygon(0 42%,14% 28%,26% 36%,43% 10%,58% 26%,76% 7%,100% 32%,100% 100%,0 100%)}
+.ashbound-orb{position:absolute;left:54%;top:39%;width:44px;aspect-ratio:1;border-radius:50%;background:#f4e2ac;box-shadow:0 0 22px #f4e2ac,0 0 90px #d6f2bd}
+@media(max-width:760px){.ashbound-feature{grid-template-columns:1fr;margin-top:42px}.ashbound-feature-copy{padding:28px}.ashbound-feature-art{min-height:180px;order:-1}.ashbound-ring{width:45%}.ashbound-ring-two{width:60%}.ashbound-horizon{height:57%}.ashbound-links{display:grid;grid-template-columns:1fr}.ashbound-links a{justify-content:center;text-align:center}}
+@media print{.ashbound-feature{display:block;background:white;color:black;border-color:#777;min-height:0}.ashbound-feature-art{display:none}.ashbound-feature-copy>p:not(.work-kind),.ashbound-feature .ashbound-status,.ashbound-feature .work-kind,.ashbound-links a{color:black}}
+
 .motion-surface{position:relative;overflow:hidden;aspect-ratio:16/9;background:#0b1515}.motion-surface canvas{display:block;width:100%;height:100%;position:absolute;inset:0}.motion-surface .motion-fallback{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.motion-active .motion-fallback{display:none}.hero-art .motion-surface{aspect-ratio:760/770;border-radius:48% 48% 2px 2px}.design-showcase .motion-surface{border-radius:2px}@media(max-width:760px){.hero h1{font-size:clamp(35px,10vw,44px)}.hero-art .motion-surface{aspect-ratio:1.12}}
 
 /* Certificate claims have a defined evidence axis and remain prominent on every screen. */
