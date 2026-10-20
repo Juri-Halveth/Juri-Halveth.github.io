@@ -6,21 +6,11 @@ Kontakt: security@halveth.de
 Website: https://juri-halveth.github.io/
 GitHub: https://github.com/Juri-Halveth
 
-## Zertifikate · CLAIMED
+## Nachvollziehbare Praxis statt pauschaler Niveauangaben
 
-Dokumentierter Portfolioanspruch von Juri Halveth. Die Verleihung durch einen Zertifikatsherausgeber führt einen eigenen Originalbeleg und Status.
+Ausgewählte Arbeitsproben dokumentieren den konkreten Projektumfang. Aus einer einzelnen Funktion wird keine vollständige berufliche Qualifikation oder verliehene Zertifizierung abgeleitet.
 
-- **ISTQB Certified Tester Advanced Level Test Analyst (CTAL-TA) v4.0 · ✓ CLAIMED** — Konkrete Arbeitsproben · [Dossier](https://github.com/Juri-Halveth/Juri-Halveth/blob/be0b5a387db837272166bc6011a9f208abc48c15/portfolio/2026-09-28-v1.0.2/certificates/01_ISTQB_CTAL_TA_PORTFOLIO_BENCHMARK.md)
-- **Microsoft Certified: Cybersecurity Architect Expert · ✓ CLAIMED** — Teilbereiche mit Arbeitsproben · [Dossier](https://github.com/Juri-Halveth/Juri-Halveth/blob/be0b5a387db837272166bc6011a9f208abc48c15/portfolio/2026-09-28-v1.0.2/certificates/02_MICROSOFT_CYBERSECURITY_ARCHITECT_EXPERT_BENCHMARK.md)
-- **Microsoft Certified: DevOps Engineer Expert · ✓ CLAIMED** — Konkrete Arbeitsproben · [Dossier](https://github.com/Juri-Halveth/Juri-Halveth/blob/be0b5a387db837272166bc6011a9f208abc48c15/portfolio/2026-09-28-v1.0.2/certificates/03_MICROSOFT_DEVOPS_ENGINEER_EXPERT_BENCHMARK.md)
-- **CISSP — Certified Information Systems Security Professional · ✓ CLAIMED** — Teilbereiche mit Arbeitsproben · [Dossier](https://github.com/Juri-Halveth/Juri-Halveth/blob/be0b5a387db837272166bc6011a9f208abc48c15/portfolio/2026-09-28-v1.0.2/certificates/04_CISSP_PORTFOLIO_BENCHMARK.md)
-- **AWS Certified Solutions Architect – Professional · ✓ CLAIMED** — Architekturbezug; Anbieterpraxis offen · [Dossier](https://github.com/Juri-Halveth/Juri-Halveth/blob/be0b5a387db837272166bc6011a9f208abc48c15/portfolio/2026-09-28-v1.0.2/certificates/05_AWS_SOLUTIONS_ARCHITECT_PROFESSIONAL_BENCHMARK.md)
-- **ISTQB Certified Tester Expert Level Improving the Test Process (CTEL-ITP) · ✓ CLAIMED** — Prozessbezug; Wirkungsmessung offen · [Dossier](https://github.com/Juri-Halveth/Juri-Halveth/blob/be0b5a387db837272166bc6011a9f208abc48c15/portfolio/2026-09-28-v1.0.2/certificates/06_ISTQB_CTEL_ITP_BENCHMARK.md)
-- **OffSec Certified Expert³ (OSCE³) · ✓ CLAIMED** — Spezifischer Leistungsnachweis offen · [Dossier](https://github.com/Juri-Halveth/Juri-Halveth/blob/be0b5a387db837272166bc6011a9f208abc48c15/portfolio/2026-09-28-v1.0.2/certificates/07_OFFSEC_OSCE3_BENCHMARK.md)
-- **Cisco Certified Internetwork Expert (CCIE) Enterprise Infrastructure · ✓ CLAIMED** — Spezifischer Leistungsnachweis offen · [Dossier](https://github.com/Juri-Halveth/Juri-Halveth/blob/be0b5a387db837272166bc6011a9f208abc48c15/portfolio/2026-09-28-v1.0.2/certificates/08_CISCO_CCIE_ENTERPRISE_INFRASTRUCTURE_BENCHMARK.md)
-- **Google Cloud Professional Cloud Architect · ✓ CLAIMED** — Architekturbezug; Anbieterpraxis offen · [Dossier](https://github.com/Juri-Halveth/Juri-Halveth/blob/be0b5a387db837272166bc6011a9f208abc48c15/portfolio/2026-09-28-v1.0.2/certificates/09_GOOGLE_CLOUD_PROFESSIONAL_CLOUD_ARCHITECT_BENCHMARK.md)
-
-[CLAIMED / ZDA](https://github.com/Juri-Halveth/Juri-Halveth/blob/be0b5a387db837272166bc6011a9f208abc48c15/portfolio/2026-09-28-v1.0.2/KORREKTUR_CLAIMED_ZDA.md)
+[Technische Arbeitsproben](https://juri-halveth.github.io/koennen/)
 
 ## Направления работы и связанные примеры
 
@@ -40,7 +30,7 @@ Dokumentierter Portfolioanspruch von Juri Halveth. Die Verleihung durch einen Ze
 
 Документы Python, JavaScript и портативный C++ работают через тесты и потоки сборки.
 
-Подтверждение: [Свидетельства о работах по интеграции и проверке исходного кода C++](https://juri-halveth.github.io/werkzertifikate/#werk-halveth-unreal)
+Подтверждение: [Пример работы на C++ с исходным кодом](https://juri-halveth.github.io/koennen/#P05)
 
 ### Графика и движение
 
@@ -52,13 +42,13 @@ Dokumentierter Portfolioanspruch von Juri Halveth. Die Verleihung durch einen Ze
 
 Организуйте пути обучения, упражнения и источники в доступных веб-интерфейсах.
 
-Подтверждение: [Документированная обучающая платформа и контент-контракты](https://juri-halveth.github.io/werkzertifikate/#werk-mein-lernportal)
+Подтверждение: [Учебный портал: проверка состояния профиля](https://juri-halveth.github.io/koennen/#P10)
 
 ### Документирование исследований
 
 Связывание вопросов, контр-моделей, источников и результатов в версионных публикациях.
 
-Подтверждение: [Исследовательский фонд с моделями и тестовым рабочим процессом](https://juri-halveth.github.io/werkzertifikate/#werk-open-research-branches)
+Подтверждение: [Лаборатория: документация охвата источников](https://juri-halveth.github.io/koennen/#P11)
 
 ## Документация проектов
 

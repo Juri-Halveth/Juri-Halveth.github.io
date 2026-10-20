@@ -12,7 +12,11 @@ Die leuchtende Bewegungskomposition startet direkt auf der Startseite. Organisch
 
 Der [PULSAR ROOT](https://juri-halveth.github.io/pulsar/) setzt einen gemeinsamen Einstiegspunkt für den datierten öffentlichen Projektatlas. Der vollständige Branch-, Tag- und Dateibaum wird vom beiliegenden, rein lesenden Python-Werkzeug lokal erzeugt; ein Baum mit privaten Repositories oder Pfaden gehört nicht in diese Website.
 
-[Alle öffentlichen Arbeiten](https://juri-halveth.github.io/arbeiten/) · [Arbeitsprofil mit Nachweisen](https://juri-halveth.github.io/profil/) · [Elf private Werkzertifikate](https://juri-halveth.github.io/werkzertifikate/)
+[Alle öffentlichen Arbeiten](https://juri-halveth.github.io/arbeiten/) · [Arbeitsprofil mit Nachweisen](https://juri-halveth.github.io/profil/) · [Technische Arbeitsproben](https://juri-halveth.github.io/koennen/)
+
+## Projekte zuerst
+
+Das Arbeitsprofil beginnt mit ausgewählten Anwendungen und Spielprototypen. Technische Arbeitsproben zeigen Funktionen und Quellstände. Frühere Zertifikatsvergleiche sind nur als historische Themenzuordnungen aufklappbar; sie werden nicht als verliehene Qualifikation oder vollständiges Prüfungsniveau dargestellt.
 
 ## Quellen und Arbeitsprofil
 
