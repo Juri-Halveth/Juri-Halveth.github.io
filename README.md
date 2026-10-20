@@ -21,6 +21,19 @@ Builder `tools/build-portfolio.cjs` erzeugt alle Seiten. Tests prüfen Katalog,
 lokale Links, Sprachfassungen sowie Bewegung, Sichtbarkeit und reduzierte
 Animation. Projektprüfungen bleiben beim jeweiligen Codebestand.
 
+## Ausgewählte Arbeiten auf dem ersten Blick
+
+Startseite und Arbeitsprofil führen über drei direkte Einstiege: die native
+ASHBOUND-Vorschau, SCARLETs Singularity Cannon und das Forschungslabor. Die
+Darstellung entsteht aus `tools/render-showcase.cjs`; die Projektquellen und
+Revisionen bleiben im bestehenden Katalog. `showcase.css` enthält die
+responsive Gestaltung. Die neue Präsentation benötigt kein zusätzliches
+JavaScript und erhält die vorhandene Bewegungssteuerung.
+
+Das [datierte lokale Prüfprotokoll](docs/WORK-SAMPLE-VALIDATION-2026-10-20.md)
+bindet den tatsächlich geprüften Forschungslabor-Commit und die Aufteilung
+der 145 Tests. Es ist eine Momentaufnahme und kein Live-CI-Badge.
+
 ## Technische Schnittstellenkarte
 
 `/koennen/` ordnet 14 konkrete Arbeitsproben in sieben technischen Gebieten.
