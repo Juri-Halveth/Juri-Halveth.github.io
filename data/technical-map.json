@@ -1,0 +1,901 @@
+{
+  "schema": "halveth.technical-interface-map.v1",
+  "reviewedAt": "2026-10-20",
+  "projectLead": "Juri Halveth / HALVETH",
+  "development": "AI_ASSISTED",
+  "title": {
+    "de": "Technische Schnittstellen. Konkrete Arbeitsproben.",
+    "en": "Technical interfaces. Concrete work samples.",
+    "ru": "Технические интерфейсы. Конкретные примеры работы."
+  },
+  "positioning": {
+    "de": "Ich entwickle und untersuche die Schnittstellen zwischen Systemen.",
+    "en": "I build and investigate the boundaries between systems.",
+    "ru": "Я разрабатываю и исследую интерфейсы между системами."
+  },
+  "introduction": {
+    "de": "Wähle ein technisches Gebiet und öffne direkt die zugehörige Funktion, Gegenprobe oder Builddefinition. Die Beispiele verbinden sieben öffentliche Repositories durch nachvollziehbare Arbeitsschritte.",
+    "en": "Choose a technical area and open its function, counterexample or build definition. These examples connect seven public repositories through inspectable engineering work.",
+    "ru": "Выберите техническую область и откройте функцию, контрпример или определение сборки. Примеры связывают семь публичных репозиториев через конкретную инженерную работу."
+  },
+  "scope": {
+    "de": "Die Karte ordnet veröffentlichte Arbeitsproben nach Schnittstellen. Sie beschreibt den sichtbaren Implementierungsumfang und keine formale Qualifikation. Verbindungen sind fachliche Querverweise; eine gemeinsame Produktruntime wird daraus nicht abgeleitet.",
+    "en": "This map indexes published work by interface and describes its visible implementation scope, not formal qualifications. Connections are engineering cross-references, not a claim of one shared product runtime.",
+    "ru": "Карта группирует опубликованные примеры по интерфейсам и описывает видимый объём реализации, а не формальную квалификацию. Связи являются техническими перекрёстными ссылками, а не общей средой выполнения."
+  },
+  "areas": [
+    {
+      "id": "interfaces",
+      "title": {
+        "de": "Oberflächen & lokale Schnittstellen",
+        "en": "Interfaces & local applications",
+        "ru": "Интерфейсы и локальные приложения"
+      }
+    },
+    {
+      "id": "native",
+      "title": {
+        "de": "C++ & native Spielwelten",
+        "en": "C++ & native game worlds",
+        "ru": "C++ и нативные игровые миры"
+      }
+    },
+    {
+      "id": "state",
+      "title": {
+        "de": "Entscheidungen & Zustände",
+        "en": "Decisions & state",
+        "ru": "Решения и состояния"
+      }
+    },
+    {
+      "id": "security",
+      "title": {
+        "de": "Security-Logik & Gegenproben",
+        "en": "Security logic & counterexamples",
+        "ru": "Логика безопасности и контрпримеры"
+      }
+    },
+    {
+      "id": "data",
+      "title": {
+        "de": "Quellen & Datenintegrität",
+        "en": "Sources & data integrity",
+        "ru": "Источники и целостность данных"
+      }
+    },
+    {
+      "id": "models",
+      "title": {
+        "de": "Grafik & numerische Modelle",
+        "en": "Graphics & numerical models",
+        "ru": "Графика и численные модели"
+      }
+    },
+    {
+      "id": "delivery",
+      "title": {
+        "de": "Builds & Veröffentlichung",
+        "en": "Builds & delivery",
+        "ru": "Сборка и публикация"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "browser-motion",
+      "area": "interfaces",
+      "technologies": [
+        "JavaScript",
+        "Canvas 2D",
+        "Browser lifecycle"
+      ],
+      "title": {
+        "de": "Animation an Sichtbarkeit und Nutzerwunsch binden",
+        "en": "Bind animation to visibility and user preferences",
+        "ru": "Связать анимацию с видимостью и настройками"
+      },
+      "interface": {
+        "de": "Darstellung, Animationszeit und Browserereignisse",
+        "en": "Rendering, animation time and browser events",
+        "ru": "Отрисовка, время анимации и события браузера"
+      },
+      "summary": {
+        "de": "Die Portfolio-Grafik pausiert außerhalb des sichtbaren Bereichs und berücksichtigt reduzierte Bewegung. Tests simulieren Sichtbarkeitswechsel und lange Unterbrechungen.",
+        "en": "The portfolio artwork pauses offscreen and respects reduced motion. Tests simulate visibility changes and long interruptions.",
+        "ru": "Графика портфолио приостанавливается вне экрана и учитывает уменьшение движения. Тесты моделируют смену видимости и долгие паузы."
+      },
+      "scope": {
+        "de": "Browseradapter mit simuliertem Canvas und Ereignissen; eigene Bewegungsberechnung separat prüfbar.",
+        "en": "Browser adapter with simulated canvas and events; motion calculations are separately inspectable.",
+        "ru": "Браузерный адаптер с имитацией Canvas и событий; расчёты движения проверяются отдельно."
+      },
+      "review": "STATIC_SOURCE_REVIEW",
+      "evidence": [
+        {
+          "role": "source",
+          "repository": "Juri-Halveth/Juri-Halveth.github.io",
+          "revision": "945eef06bf0a03822e7db589d31ef3dbb902cc69",
+          "path": "landing-motion.js",
+          "startLine": 1,
+          "endLine": 20,
+          "sha256": "8716e3e0b76b7e36c0ac6817df19eda303b2e6b94124b6c5119d3c7364fe0839",
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/945eef06bf0a03822e7db589d31ef3dbb902cc69/landing-motion.js#L1-L20"
+        },
+        {
+          "role": "test",
+          "repository": "Juri-Halveth/Juri-Halveth.github.io",
+          "revision": "945eef06bf0a03822e7db589d31ef3dbb902cc69",
+          "path": "tests/landing-motion.test.cjs",
+          "startLine": 23,
+          "endLine": 35,
+          "sha256": "169b1178a80592b8350fbd7dc2bd063c685ca562029d8c6d79785490af3bd0e7",
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/945eef06bf0a03822e7db589d31ef3dbb902cc69/tests/landing-motion.test.cjs#L23-L35"
+        }
+      ]
+    },
+    {
+      "id": "desktop-backup",
+      "area": "interfaces",
+      "technologies": [
+        "Python",
+        "pywebview",
+        "Windows"
+      ],
+      "title": {
+        "de": "Vom Desktopdialog zur lokalen Sicherung",
+        "en": "From a desktop dialog to a local backup",
+        "ru": "От диалога приложения к локальной резервной копии"
+      },
+      "interface": {
+        "de": "Weboberfläche, Python-API und Dateisystem",
+        "en": "Web interface, Python API and filesystem",
+        "ru": "Веб-интерфейс, API Python и файловая система"
+      },
+      "summary": {
+        "de": "Tresor exportiert die verschlüsselte Tresordatei an einen gewählten Ort. Die Regression prüft einen abgewiesenen Dateifilter, den Ersatzdialog und Abbruch durch den Nutzer.",
+        "en": "Tresor exports the encrypted vault file to a selected location. The regression covers a rejected file filter, the fallback dialog and user cancellation.",
+        "ru": "Tresor экспортирует зашифрованный файл в выбранное место. Регрессия проверяет отклонённый фильтр, запасной диалог и отмену пользователем."
+      },
+      "scope": {
+        "de": "Native Dialoge sind im Test ersetzt. Die Arbeitsprobe zeigt die UI/Python-Grenze; die Kryptografie besitzt einen eigenen Prüfbedarf.",
+        "en": "Native dialogs are mocked in the test. This sample covers the UI/Python boundary; cryptography has its own assessment scope.",
+        "ru": "В тесте нативные диалоги заменены. Пример охватывает границу UI/Python; криптография требует отдельной проверки."
+      },
+      "review": "STATIC_SOURCE_REVIEW",
+      "evidence": [
+        {
+          "role": "source",
+          "repository": "Juri-Halveth/halveth-tresor",
+          "revision": "66da64abfc58cd8cce05f935197aa51e31e232f2",
+          "path": "src/tresor/app.py",
+          "startLine": 223,
+          "endLine": 256,
+          "sha256": "c18d7b42cc6f215b6392b5c498bb31a50c857ad77965d0df0580cbd4e1f9aad7",
+          "url": "https://github.com/Juri-Halveth/halveth-tresor/blob/66da64abfc58cd8cce05f935197aa51e31e232f2/src/tresor/app.py#L223-L256"
+        },
+        {
+          "role": "test",
+          "repository": "Juri-Halveth/halveth-tresor",
+          "revision": "66da64abfc58cd8cce05f935197aa51e31e232f2",
+          "path": "tests/test_app_backup.py",
+          "startLine": 61,
+          "endLine": 80,
+          "sha256": "5f488ebe2ae5d66661dd90993b26913ef46a244e1be6f9cf19950a02b0778118",
+          "url": "https://github.com/Juri-Halveth/halveth-tresor/blob/66da64abfc58cd8cce05f935197aa51e31e232f2/tests/test_app_backup.py#L61-L80"
+        }
+      ]
+    },
+    {
+      "id": "cpp-state",
+      "area": "native",
+      "technologies": [
+        "C++20",
+        "Unreal Engine",
+        "State import/export"
+      ],
+      "title": {
+        "de": "Spielfortschritt vor der Übernahme prüfen",
+        "en": "Validate game progress before admission",
+        "ru": "Проверять игровой прогресс перед принятием"
+      },
+      "interface": {
+        "de": "Portabler C++-Zustandskern und Unreal-Komponenten",
+        "en": "Portable C++ state core and Unreal components",
+        "ru": "Переносимое ядро состояний C++ и компоненты Unreal"
+      },
+      "summary": {
+        "de": "Portal Garden trennt Inventar, Lernen und Questentscheidungen in einem C++-Kern. Gegenproben prüfen unter anderem ungültige Importzustände und unveränderten Zustand bei abgewiesenen Aktionen.",
+        "en": "Portal Garden models inventory, learning and quest decisions in a C++ core. Counterexamples cover invalid imported states and state preservation after rejected actions.",
+        "ru": "Portal Garden моделирует инвентарь, обучение и решения квестов в ядре C++. Контрпримеры проверяют неверные состояния импорта и сохранение состояния при отказе."
+      },
+      "scope": {
+        "de": "Portabler Zustandskern mit Quelltests; die Unreal-Laufzeit ist eine zusätzliche Integrationsfläche.",
+        "en": "Portable state core with source tests; the Unreal runtime is an additional integration surface.",
+        "ru": "Переносимое ядро с тестами исходников; среда Unreal представляет отдельный уровень интеграции."
+      },
+      "review": "STATIC_SOURCE_REVIEW",
+      "evidence": [
+        {
+          "role": "source",
+          "repository": "Juri-Halveth/halveth-unreal",
+          "revision": "44ccf28ffb80829def79a4f44ae5c6bcf8646de6",
+          "path": "Source/HALVETHRealms/Public/KnowledgeSystem.h",
+          "startLine": 455,
+          "endLine": 494,
+          "sha256": "302e63acb44968080e234c17a15a2e2d55bde47ccb418f81871ca7b1cc5e2b15",
+          "url": "https://github.com/Juri-Halveth/halveth-unreal/blob/44ccf28ffb80829def79a4f44ae5c6bcf8646de6/Source/HALVETHRealms/Public/KnowledgeSystem.h#L455-L494"
+        },
+        {
+          "role": "test",
+          "repository": "Juri-Halveth/halveth-unreal",
+          "revision": "44ccf28ffb80829def79a4f44ae5c6bcf8646de6",
+          "path": "tests/knowledge_test.cpp",
+          "startLine": 40,
+          "endLine": 46,
+          "sha256": "dbc24b415cca75f4f4aa045a57e951297f3c4ff87590502b26e6562c376b8e55",
+          "url": "https://github.com/Juri-Halveth/halveth-unreal/blob/44ccf28ffb80829def79a4f44ae5c6bcf8646de6/tests/knowledge_test.cpp#L40-L46"
+        },
+        {
+          "role": "workflow",
+          "repository": "Juri-Halveth/halveth-unreal",
+          "revision": "44ccf28ffb80829def79a4f44ae5c6bcf8646de6",
+          "path": ".github/workflows/source.yml",
+          "startLine": 33,
+          "endLine": 57,
+          "sha256": "f489ccc18c96b37f9eadc90f679bc672c518be9242c42e41442e372986fd4c63",
+          "url": "https://github.com/Juri-Halveth/halveth-unreal/blob/44ccf28ffb80829def79a4f44ae5c6bcf8646de6/.github/workflows/source.yml#L33-L57"
+        }
+      ]
+    },
+    {
+      "id": "native-packaging",
+      "area": "native",
+      "technologies": [
+        "PowerShell",
+        "Unreal Automation Tool",
+        "Win64"
+      ],
+      "title": {
+        "de": "Aus Enginequellen ein Windows-Paket bauen",
+        "en": "Package engine sources for Windows",
+        "ru": "Собрать Windows-пакет из исходников движка"
+      },
+      "interface": {
+        "de": "Quellprojekt, Unreal-Build und Ausgabepaket",
+        "en": "Source project, Unreal build and output package",
+        "ru": "Исходный проект, сборка Unreal и выходной пакет"
+      },
+      "summary": {
+        "de": "ASHBOUND ruft BuildCookRun mit Build, Cook und Stage auf, verlangt einen frischen Ausgabeordner und prüft anschließend den Launcherpfad.",
+        "en": "ASHBOUND invokes BuildCookRun with build, cook and stage, requires a fresh output directory and then checks the launcher path.",
+        "ru": "ASHBOUND вызывает BuildCookRun с build, cook и stage, требует новую папку вывода и проверяет путь запуска."
+      },
+      "scope": {
+        "de": "Buildskript gelesen; ein neuer vollständiger Enginebuild ist hierfür nicht ausgeführt. Die veröffentlichte Vorschau hat einen eigenen Versionsstand.",
+        "en": "Build script reviewed; no fresh full engine build was performed for this map. The published preview has its own version.",
+        "ru": "Скрипт сборки изучен; новая полная сборка движка для карты не выполнялась. Опубликованная версия имеет собственный номер."
+      },
+      "review": "STATIC_SOURCE_REVIEW",
+      "evidence": [
+        {
+          "role": "source",
+          "repository": "Juri-Halveth/halveth-scarlet",
+          "revision": "b768ca093d9bd68b1453a8ccc5b6d02ecaa1eb07",
+          "path": "native/ashbound-unreal/package.ps1",
+          "startLine": 1,
+          "endLine": 27,
+          "sha256": "5c36253fdbe6c86a4d82b1d18465000e0e41e89513a49f9b557da4d50e725a99",
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/b768ca093d9bd68b1453a8ccc5b6d02ecaa1eb07/native/ashbound-unreal/package.ps1#L1-L27"
+        },
+        {
+          "role": "documentation",
+          "repository": "Juri-Halveth/halveth-scarlet",
+          "revision": "b768ca093d9bd68b1453a8ccc5b6d02ecaa1eb07",
+          "path": "native/ashbound-unreal/README.md",
+          "startLine": 1,
+          "endLine": 26,
+          "sha256": "49ecace335751f2a9937d9554b7c505d36a2b3aa39d23ae298d36de441fbd6c6",
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/b768ca093d9bd68b1453a8ccc5b6d02ecaa1eb07/native/ashbound-unreal/README.md#L1-L26"
+        }
+      ],
+      "release": {
+        "url": "https://github.com/Juri-Halveth/halveth-scarlet/releases/tag/ashbound-native-v0.4.2-portal-preview",
+        "tag": "ashbound-native-v0.4.2-portal-preview",
+        "relation": "SEPARATE_PUBLISHED_PREVIEW_NOT_CURRENT_SOURCE_BUILD"
+      }
+    },
+    {
+      "id": "decision-model",
+      "area": "state",
+      "technologies": [
+        "JavaScript",
+        "Web Crypto",
+        "Deterministic ranking"
+      ],
+      "title": {
+        "de": "Entscheidungen mit offenen Ergebnissen modellieren",
+        "en": "Model decisions with open outcomes",
+        "ru": "Моделировать решения с открытым результатом"
+      },
+      "interface": {
+        "de": "Eingegebene Optionen, Gewichtung und Ergebnisansicht",
+        "en": "Entered options, weights and result view",
+        "ru": "Введённые варианты, веса и отображение результата"
+      },
+      "summary": {
+        "de": "Fortuna vergleicht vollständig eingegebene Optionen. Fehlende Werte bleiben offen; gleiche Stimmen erzeugen einen Gleichstand. Tests prüfen beide Fälle.",
+        "en": "Fortuna compares fully specified options. Missing values remain open; equal votes produce a tie. Tests cover both cases.",
+        "ru": "Fortuna сравнивает полностью заданные варианты. Пропущенные значения остаются открытыми; равные голоса дают ничью. Оба случая проверяются."
+      },
+      "scope": {
+        "de": "Ein gemeinsamer lokaler Algorithmus mit deklarierten Profilgewichten.",
+        "en": "One shared local algorithm with declared profile weights.",
+        "ru": "Один общий локальный алгоритм с объявленными весами профилей."
+      },
+      "review": "STATIC_SOURCE_REVIEW",
+      "evidence": [
+        {
+          "role": "source",
+          "repository": "Juri-Halveth/fortuna",
+          "revision": "438f6ba7557924aa011cc0d4f26d4acb4bc4d77d",
+          "path": "docs/collective.mjs",
+          "startLine": 52,
+          "endLine": 71,
+          "sha256": "dd504573d17a20273c2f89c84868aba927a59ef8e2840a109ce50c8e9c62f6ae",
+          "url": "https://github.com/Juri-Halveth/fortuna/blob/438f6ba7557924aa011cc0d4f26d4acb4bc4d77d/docs/collective.mjs#L52-L71"
+        },
+        {
+          "role": "test",
+          "repository": "Juri-Halveth/fortuna",
+          "revision": "438f6ba7557924aa011cc0d4f26d4acb4bc4d77d",
+          "path": "docs/collective.test.mjs",
+          "startLine": 29,
+          "endLine": 39,
+          "sha256": "e7a8192ee851a6ad3724c25ed656c696cee9738f8f7226e89ea4f5484fcee3ac",
+          "url": "https://github.com/Juri-Halveth/fortuna/blob/438f6ba7557924aa011cc0d4f26d4acb4bc4d77d/docs/collective.test.mjs#L29-L39"
+        }
+      ]
+    },
+    {
+      "id": "python-replay",
+      "area": "state",
+      "technologies": [
+        "Python",
+        "JSON",
+        "Three-valued logic"
+      ],
+      "title": {
+        "de": "Regelkonflikte berechnen und Ergebnisse wiederholen",
+        "en": "Evaluate rule conflicts and replay results",
+        "ru": "Вычислять конфликты правил и повторять результаты"
+      },
+      "interface": {
+        "de": "Deklarierte Regeln, Auswertung und Replay-Receipt",
+        "en": "Declared rules, evaluation and replay receipt",
+        "ru": "Объявленные правила, вычисление и запись воспроизведения"
+      },
+      "summary": {
+        "de": "Das Regelmodell erhält unbekannte Werte und widersprüchliche Regeln. Ein Receipt bindet Eingabe, Modellquelle und Ergebnis; Replay erkennt veränderte Ergebnisse.",
+        "en": "The rule model preserves unknown values and conflicting rules. A receipt binds input, model source and output; replay detects changed results.",
+        "ru": "Модель сохраняет неизвестные значения и противоречивые правила. Запись связывает ввод, исходник модели и результат; повтор выявляет изменения."
+      },
+      "scope": {
+        "de": "Deterministisches Offline-Modell für deklarierte Eingaben und Prioritäten.",
+        "en": "Deterministic offline model for declared inputs and priorities.",
+        "ru": "Детерминированная офлайн-модель объявленных данных и приоритетов."
+      },
+      "review": "STATIC_SOURCE_REVIEW",
+      "evidence": [
+        {
+          "role": "source",
+          "repository": "Juri-Halveth/halveth-forschungslabor",
+          "revision": "c6008ab5f8847921dc140d973b9a526750a89933",
+          "path": "branches/normenwerk-rule-universe/normenkern.py",
+          "startLine": 125,
+          "endLine": 168,
+          "sha256": "84dc83b2b6b93e1735b054e50f4c314a8e0e097fa5479a6ee5f773f2cdebea18",
+          "url": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/c6008ab5f8847921dc140d973b9a526750a89933/branches/normenwerk-rule-universe/normenkern.py#L125-L168"
+        },
+        {
+          "role": "test",
+          "repository": "Juri-Halveth/halveth-forschungslabor",
+          "revision": "c6008ab5f8847921dc140d973b9a526750a89933",
+          "path": "branches/normenwerk-rule-universe/test_normenkern.py",
+          "startLine": 57,
+          "endLine": 62,
+          "sha256": "deec2a08aea9d655e304329f695defe6df08f666cd614e937f776d9c07a2dce9",
+          "url": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/c6008ab5f8847921dc140d973b9a526750a89933/branches/normenwerk-rule-universe/test_normenkern.py#L57-L62"
+        }
+      ]
+    },
+    {
+      "id": "reference-authority",
+      "area": "security",
+      "technologies": [
+        "JavaScript",
+        "Canonical JSON",
+        "Authorization model"
+      ],
+      "title": {
+        "de": "Eine Kennung von einer Berechtigung unterscheiden",
+        "en": "Separate an identifier from authorization",
+        "ru": "Отделять идентификатор от полномочий"
+      },
+      "interface": {
+        "de": "Requestdaten und separat gebundener Authentisierungskontext",
+        "en": "Request data and separately bound authentication context",
+        "ru": "Данные запроса и отдельно привязанный контекст аутентификации"
+      },
+      "summary": {
+        "de": "Der lokale Referenzprüfer vergleicht Principal, Register-Digest und aktuellen Referenzzustand. Ein im Request eingetragener Principal genügt nicht. Fehlerantworten geben denselben begrenzten Status zurück.",
+        "en": "The local reference verifier checks the principal, registry digest and current reference state. A principal written into a request is insufficient. Failure responses share one limited status.",
+        "ru": "Локальный проверяющий модуль сверяет principal, дайджест реестра и актуальную ссылку. Principal из запроса недостаточен. Ошибки возвращают единый ограниченный статус."
+      },
+      "scope": {
+        "de": "Synthetischer Sicherheitsvertrag. Der vertrauenswürdige Authentisierungsadapter ist eine externe Voraussetzung.",
+        "en": "Synthetic security contract. A trusted authentication adapter is an external prerequisite.",
+        "ru": "Синтетический контракт безопасности. Доверенный адаптер аутентификации задаётся извне."
+      },
+      "review": "STATIC_SOURCE_REVIEW",
+      "evidence": [
+        {
+          "role": "source",
+          "repository": "Juri-Halveth/halveth-forschungslabor",
+          "revision": "c6008ab5f8847921dc140d973b9a526750a89933",
+          "path": "branches/document-issue-reference-verifier/src/reference-verifier.mjs",
+          "startLine": 179,
+          "endLine": 206,
+          "sha256": "dd45b22af670718d8800843c4350f41822e589ed4648e97690dec30d8c6d4ff3",
+          "url": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/c6008ab5f8847921dc140d973b9a526750a89933/branches/document-issue-reference-verifier/src/reference-verifier.mjs#L179-L206"
+        },
+        {
+          "role": "test",
+          "repository": "Juri-Halveth/halveth-forschungslabor",
+          "revision": "c6008ab5f8847921dc140d973b9a526750a89933",
+          "path": "branches/document-issue-reference-verifier/test/reference-verifier.test.mjs",
+          "startLine": 83,
+          "endLine": 89,
+          "sha256": "c48716642cf5b3cf1b8bacc14701c863270e5145fd43c07587af20dac1a17683",
+          "url": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/c6008ab5f8847921dc140d973b9a526750a89933/branches/document-issue-reference-verifier/test/reference-verifier.test.mjs#L83-L89"
+        }
+      ]
+    },
+    {
+      "id": "security-report-model",
+      "area": "security",
+      "technologies": [
+        "JavaScript",
+        "Closed input schema",
+        "Negative controls"
+      ],
+      "title": {
+        "de": "Sicherheitsberichte auf offene Belegkanten prüfen",
+        "en": "Check security drafts for missing evidence edges",
+        "ru": "Проверять недостающие основания в черновиках отчётов"
+      },
+      "interface": {
+        "de": "Deklarierte Beobachtung, Auswirkung und Berichtsstruktur",
+        "en": "Declared observation, impact and report structure",
+        "ru": "Объявленное наблюдение, влияние и структура отчёта"
+      },
+      "summary": {
+        "de": "Das Lehrmodell erkennt Platzhalter, fehlende Akteur-/Produktbindungen und eine vorgeschlagene Schwere oberhalb des deklarierten Belegstands. Gegenproben prüfen diese Übergänge.",
+        "en": "The teaching model flags placeholders, missing actor/product bindings and proposed severity above the declared evidence tier. Counterexamples cover these transitions.",
+        "ru": "Учебная модель выявляет заполнители, отсутствие привязки субъекта/продукта и серьёзность выше объявленных оснований. Переходы проверяются контрпримерами."
+      },
+      "scope": {
+        "de": "Strukturprüfung synthetischer Berichte; reale Befunde bleiben beim jeweiligen Fall und dessen Belegen.",
+        "en": "Structural checks on synthetic reports; real findings remain bound to their case evidence.",
+        "ru": "Структурная проверка синтетических отчётов; реальные находки связаны с основаниями своего случая."
+      },
+      "review": "STATIC_SOURCE_REVIEW",
+      "evidence": [
+        {
+          "role": "source",
+          "repository": "Juri-Halveth/halveth-forschungslabor",
+          "revision": "c6008ab5f8847921dc140d973b9a526750a89933",
+          "path": "branches/security-impact-learning/submission-review.mjs",
+          "startLine": 1,
+          "endLine": 17,
+          "sha256": "e2176dc71b81e26741f94bcde4c4eaa7a22bbe76a91f994124857e2740dbd197",
+          "url": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/c6008ab5f8847921dc140d973b9a526750a89933/branches/security-impact-learning/submission-review.mjs#L1-L17"
+        },
+        {
+          "role": "test",
+          "repository": "Juri-Halveth/halveth-forschungslabor",
+          "revision": "c6008ab5f8847921dc140d973b9a526750a89933",
+          "path": "branches/security-impact-learning/submission-review.test.mjs",
+          "startLine": 1,
+          "endLine": 11,
+          "sha256": "98e16e855e999f40263495340f0d9d2631cd66f5a3fb55f2da2bc3788fe5e86b",
+          "url": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/c6008ab5f8847921dc140d973b9a526750a89933/branches/security-impact-learning/submission-review.test.mjs#L1-L11"
+        }
+      ]
+    },
+    {
+      "id": "node-browser-packet",
+      "area": "data",
+      "technologies": [
+        "Node.js",
+        "Browser Web Crypto",
+        "SHA-256",
+        "Base64"
+      ],
+      "title": {
+        "de": "Dieselben Quellenpakete in Node und Browser lesen",
+        "en": "Read the same source packets in Node and browser",
+        "ru": "Читать одинаковые пакеты источников в Node и браузере"
+      },
+      "interface": {
+        "de": "Quellbytes, Transportpaket und zwei Datenverbraucher",
+        "en": "Source bytes, transport packet and two data consumers",
+        "ru": "Исходные байты, пакет передачи и два потребителя данных"
+      },
+      "summary": {
+        "de": "Ein Paket bindet Quellrevision, Bytezahl und SHA-256. Der Vergleichstest prüft gleiche Auswertung durch Node und Browser sowie Ablehnung veränderter Grenzen und Bytes.",
+        "en": "A packet binds source revision, byte count and SHA-256. A differential test covers matching Node/browser interpretation and rejection of changed boundaries and bytes.",
+        "ru": "Пакет связывает версию источника, число байтов и SHA-256. Сравнительный тест проверяет одинаковое чтение в Node/браузере и отказ при изменении границ и байтов."
+      },
+      "scope": {
+        "de": "Datenintegrität und gebundene Interpretation im implementierten Paketformat.",
+        "en": "Data integrity and bound interpretation within the implemented packet format.",
+        "ru": "Целостность данных и привязанная интерпретация в реализованном формате пакета."
+      },
+      "review": "STATIC_SOURCE_REVIEW",
+      "evidence": [
+        {
+          "role": "source",
+          "repository": "Juri-Halveth/halveth-forschungslabor",
+          "revision": "c6008ab5f8847921dc140d973b9a526750a89933",
+          "path": "scripts/packet.mjs",
+          "startLine": 1,
+          "endLine": 25,
+          "sha256": "8c14cfa18c19b37ab0d4288735d24f8df1408d4c93f12b19e1584e8e8d09ef48",
+          "url": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/c6008ab5f8847921dc140d973b9a526750a89933/scripts/packet.mjs#L1-L25"
+        },
+        {
+          "role": "test",
+          "repository": "Juri-Halveth/halveth-forschungslabor",
+          "revision": "c6008ab5f8847921dc140d973b9a526750a89933",
+          "path": "scripts/source-packet-browser.test.mjs",
+          "startLine": 1,
+          "endLine": 20,
+          "sha256": "e95e6414181b1fbc32d30e4d442b94fffff23d2bd0fa12a245252e6d96b37bda",
+          "url": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/c6008ab5f8847921dc140d973b9a526750a89933/scripts/source-packet-browser.test.mjs#L1-L20"
+        }
+      ]
+    },
+    {
+      "id": "artifact-provenance",
+      "area": "data",
+      "technologies": [
+        "Node.js",
+        "Git",
+        "SHA-256",
+        "Filesystem"
+      ],
+      "title": {
+        "de": "Quellstand und veröffentlichte Dateien getrennt binden",
+        "en": "Bind source revision and output files separately",
+        "ru": "Раздельно связывать версию исходников и выходные файлы"
+      },
+      "interface": {
+        "de": "Git-Arbeitsbaum, Website-Build und Artefaktbytes",
+        "en": "Git working tree, website build and artifact bytes",
+        "ru": "Рабочее дерево Git, сборка сайта и байты артефакта"
+      },
+      "summary": {
+        "de": "SCARLET bildet einen Digest über sortierte Dateipfade und exakte Buildbytes. Der Test erkennt veränderte und zusätzlich eingeschleuste Ausgabedateien sowie einen schmutzigen Quellbaum.",
+        "en": "SCARLET digests sorted paths and exact output bytes. The test detects changed and additional output files and a dirty source tree.",
+        "ru": "SCARLET вычисляет дайджест упорядоченных путей и точных байтов сборки. Тест выявляет изменения, лишние файлы вывода и изменённое дерево исходников."
+      },
+      "scope": {
+        "de": "Integritätsprüfung des gebundenen Website-Artefakts und seines Quellstands.",
+        "en": "Integrity checks for a bound website artifact and its source revision.",
+        "ru": "Проверка целостности заданного артефакта сайта и его версии исходников."
+      },
+      "review": "STATIC_SOURCE_REVIEW",
+      "evidence": [
+        {
+          "role": "source",
+          "repository": "Juri-Halveth/halveth-scarlet",
+          "revision": "b768ca093d9bd68b1453a8ccc5b6d02ecaa1eb07",
+          "path": "tools/artifact_tree.mjs",
+          "startLine": 1,
+          "endLine": 33,
+          "sha256": "a7455a2a3b0f0d60d6156577957427cc02b930695f86b5df4865152c3593bc50",
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/b768ca093d9bd68b1453a8ccc5b6d02ecaa1eb07/tools/artifact_tree.mjs#L1-L33"
+        },
+        {
+          "role": "test",
+          "repository": "Juri-Halveth/halveth-scarlet",
+          "revision": "b768ca093d9bd68b1453a8ccc5b6d02ecaa1eb07",
+          "path": "tests/source-state.test.mjs",
+          "startLine": 11,
+          "endLine": 55,
+          "sha256": "524b70573b4b6f127c09f04cae873523eef4362a2fceb3db10c8cc4bbce37ed6",
+          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/b768ca093d9bd68b1453a8ccc5b6d02ecaa1eb07/tests/source-state.test.mjs#L11-L55"
+        }
+      ]
+    },
+    {
+      "id": "optics-counterexample",
+      "area": "models",
+      "technologies": [
+        "JavaScript",
+        "Ray geometry",
+        "Numerical tests"
+      ],
+      "title": {
+        "de": "Ein Grafikmodell mit Grenzfall prüfen",
+        "en": "Check a graphics model against a counterexample",
+        "ru": "Проверять графическую модель на контрпримере"
+      },
+      "interface": {
+        "de": "Geometrisches Modell, numerische Vorhersage und Vergleich",
+        "en": "Geometric model, numerical prediction and comparison",
+        "ru": "Геометрическая модель, численное предсказание и сравнение"
+      },
+      "summary": {
+        "de": "Das Optiklabor berechnet gebrochene Strahlen und Fokus. Ein eigener Test zeigt: Extrapolation hilft bei gerader Bewegung, kann nach einer ungesehenen Richtungsänderung aber schlechter abschneiden.",
+        "en": "The optics lab calculates refracted rays and focus. A separate test shows extrapolation helping straight motion but worsening the result after an unseen reversal.",
+        "ru": "Оптическая лаборатория вычисляет преломлённые лучи и фокус. Отдельный тест показывает пользу экстраполяции при прямом движении и ухудшение после ненаблюдаемого разворота."
+      },
+      "scope": {
+        "de": "Geometrisches Lehrmodell mit synthetischen Strahlen und Bewegungsverläufen.",
+        "en": "Geometric teaching model with synthetic rays and motion traces.",
+        "ru": "Геометрическая учебная модель с синтетическими лучами и траекториями."
+      },
+      "review": "STATIC_SOURCE_REVIEW",
+      "evidence": [
+        {
+          "role": "source",
+          "repository": "Juri-Halveth/halveth-forschungslabor",
+          "revision": "c6008ab5f8847921dc140d973b9a526750a89933",
+          "path": "branches/eye-optics-and-prediction/model.mjs",
+          "startLine": 1,
+          "endLine": 33,
+          "sha256": "2e71d12bd2a898379dae06db12ab9b3c4efd3c0ba29b47965d2530c7beb0ac38",
+          "url": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/c6008ab5f8847921dc140d973b9a526750a89933/branches/eye-optics-and-prediction/model.mjs#L1-L33"
+        },
+        {
+          "role": "test",
+          "repository": "Juri-Halveth/halveth-forschungslabor",
+          "revision": "c6008ab5f8847921dc140d973b9a526750a89933",
+          "path": "branches/eye-optics-and-prediction/model.test.mjs",
+          "startLine": 24,
+          "endLine": 31,
+          "sha256": "00a9fecba62a17c15eaabf4203c2b1d66c592b21e35a627995751b36177d5fbc",
+          "url": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/c6008ab5f8847921dc140d973b9a526750a89933/branches/eye-optics-and-prediction/model.test.mjs#L24-L31"
+        }
+      ]
+    },
+    {
+      "id": "pixel-comparison",
+      "area": "models",
+      "technologies": [
+        "JavaScript",
+        "RGBA arrays",
+        "Sampling"
+      ],
+      "title": {
+        "de": "Bildänderungen innerhalb eines Prüfbereichs messen",
+        "en": "Measure image changes within a declared region",
+        "ru": "Измерять изменения изображения в заданной области"
+      },
+      "interface": {
+        "de": "Gelieferte RGBA-Frames und begrenzte Änderungserkennung",
+        "en": "Supplied RGBA frames and bounded change detection",
+        "ru": "Переданные RGBA-кадры и ограниченное обнаружение изменений"
+      },
+      "summary": {
+        "de": "Der Vergleicher zählt Pixeländerungen innerhalb einer Region und Schwelle. Er gibt die Lücken zwischen den gelieferten Zeitpunkten ausdrücklich mit aus.",
+        "en": "The comparator counts changed pixels within a region and threshold. It explicitly reports gaps between the supplied sample times.",
+        "ru": "Модуль считает изменённые пиксели в области по заданному порогу и явно выводит промежутки между переданными моментами."
+      },
+      "scope": {
+        "de": "Reiner Offline-Vergleich synthetischer Arrays; Aufnahme und Erfassung sind eigene Schnittstellen.",
+        "en": "Pure offline comparison of synthetic arrays; acquisition and capture are separate interfaces.",
+        "ru": "Чистое офлайн-сравнение синтетических массивов; получение и запись кадров представляют отдельные интерфейсы."
+      },
+      "review": "STATIC_SOURCE_REVIEW",
+      "evidence": [
+        {
+          "role": "source",
+          "repository": "Juri-Halveth/halveth-forschungslabor",
+          "revision": "c6008ab5f8847921dc140d973b9a526750a89933",
+          "path": "branches/pixel-region-change-observer/src/observer.js",
+          "startLine": 130,
+          "endLine": 192,
+          "sha256": "e0fd9cacecbabeea06c9d4b4e8453ca0dc54a8deef07a07c9280a81750305397",
+          "url": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/c6008ab5f8847921dc140d973b9a526750a89933/branches/pixel-region-change-observer/src/observer.js#L130-L192"
+        },
+        {
+          "role": "test",
+          "repository": "Juri-Halveth/halveth-forschungslabor",
+          "revision": "c6008ab5f8847921dc140d973b9a526750a89933",
+          "path": "branches/pixel-region-change-observer/test/observer.test.js",
+          "startLine": 44,
+          "endLine": 54,
+          "sha256": "75033240ddb2b0a61c5af6ea9442beba08253e0c05dce28e086a188a4163dd55",
+          "url": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/c6008ab5f8847921dc140d973b9a526750a89933/branches/pixel-region-change-observer/test/observer.test.js#L44-L54"
+        }
+      ]
+    },
+    {
+      "id": "pages-delivery",
+      "area": "delivery",
+      "technologies": [
+        "GitHub Actions",
+        "Node.js",
+        "GitHub Pages"
+      ],
+      "title": {
+        "de": "Generierten Stand vor dem Deploy prüfen",
+        "en": "Check generated output before deployment",
+        "ru": "Проверять сгенерированное состояние перед публикацией"
+      },
+      "interface": {
+        "de": "Projektkatalog, statischer Build, CI und Pages",
+        "en": "Project catalog, static build, CI and Pages",
+        "ru": "Каталог проектов, статическая сборка, CI и Pages"
+      },
+      "summary": {
+        "de": "Die Portfolio-Pipeline baut aus dem Katalog, verlangt identische eingecheckte Ausgaben, führt die Tests aus und veröffentlicht den main-Stand über einen getrennten Deployjob.",
+        "en": "The portfolio pipeline builds from the catalog, requires matching committed output, runs tests and publishes main through a separate deploy job.",
+        "ru": "Конвейер портфолио собирает сайт из каталога, требует совпадения сохранённого вывода, запускает тесты и публикует main отдельным заданием."
+      },
+      "scope": {
+        "de": "Konkreter statischer Veröffentlichungsweg; CI und Deployment führen eigene Ergebnisse.",
+        "en": "A specific static publication path; CI and deployment have separate outcomes.",
+        "ru": "Конкретный путь статической публикации; CI и развёртывание имеют отдельные результаты."
+      },
+      "review": "STATIC_SOURCE_REVIEW",
+      "evidence": [
+        {
+          "role": "workflow",
+          "repository": "Juri-Halveth/Juri-Halveth.github.io",
+          "revision": "945eef06bf0a03822e7db589d31ef3dbb902cc69",
+          "path": ".github/workflows/pages.yml",
+          "startLine": 17,
+          "endLine": 54,
+          "sha256": "3d8f089de8edcc9a11286d4a08c39e5e946539d958e243dac833fbc778d25b20",
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/945eef06bf0a03822e7db589d31ef3dbb902cc69/.github/workflows/pages.yml#L17-L54"
+        },
+        {
+          "role": "source",
+          "repository": "Juri-Halveth/Juri-Halveth.github.io",
+          "revision": "945eef06bf0a03822e7db589d31ef3dbb902cc69",
+          "path": "tools/build-portfolio.cjs",
+          "startLine": 13,
+          "endLine": 33,
+          "sha256": "22ddd346bbfe11c2e7bd3ce72b0d1d7dcf576e1e1ce36c3ec021e2a3c62b5b5d",
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/945eef06bf0a03822e7db589d31ef3dbb902cc69/tools/build-portfolio.cjs#L13-L33"
+        },
+        {
+          "role": "test",
+          "repository": "Juri-Halveth/Juri-Halveth.github.io",
+          "revision": "945eef06bf0a03822e7db589d31ef3dbb902cc69",
+          "path": "tests/portfolio.test.cjs",
+          "startLine": 9,
+          "endLine": 24,
+          "sha256": "3d2c65cac60fd6e2162f01f4cdffdc0ae30494b8b37718c740c060e5dba836aa",
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/945eef06bf0a03822e7db589d31ef3dbb902cc69/tests/portfolio.test.cjs#L9-L24"
+        }
+      ]
+    },
+    {
+      "id": "gradle-windows",
+      "area": "delivery",
+      "technologies": [
+        "Java ecosystem",
+        "Gradle",
+        "Protobuf",
+        "gRPC"
+      ],
+      "title": {
+        "de": "Windows-Werkzeuge im Java-Build verifizieren",
+        "en": "Verify Windows tools in a Java build",
+        "ru": "Проверять инструменты Windows в Java-сборке"
+      },
+      "interface": {
+        "de": "java-tron-Fork, Gradle-Metadaten und Compiler-Artefakte",
+        "en": "java-tron fork, Gradle metadata and compiler artifacts",
+        "ru": "Форк java-tron, метаданные Gradle и артефакты компилятора"
+      },
+      "summary": {
+        "de": "Der eigene Commit ergänzt SHA-256-Werte für die Windows-Versionen von protoc und protoc-gen-grpc-java. Der verlinkte Diff zeigt den exakten Umfang.",
+        "en": "The contribution adds SHA-256 entries for Windows protoc and protoc-gen-grpc-java. The linked diff shows its exact scope.",
+        "ru": "Изменение добавляет SHA-256 для Windows-версий protoc и protoc-gen-grpc-java. Ссылка на diff показывает точный объём."
+      },
+      "scope": {
+        "de": "Eigener Build-Metadatenbeitrag im geerbten java-tron-Codebestand. Die Blockchain-Implementierung bleibt dem Upstream zugeordnet.",
+        "en": "A build-metadata contribution within inherited java-tron sources. The blockchain implementation remains attributed to upstream.",
+        "ru": "Собственное изменение метаданных сборки в унаследованных исходниках java-tron. Реализация блокчейна относится к upstream."
+      },
+      "review": "STATIC_SOURCE_REVIEW",
+      "evidence": [
+        {
+          "role": "source",
+          "repository": "Juri-Halveth/halveth-tron-security-lab",
+          "revision": "d25e104e6b887bc4d782185a96ecf3c4eb782d8c",
+          "path": "gradle/verification-metadata.xml",
+          "startLine": 856,
+          "endLine": 858,
+          "sha256": "83adf30582f7dd24a2f74827f976c001a9f4f55faa9ca21140df2c76995f1b94",
+          "url": "https://github.com/Juri-Halveth/halveth-tron-security-lab/blob/d25e104e6b887bc4d782185a96ecf3c4eb782d8c/gradle/verification-metadata.xml#L856-L858"
+        },
+        {
+          "role": "source",
+          "repository": "Juri-Halveth/halveth-tron-security-lab",
+          "revision": "d25e104e6b887bc4d782185a96ecf3c4eb782d8c",
+          "path": "gradle/verification-metadata.xml",
+          "startLine": 1253,
+          "endLine": 1255,
+          "sha256": "83adf30582f7dd24a2f74827f976c001a9f4f55faa9ca21140df2c76995f1b94",
+          "url": "https://github.com/Juri-Halveth/halveth-tron-security-lab/blob/d25e104e6b887bc4d782185a96ecf3c4eb782d8c/gradle/verification-metadata.xml#L1253-L1255"
+        }
+      ],
+      "contribution": {
+        "url": "https://github.com/Juri-Halveth/halveth-tron-security-lab/commit/0472a5b9551ac838a2feecee2de1b1fac3f3fba9",
+        "revision": "0472a5b9551ac838a2feecee2de1b1fac3f3fba9",
+        "kind": "OWN_BUILD_METADATA_CHANGE_IN_UPSTREAM_FORK"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "id": "admission",
+      "items": [
+        "cpp-state",
+        "reference-authority",
+        "node-browser-packet"
+      ],
+      "title": {
+        "de": "Eingaben vor ihrer Übernahme prüfen",
+        "en": "Validate inputs before admission",
+        "ru": "Проверять ввод до принятия"
+      }
+    },
+    {
+      "id": "open-state",
+      "items": [
+        "decision-model",
+        "python-replay",
+        "security-report-model"
+      ],
+      "title": {
+        "de": "Offene Ergebnisse sichtbar erhalten",
+        "en": "Preserve open outcomes visibly",
+        "ru": "Явно сохранять открытые результаты"
+      }
+    },
+    {
+      "id": "reproduction",
+      "items": [
+        "artifact-provenance",
+        "pages-delivery",
+        "native-packaging"
+      ],
+      "title": {
+        "de": "Quellen, Build und Ergebnis nachvollziehen",
+        "en": "Trace sources, build and output",
+        "ru": "Прослеживать исходники, сборку и результат"
+      }
+    },
+    {
+      "id": "bounded-observation",
+      "items": [
+        "browser-motion",
+        "pixel-comparison",
+        "optics-counterexample"
+      ],
+      "title": {
+        "de": "Zeit und Beobachtungsgrenzen im Modell führen",
+        "en": "Represent time and observation limits",
+        "ru": "Учитывать время и границы наблюдения"
+      }
+    }
+  ]
+}
