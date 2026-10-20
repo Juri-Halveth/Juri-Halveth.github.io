@@ -22,6 +22,8 @@ test('three complete case studies expose implementation, counterexample and same
 });
 test('invalid paths and script-like presentation text do not become executable markup',()=>{
  const wrong=structuredClone(data);wrong.samples[0].sourcePath='../private';assert.throws(()=>validateWorkSamples(wrong),/relative/);
+ const injected=structuredClone(data);injected.samples[1].demo='https://juri-halveth.github.io/" onclick="alert(1)';assert.throws(()=>validateWorkSamples(injected),/Owned demo/);
+ const foreign=structuredClone(data);foreign.samples[1].demo='https://juri-halveth.github.io.attacker.example/';assert.throws(()=>validateWorkSamples(foreign),/Owned demo/);
  const text=structuredClone(data);text.samples[0].de.title='<script>alert(1)</script>';
  const doc=new JSDOM(renderWorkSamples(text,'de')).window.document;
  assert.equal(doc.querySelectorAll('script,iframe').length,0);
