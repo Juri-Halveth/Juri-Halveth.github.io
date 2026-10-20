@@ -3,7 +3,7 @@ const root=path.resolve(__dirname,'..'),{JSDOM}=require('jsdom');
 const data=JSON.parse(fs.readFileSync(path.join(root,'data/projects.json'),'utf8'));
 const read=p=>fs.readFileSync(path.join(root,p),'utf8');
 test('technical catalog is unique, source-pinned and records limited check states',()=>{
- assert.equal(data.projects.length,13);assert.equal(new Set(data.projects.map(x=>x.id)).size,13);
+ assert.equal(data.projects.length,14);assert.equal(new Set(data.projects.map(x=>x.id)).size,14);
  for(const x of data.projects){assert.match(x.revision,/^[0-9a-f]{40}$/);assert.ok(x.source.includes(x.revision));assert.ok(['LOCAL_MODEL_TESTS','SOURCE_REVIEW_ONLY'].includes(x.verification));}
 });
 test('all generated language entrances link only to available local files and anchors',()=>{
@@ -30,4 +30,11 @@ test('current public pages contain work samples without historical certificate o
 test('archive collectors cannot republish removed material',()=>{
  const workflows=fs.readdirSync(path.join(root,'.github/workflows'));assert.deepEqual(workflows,['pages.yml']);
  for(const p of ['schuelervz-halveth','werkzertifikate/2026-09-28-v1.1','data/claims.json'])assert.equal(fs.existsSync(path.join(root,p)),false);
+});
+
+test('ASHBOUND distinguishes native preview, source revision and its actual project illustration',()=>{
+ const x=data.projects.find(x=>x.id==='ashbound-native');assert.ok(x);
+ assert.match(x.demo,/releases\/tag\/ashbound-native-v0\.4\.2-portal-preview$/);
+ assert.match(x.source,/native\/ashbound-unreal\/README\.md$/);
+ const bytes=fs.readFileSync(path.join(root,x.image));assert.equal(require('node:crypto').createHash('sha256').update(bytes).digest('hex'),x.imageSha256);
 });

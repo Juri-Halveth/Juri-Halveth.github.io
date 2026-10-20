@@ -1,0 +1,15 @@
+{
+  "schema": "halveth.portfolio-asset-sources.v1",
+  "records": [
+    {
+      "path": "assets/ashbound-grimoire.png",
+      "sourceRepository": "Juri-Halveth/halveth-scarlet",
+      "sourceRevision": "b768ca093d9bd68b1453a8ccc5b6d02ecaa1eb07",
+      "sourcePath": "native/ashbound-unreal/art/grimoire-preview.png",
+      "sha256": "9346c84dd3a9886a3e4cf367f0ec2e638ca9d6c8445e2a263d206e2f8263126c",
+      "transfer": "EXACT_SOURCE_BYTES",
+      "context": "Illustration from native development source; not a fresh runtime or performance verification.",
+      "rights": "See source repository LICENSES.md and native asset notices; no expanded grant."
+    }
+  ]
+}

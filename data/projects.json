@@ -121,11 +121,49 @@
         "ru": "Браузерный прототип"
       },
       "repository": "https://github.com/Juri-Halveth/fortuna",
-      "revision": "e9b916139383e3f579cdad91cd8b72bf85d52d94",
-      "source": "https://github.com/Juri-Halveth/fortuna/tree/e9b916139383e3f579cdad91cd8b72bf85d52d94",
+      "revision": "438f6ba7557924aa011cc0d4f26d4acb4bc4d77d",
+      "source": "https://github.com/Juri-Halveth/fortuna/tree/438f6ba7557924aa011cc0d4f26d4acb4bc4d77d",
       "demo": "https://juri-halveth.github.io/fortuna/",
       "command": null,
       "verification": "SOURCE_REVIEW_ONLY"
+    },
+    {
+      "id": "ashbound-native",
+      "category": "games",
+      "title": {
+        "de": "ASHBOUND · native Spielwelt",
+        "en": "ASHBOUND · native game world",
+        "ru": "ASHBOUND · нативный игровой мир"
+      },
+      "description": {
+        "de": "Eigenständiges Unreal-Spiel in Entwicklung: Aschetal, Archiv, Zauber und Bücher im 3D-Raum. Die Windows-Vorschau v0.4.2 und der aktuelle Entwicklungszweig sind getrennte Stände.",
+        "en": "An independent Unreal game in development: an ash valley, archive, spells and in-world books. The Windows v0.4.2 preview and current development source are separate states.",
+        "ru": "Самостоятельная игра Unreal в разработке: пепельная долина, архив, заклинания и книги в 3D-мире. Предварительная версия Windows v0.4.2 и текущие исходники относятся к разным состояниям."
+      },
+      "stage": {
+        "de": "Native Windows-Vorschau · in Entwicklung",
+        "en": "Native Windows preview · in development",
+        "ru": "Предварительная версия Windows · в разработке"
+      },
+      "repository": "https://github.com/Juri-Halveth/halveth-scarlet",
+      "revision": "b768ca093d9bd68b1453a8ccc5b6d02ecaa1eb07",
+      "source": "https://github.com/Juri-Halveth/halveth-scarlet/blob/b768ca093d9bd68b1453a8ccc5b6d02ecaa1eb07/native/ashbound-unreal/README.md",
+      "demo": "https://github.com/Juri-Halveth/halveth-scarlet/releases/tag/ashbound-native-v0.4.2-portal-preview",
+      "actionLabel": {
+        "de": "Windows-Vorschau v0.4.2",
+        "en": "Windows preview v0.4.2",
+        "ru": "Версия Windows v0.4.2"
+      },
+      "command": null,
+      "verification": "SOURCE_REVIEW_ONLY",
+      "image": "/assets/ashbound-grimoire.png",
+      "imageAlt": {
+        "de": "ASHBOUND: ein aufgeschlagenes Spielbuch im dreidimensionalen Archiv.",
+        "en": "ASHBOUND: an open in-world book in the three-dimensional archive.",
+        "ru": "ASHBOUND: открытая игровая книга в трёхмерном архиве."
+      },
+      "imageSha256": "9346c84dd3a9886a3e4cf367f0ec2e638ca9d6c8445e2a263d206e2f8263126c",
+      "incorporatesPurposeOfPR": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/pull/21"
     },
     {
       "id": "halveth-unreal",
@@ -221,8 +259,8 @@
         "ru": "Интерактивные прототипы"
       },
       "repository": "https://github.com/Juri-Halveth/halveth-scarlet",
-      "revision": "74455b0e793259e32e37b7cfdf18415ae9985691",
-      "source": "https://github.com/Juri-Halveth/halveth-scarlet/tree/74455b0e793259e32e37b7cfdf18415ae9985691",
+      "revision": "b768ca093d9bd68b1453a8ccc5b6d02ecaa1eb07",
+      "source": "https://github.com/Juri-Halveth/halveth-scarlet/tree/b768ca093d9bd68b1453a8ccc5b6d02ecaa1eb07",
       "demo": "https://juri-halveth.github.io/halveth-scarlet/",
       "command": null,
       "verification": "SOURCE_REVIEW_ONLY"
@@ -261,9 +299,9 @@
         "ru": "Инструменты блокчейна · скрипты и состояния"
       },
       "description": {
-        "de": "Kleine Automatisierungs- und Dokumentationswerkzeuge. Aus Codebestand folgt keine gemessene Rendite.",
-        "en": "Small automation and documentation tools. Source availability does not establish measured financial returns.",
-        "ru": "Небольшие инструменты автоматизации и документации. Наличие кода не подтверждает доходность."
+        "de": "Kleine Automatisierungs- und Dokumentationswerkzeuge für einen experimentellen Solana-Werkzeugzweig.",
+        "en": "Small automation and documentation tools for an experimental Solana tool project.",
+        "ru": "Небольшие инструменты автоматизации и документации для экспериментального проекта Solana."
       },
       "stage": {
         "de": "Experimenteller Werkzeugzweig",
@@ -311,9 +349,9 @@
         "ru": "C-Drone · концепция интерфейса"
       },
       "description": {
-        "de": "Browseroberfläche, Visualisierung und Konzeptmaterial. Ein real fliegendes Gerät ist durch diese Quellen nicht belegt.",
-        "en": "A browser interface, visualisation and concept material. These sources do not establish a real flying device.",
-        "ru": "Браузерный интерфейс, визуализация и концептуальные материалы. Реальное летающее устройство этими источниками не подтверждено."
+        "de": "Browseroberfläche, Visualisierung und Konzeptmaterial für Drohnen- und Schwarmideen. Schwerpunkt: Darstellung und Systementwurf.",
+        "en": "A browser interface, visualisation and concept material for drone and swarm ideas. Focus: presentation and system design.",
+        "ru": "Браузерный интерфейс, визуализация и концептуальные материалы для идей дронов и роёв. Акцент: представление и проектирование системы."
       },
       "stage": {
         "de": "Konzept und Oberfläche",
