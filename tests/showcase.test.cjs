@@ -13,7 +13,15 @@ test('featured work offers three direct entries and a dated local receipt in eve
   assert.match(lab.textContent,/99 JavaScript \+ 46 Python/);
   assert.ok(lab.querySelector('a[href="/docs/WORK-SAMPLE-VALIDATION-2026-10-20.md"]'));
   assert.ok(doc.querySelector('[data-feature="scarlet-browser"] a[href$="/singularity-cannon/"]'));
+  assert.ok(doc.querySelector('[data-feature="scarlet-browser"] img[alt][src="/assets/scarlet-cannon-live.png"]'));
  }
+});
+test('the public demo capture is bound to its actual bytes and observation scope',()=>{
+ const records=JSON.parse(fs.readFileSync(path.join(root,'assets/ASSET-SOURCES.json'),'utf8')).records;
+ const capture=records.find(x=>x.path==='assets/scarlet-cannon-live.png');
+ assert.equal(capture.transfer,'BROWSER_SCREENSHOT');
+ assert.equal(capture.sourceRevision,'UNKNOWN_FOR_LIVE_RESPONSE');
+ assert.equal(require('node:crypto').createHash('sha256').update(fs.readFileSync(path.join(root,capture.path))).digest('hex'),capture.sha256);
 });
 test('a missing flagship or unpinned source fails rather than presenting a stale work sample',()=>{
  assert.throws(()=>renderShowcase(catalog.projects.filter(p=>p.id!=='ashbound-native'),'de'),/Source-bound/);

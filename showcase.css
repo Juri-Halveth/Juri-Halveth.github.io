@@ -1,4 +1,5 @@
 
+.feature-capture{height:236px;background:#050d10;display:grid;place-items:center}.feature-capture img{width:100%;height:100%;object-fit:contain}
 /* Featured work: a visual entrance followed by revision-bound source paths. */
 .hero{padding-top:68px;padding-bottom:68px;gap:5%;grid-template-columns:1.13fr 1fr}
 .hero h1{font-size:clamp(44px,5.35vw,78px);line-height:1.07;letter-spacing:-.05em}
@@ -30,12 +31,6 @@
 .feature-body{padding:35px}.feature-body h3{font-size:34px}.feature-body>p:not(.eyebrow):not(.feature-line){color:#c5d3cd;font-size:15px}
 .feature-line{font:italic 26px/1.35 var(--serif);color:#d5e8ad;margin:20px 0}
 .feature-body .feature-scope{font-size:11px!important;line-height:1.6;margin:24px 0 0;color:#b6c9c1!important}
-.singularity-art{height:236px;position:relative;overflow:hidden;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 50%,#304a44 0, #0a1716 46%,#071211 100%)}
-.singularity-orbit{position:absolute;width:270px;height:94px;border:2px solid #c9cdb8;border-radius:50%;transform:rotate(-18deg);box-shadow:0 0 16px #b6cdb039,inset 0 0 14px #b6cdb030}
-.singularity-art::before,.singularity-art::after{content:"";position:absolute;width:200px;height:160px;border:1px solid #8caaa5;border-radius:50%;transform:rotate(60deg);opacity:.5}
-.singularity-art::after{width:230px;height:68px;transform:rotate(22deg)}
-.singularity-core{z-index:1;width:102px;height:102px;background:#010605;border-radius:50%;box-shadow:0 0 0 2px #dbe5ce,0 0 22px #c7e2b355,0 0 65px #b5c79126}
-.orbit-point{position:absolute;width:5px;height:5px;border-radius:50%;background:#ecf1cf;transform:translate(129px,-43px);box-shadow:0 0 12px #eef5c4}
 .proof-terminal{height:236px;padding:30px;display:flex;flex-direction:column;justify-content:center;gap:11px;background:#091613;font:12px/1.6 ui-monospace,Consolas,monospace;color:#bcd5c5;overflow:hidden}
 .proof-terminal code{color:#a8bdaf}.proof-terminal strong{font-size:clamp(16px,1.9vw,24px);font-weight:500;color:#e6edc6}
 .terminal-heading{letter-spacing:.12em;font-size:10px;color:#9cb5a8}.terminal-revision{font-size:10px;color:#95b0a1}
