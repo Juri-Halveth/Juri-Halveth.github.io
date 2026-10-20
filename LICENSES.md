@@ -24,3 +24,7 @@ independent system.
 Contact **security@halveth.de** with the exact work, revision and proposed use
 for permission requests. No price or payment obligation arises from access,
 download, a fork, a reference or silence.
+
+## Zugeordnete Projektabbildung
+
+`assets/ashbound-grimoire.png` ist eine unveränderte Abbildung aus dem nativen ASHBOUND-Quellstand. `assets/ASSET-SOURCES.json` bindet Quelle und Digest. Die ursprünglichen Bedingungen des [Scarlet-Quellstands](https://github.com/Juri-Halveth/halveth-scarlet/blob/b768ca093d9bd68b1453a8ccc5b6d02ecaa1eb07/LICENSES.md) und die dortigen Asset-Hinweise gelten weiter; diese Website erweitert sie nicht.
