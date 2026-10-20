@@ -21,6 +21,19 @@ Builder `tools/build-portfolio.cjs` erzeugt alle Seiten. Tests prüfen Katalog,
 lokale Links, Sprachfassungen sowie Bewegung, Sichtbarkeit und reduzierte
 Animation. Projektprüfungen bleiben beim jeweiligen Codebestand.
 
+## Ausgewählte Arbeiten auf dem ersten Blick
+
+Startseite und Arbeitsprofil führen über drei direkte Einstiege: die native
+ASHBOUND-Vorschau, SCARLETs Singularity Cannon und das Forschungslabor. Die
+Darstellung entsteht aus `tools/render-showcase.cjs`; die Projektquellen und
+Revisionen bleiben im bestehenden Katalog. `showcase.css` enthält die
+responsive Gestaltung. Die neue Präsentation benötigt kein zusätzliches
+JavaScript und erhält die vorhandene Bewegungssteuerung.
+
+Das [datierte lokale Prüfprotokoll](docs/WORK-SAMPLE-VALIDATION-2026-10-20.md)
+bindet den tatsächlich geprüften Forschungslabor-Commit und die Aufteilung
+der 145 Tests. Es ist eine Momentaufnahme und kein Live-CI-Badge.
+
 ## Technische Schnittstellenkarte
 
 `/koennen/` ordnet 14 konkrete Arbeitsproben in sieben technischen Gebieten.
@@ -41,3 +54,7 @@ Die frühere gemischte Sammlung wurde privat gesichert und aus dem aktuellen
 Ein Redaktionscommit schreibt keine Git-Historie um.
 
 [Lizenzen](LICENSES.md) · [Sicherheit](SECURITY.md) · Kontakt: security@halveth.de
+
+## Dated evidence and hardening
+
+The three concise, source-pinned cases are generated at `/belege/` (also English and Russian) from `data/work-samples.json`. See [implementation and remaining checks](docs/HARDENING-2026-10-20.md). CI snapshots are matched to exact source revisions at build time.

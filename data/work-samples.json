@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-10-20T18:13:06Z",
+  "samples": [
+    {
+      "id": "source-packets",
+      "repository": "Juri-Halveth/halveth-forschungslabor",
+      "revision": "c6008ab5f8847921dc140d973b9a526750a89933",
+      "sourcePath": "scripts/packet.mjs",
+      "testPath": "scripts/source-packet-browser.test.mjs",
+      "ci": {
+        "id": 39416054871,
+        "headSha": "c6008ab5f8847921dc140d973b9a526750a89933",
+        "name": "Check local research modules",
+        "conclusion": "success",
+        "updatedAt": "2026-10-20T11:35:47Z"
+      },
+      "localCheck": "LOCAL_MODEL_TESTS",
+      "commands": "git clone https://github.com/Juri-Halveth/halveth-forschungslabor.git\ncd halveth-forschungslabor\ngit checkout c6008ab5f8847921dc140d973b9a526750a89933\nnpm test",
+      "de": {
+        "title": "Quellenpakete nachvollziehbar prüfen",
+        "problem": "Node und Browser sollen dieselben Paketbytes mit demselben Integritätsvertrag lesen.",
+        "input": "Ein Quellenpaket mit Inhalt, Metadaten und Digest; dazu kontrolliert veränderte Testeingaben.",
+        "result": "Der gemeinsame Parser und seine Gegenproben sind im Quellstand auffindbar. Im lokalen Gesamtlauf bestanden 99 JavaScript- und 46 Python-Tests (20.10.2026; Node 24.18.0, Python 3.14.6).",
+        "counterexample": "Die Tests verändern Paketinhalt und Bindungen. Abweichende Bytes sollen die Integritätsprüfung nicht bestehen.",
+        "reuse": "Geeignet als Ausgangspunkt für lokale Datenimporte und nachvollziehbare Forschungsartefakte.",
+        "limit": "Die 145 Tests gehören zum gesamten Labor. Sie beweisen die implementierten Modellverträge, keine Wahrheit der importierten Inhalte."
+      },
+      "en": {
+        "title": "Inspect a reproducible source packet",
+        "problem": "Node and browser consumers need the same packet bytes and integrity contract.",
+        "input": "A source packet with content, metadata and digest, plus deliberately altered test inputs.",
+        "result": "The shared parser and counterexamples are directly accessible. The local full-suite run passed 99 JavaScript and 46 Python tests (20 Oct 2026; Node 24.18.0, Python 3.14.6).",
+        "counterexample": "Tests alter packet content and bindings. Changed bytes must fail the integrity check.",
+        "reuse": "A starting point for local imports and inspectable research artifacts.",
+        "limit": "The 145 tests cover the whole lab. They verify implemented model contracts, not the truth of imported content."
+      },
+      "ru": {
+        "title": "Проверить пакет источников",
+        "problem": "Node и браузер должны читать одинаковые байты по одному контракту целостности.",
+        "input": "Пакет с содержимым, метаданными и хешем; отдельно — намеренно изменённые тестовые данные.",
+        "result": "Общий парсер и контрпримеры доступны в исходниках. Локальный полный прогон: 99 тестов JavaScript и 46 Python пройдены (20.10.2026; Node 24.18.0, Python 3.14.6).",
+        "counterexample": "Тесты изменяют содержимое и привязки пакета. Изменённые байты должны отклоняться.",
+        "reuse": "Основа для локального импорта и проверяемых исследовательских артефактов.",
+        "limit": "145 тестов относятся ко всей лаборатории. Они проверяют модельные контракты, а не истинность импортированных данных."
+      }
+    },
+    {
+      "id": "scarlet-interaction",
+      "repository": "Juri-Halveth/halveth-scarlet",
+      "revision": "b768ca093d9bd68b1453a8ccc5b6d02ecaa1eb07",
+      "sourcePath": "forschung/singularity-cannon/index.html",
+      "testPath": "tests/source-state.test.mjs",
+      "demo": "https://juri-halveth.github.io/halveth-scarlet/forschung/singularity-cannon/",
+      "ci": {
+        "id": 39418583498,
+        "headSha": "b768ca093d9bd68b1453a8ccc5b6d02ecaa1eb07",
+        "name": "Deploy Scarlet Pages",
+        "conclusion": "success",
+        "updatedAt": "2026-10-20T11:58:35Z"
+      },
+      "localCheck": "BROWSER_INTERACTION_CHECK",
+      "commands": "Browser: open the live scene; activate the fire control; inspect the field counter and Undo control.\nSource: inspect the pinned HTML and source-state tests below.",
+      "de": {
+        "title": "Interaktion sichtbar und rücknehmbar machen",
+        "problem": "Eine grafische Idee soll unmittelbar bedienbar sein und ihren Zustand sichtbar machen.",
+        "input": "Ein Klick in der Singularity-Cannon-Szene; Feldzähler und Rücknahme als sichtbare Zustände.",
+        "result": "Am 20.10.2026 im Browser beobachtet: Auslösen erzeugt eine Singularität und aktiviert die Rücknahme. Eine echte Browseraufnahme ist auf der Startseite verlinkt.",
+        "counterexample": "Vergleiche leeren Zustand, ausgelöstes Feld und Rücknahme. Die verlinkten Quellzustands-Tests prüfen zusätzlich die Artefaktbindung; sie sind kein visueller Akzeptanztest.",
+        "reuse": "Interaktive Erklärstücke, gestaltete Simulationen und Oberflächen mit sichtbarem Zustand.",
+        "limit": "Die Live-Aufnahme besitzt keinen verifizierten Build-Digest. Der Quellstand und sein erfolgreicher Deploy-Lauf sind separat gebunden. Die Szene ist eine grafische Simulation."
+      },
+      "en": {
+        "title": "Make an interaction visible and reversible",
+        "problem": "A visual idea needs direct controls and an observable state.",
+        "input": "A click in Singularity Cannon; the field counter and Undo control expose state.",
+        "result": "Observed in the browser on 20 Oct 2026: firing creates a singularity and enables Undo. The homepage includes an actual browser capture.",
+        "counterexample": "Compare the empty state, a fired field and Undo. Linked source-state tests separately check artifact binding; they are not visual acceptance tests.",
+        "reuse": "Interactive explanations, designed simulations and interfaces with visible state.",
+        "limit": "The live capture has no verified build digest. The pinned source and successful deploy run are separate evidence. This is a graphic simulation."
+      },
+      "ru": {
+        "title": "Сделать взаимодействие видимым и обратимым",
+        "problem": "Графической идее нужны понятное управление и видимое состояние.",
+        "input": "Щелчок в Singularity Cannon; счётчик полей и кнопка отмены показывают состояние.",
+        "result": "В браузере 20.10.2026 наблюдалось: запуск создаёт сингулярность и включает отмену. На главной есть настоящий снимок браузера.",
+        "counterexample": "Сравните пустую сцену, созданное поле и отмену. Тесты исходников отдельно проверяют привязку артефактов, а не визуальное качество.",
+        "reuse": "Интерактивные объяснения, художественные симуляции и интерфейсы с видимым состоянием.",
+        "limit": "Для живого снимка не проверен хеш сборки. Исходники и успешный запуск развёртывания привязаны отдельно. Сцена — графическая симуляция."
+      }
+    },
+    {
+      "id": "cpp-state",
+      "repository": "Juri-Halveth/halveth-unreal",
+      "revision": "44ccf28ffb80829def79a4f44ae5c6bcf8646de6",
+      "sourcePath": "Source/HALVETHRealms/Public/KnowledgeSystem.h",
+      "testPath": "tests/knowledge_test.cpp",
+      "ci": {
+        "id": 39413729989,
+        "headSha": "44ccf28ffb80829def79a4f44ae5c6bcf8646de6",
+        "name": "Source contracts",
+        "conclusion": "success",
+        "updatedAt": "2026-10-20T11:17:02Z"
+      },
+      "localCheck": "LOCAL_CPP_TESTS",
+      "commands": "git clone https://github.com/Juri-Halveth/halveth-unreal.git\ncd halveth-unreal\ngit checkout 44ccf28ffb80829def79a4f44ae5c6bcf8646de6\ng++ -std=c++20 -Wall -Wextra -Werror tests/knowledge_test.cpp -o knowledge_test\n./knowledge_test",
+      "de": {
+        "title": "Spielfortschritt vor der Übernahme prüfen",
+        "problem": "Ein beschädigter Spielstand darf den gültigen Zustand nicht teilweise überschreiben.",
+        "input": "Ein C++-Zustandsmodell für Wissen, Rezepte und Fortschritt; bewusst veränderte Importkandidaten.",
+        "result": "Der Import prüft den Kandidaten vor der Übernahme. Der verlinkte CI-Lauf ist erfolgreich; seine Pipeline kompiliert die portablen Tests mit GCC und MSVC. Lokal am 20.10.2026 mit Clang kompiliert und ausgeführt: 18.008 Prüfungen im Wissenstest sowie der Layout-Test bestanden.",
+        "counterexample": "RejectSave verändert einzelne Felder. RejectUnchanged verlangt anschließend denselben unveränderten exportierten Zustand wie vor dem abgelehnten Vorgang.",
+        "reuse": "Transaktionale Zustandsübernahme in Spielen und lokalen Anwendungen.",
+        "limit": "Dieser Nachweis betrifft den portablen C++-Kern. Er ist kein Unreal-Engine-Build, kein Leistungstest und keine Abnahme der Spielgrafik."
+      },
+      "en": {
+        "title": "Validate progress before accepting it",
+        "problem": "A damaged save must not partially overwrite valid state.",
+        "input": "A C++ state model for knowledge, recipes and progress, with deliberately modified import candidates.",
+        "result": "Import validates the candidate before applying it. The linked CI run succeeded; its pipeline compiles portable tests with GCC and MSVC. Compiled and executed locally with Clang on 20 Oct 2026: 18,008 knowledge checks and the layout test passed.",
+        "counterexample": "RejectSave alters individual fields. RejectUnchanged then requires the exported state to equal the pre-rejection state exactly.",
+        "reuse": "Transactional state admission in games and local applications.",
+        "limit": "This evidence covers the portable C++ core. It is not an Unreal Engine build, performance benchmark or graphics acceptance test."
+      },
+      "ru": {
+        "title": "Проверить прогресс до принятия",
+        "problem": "Повреждённое сохранение не должно частично перезаписывать корректное состояние.",
+        "input": "Модель C++ для знаний, рецептов и прогресса; намеренно изменённые кандидаты импорта.",
+        "result": "Импорт проверяет кандидата до применения. Указанный запуск CI успешен; конвейер компилирует переносимые тесты GCC и MSVC. Локальная компиляция Clang и запуск 20.10.2026: 18 008 проверок знаний и тест компоновки пройдены.",
+        "counterexample": "RejectSave изменяет отдельные поля. RejectUnchanged требует полного равенства экспортированного состояния до и после отклонения.",
+        "reuse": "Транзакционное принятие состояния в играх и локальных приложениях.",
+        "limit": "Доказательство относится к переносимому ядру C++. Это не сборка Unreal Engine, не тест производительности и не приёмка графики."
+      }
+    }
+  ]
+}
