@@ -23,9 +23,9 @@ jobs:
           node-version: '24'
           package-manager-cache: false
       - run: npm ci --ignore-scripts --no-audit --no-fund
-      - run: bash SPACE.sh build
+      - run: npm run build
       - run: git diff --exit-code
-      - run: bash SPACE.sh check
+      - run: npm test
       - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
       - name: Stage committed static website
         shell: bash

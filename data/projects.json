@@ -1,0 +1,331 @@
+{
+  "schema": "halveth.technical-portfolio.v2",
+  "sourceDate": "2026-10-20",
+  "projects": [
+    {
+      "id": "halveth-forschungslabor",
+      "category": "research",
+      "title": {
+        "de": "Forschungslabor",
+        "en": "Research lab",
+        "ru": "Исследовательская лаборатория"
+      },
+      "description": {
+        "de": "Zehn lokale JavaScript- und Python-Module: Bildvergleich, Quellenpakete, Optik, Ereignisse und Regeln.",
+        "en": "Ten local JavaScript and Python modules: image comparison, source packets, optics, events and rules.",
+        "ru": "Десять локальных модулей JavaScript и Python: сравнение изображений, пакеты источников, оптика, события и правила."
+      },
+      "stage": {
+        "de": "Lokal geprüftes Modell",
+        "en": "Locally tested model",
+        "ru": "Локально проверенная модель"
+      },
+      "repository": "https://github.com/Juri-Halveth/halveth-forschungslabor",
+      "revision": "c6008ab5f8847921dc140d973b9a526750a89933",
+      "source": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/c6008ab5f8847921dc140d973b9a526750a89933/scripts/check-modules.mjs",
+      "demo": null,
+      "command": "npm test",
+      "verification": "LOCAL_MODEL_TESTS"
+    },
+    {
+      "id": "mein-lernportal",
+      "category": "learning",
+      "title": {
+        "de": "Mein Lernportal",
+        "en": "Open learning portal",
+        "ru": "Учебный портал"
+      },
+      "description": {
+        "de": "Ein Lernkatalog mit Übungen zu digitalen Grundlagen, Programmierung und Mathematik. Ohne Pflichtkonto lesbar.",
+        "en": "A lesson catalog with exercises on digital skills, programming and mathematics. Browse without a required account.",
+        "ru": "Каталог уроков и упражнений по цифровым навыкам, программированию и математике. Чтение без обязательного аккаунта."
+      },
+      "stage": {
+        "de": "Webanwendung",
+        "en": "Web application",
+        "ru": "Веб-приложение"
+      },
+      "repository": "https://github.com/Juri-Halveth/mein-lernportal",
+      "revision": "539d954856349bd792f9abff7abc0b718ebbbfef",
+      "source": "https://github.com/Juri-Halveth/mein-lernportal/tree/539d954856349bd792f9abff7abc0b718ebbbfef",
+      "demo": "https://juri-halveth.github.io/mein-lernportal/",
+      "command": null,
+      "verification": "SOURCE_REVIEW_ONLY"
+    },
+    {
+      "id": "lernstudio",
+      "category": "learning",
+      "title": {
+        "de": "Interaktives Lernstudio",
+        "en": "Interactive learning studio",
+        "ru": "Интерактивная учебная студия"
+      },
+      "description": {
+        "de": "Lernkarte, Spielmissionen und Fortschrittsansicht für selbstständiges Lernen.",
+        "en": "A learning map, small missions and progress views for self-directed learning.",
+        "ru": "Учебная карта, игровые задания и отображение прогресса для самостоятельного обучения."
+      },
+      "stage": {
+        "de": "Webanwendung",
+        "en": "Web application",
+        "ru": "Веб-приложение"
+      },
+      "repository": "https://github.com/Juri-Halveth/lernstudio",
+      "revision": "7e643dcb1e477c8ccd24ae0e28ad8b69536bf9e6",
+      "source": "https://github.com/Juri-Halveth/lernstudio/tree/7e643dcb1e477c8ccd24ae0e28ad8b69536bf9e6",
+      "demo": "https://juri-halveth.github.io/lernstudio/",
+      "command": null,
+      "verification": "SOURCE_REVIEW_ONLY"
+    },
+    {
+      "id": "halveth-tresor",
+      "category": "software",
+      "title": {
+        "de": "Tresor · lokale Zugangsdaten",
+        "en": "Tresor · local credentials",
+        "ru": "Tresor · локальные учётные данные"
+      },
+      "description": {
+        "de": "Windows-Projekt mit veröffentlichtem Quellstand, Desktop-Oberfläche und dokumentiertem Release-Prozess.",
+        "en": "A Windows project with published source, a desktop interface and a documented release process.",
+        "ru": "Проект Windows с опубликованными исходниками, интерфейсом и документированным процессом выпуска."
+      },
+      "stage": {
+        "de": "Desktop-Projekt",
+        "en": "Desktop project",
+        "ru": "Настольный проект"
+      },
+      "repository": "https://github.com/Juri-Halveth/halveth-tresor",
+      "revision": "66da64abfc58cd8cce05f935197aa51e31e232f2",
+      "source": "https://github.com/Juri-Halveth/halveth-tresor/tree/66da64abfc58cd8cce05f935197aa51e31e232f2",
+      "demo": null,
+      "command": null,
+      "verification": "SOURCE_REVIEW_ONLY"
+    },
+    {
+      "id": "fortuna",
+      "category": "software",
+      "title": {
+        "de": "Fortuna · Möglichkeiten vergleichen",
+        "en": "Fortuna · compare options",
+        "ru": "Fortuna · сравнение вариантов"
+      },
+      "description": {
+        "de": "Browseroberfläche und JavaScript-Modelle zum Vergleichen selbst eingegebener Möglichkeiten. Der öffentliche Bestand ist eine Browserfassung.",
+        "en": "A browser interface and JavaScript models for comparing user-entered options. The public source is a browser version.",
+        "ru": "Браузерный интерфейс и модели JavaScript для сравнения введённых вариантов. Публичные исходники относятся к браузерной версии."
+      },
+      "stage": {
+        "de": "Browser-Prototyp",
+        "en": "Browser prototype",
+        "ru": "Браузерный прототип"
+      },
+      "repository": "https://github.com/Juri-Halveth/fortuna",
+      "revision": "e9b916139383e3f579cdad91cd8b72bf85d52d94",
+      "source": "https://github.com/Juri-Halveth/fortuna/tree/e9b916139383e3f579cdad91cd8b72bf85d52d94",
+      "demo": "https://juri-halveth.github.io/fortuna/",
+      "command": null,
+      "verification": "SOURCE_REVIEW_ONLY"
+    },
+    {
+      "id": "halveth-unreal",
+      "category": "games",
+      "title": {
+        "de": "Portal Garden · Unreal-Spielprototyp",
+        "en": "Portal Garden · Unreal game prototype",
+        "ru": "Portal Garden · прототип игры Unreal"
+      },
+      "description": {
+        "de": "Eigenständiger C++-Spielzweig für Unreal Engine. Einstieg, Entwicklungsstand und Build-Hinweise stehen beim Code.",
+        "en": "An independent C++ game project for Unreal Engine. Entry points, development state and build notes accompany the code.",
+        "ru": "Самостоятельный игровой проект C++ для Unreal Engine с описанием состояния разработки и сборки."
+      },
+      "stage": {
+        "de": "Spielprototyp",
+        "en": "Game prototype",
+        "ru": "Прототип игры"
+      },
+      "repository": "https://github.com/Juri-Halveth/halveth-unreal",
+      "revision": "44ccf28ffb80829def79a4f44ae5c6bcf8646de6",
+      "source": "https://github.com/Juri-Halveth/halveth-unreal/tree/44ccf28ffb80829def79a4f44ae5c6bcf8646de6",
+      "demo": null,
+      "command": null,
+      "verification": "SOURCE_REVIEW_ONLY"
+    },
+    {
+      "id": "halveth-realms",
+      "category": "games",
+      "title": {
+        "de": "Scarlet Garden · prozedurale Welten",
+        "en": "Scarlet Garden · procedural worlds",
+        "ru": "Scarlet Garden · процедурные миры"
+      },
+      "description": {
+        "de": "Fantasy-Sandbox mit prozeduraler Weltgenerierung und experimentellen Dialogsystemen.",
+        "en": "A fantasy sandbox exploring procedural world generation and experimental dialogue systems.",
+        "ru": "Фэнтезийная песочница с процедурной генерацией мира и экспериментальными диалоговыми системами."
+      },
+      "stage": {
+        "de": "Spielprototyp",
+        "en": "Game prototype",
+        "ru": "Прототип игры"
+      },
+      "repository": "https://github.com/Juri-Halveth/halveth-realms",
+      "revision": "2c0af088f6cb58d020a4f9a30670964ee0a4efd7",
+      "source": "https://github.com/Juri-Halveth/halveth-realms/tree/2c0af088f6cb58d020a4f9a30670964ee0a4efd7",
+      "demo": null,
+      "command": null,
+      "verification": "SOURCE_REVIEW_ONLY"
+    },
+    {
+      "id": "halveth-morrowind-genesis",
+      "category": "games",
+      "title": {
+        "de": "Morrowind · Werkzeuge für einen Umbau",
+        "en": "Morrowind · conversion tools",
+        "ru": "Morrowind · инструменты переработки"
+      },
+      "description": {
+        "de": "OpenMW-bezogene Werkzeuge und Entwicklungsarbeit an einem Rollenspiel-Umbau. Das Projekt baut auf fremder Engine und Spielinhalten auf.",
+        "en": "OpenMW-related tools and development for a game conversion. The project builds on an external engine and game content.",
+        "ru": "Инструменты OpenMW и разработка переработки игры на основе стороннего движка и игровых материалов."
+      },
+      "stage": {
+        "de": "Umbau in Entwicklung",
+        "en": "Conversion in development",
+        "ru": "Переработка в разработке"
+      },
+      "repository": "https://github.com/Juri-Halveth/halveth-morrowind-genesis",
+      "revision": "6c9d981379c75ac822f3538f9508f3ed0b70230f",
+      "source": "https://github.com/Juri-Halveth/halveth-morrowind-genesis/tree/6c9d981379c75ac822f3538f9508f3ed0b70230f",
+      "demo": null,
+      "command": null,
+      "verification": "SOURCE_REVIEW_ONLY"
+    },
+    {
+      "id": "halveth-scarlet",
+      "category": "games",
+      "title": {
+        "de": "SCARLET · interaktive Grafik",
+        "en": "SCARLET · interactive graphics",
+        "ru": "SCARLET · интерактивная графика"
+      },
+      "description": {
+        "de": "Browsergrafik, räumliche Szenen und technische Demos. Native Spielarbeit und Browseransichten haben jeweils ihren eigenen Stand.",
+        "en": "Browser graphics, spatial scenes and technical demos. Native game work and browser views have their own development states.",
+        "ru": "Браузерная графика, пространственные сцены и технические демонстрации с отдельными состояниями разработки."
+      },
+      "stage": {
+        "de": "Interaktive Prototypen",
+        "en": "Interactive prototypes",
+        "ru": "Интерактивные прототипы"
+      },
+      "repository": "https://github.com/Juri-Halveth/halveth-scarlet",
+      "revision": "74455b0e793259e32e37b7cfdf18415ae9985691",
+      "source": "https://github.com/Juri-Halveth/halveth-scarlet/tree/74455b0e793259e32e37b7cfdf18415ae9985691",
+      "demo": "https://juri-halveth.github.io/halveth-scarlet/",
+      "command": null,
+      "verification": "SOURCE_REVIEW_ONLY"
+    },
+    {
+      "id": "halveth-field-difference-lab",
+      "category": "research",
+      "title": {
+        "de": "Feldlabor · Bewegung und Differenzen",
+        "en": "Field lab · motion and differences",
+        "ru": "Полевая лаборатория · движение и различия"
+      },
+      "description": {
+        "de": "Interaktive Visualisierungen von Bewegung und Zustandsunterschieden in einem Browsermodell.",
+        "en": "Interactive visualisations of motion and state differences in a browser model.",
+        "ru": "Интерактивная визуализация движения и различий состояний в браузерной модели."
+      },
+      "stage": {
+        "de": "Visuelles Modell",
+        "en": "Visual model",
+        "ru": "Визуальная модель"
+      },
+      "repository": "https://github.com/Juri-Halveth/halveth-field-difference-lab",
+      "revision": "a067d1ee779efb830144bf7d79875cbb51ec6e4d",
+      "source": "https://github.com/Juri-Halveth/halveth-field-difference-lab/tree/a067d1ee779efb830144bf7d79875cbb51ec6e4d",
+      "demo": "https://juri-halveth.github.io/halveth-field-difference-lab/",
+      "command": null,
+      "verification": "SOURCE_REVIEW_ONLY"
+    },
+    {
+      "id": "halveth-project0-keeper",
+      "category": "research",
+      "title": {
+        "de": "Blockchain-Werkzeuge · Skripte und Zustände",
+        "en": "Blockchain tools · scripts and states",
+        "ru": "Инструменты блокчейна · скрипты и состояния"
+      },
+      "description": {
+        "de": "Kleine Automatisierungs- und Dokumentationswerkzeuge. Aus Codebestand folgt keine gemessene Rendite.",
+        "en": "Small automation and documentation tools. Source availability does not establish measured financial returns.",
+        "ru": "Небольшие инструменты автоматизации и документации. Наличие кода не подтверждает доходность."
+      },
+      "stage": {
+        "de": "Experimenteller Werkzeugzweig",
+        "en": "Experimental tool project",
+        "ru": "Экспериментальные инструменты"
+      },
+      "repository": "https://github.com/Juri-Halveth/halveth-project0-keeper",
+      "revision": "aee4cfdaafdaad2c8cfcb829b572c5dabec195df",
+      "source": "https://github.com/Juri-Halveth/halveth-project0-keeper/tree/aee4cfdaafdaad2c8cfcb829b572c5dabec195df",
+      "demo": null,
+      "command": null,
+      "verification": "SOURCE_REVIEW_ONLY"
+    },
+    {
+      "id": "halveth-tron-security-lab",
+      "category": "research",
+      "title": {
+        "de": "TRON · lokales Quorum-Labor",
+        "en": "TRON · local quorum lab",
+        "ru": "TRON · локальная лаборатория кворума"
+      },
+      "description": {
+        "de": "Fork mit eigenen lokalen Forschungsbausteinen. Der Großteil des Repositorys stammt aus java-tron; eigene Ergänzungen stehen getrennt im Projekt.",
+        "en": "A fork with local research additions. Most repository code comes from java-tron; project additions are identified separately.",
+        "ru": "Форк с локальными исследовательскими дополнениями. Основная часть кода относится к java-tron; собственные дополнения выделены отдельно."
+      },
+      "stage": {
+        "de": "Upstream-Fork mit Ergänzungen",
+        "en": "Upstream fork with additions",
+        "ru": "Форк с дополнениями"
+      },
+      "repository": "https://github.com/Juri-Halveth/halveth-tron-security-lab",
+      "revision": "d25e104e6b887bc4d782185a96ecf3c4eb782d8c",
+      "source": "https://github.com/Juri-Halveth/halveth-tron-security-lab/tree/d25e104e6b887bc4d782185a96ecf3c4eb782d8c",
+      "demo": null,
+      "command": null,
+      "verification": "SOURCE_REVIEW_ONLY"
+    },
+    {
+      "id": "c-drohne-red-room",
+      "category": "research",
+      "title": {
+        "de": "C-Drohne · Schnittstellenkonzept",
+        "en": "C-Drone · interface concept",
+        "ru": "C-Drone · концепция интерфейса"
+      },
+      "description": {
+        "de": "Browseroberfläche, Visualisierung und Konzeptmaterial. Ein real fliegendes Gerät ist durch diese Quellen nicht belegt.",
+        "en": "A browser interface, visualisation and concept material. These sources do not establish a real flying device.",
+        "ru": "Браузерный интерфейс, визуализация и концептуальные материалы. Реальное летающее устройство этими источниками не подтверждено."
+      },
+      "stage": {
+        "de": "Konzept und Oberfläche",
+        "en": "Concept and interface",
+        "ru": "Концепция и интерфейс"
+      },
+      "repository": "https://github.com/Juri-Halveth/c-drohne-red-room",
+      "revision": "d341c1afb1d8cf3c2a9cfff2cb1cda6e6e9bd6ff",
+      "source": "https://github.com/Juri-Halveth/c-drohne-red-room/tree/d341c1afb1d8cf3c2a9cfff2cb1cda6e6e9bd6ff",
+      "demo": null,
+      "command": null,
+      "verification": "SOURCE_REVIEW_ONLY"
+    }
+  ]
+}
