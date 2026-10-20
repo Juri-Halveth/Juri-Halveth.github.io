@@ -54,3 +54,7 @@ Die frühere gemischte Sammlung wurde privat gesichert und aus dem aktuellen
 Ein Redaktionscommit schreibt keine Git-Historie um.
 
 [Lizenzen](LICENSES.md) · [Sicherheit](SECURITY.md) · Kontakt: security@halveth.de
+
+## Dated evidence and hardening
+
+The three concise, source-pinned cases are generated at `/belege/` (also English and Russian) from `data/work-samples.json`. See [implementation and remaining checks](docs/HARDENING-2026-10-20.md). CI snapshots are matched to exact source revisions at build time.

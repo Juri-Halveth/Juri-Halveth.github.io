@@ -43,7 +43,7 @@ test('homepage hero and showcase use shared stylesheet and preserve both navigat
  for(const lang of ['','en/','ru/']){
   const doc=new JSDOM(fs.readFileSync(path.join(root,lang,'index.html'),'utf8')).window.document;
   assert.equal(doc.querySelectorAll('h1').length,1);
-  assert.equal(doc.querySelector('.hero-actions a').getAttribute('href'),'#showcase');
+  assert.equal(doc.querySelector('.hero-actions a').getAttribute('href'),'/'+lang+'belege/');
   assert.equal(doc.querySelector('.hero-actions a:nth-child(2)').getAttribute('href'),'/'+lang+'koennen/');
   assert.ok(doc.querySelector('link[href="/showcase.css"]'));
   assert.equal(doc.querySelectorAll('.hero-facts li').length,3);

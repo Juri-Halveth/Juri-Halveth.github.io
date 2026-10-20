@@ -7,7 +7,7 @@ test('technical catalog is unique, source-pinned and records limited check state
  for(const x of data.projects){assert.match(x.revision,/^[0-9a-f]{40}$/);assert.ok(x.source.includes(x.revision));assert.ok(['LOCAL_MODEL_TESTS','SOURCE_REVIEW_ONLY'].includes(x.verification));}
 });
 test('all generated language entrances link only to available local files and anchors',()=>{
- for(const lang of ['','en/','ru/'])for(const page of ['','profil/','arbeiten/','koennen/','modelle/','audits/','lernen/','motion/','handbuch/','pulsar/','zertifikate/','werkzertifikate/']){
+ for(const lang of ['','en/','ru/'])for(const page of ['','profil/','arbeiten/','koennen/','belege/','modelle/','audits/','lernen/','motion/','handbuch/','pulsar/','zertifikate/','werkzertifikate/']){
   const raw=read(lang+page+'index.html'),doc=new JSDOM(raw).window.document;
   assert.equal(doc.querySelectorAll('h1').length>0||doc.querySelectorAll('[data-project]').length>0,true);
   assert.ok(doc.querySelector('meta[http-equiv="Content-Security-Policy"]'));
