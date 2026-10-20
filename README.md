@@ -1,55 +1,28 @@
-[Handbuch: Was steht wo?](https://juri-halveth.github.io/handbuch/) · [HTML, Code und Prüfungen / HTML, code and checks / HTML, код и проверки](docs/HANDBUCH.md)
+# Juri Halveth · Software, Grafik und Lernen
 
-<!-- HUB_LANGUAGES_V1 -->
-[Original / Deutsch](README.md) · [English](README.en.md) · [Русский](README.ru.md)
-<!-- /HUB_LANGUAGES_V1 -->
+[Portfolio öffnen](https://juri-halveth.github.io/) · [Arbeitsproben](https://juri-halveth.github.io/koennen/)
 
-# HALVETH · Forschung, Gestaltung & Wissen
+Diese Website präsentiert ausgewählte technische Projekte mit Zweck, Einstieg,
+Quellrevision und Entwicklungsstand. Die Oberfläche ist auf Deutsch, Englisch
+und Russisch verfügbar. Projektleitung: Juri Halveth / HALVETH; Entwicklung
+mit KI-Unterstützung.
 
-Die öffentliche Startseite [HALVETH](https://juri-halveth.github.io/) erschließt die Arbeiten nach ihrem Zweck: **Forschung und Sicherheit**, **Grafik und Spiele**, **Lernen**, **Software und Ideen**, **Fähigkeiten und Nachweise**. Zusammengehörige Websites und Codebestände teilen sich einen thematischen Eintrag. Die Lernwelt enthält ihre Website, den Bash-Bereich und die zugehörigen Quellen.
+## Lokal bauen
 
-Die leuchtende Bewegungskomposition startet direkt auf der Startseite. Organische Kurven, räumliche Rotation und wandernde Lichtpunkte werden zur Laufzeit gezeichnet. Der kontinuierliche Kompositionsmodus hat keine Titelkarten, Abspielregler oder Zeitleiste. Sichtbarkeit und die Systemeinstellung für reduzierte Bewegung steuern den Rechenaufwand; Text und Links bleiben vollständig zugänglich.
-
-Der [PULSAR ROOT](https://juri-halveth.github.io/pulsar/) setzt einen gemeinsamen Einstiegspunkt für den datierten öffentlichen Projektatlas. Der vollständige Branch-, Tag- und Dateibaum wird vom beiliegenden, rein lesenden Python-Werkzeug lokal erzeugt; ein Baum mit privaten Repositories oder Pfaden gehört nicht in diese Website.
-
-[Alle öffentlichen Arbeiten](https://juri-halveth.github.io/arbeiten/) · [Arbeitsprofil mit Nachweisen](https://juri-halveth.github.io/profil/) · [Technische Arbeitsproben](https://juri-halveth.github.io/koennen/)
-
-## Projekte zuerst
-
-Das Arbeitsprofil beginnt mit ausgewählten Anwendungen und Spielprototypen. Technische Arbeitsproben zeigen Funktionen und Quellstände. Frühere Zertifikatsvergleiche sind nur als historische Themenzuordnungen aufklappbar; sie werden nicht als verliehene Qualifikation oder vollständiges Prüfungsniveau dargestellt.
-
-## Quellen und Arbeitsprofil
-
-`data/portfolio.json` bindet fünf Themen und jede der 17 früheren Projektadressen genau einmal. `data/public-sources.json` dokumentiert den gelesenen öffentlichen Stand vom 05.10.2026: 15 eigene öffentliche Repositories sowie 66 Forschungsdokumente aus der Commitfassung `834352b21a2123137f55fbca22afbfda2be7c7fd`. Jeder gelesene Text besitzt Quelladresse, Git-Blob-ID, Bytezahl und SHA-256. Zwei bereits veröffentlichte Sites-Zugänge bleiben als zugehörige Alternativzugänge auffindbar.
-
-Das Arbeitsprofil ordnet sechs Arbeitsfelder konkreten öffentlichen Artefakten zu. Die historischen HALVETH-Werkzertifikate sind private, KI-gestützt erstellte Werkdokumentationen mit Projekt, Quellstand und Prüfumfang. Sie werden mit ihrer eigenen Nachweisart geführt. Fachliche Arbeitsproben und institutionell ausgestellte Personenzertifikate haben jeweils ihre eigene Herkunft.
-
-## Mit Git Bash arbeiten
-
-Node.js und Git Bash reichen für Aufbau, Prüfung und Vorschau; die Website benötigt keine npm-Pakete.
-
-```bash
-bash SPACE.sh build      # Themen, Arbeitsverzeichnis, Profil und Rückwege erzeugen
-bash SPACE.sh check      # Navigation, Quellenbindung und Bewegung prüfen
-bash SPACE.sh preview    # Lokale Vorschau auf http://127.0.0.1:4187
-bash SPACE.sh inventory  # Öffentliche eigene Repository-Metadaten lesen; benötigt gh
-bash SPACE.sh motion --out motion-render  # Optionaler CPU-Filmexport
+```sh
+npm ci --ignore-scripts
+npm run build
+npm test
+npm run preview
 ```
 
-Der Build ist deterministisch. Die Landingpage wird aus `templates/index.html` erzeugt; Arbeitsverzeichnis und Profil folgen dem gebundenen Quellenregister. Die GitHub-Prüfung kontrolliert die generierten Seiten und die Tests. Der Vorschauprozess bindet ausschließlich Loopback.
+`data/projects.json` ist der technische Projektkatalog. Der deterministische
+Builder `tools/build-portfolio.cjs` erzeugt alle Seiten. Tests prüfen Katalog,
+lokale Links, Sprachfassungen sowie Bewegung, Sichtbarkeit und reduzierte
+Animation. Projektprüfungen bleiben beim jeweiligen Codebestand.
 
-## Navigation und Veröffentlichung
+Die frühere gemischte Sammlung wurde privat gesichert und aus dem aktuellen
+öffentlichen Baum entfernt. Alte Zertifikatsadressen zeigen jetzt Arbeitsproben.
+Ein Redaktionscommit schreibt keine Git-Historie um.
 
-Normale Links führen direkt zu Themen, Arbeiten und Quellen. Frühere `?project=...`-Adressen gehen in den passenden Themenabschnitt über. Die eigenen Unterseiten, Werkzertifikate und sechs aktiven Archiv-/Medieneingänge führen zur Themenübersicht zurück. Eine eigene Fehlerseite erhält den Rückweg auch bei einer unbekannten Adresse. Historische Roharchive behalten ihren überlieferten Inhalt.
-
-GitHub Pages veröffentlicht `main` aus dem Repository-Wurzelverzeichnis. Die verlinkten Lern-, Forschungs-, Software- und Spielprojekte besitzen ihre eigenen Quellen und Entwicklungsstände. Ein offener Spielentwicklungszweig wird auf der Website als Entwicklung bezeichnet.
-
-## Sicherheit und Agenten
-
-[Sicherheitsmeldung](SECURITY.md) · [Arbeitsregeln für Agenten](AGENTS.md). Dieses Repository bietet kein öffentliches Bug-Bounty-Programm.
-
-## Rechte und Herkunft
-
-Eigene Portaltexte, Anordnung und Oberflächencode sind **Source Available** unter [HALVETH PIRL 2.0](LICENSE-HALVETH-PIRL-2.0.md). Die eigenen Bewegungsrenderer und zugeordneten Dateien stehen unter [MIT](motion/LICENSE-MIT.txt). [LICENSES.md](LICENSES.md) ordnet den Umfang und die früheren Freigaben zu. [Rechte- und Herkunftsrichtlinie](docs/RIGHTS-AND-PROVENANCE.md) und [Beitragsregeln](CONTRIBUTING.md) halten Urheber, Lizenzumfang und Belege getrennt. Verlinkte Inhalte behalten ihre eigenen Rechte. Kontakt: **security@halveth.de**.
-
-[Aufbau, Pflege und Quellenumfang](docs/JURIS-SPACE.md)
+[Lizenzen](LICENSES.md) · [Sicherheit](SECURITY.md) · Kontakt: security@halveth.de

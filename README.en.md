@@ -1,37 +1,27 @@
-[Handbook: What lives where?](https://juri-halveth.github.io/en/handbuch/) · [HTML, Code und Prüfungen / HTML, code and checks / HTML, код и проверки](docs/HANDBUCH.md)
+# Juri Halveth · Software, graphics and learning
 
-[Original / Deutsch](README.md) · [English](README.en.md) · [Русский](README.ru.md)
+[Portfolio](https://juri-halveth.github.io/en/) · [Work samples](https://juri-halveth.github.io/en/koennen/)
 
-# HALVETH · Research, Design & Learning
+A curated technical portfolio with project purpose, source revision and development
+state. Available in German, English and Russian. Project lead: Juri Halveth / HALVETH.
+Development includes AI assistance.
 
-**Concise project guide · EN / RU**
+## Build locally
 
-The public landing page organizes work by purpose: research and security, graphics and games, learning, software and ideas, and skills with evidence. Related websites and code collections share a thematic route rather than appearing as duplicate projects.
-
-The landing composition draws moving curves, spatial rotation and travelling light at runtime. English and Russian entrances use /en/ and /ru/. The website has no npm runtime dependencies; the DOM-based verification suite uses development dependencies. Work certificates remain private project documentation rather than institutional personal qualifications.
-
-This manually edited guide summarizes the audited source. The original technical documentation remains the reference for commands, build requirements, exact versions and detailed evidence.
-
-## Build and verify this website
-
-From the repository folder, install the verification dependencies once, then run the existing build-and-check entry point. These commands are documented here and were not executed by this guide generator.
-
-```bash
-npm ci --ignore-scripts --no-audit --no-fund
-bash SPACE.sh verify
+```sh
+npm ci --ignore-scripts
+npm run build
+npm test
+npm run preview
 ```
 
-## Start with the sources
+`data/projects.json` supplies the selected projects. `tools/build-portfolio.cjs`
+builds every page deterministically. Tests cover the catalog, local links, language
+entrances, motion timing, visibility and reduced motion. Each linked project keeps
+its own validation scope and licence.
 
-- [Original technical documentation](README.md)
-- [README at the audited commit](https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/0fcb86f97e5bd6132d4b55f8b317573af2f545f8/README.md)
-- [Open the website](https://juri-halveth.github.io/)
-- [Licences and sources](LICENSES.md)
+Earlier mixed archives are retained privately and removed from the current public
+file tree. Historical certificate URLs now display technical work samples. This
+editorial commit does not rewrite Git history.
 
-## Security and agents
-
-[Report a vulnerability](SECURITY.md) · [Agent working rules](AGENTS.md). This repository does not offer a public bug-bounty program.
-
-## Rights and scope
-
-Use the original rights and licence notices for the relevant files and versions. See [rights and provenance](docs/RIGHTS-AND-PROVENANCE.md) and [contribution rules](CONTRIBUTING.md). This guide grants no additional licence.
+[Licences](LICENSES.md) · [Security](SECURITY.md) · security@halveth.de
