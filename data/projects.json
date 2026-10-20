@@ -299,9 +299,9 @@
         "ru": "Инструменты блокчейна · скрипты и состояния"
       },
       "description": {
-        "de": "Kleine Automatisierungs- und Dokumentationswerkzeuge. Aus Codebestand folgt keine gemessene Rendite.",
-        "en": "Small automation and documentation tools. Source availability does not establish measured financial returns.",
-        "ru": "Небольшие инструменты автоматизации и документации. Наличие кода не подтверждает доходность."
+        "de": "Kleine Automatisierungs- und Dokumentationswerkzeuge für einen experimentellen Solana-Werkzeugzweig.",
+        "en": "Small automation and documentation tools for an experimental Solana tool project.",
+        "ru": "Небольшие инструменты автоматизации и документации для экспериментального проекта Solana."
       },
       "stage": {
         "de": "Experimenteller Werkzeugzweig",
@@ -349,9 +349,9 @@
         "ru": "C-Drone · концепция интерфейса"
       },
       "description": {
-        "de": "Browseroberfläche, Visualisierung und Konzeptmaterial. Ein real fliegendes Gerät ist durch diese Quellen nicht belegt.",
-        "en": "A browser interface, visualisation and concept material. These sources do not establish a real flying device.",
-        "ru": "Браузерный интерфейс, визуализация и концептуальные материалы. Реальное летающее устройство этими источниками не подтверждено."
+        "de": "Browseroberfläche, Visualisierung und Konzeptmaterial für Drohnen- und Schwarmideen. Schwerpunkt: Darstellung und Systementwurf.",
+        "en": "A browser interface, visualisation and concept material for drone and swarm ideas. Focus: presentation and system design.",
+        "ru": "Браузерный интерфейс, визуализация и концептуальные материалы для идей дронов и роёв. Акцент: представление и проектирование системы."
       },
       "stage": {
         "de": "Konzept und Oberfläche",
