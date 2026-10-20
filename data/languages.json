@@ -2102,7 +2102,7 @@
     },
     "Nachweise": {
       "en": "Evidence",
-      "ru": "Примеры работ"
+      "ru": "Подтверждения"
     },
     "Name": {
       "en": "Name of name",
@@ -2706,7 +2706,7 @@
     },
     "Software": {
       "en": "Software",
-      "ru": "Программы"
+      "ru": "Программное обеспечение"
     },
     "Software & Ideen": {
       "en": "Software & ideas",
@@ -6072,25 +6072,13 @@
       "en": "& games",
       "ru": "и игры"
     },
-    "Lernen": {
-      "en": "Learning",
-      "ru": "Обучение"
-    },
     "gemeinsam": {
       "en": "together",
       "ru": "вместе"
     },
-    "Software": {
-      "en": "Software",
-      "ru": "Программное обеспечение"
-    },
     "& Ideen": {
       "en": "& ideas",
       "ru": "и идеи"
-    },
-    "Nachweise": {
-      "en": "Evidence",
-      "ru": "Подтверждения"
     },
     "& Herkunft": {
       "en": "& provenance",
@@ -6343,6 +6331,466 @@
     "227 lesende API-Abfragen über angemeldete GitHub-CLI (nur öffentliche Endpunkte) · 0 nicht zugeordnete Referenzen · Manifest-SHA-256 lokal gebunden": {
       "en": "227 read-only API requests through authenticated GitHub CLI (public endpoints only) · 0 unmapped references · manifest SHA-256 bound locally",
       "ru": "227 запросов API только для чтения через авторизованную GitHub CLI (только публичные конечные точки) · 0 несвязанных ссылок · SHA-256 манифеста сохранён локально"
+    },
+    "Arbeitsprofil & Projekte": {
+      "en": "Profile & projects",
+      "ru": "Профиль и проекты"
+    },
+    "Arbeitsprofil & Projekte ansehen →": {
+      "en": "View profile & projects →",
+      "ru": "Профиль и проекты →"
+    },
+    "Projekte & Arbeitsproben.": {
+      "en": "Projects & work samples.",
+      "ru": "Проекты и примеры работ."
+    },
+    "Ausgewählte Projekte, konkrete Arbeitsproben und der Lebenslauf sind im persönlichen Profil gebündelt.": {
+      "en": "Selected projects, concrete work samples and a CV are collected in the professional profile.",
+      "ru": "Избранные проекты, конкретные примеры работ и резюме собраны в профессиональном профиле."
+    },
+    "AUSGEWÄHLTE PROJEKTE": {
+      "en": "SELECTED PROJECTS",
+      "ru": "ИЗБРАННЫЕ ПРОЕКТЫ"
+    },
+    "Was ich entwickle.": {
+      "en": "What I build.",
+      "ru": "Что я разрабатываю."
+    },
+    "01 / LERNEN": {
+      "en": "01 / LEARNING",
+      "ru": "01 / ОБУЧЕНИЕ"
+    },
+    "02 / DESKTOP": {
+      "en": "02 / DESKTOP",
+      "ru": "02 / НАСТОЛЬНЫЕ ПРОГРАММЫ"
+    },
+    "03 / SPIELENTWICKLUNG": {
+      "en": "03 / GAME DEVELOPMENT",
+      "ru": "03 / РАЗРАБОТКА ИГР"
+    },
+    "04 / FORSCHUNG": {
+      "en": "04 / RESEARCH",
+      "ru": "04 / ИССЛЕДОВАНИЯ"
+    },
+    "702 Lektionen mit Übungen. Ein direkt zugänglicher Lernkatalog ohne Pflichtkonto.": {
+      "en": "702 lessons with exercises. An accessible learning catalogue without a required account.",
+      "ru": "702 урока с упражнениями. Доступный учебный каталог без обязательной регистрации."
+    },
+    "Ein Windows-Projekt zur lokalen Verwaltung von Zugangsdaten, mit dokumentiertem Release-Prozess.": {
+      "en": "A Windows project for local credential management, with a documented release process.",
+      "ru": "Проект для локального хранения учётных данных в Windows с документированным процессом выпуска."
+    },
+    "Eigenständiger C++-Spielprototyp für Unreal Engine: Portale, Welten und eine interaktive Bibliothek.": {
+      "en": "An independent C++ game prototype for Unreal Engine: portals, worlds and an interactive library.",
+      "ru": "Самостоятельный игровой прототип на C++ для Unreal Engine: порталы, миры и интерактивная библиотека."
+    },
+    "Modelle, Quellanalysen und kleine Werkzeuge mit nachvollziehbaren Quellen und offenen Forschungsfragen.": {
+      "en": "Models, source reviews and small tools with traceable sources and open research questions.",
+      "ru": "Модели, анализ исходного кода и небольшие инструменты с проверяемыми источниками и открытыми вопросами."
+    },
+    "Lernportal öffnen ↗": {
+      "en": "Open learning portal ↗",
+      "ru": "Открыть учебный портал ↗"
+    },
+    "Projekt und Code ↗": {
+      "en": "Project and code ↗",
+      "ru": "Проект и код ↗"
+    },
+    "Spielprototyp ansehen ↗": {
+      "en": "Explore game prototype ↗",
+      "ru": "Игровой прототип ↗"
+    },
+    "Forschungslabor öffnen ↗": {
+      "en": "Open research lab ↗",
+      "ru": "Открыть исследовательскую лабораторию ↗"
+    },
+    "HALVETH Forschungslabor": {
+      "en": "HALVETH research lab",
+      "ru": "Исследовательская лаборатория HALVETH"
+    },
+    "Fachliche Arbeitsproben": {
+      "en": "Technical work samples",
+      "ru": "Технические примеры работ"
+    },
+    "Der konkrete Projektumfang steht im Mittelpunkt dieses Portfolios: Anwendung, Quellcode, Prüfweg und dokumentiertes Ergebnis.": {
+      "en": "This portfolio focuses on concrete project scope: application, source code, review method and documented result.",
+      "ru": "В центре портфолио — конкретный объём проекта: приложение, код, способ проверки и документированный результат."
+    },
+    "Institutionell ausgestellte Qualifikationsnachweise führen eine eigene Aussteller- und Prüfungsspur. Ein solcher Originalnachweis ist in den hier geprüften Unterlagen nicht verifiziert.": {
+      "en": "Institution-issued qualifications require their own issuer and examination records. No such original award record is verified in the material reviewed here.",
+      "ru": "Квалификации, выданные учреждениями, требуют собственных документов об организации и экзамене. Такой оригинальный документ не подтверждён в рассмотренных материалах."
+    },
+    "Technische Arbeitsproben ansehen →": {
+      "en": "Explore technical work samples →",
+      "ru": "Технические примеры работ →"
+    },
+    "Die Projektarbeiten dokumentieren Ergebnisse, Quellstände und Prüfungen. Historische Werkdokumentationen bleiben im Archiv erreichbar.": {
+      "en": "Project records document results, source revisions and checks. Historical work documentation remains accessible in the archive.",
+      "ru": "Документация проектов отражает результаты, версии кода и проверки. Исторические документы доступны в архиве."
+    },
+    "Historische Dokumentation als PDF ↗": {
+      "en": "Historical documentation as PDF ↗",
+      "ru": "Историческая документация в PDF ↗"
+    },
+    "Historische Werkdokumentation": {
+      "en": "Historical work documentation",
+      "ru": "Историческая документация работ"
+    },
+    "Historische Werkdokumentationen": {
+      "en": "Historical work records",
+      "ru": "Исторические документы работ"
+    },
+    "Historisches Dokumentationsarchiv": {
+      "en": "Historical documentation archive",
+      "ru": "Архив исторической документации"
+    },
+    "Historische Originaldokumente öffnen →": {
+      "en": "Open historical original records →",
+      "ru": "Открыть исторические оригиналы →"
+    },
+    "Arbeitsproben und dokumentierte Projektarbeit": {
+      "en": "Work samples and documented project work",
+      "ru": "Примеры работ и документация проектов"
+    },
+    "Arbeitsproben und historische Dokumentation · HALVETH": {
+      "en": "Work samples and historical documentation · HALVETH",
+      "ru": "Примеры работ и историческая документация · HALVETH"
+    },
+    "Arbeitsproben": {
+      "en": "Work samples",
+      "ru": "Примеры работ"
+    },
+    "/ Arbeitsproben": {
+      "en": "/ Work samples",
+      "ru": "/ Примеры работ"
+    },
+    "PRAXIS · QUELLEN · DOKUMENTATION": {
+      "en": "PRACTICE · SOURCES · DOCUMENTATION",
+      "ru": "ПРАКТИКА · ИСТОЧНИКИ · ДОКУМЕНТАЦИЯ"
+    },
+    "Arbeit zeigen.": {
+      "en": "Show the work.",
+      "ru": "Показывать работу."
+    },
+    "Ergebnisse einordnen.": {
+      "en": "Explain the results.",
+      "ru": "Объяснять результаты."
+    },
+    "Entscheidend ist, was ein Projekt leistet und wie du es nachvollziehen kannst. Hier findest du die technische Arbeit und ihre Dokumentation.": {
+      "en": "What matters is what a project does and how you can inspect it. Find technical work and its documentation here.",
+      "ru": "Важно, что делает проект и как его можно изучить. Здесь собраны технические работы и документация."
+    },
+    "Funktionen und Quellcode ansehen →": {
+      "en": "Explore functions and source code →",
+      "ru": "Функции и исходный код →"
+    },
+    "Zum Arbeitsprofil →": {
+      "en": "Professional profile →",
+      "ru": "Профессиональный профиль →"
+    },
+    "Die früheren, KI-gestützt erstellten HALVETH-Werkzertifikate sind eigene Projektdokumentationen. Sie sind keine von einem unabhängigen Prüfungsanbieter verliehenen Personenzertifikate.": {
+      "en": "Earlier AI-assisted HALVETH work certificates are self-authored project records, not personal qualifications awarded by an independent examination provider.",
+      "ru": "Прежние сертификаты работ HALVETH, созданные с помощью ИИ, являются собственной документацией проектов, а не личными квалификациями, выданными независимой экзаменационной организацией."
+    },
+    "Historische Themenvergleiche und Originaldossiers": {
+      "en": "Historical topic comparisons and original dossiers",
+      "ru": "Исторические сравнения тем и оригинальные досье"
+    },
+    "Diese früheren Zuordnungen beschreiben einzelne fachliche Anknüpfungen. Sie belegen weder eine verliehene Qualifikation noch das vollständige Niveau einer Zertifikatsprüfung.": {
+      "en": "These earlier mappings describe selected topic connections. They establish neither an awarded qualification nor full certification-exam coverage.",
+      "ru": "Эти прежние сопоставления описывают отдельные тематические связи. Они не подтверждают присвоенную квалификацию или полный уровень сертификационного экзамена."
+    },
+    "THEMENVERGLEICH": {
+      "en": "TOPIC COMPARISON",
+      "ru": "СРАВНЕНИЕ ТЕМ"
+    },
+    "Historischer Themenvergleich": {
+      "en": "Historical topic comparison",
+      "ru": "Историческое сравнение тем"
+    },
+    "Historische Themenzuordnung": {
+      "en": "Historical topic mapping",
+      "ru": "Историческое сопоставление тем"
+    },
+    "Neun technische Arbeitsfelder": {
+      "en": "Nine technical work areas",
+      "ru": "Девять технических направлений"
+    },
+    "18 Codeausschnitte · 1 Forschungsdokument · 9 technische Arbeitsfelder": {
+      "en": "18 code excerpts · 1 research document · 9 technical work areas",
+      "ru": "18 фрагментов кода · 1 исследовательский документ · 9 технических направлений"
+    },
+    "Die Arbeitsproben zeigen konkrete Funktionen und ihren Quellstand. Frühere Themenvergleiche bleiben als historische Zuordnungen aufklappbar.": {
+      "en": "Work samples show specific functions and their source revisions. Earlier topic comparisons remain available in expandable historical mappings.",
+      "ru": "Примеры показывают конкретные функции и версии исходного кода. Прежние тематические сравнения доступны в раскрывающихся исторических разделах."
+    },
+    "Was zeigen die Arbeitsproben?": {
+      "en": "What do the work samples show?",
+      "ru": "Что показывают примеры работ?"
+    },
+    "Jedes Arbeitsfeld führt zu einer konkreten Funktion und ihrem Quellcode.": {
+      "en": "Each work area links to a specific function and its source code.",
+      "ru": "Каждое направление ведёт к конкретной функции и её исходному коду."
+    },
+    "Software gezielt prüfen": {
+      "en": "Targeted software checks",
+      "ru": "Целенаправленная проверка программ"
+    },
+    "Regeln und Zuständigkeiten modellieren": {
+      "en": "Model rules and responsibilities",
+      "ru": "Моделирование правил и полномочий"
+    },
+    "Veröffentlichungen nachvollziehbar vorbereiten": {
+      "en": "Prepare traceable releases",
+      "ru": "Подготовка прослеживаемых выпусков"
+    },
+    "Schlüsselableitung im Quellcode untersuchen": {
+      "en": "Inspect key derivation in source code",
+      "ru": "Изучение формирования ключей в коде"
+    },
+    "Modellstrukturen aufbauen": {
+      "en": "Build model structures",
+      "ru": "Построение структур моделей"
+    },
+    "Prüfschritte systematisch verbinden": {
+      "en": "Connect review steps systematically",
+      "ru": "Систематическое объединение этапов проверки"
+    },
+    "Sicherheitswirkungen strukturiert bewerten": {
+      "en": "Assess security effects systematically",
+      "ru": "Структурная оценка последствий для безопасности"
+    },
+    "Eingaben mit einem Formatvertrag prüfen": {
+      "en": "Check input against a format contract",
+      "ru": "Проверка ввода по контракту формата"
+    },
+    "Ereignisse und Herkunft modellieren": {
+      "en": "Model events and provenance",
+      "ru": "Моделирование событий и происхождения"
+    },
+    "PROJEKTARBEIT 01 · AUSGABE 28.09.2026": {
+      "en": "PROJECT WORK 01 · EDITION 28.09.2026",
+      "ru": "ПРОЕКТНАЯ РАБОТА 01 · ВЫПУСК 28.09.2026"
+    },
+    "PROJEKTARBEIT 02 · AUSGABE 28.09.2026": {
+      "en": "PROJECT WORK 02 · EDITION 28.09.2026",
+      "ru": "ПРОЕКТНАЯ РАБОТА 02 · ВЫПУСК 28.09.2026"
+    },
+    "PROJEKTARBEIT 03 · AUSGABE 28.09.2026": {
+      "en": "PROJECT WORK 03 · EDITION 28.09.2026",
+      "ru": "ПРОЕКТНАЯ РАБОТА 03 · ВЫПУСК 28.09.2026"
+    },
+    "PROJEKTARBEIT 04 · AUSGABE 28.09.2026": {
+      "en": "PROJECT WORK 04 · EDITION 28.09.2026",
+      "ru": "ПРОЕКТНАЯ РАБОТА 04 · ВЫПУСК 28.09.2026"
+    },
+    "PROJEKTARBEIT 05 · AUSGABE 28.09.2026": {
+      "en": "PROJECT WORK 05 · EDITION 28.09.2026",
+      "ru": "ПРОЕКТНАЯ РАБОТА 05 · ВЫПУСК 28.09.2026"
+    },
+    "PROJEKTARBEIT 06 · AUSGABE 28.09.2026": {
+      "en": "PROJECT WORK 06 · EDITION 28.09.2026",
+      "ru": "ПРОЕКТНАЯ РАБОТА 06 · ВЫПУСК 28.09.2026"
+    },
+    "PROJEKTARBEIT 07 · AUSGABE 28.09.2026": {
+      "en": "PROJECT WORK 07 · EDITION 28.09.2026",
+      "ru": "ПРОЕКТНАЯ РАБОТА 07 · ВЫПУСК 28.09.2026"
+    },
+    "PROJEKTARBEIT 08 · AUSGABE 28.09.2026": {
+      "en": "PROJECT WORK 08 · EDITION 28.09.2026",
+      "ru": "ПРОЕКТНАЯ РАБОТА 08 · ВЫПУСК 28.09.2026"
+    },
+    "PROJEKTARBEIT 09 · AUSGABE 28.09.2026": {
+      "en": "PROJECT WORK 09 · EDITION 28.09.2026",
+      "ru": "ПРОЕКТНАЯ РАБОТА 09 · ВЫПУСК 28.09.2026"
+    },
+    "PROJEKTARBEIT 10 · AUSGABE 28.09.2026": {
+      "en": "PROJECT WORK 10 · EDITION 28.09.2026",
+      "ru": "ПРОЕКТНАЯ РАБОТА 10 · ВЫПУСК 28.09.2026"
+    },
+    "PROJEKTARBEIT 11 · AUSGABE 28.09.2026": {
+      "en": "PROJECT WORK 11 · EDITION 28.09.2026",
+      "ru": "ПРОЕКТНАЯ РАБОТА 11 · ВЫПУСК 28.09.2026"
+    },
+    "702 Lektionen · Projektarbeit": {
+      "en": "702 lessons · project work",
+      "ru": "702 урока · проектная работа"
+    },
+    "702 Lektionen · dokumentierter Entwicklungsstand": {
+      "en": "702 lessons · documented development state",
+      "ru": "702 урока · документированное состояние разработки"
+    },
+    "Geburtsumgebung · Projektarbeit": {
+      "en": "Birth environment · project work",
+      "ru": "Среда для родов · проектная работа"
+    },
+    "Geburtsumgebung · dokumentierter Entwicklungsstand": {
+      "en": "Birth environment · documented development state",
+      "ru": "Среда для родов · документированное состояние разработки"
+    },
+    "Kooperationskonzept · Projektarbeit": {
+      "en": "Collaboration proposal · project work",
+      "ru": "Предложение о сотрудничестве · проектная работа"
+    },
+    "Kooperationskonzept · dokumentierter Entwicklungsstand": {
+      "en": "Collaboration proposal · documented development state",
+      "ru": "Предложение о сотрудничестве · документированное состояние разработки"
+    },
+    "Lernstudio · Projektarbeit": {
+      "en": "Lernstudio · project work",
+      "ru": "Lernstudio · проектная работа"
+    },
+    "Lernstudio · dokumentierter Entwicklungsstand": {
+      "en": "Lernstudio · documented development state",
+      "ru": "Lernstudio · документированное состояние разработки"
+    },
+    "Morrowind Genesis · Projektarbeit": {
+      "en": "Morrowind Genesis · project work",
+      "ru": "Morrowind Genesis · проектная работа"
+    },
+    "Morrowind Genesis · dokumentierter Entwicklungsstand": {
+      "en": "Morrowind Genesis · documented development state",
+      "ru": "Morrowind Genesis · документированное состояние разработки"
+    },
+    "Open Research · Projektarbeit": {
+      "en": "Open Research · project work",
+      "ru": "Open Research · проектная работа"
+    },
+    "Open Research · dokumentierter Entwicklungsstand": {
+      "en": "Open Research · documented development state",
+      "ru": "Open Research · документированное состояние разработки"
+    },
+    "Portal Garden · Projektarbeit": {
+      "en": "Portal Garden · project work",
+      "ru": "Portal Garden · проектная работа"
+    },
+    "Portal Garden · dokumentierter Entwicklungsstand": {
+      "en": "Portal Garden · documented development state",
+      "ru": "Portal Garden · документированное состояние разработки"
+    },
+    "Portfolio · Projektarbeit": {
+      "en": "Portfolio · project work",
+      "ru": "Portfolio · проектная работа"
+    },
+    "Portfolio · dokumentierter Entwicklungsstand": {
+      "en": "Portfolio · documented development state",
+      "ru": "Portfolio · документированное состояние разработки"
+    },
+    "Scarlet Garden · Projektarbeit": {
+      "en": "Scarlet Garden · project work",
+      "ru": "Scarlet Garden · проектная работа"
+    },
+    "Scarlet Garden · dokumentierter Entwicklungsstand": {
+      "en": "Scarlet Garden · documented development state",
+      "ru": "Scarlet Garden · документированное состояние разработки"
+    },
+    "Scarlet · Projektarbeit": {
+      "en": "Scarlet · project work",
+      "ru": "Scarlet · проектная работа"
+    },
+    "Scarlet · dokumentierter Entwicklungsstand": {
+      "en": "Scarlet · documented development state",
+      "ru": "Scarlet · документированное состояние разработки"
+    },
+    "Tresor · Projektarbeit": {
+      "en": "Tresor · project work",
+      "ru": "Tresor · проектная работа"
+    },
+    "Tresor · dokumentierter Entwicklungsstand": {
+      "en": "Tresor · documented development state",
+      "ru": "Tresor · документированное состояние разработки"
+    },
+    "ARBEITSPROBE · Architekturmethoden": {
+      "en": "WORK SAMPLE · Architecture methods",
+      "ru": "ПРИМЕР РАБОТЫ · Методы архитектуры"
+    },
+    "ARBEITSPROBE · Ausgewählte Programmiergrundlagen": {
+      "en": "WORK SAMPLE · Selected programming basics",
+      "ru": "ПРИМЕР РАБОТЫ · Основы программирования"
+    },
+    "ARBEITSPROBE · Ausgewählte Sicherheitsdomänen": {
+      "en": "WORK SAMPLE · Selected security topics",
+      "ru": "ПРИМЕР РАБОТЫ · Избранные темы безопасности"
+    },
+    "ARBEITSPROBE · Konkrete Release-Arbeit": {
+      "en": "WORK SAMPLE · Release engineering",
+      "ru": "ПРИМЕР РАБОТЫ · Подготовка выпусков"
+    },
+    "ARBEITSPROBE · Konkrete Testmethoden": {
+      "en": "WORK SAMPLE · Testing methods",
+      "ru": "ПРИМЕР РАБОТЫ · Методы тестирования"
+    },
+    "ARBEITSPROBE · Prozessverbesserung": {
+      "en": "WORK SAMPLE · Process improvement",
+      "ru": "ПРИМЕР РАБОТЫ · Улучшение процессов"
+    },
+    "ARBEITSPROBE · Verwandte Analysearbeit": {
+      "en": "WORK SAMPLE · Related analysis",
+      "ru": "ПРИМЕР РАБОТЫ · Связанный анализ"
+    },
+    "ISTQB CTAL-TA · Ausgewählter Themenvergleich; kein Nachweis einer verliehenen Qualifikation oder vollständiger Prüfungsabdeckung.": {
+      "en": "ISTQB CTAL-TA · Selected topic comparison; not an awarded qualification or full examination coverage.",
+      "ru": "ISTQB CTAL-TA · Сравнение отдельных тем; не присвоенная квалификация и не полное покрытие экзамена."
+    },
+    "Microsoft Cybersecurity Architect · Ausgewählter Themenvergleich; kein Nachweis einer verliehenen Qualifikation oder vollständiger Prüfungsabdeckung.": {
+      "en": "Microsoft Cybersecurity Architect · Selected topic comparison; not an awarded qualification or full examination coverage.",
+      "ru": "Microsoft Cybersecurity Architect · Сравнение отдельных тем; не присвоенная квалификация и не полное покрытие экзамена."
+    },
+    "Microsoft DevOps Engineer · Ausgewählter Themenvergleich; kein Nachweis einer verliehenen Qualifikation oder vollständiger Prüfungsabdeckung.": {
+      "en": "Microsoft DevOps Engineer · Selected topic comparison; not an awarded qualification or full examination coverage.",
+      "ru": "Microsoft DevOps Engineer · Сравнение отдельных тем; не присвоенная квалификация и не полное покрытие экзамена."
+    },
+    "CISSP · Ausgewählter Themenvergleich; kein Nachweis einer verliehenen Qualifikation oder vollständiger Prüfungsabdeckung.": {
+      "en": "CISSP · Selected topic comparison; not an awarded qualification or full examination coverage.",
+      "ru": "CISSP · Сравнение отдельных тем; не присвоенная квалификация и не полное покрытие экзамена."
+    },
+    "AWS Solutions Architect Professional · Ausgewählter Themenvergleich; kein Nachweis einer verliehenen Qualifikation oder vollständiger Prüfungsabdeckung.": {
+      "en": "AWS Solutions Architect Professional · Selected topic comparison; not an awarded qualification or full examination coverage.",
+      "ru": "AWS Solutions Architect Professional · Сравнение отдельных тем; не присвоенная квалификация и не полное покрытие экзамена."
+    },
+    "ISTQB CTEL-ITP · Ausgewählter Themenvergleich; kein Nachweis einer verliehenen Qualifikation oder vollständiger Prüfungsabdeckung.": {
+      "en": "ISTQB CTEL-ITP · Selected topic comparison; not an awarded qualification or full examination coverage.",
+      "ru": "ISTQB CTEL-ITP · Сравнение отдельных тем; не присвоенная квалификация и не полное покрытие экзамена."
+    },
+    "OffSec OSCE³ · Ausgewählter Themenvergleich; kein Nachweis einer verliehenen Qualifikation oder vollständiger Prüfungsabdeckung.": {
+      "en": "OffSec OSCE³ · Selected topic comparison; not an awarded qualification or full examination coverage.",
+      "ru": "OffSec OSCE³ · Сравнение отдельных тем; не присвоенная квалификация и не полное покрытие экзамена."
+    },
+    "Cisco CCIE Enterprise · Ausgewählter Themenvergleich; kein Nachweis einer verliehenen Qualifikation oder vollständiger Prüfungsabdeckung.": {
+      "en": "Cisco CCIE Enterprise · Selected topic comparison; not an awarded qualification or full examination coverage.",
+      "ru": "Cisco CCIE Enterprise · Сравнение отдельных тем; не присвоенная квалификация и не полное покрытие экзамена."
+    },
+    "Google Cloud Architect · Ausgewählter Themenvergleich; kein Nachweis einer verliehenen Qualifikation oder vollständiger Prüfungsabdeckung.": {
+      "en": "Google Cloud Architect · Selected topic comparison; not an awarded qualification or full examination coverage.",
+      "ru": "Google Cloud Architect · Сравнение отдельных тем; не присвоенная квалификация и не полное покрытие экзамена."
+    },
+    "Software. Welten. Lernen.": {
+      "en": "Software. Worlds. Learning.",
+      "ru": "Программы. Миры. Обучение."
+    },
+    "Ich entwickle lokale Software, interaktive Spielwelten und frei zugängliche Lernangebote. Hier findest du ausgewählte Projekte, konkrete Arbeitsproben und die zugehörigen Quellen.": {
+      "en": "I build local software, interactive game worlds and freely accessible learning tools. Explore selected projects, concrete work samples and their sources.",
+      "ru": "Я разрабатываю локальные программы, интерактивные игровые миры и открытые учебные инструменты. Здесь собраны избранные проекты, конкретные примеры работ и их источники."
+    },
+    "Qualifikation und Herkunft der Nachweise": {
+      "en": "Qualifications and evidence provenance",
+      "ru": "Квалификации и происхождение подтверждений"
+    },
+    "Historische Werkdokumentationen öffnen": {
+      "en": "Open historical work records",
+      "ru": "Открыть исторические документы работ"
+    },
+    "C++-Arbeitsprobe mit Quellcode": {
+      "en": "C++ work sample with source code",
+      "ru": "Пример работы на C++ с исходным кодом"
+    },
+    "Lernportal: Profilzustand prüfen": {
+      "en": "Learning portal: checking profile state",
+      "ru": "Учебный портал: проверка состояния профиля"
+    },
+    "Forschungslabor: Quellenumfang dokumentieren": {
+      "en": "Research lab: documenting source coverage",
+      "ru": "Лаборатория: документация охвата источников"
     }
   }
 }

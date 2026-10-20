@@ -7,17 +7,17 @@ const claims={
  B07:{name:'OffSec OSCE³',proof},B08:{name:'Cisco CCIE Enterprise',proof},B09:{name:'Google Cloud Architect',proof:'/modelle/'}
 };
 const works={
- 'halveth-morrowind-genesis':['Softwareintegration','Morrowind Genesis','ISTQB · DevOps'],
- 'halveth-realms':['Spielentwicklung','Scarlet Garden','ISTQB · DevOps'],
- 'halveth-scarlet':['Webentwicklung','Scarlet','ISTQB'],
- 'halveth-tresor':['Desktopsoftware','Tresor','DevOps'],
- 'halveth-unreal':['C++ & Unreal','Portal Garden','ISTQB'],
+ 'halveth-morrowind-genesis':['Softwareintegration','Morrowind Genesis','Integration und Prüfungen'],
+ 'halveth-realms':['Spielentwicklung','Scarlet Garden','Integration und Prüfungen'],
+ 'halveth-scarlet':['Webentwicklung','Scarlet','Quellcode und Dokumentation'],
+ 'halveth-tresor':['Desktopsoftware','Tresor','Build und Veröffentlichung'],
+ 'halveth-unreal':['C++ & Unreal','Portal Garden','Quellcode und Dokumentation'],
  'halveth-xai-40m-proposal':['Forschungsplanung','Kooperationskonzept','Dokumentation'],
- 'Juri-Halveth.github.io':['Webportal','Portfolio','ISTQB · DevOps'],
+ 'Juri-Halveth.github.io':['Webportal','Portfolio','Integration und Prüfungen'],
  'juri-janovski-these-zur-geburt':['Forschungsdokumentation','Geburtsumgebung','Dokumentation'],
- 'lernstudio':['Lernplattform','Lernstudio','ISTQB · DevOps'],
- 'mein-lernportal':['Freies Lernportal','702 Lektionen','ISTQB'],
- 'open-research-branches':['Forschung & Modelle','Open Research','ISTQB · Security']
+ 'lernstudio':['Lernplattform','Lernstudio','Integration und Prüfungen'],
+ 'mein-lernportal':['Freies Lernportal','702 Lektionen','Quellcode und Dokumentation'],
+ 'open-research-branches':['Forschung & Modelle','Open Research','Modelle und Gegenproben']
 };
 for(const id of Object.keys(claims))claims[id].proof='/koennen/#'+id.toLowerCase();
 const evidence=require('../data/competence-evidence.json');
