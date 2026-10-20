@@ -21,7 +21,7 @@ test('the home page routes to the profile while certificate claims keep their ev
    assert.equal(card.querySelector('a').getAttribute('href'),proof.startsWith('/')?'/'+lang+proof.slice(1):proof);
    assert.ok([...card.querySelectorAll('a')].some(a=>a.href===c.dossier));
   }
-  assert.match(doc.querySelector('.claim-definition').textContent,/Portfolio|portfolio|портфолио/);
+  assert.match(doc.querySelector('.claim-definition').textContent,/Arbeitsproben|Work samples|Примеры работ/);
   const firstTopic=doc.querySelector('[data-topic]'),claim=doc.querySelector('[data-claim]');
   if(firstTopic)assert.ok(claim.compareDocumentPosition(firstTopic)&dom.window.Node.DOCUMENT_POSITION_FOLLOWING);
   dom.window.close();
