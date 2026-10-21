@@ -1,6 +1,6 @@
 // Source-available under LICENSES.md. Deterministic static portfolio builder.
 'use strict';
-const fs=require('node:fs'),path=require('node:path');
+const fs=require('node:fs'),path=require('node:path'),{createHash}=require('node:crypto');
 const root=path.resolve(__dirname,'..'),data=JSON.parse(fs.readFileSync(path.join(root,'data/projects.json'),'utf8'));
 const {validateMap,renderTechnicalMap,renderMapTeaser,mapCopy}=require('./render-technical-map.cjs');
 const {renderShowcase}=require('./render-showcase.cjs');
@@ -9,6 +9,9 @@ const {renderWorkSamples,evidenceWords}=require('./render-work-samples.cjs');
 const {validateResearchIndex,renderResearchOS}=require('./render-research-os.cjs');
 const workSamples=JSON.parse(fs.readFileSync(path.join(root,'data/work-samples.json'),'utf8'));
 const researchIndex=validateResearchIndex(JSON.parse(fs.readFileSync(path.join(root,'data/research-index.json'),'utf8')));
+const researchCss=['portal.css','portfolio.css','research-os.css'].map(name=>fs.readFileSync(path.join(root,name),'utf8')).join('\n');
+if(researchCss.includes('</style'))throw new Error('Inline CSS contains an HTML closing tag');
+const researchCssHash=createHash('sha256').update(researchCss).digest('base64');
 const mapBytes=fs.readFileSync(path.join(root,'data/technical-map.json'));
 const technicalMap=JSON.parse(mapBytes.toString('utf8'));
 const mapSource=JSON.parse(fs.readFileSync(path.join(root,'data/technical-map-source.json'),'utf8'));
@@ -41,7 +44,17 @@ for(const lang of Object.keys(copy)){
   content+=`</div><section class="shell section" id="contact"><p class="eyebrow">${t.contact}</p><h2>${t.offer}</h2><p class="lead">${t.offerText}</p><a class="contact-link" href="mailto:security@halveth.de">security@halveth.de ↗</a><p class="source-caption">${t.scope}</p></section>`;
   const langs=Object.keys(copy).map(l=>`<a href="${l==='de'?'/':`/${l}/`}${route}" lang="${l}" ${l===lang?'aria-current="page"':''}>${l.toUpperCase()}</a>`).join(' · ');
   const html=`<!doctype html><html lang="${lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="${escape(t.intro)}"><meta name="theme-color" content="#f2f1e9"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'"><title>Juri Halveth · ${route==='belege/'?evidenceWords[lang].nav:route==='koennen/'?mapCopy[lang].nav:route==='forschung/'?'Research OS':t.nav} · HALVETH</title><link rel="canonical" href="https://juri-halveth.github.io${prefix}${route}"><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/portal.css"><link rel="stylesheet" href="/portfolio.css">${(!route||route==='profil/')?'<link rel="stylesheet" href="/showcase.css">':''}${route==='forschung/'?'<link rel="stylesheet" href="/research-os.css">':''}${route==='motion/'?'<link rel="stylesheet" href="/motion.css">':''}<script src="/motion-core.js" defer></script><script src="${route==='motion/'?'/motion-player.js':'/landing-motion.js'}" defer></script></head><body><a class="skip-link" href="#main">${t.nav}</a><header class="site-header shell"><a class="brand" href="${prefix}"><span class="brand-mark">H</span><span>JURI HALVETH</span></a><nav aria-label="Navigation"><a href="${prefix}arbeiten/">${t.nav}</a><a href="${prefix}belege/">${evidenceWords[lang].nav}</a><a href="${prefix}forschung/">Research OS</a><a href="${prefix}koennen/">${mapCopy[lang].nav}</a><a href="#contact">${t.contact}</a><span>${langs}</span></nav></header><main id="main">${content}</main><footer class="site-footer shell"><div><strong>HALVETH</strong><p>${t.footer}</p><p>2026-10-20 · ${lang==='de'?'Projektübersicht':lang==='en'?'Project overview':'Обзор проектов'}</p></div><nav><a href="https://github.com/Juri-Halveth">GitHub ↗</a><a href="/LICENSES.md">${t.rights}</a><a href="${prefix}">${t.back} ↑</a></nav></footer></body></html>\n`;
-  put((lang==='de'?'':lang+'/')+route+'index.html',html);
+  // Keep local navigation; preserve the reviewed motion player's public script path.
+  const relativeRoot='../'.repeat((lang==='de'?0:1)+(route?1:0))||'./';
+  let portableHtml=html.replace(/\b(href|src)="\/([^"]*)"/g,(_,attribute,target)=>route==='motion/'&&attribute==='src'&&target==='motion-player.js'?`${attribute}="/${target}"`:`${attribute}="${relativeRoot}${target}"`);
+  if(route==='forschung/'){
+   const links=['portal.css','portfolio.css','research-os.css'].map(name=>`<link rel="stylesheet" href="${relativeRoot}${name}">`).join('');
+   if(!portableHtml.includes(links))throw new Error('Research stylesheet links missing');
+   portableHtml=portableHtml.replace(links,`<style>${researchCss}</style>`)
+    .replace("style-src 'self';",`style-src 'self' 'sha256-${researchCssHash}';`)
+    .replace(`<script src="${relativeRoot}motion-core.js" defer></script><script src="${relativeRoot}landing-motion.js" defer></script>`,'');
+  }
+  put((lang==='de'?'':lang+'/')+route+'index.html',portableHtml);
  }
 }
 put('404.html',`<!doctype html><html lang="de"><meta charset="utf-8"><title>HALVETH · Übersicht</title><h1>Diese Adresse wurde neu geordnet.</h1><p><a href="/">Projekte & Arbeitsproben öffnen</a></p></html>\n`);

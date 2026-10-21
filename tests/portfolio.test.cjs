@@ -15,8 +15,10 @@ test('all generated language entrances link only to available local files and an
   for(const a of doc.querySelectorAll('[href],[src]')){
    const url=a.getAttribute('href')||a.getAttribute('src');if(!url)continue;
    if(url.startsWith('#')){assert.ok(doc.getElementById(url.slice(1)),url);continue;}
-   if(!url.startsWith('/'))continue;
-   const name=decodeURIComponent(url.split('#')[0]);const target=path.join(root,name.endsWith('/')?name+'index.html':name);
+   if(/^[a-z][a-z0-9+.-]*:/i.test(url))continue;
+   const name=decodeURIComponent(url.split('#')[0]);
+   const base=path.join(root,lang,page);
+   const target=name.startsWith('/')?path.join(root,name.endsWith('/')?name+'index.html':name):path.resolve(base,name.endsWith('/')?name+'index.html':name);
    assert.ok(fs.existsSync(target),`${lang}${page}: ${url}`);
   }
  }

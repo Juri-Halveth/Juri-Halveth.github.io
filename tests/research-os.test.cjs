@@ -39,13 +39,18 @@ test('tampered digest and mismatched evidence links cannot be rendered', () => {
 test('all three generated routes show linked sources and retained unknowns', () => {
   for (const [prefix, expected] of [['', 'Projekte'], ['en/', 'Projects'], ['ru/', 'Проекты']]) {
     const file = path.join(root, prefix, 'forschung/index.html');
-    const doc = new JSDOM(fs.readFileSync(file, 'utf8')).window.document;
+    const html = fs.readFileSync(file, 'utf8');
+    const doc = new JSDOM(html).window.document;
+    assert.doesNotMatch(html, /\b(?:href|src)="\//);
     assert.equal(doc.querySelectorAll('.ros-card').length, 4);
     assert.equal(doc.querySelectorAll('.ros-relation-list li').length, 2);
     assert.equal(doc.querySelectorAll('.ros-card details').length, 4);
     assert.match(doc.querySelector('.ros-counts').textContent, new RegExp(expected));
-    assert.ok(doc.querySelector('link[href="/research-os.css"]'));
-    assert.ok(doc.querySelector('a[href="/forschung/"]'));
+    const style = doc.querySelector('head style');
+    assert.ok(style && style.textContent.includes('.ros-card'));
+    const hash = require('node:crypto').createHash('sha256').update(style.textContent).digest('base64');
+    assert.ok(doc.querySelector('meta[http-equiv="Content-Security-Policy"]').content.includes(`'sha256-${hash}'`));
+    assert.ok(doc.querySelector('a[href$="forschung/"]'));
     for (const card of doc.querySelectorAll('.ros-card')) {
       assert.ok(card.querySelector('a[href^="https://github.com/Juri-Halveth/"]'));
       assert.ok(card.querySelector('details li'));

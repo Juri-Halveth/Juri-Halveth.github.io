@@ -31,9 +31,9 @@ test('invalid paths and script-like presentation text do not become executable m
 });
 test('generated evidence entrances are present without JavaScript and preserve localized navigation',()=>{
  for(const lang of ['','en/','ru/']){
-  const doc=new JSDOM(fs.readFileSync(path.join(root,lang,'belege/index.html'),'utf8')).window.document;
+  const page=path.join(root,lang,'belege/index.html');const doc=new JSDOM(fs.readFileSync(page,'utf8')).window.document;
   assert.equal(doc.querySelectorAll('h1').length,1);
   assert.equal(doc.querySelectorAll('.project-card').length,0);
-  assert.ok(doc.querySelector(`header a[href="/${lang}belege/"]`));
+  assert.ok([...doc.querySelectorAll('header a')].some(a=>path.resolve(path.dirname(page),a.getAttribute('href'))===path.join(root,lang,'belege')));
  }
 });
