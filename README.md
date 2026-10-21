@@ -21,6 +21,24 @@ Builder `tools/build-portfolio.cjs` erzeugt alle Seiten. Tests prüfen Katalog,
 lokale Links, Sprachfassungen sowie Bewegung, Sichtbarkeit und reduzierte
 Animation. Projektprüfungen bleiben beim jeweiligen Codebestand.
 
+## Public Research OS · lokaler Kandidat
+
+`/forschung/` zeigt einen ersten, statisch erzeugten Forschungsindex in drei
+Sprachen. Portfolio, Seedspace, Field Difference Lab und C-DROHNE besitzen
+quellgebundene Einträge, vier README-Belege, vier Capture-Ereignisse und zwei
+Beziehungen aus dem gebundenen Portfolio-Katalog. Seedspace erhält keine
+erfundene Katalogbeziehung. Offene Fragen bleiben auf den Karten sichtbar.
+
+`data/research-index.json` ist ein geprüfter Snapshot aus dem separaten lokalen
+Core-Kandidaten v0.1. `tools/render-research-os.cjs` prüft seinen Digest,
+öffentliche Quellenadressen, Entitäts-Digests und Relationsendpunkte vor dem
+Seitenbau. Die Website führt den Importer und die verknüpften Projekte nicht
+aus. Ein gebundener README-Stand ist kein Funktions- oder Wirkungsnachweis.
+Der Core-Kandidat und diese Version der Seite liegen zunächst lokal. Die neun
+gebundenen öffentlichen README-, Katalog- und Demo-Adressen antworteten beim
+HTTP-HEAD-Linkcheck am 22. Oktober 2026 mit Status 200; das ist kein
+Funktionstest ihrer Inhalte.
+
 ## Ausgewählte Arbeiten auf dem ersten Blick
 
 Startseite und Arbeitsprofil führen über drei direkte Einstiege: die native
