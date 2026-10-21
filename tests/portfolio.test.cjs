@@ -9,7 +9,7 @@ test('technical catalog is unique, source-pinned and records limited check state
 test('all generated language entrances link only to available local files and anchors',()=>{
  for(const lang of ['','en/','ru/'])for(const page of ['','profil/','arbeiten/','koennen/','belege/','modelle/','audits/','lernen/','motion/','handbuch/','pulsar/','zertifikate/','werkzertifikate/']){
   const raw=read(lang+page+'index.html'),doc=new JSDOM(raw).window.document;
-  assert.equal(doc.querySelectorAll('h1').length>0||doc.querySelectorAll('[data-project]').length>0,true);
+  assert.equal(doc.querySelectorAll('h1').length,1,`${lang}${page}: exactly one main heading`);
   assert.ok(doc.querySelector('meta[http-equiv="Content-Security-Policy"]'));
   const ids=[...doc.querySelectorAll('[id]')].map(x=>x.id);assert.equal(ids.length,new Set(ids).size);
   for(const a of doc.querySelectorAll('[href],[src]')){

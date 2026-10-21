@@ -103,7 +103,7 @@
         "updatedAt": "2026-10-20T11:17:02Z"
       },
       "localCheck": "LOCAL_CPP_TESTS",
-      "commands": "git clone https://github.com/Juri-Halveth/halveth-unreal.git\ncd halveth-unreal\ngit checkout 44ccf28ffb80829def79a4f44ae5c6bcf8646de6\ng++ -std=c++20 -Wall -Wextra -Werror tests/knowledge_test.cpp -o knowledge_test\n./knowledge_test",
+      "commands": "git clone https://github.com/Juri-Halveth/halveth-unreal.git\ncd halveth-unreal\ngit checkout 44ccf28ffb80829def79a4f44ae5c6bcf8646de6\ng++ -std=c++20 -Wall -Wextra -Werror tests/knowledge_test.cpp -o knowledge_test\n./knowledge_test\ng++ -std=c++20 -Wall -Wextra -Werror tests/layout_test.cpp -o layout_test\n./layout_test",
       "de": {
         "title": "Spielfortschritt vor der Übernahme prüfen",
         "problem": "Ein beschädigter Spielstand darf den gültigen Zustand nicht teilweise überschreiben.",
