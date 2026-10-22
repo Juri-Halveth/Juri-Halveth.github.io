@@ -58,7 +58,7 @@ responsive Gestaltung. Die neue Präsentation benötigt kein zusätzliches
 JavaScript und erhält die vorhandene Bewegungssteuerung.
 
 Das [neue lokale Prüfprotokoll](docs/WORK-SAMPLE-VALIDATION-2026-10-22.md)
-bindet den GENESIS-Branch-Commit und die Aufteilung der 184 Tests.
+bindet den GENESIS-Branch-Commit und die Aufteilung der 186 Tests.
 Der [vorherige Prüfstand](docs/WORK-SAMPLE-VALIDATION-2026-10-20.md)
 bleibt unverändert nachvollziehbar. Beide sind Momentaufnahmen und keine
 Live-CI-Badges.
