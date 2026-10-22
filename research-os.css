@@ -6,3 +6,6 @@
 @media(max-width:900px){.ros-grid,.ros-lower{grid-template-columns:1fr}.ros-card{min-height:auto}.ros-card-body{padding-bottom:30px}}
 @media(max-width:600px){.ros-hero{padding:58px 0 64px}.ros-hero:after{width:80vw;right:-30vw;top:2vw}.ros-main{padding-top:34px}.ros-card{display:block}.ros-orb{margin:24px 0 0 24px;width:54px;height:54px}.ros-card-body{padding:17px 24px 26px}.ros-path{min-height:0}.ros-panel{padding:24px}.ros-relation-list li{grid-template-columns:1fr}.ros-edge{font-size:12px}}
 @media(prefers-reduced-motion:reduce){.research-os *{scroll-behavior:auto}}
+.ros-demo-pending{color:#536b5f;font-weight:500}
+.ros-card#forschungslabor{grid-column:1/-1}
+@media(max-width:900px){.ros-card#forschungslabor{grid-column:auto}}

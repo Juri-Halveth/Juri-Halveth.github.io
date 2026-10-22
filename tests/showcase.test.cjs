@@ -10,8 +10,8 @@ test('featured work offers three direct entries and a dated local receipt in eve
   assert.match(native.querySelector('.button').href,/releases\/tag\/ashbound-native-v0\.4\.2-portal-preview$/);
   assert.match(native.innerHTML,/b768ca093d9bd68b1453a8ccc5b6d02ecaa1eb07/);
   const lab=doc.querySelector('[data-feature="halveth-forschungslabor"]');
-  assert.match(lab.textContent,/99 JavaScript \+ 46 Python/);
-  assert.ok(lab.querySelector('a[href="/docs/WORK-SAMPLE-VALIDATION-2026-10-20.md"]'));
+  assert.match(lab.textContent,/146 JavaScript \+ 49 Python/);
+  assert.ok(lab.querySelector('a[href="/docs/WORK-SAMPLE-VALIDATION-2026-10-22.md"]'));
   assert.ok(doc.querySelector('[data-feature="scarlet-browser"] a[href$="/singularity-cannon/"]'));
   assert.ok(doc.querySelector('[data-feature="scarlet-browser"] img[alt][src="/assets/scarlet-cannon-live.jpg"]'));
  }
