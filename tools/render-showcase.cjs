@@ -13,7 +13,7 @@ const texts = {
   open:'Szene ausprobieren', scarletSource:'SCARLET-Quellen', sceneScope:'Interaktive Browsergrafik · gestaltete Simulation.',
   lab:'03 / CODE MIT GEGENPROBEN', labTitle:'Forschungslabor', labLead:'Was passiert,<br>wenn sich die Eingabe ändert?',
   labBody:'Lokale JavaScript- und Python-Modelle mit konkreten Gegenproben. GENESIS macht Zustandsübergänge, Replay und verborgene Gate-Information im Browser sichtbar.',
-  inspect:'Code und Tests öffnen', receipt:'Lokales Prüfprotokoll', proof:'141 JavaScript + 49 Python', proofLabel:'Tests im lokalen Lauf bestanden · 22.10.2026', scope:'Der Prüfstand gilt für die mitgelieferten Modellverträge. Er ist keine externe Produktprüfung.',
+  inspect:'Code und Tests öffnen', receipt:'Lokales Prüfprotokoll', proof:'144 JavaScript + 49 Python', proofLabel:'Tests im lokalen Lauf bestanden · 22.10.2026', scope:'Der Prüfstand gilt für die mitgelieferten Modellverträge. Er ist keine externe Produktprüfung.',
   routeTitle:'Dein nächster Schritt', routeLead:'Wähle, wie tief du einsteigen möchtest.',
   routes:[['Ansehen & ausprobieren','Browserdemos und die native Vorschau.','arbeiten/'],['Technik nachvollziehen','14 Arbeitsproben mit Funktionen und Gegenproben.','koennen/'],['Zusammenarbeiten','Software, Prototypen und verständliche Oberflächen.','#contact']]
  },
@@ -28,7 +28,7 @@ const texts = {
   open:'Try the scene',scarletSource:'SCARLET source',sceneScope:'Interactive browser graphics · designed simulation.',
   lab:'03 / CODE AND COUNTEREXAMPLES',labTitle:'Research lab',labLead:'What happens<br>when the input changes?',
   labBody:'Local JavaScript and Python models with concrete counterexamples. GENESIS shows state transitions, replay and hidden gate information in the browser.',
-  inspect:'Open code and tests',receipt:'Local validation record',proof:'141 JavaScript + 49 Python',proofLabel:'Tests passed in the local run · 22 Oct 2026',scope:'The recorded checks cover the supplied model contracts. They are not an external product assessment.',
+  inspect:'Open code and tests',receipt:'Local validation record',proof:'144 JavaScript + 49 Python',proofLabel:'Tests passed in the local run · 22 Oct 2026',scope:'The recorded checks cover the supplied model contracts. They are not an external product assessment.',
   routeTitle:'Your next step',routeLead:'Choose how closely you want to look.',
   routes:[['See & try','Browser demos and the native preview.','arbeiten/'],['Inspect the engineering','14 samples with functions and counterexamples.','koennen/'],['Collaborate','Software, prototypes and understandable interfaces.','#contact']]
  },
@@ -43,7 +43,7 @@ const texts = {
   open:'Попробовать сцену',scarletSource:'Исходники SCARLET',sceneScope:'Интерактивная браузерная графика · художественная симуляция.',
   lab:'03 / КОД И КОНТРПРИМЕРЫ',labTitle:'Лаборатория',labLead:'Что произойдёт,<br>если изменить входные данные?',
   labBody:'Локальные модели JavaScript и Python с конкретными контрпримерами. GENESIS показывает переходы состояний, повторное воспроизведение и скрытый параметр gate в браузере.',
-  inspect:'Открыть код и тесты',receipt:'Протокол локальной проверки',proof:'141 JavaScript + 49 Python',proofLabel:'Тесты пройдены локально · 22.10.2026',scope:'Проверки относятся к предоставленным модельным контрактам и не заменяют внешнюю проверку продукта.',
+  inspect:'Открыть код и тесты',receipt:'Протокол локальной проверки',proof:'144 JavaScript + 49 Python',proofLabel:'Тесты пройдены локально · 22.10.2026',scope:'Проверки относятся к предоставленным модельным контрактам и не заменяют внешнюю проверку продукта.',
   routeTitle:'Следующий шаг',routeLead:'Выберите нужную глубину.',
   routes:[['Посмотреть и попробовать','Браузерные сцены и версия Windows.','arbeiten/'],['Изучить техническую работу','14 примеров с функциями и контрпримерами.','koennen/'],['Сотрудничать','Программы, прототипы и понятные интерфейсы.','#contact']]
  }
