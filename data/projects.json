@@ -294,14 +294,14 @@
       "id": "halveth-project0-keeper",
       "category": "research",
       "title": {
-        "de": "Blockchain-Werkzeuge · Skripte und Zustände",
-        "en": "Blockchain tools · scripts and states",
-        "ru": "Инструменты блокчейна · скрипты и состояния"
+        "de": "TRIAD · lokale Projektsteuerung",
+        "en": "TRIAD · local project control",
+        "ru": "TRIAD · локальное управление проектами"
       },
       "description": {
-        "de": "Kleine Automatisierungs- und Dokumentationswerkzeuge für einen experimentellen Solana-Werkzeugzweig.",
-        "en": "Small automation and documentation tools for an experimental Solana tool project.",
-        "ru": "Небольшие инструменты автоматизации и документации для экспериментального проекта Solana."
+        "de": "PowerShell-Werkzeuge und Zustandsdateien für die experimentelle TRIAD-Steuerung von ASTER, RACHEL und SHELLA.",
+        "en": "PowerShell tools and state files for the experimental TRIAD control plane of ASTER, RACHEL and SHELLA.",
+        "ru": "Инструменты PowerShell и файлы состояния для экспериментального управления TRIAD: ASTER, RACHEL и SHELLA."
       },
       "stage": {
         "de": "Experimenteller Werkzeugzweig",

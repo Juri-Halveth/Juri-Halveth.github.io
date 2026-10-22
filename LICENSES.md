@@ -11,6 +11,8 @@ Copyright (c) 2026 Juri Janovski, publishing as Juri Halveth.
 | New shared language runtime `assets/hub-language.js`, `assets/hub-language.css`, and its language regression tests | [MIT](motion/LICENSE-MIT.txt); source texts and linked works retain their existing terms |
 | AI-assisted PULSAR public atlas, source builder and local GitHub tree navigator under `pulsar/` and `tools/pulsar-one-root/` | [HALVETH PIRL 2.0](LICENSE-HALVETH-PIRL-2.0.md), only to the extent of protectable rights actually held; no blanket authorship or rights claim over AI output, linked repositories, GitHub metadata, or third-party material; see [rights and provenance](docs/RIGHTS-AND-PROVENANCE.md) |
 
+| New portfolio and technical-map implementation: `tools/build-portfolio.cjs`, `tools/render-showcase.cjs`, `tools/render-work-samples.cjs`, `tools/render-technical-map.cjs`, `tools/render-motion-page.cjs`, `portfolio.css`, `showcase.css`, `data/projects.json`, `data/work-samples.json`, `data/technical-map*.json`, `data/robots.txt`, associated local tests, and the generated root / language portfolio pages | [HALVETH PIRL 2.0](LICENSE-HALVETH-PIRL-2.0.md), only to the extent of rights actually held; references and copied assets retain their own terms |
+
 This portal is **source-available**, with conditional non-commercial
 public-interest permission and a separate written commercial licensing route.
 HALVETH PIRL 2.0 is not an OSI-approved open-source license.
@@ -27,7 +29,7 @@ download, a fork, a reference or silence.
 
 ## Zugeordnete Projektabbildung
 
-`assets/scarlet-cannon-live.png` ist eine Browseraufnahme der öffentlichen
+`assets/scarlet-cannon-live.jpg` ist eine Browseraufnahme der öffentlichen
 SCARLET-Demo. `assets/ASSET-SOURCES.json` bindet URL, Aufnahmezeit und Digest.
 Die Aufnahme ist ein visueller Beobachtungsstand; ein identischer Quellbuild
 wird daraus nicht abgeleitet. Die ursprünglichen Rechte und Asset-Hinweise
