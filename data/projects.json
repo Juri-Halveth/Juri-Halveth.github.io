@@ -21,8 +21,8 @@
         "ru": "Локально проверенная модель"
       },
       "repository": "https://github.com/Juri-Halveth/halveth-forschungslabor",
-      "revision": "7e5f21ea2cd27ad4e6281bd0992471b07cb736e0",
-      "source": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/7e5f21ea2cd27ad4e6281bd0992471b07cb736e0/README.md",
+      "revision": "47bc8c0199f4d43d3f19d705a03dd30e87d29199",
+      "source": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/47bc8c0199f4d43d3f19d705a03dd30e87d29199/README.md",
       "demo": null,
       "command": "npm test",
       "verification": "LOCAL_MODEL_TESTS"
