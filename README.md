@@ -39,7 +39,8 @@ HTML und verwenden relative interne Pfade, damit auch ein direktes Öffnen der
 erzeugten `forschung/index.html` über `file://` gestaltet bleibt. Für die
 übrigen Routen bleiben Styles eigene Dateien; die Navigation löst lokal und
 unter GitHub Pages dieselben Ziele auf.
-Der Core-Kandidat und diese Version der Seite liegen zunächst lokal. Die neun
+Der Core-Kandidat liegt separat lokal; die öffentliche Webseite zeigt nur den
+geprüften statischen Index. Die neun
 gebundenen öffentlichen README-, Katalog- und Demo-Adressen antworteten beim
 HTTP-HEAD-Linkcheck am 22. Oktober 2026 mit Status 200; das ist kein
 Funktionstest ihrer Inhalte.
