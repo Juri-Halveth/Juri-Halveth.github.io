@@ -11,9 +11,9 @@
         "ru": "Исследовательская лаборатория"
       },
       "description": {
-        "de": "Ausgewählte JavaScript- und Python-Modelle; GENESIS prüft Replay, zwei Perspektiven, Zustandsprojektionen, gepaarte Scores und getrennte Generator-/Auswerterprozesse mit synthetischen Daten.",
-        "en": "Selected JavaScript and Python models; GENESIS tests replay, two perspectives, state projections, paired scores and separate generator/evaluator processes on synthetic data.",
-        "ru": "Избранные модели JavaScript и Python; GENESIS проверяет воспроизведение, два взгляда, проекции состояний, парные оценки и раздельные процессы генератора и проверки на синтетических данных."
+        "de": "Ausgewählte JavaScript- und Python-Modelle; GENESIS prüft Replay, zwei Perspektiven, Zustandsprojektionen, einen endlichen Restkanal, gepaarte Scores und getrennte Generator-/Auswerterprozesse mit synthetischen Daten.",
+        "en": "Selected JavaScript and Python models; GENESIS tests replay, two perspectives, state projections, a finite residual channel, paired scores and separate generator/evaluator processes on synthetic data.",
+        "ru": "Избранные модели JavaScript и Python; GENESIS проверяет воспроизведение, два взгляда, проекции состояний, конечный канал передачи остатка, парные оценки и раздельные процессы генератора и проверки на синтетических данных."
       },
       "stage": {
         "de": "Lokal geprüftes Modell",
@@ -21,8 +21,8 @@
         "ru": "Локально проверенная модель"
       },
       "repository": "https://github.com/Juri-Halveth/halveth-forschungslabor",
-      "revision": "680c8c61573fe88f30c369ba6e42116177bc64f4",
-      "source": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/680c8c61573fe88f30c369ba6e42116177bc64f4/README.md",
+      "revision": "e8e0da89a1bda39def0279b1e58edb8882ddb839",
+      "source": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/e8e0da89a1bda39def0279b1e58edb8882ddb839/README.md",
       "demo": null,
       "command": "npm test",
       "verification": "LOCAL_MODEL_TESTS"

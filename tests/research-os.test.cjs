@@ -58,7 +58,7 @@ test('all three generated routes show linked sources and retained unknowns', () 
     const lab = doc.getElementById('forschungslabor');
     assert.equal(lab.querySelectorAll('.ros-actions a').length, 1);
     assert.ok(lab.querySelector('.ros-demo-pending'));
-    assert.match(lab.querySelector('.ros-actions a').href, /github\.com\/Juri-Halveth\/halveth-forschungslabor\/blob\/680c8c6/);
+    assert.match(lab.querySelector('.ros-actions a').href, /github\.com\/Juri-Halveth\/halveth-forschungslabor\/blob\/e8e0da8/);
   }
 });
 

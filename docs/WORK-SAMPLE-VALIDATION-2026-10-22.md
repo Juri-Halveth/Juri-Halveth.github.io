@@ -2,7 +2,7 @@
 
 Repository: [Juri-Halveth/halveth-forschungslabor](https://github.com/Juri-Halveth/halveth-forschungslabor)
 
-Geprüfter Quellstand: [680c8c61573fe88f30c369ba6e42116177bc64f4](https://github.com/Juri-Halveth/halveth-forschungslabor/tree/680c8c61573fe88f30c369ba6e42116177bc64f4)
+Geprüfter Quellstand: [e8e0da89a1bda39def0279b1e58edb8882ddb839](https://github.com/Juri-Halveth/halveth-forschungslabor/tree/e8e0da89a1bda39def0279b1e58edb8882ddb839)
 
 Integration: [Draft-PR #6](https://github.com/Juri-Halveth/halveth-forschungslabor/pull/6)
 
@@ -14,11 +14,11 @@ mit Node.js 24.18.0 und Python 3.14.6 durch `npm test` geprüft. Der Lauf vom
 
 | Suite | Bestanden | Fehlgeschlagen |
 | --- | ---: | ---: |
-| Ausgewählte JavaScript-Modul- und Skripttests | 146 | 0 |
+| Ausgewählte JavaScript-Modul- und Skripttests | 148 | 0 |
 | Python: Ereignis-/Provenienzmodell | 17 | 0 |
 | Python: Regelmodell und Universe | 29 | 0 |
 | Python: Metadateninventur | 3 | 0 |
-| **Gesamt** | **195** | **0** |
+| **Gesamt** | **197** | **0** |
 
 Das GENESIS-Labor prüft unter anderem eine deterministische 100-Agenten-Folge,
 Replay gegen manipulierte Records, ein blockiertes Relay, zwei
@@ -29,7 +29,10 @@ und einen Vorhersageprüfer mit drei synthetischen Auswertungen. Hinzu kommt ein
 gepaarter Serienvergleich, der Mittelwert und Mehrheitsbedingung als getrennte
 Prüfgrößen behandelt. Eine weitere Prozessprobe erzeugt den Kandidaten in einem
 frischen Node-Prozess und wertet ihn danach in einem getrennten Prozess aus;
-abweichend gebundene und geänderte Kandidaten scheitern. Der Browser wurde auf
+abweichend gebundene und geänderte Kandidaten scheitern. Die zusätzliche
+Restkanalprobe führt den Drei-Vorwerte-Rang durch 2 oder 3 Symbole und 1 oder
+2 Takte; sie zeigt eine konkrete Kollision sowie zwei verlustfreie Varianten
+innerhalb der gebundenen Rückfaser. Der Browser wurde auf
 Desktop sowie vor dem Linsenschalter auf 320 px und 390 px geprüft; dabei gab
 es keinen horizontalen Überlauf. Der Linsenschalter wurde danach auf Desktop
 mit beiden Ansichten und ohne Browser-Konsolenfehler geprüft. Der Scope-Prüfer
@@ -40,14 +43,16 @@ Vorhersageansicht zeigte auf Desktop denselben vorab gebundenen Kandidaten bei
 passender und künstlich abweichender Kontrolle. Alle vier Modi des
 Serienvergleichs wurden auf Desktop ausgelöst. Die neuen Sektionen wurden
 anschließend bei 320 px und 390 px mobil visuell geprüft; der Inhalt blieb
-innerhalb der jeweiligen Viewportbreite.
+innerhalb der jeweiligen Viewportbreite. Auch die Restkanalprobe wurde auf
+Desktop ausgelöst und bei 320 px und 390 px ohne horizontalen Dokumentüberlauf
+kontrolliert.
 
 ## Nachvollziehen
 
 ```sh
 git clone https://github.com/Juri-Halveth/halveth-forschungslabor.git
 cd halveth-forschungslabor
-git checkout 680c8c61573fe88f30c369ba6e42116177bc64f4
+git checkout e8e0da89a1bda39def0279b1e58edb8882ddb839
 npm test
 python -m http.server 8847 --bind 127.0.0.1
 ```
@@ -67,5 +72,5 @@ unabhängige Prüfung fremder Systeme. Der frühere
 separater Quell- und Teststand erhalten.
 
 Projektleitung und Konzept: Juri Halveth / HALVETH. Entwicklung und Prüfung
-mit KI-Unterstützung. Die [Lizenzzuordnung des Forschungslabors](https://github.com/Juri-Halveth/halveth-forschungslabor/blob/680c8c61573fe88f30c369ba6e42116177bc64f4/LICENSES.md)
+mit KI-Unterstützung. Die [Lizenzzuordnung des Forschungslabors](https://github.com/Juri-Halveth/halveth-forschungslabor/blob/e8e0da89a1bda39def0279b1e58edb8882ddb839/LICENSES.md)
 bleibt maßgeblich für dessen Quellcode und Texte.
