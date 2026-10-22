@@ -11,9 +11,9 @@
         "ru": "Исследовательская лаборатория"
       },
       "description": {
-        "de": "Ausgewählte JavaScript- und Python-Modelle; GENESIS prüft Replay, zwei Perspektiven, Zustandsprojektionen und gepaarte Scorefolgen mit synthetischen Daten.",
-        "en": "Selected JavaScript and Python models; GENESIS tests replay, two perspectives, state projections and paired score series on synthetic data.",
-        "ru": "Избранные модели JavaScript и Python; GENESIS проверяет воспроизведение, два взгляда, проекции состояний и парные ряды оценок на синтетических данных."
+        "de": "Ausgewählte JavaScript- und Python-Modelle; GENESIS prüft Replay, zwei Perspektiven, Zustandsprojektionen, gepaarte Scores und getrennte Generator-/Auswerterprozesse mit synthetischen Daten.",
+        "en": "Selected JavaScript and Python models; GENESIS tests replay, two perspectives, state projections, paired scores and separate generator/evaluator processes on synthetic data.",
+        "ru": "Избранные модели JavaScript и Python; GENESIS проверяет воспроизведение, два взгляда, проекции состояний, парные оценки и раздельные процессы генератора и проверки на синтетических данных."
       },
       "stage": {
         "de": "Lokal geprüftes Modell",
@@ -21,8 +21,8 @@
         "ru": "Локально проверенная модель"
       },
       "repository": "https://github.com/Juri-Halveth/halveth-forschungslabor",
-      "revision": "1fa6e66d5836659aeb0277a87222135d273429de",
-      "source": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/1fa6e66d5836659aeb0277a87222135d273429de/README.md",
+      "revision": "680c8c61573fe88f30c369ba6e42116177bc64f4",
+      "source": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/680c8c61573fe88f30c369ba6e42116177bc64f4/README.md",
       "demo": null,
       "command": "npm test",
       "verification": "LOCAL_MODEL_TESTS"
