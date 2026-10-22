@@ -2,7 +2,7 @@
 
 Repository: [Juri-Halveth/halveth-forschungslabor](https://github.com/Juri-Halveth/halveth-forschungslabor)
 
-Geprüfter Quellstand: [e8e0da89a1bda39def0279b1e58edb8882ddb839](https://github.com/Juri-Halveth/halveth-forschungslabor/tree/e8e0da89a1bda39def0279b1e58edb8882ddb839)
+Geprüfter Quellstand: [c782d4a1ebb7a7cbc9031c6109bd58fe07b504ea](https://github.com/Juri-Halveth/halveth-forschungslabor/tree/c782d4a1ebb7a7cbc9031c6109bd58fe07b504ea)
 
 Integration: [Draft-PR #6](https://github.com/Juri-Halveth/halveth-forschungslabor/pull/6)
 
@@ -47,12 +47,18 @@ innerhalb der jeweiligen Viewportbreite. Auch die Restkanalprobe wurde auf
 Desktop ausgelöst und bei 320 px und 390 px ohne horizontalen Dokumentüberlauf
 kontrolliert.
 
+Nach der visuellen Korrektur wurde ein Event von A001 erzeugt und die
+Menüauswahl auf A002 geändert. Der Browser zeigte im Graphen weiter
+„Ereignisquelle A001“ und im Menü „Agent A002“. Das frühere Ereignis wurde
+durch die Vorbereitung des nächsten Impulses nicht ummarkiert. `npm test`
+bestand anschließend erneut mit 197 ausgewählten Tests.
+
 ## Nachvollziehen
 
 ```sh
 git clone https://github.com/Juri-Halveth/halveth-forschungslabor.git
 cd halveth-forschungslabor
-git checkout e8e0da89a1bda39def0279b1e58edb8882ddb839
+git checkout c782d4a1ebb7a7cbc9031c6109bd58fe07b504ea
 npm test
 python -m http.server 8847 --bind 127.0.0.1
 ```
@@ -72,5 +78,5 @@ unabhängige Prüfung fremder Systeme. Der frühere
 separater Quell- und Teststand erhalten.
 
 Projektleitung und Konzept: Juri Halveth / HALVETH. Entwicklung und Prüfung
-mit KI-Unterstützung. Die [Lizenzzuordnung des Forschungslabors](https://github.com/Juri-Halveth/halveth-forschungslabor/blob/e8e0da89a1bda39def0279b1e58edb8882ddb839/LICENSES.md)
+mit KI-Unterstützung. Die [Lizenzzuordnung des Forschungslabors](https://github.com/Juri-Halveth/halveth-forschungslabor/blob/c782d4a1ebb7a7cbc9031c6109bd58fe07b504ea/LICENSES.md)
 bleibt maßgeblich für dessen Quellcode und Texte.
