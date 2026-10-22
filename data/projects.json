@@ -1,6 +1,6 @@
 {
   "schema": "halveth.technical-portfolio.v2",
-  "sourceDate": "2026-10-20",
+  "sourceDate": "2026-10-22",
   "projects": [
     {
       "id": "halveth-forschungslabor",
@@ -11,9 +11,9 @@
         "ru": "Исследовательская лаборатория"
       },
       "description": {
-        "de": "Zehn lokale JavaScript- und Python-Module: Bildvergleich, Quellenpakete, Optik, Ereignisse und Regeln.",
-        "en": "Ten local JavaScript and Python modules: image comparison, source packets, optics, events and rules.",
-        "ru": "Десять локальных модулей JavaScript и Python: сравнение изображений, пакеты источников, оптика, события и правила."
+        "de": "Ausgewählte JavaScript- und Python-Modelle; neu im öffentlichen Branch: GENESIS mit Replay, zwei Perspektiven und einer prüfbaren Zustandsprojektion.",
+        "en": "Selected JavaScript and Python models; new on a public branch: GENESIS with replay, two perspectives and a testable state projection.",
+        "ru": "Избранные модели JavaScript и Python; в публичной ветке добавлен GENESIS с повторным воспроизведением, двумя взглядами и проверяемой проекцией состояния."
       },
       "stage": {
         "de": "Lokal geprüftes Modell",
@@ -21,8 +21,8 @@
         "ru": "Локально проверенная модель"
       },
       "repository": "https://github.com/Juri-Halveth/halveth-forschungslabor",
-      "revision": "c6008ab5f8847921dc140d973b9a526750a89933",
-      "source": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/c6008ab5f8847921dc140d973b9a526750a89933/scripts/check-modules.mjs",
+      "revision": "9616c8b0438d05fcffde697b2d3d2fae2f62ca0b",
+      "source": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/9616c8b0438d05fcffde697b2d3d2fae2f62ca0b/README.md",
       "demo": null,
       "command": "npm test",
       "verification": "LOCAL_MODEL_TESTS"

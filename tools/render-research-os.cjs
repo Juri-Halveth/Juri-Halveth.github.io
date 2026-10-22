@@ -28,7 +28,7 @@ function validateResearchIndex(index) {
     requireThat(/^[0-9a-f]{40}$/.test(entity.source.revision) && /^[0-9a-f]{64}$/.test(entity.source.sha256), `unbound source: ${entity.id}`);
     const expected = `https://github.com/${entity.source.repo}/blob/${entity.source.revision}/${entity.source.path}`;
     requireThat(entity.source.url === expected, `source URL mismatch: ${entity.id}`);
-    requireThat(/^https:\/\/juri-halveth\.github\.io\/(?:[A-Za-z0-9._-]+\/)?$/.test(entity.demo), `unexpected demo URL: ${entity.id}`);
+    requireThat(entity.demo === null || /^https:\/\/juri-halveth\.github\.io\/(?:[A-Za-z0-9._-]+\/)?$/.test(entity.demo), `unexpected demo URL: ${entity.id}`);
     requireThat(Array.isArray(entity.unknowns), `unknowns missing: ${entity.id}`);
     entities.set(entity.id, entity);
   }
@@ -67,6 +67,16 @@ const maturityLabels = {
   en: { 'locally-tested-model': 'Locally tested model', 'published-website': 'Published website', 'browser-prototype': 'Browser prototype' },
   ru: { 'locally-tested-model': 'Локально проверенная модель', 'published-website': 'Опубликованный сайт', 'browser-prototype': 'Прототип в браузере' }
 };
+const countTitle = {
+  de: count => `Eine Welt. ${count} prüfbare Einstiege.`,
+  en: count => `One world. ${count} inspectable entries.`,
+  ru: count => `Один мир. ${count} проверяемых входов.`
+};
+const pendingDemo = {
+  de: 'Browserdemo noch nicht veröffentlicht',
+  en: 'Browser demo not published yet',
+  ru: 'Браузерная демонстрация ещё не опубликована'
+};
 
 function renderResearchOS(input, lang) {
   const index = validateResearchIndex(input);
@@ -77,7 +87,7 @@ function renderResearchOS(input, lang) {
     const label = lang === 'de' ? entity.name.de : entity.name.en;
     const receipt = index.evidence.find(item => item.subjectId === entity.id);
     const pathText = entity.id === 'urn:halveth:project:portfolio' ? t.relations : linked.has(entity.id) ? t.connects : t.standalone;
-    return `<article class="ros-card" id="${escape(entity.id.split(':').at(-1))}"><div class="ros-orb" aria-hidden="true"></div><div class="ros-card-body"><p class="ros-kind">${escape(maturityLabels[lang][entity.maturity] || entity.maturity)}</p><h2>${escape(label)}</h2><p class="ros-path">${escape(pathText)}</p><div class="ros-actions"><a href="${escape(entity.demo)}">${escape(t.try)} ↗</a><a href="${escape(entity.source.url)}">${escape(t.source)} ↗</a></div><details><summary>${escape(t.evidence)} / ${escape(t.unknown)}</summary><p><strong>${escape(t.evidence)}:</strong> ${escape(receipt.source.repo)} @ ${escape(receipt.source.revision.slice(0, 12))} · SHA-256 ${escape(receipt.source.sha256.slice(0, 16))}…</p><ul>${entity.unknowns.map(value => `<li>${escape(value)}</li>`).join('')}</ul></details></div></article>`;
+    return `<article class="ros-card" id="${escape(entity.id.split(':').at(-1))}"><div class="ros-orb" aria-hidden="true"></div><div class="ros-card-body"><p class="ros-kind">${escape(maturityLabels[lang][entity.maturity] || entity.maturity)}</p><h2>${escape(label)}</h2><p class="ros-path">${escape(pathText)}</p><div class="ros-actions">${entity.demo ? `<a href="${escape(entity.demo)}">${escape(t.try)} ↗</a>` : `<span class="ros-demo-pending">${escape(pendingDemo[lang])}</span>`}<a href="${escape(entity.source.url)}">${escape(t.source)} ↗</a></div><details><summary>${escape(t.evidence)} / ${escape(t.unknown)}</summary><p><strong>${escape(t.evidence)}:</strong> ${escape(receipt.source.repo)} @ ${escape(receipt.source.revision.slice(0, 12))} · SHA-256 ${escape(receipt.source.sha256.slice(0, 16))}…</p><ul>${entity.unknowns.map(value => `<li>${escape(value)}</li>`).join('')}</ul></details></div></article>`;
   }).join('');
   const relations = index.relations.map(relation => {
     const left = index.entities.find(entity => entity.id === relation.left.id);
@@ -86,7 +96,7 @@ function renderResearchOS(input, lang) {
     const to = lang === 'de' ? right.name.de : right.name.en;
     return `<li><span>${escape(from)}</span><span class="ros-edge">${escape(t.connects)}</span><span>${escape(to)}</span><a href="${escape(relation.source.url)}">${escape(lang === 'de' ? 'Portfolio-Katalog am gebundenen Commit' : lang === 'ru' ? 'Каталог портфолио в закреплённом коммите' : 'Portfolio catalog at pinned commit')} ↗</a></li>`;
   }).join('');
-  return `<div class="research-os"><section class="ros-hero"><div class="shell"><p class="eyebrow">${escape(t.eyebrow)}</p><h1>${escape(t.title)}</h1><p class="ros-lead">${escape(t.lead)}</p><div class="ros-counts"><span>${index.entities.length} ${escape(t.projectsLabel)}</span><span>${index.relations.length} ${escape(t.relationsLabel)}</span><span>${index.evidence.length} ${escape(t.evidenceLabel)}</span></div></div></section><section class="shell ros-main" aria-label="Research OS"><div class="ros-grid">${cards}</div><div class="ros-lower"><section class="ros-panel"><h2>${escape(t.relations)}</h2><ul class="ros-relation-list">${relations}</ul></section><aside class="ros-panel ros-status"><h2>${escape(t.status)}</h2><p>${escape(t.statusText)}</p><p>${escape(t.time)}: <time datetime="${escape(index.capturedAt)}">${escape(index.capturedAt)}</time></p><p>${escape(t.note)}</p><p class="ros-digest">${escape(t.digest)}: <code>${escape(index.digest)}</code></p></aside></div></section></div>`;
+  return `<div class="research-os"><section class="ros-hero"><div class="shell"><p class="eyebrow">${escape(t.eyebrow)}</p><h1>${escape(countTitle[lang](index.entities.length))}</h1><p class="ros-lead">${escape(t.lead)}</p><div class="ros-counts"><span>${index.entities.length} ${escape(t.projectsLabel)}</span><span>${index.relations.length} ${escape(t.relationsLabel)}</span><span>${index.evidence.length} ${escape(t.evidenceLabel)}</span></div></div></section><section class="shell ros-main" aria-label="Research OS"><div class="ros-grid">${cards}</div><div class="ros-lower"><section class="ros-panel"><h2>${escape(t.relations)}</h2><ul class="ros-relation-list">${relations}</ul></section><aside class="ros-panel ros-status"><h2>${escape(t.status)}</h2><p>${escape(t.statusText)}</p><p>${escape(t.time)}: <time datetime="${escape(index.capturedAt)}">${escape(index.capturedAt)}</time></p><p>${escape(t.note)}</p><p class="ros-digest">${escape(t.digest)}: <code>${escape(index.digest)}</code></p></aside></div></section></div>`;
 }
 
 module.exports = { validateResearchIndex, renderResearchOS };

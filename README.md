@@ -23,11 +23,14 @@ Animation. Projektprüfungen bleiben beim jeweiligen Codebestand.
 
 ## Public Research OS · lokaler Kandidat
 
-`/forschung/` zeigt einen ersten, statisch erzeugten Forschungsindex in drei
-Sprachen. Portfolio, Seedspace, Field Difference Lab und C-DROHNE besitzen
-quellgebundene Einträge, vier README-Belege, vier Capture-Ereignisse und zwei
-Beziehungen aus dem gebundenen Portfolio-Katalog. Seedspace erhält keine
-erfundene Katalogbeziehung. Offene Fragen bleiben auf den Karten sichtbar.
+`/forschung/` zeigt einen statisch erzeugten Forschungsindex in drei Sprachen.
+Portfolio, Seedspace, Field Difference Lab, C-DROHNE und das Forschungslabor mit
+GENESIS besitzen quellgebundene Einträge, fünf README-Belege, fünf
+Capture-Ereignisse und drei Beziehungen aus dem gebundenen Portfolio-Katalog.
+Seedspace erhält keine erfundene Katalogbeziehung. Beim Forschungslabor führt
+der Quelllink zu einem öffentlichen Branch-Commit; solange es keine
+veröffentlichte Browserdemo gibt, zeigt die Karte keinen Demo-Link.
+Offene Fragen bleiben auf den Karten sichtbar.
 
 `data/research-index.json` ist ein geprüfter Snapshot aus dem separaten lokalen
 Core-Kandidaten v0.1. `tools/render-research-os.cjs` prüft seinen Digest,
@@ -40,10 +43,10 @@ erzeugten `forschung/index.html` über `file://` gestaltet bleibt. Für die
 übrigen Routen bleiben Styles eigene Dateien; die Navigation löst lokal und
 unter GitHub Pages dieselben Ziele auf.
 Der Core-Kandidat liegt separat lokal; die öffentliche Webseite zeigt nur den
-geprüften statischen Index. Die neun
-gebundenen öffentlichen README-, Katalog- und Demo-Adressen antworteten beim
-HTTP-HEAD-Linkcheck am 22. Oktober 2026 mit Status 200; das ist kein
-Funktionstest ihrer Inhalte.
+geprüften statischen Index. Der
+[Linkcheck des Fünferstands](docs/RESEARCH-OS-LINKCHECK-2026-10-22.md)
+ergab für alle zehn unterschiedlichen externen Adressen HTTP `200` per `HEAD`.
+Ein Linkstatus ist kein Funktionstest.
 
 ## Ausgewählte Arbeiten auf dem ersten Blick
 
@@ -54,9 +57,11 @@ Revisionen bleiben im bestehenden Katalog. `showcase.css` enthält die
 responsive Gestaltung. Die neue Präsentation benötigt kein zusätzliches
 JavaScript und erhält die vorhandene Bewegungssteuerung.
 
-Das [datierte lokale Prüfprotokoll](docs/WORK-SAMPLE-VALIDATION-2026-10-20.md)
-bindet den tatsächlich geprüften Forschungslabor-Commit und die Aufteilung
-der 145 Tests. Es ist eine Momentaufnahme und kein Live-CI-Badge.
+Das [neue lokale Prüfprotokoll](docs/WORK-SAMPLE-VALIDATION-2026-10-22.md)
+bindet den GENESIS-Branch-Commit und die Aufteilung der 184 Tests.
+Der [vorherige Prüfstand](docs/WORK-SAMPLE-VALIDATION-2026-10-20.md)
+bleibt unverändert nachvollziehbar. Beide sind Momentaufnahmen und keine
+Live-CI-Badges.
 
 ## Technische Schnittstellenkarte
 
