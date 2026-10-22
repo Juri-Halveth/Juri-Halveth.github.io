@@ -7,7 +7,7 @@ test('technical catalog is unique, source-pinned and records limited check state
  for(const x of data.projects){assert.match(x.revision,/^[0-9a-f]{40}$/);assert.ok(x.source.includes(x.revision));assert.ok(['LOCAL_MODEL_TESTS','SOURCE_REVIEW_ONLY'].includes(x.verification));}
 });
 test('all generated language entrances link only to available local files and anchors',()=>{
- for(const lang of ['','en/','ru/'])for(const page of ['','profil/','arbeiten/','koennen/','belege/','modelle/','audits/','lernen/','motion/','handbuch/','pulsar/','zertifikate/','werkzertifikate/']){
+ for(const lang of ['','en/','ru/'])for(const page of ['','profil/','arbeiten/','koennen/','belege/','modelle/','audits/','lernen/','motion/','handbuch/','pulsar/','zertifikate/','werkzertifikate/','forschung/']){
   const raw=read(lang+page+'index.html'),doc=new JSDOM(raw).window.document;
   assert.equal(doc.querySelectorAll('h1').length,1,`${lang}${page}: exactly one main heading`);
   assert.ok(doc.querySelector('meta[http-equiv="Content-Security-Policy"]'));
@@ -15,8 +15,10 @@ test('all generated language entrances link only to available local files and an
   for(const a of doc.querySelectorAll('[href],[src]')){
    const url=a.getAttribute('href')||a.getAttribute('src');if(!url)continue;
    if(url.startsWith('#')){assert.ok(doc.getElementById(url.slice(1)),url);continue;}
-   if(!url.startsWith('/'))continue;
-   const name=decodeURIComponent(url.split('#')[0]);const target=path.join(root,name.endsWith('/')?name+'index.html':name);
+   if(/^[a-z][a-z0-9+.-]*:/i.test(url))continue;
+   const name=decodeURIComponent(url.split('#')[0]);
+   const base=path.join(root,lang,page);
+   const target=name.startsWith('/')?path.join(root,name.endsWith('/')?name+'index.html':name):path.resolve(base,name.endsWith('/')?name+'index.html':name);
    assert.ok(fs.existsSync(target),`${lang}${page}: ${url}`);
   }
  }
