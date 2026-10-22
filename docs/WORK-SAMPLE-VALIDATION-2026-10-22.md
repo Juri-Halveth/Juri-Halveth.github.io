@@ -2,7 +2,7 @@
 
 Repository: [Juri-Halveth/halveth-forschungslabor](https://github.com/Juri-Halveth/halveth-forschungslabor)
 
-Geprüfter Quellstand: [b111f4588948c68afab6d491569afd8530131398](https://github.com/Juri-Halveth/halveth-forschungslabor/tree/b111f4588948c68afab6d491569afd8530131398)
+Geprüfter Quellstand: [7e5f21ea2cd27ad4e6281bd0992471b07cb736e0](https://github.com/Juri-Halveth/halveth-forschungslabor/tree/7e5f21ea2cd27ad4e6281bd0992471b07cb736e0)
 
 Integration: [Draft-PR #6](https://github.com/Juri-Halveth/halveth-forschungslabor/pull/6)
 
@@ -14,29 +14,31 @@ mit Node.js 24.18.0 und Python 3.14.6 durch `npm test` geprüft. Der Lauf vom
 
 | Suite | Bestanden | Fehlgeschlagen |
 | --- | ---: | ---: |
-| Ausgewählte JavaScript-Modul- und Skripttests | 137 | 0 |
+| Ausgewählte JavaScript-Modul- und Skripttests | 139 | 0 |
 | Python: Ereignis-/Provenienzmodell | 17 | 0 |
 | Python: Regelmodell und Universe | 29 | 0 |
 | Python: Metadateninventur | 3 | 0 |
-| **Gesamt** | **186** | **0** |
+| **Gesamt** | **188** | **0** |
 
 Das GENESIS-Labor prüft unter anderem eine deterministische 100-Agenten-Folge,
 Replay gegen manipulierte Records, ein blockiertes Relay, zwei
 Beobachtungsoperatoren für denselben Zustandsvergleich und den endlichen
-Scope-Prüfer mit 100 Zuständen, zwei Inputs und vier Linsen. Der Browser wurde auf
+Scope-Prüfer mit 100 Zuständen, zwei Inputs und vier Linsen sowie einen
+Rückweg-Prüfer für fünf gebundene Vorzustände und ein explizites Zwei-Bit-Residuum. Der Browser wurde auf
 Desktop sowie vor dem Linsenschalter auf 320 px und 390 px geprüft; dabei gab
 es keinen horizontalen Überlauf. Der Linsenschalter wurde danach auf Desktop
 mit beiden Ansichten und ohne Browser-Konsolenfehler geprüft. Der Scope-Prüfer
 wurde danach auf Desktop in zwei Linsen mit konkretem Gegenzeugen und der
-Singleton-Grenze visuell geprüft; seine mobile Ansicht wurde nicht erneut
-visuell abgenommen.
+Singleton-Grenze visuell geprüft. Der Rückweg-Prüfer zeigte auf Desktop die
+drei Nachzustände und fünf rekonstruierten Vorwerte ohne Konsolenfehler. Die
+neuen Sektionen wurden mobil nicht erneut visuell abgenommen.
 
 ## Nachvollziehen
 
 ```sh
 git clone https://github.com/Juri-Halveth/halveth-forschungslabor.git
 cd halveth-forschungslabor
-git checkout b111f4588948c68afab6d491569afd8530131398
+git checkout 7e5f21ea2cd27ad4e6281bd0992471b07cb736e0
 npm test
 python -m http.server 8847 --bind 127.0.0.1
 ```
@@ -56,5 +58,5 @@ unabhängige Prüfung fremder Systeme. Der frühere
 separater Quell- und Teststand erhalten.
 
 Projektleitung und Konzept: Juri Halveth / HALVETH. Entwicklung und Prüfung
-mit KI-Unterstützung. Die [Lizenzzuordnung des Forschungslabors](https://github.com/Juri-Halveth/halveth-forschungslabor/blob/b111f4588948c68afab6d491569afd8530131398/LICENSES.md)
+mit KI-Unterstützung. Die [Lizenzzuordnung des Forschungslabors](https://github.com/Juri-Halveth/halveth-forschungslabor/blob/7e5f21ea2cd27ad4e6281bd0992471b07cb736e0/LICENSES.md)
 bleibt maßgeblich für dessen Quellcode und Texte.
