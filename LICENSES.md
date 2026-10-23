@@ -1,6 +1,6 @@
 # HALVETH root portal — path and version license map
 
-Copyright (c) 2026 Juri Janovski, publishing as Juri Halveth.
+Copyright (c) 2026 Juri Janovski, project HALVETH.
 
 | Material | Applicable terms |
 | --- | --- |

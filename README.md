@@ -1,10 +1,12 @@
-# Juri Halveth · Software, Grafik und Lernen
+# Juri · Software, Grafik und Lernen
+
+**Person: Juri. Projekt: HALVETH.** [Namenszuordnung](IDENTITY.md).
 
 [Portfolio öffnen](https://juri-halveth.github.io/) · [Arbeitsproben](https://juri-halveth.github.io/koennen/)
 
 Diese Website präsentiert ausgewählte technische Projekte mit Zweck, Einstieg,
 Quellrevision und Entwicklungsstand. Die Oberfläche ist auf Deutsch, Englisch
-und Russisch verfügbar. Projektleitung: Juri Halveth / HALVETH; Entwicklung
+und Russisch verfügbar. Projektleitung: Juri / HALVETH; Entwicklung
 mit KI-Unterstützung.
 
 ## Lokal bauen

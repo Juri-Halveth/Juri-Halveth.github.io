@@ -1,4 +1,4 @@
-# Juri Halveth
+# Juri
 
 Softwareentwicklung · interaktive Grafik · Lernangebote
 

@@ -1,9 +1,9 @@
-# Juri Halveth · Software, graphics and learning
+# Juri · Software, graphics and learning
 
 [Portfolio](https://juri-halveth.github.io/en/) · [Work samples](https://juri-halveth.github.io/en/koennen/)
 
 A curated technical portfolio with project purpose, source revision and development
-state. Available in German, English and Russian. Project lead: Juri Halveth / HALVETH.
+state. Available in German, English and Russian. Project lead: Juri / HALVETH.
 Development includes AI assistance.
 
 ## Build locally
