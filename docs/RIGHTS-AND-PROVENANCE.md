@@ -15,7 +15,7 @@ UrhG eingeräumt werden. Ein Kontoname, Repository-Administrator, Commit,
 Zeitstempel oder Hash belegt Bytes beziehungsweise einen Git-Vorgang, aber
 allein weder Urheberschaft noch eine vollständige Rechtekette.
 
-Die bestehende Erklärung nennt Juri Janovski (Juri Halveth) als Herausgeber und
+Die bestehende Erklärung nennt Juri Janovski (Projekt HALVETH) als Herausgeber und
 Rechtekontakt. Der Geltungsbereich bleibt durch
 [LICENSES.md](../LICENSES.md) nach Pfad und Version begrenzt und gilt nur,
 soweit die betreffenden Rechte tatsächlich gehalten werden. Verlinkte Projekte,
@@ -94,7 +94,7 @@ sections 29 and 31. An account name, repository administrator, commit,
 timestamp, or hash can bind bytes or a Git event, but does not alone establish
 authorship or a complete chain of title.
 
-The existing declaration identifies Juri Janovski (Juri Halveth) as publisher
+The existing declaration identifies Juri Janovski (Projekt HALVETH) as publisher
 and rights contact. Scope is limited by path and version in
 [LICENSES.md](../LICENSES.md), and applies only to rights actually held. Linked
 projects, third-party materials, trademarks, facts, and ideas are not

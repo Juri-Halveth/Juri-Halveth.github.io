@@ -1,6 +1,6 @@
 # Rechte und Herkunft / Rights and provenance
 
-**Herausgeber / Publisher:** Juri Janovski, publishing as Juri Halveth.
+**Herausgeber / Publisher:** Juri Janovski, project HALVETH.
 **Kontakt / Contact:** security@halveth.de
 
 ## Deutsch

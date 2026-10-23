@@ -1,7 +1,7 @@
 {
   "schema": "halveth.technical-interface-map.v1",
   "reviewedAt": "2026-10-20",
-  "projectLead": "Juri Halveth / HALVETH",
+  "projectLead": "Juri",
   "development": "AI_ASSISTED",
   "title": {
     "de": "Technische Schnittstellen. Konkrete Arbeitsproben.",
@@ -897,5 +897,6 @@
         "ru": "Учитывать время и границы наблюдения"
       }
     }
-  ]
+  ],
+  "projectName": "HALVETH"
 }
