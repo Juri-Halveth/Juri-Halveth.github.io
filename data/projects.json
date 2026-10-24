@@ -6,9 +6,9 @@
       "id": "halveth-forschungslabor",
       "category": "research",
       "title": {
-        "de": "Forschungslabor",
-        "en": "Research lab",
-        "ru": "Исследовательская лаборатория"
+        "de": "Modelle und Gegenproben ausführen",
+        "en": "Run models and counterexamples",
+        "ru": "Выполнять модели и контрпримеры"
       },
       "description": {
         "de": "Lokale JavaScript- und Python-Modelle: Perspektiven, Quellenpakete, Optik, Ereignisse und Regeln. Mit eigenem ausführbarem Prüfweg.",
@@ -42,9 +42,9 @@
       "id": "mein-lernportal",
       "category": "learning",
       "title": {
-        "de": "Mein Lernportal",
-        "en": "Open learning portal",
-        "ru": "Учебный портал"
+        "de": "Digitale Grundlagen lernen",
+        "en": "Learn digital foundations",
+        "ru": "Изучать цифровые основы"
       },
       "description": {
         "de": "Ein Lernkatalog mit Übungen zu digitalen Grundlagen, Programmierung und Mathematik. Ohne Pflichtkonto lesbar.",
@@ -67,9 +67,9 @@
       "id": "lernstudio",
       "category": "learning",
       "title": {
-        "de": "Interaktives Lernstudio",
-        "en": "Interactive learning studio",
-        "ru": "Интерактивная учебная студия"
+        "de": "Lernpfade, Übungen und Fortschritt",
+        "en": "Learning paths, exercises and progress",
+        "ru": "Учебные маршруты, упражнения и прогресс"
       },
       "description": {
         "de": "Lernkarte, Spielmissionen und Fortschrittsansicht für selbstständiges Lernen.",
@@ -92,9 +92,9 @@
       "id": "halveth-tresor",
       "category": "software",
       "title": {
-        "de": "Tresor · lokale Zugangsdaten",
-        "en": "Tresor · local credentials",
-        "ru": "Tresor · локальные учётные данные"
+        "de": "Zugangsdaten lokal verwalten",
+        "en": "Manage credentials locally",
+        "ru": "Локально управлять учётными данными"
       },
       "description": {
         "de": "Windows-Projekt mit veröffentlichtem Quellstand, Desktop-Oberfläche und dokumentiertem Release-Prozess.",
@@ -117,9 +117,9 @@
       "id": "fortuna",
       "category": "software",
       "title": {
-        "de": "Fortuna · Möglichkeiten vergleichen",
-        "en": "Fortuna · compare options",
-        "ru": "Fortuna · сравнение вариантов"
+        "de": "Möglichkeiten vergleichen",
+        "en": "Compare options",
+        "ru": "Сравнивать варианты"
       },
       "description": {
         "de": "Browseroberfläche und JavaScript-Modelle zum Vergleichen selbst eingegebener Möglichkeiten. Der öffentliche Bestand ist eine Browserfassung.",
@@ -142,12 +142,12 @@
       "id": "ashbound-native",
       "category": "games",
       "title": {
-        "de": "ASHBOUND · native Spielwelt",
-        "en": "ASHBOUND · native game world",
-        "ru": "ASHBOUND · нативный игровой мир"
+        "de": "Eine Archivwelt erkunden",
+        "en": "Explore an archive world",
+        "ru": "Исследовать мир архива"
       },
       "description": {
-        "de": "Eigenständiges Unreal-Spiel in Entwicklung: Aschetal, Archiv, Zauber und Bücher im 3D-Raum. Die Windows-Vorschau v0.4.2 und der aktuelle Entwicklungszweig sind getrennte Stände.",
+        "de": "Eigenständiges Unreal-Spiel in Entwicklung: begehbare Landschaft, Archiv, Zauber und Bücher im 3D-Raum. Die Windows-Vorschau v0.4.2 und der aktuelle Entwicklungszweig sind getrennte Stände.",
         "en": "An independent Unreal game in development: an ash valley, archive, spells and in-world books. The Windows v0.4.2 preview and current development source are separate states.",
         "ru": "Самостоятельная игра Unreal в разработке: пепельная долина, архив, заклинания и книги в 3D-мире. Предварительная версия Windows v0.4.2 и текущие исходники относятся к разным состояниям."
       },
@@ -169,9 +169,9 @@
       "verification": "SOURCE_REVIEW_ONLY",
       "image": "/assets/ashbound-grimoire.png",
       "imageAlt": {
-        "de": "ASHBOUND: ein aufgeschlagenes Spielbuch im dreidimensionalen Archiv.",
-        "en": "ASHBOUND: an open in-world book in the three-dimensional archive.",
-        "ru": "ASHBOUND: открытая игровая книга в трёхмерном архиве."
+        "de": "Ein aufgeschlagenes Spielbuch im dreidimensionalen Archiv.",
+        "en": "An open in-world book in the three-dimensional archive.",
+        "ru": "Открытая игровая книга в трёхмерном архиве."
       },
       "imageSha256": "9346c84dd3a9886a3e4cf367f0ec2e638ca9d6c8445e2a263d206e2f8263126c",
       "incorporatesPurposeOfPR": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/pull/21"
@@ -180,9 +180,9 @@
       "id": "halveth-unreal",
       "category": "games",
       "title": {
-        "de": "ASTRALIS · native Spielwelt",
-        "en": "ASTRALIS · native game world",
-        "ru": "ASTRALIS · нативный игровой мир"
+        "de": "Räume und Bewegung in 3D erproben",
+        "en": "Explore spaces and movement in 3D",
+        "ru": "Исследовать пространство и движение в 3D"
       },
       "description": {
         "de": "Eigenständiger C++-Spielzweig für Unreal Engine. Einstieg, Entwicklungsstand und Build-Hinweise stehen beim Code.",
@@ -205,9 +205,9 @@
       "id": "halveth-realms",
       "category": "games",
       "title": {
-        "de": "Scarlet Garden · prozedurale Welten",
-        "en": "Scarlet Garden · procedural worlds",
-        "ru": "Scarlet Garden · процедурные миры"
+        "de": "Prozedurale Welten erzeugen",
+        "en": "Generate procedural worlds",
+        "ru": "Создавать процедурные миры"
       },
       "description": {
         "de": "Fantasy-Sandbox mit prozeduraler Weltgenerierung und experimentellen Dialogsystemen.",
@@ -230,9 +230,9 @@
       "id": "halveth-morrowind-genesis",
       "category": "games",
       "title": {
-        "de": "Morrowind · Werkzeuge für einen Umbau",
-        "en": "Morrowind · conversion tools",
-        "ru": "Morrowind · инструменты переработки"
+        "de": "Werkzeuge für einen Rollenspiel-Umbau",
+        "en": "Tools for a role-playing game conversion",
+        "ru": "Инструменты для преобразования ролевой игры"
       },
       "description": {
         "de": "OpenMW-bezogene Werkzeuge und Entwicklungsarbeit an einem Rollenspiel-Umbau. Das Projekt baut auf fremder Engine und Spielinhalten auf.",
@@ -255,14 +255,14 @@
       "id": "halveth-scarlet",
       "category": "software",
       "title": {
-        "de": "SCARLET · Zustände, Zeit und Varianten",
-        "en": "SCARLET · states, time and variants",
-        "ru": "SCARLET · состояния, время и варианты"
+        "de": "Zustände, Zeit und Varianten",
+        "en": "States, time and variants",
+        "ru": "Состояния, время и варианты"
       },
       "description": {
-        "de": "Text als Keim setzen, eine Variante ableiten, Zustände beobachten und das aktuelle Browsermodell als JSON mitnehmen. Eine lokale Zellsimulation macht Regeln sichtbar.",
-        "en": "Plant text as a seed, derive a variant, observe states and take the current browser model with you as JSON. A local cell simulation makes rules visible.",
-        "ru": "Задайте текст как зерно, создайте вариант, наблюдайте состояния и сохраните текущую модель браузера в JSON. Локальная клеточная симуляция показывает действие правил."
+        "de": "Text setzen, eine Variante ableiten, Zustände beobachten und als JSON mitnehmen. Lichtkörper zeigen die Entwicklung des lokalen Modells.",
+        "en": "Set text, derive a variant, observe states and take the result as JSON. Light bodies show how the local model evolves.",
+        "ru": "Задайте текст, создайте вариант, наблюдайте состояния и сохраните результат в JSON. Световые тела показывают развитие локальной модели."
       },
       "stage": {
         "de": "Lokale Browseranwendung",
@@ -270,8 +270,8 @@
         "ru": "Локальное браузерное приложение"
       },
       "repository": "https://github.com/Juri-Halveth/halveth-scarlet",
-      "revision": "3a70748b790e1c52142518ed6670b4579573a302",
-      "source": "https://github.com/Juri-Halveth/halveth-scarlet/tree/3a70748b790e1c52142518ed6670b4579573a302",
+      "revision": "a590ed6c35a9dd5fc89c259ef057bb143850bae5",
+      "source": "https://github.com/Juri-Halveth/halveth-scarlet/tree/a590ed6c35a9dd5fc89c259ef057bb143850bae5",
       "demo": "https://juri-halveth.github.io/halveth-scarlet/",
       "command": null,
       "verification": "SOURCE_REVIEW_ONLY"
@@ -280,9 +280,9 @@
       "id": "halveth-field-difference-lab",
       "category": "research",
       "title": {
-        "de": "Feldlabor · Bewegung und Differenzen",
-        "en": "Field lab · motion and differences",
-        "ru": "Полевая лаборатория · движение и различия"
+        "de": "Bewegung und Zustandsunterschiede",
+        "en": "Motion and state differences",
+        "ru": "Движение и различия состояний"
       },
       "description": {
         "de": "Interaktive Visualisierungen von Bewegung und Zustandsunterschieden in einem Browsermodell.",
@@ -305,14 +305,14 @@
       "id": "halveth-project0-keeper",
       "category": "research",
       "title": {
-        "de": "TRIAD · lokale Projektsteuerung",
-        "en": "TRIAD · local project control",
-        "ru": "TRIAD · локальное управление проектами"
+        "de": "Lokale Projekte steuern",
+        "en": "Coordinate local projects",
+        "ru": "Управлять локальными проектами"
       },
       "description": {
-        "de": "PowerShell-Werkzeuge und Zustandsdateien für die experimentelle TRIAD-Steuerung von ASTER, RACHEL und SHELLA.",
-        "en": "PowerShell tools and state files for the experimental TRIAD control plane of ASTER, RACHEL and SHELLA.",
-        "ru": "Инструменты PowerShell и файлы состояния для экспериментального управления TRIAD: ASTER, RACHEL и SHELLA."
+        "de": "PowerShell-Werkzeuge und Zustandsdateien für experimentelle lokale Auftrags- und Projektsteuerung.",
+        "en": "PowerShell tools and state files for experimental local task and project coordination.",
+        "ru": "Инструменты PowerShell и файлы состояния для экспериментального локального управления задачами и проектами."
       },
       "stage": {
         "de": "Experimenteller Werkzeugzweig",
@@ -330,9 +330,9 @@
       "id": "halveth-tron-security-lab",
       "category": "research",
       "title": {
-        "de": "TRON · Quorum-Modell im Forschungszweig",
-        "en": "TRON · quorum model on a research branch",
-        "ru": "TRON · модель кворума в исследовательской ветке"
+        "de": "Quorum und Verfügbarkeit vergleichen",
+        "en": "Compare quorum and availability",
+        "ru": "Сравнивать кворум и доступность"
       },
       "description": {
         "de": "Eigenes Offline-Modell für Quorumschnittmenge und Verfügbarkeit im offenen PR #1. Der Standardzweig enthält den java-tron-Fork; das Modell ist dort noch nicht integriert und bildet keinen laufenden TRON-Konsens ab.",
@@ -355,9 +355,9 @@
       "id": "c-drohne-red-room",
       "category": "research",
       "title": {
-        "de": "C-Drohne · Schnittstellenkonzept",
-        "en": "C-Drone · interface concept",
-        "ru": "C-Drone · концепция интерфейса"
+        "de": "Schwarmkonzepte und Schnittstellen erklären",
+        "en": "Explain swarm concepts and interfaces",
+        "ru": "Объяснять концепции роёв и интерфейсы"
       },
       "description": {
         "de": "Browseroberfläche, Visualisierung und Konzeptmaterial für Drohnen- und Schwarmideen. Schwerpunkt: Darstellung und Systementwurf.",

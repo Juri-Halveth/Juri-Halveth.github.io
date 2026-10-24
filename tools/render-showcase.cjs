@@ -12,7 +12,7 @@ const nativeMotionLabel={de:'Neue Wiese in Bewegung · GIF, 4 MB',en:'New meadow
 const words = {
   "de": {
     "eyebrow": "JURI / GESTALTUNG & SOFTWARE",
-    "title": "HALVETH.<br><em>Ein Raum für Möglichkeiten.</em>",
+    "title": "Zustände. Zeit.<br><em>Möglichkeiten entfalten.</em>",
     "intro": "Zustände verändern, Abläufe beobachten und Varianten vergleichen. Ich baue die Werkzeuge dazu: zum Ausprobieren, Lernen und Weiterentwickeln.",
     "try": "Funktionsraum öffnen",
     "code": "Zum Code",
@@ -46,7 +46,7 @@ const words = {
   },
   "en": {
     "eyebrow": "JURI / DESIGN & SOFTWARE",
-    "title": "HALVETH.<br><em>A space of possibilities.</em>",
+    "title": "States. Time.<br><em>Explore possibilities.</em>",
     "intro": "Change states, observe sequences and compare variants. I build the tools to try, learn and develop those ideas further.",
     "try": "Open the function space",
     "code": "View code",
@@ -80,7 +80,7 @@ const words = {
   },
   "ru": {
     "eyebrow": "JURI / ДИЗАЙН И ПРОГРАММЫ",
-    "title": "HALVETH.<br><em>Пространство возможностей.</em>",
+    "title": "Состояния. Время.<br><em>Открывайте возможности.</em>",
     "intro": "Меняйте состояния, наблюдайте последовательности и сравнивайте варианты. Я создаю инструменты, чтобы пробовать, учиться и развивать идеи.",
     "try": "Открыть пространство функций",
     "code": "Код",
@@ -119,7 +119,7 @@ function validateSceneCatalog(catalog,root) {
   if(catalog.scenes.map(s=>s.id).join('|')!=='astralis|scarlet|endeck')throw Error('Exact scene identities required');
   if(!Array.isArray(catalog.presentationOrder)||catalog.presentationOrder.length!==3||new Set(catalog.presentationOrder).size!==3||catalog.presentationOrder.some(id=>!catalog.scenes.some(scene=>scene.id===id)))throw Error('Complete unique presentation order required');
   const projects={astralis:'halveth-unreal',scarlet:'halveth-scarlet',endeck:'halveth-forschungslabor'};
-  const images={astralis:'/assets/scene-astralis.webp',scarlet:'/assets/scene-scarlet-functions.webp',endeck:'/assets/scene-endeck.webp'};
+  const images={astralis:'/assets/scene-astralis.webp',scarlet:'/assets/scene-state-space.webp',endeck:'/assets/scene-endeck.webp'};
   for(const scene of catalog.scenes){
     if(scene.project!==projects[scene.id])throw Error('Scene project identity mismatch');
     publicUrl(scene.href);publicUrl(scene.source);

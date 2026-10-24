@@ -267,9 +267,9 @@
         "ru": "Исходный проект, сборка Unreal и выходной пакет"
       },
       "summary": {
-        "de": "ASHBOUND ruft BuildCookRun mit Build, Cook und Stage auf, verlangt einen frischen Ausgabeordner und prüft anschließend den Launcherpfad.",
-        "en": "ASHBOUND invokes BuildCookRun with build, cook and stage, requires a fresh output directory and then checks the launcher path.",
-        "ru": "ASHBOUND вызывает BuildCookRun с build, cook и stage, требует новую папку вывода и проверяет путь запуска."
+        "de": "Das Buildskript ruft BuildCookRun mit Build, Cook und Stage auf, verlangt einen frischen Ausgabeordner und prüft anschließend den Launcherpfad.",
+        "en": "The build script invokes BuildCookRun with build, cook and stage, requires a fresh output directory and then checks the launcher path.",
+        "ru": "Скрипт сборки вызывает BuildCookRun с build, cook и stage, требует новую папку вывода и проверяет путь запуска."
       },
       "scope": {
         "de": "Buildskript gelesen; ein neuer vollständiger Enginebuild ist hierfür nicht ausgeführt. Die veröffentlichte Vorschau hat einen eigenen Versionsstand.",
@@ -324,9 +324,9 @@
         "ru": "Введённые варианты, веса и отображение результата"
       },
       "summary": {
-        "de": "Fortuna vergleicht vollständig eingegebene Optionen. Fehlende Werte bleiben offen; gleiche Stimmen erzeugen einen Gleichstand. Tests prüfen beide Fälle.",
-        "en": "Fortuna compares fully specified options. Missing values remain open; equal votes produce a tie. Tests cover both cases.",
-        "ru": "Fortuna сравнивает полностью заданные варианты. Пропущенные значения остаются открытыми; равные голоса дают ничью. Оба случая проверяются."
+        "de": "Das Entscheidungsmodell vergleicht vollständig eingegebene Optionen. Fehlende Werte bleiben offen; gleiche Stimmen erzeugen einen Gleichstand. Tests prüfen beide Fälle.",
+        "en": "The decision model compares fully specified options. Missing values remain open; equal votes produce a tie. Tests cover both cases.",
+        "ru": "Модель решений сравнивает полностью заданные варианты. Пропущенные значения остаются открытыми; равные голоса дают ничью. Оба случая проверяются."
       },
       "scope": {
         "de": "Ein gemeinsamer lokaler Algorithmus mit deklarierten Profilgewichten.",
@@ -586,9 +586,9 @@
         "ru": "Рабочее дерево Git, сборка сайта и байты артефакта"
       },
       "summary": {
-        "de": "SCARLET bildet einen Digest über sortierte Dateipfade und exakte Buildbytes. Der Test erkennt veränderte und zusätzlich eingeschleuste Ausgabedateien sowie einen schmutzigen Quellbaum.",
-        "en": "SCARLET digests sorted paths and exact output bytes. The test detects changed and additional output files and a dirty source tree.",
-        "ru": "SCARLET вычисляет дайджест упорядоченных путей и точных байтов сборки. Тест выявляет изменения, лишние файлы вывода и изменённое дерево исходников."
+        "de": "Die Buildprüfung bildet einen Digest über sortierte Dateipfade und exakte Buildbytes. Der Test erkennt veränderte und zusätzlich eingeschleuste Ausgabedateien sowie einen schmutzigen Quellbaum.",
+        "en": "The build check digests sorted paths and exact output bytes. The test detects changed and additional output files and a dirty source tree.",
+        "ru": "Проверка сборки вычисляет дайджест упорядоченных путей и точных байтов сборки. Тест выявляет изменения, лишние файлы вывода и изменённое дерево исходников."
       },
       "scope": {
         "de": "Integritätsprüfung des gebundenen Website-Artefakts und seines Quellstands.",

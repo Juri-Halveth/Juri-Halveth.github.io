@@ -42,12 +42,12 @@
       "rights": "Source project notices remain applicable. Screenshot, conversion and publication create no expanded rights."
     },
     {
-      "path": "assets/scene-scarlet-functions.webp",
+      "path": "assets/scene-state-space.webp",
       "sourceUrl": "https://juri-halveth.github.io/halveth-scarlet/",
-      "sourceRevision": "3a70748b790e1c52142518ed6670b4579573a302",
-      "recordedAt": "2026-10-24T15:58:30.354Z",
-      "sha256": "93e98d5896c34034adc89b529b27bbb3de4c52830b7a0a73d78037edb44b39b7",
-      "sourceSha256": "9a5eac855c2503ff43948b9b7f17df33833ffceabd01f09fb29e9434c43db200",
+      "sourceRevision": "a590ed6c35a9dd5fc89c259ef057bb143850bae5",
+      "recordedAt": "2026-10-24T17:19:32.974Z",
+      "sha256": "8a137c8e5bbaee8b869c2230554274597ef38d9ee08bd9771f4b1b5a41a1d48e",
+      "sourceSha256": "cead1912da3594652e30f08e3e1f8658fc036d9b11c781c85f9846af205323ab",
       "transfer": "BROWSER_SCREENSHOT",
       "conversion": {
         "name": "PIXEL_CROP_AND_WEBP",
@@ -58,15 +58,15 @@
         "sourceHeight": 990,
         "crop": {
           "x": 28,
-          "y": 5,
+          "y": 291,
           "width": 1369,
-          "height": 624,
+          "height": 639,
           "coordinateSpace": "SOURCE_IMAGE_PIXELS"
         },
         "quality": 84,
         "method": 6
       },
-      "context": "Actual browser capture of local text-state operations and a separate rule-based cell model. Public build metadata names the source revision; the screenshot alone does not establish source-build equivalence.",
+      "context": "Public browser capture of local text-state operations and their spatial light rendering. Source/build evidence and timed screenshot remain separate.",
       "rights": "Source project notices remain applicable. Screenshot, conversion and publication create no expanded rights."
     },
     {

@@ -4,8 +4,8 @@
 
 [Portfolio öffnen](https://juri-halveth.github.io/) · [Projekte](https://juri-halveth.github.io/arbeiten/) · [Technik & Code](https://juri-halveth.github.io/koennen/)
 
-Der Einstieg zeigt, welche Funktionen bedienbar sind: Zustände und Varianten
-in SCARLET, Beobachtungsvergleich in ENDECK und ASTRALIS als räumliche Anwendung.
+Der Einstieg zeigt bedienbare Funktionen für Textzustände, Varianten,
+Beobachtungsvergleich und räumliche Anwendungen.
 Direkt auf der Seite berechnet JavaScript zwei Ansichten derselben vier Punkte.
 Zweck, Modellregeln, lokale Ausführung und mögliche Anwendung bleiben erkennbar.
 Die Präsentationsreihenfolge ist getrennt von den unveränderten Quellpaket-IDs.
@@ -65,7 +65,7 @@ trennt diese Ergebnisse vom aktuellen lokalen Lauf.
 `/forschung/` zeigt den statischen Public-Research-OS-Index: vier Projekte,
 gebundene README-Quellen und explizite Beziehungen. Er startet weder die
 verlinkten Produkte noch den externen Importer. Der Build verwendet separat
-den lokalen ENDECK-Modellcode zur SVG-Erzeugung. Forschungsseiten betten ihre
+den lokalen Geometriemodell zur SVG-Erzeugung. Forschungsseiten betten ihre
 Styles mit CSP-Hash ein; Navigation und Ressourcen bleiben relativ.
 
 ## Zusammenarbeit und Rechte

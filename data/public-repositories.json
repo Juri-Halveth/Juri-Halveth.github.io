@@ -1,5 +1,5 @@
 {
-  "schema": "halveth.public-repositories.v1",
+  "schema": "halveth.public-repositories.v2",
   "observedAt": "2026-10-24T14:16:03.641074+00:00",
   "source": "https://github.com/Juri-Halveth?tab=repositories",
   "coverage": "Public repositories returned by the owner repository API at observation time; not a full security audit.",
@@ -22,6 +22,11 @@
         "revision": "89398fccf993ad361a5230a6adefb8b559f547d8",
         "classification": "UNASSIGNED_GENERAL_REUSE",
         "scope": "Bound license-surface snapshot; not proof of title or a new licence grant."
+      },
+      "displayTitle": {
+        "de": "Schwarmkonzepte und Schnittstellen erklären",
+        "en": "Explain swarm concepts and interfaces",
+        "ru": "Объяснять концепции роёв и интерфейсы"
       }
     },
     {
@@ -42,6 +47,11 @@
         "revision": "247d6d4d4fb029571af4da591675dc3650cafe44",
         "classification": "UNASSIGNED_OWN_WORK_WITH_PIRL_AND_OSS_COMPONENTS",
         "scope": "Bound license-surface snapshot; not proof of title or a new licence grant."
+      },
+      "displayTitle": {
+        "de": "Möglichkeiten vergleichen",
+        "en": "Compare options",
+        "ru": "Сравнивать варианты"
       }
     },
     {
@@ -62,6 +72,11 @@
         "revision": "51cfbbdce9efcb00def308e5a399f8e0c7d6a233",
         "classification": "COMMERCIAL_PERMISSION_RESERVED_GENERAL_GRANT_UNLOCATED",
         "scope": "Bound license-surface snapshot; not proof of title or a new licence grant."
+      },
+      "displayTitle": {
+        "de": "Cannabisreform mit Quellen und Messplan",
+        "en": "Cannabis reform with sources and a measurement plan",
+        "ru": "Реформа каннабиса: источники и план измерений"
       }
     },
     {
@@ -82,6 +97,11 @@
         "revision": "572734742951819993b10d89b22591951a49dbc8",
         "classification": "APACHE_2_ORIGINAL_WORK",
         "scope": "Bound license-surface snapshot; not proof of title or a new licence grant."
+      },
+      "displayTitle": {
+        "de": "Bewegung und Zustandsunterschiede",
+        "en": "Motion and state differences",
+        "ru": "Движение и различия состояний"
       }
     },
     {
@@ -102,6 +122,11 @@
         "revision": "8d6d53bd67d548c1f66923fa2eefa6295a13668b",
         "classification": "MIT_CC_BY_CC0_ACTIVE_MAP_WITH_UNASSIGNED_LICENSE_TEMPLATES",
         "scope": "Bound license-surface snapshot; not proof of title or a new licence grant."
+      },
+      "displayTitle": {
+        "de": "Modelle und Gegenproben ausführen",
+        "en": "Run models and counterexamples",
+        "ru": "Выполнять модели и контрпримеры"
       }
     },
     {
@@ -122,6 +147,11 @@
         "revision": "6c9d981379c75ac822f3538f9508f3ed0b70230f",
         "classification": "MIT_CODE_DOCS_CC0_DESIGNATED_ART_EXTERNAL_ENGINE_GAME_RIGHTS",
         "scope": "Bound license-surface snapshot; not proof of title or a new licence grant."
+      },
+      "displayTitle": {
+        "de": "Werkzeuge für einen Rollenspiel-Umbau",
+        "en": "Tools for a role-playing game conversion",
+        "ru": "Инструменты для преобразования ролевой игры"
       }
     },
     {
@@ -142,6 +172,11 @@
         "revision": "aee4cfdaafdaad2c8cfcb829b572c5dabec195df",
         "classification": "GENERAL_REUSE_GRANT_NOT_FOUND_IN_REVIEWED_SURFACES",
         "scope": "Bound license-surface snapshot; not proof of title or a new licence grant."
+      },
+      "displayTitle": {
+        "de": "Lokale Projekte steuern",
+        "en": "Coordinate local projects",
+        "ru": "Управлять локальными проектами"
       }
     },
     {
@@ -162,6 +197,11 @@
         "revision": "c353bf650ecd9aa1bc5dfeaf10649c601f0c39a4",
         "classification": "MIT_ORIGINAL_CODE_WITH_COMPONENT_NOTICES",
         "scope": "Bound license-surface snapshot; not proof of title or a new licence grant."
+      },
+      "displayTitle": {
+        "de": "Prozedurale Welten erzeugen",
+        "en": "Generate procedural worlds",
+        "ru": "Создавать процедурные миры"
       }
     },
     {
@@ -171,17 +211,22 @@
       "fork": false,
       "archived": false,
       "purpose": {
-        "de": "Text als Keim setzen, eine Variante ableiten, Zustände beobachten und das aktuelle Browsermodell als JSON mitnehmen. Eine lokale Zellsimulation macht Regeln sichtbar.",
-        "en": "Plant text as a seed, derive a variant, observe states and take the current browser model with you as JSON. A local cell simulation makes rules visible.",
-        "ru": "Задайте текст как зерно, создайте вариант, наблюдайте состояния и сохраните текущую модель браузера в JSON. Локальная клеточная симуляция показывает действие правил."
+        "de": "Text setzen, eine Variante ableiten, Zustände beobachten und als JSON mitnehmen. Lichtkörper zeigen die Entwicklung des lokalen Modells.",
+        "en": "Set text, derive a variant, observe states and take the result as JSON. Light bodies show how the local model evolves.",
+        "ru": "Задайте текст, создайте вариант, наблюдайте состояния и сохраните результат в JSON. Световые тела показывают развитие локальной модели."
       },
-      "revision": "3a70748b790e1c52142518ed6670b4579573a302",
-      "revisionObservedAt": "2026-10-24T16:01:23.031258+00:00",
-      "source": "https://github.com/Juri-Halveth/halveth-scarlet/tree/3a70748b790e1c52142518ed6670b4579573a302",
+      "revision": "a590ed6c35a9dd5fc89c259ef057bb143850bae5",
+      "revisionObservedAt": "2026-10-24T17:19:41.164053+00:00",
+      "source": "https://github.com/Juri-Halveth/halveth-scarlet/tree/a590ed6c35a9dd5fc89c259ef057bb143850bae5",
       "licenseReview": {
         "revision": "c339043258a59a55ddc1f3ad64d17160c18b9672",
         "classification": "PIRL_ORIGINAL_CONTRIBUTIONS_WITH_EXPLICIT_THIRD_PARTY_EXCLUSIONS",
         "scope": "Bound license-surface snapshot; not proof of title or a new licence grant."
+      },
+      "displayTitle": {
+        "de": "Zustände, Zeit und Varianten",
+        "en": "States, time and variants",
+        "ru": "Состояния, время и варианты"
       }
     },
     {
@@ -202,6 +247,11 @@
         "revision": "05a6aa5d2fc8c58af9959c4b88dd4da6685d5e64",
         "classification": "VERSION_SPLIT_MIT_AND_NEW_PIRL_WITH_SUMMARY_AMBIGUITY",
         "scope": "Bound license-surface snapshot; not proof of title or a new licence grant."
+      },
+      "displayTitle": {
+        "de": "Zugangsdaten lokal verwalten",
+        "en": "Manage credentials locally",
+        "ru": "Локально управлять учётными данными"
       }
     },
     {
@@ -222,6 +272,11 @@
         "revision": "d25e104e6b887bc4d782185a96ecf3c4eb782d8c",
         "classification": "TRON_UPSTREAM_LGPL3_FORK",
         "scope": "Bound license-surface snapshot; not proof of title or a new licence grant."
+      },
+      "displayTitle": {
+        "de": "Quorum und Verfügbarkeit vergleichen",
+        "en": "Compare quorum and availability",
+        "ru": "Сравнивать кворум и доступность"
       }
     },
     {
@@ -242,6 +297,11 @@
         "revision": "44ccf28ffb80829def79a4f44ae5c6bcf8646de6",
         "classification": "MIT_ORIGINAL_CODE_CC0_ASSETS_SEPARATE_EPIC_ENGINE",
         "scope": "Bound license-surface snapshot; not proof of title or a new licence grant."
+      },
+      "displayTitle": {
+        "de": "Räume und Bewegung in 3D erproben",
+        "en": "Explore spaces and movement in 3D",
+        "ru": "Исследовать пространство и движение в 3D"
       }
     },
     {
@@ -262,6 +322,11 @@
         "revision": "42b80b5051336b43427e82caccfc5840ee131f86",
         "classification": "PROFILE_NO_GENERAL_REUSE_GRANT_FOUND",
         "scope": "Bound license-surface snapshot; not proof of title or a new licence grant."
+      },
+      "displayTitle": {
+        "de": "Arbeitsproben und technische Fähigkeiten",
+        "en": "Work samples and technical skills",
+        "ru": "Примеры работы и технические навыки"
       }
     },
     {
@@ -282,6 +347,11 @@
         "revision": "896e61e5a05f3efc4106d18c31c7f96513bd8adf",
         "classification": "PIRL_PORTAL_WITH_MIT_MOTION_AND_LANGUAGE_EXCEPTIONS",
         "scope": "Bound license-surface snapshot; not proof of title or a new licence grant."
+      },
+      "displayTitle": {
+        "de": "Bedienbare Projekte und Quellnachweise",
+        "en": "Usable projects and source evidence",
+        "ru": "Доступные приложения и подтверждённые источники"
       }
     },
     {
@@ -302,6 +372,11 @@
         "revision": "a1cd5b3b9e3b8b2debb5f37346411dc8b1fb116d",
         "classification": "VERSION_SPLIT_ISC_PIRL_WITH_FILE_SPECIFIC_MIT",
         "scope": "Bound license-surface snapshot; not proof of title or a new licence grant."
+      },
+      "displayTitle": {
+        "de": "Lernpfade, Übungen und Fortschritt",
+        "en": "Learning paths, exercises and progress",
+        "ru": "Учебные маршруты, упражнения и прогресс"
       }
     },
     {
@@ -322,6 +397,11 @@
         "revision": "1bfaef54985826fcc00250ce5b29372cd05af21f",
         "classification": "PIRL_NAMED_NEW_CONTRIBUTIONS_OLDER_BASE_UNRESOLVED",
         "scope": "Bound license-surface snapshot; not proof of title or a new licence grant."
+      },
+      "displayTitle": {
+        "de": "Öffentliche Wallet-Adressen ansehen",
+        "en": "View public wallet addresses",
+        "ru": "Просматривать публичные адреса кошельков"
       }
     },
     {
@@ -342,6 +422,11 @@
         "revision": "5700fb936bb7d491f5caddb28b7765e17680b348",
         "classification": "GENERAL_REUSE_GRANT_NOT_FOUND_IN_REVIEWED_SURFACES",
         "scope": "Bound license-surface snapshot; not proof of title or a new licence grant."
+      },
+      "displayTitle": {
+        "de": "Oberflächen bearbeiten und ausführen",
+        "en": "Edit and run interfaces",
+        "ru": "Редактировать и запускать интерфейсы"
       }
     },
     {
@@ -362,6 +447,11 @@
         "revision": "539d954856349bd792f9abff7abc0b718ebbbfef",
         "classification": "ISC_ORIGINAL_PLATFORM_AND_LESSONS",
         "scope": "Bound license-surface snapshot; not proof of title or a new licence grant."
+      },
+      "displayTitle": {
+        "de": "Digitale Grundlagen lernen",
+        "en": "Learn digital foundations",
+        "ru": "Изучать цифровые основы"
       }
     }
   ],
