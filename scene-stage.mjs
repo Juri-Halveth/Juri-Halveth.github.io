@@ -1,7 +1,7 @@
 // Original presentation controller. Source model: MIT; see LICENSES.md.
 import {source,observeXY,distinct,project} from './assets/endeck-model.mjs';
 const NS='http://www.w3.org/2000/svg';
-const messages={de:(a,b)=>`${a} Bildort${a===1?'':'e'} · ${b} Raumorte · 4 erhaltene IDs`,en:(a,b)=>`${a} image position${a===1?'':'s'} · ${b} spatial positions · 4 retained IDs`,ru:(a,b)=>`${a} положений на изображении · ${b} в пространстве · 4 сохранённых ID`};
+const messages={de:(a,b)=>`${a} Bildort${a===1?'':'e'} · ${b} Raumorte · 4 erhaltene IDs`,en:(a,b)=>`${a} image position${a===1?'':'s'} · ${b} spatial positions · 4 retained IDs`,ru:(a,b)=>`${a} ${a===1?'место':'места'} на изображении · ${b} места в пространстве · 4 сохранённых ID`};
 export function viewAt(time){
   const points=source('projection',time);
   return {flat:observeXY(points),space:points.map(p=>project(p,64)),imagePositions:distinct(points,['x','y']),spacePositions:distinct(points,['x','y','z'])};

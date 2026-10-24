@@ -23,10 +23,16 @@ test('missing scenes, languages, source revisions and executable URLs fail close
  for(const change of changes){const altered=structuredClone(catalog);change(altered);assert.throws(()=>validateSceneCatalog(altered));}
  assert.throws(()=>renderHero(catalog,'unknown'),/Unknown/);
 });
+
+test('scene identity and native source revision stay coupled before HTML emission',()=>{
+ for(const change of [d=>d.scenes[0].project='other" data-fixture="x',d=>d.scenes[0].source=d.scenes[0].source.replace(d.scenes[0].revision,'f'.repeat(40)),d=>d.scenes[2].source='https://juri-halveth.github.io/fortuna/']){
+  const altered=structuredClone(catalog);change(altered);assert.throws(()=>validateSceneCatalog(altered));
+ }
+});
 test('presentation strings are escaped while the model has native usable controls',()=>{
  const altered=structuredClone(catalog);altered.scenes[0].title.de='<script>fake proof</script>';
  const doc=new JSDOM(renderHero(altered,'de')+renderSceneShowcase(altered,'de')).window.document;
- assert.equal(doc.querySelectorAll('script,iframe').length,0);assert.equal(doc.querySelector('img').alt,'<script>fake proof</script>');
+  assert.equal(doc.querySelectorAll('script,iframe').length,0);assert.equal(doc.querySelector('img').alt,catalog.scenes[0].alt.de);assert.equal(doc.querySelector('.scene-caption strong').textContent,'<script>fake proof</script>');
  assert.equal(doc.querySelectorAll('button').length,2);assert.equal(doc.querySelector('label[for="scene-time"]').htmlFor,'scene-time');
  assert.equal(doc.querySelectorAll('svg circle').length,8);
  assert.equal(new Set([...doc.querySelectorAll('[id]')].map(x=>x.id)).size,doc.querySelectorAll('[id]').length);

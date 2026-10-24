@@ -1,4 +1,5 @@
 'use strict';
+const {githubRepository,sourcePath,encodeSourcePath}=require('./validate-projects.cjs');
 // Original portfolio evidence view; applicable terms: LICENSES.md.
 const esc=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const words={
@@ -10,10 +11,10 @@ function validateWorkSamples(data){
  if(data.schemaVersion!==1||!Number.isFinite(Date.parse(data.observedAt))||data.samples?.length!==3)throw Error('Three dated work samples required');
  if(new Set(data.samples.map(s=>s.id)).size!==3)throw Error('Unique samples required');
  for(const s of data.samples){
-  if(!/^[a-z0-9-]+$/.test(s.id)||!/^Juri-Halveth\/[A-Za-z0-9_.-]+$/.test(s.repository)||!/^[a-f0-9]{40}$/.test(s.revision))throw Error('Pinned source required');
+  if(!/^[a-z0-9-]+$/.test(s.id)||!githubRepository(s.repository)||!/^[a-f0-9]{40}$/.test(s.revision))throw Error('Pinned source required');
   if(s.ci?.headSha!==s.revision||s.ci?.conclusion!=='success'||!Number.isSafeInteger(s.ci?.id)||!Number.isFinite(Date.parse(s.ci?.updatedAt)))throw Error('CI must bind the same revision');
   if(!['LOCAL_MODEL_TESTS','BROWSER_INTERACTION_CHECK','SOURCE_REVIEW_ONLY','LOCAL_CPP_TESTS'].includes(s.localCheck))throw Error('Explicit check type required');
-  for(const field of ['sourcePath','testPath'])if(!s[field]||s[field].includes('..')||/[:\\?#]/.test(s[field]))throw Error('Repository-relative source path required');
+  for(const field of ['sourcePath','testPath'])if(!sourcePath(s[field]))throw Error('Repository-relative source path required');
   if(s.demo){let u;try{u=new URL(s.demo);}catch{throw Error('Owned demo required');}if(u.origin!=='https://juri-halveth.github.io'||u.username||u.password||/["<>\r\n]/.test(s.demo))throw Error('Owned demo required');}
   if(!s.commands)throw Error('Reproduction required');
   for(const lang of Object.keys(words))for(const key of ['title','problem','input','result','counterexample','reuse','limit'])if(!s[lang]?.[key])throw Error('Complete localized case required');
@@ -24,7 +25,7 @@ function renderWorkSamples(data,lang){
  validateWorkSamples(data);const t=words[lang];if(!t)throw Error('Unknown evidence language');
  const prefix=lang==='de'?'/':'/'+lang+'/';
  return `<section class="shell section evidence-intro"><p class="eyebrow">HALVETH / ${t.nav}</p><h1>${t.heading}</h1><p class="lead">${t.lead}</p><p class="source-caption">${t.date}: ${esc(data.observedAt)} · <a href="/data/work-samples.json">JSON</a></p><div class="map-jumps">${data.samples.map((s,i)=>`<a href="#${s.id}">0${i+1} / ${esc(s[lang].title)}</a>`).join('')}</div></section>`+
- data.samples.map((s,i)=>{const c=s[lang],base=`https://github.com/${s.repository}`,blob=`${base}/blob/${s.revision}/`;return `<section class="${i%2?'soft-section':''}"><article class="shell section evidence-case" id="${s.id}"><p class="eyebrow">0${i+1} / ${esc(s.repository)}</p><h2>${esc(c.title)}</h2><div class="evidence-grid">${['problem','input','result','counterexample','reuse','limit'].map((k,j)=>`<div><h3>${t.labels[j]}</h3><p>${esc(c[k])}</p></div>`).join('')}</div><p class="check-type">${t.status}: <code>${esc(s.localCheck)}</code></p><div class="card-links">${s.demo?`<a class="button" href="${esc(s.demo)}">${t.demo} ↗</a>`:''}<a href="${blob+esc(s.sourcePath)}">${t.source} ↗</a><a href="${blob+esc(s.testPath)}">${t.tests} ↗</a></div><p class="evidence-ci"><a href="${base}/actions/runs/${s.ci.id}">${t.ci}: ${esc(s.ci.name)} · success ↗</a><br><span>${esc(s.ci.updatedAt)} · <code>${s.revision}</code></span></p><details><summary>${t.commands}</summary><pre><code>${esc(s.commands)}</code></pre></details></article></section>`;}).join('')+
+ data.samples.map((s,i)=>{const c=s[lang],base=`https://github.com/${s.repository}`,blob=`${base}/blob/${s.revision}/`;return `<section class="${i%2?'soft-section':''}"><article class="shell section evidence-case" id="${s.id}"><p class="eyebrow">0${i+1} / ${esc(s.repository)}</p><h2>${esc(c.title)}</h2><div class="evidence-grid">${['problem','input','result','counterexample','reuse','limit'].map((k,j)=>`<div><h3>${t.labels[j]}</h3><p>${esc(c[k])}</p></div>`).join('')}</div><p class="check-type">${t.status}: <code>${esc(s.localCheck)}</code></p><div class="card-links">${s.demo?`<a class="button" href="${esc(s.demo)}">${t.demo} ↗</a>`:''}<a href="${blob+esc(encodeSourcePath(s.sourcePath))}">${t.source} ↗</a><a href="${blob+esc(encodeSourcePath(s.testPath))}">${t.tests} ↗</a></div><p class="evidence-ci"><a href="${base}/actions/runs/${s.ci.id}">${t.ci}: ${esc(s.ci.name)} · success ↗</a><br><span>${esc(s.ci.updatedAt)} · <code>${s.revision}</code></span></p><details><summary>${t.commands}</summary><pre><code>${esc(s.commands)}</code></pre></details></article></section>`;}).join('')+
  `<section class="shell section evidence-notes"><h2>${t.role}</h2><p>${t.roles}</p><h2>${t.fork}</h2><p>${t.forkText}</p><p><a href="https://github.com/Juri-Halveth/halveth-tron-security-lab/commit/0472a5b9551ac838a2feecee2de1b1fac3f3fba9">${t.contribution} ↗</a></p><a class="button" href="${prefix}koennen/">${t.more} ↗</a></section>`;
 }
 module.exports={validateWorkSamples,renderWorkSamples,evidenceWords:words};

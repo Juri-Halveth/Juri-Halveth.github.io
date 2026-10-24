@@ -1,6 +1,6 @@
 {
   "schema": "halveth.technical-portfolio.v2",
-  "sourceDate": "2026-10-20",
+  "sourceDate": "2026-10-24",
   "projects": [
     {
       "id": "halveth-forschungslabor",
@@ -11,9 +11,9 @@
         "ru": "Исследовательская лаборатория"
       },
       "description": {
-        "de": "Zehn lokale JavaScript- und Python-Module: Bildvergleich, Quellenpakete, Optik, Ereignisse und Regeln.",
-        "en": "Ten local JavaScript and Python modules: image comparison, source packets, optics, events and rules.",
-        "ru": "Десять локальных модулей JavaScript и Python: сравнение изображений, пакеты источников, оптика, события и правила."
+        "de": "Lokale JavaScript- und Python-Modelle: Perspektiven, Quellenpakete, Optik, Ereignisse und Regeln. Mit eigenem ausführbarem Prüfweg.",
+        "en": "Local JavaScript and Python models for perspective, source packets, optics, events and rules, with an executable test path.",
+        "ru": "Локальные модели JavaScript и Python: перспективы, пакеты источников, оптика, события и правила. С исполняемыми проверками."
       },
       "stage": {
         "de": "Lokal geprüftes Modell",
@@ -21,11 +21,22 @@
         "ru": "Локально проверенная модель"
       },
       "repository": "https://github.com/Juri-Halveth/halveth-forschungslabor",
-      "revision": "c6008ab5f8847921dc140d973b9a526750a89933",
-      "source": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/c6008ab5f8847921dc140d973b9a526750a89933/scripts/check-modules.mjs",
+      "revision": "8d6d53bd67d548c1f66923fa2eefa6295a13668b",
+      "source": "https://github.com/Juri-Halveth/halveth-forschungslabor/tree/8d6d53bd67d548c1f66923fa2eefa6295a13668b",
       "demo": null,
       "command": "npm test",
-      "verification": "LOCAL_MODEL_TESTS"
+      "verification": "LOCAL_MODEL_TESTS",
+      "verificationRecord": {
+        "revision": "8d6d53bd67d548c1f66923fa2eefa6295a13668b",
+        "observedAt": "2026-10-24T13:46:57.108617+00:00",
+        "command": "npm test",
+        "javascriptTests": 156,
+        "pythonTests": 49,
+        "scope": "Fresh isolated archive of this exact revision; supplied local model contracts only.",
+        "recordedAt": "2026-10-24T14:04:02.933063+00:00",
+        "timeBasis": "Local completed test-log write timestamp; not source-commit event time.",
+        "localLogSha256": "df3b83bb663113bca20a764b48cf01240b62de2cd85022752abc4c1ea6ba9741"
+      }
     },
     {
       "id": "mein-lernportal",
@@ -46,8 +57,8 @@
         "ru": "Веб-приложение"
       },
       "repository": "https://github.com/Juri-Halveth/mein-lernportal",
-      "revision": "539d954856349bd792f9abff7abc0b718ebbbfef",
-      "source": "https://github.com/Juri-Halveth/mein-lernportal/tree/539d954856349bd792f9abff7abc0b718ebbbfef",
+      "revision": "561002e15d226015370c6b5def85b88f76ff9d39",
+      "source": "https://github.com/Juri-Halveth/mein-lernportal/tree/561002e15d226015370c6b5def85b88f76ff9d39",
       "demo": "https://juri-halveth.github.io/mein-lernportal/",
       "command": null,
       "verification": "SOURCE_REVIEW_ONLY"
@@ -71,8 +82,8 @@
         "ru": "Веб-приложение"
       },
       "repository": "https://github.com/Juri-Halveth/lernstudio",
-      "revision": "7e643dcb1e477c8ccd24ae0e28ad8b69536bf9e6",
-      "source": "https://github.com/Juri-Halveth/lernstudio/tree/7e643dcb1e477c8ccd24ae0e28ad8b69536bf9e6",
+      "revision": "ac941d9bda5a32acf937618c532d9f56106d7727",
+      "source": "https://github.com/Juri-Halveth/lernstudio/tree/ac941d9bda5a32acf937618c532d9f56106d7727",
       "demo": "https://juri-halveth.github.io/lernstudio/",
       "command": null,
       "verification": "SOURCE_REVIEW_ONLY"
@@ -96,8 +107,8 @@
         "ru": "Настольный проект"
       },
       "repository": "https://github.com/Juri-Halveth/halveth-tresor",
-      "revision": "66da64abfc58cd8cce05f935197aa51e31e232f2",
-      "source": "https://github.com/Juri-Halveth/halveth-tresor/tree/66da64abfc58cd8cce05f935197aa51e31e232f2",
+      "revision": "72a257bf93c3daaf7ae6145cc798d48a8866467f",
+      "source": "https://github.com/Juri-Halveth/halveth-tresor/tree/72a257bf93c3daaf7ae6145cc798d48a8866467f",
       "demo": null,
       "command": null,
       "verification": "SOURCE_REVIEW_ONLY"
@@ -121,8 +132,8 @@
         "ru": "Браузерный прототип"
       },
       "repository": "https://github.com/Juri-Halveth/fortuna",
-      "revision": "438f6ba7557924aa011cc0d4f26d4acb4bc4d77d",
-      "source": "https://github.com/Juri-Halveth/fortuna/tree/438f6ba7557924aa011cc0d4f26d4acb4bc4d77d",
+      "revision": "af8eb2ae4d78e2d34ab0b59d6ae089f179b882e6",
+      "source": "https://github.com/Juri-Halveth/fortuna/tree/af8eb2ae4d78e2d34ab0b59d6ae089f179b882e6",
       "demo": "https://juri-halveth.github.io/fortuna/",
       "command": null,
       "verification": "SOURCE_REVIEW_ONLY"
@@ -169,9 +180,9 @@
       "id": "halveth-unreal",
       "category": "games",
       "title": {
-        "de": "Portal Garden · Unreal-Spielprototyp",
-        "en": "Portal Garden · Unreal game prototype",
-        "ru": "Portal Garden · прототип игры Unreal"
+        "de": "ASTRALIS · native Spielwelt",
+        "en": "ASTRALIS · native game world",
+        "ru": "ASTRALIS · нативный игровой мир"
       },
       "description": {
         "de": "Eigenständiger C++-Spielzweig für Unreal Engine. Einstieg, Entwicklungsstand und Build-Hinweise stehen beim Code.",
@@ -184,8 +195,8 @@
         "ru": "Прототип игры"
       },
       "repository": "https://github.com/Juri-Halveth/halveth-unreal",
-      "revision": "44ccf28ffb80829def79a4f44ae5c6bcf8646de6",
-      "source": "https://github.com/Juri-Halveth/halveth-unreal/tree/44ccf28ffb80829def79a4f44ae5c6bcf8646de6",
+      "revision": "5c2260f85d5275c15082c5c7d38ae51a143a5688",
+      "source": "https://github.com/Juri-Halveth/halveth-unreal/tree/5c2260f85d5275c15082c5c7d38ae51a143a5688",
       "demo": null,
       "command": null,
       "verification": "SOURCE_REVIEW_ONLY"
@@ -209,8 +220,8 @@
         "ru": "Прототип игры"
       },
       "repository": "https://github.com/Juri-Halveth/halveth-realms",
-      "revision": "2c0af088f6cb58d020a4f9a30670964ee0a4efd7",
-      "source": "https://github.com/Juri-Halveth/halveth-realms/tree/2c0af088f6cb58d020a4f9a30670964ee0a4efd7",
+      "revision": "019ff203ed4636b48fb6a2325f6af80b3f935c35",
+      "source": "https://github.com/Juri-Halveth/halveth-realms/tree/019ff203ed4636b48fb6a2325f6af80b3f935c35",
       "demo": null,
       "command": null,
       "verification": "SOURCE_REVIEW_ONLY"
@@ -234,8 +245,8 @@
         "ru": "Переработка в разработке"
       },
       "repository": "https://github.com/Juri-Halveth/halveth-morrowind-genesis",
-      "revision": "6c9d981379c75ac822f3538f9508f3ed0b70230f",
-      "source": "https://github.com/Juri-Halveth/halveth-morrowind-genesis/tree/6c9d981379c75ac822f3538f9508f3ed0b70230f",
+      "revision": "ebca40a1a9434da1ef194749dc546da5d722687e",
+      "source": "https://github.com/Juri-Halveth/halveth-morrowind-genesis/tree/ebca40a1a9434da1ef194749dc546da5d722687e",
       "demo": null,
       "command": null,
       "verification": "SOURCE_REVIEW_ONLY"
@@ -259,8 +270,8 @@
         "ru": "Интерактивные прототипы"
       },
       "repository": "https://github.com/Juri-Halveth/halveth-scarlet",
-      "revision": "b768ca093d9bd68b1453a8ccc5b6d02ecaa1eb07",
-      "source": "https://github.com/Juri-Halveth/halveth-scarlet/tree/b768ca093d9bd68b1453a8ccc5b6d02ecaa1eb07",
+      "revision": "d033b291b946ae2010b64f040392a0bf0926a1e4",
+      "source": "https://github.com/Juri-Halveth/halveth-scarlet/tree/d033b291b946ae2010b64f040392a0bf0926a1e4",
       "demo": "https://juri-halveth.github.io/halveth-scarlet/",
       "command": null,
       "verification": "SOURCE_REVIEW_ONLY"
@@ -284,8 +295,8 @@
         "ru": "Визуальная модель"
       },
       "repository": "https://github.com/Juri-Halveth/halveth-field-difference-lab",
-      "revision": "a067d1ee779efb830144bf7d79875cbb51ec6e4d",
-      "source": "https://github.com/Juri-Halveth/halveth-field-difference-lab/tree/a067d1ee779efb830144bf7d79875cbb51ec6e4d",
+      "revision": "572734742951819993b10d89b22591951a49dbc8",
+      "source": "https://github.com/Juri-Halveth/halveth-field-difference-lab/tree/572734742951819993b10d89b22591951a49dbc8",
       "demo": "https://juri-halveth.github.io/halveth-field-difference-lab/",
       "command": null,
       "verification": "SOURCE_REVIEW_ONLY"
@@ -309,8 +320,8 @@
         "ru": "Экспериментальные инструменты"
       },
       "repository": "https://github.com/Juri-Halveth/halveth-project0-keeper",
-      "revision": "aee4cfdaafdaad2c8cfcb829b572c5dabec195df",
-      "source": "https://github.com/Juri-Halveth/halveth-project0-keeper/tree/aee4cfdaafdaad2c8cfcb829b572c5dabec195df",
+      "revision": "2cf77b66e54c87434f54b2cbf9a09f3645fe2e11",
+      "source": "https://github.com/Juri-Halveth/halveth-project0-keeper/tree/2cf77b66e54c87434f54b2cbf9a09f3645fe2e11",
       "demo": null,
       "command": null,
       "verification": "SOURCE_REVIEW_ONLY"
@@ -359,8 +370,8 @@
         "ru": "Концепция и интерфейс"
       },
       "repository": "https://github.com/Juri-Halveth/c-drohne-red-room",
-      "revision": "d341c1afb1d8cf3c2a9cfff2cb1cda6e6e9bd6ff",
-      "source": "https://github.com/Juri-Halveth/c-drohne-red-room/tree/d341c1afb1d8cf3c2a9cfff2cb1cda6e6e9bd6ff",
+      "revision": "89398fccf993ad361a5230a6adefb8b559f547d8",
+      "source": "https://github.com/Juri-Halveth/c-drohne-red-room/tree/89398fccf993ad361a5230a6adefb8b559f547d8",
       "demo": null,
       "command": null,
       "verification": "SOURCE_REVIEW_ONLY"

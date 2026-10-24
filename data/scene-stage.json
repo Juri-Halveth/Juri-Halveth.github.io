@@ -32,9 +32,9 @@
         "ru": "Для игровых пространств и интерактивных выставок."
       },
       "scope": {
-        "de": "Aufgenommen in der nativen Entwicklungsfassung · Quellstand 5c2260f.",
-        "en": "Captured in the native development version · source5c2260f.",
-        "ru": "Кадр нативной версии в разработке · исходники5c2260f."
+        "de": "Aufnahme aus der nativen Entwicklungsfassung.",
+        "en": "Captured in the native development version.",
+        "ru": "Кадр нативной версии в разработке."
       },
       "image": "/assets/scene-astralis.webp",
       "sha256": "7dd497c43b14d1ee5234480425ef33c2d07e47896cbacdb7af7e6cc45e9eaef2",
@@ -52,7 +52,12 @@
         "quality": 84,
         "method": 6
       },
-      "rights": "Source project notices remain applicable. Screenshot, conversion and publication create no expanded rights."
+      "rights": "Source project notices remain applicable. Screenshot, conversion and publication create no expanded rights.",
+      "alt": {
+        "de": "Steinerner Weg, Sternentor und Bewohner in der nativen Spielwelt.",
+        "en": "A stone path, star gate and residents in the native game world.",
+        "ru": "Каменная дорожка, звёздные врата и жители в нативном игровом мире."
+      }
     },
     {
       "id": "scarlet",
@@ -102,7 +107,12 @@
         "quality": 84,
         "method": 6
       },
-      "rights": "Source project notices remain applicable. Screenshot, conversion and publication create no expanded rights."
+      "rights": "Source project notices remain applicable. Screenshot, conversion and publication create no expanded rights.",
+      "alt": {
+        "de": "Teilchenfeld mit dunkler Kreisscheibe und gekrümmten Bahnen.",
+        "en": "A particle field with a dark disk and curved trajectories.",
+        "ru": "Поле частиц с тёмным диском и искривлёнными траекториями."
+      }
     },
     {
       "id": "endeck",
@@ -160,6 +170,11 @@
         "height": 358,
         "coordinateSpace": "DOCUMENT_CSS_PIXELS",
         "viewportScrollY": 432
+      },
+      "alt": {
+        "de": "Links ein gemeinsamer Bildort, rechts vier getrennte Punkte entlang der Tiefe.",
+        "en": "One shared image position on the left; four depth-separated points on the right.",
+        "ru": "Слева одно общее положение на изображении; справа четыре точки на разной глубине."
       }
     }
   ],
@@ -171,5 +186,6 @@
     "sha256": "3824d725caaed2d437561573533a59bee1251cc4b0a224902ca0965d0b578c11",
     "transfer": "EXACT_SOURCE_BYTES",
     "license": "MIT"
-  }
+  },
+  "updatedAt": "2026-10-24T14:04:02.933063+00:00"
 }

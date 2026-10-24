@@ -1,7 +1,7 @@
 // Presentation of public, pinned work samples. See LICENSES.md.
 'use strict';
 const crypto=require('node:crypto');
-const {githubRepository,supplementalUrl}=require('./validate-projects.cjs');
+const {githubRepository,supplementalUrl,encodeSourcePath}=require('./validate-projects.cjs');
 const languages=['de','en','ru'];
 const text={
  de:{nav:'Technik & Code',eyebrow:'TECHNISCHE SCHNITTSTELLEN',areas:'Themen',samples:'Arbeitsproben',repos:'Repositories',patterns:'Was sich durch die Projekte zieht',scope:'Prüfumfang',open:'Quellen & Belege öffnen',version:'Quellstand',review:'Quellen geprüft',github:'Als GitHub-Dokument lesen',teaser:'Von der Fähigkeit direkt zum Code.',go:'Schnittstellenkarte erkunden',all:'Alle Projekte ansehen',release:'Windows-Vorschau',contribution:'Eigener Commit',footer:'Projektleitung und Zusammenstellung: Juri / HALVETH. Entwicklung mit KI-Unterstützung. Verlinkte Quellen behalten ihre Attribution und Lizenzen.',roles:{source:'Implementierung',test:'Gegenprobe',documentation:'Builddokumentation',workflow:'Pipeline'}},
@@ -29,7 +29,7 @@ function validateMap(data,provenance,bytes){
    roles.add(e.role);
    if(!Object.hasOwn(text.en.roles,e.role)||!githubRepository(e.repository)||!/^[a-f0-9]{40}$/.test(e.revision)||!/^[a-f0-9]{64}$/.test(e.sha256))throw Error('Invalid source binding');
    if(typeof e.path!=='string'||e.path.split('/').some(p=>!p||p==='..'||p==='.')||!Number.isSafeInteger(e.startLine)||!Number.isSafeInteger(e.endLine)||e.startLine<1||e.endLine<e.startLine)throw Error('Invalid source span');
-   const source=`https://github.com/${e.repository}/blob/${e.revision}/${e.path.split('/').map(encodeURIComponent).join('/')}#L${e.startLine}-L${e.endLine}`;
+   const source=`https://github.com/${e.repository}/blob/${e.revision}/${encodeSourcePath(e.path)}#L${e.startLine}-L${e.endLine}`;
    if(e.url!==source)throw Error('Source URL must bind the exact file and lines');
   }
   if(!roles.has('source')&&!roles.has('workflow'))throw Error('Implementation required');

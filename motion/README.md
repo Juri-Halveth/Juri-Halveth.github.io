@@ -53,7 +53,7 @@ Der lokale geprüfte Export verwendete `@napi-rs/canvas` 0.1.100.
 
 ```bash
 npm install --no-save --package-lock=false @napi-rs/canvas@0.1.100
-bash SPACE.sh motion --out motion-render --width 1920 --height 1080 --fps 30 --ffmpeg ffmpeg
+node tools/render-motion.cjs --out motion-render --width 1920 --height 1080 --fps 30 --ffmpeg ffmpeg
 ```
 
 Der Export erzeugt sechs PNGs, ein Poster, das H.264-Video und `RENDER.json`.
