@@ -1,0 +1,300 @@
+{
+  "schema": "halveth.public-repositories.v1",
+  "observedAt": "2026-10-24T13:05:41.907093+00:00",
+  "source": "https://github.com/Juri-Halveth?tab=repositories",
+  "coverage": "Public repositories returned by the owner repository API at observation time; not a full security audit.",
+  "repositories": [
+    {
+      "name": "c-drohne-red-room",
+      "url": "https://github.com/Juri-Halveth/c-drohne-red-room",
+      "defaultBranch": "main",
+      "fork": false,
+      "archived": false,
+      "purpose": {
+        "de": "Systemfilme und dokumentierte Drohnen- und Schwarmkonzepte.",
+        "en": "System films and documented drone and swarm concepts.",
+        "ru": "Системные фильмы и документированные концепции дронов и роёв."
+      },
+      "revision": "89398fccf993ad361a5230a6adefb8b559f547d8",
+      "revisionObservedAt": "2026-10-24T13:08:20+00:00",
+      "source": "https://github.com/Juri-Halveth/c-drohne-red-room/tree/89398fccf993ad361a5230a6adefb8b559f547d8",
+      "licenseClassification": "UNASSIGNED_GENERAL_REUSE"
+    },
+    {
+      "name": "fortuna",
+      "url": "https://github.com/Juri-Halveth/fortuna",
+      "defaultBranch": "main",
+      "fork": false,
+      "archived": false,
+      "purpose": {
+        "de": "Eigene Optionen in einer lokalen Browseroberfläche vergleichen.",
+        "en": "Compare your own options in a local browser interface.",
+        "ru": "Сравнивать свои варианты в локальном браузерном интерфейсе."
+      },
+      "revision": "247d6d4d4fb029571af4da591675dc3650cafe44",
+      "revisionObservedAt": "2026-10-24T13:08:23+00:00",
+      "source": "https://github.com/Juri-Halveth/fortuna/tree/247d6d4d4fb029571af4da591675dc3650cafe44",
+      "licenseClassification": "UNASSIGNED_OWN_WORK_WITH_PIRL_AND_OSS_COMPONENTS"
+    },
+    {
+      "name": "halveth-cannabis-reform-forschung",
+      "url": "https://github.com/Juri-Halveth/halveth-cannabis-reform-forschung",
+      "defaultBranch": "main",
+      "fork": false,
+      "archived": false,
+      "purpose": {
+        "de": "Quellenbasierte Cannabisreform und ein dokumentierter Messplan.",
+        "en": "Source-based cannabis reform research and a documented measurement plan.",
+        "ru": "Исследование реформы каннабиса с источниками и планом измерений."
+      },
+      "revision": "51cfbbdce9efcb00def308e5a399f8e0c7d6a233",
+      "revisionObservedAt": "2026-10-24T13:08:25+00:00",
+      "source": "https://github.com/Juri-Halveth/halveth-cannabis-reform-forschung/tree/51cfbbdce9efcb00def308e5a399f8e0c7d6a233",
+      "licenseClassification": "COMMERCIAL_PERMISSION_RESERVED_GENERAL_GRANT_UNLOCATED"
+    },
+    {
+      "name": "halveth-field-difference-lab",
+      "url": "https://github.com/Juri-Halveth/halveth-field-difference-lab",
+      "defaultBranch": "main",
+      "fork": false,
+      "archived": false,
+      "purpose": {
+        "de": "Bewegung, Feldregeln und Projektionen direkt vergleichen.",
+        "en": "Compare motion, field rules and projections directly.",
+        "ru": "Сравнивать движение, правила полей и проекции."
+      },
+      "revision": "572734742951819993b10d89b22591951a49dbc8",
+      "revisionObservedAt": "2026-10-24T13:08:28+00:00",
+      "source": "https://github.com/Juri-Halveth/halveth-field-difference-lab/tree/572734742951819993b10d89b22591951a49dbc8",
+      "licenseClassification": "APACHE_2_ORIGINAL_WORK"
+    },
+    {
+      "name": "halveth-forschungslabor",
+      "url": "https://github.com/Juri-Halveth/halveth-forschungslabor",
+      "defaultBranch": "main",
+      "fork": false,
+      "archived": false,
+      "purpose": {
+        "de": "Modellvergleiche und lokale Werkzeuge mit Gegenproben und Tests.",
+        "en": "Model comparisons and local tools with counterexamples and tests.",
+        "ru": "Сравнение моделей и локальные инструменты с контрпримерами и тестами."
+      },
+      "revision": "8d6d53bd67d548c1f66923fa2eefa6295a13668b",
+      "revisionObservedAt": "2026-10-24T13:08:30+00:00",
+      "source": "https://github.com/Juri-Halveth/halveth-forschungslabor/tree/8d6d53bd67d548c1f66923fa2eefa6295a13668b",
+      "licenseClassification": "MIT_CC_BY_CC0_ACTIVE_MAP_WITH_UNASSIGNED_LICENSE_TEMPLATES"
+    },
+    {
+      "name": "halveth-morrowind-genesis",
+      "url": "https://github.com/Juri-Halveth/halveth-morrowind-genesis",
+      "defaultBranch": "codex/public-release",
+      "fork": false,
+      "archived": false,
+      "purpose": {
+        "de": "OpenMW-Werkzeuge für Dialoge, Figurengedächtnis und Weltprototypen.",
+        "en": "OpenMW tools for dialogue, character memory and world prototypes.",
+        "ru": "Инструменты OpenMW: диалоги, память персонажей и прототипы миров."
+      },
+      "revision": "6c9d981379c75ac822f3538f9508f3ed0b70230f",
+      "revisionObservedAt": "2026-10-24T13:08:33+00:00",
+      "source": "https://github.com/Juri-Halveth/halveth-morrowind-genesis/tree/6c9d981379c75ac822f3538f9508f3ed0b70230f",
+      "licenseClassification": "MIT_CODE_DOCS_CC0_DESIGNATED_ART_EXTERNAL_ENGINE_GAME_RIGHTS"
+    },
+    {
+      "name": "halveth-project0-keeper",
+      "url": "https://github.com/Juri-Halveth/halveth-project0-keeper",
+      "defaultBranch": "main",
+      "fork": false,
+      "archived": false,
+      "purpose": {
+        "de": "PowerShell-Skripte und Hinweise für einen experimentellen Keeper.",
+        "en": "PowerShell scripts and notes for an experimental keeper.",
+        "ru": "Скрипты PowerShell и документация экспериментального keeper."
+      },
+      "revision": "aee4cfdaafdaad2c8cfcb829b572c5dabec195df",
+      "revisionObservedAt": "2026-10-24T13:08:35+00:00",
+      "source": "https://github.com/Juri-Halveth/halveth-project0-keeper/tree/aee4cfdaafdaad2c8cfcb829b572c5dabec195df",
+      "licenseClassification": "GENERAL_REUSE_GRANT_NOT_FOUND_IN_REVIEWED_SURFACES"
+    },
+    {
+      "name": "halveth-realms",
+      "url": "https://github.com/Juri-Halveth/halveth-realms",
+      "defaultBranch": "codex/scarlet-garden",
+      "fork": false,
+      "archived": false,
+      "purpose": {
+        "de": "Prozedurale Fantasywelten und experimentelle Figurendialoge.",
+        "en": "Procedural fantasy worlds and experimental character dialogue.",
+        "ru": "Процедурные фэнтезийные миры и экспериментальные диалоги."
+      },
+      "revision": "c353bf650ecd9aa1bc5dfeaf10649c601f0c39a4",
+      "revisionObservedAt": "2026-10-24T13:08:37+00:00",
+      "source": "https://github.com/Juri-Halveth/halveth-realms/tree/c353bf650ecd9aa1bc5dfeaf10649c601f0c39a4",
+      "licenseClassification": "MIT_ORIGINAL_CODE_WITH_COMPONENT_NOTICES"
+    },
+    {
+      "name": "halveth-scarlet",
+      "url": "https://github.com/Juri-Halveth/halveth-scarlet",
+      "defaultBranch": "main",
+      "fork": false,
+      "archived": false,
+      "purpose": {
+        "de": "Interaktive Erde, Webgrafik, Spiele und Forschungsdemos.",
+        "en": "Interactive Earth, web graphics, games and research demos.",
+        "ru": "Интерактивная Земля, веб-графика, игры и исследовательские демонстрации."
+      },
+      "revision": "c339043258a59a55ddc1f3ad64d17160c18b9672",
+      "revisionObservedAt": "2026-10-24T13:08:40+00:00",
+      "source": "https://github.com/Juri-Halveth/halveth-scarlet/tree/c339043258a59a55ddc1f3ad64d17160c18b9672",
+      "licenseClassification": "PIRL_ORIGINAL_CONTRIBUTIONS_WITH_EXPLICIT_THIRD_PARTY_EXCLUSIONS"
+    },
+    {
+      "name": "halveth-tresor",
+      "url": "https://github.com/Juri-Halveth/halveth-tresor",
+      "defaultBranch": "main",
+      "fork": false,
+      "archived": false,
+      "purpose": {
+        "de": "Lokale Zugangsdatenverwaltung für Windows mit veröffentlichtem Quellcode.",
+        "en": "Local credential management for Windows with published source.",
+        "ru": "Локальное хранение учётных данных для Windows с опубликованным кодом."
+      },
+      "revision": "05a6aa5d2fc8c58af9959c4b88dd4da6685d5e64",
+      "revisionObservedAt": "2026-10-24T13:08:42+00:00",
+      "source": "https://github.com/Juri-Halveth/halveth-tresor/tree/05a6aa5d2fc8c58af9959c4b88dd4da6685d5e64",
+      "licenseClassification": "VERSION_SPLIT_MIT_AND_NEW_PIRL_WITH_SUMMARY_AMBIGUITY"
+    },
+    {
+      "name": "halveth-tron-security-lab",
+      "url": "https://github.com/Juri-Halveth/halveth-tron-security-lab",
+      "defaultBranch": "develop",
+      "fork": true,
+      "archived": false,
+      "purpose": {
+        "de": "java-tron-Forschungsfork für lokale Protokollprüfungen.",
+        "en": "A java-tron research fork for local protocol checks.",
+        "ru": "Исследовательский форк java-tron для локальных проверок протокола."
+      },
+      "revision": "d25e104e6b887bc4d782185a96ecf3c4eb782d8c",
+      "revisionObservedAt": "2026-10-24T13:08:45+00:00",
+      "source": "https://github.com/Juri-Halveth/halveth-tron-security-lab/tree/d25e104e6b887bc4d782185a96ecf3c4eb782d8c",
+      "licenseClassification": "TRON_UPSTREAM_LGPL3_FORK"
+    },
+    {
+      "name": "halveth-unreal",
+      "url": "https://github.com/Juri-Halveth/halveth-unreal",
+      "defaultBranch": "codex/knowledge-crafting-0.2",
+      "fork": false,
+      "archived": false,
+      "purpose": {
+        "de": "Native C++-Spielprototypen mit Portalen, Flug und Weltzuständen.",
+        "en": "Native C++ game prototypes with portals, flight and world state.",
+        "ru": "Нативные прототипы игр C++: порталы, полёт и состояния мира."
+      },
+      "revision": "44ccf28ffb80829def79a4f44ae5c6bcf8646de6",
+      "revisionObservedAt": "2026-10-24T13:08:48+00:00",
+      "source": "https://github.com/Juri-Halveth/halveth-unreal/tree/44ccf28ffb80829def79a4f44ae5c6bcf8646de6",
+      "licenseClassification": "MIT_ORIGINAL_CODE_CC0_ASSETS_SEPARATE_EPIC_ENGINE"
+    },
+    {
+      "name": "Juri-Halveth",
+      "url": "https://github.com/Juri-Halveth/Juri-Halveth",
+      "defaultBranch": "main",
+      "fork": false,
+      "archived": false,
+      "purpose": {
+        "de": "Das öffentliche Profil mit ausgewählten Szenen und Arbeitsproben.",
+        "en": "The public profile with selected scenes and work samples.",
+        "ru": "Публичный профиль с избранными сценами и примерами работы."
+      },
+      "revision": "42b80b5051336b43427e82caccfc5840ee131f86",
+      "revisionObservedAt": "2026-10-24T13:08:50+00:00",
+      "source": "https://github.com/Juri-Halveth/Juri-Halveth/tree/42b80b5051336b43427e82caccfc5840ee131f86",
+      "licenseClassification": "PROFILE_NO_GENERAL_REUSE_GRANT_FOUND"
+    },
+    {
+      "name": "Juri-Halveth.github.io",
+      "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io",
+      "defaultBranch": "main",
+      "fork": false,
+      "archived": false,
+      "purpose": {
+        "de": "Dieses Portfolio mit Demos, Quellen und Arbeitsproben.",
+        "en": "This portfolio with demos, source and work samples.",
+        "ru": "Это портфолио с демонстрациями, кодом и примерами работы."
+      },
+      "revision": "896e61e5a05f3efc4106d18c31c7f96513bd8adf",
+      "revisionObservedAt": "2026-10-24T13:08:53+00:00",
+      "source": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/tree/896e61e5a05f3efc4106d18c31c7f96513bd8adf",
+      "licenseClassification": "PIRL_PORTAL_WITH_MIT_MOTION_AND_LANGUAGE_EXCEPTIONS"
+    },
+    {
+      "name": "lernstudio",
+      "url": "https://github.com/Juri-Halveth/lernstudio",
+      "defaultBranch": "main",
+      "fork": false,
+      "archived": false,
+      "purpose": {
+        "de": "Interaktive Lernmissionen und Lernpfade im Browser.",
+        "en": "Interactive learning missions and learning paths in the browser.",
+        "ru": "Интерактивные учебные миссии и маршруты в браузере."
+      },
+      "revision": "a1cd5b3b9e3b8b2debb5f37346411dc8b1fb116d",
+      "revisionObservedAt": "2026-10-24T13:08:55+00:00",
+      "source": "https://github.com/Juri-Halveth/lernstudio/tree/a1cd5b3b9e3b8b2debb5f37346411dc8b1fb116d",
+      "licenseClassification": "VERSION_SPLIT_ISC_PIRL_WITH_FILE_SPECIFIC_MIT"
+    },
+    {
+      "name": "leviathan-wallet-portal",
+      "url": "https://github.com/Juri-Halveth/leviathan-wallet-portal",
+      "defaultBranch": "main",
+      "fork": false,
+      "archived": false,
+      "purpose": {
+        "de": "Öffentliche Adressansicht und Browserportal für Wallet-Daten.",
+        "en": "A public address view and browser portal for wallet data.",
+        "ru": "Просмотр публичных адресов и браузерный портал данных кошелька."
+      },
+      "revision": "1bfaef54985826fcc00250ce5b29372cd05af21f",
+      "revisionObservedAt": "2026-10-24T13:08:58+00:00",
+      "source": "https://github.com/Juri-Halveth/leviathan-wallet-portal/tree/1bfaef54985826fcc00250ce5b29372cd05af21f",
+      "licenseClassification": "PIRL_NAMED_NEW_CONTRIBUTIONS_OLDER_BASE_UNRESOLVED"
+    },
+    {
+      "name": "lucinet-seedspace",
+      "url": "https://github.com/Juri-Halveth/lucinet-seedspace",
+      "defaultBranch": "main",
+      "fork": false,
+      "archived": false,
+      "purpose": {
+        "de": "Ein Browser-Prototyp für editierbare, ausführbare Oberflächen.",
+        "en": "A browser prototype for editable, runnable interfaces.",
+        "ru": "Браузерный прототип редактируемых и исполняемых интерфейсов."
+      },
+      "revision": "5700fb936bb7d491f5caddb28b7765e17680b348",
+      "revisionObservedAt": "2026-10-24T13:09:00+00:00",
+      "source": "https://github.com/Juri-Halveth/lucinet-seedspace/tree/5700fb936bb7d491f5caddb28b7765e17680b348",
+      "licenseClassification": "GENERAL_REUSE_GRANT_NOT_FOUND_IN_REVIEWED_SURFACES"
+    },
+    {
+      "name": "mein-lernportal",
+      "url": "https://github.com/Juri-Halveth/mein-lernportal",
+      "defaultBranch": "main",
+      "fork": false,
+      "archived": false,
+      "purpose": {
+        "de": "702 zugängliche Lektionen und Übungen ohne Pflichtkonto.",
+        "en": "702 accessible lessons and exercises without a required account.",
+        "ru": "702 доступных урока и упражнения без обязательной регистрации."
+      },
+      "revision": "539d954856349bd792f9abff7abc0b718ebbbfef",
+      "revisionObservedAt": "2026-10-24T13:09:02+00:00",
+      "source": "https://github.com/Juri-Halveth/mein-lernportal/tree/539d954856349bd792f9abff7abc0b718ebbbfef",
+      "licenseClassification": "ISC_ORIGINAL_PLATFORM_AND_LESSONS"
+    }
+  ],
+  "observationWindow": {
+    "start": "2026-10-24T13:04:35Z",
+    "end": "2026-10-24T13:05:41.907093+00:00"
+  }
+}

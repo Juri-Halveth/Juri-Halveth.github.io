@@ -23,6 +23,21 @@ test('mutable versions, mismatched URLs, invalid spans and runtime promotion fai
   assert.throws(()=>validateMap(copy,provenance,bytes));
  }
 });
+
+test('supplemental links preserve safe release tags and dot-named repositories while rejecting changed Markdown and owner scopes',()=>{
+ for(const kind of ['release','contribution']){
+  const original=data.items.find(i=>i[kind])[kind].url;
+  for(const url of [original+')\n\n[fixture](https://example.invalid/fixture',[original],'https://github.com/Juri-Halveth/../commit/a','https://github.com/Juri-Halveth/repo/commit/..']){
+   const d=structuredClone(data);d.items.find(i=>i[kind])[kind].url=url;assert.throws(()=>validateMap(d,provenance,bytes));
+  }
+ }
+ for(const tag of ['release/v1.2.3','v1.2.3+build.1']){
+  const d=structuredClone(data);d.items.find(i=>i.release).release.url='https://github.com/Juri-Halveth/.github/releases/tag/'+tag;validateMap(d,provenance,bytes);
+ }
+ for(const repository of ['Juri-Halveth/.','Juri-Halveth/..']){
+  const d=structuredClone(data),e=d.items[0].evidence[0];e.repository=repository;e.url=`https://github.com/${repository}/blob/${e.revision}/${e.path}#L${e.startLine}-L${e.endLine}`;assert.throws(()=>validateMap(d,provenance,bytes));
+ }
+});
 test('each language renders all samples, bounded scopes and usable source links',()=>{
  for(const lang of ['de','en','ru']){
   const prefix=lang==='de'?'':lang+'/';

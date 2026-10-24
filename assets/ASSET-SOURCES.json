@@ -20,6 +20,74 @@
       "context": "Public demo viewed and its fire control activated in the browser. Screenshot is a visual observation, not a pinned source-build equivalence or performance measurement.",
       "sourceRevision": "UNKNOWN_FOR_LIVE_RESPONSE",
       "rights": "Same project and per-file rights as the SCARLET demo. No expanded grant."
+    },
+    {
+      "path": "assets/scene-astralis.webp",
+      "sourceUrl": "https://github.com/Juri-Halveth/halveth-unreal/blob/5c2260f85d5275c15082c5c7d38ae51a143a5688/Preview/LIVING_DISTRICT.png",
+      "sourceRevision": "5c2260f85d5275c15082c5c7d38ae51a143a5688",
+      "recordedAt": "2026-10-24T13:22:13.971898+00:00",
+      "sha256": "7dd497c43b14d1ee5234480425ef33c2d07e47896cbacdb7af7e6cc45e9eaef2",
+      "sourceSha256": "3a2a88344fd46e9ce443dca32b42621a71fc524e34f2047bed434ea24dad3bb4",
+      "transfer": "PINNED_NATIVE_RUNTIME_CAPTURE",
+      "conversion": {
+        "name": "WEBP_RESIZE",
+        "library": "Pillow",
+        "version": "12.3.0",
+        "maxWidth": 1440,
+        "maxHeight": 900,
+        "quality": 84,
+        "method": 6
+      },
+      "context": "Development capture · not a newly released download build.",
+      "rights": "Source project notices remain applicable. Screenshot, conversion and publication create no expanded rights."
+    },
+    {
+      "path": "assets/scene-scarlet.webp",
+      "sourceUrl": "https://juri-halveth.github.io/halveth-scarlet/forschung/singularity-cannon/",
+      "sourceRevision": "UNKNOWN_FOR_LIVE_RESPONSE",
+      "recordedAt": "2026-10-24T13:22:13.971898+00:00",
+      "sha256": "d26a506b3549dcb678678e2fca1cb816af9e5628ea59a8942bf5200f9bb902f0",
+      "sourceSha256": "c3979c9800b9d523103a92812c8080cfe8a9125f75b803b7868f31c9969bf39b",
+      "transfer": "BROWSER_SCREENSHOT",
+      "conversion": {
+        "name": "WEBP_RESIZE",
+        "library": "Pillow",
+        "version": "12.3.0",
+        "maxWidth": 1440,
+        "maxHeight": 900,
+        "quality": 84,
+        "method": 6
+      },
+      "context": "Actual browser capture · designed game simulation.",
+      "rights": "Source project notices remain applicable. Screenshot, conversion and publication create no expanded rights."
+    },
+    {
+      "path": "assets/scene-endeck.webp",
+      "sourceUrl": "https://juri-halveth.github.io/halveth-forschungslabor/endeck/",
+      "sourceRevision": "8d6d53bd67d548c1f66923fa2eefa6295a13668b",
+      "recordedAt": "2026-10-24T13:37:55.995147+00:00",
+      "sha256": "4d4939b745fbaad453e3b63151e8fa324d0afdcbe8253230ad7e1b68a969749c",
+      "sourceSha256": "21d8edc8cb3b53d5636502811494c4617753030bdef3059476eb6750c044a90c",
+      "transfer": "BROWSER_SCREENSHOT",
+      "conversion": {
+        "name": "WEBP_RESIZE",
+        "library": "Pillow",
+        "version": "12.3.0",
+        "maxWidth": 1440,
+        "maxHeight": 900,
+        "quality": 84,
+        "method": 6
+      },
+      "context": "Geometric model · not a measurement of unknown real processes.",
+      "rights": "Source project notices remain applicable. Screenshot, conversion and publication create no expanded rights.",
+      "captureClip": {
+        "x": 97,
+        "y": 525,
+        "width": 1071,
+        "height": 358,
+        "coordinateSpace": "DOCUMENT_CSS_PIXELS",
+        "viewportScrollY": 432
+      }
     }
   ]
 }
