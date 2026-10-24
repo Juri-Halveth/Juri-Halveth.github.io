@@ -10,8 +10,8 @@
 .scene-wall{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);grid-template-rows:1fr 1fr;gap:14px}
 .scene-tile{position:relative;display:block;min-width:0;min-height:0;background:#091717;overflow:hidden;isolation:isolate;text-decoration:none;color:#fff}
 .scene-tile:hover{color:#fff}
-.scene-tile-astralis{grid-row:1/3;aspect-ratio:1.56}
-.scene-tile-scarlet,.scene-tile-endeck{aspect-ratio:3.1}
+.scene-tile-scarlet{grid-row:1/3;aspect-ratio:1.56}
+.scene-tile-astralis,.scene-tile-endeck{aspect-ratio:3.1}
 .scene-tile img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
 .scene-tile:after{position:absolute;inset:0;z-index:0;content:'';background:linear-gradient(180deg,transparent 30%,rgba(3,12,13,.88) 100%)}
 .scene-tile:hover img{transform:scale(1.018)}
@@ -20,8 +20,8 @@
 .scene-caption strong{font-weight:600;font-size:clamp(18px,2vw,28px);letter-spacing:-.025em}
 .scene-caption>span:last-child{font-size:12px;color:#e0e9dc}
 .scene-type{font:10px/1.4 ui-monospace,Consolas,monospace;letter-spacing:.09em;color:#dce8b4}
-.scene-tile-astralis .scene-caption{inset:auto 28px 25px}
-.scene-tile-astralis .scene-caption strong{font-size:clamp(24px,2.7vw,39px);max-width:560px}
+.scene-tile-scarlet .scene-caption{inset:auto 28px 25px}
+.scene-tile-scarlet .scene-caption strong{font-size:clamp(24px,2.7vw,39px);max-width:560px}
 .scene-note{font-size:12px;line-height:1.6;color:var(--muted);margin:13px 0 0}
 .scene-note a{white-space:nowrap}
 .scene-demo-band{background:#102c28;color:#edf4e6;padding:68px 0;--muted:#c1d2c7}
@@ -74,7 +74,7 @@
 .scene-offer .text-link{margin-top:8px}
 @media(max-width:1000px){.scene-heading{grid-template-columns:1fr 1fr;gap:5%}
 .scene-wall{grid-template-columns:1.4fr 1fr}
-.scene-tile-astralis{aspect-ratio:1.36}
+.scene-tile-scarlet{aspect-ratio:1.36}
 .scene-demo-layout{grid-template-columns:1fr;gap:30px}
 .scene-demo-copy{max-width:700px}
 .scene-demo-copy>p:not(.eyebrow):not(.scene-note){max-width:650px}
@@ -89,14 +89,14 @@
 .scene-heading h1{font-size:clamp(36px,8.3vw,58px)}
 .scene-intro p{font-size:15px;max-width:600px}
 .scene-wall{grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:10px}
-.scene-tile-astralis{grid-column:1/3;grid-row:auto;aspect-ratio:16/10}
-.scene-tile-scarlet,.scene-tile-endeck{aspect-ratio:1.1}
+.scene-tile-scarlet{grid-column:1/3;grid-row:auto;aspect-ratio:16/10}
+.scene-tile-astralis,.scene-tile-endeck{aspect-ratio:1.1}
 .scene-caption{inset:auto 12px 12px;gap:6px}
 .scene-caption strong{font-size:17px}
 .scene-caption>span:last-child{font-size:11px}
 .scene-type{font-size:9px}
-.scene-tile-astralis .scene-caption{inset:auto 20px 18px}
-.scene-tile-astralis .scene-caption strong{font-size:27px}
+.scene-tile-scarlet .scene-caption{inset:auto 20px 18px}
+.scene-tile-scarlet .scene-caption strong{font-size:27px}
 .scene-demo-band{padding:44px 0}
 .scene-demo{padding:18px}
 .scene-demo-views{gap:12px}
@@ -111,11 +111,11 @@
 .repository-list{grid-template-columns:1fr}
 .scene-offer{padding:40px 0}}
 .scene-tile img{position:absolute;inset:0}
-.scene-tile-astralis{aspect-ratio:1.9}
-.scene-tile-scarlet,.scene-tile-endeck{aspect-ratio:auto}
-@media(max-width:1000px) and (min-width:761px){.scene-tile-astralis{aspect-ratio:1.6}}
-@media(max-width:760px){.scene-tile-astralis{aspect-ratio:16/10}
-.scene-tile-scarlet,.scene-tile-endeck{aspect-ratio:1.1}}
+.scene-tile-scarlet{aspect-ratio:1.9}
+.scene-tile-astralis,.scene-tile-endeck{aspect-ratio:auto}
+@media(max-width:1000px) and (min-width:761px){.scene-tile-scarlet{aspect-ratio:1.6}}
+@media(max-width:760px){.scene-tile-scarlet{aspect-ratio:16/10}
+.scene-tile-astralis,.scene-tile-endeck{aspect-ratio:1.1}}
 .demo-label{font-size:14px}
 .scene-demo svg{aspect-ratio:1;max-height:none}
 @media(max-width:760px){.scene-demo-views{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -129,29 +129,37 @@
 .scene-code{font-size:12px;line-height:1.6;padding-block:5px;min-height:32px}
 @media(max-width:1100px){
 .scene-wall{grid-template-columns:1fr 1fr;grid-template-rows:auto auto}
-.scene-tile-astralis{grid-row:auto;grid-column:1/3;aspect-ratio:16/9}
-.scene-tile-scarlet,.scene-tile-endeck{aspect-ratio:1.8;min-height:180px}
+.scene-tile-scarlet{grid-row:auto;grid-column:1/3;aspect-ratio:16/9}
+.scene-tile-astralis,.scene-tile-endeck{aspect-ratio:1.8;min-height:180px}
 }
 @media(max-width:560px){
 .scene-wall{grid-template-columns:1fr}
-.scene-tile-astralis{grid-column:auto}
-.scene-tile-scarlet,.scene-tile-endeck{aspect-ratio:2.2;min-height:180px}
+.scene-tile-scarlet{grid-column:auto}
+.scene-tile-astralis,.scene-tile-endeck{aspect-ratio:2.2;min-height:180px}
 }
 
 /* Definite tile widths keep aspect-ratio minimums inside narrow grid tracks. */
 .scene-tile{width:100%}
 @media(max-width:1100px){
 .scene-wall{grid-template-columns:repeat(2,minmax(0,1fr))}
-.scene-tile-scarlet,.scene-tile-endeck{aspect-ratio:auto;min-height:0;height:clamp(180px,23vw,260px)}
+.scene-tile-astralis,.scene-tile-endeck{aspect-ratio:auto;min-height:0;height:clamp(180px,23vw,260px)}
 }
 @media(max-width:560px){
 .scene-wall{grid-template-columns:minmax(0,1fr)}
 .scene-heading h1{font-size:clamp(30px,7.8vw,42px)}
-.scene-tile-astralis{aspect-ratio:auto;height:220px}
-.scene-tile-scarlet,.scene-tile-endeck{height:200px}
+.scene-tile-scarlet{aspect-ratio:auto;height:220px}
+.scene-tile-astralis,.scene-tile-endeck{height:200px}
 /* Keep the four spatial points clear of the caption on a narrow screen. */
 .scene-tile-endeck{height:auto;padding-top:160px}
 .scene-tile-endeck img{height:160px}
 .scene-tile-endeck:after{height:160px;bottom:auto}
 .scene-tile-endeck .scene-caption{position:relative;inset:auto;padding:14px 18px 18px}
 }
+
+/* Show the calculation contract on demand, beside the working model. */
+.scene-mechanism{margin-top:22px;font-size:13px;line-height:1.65;max-width:650px}
+.scene-mechanism summary{cursor:pointer;min-height:44px;display:list-item;padding-block:11px;color:#edf4e6}
+.scene-mechanism p{margin-top:8px;color:#c1d2c7}
+.scene-purpose-grid .scene-note{font-size:12px;margin-bottom:16px}
+.scene-purpose-grid .scene-note a{white-space:normal;overflow-wrap:anywhere}
+.scene-mechanism summary:focus-visible{outline:3px solid #e6b579;outline-offset:4px}
