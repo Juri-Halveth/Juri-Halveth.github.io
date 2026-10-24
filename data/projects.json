@@ -330,23 +330,23 @@
       "id": "halveth-tron-security-lab",
       "category": "research",
       "title": {
-        "de": "TRON · lokales Quorum-Labor",
-        "en": "TRON · local quorum lab",
-        "ru": "TRON · локальная лаборатория кворума"
+        "de": "TRON · Quorum-Modell im Forschungszweig",
+        "en": "TRON · quorum model on a research branch",
+        "ru": "TRON · модель кворума в исследовательской ветке"
       },
       "description": {
-        "de": "Fork mit eigenen lokalen Forschungsbausteinen. Der Großteil des Repositorys stammt aus java-tron; eigene Ergänzungen stehen getrennt im Projekt.",
-        "en": "A fork with local research additions. Most repository code comes from java-tron; project additions are identified separately.",
-        "ru": "Форк с локальными исследовательскими дополнениями. Основная часть кода относится к java-tron; собственные дополнения выделены отдельно."
+        "de": "Eigenes Offline-Modell für Quorumschnittmenge und Verfügbarkeit im offenen PR #1. Der Standardzweig enthält den java-tron-Fork; das Modell ist dort noch nicht integriert und bildet keinen laufenden TRON-Konsens ab.",
+        "en": "An offline quorum-intersection and availability model in open PR #1. The default branch contains the java-tron fork; this model is not merged there and does not implement running TRON consensus.",
+        "ru": "Офлайн-модель пересечения кворумов и доступности в открытом PR #1. Основная ветка содержит форк java-tron; модель ещё не включена в неё и не реализует действующий консенсус TRON."
       },
       "stage": {
-        "de": "Upstream-Fork mit Ergänzungen",
-        "en": "Upstream fork with additions",
-        "ru": "Форк с дополнениями"
+        "de": "Offener Forschungszweig · PR #1",
+        "en": "Open research branch · PR #1",
+        "ru": "Открытая исследовательская ветка · PR #1"
       },
       "repository": "https://github.com/Juri-Halveth/halveth-tron-security-lab",
-      "revision": "d25e104e6b887bc4d782185a96ecf3c4eb782d8c",
-      "source": "https://github.com/Juri-Halveth/halveth-tron-security-lab/tree/d25e104e6b887bc4d782185a96ecf3c4eb782d8c",
+      "revision": "0d25fb9945d01629c85beeb0768e102eb247c8d1",
+      "source": "https://github.com/Juri-Halveth/halveth-tron-security-lab/blob/0d25fb9945d01629c85beeb0768e102eb247c8d1/halveth/experiments/quorum-model.js",
       "demo": null,
       "command": null,
       "verification": "SOURCE_REVIEW_ONLY"
