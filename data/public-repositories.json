@@ -171,13 +171,13 @@
       "fork": false,
       "archived": false,
       "purpose": {
-        "de": "Interaktive Erde, Webgrafik, Spiele und Forschungsdemos.",
-        "en": "Interactive Earth, web graphics, games and research demos.",
-        "ru": "Интерактивная Земля, веб-графика, игры и исследовательские демонстрации."
+        "de": "Text als Keim setzen, eine Variante ableiten, Zustände beobachten und das aktuelle Browsermodell als JSON mitnehmen. Eine lokale Zellsimulation macht Regeln sichtbar.",
+        "en": "Plant text as a seed, derive a variant, observe states and take the current browser model with you as JSON. A local cell simulation makes rules visible.",
+        "ru": "Задайте текст как зерно, создайте вариант, наблюдайте состояния и сохраните текущую модель браузера в JSON. Локальная клеточная симуляция показывает действие правил."
       },
-      "revision": "d033b291b946ae2010b64f040392a0bf0926a1e4",
-      "revisionObservedAt": "2026-10-24T14:16:03.641074+00:00",
-      "source": "https://github.com/Juri-Halveth/halveth-scarlet/tree/d033b291b946ae2010b64f040392a0bf0926a1e4",
+      "revision": "3a70748b790e1c52142518ed6670b4579573a302",
+      "revisionObservedAt": "2026-10-24T16:01:23.031258+00:00",
+      "source": "https://github.com/Juri-Halveth/halveth-scarlet/tree/3a70748b790e1c52142518ed6670b4579573a302",
       "licenseReview": {
         "revision": "c339043258a59a55ddc1f3ad64d17160c18b9672",
         "classification": "PIRL_ORIGINAL_CONTRIBUTIONS_WITH_EXPLICIT_THIRD_PARTY_EXCLUSIONS",

@@ -1,14 +1,14 @@
-# Juri · Interaktive Welten und prüfbare Systeme
+# Juri · Werkzeuge, Modelle und Anwendungen
 
 **Person: Juri. Projekt: HALVETH.** [Namenszuordnung](IDENTITY.md).
 
 [Portfolio öffnen](https://juri-halveth.github.io/) · [Projekte](https://juri-halveth.github.io/arbeiten/) · [Technik & Code](https://juri-halveth.github.io/koennen/)
 
-Die Startseite zeigt tatsächliche Projektszenen: eine native ASTRALIS-Spielwelt,
-SCARLETs interaktives Teilchenfeld und zwei Ansichten des ENDECK-Modells.
-Direkt auf der Seite lässt sich die Modellzeit verändern. Links fallen vier
-Bildorte zusammen, rechts bleibt ihre Tiefe unterscheidbar. Zweck und mögliche
-Weiterverwendung stehen bei jeder Szene.
+Der Einstieg zeigt, welche Funktionen bedienbar sind: Zustände und Varianten
+in SCARLET, Beobachtungsvergleich in ENDECK und ASTRALIS als räumliche Anwendung.
+Direkt auf der Seite berechnet JavaScript zwei Ansichten derselben vier Punkte.
+Zweck, Modellregeln, lokale Ausführung und mögliche Anwendung bleiben erkennbar.
+Die Präsentationsreihenfolge ist getrennt von den unveränderten Quellpaket-IDs.
 
 Die Oberfläche ist auf Deutsch, Englisch und Russisch verfügbar. Projektleitung
 und Auswahl: Juri / HALVETH; Entwicklung mit KI-Unterstützung.

@@ -1,13 +1,14 @@
-# Juri · Interactive worlds and inspectable systems
+# Juri · Tools, models and applications
 
 Person: **Juri**. Project: **HALVETH**. [Identity](IDENTITY.md).
 
 [Portfolio](https://juri-halveth.github.io/en/) · [Projects](https://juri-halveth.github.io/en/arbeiten/) · [Technology and code](https://juri-halveth.github.io/en/koennen/)
 
-The first screen presents actual project captures: native ASTRALIS development,
-SCARLET's interactive particle field and two views of the ENDECK model. Change
-model time directly on the page; the image projection converges while distinct
-depth positions remain. Each scene explains its purpose and possible reuse.
+The entrance explains usable functions: states and variants in SCARLET,
+observation comparison in ENDECK and ASTRALIS as a spatial application.
+JavaScript calculates two views of the same four points directly on the page.
+Purpose, model rules, local execution and potential uses remain explicit.
+Presentation order is separate from the unchanged source-packet identities.
 
 Project lead and curation: Juri / HALVETH. AI-assisted development. German,
 English and Russian interfaces are generated from the same sources.
