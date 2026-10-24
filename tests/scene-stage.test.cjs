@@ -43,7 +43,9 @@ test('generated entrances use the model controller, translated routes and exactl
   assert.equal(doc.querySelectorAll('h1').length,1);assert.equal(doc.querySelectorAll('script[type="module"][src$="scene-stage.mjs"]').length,1);
   assert.equal(doc.querySelectorAll('[data-ambient-motion]').length,0);
   assert.equal(path.resolve(path.dirname(page),doc.querySelector('.hero-actions a:nth-child(2)').getAttribute('href')),path.join(root,lang,'koennen'));
-  assert.equal(path.resolve(path.dirname(page),doc.querySelector('link[href$="showcase.css"]').getAttribute('href')),path.join(root,'showcase.css'));
+  const stylesheet=doc.querySelector('link[rel="stylesheet"][href*="showcase.css"]').getAttribute('href'),[stylesheetPath,stylesheetQuery]=stylesheet.split('?');
+  assert.equal(path.resolve(path.dirname(page),stylesheetPath),path.join(root,'showcase.css'));
+  assert.equal(new URLSearchParams(stylesheetQuery).get('v'),require('node:crypto').createHash('sha256').update(fs.readFileSync(path.join(root,'showcase.css'),'utf8').replace(/\r\n/g,'\n')).digest('hex'));
  }
 });
 test('the full directory exposes each observed public repository once without pretending audit completion',()=>{
