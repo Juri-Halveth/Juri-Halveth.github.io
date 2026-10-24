@@ -12,6 +12,8 @@ const {renderWorkSamples,evidenceWords}=require('./render-work-samples.cjs');
 const {validateResearchIndex,renderResearchOS}=require('./render-research-os.cjs');
 const workSamples=JSON.parse(fs.readFileSync(path.join(root,'data/work-samples.json'),'utf8'));
 const researchIndex=validateResearchIndex(JSON.parse(fs.readFileSync(path.join(root,'data/research-index.json'),'utf8')));
+// A cache address for equivalent LF-normalized CSS, not a raw-file provenance hash.
+const showcaseVersion=createHash('sha256').update(fs.readFileSync(path.join(root,'showcase.css'),'utf8').replace(/\r\n/g,'\n')).digest('hex');
 const researchCss=['portal.css','portfolio.css','showcase.css','research-os.css'].map(name=>fs.readFileSync(path.join(root,name),'utf8')).join('\n');
 if(researchCss.includes('</style'))throw new Error('Inline CSS contains an HTML closing tag');
 const researchCssHash=createHash('sha256').update(researchCss).digest('base64');
@@ -58,6 +60,11 @@ for(const lang of Object.keys(copy)){
    portableHtml=portableHtml.replace(links,`<style>${researchCss}</style>`)
     .replace("style-src 'self';",`style-src 'self' 'sha256-${researchCssHash}';`)
     .replace(`<script src="${relativeRoot}motion-core.js" defer></script><script src="${relativeRoot}landing-motion.js" defer></script>`,'');
+  }
+  if(route!=='forschung/'){
+   const stylesheet=`href="${relativeRoot}showcase.css"`;
+   if(!portableHtml.includes(stylesheet))throw new Error('Scene stylesheet link missing');
+   portableHtml=portableHtml.replace(stylesheet,`href="${relativeRoot}showcase.css?v=${showcaseVersion}"`);
   }
   put((lang==='de'?'':lang+'/')+route+'index.html',portableHtml);
  }
