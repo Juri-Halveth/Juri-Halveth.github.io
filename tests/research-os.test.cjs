@@ -72,6 +72,7 @@ test('all three generated routes show linked sources and retained unknowns', () 
 test('rendered cards escape data text', () => {
   const injected = structuredClone(index);
   injected.entities[0].name.de = '<script>alert(1)</script>';
+  injected.entities[0].unknowns[0] = '<script>visible countercheck</script>';
   const { createHash } = require('node:crypto');
   const canonical = value => Array.isArray(value) ? '[' + value.map(canonical).join(',') + ']' : value && typeof value === 'object' ? '{' + Object.keys(value).sort().map(key => JSON.stringify(key) + ':' + canonical(value[key])).join(',') + '}' : JSON.stringify(value);
   const entity = injected.entities[0];

@@ -26,12 +26,13 @@ function encodeSourcePath(value){
  return value.split('/').map(part=>encodeURIComponent(part).replace(/[!'()*]/g,c=>'%'+c.charCodeAt(0).toString(16).toUpperCase())).join('/');
 }
 function validateRepositorySnapshot(data){
- if(data?.schema!=='halveth.public-repositories.v1'||!timestamp(data.observedAt)||!Array.isArray(data.repositories)||!data.repositories.length)throw Error('Invalid public repository snapshot');
+ if(data?.schema!=='halveth.public-repositories.v2'||!timestamp(data.observedAt)||!Array.isArray(data.repositories)||!data.repositories.length)throw Error('Invalid public repository snapshot');
  const names=new Set();
  for(const p of data.repositories){
   if(typeof p.name!=='string'||!githubRepository('Juri-Halveth/'+p.name)||names.has(p.name.toLowerCase())||p.url!=='https://github.com/Juri-Halveth/'+p.name||typeof p.revision!=='string'||!/^[a-f0-9]{40}$/.test(p.revision)||p.source!==p.url+'/tree/'+p.revision||!timestamp(p.revisionObservedAt))throw Error('Invalid public repository entry');
   publicUrl(p.url);publicUrl(p.source);names.add(p.name.toLowerCase());
   for(const lang of LANGUAGES)if(typeof p.purpose?.[lang]!=='string'||!p.purpose[lang].trim())throw Error('Complete repository purpose required');
+  for(const lang of LANGUAGES)if(typeof p.displayTitle?.[lang]!=='string'||!p.displayTitle[lang].trim())throw Error('Complete functional repository title required');
  }
  return data;
 }

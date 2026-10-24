@@ -4,8 +4,8 @@ Person: **Juri**. Project: **HALVETH**. [Identity](IDENTITY.md).
 
 [Portfolio](https://juri-halveth.github.io/en/) · [Projects](https://juri-halveth.github.io/en/arbeiten/) · [Technology and code](https://juri-halveth.github.io/en/koennen/)
 
-The entrance explains usable functions: states and variants in SCARLET,
-observation comparison in ENDECK and ASTRALIS as a spatial application.
+The entrance explains usable functions: text states and variants,
+observation comparison and spatial applications.
 JavaScript calculates two views of the same four points directly on the page.
 Purpose, model rules, local execution and potential uses remain explicit.
 Presentation order is separate from the unchanged source-packet identities.
@@ -44,7 +44,7 @@ The deterministic builder produces 43 HTML pages. The technical map links 14 wor
 samples across seven areas to pinned functions, tests and build definitions.
 Its profile-source byte binding remains explicit. `/forschung/` is a static
 source/relationship index, not a running cross-project backend. The build does
-execute the retained local ENDECK model to produce SVG.
+execute the retained local geometric model to produce SVG.
 
 Historical `/belege/` results retain their original dates and revisions.
 See [the 24 October change record](docs/SCENE-FIRST-2026-10-24.md) for the new scope.

@@ -12,9 +12,9 @@
       "transfer": "PINNED_NATIVE_RUNTIME_CAPTURE",
       "href": "https://github.com/Juri-Halveth/halveth-unreal/tree/5c2260f85d5275c15082c5c7d38ae51a143a5688",
       "title": {
-        "de": "ASTRALIS · Raum und Bewegung",
-        "en": "ASTRALIS · space and movement",
-        "ru": "ASTRALIS · пространство и движение"
+        "de": "Raum und Bewegung",
+        "en": "Space and movement",
+        "ru": "Пространство и движение"
       },
       "action": {
         "de": "Native Entwicklungsquellen öffnen",
@@ -63,13 +63,13 @@
       "id": "scarlet",
       "project": "halveth-scarlet",
       "source": "https://juri-halveth.github.io/halveth-scarlet/",
-      "revision": "3a70748b790e1c52142518ed6670b4579573a302",
+      "revision": "a590ed6c35a9dd5fc89c259ef057bb143850bae5",
       "transfer": "BROWSER_SCREENSHOT",
       "href": "https://juri-halveth.github.io/halveth-scarlet/",
       "title": {
-        "de": "SCARLET · Zustände, Zeit und Varianten",
-        "en": "SCARLET · states, time and variants",
-        "ru": "SCARLET · состояния, время и варианты"
+        "de": "Zustände, Zeit und Varianten",
+        "en": "States, time and variants",
+        "ru": "Состояния, время и варианты"
       },
       "action": {
         "de": "Funktionsraum öffnen",
@@ -77,9 +77,9 @@
         "ru": "Открыть пространство функций"
       },
       "purpose": {
-        "de": "Text als Keim setzen, eine Variante ableiten, Zustände beobachten und das aktuelle Browsermodell als JSON mitnehmen. Eine lokale Zellsimulation macht Regeln sichtbar.",
-        "en": "Plant text as a seed, derive a variant, observe states and take the current browser model with you as JSON. A local cell simulation makes rules visible.",
-        "ru": "Задайте текст как зерно, создайте вариант, наблюдайте состояния и сохраните текущую модель браузера в JSON. Локальная клеточная симуляция показывает действие правил."
+        "de": "Text setzen, eine Variante ableiten, Zustände beobachten und als JSON mitnehmen. Lichtkörper zeigen die Entwicklung des lokalen Modells.",
+        "en": "Set text, derive a variant, observe states and take the result as JSON. Light bodies show how the local model evolves.",
+        "ru": "Задайте текст, создайте вариант, наблюдайте состояния и сохраните результат в JSON. Световые тела показывают развитие локальной модели."
       },
       "use": {
         "de": "Für interaktive Erklärungen, Variantenvergleich und nachvollziehbare Zustandsabläufe.",
@@ -91,13 +91,13 @@
         "en": "JavaScript runs locally in your browser. Text states and rule-based cell movement are separate models.",
         "ru": "JavaScript работает локально в браузере. Текстовые состояния и движение клеток по правилам — отдельные модели."
       },
-      "image": "/assets/scene-scarlet-functions.webp",
-      "sha256": "93e98d5896c34034adc89b529b27bbb3de4c52830b7a0a73d78037edb44b39b7",
-      "bytes": 35714,
+      "image": "/assets/scene-state-space.webp",
+      "sha256": "8a137c8e5bbaee8b869c2230554274597ef38d9ee08bd9771f4b1b5a41a1d48e",
+      "bytes": 38654,
       "width": 1369,
-      "height": 624,
-      "sourceSha256": "9a5eac855c2503ff43948b9b7f17df33833ffceabd01f09fb29e9434c43db200",
-      "recordedAt": "2026-10-24T15:58:30.354Z",
+      "height": 639,
+      "sourceSha256": "cead1912da3594652e30f08e3e1f8658fc036d9b11c781c85f9846af205323ab",
+      "recordedAt": "2026-10-24T17:19:32.974Z",
       "imageOperation": {
         "name": "PIXEL_CROP_AND_WEBP",
         "library": "Pillow",
@@ -107,9 +107,9 @@
         "sourceHeight": 990,
         "crop": {
           "x": 28,
-          "y": 5,
+          "y": 291,
           "width": 1369,
-          "height": 624,
+          "height": 639,
           "coordinateSpace": "SOURCE_IMAGE_PIXELS"
         },
         "quality": 84,
@@ -117,15 +117,15 @@
       },
       "rights": "Source project notices remain applicable. Screenshot, conversion and publication create no expanded rights.",
       "alt": {
-        "de": "SCARLET-Funktionsraum mit Textkeim, leuchtenden Modellzellen und Bedienfeldern für Keim, Hülle, Zeit und Entfaltung.",
-        "en": "SCARLET function space with a text seed, glowing model cells and controls for seed, shell, time and unfolding.",
-        "ru": "Пространство функций SCARLET: текстовое зерно, светящиеся клетки модели и элементы управления зерном, оболочкой, временем и развитием."
+        "de": "Räumliches Lichtfeld mit Textkeim, Zeitsteuerung und Zustandsvarianten.",
+        "en": "A spatial light field with a text seed, time controls and state variants.",
+        "ru": "Световое поле с текстовым зерном, управлением временем и вариантами состояния."
       },
-      "revisionBinding": "PUBLIC_BUILD_INFO_AND_BOUND_RUNTIME_REFERENCE_TRANSFORM",
+      "revisionBinding": "PUBLIC_BUILD_INFO_AND_BOUND_RUNTIME_IMPORT_TRANSFORM",
       "captureViewport": {
         "height": 1000,
         "scrollX": 0,
-        "scrollY": 296,
+        "scrollY": 0,
         "width": 1440
       }
     },
@@ -137,9 +137,9 @@
       "transfer": "BROWSER_SCREENSHOT",
       "href": "https://juri-halveth.github.io/halveth-forschungslabor/endeck/",
       "title": {
-        "de": "ENDECK · Bild und Raum unterscheiden",
-        "en": "ENDECK · distinguish image and space",
-        "ru": "ENDECK · различать изображение и пространство"
+        "de": "Bild und Raum unterscheiden",
+        "en": "Distinguish image and space",
+        "ru": "Различать изображение и пространство"
       },
       "action": {
         "de": "Perspektive selbst verändern",
@@ -202,7 +202,7 @@
     "transfer": "EXACT_SOURCE_BYTES",
     "license": "MIT"
   },
-  "updatedAt": "2026-10-24T16:01:23.029137+00:00",
+  "updatedAt": "2026-10-24T17:19:41.161829+00:00",
   "presentationOrder": [
     "scarlet",
     "endeck",
