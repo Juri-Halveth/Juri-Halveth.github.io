@@ -1,0 +1,191 @@
+{
+  "schema": "halveth.scene-stage.v1",
+  "observedAt": "2026-10-24T13:22:13.971898+00:00",
+  "person": "Juri",
+  "project": "HALVETH",
+  "scenes": [
+    {
+      "id": "astralis",
+      "project": "halveth-unreal",
+      "source": "https://github.com/Juri-Halveth/halveth-unreal/blob/5c2260f85d5275c15082c5c7d38ae51a143a5688/Preview/LIVING_DISTRICT.png",
+      "revision": "5c2260f85d5275c15082c5c7d38ae51a143a5688",
+      "transfer": "PINNED_NATIVE_RUNTIME_CAPTURE",
+      "href": "https://github.com/Juri-Halveth/halveth-unreal/tree/5c2260f85d5275c15082c5c7d38ae51a143a5688",
+      "title": {
+        "de": "ASTRALIS · begehbare Spielwelt",
+        "en": "ASTRALIS · an explorable game world",
+        "ru": "ASTRALIS · исследуемый игровой мир"
+      },
+      "action": {
+        "de": "Spielwelt & Entwicklungsquellen",
+        "en": "Game world & development source",
+        "ru": "Мир игры и исходники"
+      },
+      "purpose": {
+        "de": "Fliegen, Portale öffnen und Bewohnern begegnen. Ein nativer C++-Prototyp in Unreal Engine.",
+        "en": "Fly, open portals and meet residents. A native C++ prototype in Unreal Engine.",
+        "ru": "Полёты, порталы и встречи с жителями. Нативный прототип C++ в Unreal Engine."
+      },
+      "use": {
+        "de": "Für spielbare Raumkonzepte und interaktive Ausstellungen.",
+        "en": "For playable spatial concepts and interactive exhibitions.",
+        "ru": "Для игровых пространств и интерактивных выставок."
+      },
+      "scope": {
+        "de": "Aufnahme aus der nativen Entwicklungsfassung.",
+        "en": "Captured in the native development version.",
+        "ru": "Кадр нативной версии в разработке."
+      },
+      "image": "/assets/scene-astralis.webp",
+      "sha256": "7dd497c43b14d1ee5234480425ef33c2d07e47896cbacdb7af7e6cc45e9eaef2",
+      "bytes": 245652,
+      "width": 1440,
+      "height": 810,
+      "sourceSha256": "3a2a88344fd46e9ce443dca32b42621a71fc524e34f2047bed434ea24dad3bb4",
+      "recordedAt": "2026-10-24T13:22:13.971898+00:00",
+      "imageOperation": {
+        "name": "WEBP_RESIZE",
+        "library": "Pillow",
+        "version": "12.3.0",
+        "maxWidth": 1440,
+        "maxHeight": 900,
+        "quality": 84,
+        "method": 6
+      },
+      "rights": "Source project notices remain applicable. Screenshot, conversion and publication create no expanded rights.",
+      "alt": {
+        "de": "Steinerner Weg, Sternentor und Bewohner in der nativen Spielwelt.",
+        "en": "A stone path, star gate and residents in the native game world.",
+        "ru": "Каменная дорожка, звёздные врата и жители в нативном игровом мире."
+      }
+    },
+    {
+      "id": "scarlet",
+      "project": "halveth-scarlet",
+      "source": "https://juri-halveth.github.io/halveth-scarlet/forschung/singularity-cannon/",
+      "revision": "UNKNOWN_FOR_LIVE_RESPONSE",
+      "transfer": "BROWSER_SCREENSHOT",
+      "href": "https://juri-halveth.github.io/halveth-scarlet/forschung/singularity-cannon/",
+      "title": {
+        "de": "SCARLET · ein Feld reagiert",
+        "en": "SCARLET · a field responds",
+        "ru": "SCARLET · поле реагирует"
+      },
+      "action": {
+        "de": "Im Browser ausprobieren",
+        "en": "Try in your browser",
+        "ru": "Попробовать в браузере"
+      },
+      "purpose": {
+        "de": "Ein Projektil verändert die Bahnen im Feld. Steuerung, Rücknahme und sichtbare Zustände greifen ineinander.",
+        "en": "A projectile changes paths in a field. Controls, undo and visible states work together.",
+        "ru": "Снаряд меняет траектории в поле. Управление, отмена и видимые состояния связаны."
+      },
+      "use": {
+        "de": "Für interaktive Produktdemos, Webgrafik und spielerische Erklärungen.",
+        "en": "For interactive product demos, web graphics and playful explanations.",
+        "ru": "Для интерактивных демонстраций, веб-графики и наглядных объяснений."
+      },
+      "scope": {
+        "de": "Echte Browseraufnahme · gestaltete Spielsimulation.",
+        "en": "Actual browser capture · designed game simulation.",
+        "ru": "Реальный снимок браузера · игровая симуляция."
+      },
+      "image": "/assets/scene-scarlet.webp",
+      "sha256": "d26a506b3549dcb678678e2fca1cb816af9e5628ea59a8942bf5200f9bb902f0",
+      "bytes": 43760,
+      "width": 1280,
+      "height": 720,
+      "sourceSha256": "c3979c9800b9d523103a92812c8080cfe8a9125f75b803b7868f31c9969bf39b",
+      "recordedAt": "2026-10-24T13:22:13.971898+00:00",
+      "imageOperation": {
+        "name": "WEBP_RESIZE",
+        "library": "Pillow",
+        "version": "12.3.0",
+        "maxWidth": 1440,
+        "maxHeight": 900,
+        "quality": 84,
+        "method": 6
+      },
+      "rights": "Source project notices remain applicable. Screenshot, conversion and publication create no expanded rights.",
+      "alt": {
+        "de": "Teilchenfeld mit dunkler Kreisscheibe und gekrümmten Bahnen.",
+        "en": "A particle field with a dark disk and curved trajectories.",
+        "ru": "Поле частиц с тёмным диском и искривлёнными траекториями."
+      }
+    },
+    {
+      "id": "endeck",
+      "project": "halveth-forschungslabor",
+      "source": "https://juri-halveth.github.io/halveth-forschungslabor/endeck/",
+      "revision": "8d6d53bd67d548c1f66923fa2eefa6295a13668b",
+      "transfer": "BROWSER_SCREENSHOT",
+      "href": "https://juri-halveth.github.io/halveth-forschungslabor/endeck/",
+      "title": {
+        "de": "ENDECK · Bild und Raum unterscheiden",
+        "en": "ENDECK · distinguish image and space",
+        "ru": "ENDECK · различать изображение и пространство"
+      },
+      "action": {
+        "de": "Perspektive selbst verändern",
+        "en": "Change the perspective yourself",
+        "ru": "Самому изменить перспективу"
+      },
+      "purpose": {
+        "de": "Vier Punkte, zwei Ansichten: eine Projektion kann verschiedene Raumorte verdecken. Mit Zeitregler und Gegenproben.",
+        "en": "Four points, two views: a projection can hide distinct spatial positions. With a time control and counterexamples.",
+        "ru": "Четыре точки, два вида: проекция скрывает разные положения в пространстве. Время и контрпримеры доступны."
+      },
+      "use": {
+        "de": "Für Kamera-Debugging, technische Lernangebote und verständliche Modellvergleiche.",
+        "en": "For camera debugging, technical learning and understandable model comparisons.",
+        "ru": "Для отладки камер, обучения и понятного сравнения моделей."
+      },
+      "scope": {
+        "de": "Geometrisches Modell · keine Messung unbekannter realer Vorgänge.",
+        "en": "Geometric model · not a measurement of unknown real processes.",
+        "ru": "Геометрическая модель, не измерение неизвестных реальных процессов."
+      },
+      "image": "/assets/scene-endeck.webp",
+      "sha256": "4d4939b745fbaad453e3b63151e8fa324d0afdcbe8253230ad7e1b68a969749c",
+      "bytes": 10602,
+      "width": 1071,
+      "height": 358,
+      "sourceSha256": "21d8edc8cb3b53d5636502811494c4617753030bdef3059476eb6750c044a90c",
+      "recordedAt": "2026-10-24T13:37:55.995147+00:00",
+      "imageOperation": {
+        "name": "WEBP_RESIZE",
+        "library": "Pillow",
+        "version": "12.3.0",
+        "maxWidth": 1440,
+        "maxHeight": 900,
+        "quality": 84,
+        "method": 6
+      },
+      "rights": "Source project notices remain applicable. Screenshot, conversion and publication create no expanded rights.",
+      "captureClip": {
+        "x": 97,
+        "y": 525,
+        "width": 1071,
+        "height": 358,
+        "coordinateSpace": "DOCUMENT_CSS_PIXELS",
+        "viewportScrollY": 432
+      },
+      "alt": {
+        "de": "Links ein gemeinsamer Bildort, rechts vier getrennte Punkte entlang der Tiefe.",
+        "en": "One shared image position on the left; four depth-separated points on the right.",
+        "ru": "Слева одно общее положение на изображении; справа четыре точки на разной глубине."
+      }
+    }
+  ],
+  "model": {
+    "path": "assets/endeck-model.mjs",
+    "repository": "Juri-Halveth/halveth-forschungslabor",
+    "revision": "8d6d53bd67d548c1f66923fa2eefa6295a13668b",
+    "sourcePath": "branches/endeck-observer/model.mjs",
+    "sha256": "3824d725caaed2d437561573533a59bee1251cc4b0a224902ca0965d0b578c11",
+    "transfer": "EXACT_SOURCE_BYTES",
+    "license": "MIT"
+  },
+  "updatedAt": "2026-10-24T14:04:02.933063+00:00"
+}

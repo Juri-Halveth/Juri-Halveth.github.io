@@ -29,6 +29,13 @@ test('invalid paths and script-like presentation text do not become executable m
  assert.equal(doc.querySelectorAll('script,iframe').length,0);
  assert.match(doc.querySelector('.evidence-case h2').textContent,/<script>/);
 });
+
+test('source evidence rejects dot repositories and safely encodes filenames with spaces',()=>{
+ const wrong=structuredClone(data);wrong.samples[0].repository='Juri-Halveth/..';assert.throws(()=>validateWorkSamples(wrong),/Pinned source/);
+ const copy=structuredClone(data);copy.samples[0].sourcePath='docs/safe file(1).md';
+ const doc=new JSDOM(renderWorkSamples(copy,'en')).window.document;
+ assert.ok(doc.querySelector('a[href$="/docs/safe%20file%281%29.md"]'));
+});
 test('generated evidence entrances are present without JavaScript and preserve localized navigation',()=>{
  for(const lang of ['','en/','ru/']){
   const page=path.join(root,lang,'belege/index.html');const doc=new JSDOM(fs.readFileSync(page,'utf8')).window.document;

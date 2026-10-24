@@ -1,6 +1,7 @@
 'use strict';
 
 const { createHash } = require('node:crypto');
+const {githubRepository,sourcePath,encodeSourcePath}=require('./validate-projects.cjs');
 const digest = value => createHash('sha256').update(value).digest('hex');
 const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const requireThat = (condition, message) => { if (!condition) throw new Error(`Research OS index: ${message}`); };
@@ -24,9 +25,10 @@ function validateResearchIndex(index) {
     const { digest: entityDigest, ...entityBody } = entity;
     requireThat(digest(canonical(entityBody)) === entityDigest, `entity digest mismatch: ${entity.id}`);
     requireThat(entity.source.visibility === 'PUBLIC', `private source: ${entity.id}`);
-    requireThat(/^Juri-Halveth\/[A-Za-z0-9._-]+$/.test(entity.source.repo), `unexpected repository: ${entity.id}`);
+    requireThat(githubRepository(entity.source.repo), `unexpected repository: ${entity.id}`);
+    requireThat(sourcePath(entity.source.path), `invalid source path: ${entity.id}`);
     requireThat(/^[0-9a-f]{40}$/.test(entity.source.revision) && /^[0-9a-f]{64}$/.test(entity.source.sha256), `unbound source: ${entity.id}`);
-    const expected = `https://github.com/${entity.source.repo}/blob/${entity.source.revision}/${entity.source.path}`;
+    const expected = `https://github.com/${entity.source.repo}/blob/${entity.source.revision}/${encodeSourcePath(entity.source.path)}`;
     requireThat(entity.source.url === expected, `source URL mismatch: ${entity.id}`);
     requireThat(/^https:\/\/juri-halveth\.github\.io\/(?:[A-Za-z0-9._-]+\/)?$/.test(entity.demo), `unexpected demo URL: ${entity.id}`);
     requireThat(Array.isArray(entity.unknowns), `unknowns missing: ${entity.id}`);

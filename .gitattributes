@@ -2,3 +2,7 @@
 *.jpg binary
 *.png binary
 *.mp4 binary
+*.webp binary
+# These retained upstream files are byte-bound, including their line endings.
+assets/endeck-model.mjs -text
+assets/endeck-LICENSE.txt -text

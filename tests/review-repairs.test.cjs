@@ -19,7 +19,7 @@ test('generated motion pages wire all existing player controls rather than ambie
  for(const prefix of ['','en/','ru/']){
   const doc=new JSDOM(read(prefix+'motion/index.html')).window.document;
   for(const id of ['motion-canvas','motion-play','motion-reverse','motion-time','motion-clock','motion-speed','motion-glow','motion-loop','motion-phase'])assert.ok(doc.getElementById(id),id);
-  assert.ok(doc.querySelector('script[src="/motion-player.js"]'));assert.equal(doc.querySelectorAll('[data-ambient-motion]').length,0);
+  const script=doc.querySelector('script[src$="motion-player.js"]');assert.ok(script);assert.equal(new URL(script.getAttribute('src'),'https://example.invalid/portfolio/'+prefix+'motion/').href,'https://example.invalid/portfolio/motion-player.js');assert.equal(doc.querySelectorAll('[data-ambient-motion]').length,0);
  }
 });
 test('retained crawler choices survive every deterministic build',()=>{
@@ -30,7 +30,7 @@ test('image suffix matches existing JPEG bytes and SCARLET source is pinned',()=
  const bytes=fs.readFileSync(path.join(root,'assets/scarlet-cannon-live.jpg'));assert.deepEqual([...bytes.subarray(0,3)],[255,216,255]);
  const doc=new JSDOM(read('index.html')).window.document;
  const source=catalog.projects.find(p=>p.id==='halveth-scarlet').source;
- assert.ok(doc.querySelector(`[data-feature="scarlet-browser"] a[href="${source}"]`));
+ assert.ok(doc.querySelector(`[data-project="halveth-scarlet"] a[href="${source}"]`));
 });
 test('reproduction paths contain their pinned revision and both C++ suites',()=>{
  const samples=JSON.parse(read('data/work-samples.json')).samples;

@@ -36,6 +36,17 @@ test('tampered digest and mismatched evidence links cannot be rendered', () => {
   assert.throws(() => validateResearchIndex(broken), /unresolved capture receipt/);
 });
 
+test('recomputed metadata cannot turn dot repositories or traversal paths into source identities',()=>{
+ const {createHash}=require('node:crypto');
+ const canonical=value=>Array.isArray(value)?'['+value.map(canonical).join(',')+']':value&&typeof value==='object'?'{'+Object.keys(value).sort().map(k=>JSON.stringify(k)+':'+canonical(value[k])).join(',')+'}':JSON.stringify(value);
+ for(const [key,value,message]of [['repo','Juri-Halveth/..',/unexpected repository/],['path','docs/../README.md',/invalid source path/]]){
+  const changed=structuredClone(index),entity=changed.entities[0];entity.source[key]=value;
+  const {digest:_,...body}=entity;entity.digest=createHash('sha256').update(canonical(body)).digest('hex');
+  const {digest:__,...whole}=changed;changed.digest=createHash('sha256').update(canonical(whole)).digest('hex');
+  assert.throws(()=>validateResearchIndex(changed),message);
+ }
+});
+
 test('all three generated routes show linked sources and retained unknowns', () => {
   for (const [prefix, expected] of [['', 'Projekte'], ['en/', 'Projects'], ['ru/', 'Проекты']]) {
     const file = path.join(root, prefix, 'forschung/index.html');

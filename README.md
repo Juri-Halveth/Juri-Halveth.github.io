@@ -1,15 +1,21 @@
-# Juri · Software, Grafik und Lernen
+# Juri · Interaktive Welten und prüfbare Systeme
 
 **Person: Juri. Projekt: HALVETH.** [Namenszuordnung](IDENTITY.md).
 
-[Portfolio öffnen](https://juri-halveth.github.io/) · [Arbeitsproben](https://juri-halveth.github.io/koennen/)
+[Portfolio öffnen](https://juri-halveth.github.io/) · [Projekte](https://juri-halveth.github.io/arbeiten/) · [Technik & Code](https://juri-halveth.github.io/koennen/)
 
-Diese Website präsentiert ausgewählte technische Projekte mit Zweck, Einstieg,
-Quellrevision und Entwicklungsstand. Die Oberfläche ist auf Deutsch, Englisch
-und Russisch verfügbar. Projektleitung: Juri / HALVETH; Entwicklung
-mit KI-Unterstützung.
+Die Startseite zeigt tatsächliche Projektszenen: eine native ASTRALIS-Spielwelt,
+SCARLETs interaktives Teilchenfeld und zwei Ansichten des ENDECK-Modells.
+Direkt auf der Seite lässt sich die Modellzeit verändern. Links fallen vier
+Bildorte zusammen, rechts bleibt ihre Tiefe unterscheidbar. Zweck und mögliche
+Weiterverwendung stehen bei jeder Szene.
+
+Die Oberfläche ist auf Deutsch, Englisch und Russisch verfügbar. Projektleitung
+und Auswahl: Juri / HALVETH; Entwicklung mit KI-Unterstützung.
 
 ## Lokal bauen
+
+Voraussetzung: Node.js 24.
 
 ```sh
 npm ci --ignore-scripts
@@ -18,69 +24,58 @@ npm test
 npm run preview
 ```
 
-`data/projects.json` ist der technische Projektkatalog. Der deterministische
-Builder `tools/build-portfolio.cjs` erzeugt alle Seiten. Tests prüfen Katalog,
-lokale Links, Sprachfassungen sowie Bewegung, Sichtbarkeit und reduzierte
-Animation. Projektprüfungen bleiben beim jeweiligen Codebestand.
+Die Vorschau bindet ausschließlich `127.0.0.1:4187`. `SPACE_PORT` kann einen
+anderen lokalen Port wählen. Der Preview-Root ist ein öffentliches
+Arbeitsverzeichnis; vertrauliche Dateien gehören in einen getrennten Speicher.
 
-## Public Research OS · lokaler Kandidat
+## Quellen und Darstellung
 
-`/forschung/` zeigt einen ersten, statisch erzeugten Forschungsindex in drei
-Sprachen. Portfolio, Seedspace, Field Difference Lab und C-DROHNE besitzen
-quellgebundene Einträge, vier README-Belege, vier Capture-Ereignisse und zwei
-Beziehungen aus dem gebundenen Portfolio-Katalog. Seedspace erhält keine
-erfundene Katalogbeziehung. Offene Fragen bleiben auf den Karten sichtbar.
+- `data/scene-stage.json` bindet drei Aufnahmen, Verarbeitung, Maße, Digests und
+  den exakt übernommenen MIT-Modellcode. `assets/ASSET-SOURCES.json` erhält die
+  Asset-Herkunft. Eine Bildschirmaufnahme ist eine zeitgebundene Beobachtung.
+- `tools/render-showcase.cjs`, `scene-stage.mjs` und `showcase.css` erzeugen
+  Darstellung und Bedienung. Eine statische SVG-Ansicht bleibt ohne JavaScript
+  lesbar; die interaktiven Steuerelemente benötigen JavaScript. Abspielen ist
+  bewusst, endlich und bei unsichtbarer Seite pausiert.
+- `data/projects.json` enthält 14 ausgewählte Einstiege mit Zweck, Quellrevision
+  und Prüfart. Lokale Modelltests sind an genau dieselbe Revision gebunden.
+  Historische Download-Releases behalten ihren eigenen Stand.
+- `data/public-repositories.json` führt alle 18 beim datierten Abruf sichtbaren
+  öffentlichen Repositories mit Zweck und beobachtetem Standardbranch-HEAD.
+  Lizenzquellen haben ihre eigene Prüfungsrevision. Das Verzeichnis ist kein
+  Vollaudit der verlinkten Produkte.
 
-`data/research-index.json` ist ein geprüfter Snapshot aus dem separaten lokalen
-Core-Kandidaten v0.1. `tools/render-research-os.cjs` prüft seinen Digest,
-öffentliche Quellenadressen, Entitäts-Digests und Relationsendpunkte vor dem
-Seitenbau. Die Website führt den Importer und die verknüpften Projekte nicht
-aus. Ein gebundener README-Stand ist kein Funktions- oder Wirkungsnachweis.
-Die Forschungsseiten enthalten ihre geprüften Styles mit CSP-Hash direkt im
-HTML und verwenden relative interne Pfade, damit auch ein direktes Öffnen der
-erzeugten `forschung/index.html` über `file://` gestaltet bleibt. Für die
-übrigen Routen bleiben Styles eigene Dateien; die Navigation löst lokal und
-unter GitHub Pages dieselben Ziele auf.
-Der Core-Kandidat liegt separat lokal; die öffentliche Webseite zeigt nur den
-geprüften statischen Index. Die neun
-gebundenen öffentlichen README-, Katalog- und Demo-Adressen antworteten beim
-HTTP-HEAD-Linkcheck am 22. Oktober 2026 mit Status 200; das ist kein
-Funktionstest ihrer Inhalte.
+`tools/build-portfolio.cjs` erzeugt 43 HTML-Seiten deterministisch. Tests prüfen
+Quelladressen, Darstellungsgrenzen, Sprachfassungen, lokale Dateipfade,
+Zeitsteuerung und gezielte Gegenbeispiele. GitHub Pages veröffentlicht den
+committeten Baum nach Build, Driftprüfung und Tests.
 
-## Ausgewählte Arbeiten auf dem ersten Blick
+## Nachvollziehbare Arbeit
 
-Startseite und Arbeitsprofil führen über drei direkte Einstiege: die native
-ASHBOUND-Vorschau, SCARLETs Singularity Cannon und das Forschungslabor. Die
-Darstellung entsteht aus `tools/render-showcase.cjs`; die Projektquellen und
-Revisionen bleiben im bestehenden Katalog. `showcase.css` enthält die
-responsive Gestaltung. Die neue Präsentation benötigt kein zusätzliches
-JavaScript und erhält die vorhandene Bewegungssteuerung.
+Die [Schnittstellenkarte](https://juri-halveth.github.io/koennen/) verbindet
+14 Arbeitsproben in sieben Bereichen mit versionierten Funktionen, Tests und
+Builddefinitionen. `data/technical-map.json` bleibt eine bytegebundene Kopie aus
+dem Profilrepository; der Build prüft sie gegen `technical-map-source.json`.
 
-Das [datierte lokale Prüfprotokoll](docs/WORK-SAMPLE-VALIDATION-2026-10-20.md)
-bindet den tatsächlich geprüften Forschungslabor-Commit und die Aufteilung
-der 145 Tests. Es ist eine Momentaufnahme und kein Live-CI-Badge.
+`/belege/` zeigt drei datierte Fälle. Das [Prüfprotokoll vom 20. Oktober](docs/WORK-SAMPLE-VALIDATION-2026-10-20.md)
+und die damaligen CI-Zuordnungen bleiben historische Belege ihrer eigenen
+Revision. Der neue [Änderungs- und Prüfstand](docs/SCENE-FIRST-2026-10-24.md)
+trennt diese Ergebnisse vom aktuellen lokalen Lauf.
 
-## Technische Schnittstellenkarte
+`/forschung/` zeigt den statischen Public-Research-OS-Index: vier Projekte,
+gebundene README-Quellen und explizite Beziehungen. Er startet weder die
+verlinkten Produkte noch den externen Importer. Der Build verwendet separat
+den lokalen ENDECK-Modellcode zur SVG-Erzeugung. Forschungsseiten betten ihre
+Styles mit CSP-Hash ein; Navigation und Ressourcen bleiben relativ.
 
-`/koennen/` ordnet 14 konkrete Arbeitsproben in sieben technischen Gebieten.
-Vier Querwege verbinden wiederkehrende Arbeitsweisen über die Projekte hinweg.
-Die Belege führen direkt zu versionierten Funktionen, Gegenproben, Buildskripten
-und Workflows. Die Bereiche lassen sich ohne JavaScript anspringen; native
-Details-Elemente öffnen die jeweiligen Quellverweise.
+## Zusammenarbeit und Rechte
 
-`data/technical-map.json` ist eine exakte Kopie des Quellenkatalogs aus dem
-Profilrepository. `data/technical-map-source.json` bindet dessen Commit, Pfad
-und SHA-256. Änderungen erfolgen zuerst dort, anschließend wird die Kopie bewusst
-übernommen. Die Website prüft lokale Struktur, Quelladressen und Kopierintegrität;
-sie führt die fremden Produkte beim Build nicht aus und behauptet keine neue
-Laufzeitprüfung dieser Produkte.
+Interaktive Prototypen, technische Erklärungen und lokale Werkzeuge können als
+konkreter Auftrag mit Ziel, Umfang und Abnahme vereinbart werden.
 
-Die frühere gemischte Sammlung wurde privat gesichert und aus dem aktuellen
-öffentlichen Baum entfernt. Alte Zertifikatsadressen zeigen jetzt Arbeitsproben.
-Ein Redaktionscommit schreibt keine Git-Historie um.
+Die Website ist source-available unter der pfad- und versionsgebundenen
+[Lizenzkarte](LICENSES.md), mit erhaltenen MIT-Ausnahmen. Verlinkte Projekte
+haben eigene Bedingungen; frühere wirksame Grants bleiben bestehen. Eine
+kommerzielle Anfrage nennt das konkrete Werk, die Revision und den Einsatz.
 
-[Lizenzen](LICENSES.md) · [Sicherheit](SECURITY.md) · Kontakt: security@halveth.de
-
-## Dated evidence and hardening
-
-The three concise, source-pinned cases are generated at `/belege/` (also English and Russian) from `data/work-samples.json`. See [implementation and remaining checks](docs/HARDENING-2026-10-20.md). CI snapshots are matched to exact source revisions at build time.
+[Sicherheit](SECURITY.md) · Kontakt: **security@halveth.de**
