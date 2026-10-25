@@ -32,9 +32,13 @@ test('image suffix matches existing JPEG bytes and SCARLET source is pinned',()=
  const source=catalog.projects.find(p=>p.id==='halveth-scarlet').source;
  assert.ok(doc.querySelector(`[data-project="halveth-scarlet"] a[href="${source}"]`));
 });
-test('reproduction paths contain their pinned revision and both C++ suites',()=>{
+test('retained reproduction paths bind each displayed revision',()=>{
  const samples=JSON.parse(read('data/work-samples.json')).samples;
- const cpp=samples.find(x=>x.id==='cpp-state');assert.match(cpp.commands,/tests\/layout_test\.cpp/);assert.match(cpp.commands,/\.\/layout_test/);
+ assert.deepEqual(samples.map(x=>x.id),['source-packets','scarlet-interaction']);
+ for(const sample of samples){
+  if(sample.localCheck==='LOCAL_MODEL_TESTS')assert.ok(sample.commands.includes('git checkout '+sample.revision),sample.id);
+  else assert.match(sample.commands,/Browser: open the live scene/);
+ }
  const lab=catalog.projects.find(p=>p.id==='halveth-forschungslabor');
  for(const prefix of ['','en/','ru/'])assert.ok(new JSDOM(read(prefix+'handbuch/index.html')).window.document.querySelector('pre').textContent.includes('git checkout '+lab.revision));
 });

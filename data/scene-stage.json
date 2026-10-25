@@ -5,61 +5,6 @@
   "project": "HALVETH",
   "scenes": [
     {
-      "id": "astralis",
-      "project": "halveth-unreal",
-      "source": "https://github.com/Juri-Halveth/halveth-unreal/blob/5c2260f85d5275c15082c5c7d38ae51a143a5688/Preview/LIVING_DISTRICT.png",
-      "revision": "5c2260f85d5275c15082c5c7d38ae51a143a5688",
-      "transfer": "PINNED_NATIVE_RUNTIME_CAPTURE",
-      "href": "https://github.com/Juri-Halveth/halveth-unreal/tree/5c2260f85d5275c15082c5c7d38ae51a143a5688",
-      "title": {
-        "de": "Raum und Bewegung",
-        "en": "Space and movement",
-        "ru": "Пространство и движение"
-      },
-      "action": {
-        "de": "Native Entwicklungsquellen öffnen",
-        "en": "Open native development source",
-        "ru": "Открыть исходники нативного прототипа"
-      },
-      "purpose": {
-        "de": "Fliegen, Portale öffnen und Bewohnern begegnen. Ein nativer C++-Prototyp in Unreal Engine.",
-        "en": "Fly, open portals and meet residents. A native C++ prototype in Unreal Engine.",
-        "ru": "Полёты, порталы и встречи с жителями. Нативный прототип C++ в Unreal Engine."
-      },
-      "use": {
-        "de": "Für räumliche Prototypen, interaktive Ausstellungen und Spielkonzepte.",
-        "en": "For spatial prototypes, interactive exhibitions and game concepts.",
-        "ru": "Для пространственных прототипов, интерактивных выставок и игровых концепций."
-      },
-      "scope": {
-        "de": "Aufnahme aus der nativen Entwicklungsfassung.",
-        "en": "Captured in the native development version.",
-        "ru": "Кадр нативной версии в разработке."
-      },
-      "image": "/assets/scene-astralis.webp",
-      "sha256": "7dd497c43b14d1ee5234480425ef33c2d07e47896cbacdb7af7e6cc45e9eaef2",
-      "bytes": 245652,
-      "width": 1440,
-      "height": 810,
-      "sourceSha256": "3a2a88344fd46e9ce443dca32b42621a71fc524e34f2047bed434ea24dad3bb4",
-      "recordedAt": "2026-10-24T13:22:13.971898+00:00",
-      "imageOperation": {
-        "name": "WEBP_RESIZE",
-        "library": "Pillow",
-        "version": "12.3.0",
-        "maxWidth": 1440,
-        "maxHeight": 900,
-        "quality": 84,
-        "method": 6
-      },
-      "rights": "Source project notices remain applicable. Screenshot, conversion and publication create no expanded rights.",
-      "alt": {
-        "de": "Steinerner Weg, Sternentor und Bewohner in der nativen Spielwelt.",
-        "en": "A stone path, star gate and residents in the native game world.",
-        "ru": "Каменная дорожка, звёздные врата и жители в нативном игровом мире."
-      }
-    },
-    {
       "id": "scarlet",
       "project": "halveth-scarlet",
       "source": "https://juri-halveth.github.io/halveth-scarlet/",
@@ -205,7 +150,6 @@
   "updatedAt": "2026-10-24T17:19:41.161829+00:00",
   "presentationOrder": [
     "scarlet",
-    "endeck",
-    "astralis"
+    "endeck"
   ]
 }

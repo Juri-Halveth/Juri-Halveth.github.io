@@ -7,11 +7,11 @@
 .scene-intro p{max-width:560px;font-size:16px;line-height:1.6;margin-bottom:15px}
 .scene-intro .hero-actions{display:flex;flex-wrap:wrap;align-items:center;margin:0;gap:12px 18px}
 .scene-intro .button{padding:12px 18px}
-.scene-wall{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);grid-template-rows:1fr 1fr;gap:14px}
+.scene-wall{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);grid-template-rows:1fr;gap:14px}
 .scene-tile{position:relative;display:block;min-width:0;min-height:0;background:#091717;overflow:hidden;isolation:isolate;text-decoration:none;color:#fff}
 .scene-tile:hover{color:#fff}
-.scene-tile-scarlet{grid-row:1/3;aspect-ratio:1.56}
-.scene-tile-astralis,.scene-tile-endeck{aspect-ratio:3.1}
+.scene-tile-scarlet{aspect-ratio:1.56}
+.scene-tile-endeck{aspect-ratio:auto}
 .scene-tile img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
 .scene-tile:after{position:absolute;inset:0;z-index:0;content:'';background:linear-gradient(180deg,transparent 30%,rgba(3,12,13,.88) 100%)}
 .scene-tile:hover img{transform:scale(1.018)}
@@ -55,7 +55,7 @@
 .scene-purpose{padding-block:70px}
 .scene-purpose>.eyebrow{margin-bottom:18px}
 .scene-purpose h2{font-size:clamp(32px,3.6vw,48px);max-width:900px}
-.scene-purpose-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px;margin:40px 0 25px}
+.scene-purpose-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px;margin:40px 0 25px}
 .scene-purpose-grid article{border-top:1px solid var(--line);padding-top:24px;min-width:0}
 .scene-purpose-grid h3{font-size:22px;line-height:1.25;margin-bottom:18px}
 .scene-purpose-grid p{font-size:15px;line-height:1.65}
@@ -64,7 +64,7 @@
 .repository-index{padding-block:65px;border-top:1px solid var(--line)}
 .repository-index h2{font-size:clamp(30px,3.6vw,46px)}
 .repository-index>p{max-width:850px;margin-top:20px}
-.repository-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));list-style:none;padding:0;margin:30px 0;gap:0 30px}
+.repository-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));list-style:none;padding:0;margin:30px 0;gap:0 30px}
 .repository-list li{min-width:0;border-top:1px solid var(--line);padding:18px 0}
 .repository-list a{display:inline-block;font-size:15px;font-weight:600;overflow-wrap:anywhere}
 .repository-list p{font-size:13px;color:var(--muted);line-height:1.55;margin:6px 0 0}
@@ -90,7 +90,7 @@
 .scene-intro p{font-size:15px;max-width:600px}
 .scene-wall{grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:10px}
 .scene-tile-scarlet{grid-column:1/3;grid-row:auto;aspect-ratio:16/10}
-.scene-tile-astralis,.scene-tile-endeck{aspect-ratio:1.1}
+.scene-tile-endeck{aspect-ratio:1.1}
 .scene-caption{inset:auto 12px 12px;gap:6px}
 .scene-caption strong{font-size:17px}
 .scene-caption>span:last-child{font-size:11px}
@@ -112,10 +112,10 @@
 .scene-offer{padding:40px 0}}
 .scene-tile img{position:absolute;inset:0}
 .scene-tile-scarlet{aspect-ratio:1.9}
-.scene-tile-astralis,.scene-tile-endeck{aspect-ratio:auto}
+.scene-tile-endeck{aspect-ratio:auto}
 @media(max-width:1000px) and (min-width:761px){.scene-tile-scarlet{aspect-ratio:1.6}}
 @media(max-width:760px){.scene-tile-scarlet{aspect-ratio:16/10}
-.scene-tile-astralis,.scene-tile-endeck{aspect-ratio:1.1}}
+.scene-tile-endeck{aspect-ratio:1.1}}
 .demo-label{font-size:14px}
 .scene-demo svg{aspect-ratio:1;max-height:none}
 @media(max-width:760px){.scene-demo-views{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -130,25 +130,25 @@
 @media(max-width:1100px){
 .scene-wall{grid-template-columns:1fr 1fr;grid-template-rows:auto auto}
 .scene-tile-scarlet{grid-row:auto;grid-column:1/3;aspect-ratio:16/9}
-.scene-tile-astralis,.scene-tile-endeck{aspect-ratio:1.8;min-height:180px}
+.scene-tile-endeck{aspect-ratio:1.8;min-height:180px}
 }
 @media(max-width:560px){
 .scene-wall{grid-template-columns:1fr}
 .scene-tile-scarlet{grid-column:auto}
-.scene-tile-astralis,.scene-tile-endeck{aspect-ratio:2.2;min-height:180px}
+.scene-tile-endeck{aspect-ratio:2.2;min-height:180px}
 }
 
 /* Definite tile widths keep aspect-ratio minimums inside narrow grid tracks. */
 .scene-tile{width:100%}
 @media(max-width:1100px){
 .scene-wall{grid-template-columns:repeat(2,minmax(0,1fr))}
-.scene-tile-astralis,.scene-tile-endeck{aspect-ratio:auto;min-height:0;height:clamp(180px,23vw,260px)}
+.scene-tile-endeck{aspect-ratio:auto;min-height:0;height:clamp(180px,23vw,260px)}
 }
 @media(max-width:560px){
 .scene-wall{grid-template-columns:minmax(0,1fr)}
 .scene-heading h1{font-size:clamp(30px,7.8vw,42px)}
 .scene-tile-scarlet{aspect-ratio:auto;height:220px}
-.scene-tile-astralis,.scene-tile-endeck{height:200px}
+.scene-tile-endeck{height:200px}
 /* Keep the four spatial points clear of the caption on a narrow screen. */
 .scene-tile-endeck{height:auto;padding-top:160px}
 .scene-tile-endeck img{height:160px}

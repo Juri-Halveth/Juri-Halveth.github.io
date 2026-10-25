@@ -25,14 +25,18 @@ test('mutable versions, mismatched URLs, invalid spans and runtime promotion fai
 });
 
 test('supplemental links preserve safe release tags and dot-named repositories while rejecting changed Markdown and owner scopes',()=>{
+ // The current selection has no release promotion. Keep URL validation
+ // covered with a synthetic release fixture; never render it publicly.
+ const fixture=structuredClone(data);
+ fixture.items[0].release={url:'https://github.com/Juri-Halveth/fixture/releases/tag/v1.0.0'};
  for(const kind of ['release','contribution']){
-  const original=data.items.find(i=>i[kind])[kind].url;
+  const original=fixture.items.find(i=>i[kind])[kind].url;
   for(const url of [original+')\n\n[fixture](https://example.invalid/fixture',[original],'https://github.com/Juri-Halveth/../commit/a','https://github.com/Juri-Halveth/repo/commit/..']){
-   const d=structuredClone(data);d.items.find(i=>i[kind])[kind].url=url;assert.throws(()=>validateMap(d,provenance,bytes));
+   const d=structuredClone(fixture);d.items.find(i=>i[kind])[kind].url=url;assert.throws(()=>validateMap(d,provenance,bytes));
   }
  }
  for(const tag of ['release/v1.2.3','v1.2.3+build.1']){
-  const d=structuredClone(data);d.items.find(i=>i.release).release.url='https://github.com/Juri-Halveth/.github/releases/tag/'+tag;validateMap(d,provenance,bytes);
+  const d=structuredClone(fixture);d.items.find(i=>i.release).release.url='https://github.com/Juri-Halveth/.github/releases/tag/'+tag;validateMap(d,provenance,bytes);
  }
  for(const repository of ['Juri-Halveth/.','Juri-Halveth/..']){
   const d=structuredClone(data),e=d.items[0].evidence[0];e.repository=repository;e.url=`https://github.com/${repository}/blob/${e.revision}/${e.path}#L${e.startLine}-L${e.endLine}`;assert.throws(()=>validateMap(d,provenance,bytes));
@@ -68,6 +72,6 @@ test('profile and overview point to the map while keeping the project catalog',(
  for(const prefix of ['','en/','ru/'])for(const route of ['','profil/']){
   const page=path.join(root,prefix+route+'index.html');const doc=new JSDOM(fs.readFileSync(page,'utf8')).window.document;
   assert.equal(path.resolve(path.dirname(page),doc.querySelector('.map-teaser a').getAttribute('href')),path.join(root,prefix,'koennen'));
-  assert.equal(doc.querySelectorAll('[data-project]').length,14);
+  assert.equal(doc.querySelectorAll('[data-project]').length,10);
  }
 });

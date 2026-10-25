@@ -7,8 +7,6 @@ const model = require('../assets/endeck-model.mjs');
 const {publicUrl}=require('./validate-projects.cjs');
 const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const LANGUAGES = ['de','en','ru'];
-const nativeMotionUrl='https://github.com/Juri-Halveth/halveth-unreal/blob/d90cfd9ec5b895ff4a7e82c27983e25efa5c3350/Preview/MEADOW_WIND.gif';
-const nativeMotionLabel={de:'Neue Wiese in Bewegung · GIF, 4 MB',en:'New meadow in motion · GIF, 4 MB',ru:'Новый луг в движении · GIF, 4 МБ'};
 const words = {
   "de": {
     "eyebrow": "JURI / GESTALTUNG & SOFTWARE",
@@ -35,10 +33,10 @@ const words = {
     "purposeTitle": "Was läuft hier?<br><em>Und wofür ist es nützlich?</em>",
     "proof": "Arbeitsproben mit Eingabe, Gegenprobe und Quellrevision",
     "scope": "Für Kamera-Debugging, technische Erklärungen und den Vergleich von Modellansichten.",
-    "all": "Alle öffentlichen Repositories",
+    "all": "Weitere ausgewählte Projekte",
     "allIntro": "Auch kleinere Werkzeuge und Forschungszweige bleiben erreichbar. Der Stand nennt den Zweck und führt zum jeweiligen Quellbestand.",
     "offer": "Gemeinsam etwas Brauchbares bauen.",
-    "offerIntro": "Ein begehbarer Prototyp, eine interaktive Erklärung oder ein klar begrenzter technischer Review: Wir vereinbaren Aufgabe, Umfang und Abnahme.",
+    "offerIntro": "Ein Browserwerkzeug, eine interaktive Erklärung oder ein klar begrenzter technischer Review: Wir vereinbaren Aufgabe, Umfang und Abnahme.",
     "contact": "Projekt besprechen",
     "observe": "Modell hier bewegen",
     "mechanismTitle": "Was berechnet der Code?",
@@ -69,10 +67,10 @@ const words = {
     "purposeTitle": "What runs here?<br><em>And what can it help you do?</em>",
     "proof": "Work samples with input, counterexample and source revision",
     "scope": "For camera debugging, technical explanations and comparing model views.",
-    "all": "Every public repository",
+    "all": "More selected projects",
     "allIntro": "Smaller tools and research branches remain accessible. Each entry explains its purpose and links to the source.",
     "offer": "Build something useful together.",
-    "offerIntro": "An explorable prototype, an interactive explanation or a bounded technical review: agree the task, scope and acceptance checks.",
+    "offerIntro": "A browser tool, an interactive explanation or a bounded technical review: agree the task, scope and acceptance checks.",
     "contact": "Discuss a project",
     "observe": "Move the model here",
     "mechanismTitle": "What does the code calculate?",
@@ -103,10 +101,10 @@ const words = {
     "purposeTitle": "Что здесь работает?<br><em>Для чего это полезно?</em>",
     "proof": "Примеры работы: вход, контрпример и версия исходников",
     "scope": "Для отладки камер, технических объяснений и сравнения видов модели.",
-    "all": "Все публичные репозитории",
+    "all": "Другие избранные проекты",
     "allIntro": "Небольшие инструменты и исследовательские ветви также доступны. У каждого есть описание цели и ссылка на код.",
     "offer": "Создадим что-то полезное вместе.",
-    "offerIntro": "Исследуемый прототип, интерактивное объяснение или ограниченный технический обзор: согласуем задачу, объём и проверку результата.",
+    "offerIntro": "Браузерный инструмент, интерактивное объяснение или ограниченный технический обзор: согласуем задачу, объём и проверку результата.",
     "contact": "Обсудить проект",
     "observe": "Изменить модель здесь",
     "mechanismTitle": "Что вычисляет код?",
@@ -115,18 +113,18 @@ const words = {
 };
 
 function validateSceneCatalog(catalog,root) {
-  if(catalog?.schema!=='halveth.scene-stage.v2'||catalog.person!=='Juri'||catalog.project!=='HALVETH'||catalog.scenes?.length!==3)throw Error('Invalid scene catalog');
-  if(catalog.scenes.map(s=>s.id).join('|')!=='astralis|scarlet|endeck')throw Error('Exact scene identities required');
-  if(!Array.isArray(catalog.presentationOrder)||catalog.presentationOrder.length!==3||new Set(catalog.presentationOrder).size!==3||catalog.presentationOrder.some(id=>!catalog.scenes.some(scene=>scene.id===id)))throw Error('Complete unique presentation order required');
-  const projects={astralis:'halveth-unreal',scarlet:'halveth-scarlet',endeck:'halveth-forschungslabor'};
-  const images={astralis:'/assets/scene-astralis.webp',scarlet:'/assets/scene-state-space.webp',endeck:'/assets/scene-endeck.webp'};
+  if(catalog?.schema!=='halveth.scene-stage.v2'||catalog.person!=='Juri'||catalog.project!=='HALVETH'||catalog.scenes?.length!==2)throw Error('Invalid scene catalog');
+  if(catalog.scenes.map(s=>s.id).join('|')!=='scarlet|endeck')throw Error('Exact scene identities required');
+  if(!Array.isArray(catalog.presentationOrder)||catalog.presentationOrder.length!==2||new Set(catalog.presentationOrder).size!==2||catalog.presentationOrder.some(id=>!catalog.scenes.some(scene=>scene.id===id)))throw Error('Complete unique presentation order required');
+  const projects={scarlet:'halveth-scarlet',endeck:'halveth-forschungslabor'};
+  const images={scarlet:'/assets/scene-state-space.webp',endeck:'/assets/scene-endeck.webp'};
   for(const scene of catalog.scenes){
     if(scene.project!==projects[scene.id])throw Error('Scene project identity mismatch');
     publicUrl(scene.href);publicUrl(scene.source);
-    if(!['PINNED_NATIVE_RUNTIME_CAPTURE','BROWSER_SCREENSHOT'].includes(scene.transfer)||!Number.isSafeInteger(scene.width)||!Number.isSafeInteger(scene.height)||scene.width<1||scene.width>8192||scene.height<1||scene.height>8192)throw Error('Invalid capture contract');
+    if(scene.transfer!=='BROWSER_SCREENSHOT'||!Number.isSafeInteger(scene.width)||!Number.isSafeInteger(scene.height)||scene.width<1||scene.width>8192||scene.height<1||scene.height>8192)throw Error('Invalid capture contract');
     if(scene.image!==images[scene.id]||!/^https:\/\/(github\.com\/Juri-Halveth\/|juri-halveth\.github\.io\/)/.test(scene.href))throw Error('Unsafe or mismatched scene route');
     if(!/^[a-f0-9]{64}$/.test(scene.sha256)||!Number.isSafeInteger(scene.bytes)||scene.bytes<1||scene.bytes>500000)throw Error('Bound scene bytes required');
-    if(scene.transfer==='PINNED_NATIVE_RUNTIME_CAPTURE'&&(typeof scene.revision!=='string'||!/^[a-f0-9]{40}$/.test(scene.revision)||!scene.source.startsWith(`https://github.com/Juri-Halveth/${scene.project}/blob/${scene.revision}/`)||scene.href!==`https://github.com/Juri-Halveth/${scene.project}/tree/${scene.revision}`))throw Error('Pinned native source required');
+    if(typeof scene.revision!=='string'||!/^[a-f0-9]{40}$/.test(scene.revision))throw Error('Pinned source revision required');
     if(scene.transfer==='BROWSER_SCREENSHOT'&&(!scene.source.startsWith(`https://juri-halveth.github.io/${scene.project}/`)||scene.href!==scene.source))throw Error('Scene capture URL must bind its project');
     for(const field of ['title','alt','action','purpose','use','scope'])for(const language of LANGUAGES)if(typeof scene[field]?.[language]!=='string'||!scene[field][language].trim())throw Error('Every scene needs localized purpose and scope');
     if(root){const bytes=fs.readFileSync(path.join(root,scene.image.slice(1)));if(bytes.length!==scene.bytes||createHash('sha256').update(bytes).digest('hex')!==scene.sha256)throw Error('Scene byte mismatch');}
@@ -145,13 +143,13 @@ function renderProjection(points){
 function renderHero(catalog,lang){
   const t=language(lang);validateSceneCatalog(catalog);
   const prefix=lang==='de'?'/':`/${lang}/`;
-  const captions={astralis:t.native,scarlet:t.web,endeck:t.model};
+  const captions={scarlet:t.web,endeck:t.model};
   const scenes=presentationScenes(catalog),lead=scenes[0];
   return `<section class="hero scene-hero shell"><div class="scene-heading"><div><p class="eyebrow">${t.eyebrow}</p><h1>${t.title}</h1></div><div class="scene-intro"><p>${t.intro}</p><div class="hero-actions"><a class="button" href="${esc(sceneHref(lead,lang))}">${t.try} ↗</a><a class="text-link" href="#scene-lab">${t.observe} ↓</a><a class="text-link" href="${prefix}koennen/">${t.code} ↗</a></div></div></div><div class="scene-wall">${scenes.map((s,i)=>`<a class="scene-tile scene-tile-${s.id}" href="${esc(sceneHref(s,lang))}" data-scene="${s.id}"><img src="${esc(s.image)}" alt="${esc(s.alt[lang])}" width="${s.width}" height="${s.height}" ${i===0?'fetchpriority="high"':'loading="lazy"'}><span class="scene-caption"><span class="scene-type">${captions[s.id]}</span><strong>${esc(s.title[lang])}</strong><span>${esc(s.action[lang])} ↗</span></span></a>`).join('')}</div><p class="scene-note">${esc(lead.scope[lang])}</p></section>`;
 }
 function renderSceneShowcase(catalog,lang){
   const t=language(lang);validateSceneCatalog(catalog);
   const prefix=lang==='de'?'/':`/${lang}/`;
-  return `<section class="scene-demo-band" id="scene-lab"><div class="shell scene-demo-layout"><div class="scene-demo-copy"><p class="eyebrow">${t.lab}</p><h2>${t.labTitle}</h2><p>${t.labIntro}</p><a class="text-link" href="https://juri-halveth.github.io/halveth-forschungslabor/endeck/">${t.detail} ↗</a><p class="scene-note">${t.scope}</p><details class="scene-mechanism"><summary>${t.mechanismTitle}</summary><p>${t.mechanism}</p></details></div><div class="scene-demo" id="scene-demo" data-lang="${lang}" data-state="still"><div class="scene-demo-views"><figure><figcaption>${t.flat}</figcaption><svg id="scene-flat" viewBox="0 0 200 200" role="img" aria-label="${t.flat}"><title>${t.flat}</title>${renderProjection(model.observeXY(model.source('projection',0)))}</svg></figure><figure><figcaption>${t.space}</figcaption><svg id="scene-space" viewBox="0 0 200 200" role="img" aria-label="${t.space}"><title>${t.space}</title>${renderProjection(model.source('projection',0).map(p=>model.project(p,64)))}</svg></figure></div><label class="scene-time" for="scene-time"><span>${t.time}</span><output id="scene-time-value" for="scene-time">0,000</output></label><input id="scene-time" type="range" min="0" max="1000" step="1" value="0"><div class="scene-demo-actions"><button id="scene-play" type="button" aria-pressed="false" data-play="${t.play}" data-pause="${t.pause}">${t.play}</button><button id="scene-end" type="button">${t.end}</button></div><p id="scene-result" role="status">${t.result}</p><a class="scene-code" href="https://github.com/Juri-Halveth/halveth-forschungslabor/blob/${catalog.model.revision}/${catalog.model.sourcePath}">${t.source} · ${catalog.model.revision.slice(0,7)} ↗</a></div></div></section><section class="shell scene-purpose"><p class="eyebrow">${t.purpose}</p><h2>${t.purposeTitle}</h2><div class="scene-purpose-grid">${presentationScenes(catalog).map(s=>`<article data-feature="${esc(s.project)}"><h3>${esc(s.title[lang])}</h3><p>${esc(s.purpose[lang])}</p><p class="scene-use">${esc(s.use[lang])}</p><p class="scene-note">${esc(s.scope[lang])}</p><a href="${esc(sceneHref(s,lang))}">${esc(s.action[lang])} ↗</a>${s.id==='astralis'?`<p class="scene-note"><a href="${nativeMotionUrl}">${esc(nativeMotionLabel[lang])} ↗</a></p>`:''}</article>`).join('')}</div><a class="text-link" href="${prefix}belege/">${t.proof} ↗</a></section>`;
+  return `<section class="scene-demo-band" id="scene-lab"><div class="shell scene-demo-layout"><div class="scene-demo-copy"><p class="eyebrow">${t.lab}</p><h2>${t.labTitle}</h2><p>${t.labIntro}</p><a class="text-link" href="https://juri-halveth.github.io/halveth-forschungslabor/endeck/">${t.detail} ↗</a><p class="scene-note">${t.scope}</p><details class="scene-mechanism"><summary>${t.mechanismTitle}</summary><p>${t.mechanism}</p></details></div><div class="scene-demo" id="scene-demo" data-lang="${lang}" data-state="still"><div class="scene-demo-views"><figure><figcaption>${t.flat}</figcaption><svg id="scene-flat" viewBox="0 0 200 200" role="img" aria-label="${t.flat}"><title>${t.flat}</title>${renderProjection(model.observeXY(model.source('projection',0)))}</svg></figure><figure><figcaption>${t.space}</figcaption><svg id="scene-space" viewBox="0 0 200 200" role="img" aria-label="${t.space}"><title>${t.space}</title>${renderProjection(model.source('projection',0).map(p=>model.project(p,64)))}</svg></figure></div><label class="scene-time" for="scene-time"><span>${t.time}</span><output id="scene-time-value" for="scene-time">0,000</output></label><input id="scene-time" type="range" min="0" max="1000" step="1" value="0"><div class="scene-demo-actions"><button id="scene-play" type="button" aria-pressed="false" data-play="${t.play}" data-pause="${t.pause}">${t.play}</button><button id="scene-end" type="button">${t.end}</button></div><p id="scene-result" role="status">${t.result}</p><a class="scene-code" href="https://github.com/Juri-Halveth/halveth-forschungslabor/blob/${catalog.model.revision}/${catalog.model.sourcePath}">${t.source} · ${catalog.model.revision.slice(0,7)} ↗</a></div></div></section><section class="shell scene-purpose"><p class="eyebrow">${t.purpose}</p><h2>${t.purposeTitle}</h2><div class="scene-purpose-grid">${presentationScenes(catalog).map(s=>`<article data-feature="${esc(s.project)}"><h3>${esc(s.title[lang])}</h3><p>${esc(s.purpose[lang])}</p><p class="scene-use">${esc(s.use[lang])}</p><p class="scene-note">${esc(s.scope[lang])}</p><a href="${esc(sceneHref(s,lang))}">${esc(s.action[lang])} ↗</a></article>`).join('')}</div><a class="text-link" href="${prefix}belege/">${t.proof} ↗</a></section>`;
 }
 module.exports={validateSceneCatalog,presentationScenes,renderHero,renderSceneShowcase,words,renderProjection};

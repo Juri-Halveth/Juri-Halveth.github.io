@@ -14,9 +14,9 @@
     "ru": "Я разрабатываю и исследую интерфейсы между системами."
   },
   "introduction": {
-    "de": "Wähle ein technisches Gebiet und öffne direkt die zugehörige Funktion, Gegenprobe oder Builddefinition. Die Beispiele verbinden sieben öffentliche Repositories durch nachvollziehbare Arbeitsschritte.",
-    "en": "Choose a technical area and open its function, counterexample or build definition. These examples connect seven public repositories through inspectable engineering work.",
-    "ru": "Выберите техническую область и откройте функцию, контрпример или определение сборки. Примеры связывают семь публичных репозиториев через конкретную инженерную работу."
+    "de": "Wähle ein technisches Gebiet und öffne direkt die zugehörige Funktion, Gegenprobe oder Builddefinition. Die Beispiele verbinden 6 ausgewählte öffentliche Repositories durch nachvollziehbare Arbeitsschritte.",
+    "en": "Choose a technical area and open its function, counterexample or build definition. These examples connect 6 selected public repositories through inspectable engineering work.",
+    "ru": "Выберите техническую область и откройте функцию, контрпример или определение сборки. Примеры связывают 6 выбранных публичных репозиториев через конкретную инженерную работу."
   },
   "scope": {
     "de": "Die Karte ordnet veröffentlichte Arbeitsproben nach Schnittstellen. Sie beschreibt den sichtbaren Implementierungsumfang und keine formale Qualifikation. Verbindungen sind fachliche Querverweise; eine gemeinsame Produktruntime wird daraus nicht abgeleitet.",
@@ -30,14 +30,6 @@
         "de": "Oberflächen & lokale Schnittstellen",
         "en": "Interfaces & local applications",
         "ru": "Интерфейсы и локальные приложения"
-      }
-    },
-    {
-      "id": "native",
-      "title": {
-        "de": "C++ & native Spielwelten",
-        "en": "C++ & native game worlds",
-        "ru": "C++ и нативные игровые миры"
       }
     },
     {
@@ -185,125 +177,6 @@
           "url": "https://github.com/Juri-Halveth/halveth-tresor/blob/66da64abfc58cd8cce05f935197aa51e31e232f2/tests/test_app_backup.py#L61-L80"
         }
       ]
-    },
-    {
-      "id": "cpp-state",
-      "area": "native",
-      "technologies": [
-        "C++20",
-        "Unreal Engine",
-        "State import/export"
-      ],
-      "title": {
-        "de": "Spielfortschritt vor der Übernahme prüfen",
-        "en": "Validate game progress before admission",
-        "ru": "Проверять игровой прогресс перед принятием"
-      },
-      "interface": {
-        "de": "Portabler C++-Zustandskern und Unreal-Komponenten",
-        "en": "Portable C++ state core and Unreal components",
-        "ru": "Переносимое ядро состояний C++ и компоненты Unreal"
-      },
-      "summary": {
-        "de": "Portal Garden trennt Inventar, Lernen und Questentscheidungen in einem C++-Kern. Gegenproben prüfen unter anderem ungültige Importzustände und unveränderten Zustand bei abgewiesenen Aktionen.",
-        "en": "Portal Garden models inventory, learning and quest decisions in a C++ core. Counterexamples cover invalid imported states and state preservation after rejected actions.",
-        "ru": "Portal Garden моделирует инвентарь, обучение и решения квестов в ядре C++. Контрпримеры проверяют неверные состояния импорта и сохранение состояния при отказе."
-      },
-      "scope": {
-        "de": "Portabler Zustandskern mit Quelltests; die Unreal-Laufzeit ist eine zusätzliche Integrationsfläche.",
-        "en": "Portable state core with source tests; the Unreal runtime is an additional integration surface.",
-        "ru": "Переносимое ядро с тестами исходников; среда Unreal представляет отдельный уровень интеграции."
-      },
-      "review": "STATIC_SOURCE_REVIEW",
-      "evidence": [
-        {
-          "role": "source",
-          "repository": "Juri-Halveth/halveth-unreal",
-          "revision": "44ccf28ffb80829def79a4f44ae5c6bcf8646de6",
-          "path": "Source/HALVETHRealms/Public/KnowledgeSystem.h",
-          "startLine": 455,
-          "endLine": 494,
-          "sha256": "302e63acb44968080e234c17a15a2e2d55bde47ccb418f81871ca7b1cc5e2b15",
-          "url": "https://github.com/Juri-Halveth/halveth-unreal/blob/44ccf28ffb80829def79a4f44ae5c6bcf8646de6/Source/HALVETHRealms/Public/KnowledgeSystem.h#L455-L494"
-        },
-        {
-          "role": "test",
-          "repository": "Juri-Halveth/halveth-unreal",
-          "revision": "44ccf28ffb80829def79a4f44ae5c6bcf8646de6",
-          "path": "tests/knowledge_test.cpp",
-          "startLine": 40,
-          "endLine": 46,
-          "sha256": "dbc24b415cca75f4f4aa045a57e951297f3c4ff87590502b26e6562c376b8e55",
-          "url": "https://github.com/Juri-Halveth/halveth-unreal/blob/44ccf28ffb80829def79a4f44ae5c6bcf8646de6/tests/knowledge_test.cpp#L40-L46"
-        },
-        {
-          "role": "workflow",
-          "repository": "Juri-Halveth/halveth-unreal",
-          "revision": "44ccf28ffb80829def79a4f44ae5c6bcf8646de6",
-          "path": ".github/workflows/source.yml",
-          "startLine": 33,
-          "endLine": 57,
-          "sha256": "f489ccc18c96b37f9eadc90f679bc672c518be9242c42e41442e372986fd4c63",
-          "url": "https://github.com/Juri-Halveth/halveth-unreal/blob/44ccf28ffb80829def79a4f44ae5c6bcf8646de6/.github/workflows/source.yml#L33-L57"
-        }
-      ]
-    },
-    {
-      "id": "native-packaging",
-      "area": "native",
-      "technologies": [
-        "PowerShell",
-        "Unreal Automation Tool",
-        "Win64"
-      ],
-      "title": {
-        "de": "Aus Enginequellen ein Windows-Paket bauen",
-        "en": "Package engine sources for Windows",
-        "ru": "Собрать Windows-пакет из исходников движка"
-      },
-      "interface": {
-        "de": "Quellprojekt, Unreal-Build und Ausgabepaket",
-        "en": "Source project, Unreal build and output package",
-        "ru": "Исходный проект, сборка Unreal и выходной пакет"
-      },
-      "summary": {
-        "de": "Das Buildskript ruft BuildCookRun mit Build, Cook und Stage auf, verlangt einen frischen Ausgabeordner und prüft anschließend den Launcherpfad.",
-        "en": "The build script invokes BuildCookRun with build, cook and stage, requires a fresh output directory and then checks the launcher path.",
-        "ru": "Скрипт сборки вызывает BuildCookRun с build, cook и stage, требует новую папку вывода и проверяет путь запуска."
-      },
-      "scope": {
-        "de": "Buildskript gelesen; ein neuer vollständiger Enginebuild ist hierfür nicht ausgeführt. Die veröffentlichte Vorschau hat einen eigenen Versionsstand.",
-        "en": "Build script reviewed; no fresh full engine build was performed for this map. The published preview has its own version.",
-        "ru": "Скрипт сборки изучен; новая полная сборка движка для карты не выполнялась. Опубликованная версия имеет собственный номер."
-      },
-      "review": "STATIC_SOURCE_REVIEW",
-      "evidence": [
-        {
-          "role": "source",
-          "repository": "Juri-Halveth/halveth-scarlet",
-          "revision": "b768ca093d9bd68b1453a8ccc5b6d02ecaa1eb07",
-          "path": "native/ashbound-unreal/package.ps1",
-          "startLine": 1,
-          "endLine": 27,
-          "sha256": "5c36253fdbe6c86a4d82b1d18465000e0e41e89513a49f9b557da4d50e725a99",
-          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/b768ca093d9bd68b1453a8ccc5b6d02ecaa1eb07/native/ashbound-unreal/package.ps1#L1-L27"
-        },
-        {
-          "role": "documentation",
-          "repository": "Juri-Halveth/halveth-scarlet",
-          "revision": "b768ca093d9bd68b1453a8ccc5b6d02ecaa1eb07",
-          "path": "native/ashbound-unreal/README.md",
-          "startLine": 1,
-          "endLine": 26,
-          "sha256": "49ecace335751f2a9937d9554b7c505d36a2b3aa39d23ae298d36de441fbd6c6",
-          "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/b768ca093d9bd68b1453a8ccc5b6d02ecaa1eb07/native/ashbound-unreal/README.md#L1-L26"
-        }
-      ],
-      "release": {
-        "url": "https://github.com/Juri-Halveth/halveth-scarlet/releases/tag/ashbound-native-v0.4.2-portal-preview",
-        "tag": "ashbound-native-v0.4.2-portal-preview",
-        "relation": "SEPARATE_PUBLISHED_PREVIEW_NOT_CURRENT_SOURCE_BUILD"
-      }
     },
     {
       "id": "decision-model",
@@ -848,7 +721,6 @@
     {
       "id": "admission",
       "items": [
-        "cpp-state",
         "reference-authority",
         "node-browser-packet"
       ],
@@ -875,8 +747,7 @@
       "id": "reproduction",
       "items": [
         "artifact-provenance",
-        "pages-delivery",
-        "native-packaging"
+        "pages-delivery"
       ],
       "title": {
         "de": "Quellen, Build und Ergebnis nachvollziehen",
@@ -898,5 +769,12 @@
       }
     }
   ],
-  "projectName": "HALVETH"
+  "projectName": "HALVETH",
+  "counts": {
+    "areas": 6,
+    "samples": 12,
+    "connections": 4,
+    "repositories": 6,
+    "sourceFiles": 24
+  }
 }

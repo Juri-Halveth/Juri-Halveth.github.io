@@ -11,12 +11,12 @@ test('CI snapshots bind exactly the displayed source rather than a different suc
  const missing=structuredClone(data);delete missing.samples[0].de.counterexample;
  assert.throws(()=>validateWorkSamples(missing),/localized/);
 });
-test('three complete case studies expose implementation, counterexample and same-revision CI in each language',()=>{
+test('two complete case studies expose implementation, counterexample and same-revision CI in each language',()=>{
  for(const lang of ['de','en','ru']){
   const doc=new JSDOM(renderWorkSamples(data,lang)).window.document;
-  assert.equal(doc.querySelectorAll('.evidence-case').length,3);
-  assert.equal(doc.querySelectorAll('.evidence-grid>div').length,18);
-  assert.equal(doc.querySelectorAll('details').length,3);
+  assert.equal(doc.querySelectorAll('.evidence-case').length,2);
+  assert.equal(doc.querySelectorAll('.evidence-grid>div').length,12);
+  assert.equal(doc.querySelectorAll('details').length,2);
   for(const s of data.samples){const item=doc.getElementById(s.id);assert.ok(item.querySelector(`a[href*="/blob/${s.revision}/"]`));assert.ok(item.querySelector(`a[href$="/actions/runs/${s.ci.id}"]`));}
  }
 });

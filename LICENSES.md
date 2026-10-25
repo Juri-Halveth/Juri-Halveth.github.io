@@ -13,7 +13,7 @@ Copyright (c) 2026 Juri Janovski, project HALVETH.
 | Public Research OS portfolio integration: `tools/render-research-os.cjs`, `research-os.css`, `data/research-index.json`, matching local tests, and generated `/forschung/` language pages | [HALVETH PIRL 2.0](LICENSE-HALVETH-PIRL-2.0.md), only to the extent of rights actually held; the referenced project repositories and original source materials retain their respective terms |
 | Retained geometric model `assets/endeck-model.mjs` | [MIT](assets/endeck-LICENSE.txt), copied byte-for-byte from `halveth-forschungslabor` revision `8d6d53bd67d548c1f66923fa2eefa6295a13668b`, path `branches/endeck-observer/model.mjs`; its original notice and grant remain |
 | New scene presentation controller `scene-stage.mjs`, source/catalog validators and associated original tests | [HALVETH PIRL 2.0](LICENSE-HALVETH-PIRL-2.0.md), only to the extent of protectable rights actually held; the imported model retains MIT |
-| Scene captures `assets/scene-astralis.webp`, `assets/scene-state-space.webp`, `assets/scene-endeck.webp` | The source projects' respective terms and asset notices; source, conversion, dates and digests are recorded in [ASSET-SOURCES.json](assets/ASSET-SOURCES.json) and [scene-stage.json](data/scene-stage.json); no expanded grant |
+| Scene captures `assets/scene-state-space.webp`, `assets/scene-endeck.webp` | The source projects' respective terms and asset notices; source, conversion, dates and digests are recorded in [ASSET-SOURCES.json](assets/ASSET-SOURCES.json) and [scene-stage.json](data/scene-stage.json); no expanded grant |
 
 | New portfolio and technical-map implementation: `tools/build-portfolio.cjs`, `tools/render-showcase.cjs`, `tools/render-work-samples.cjs`, `tools/render-technical-map.cjs`, `tools/render-motion-page.cjs`, `portfolio.css`, `showcase.css`, `data/projects.json`, `data/work-samples.json`, `data/technical-map*.json`, `data/robots.txt`, associated local tests, and the generated root / language portfolio pages | [HALVETH PIRL 2.0](LICENSE-HALVETH-PIRL-2.0.md), only to the extent of rights actually held; references and copied assets retain their own terms |
 
@@ -38,5 +38,3 @@ SCARLET-Demo. `assets/ASSET-SOURCES.json` bindet URL, Aufnahmezeit und Digest.
 Die Aufnahme ist ein visueller Beobachtungsstand; ein identischer Quellbuild
 wird daraus nicht abgeleitet. Die ursprünglichen Rechte und Asset-Hinweise
 der SCARLET-Demo gelten weiter. Die Aufnahme erweitert keine Lizenz.
-
-`assets/ashbound-grimoire.png` ist eine unveränderte Abbildung aus dem nativen ASHBOUND-Quellstand. `assets/ASSET-SOURCES.json` bindet Quelle und Digest. Die ursprünglichen Bedingungen des [Scarlet-Quellstands](https://github.com/Juri-Halveth/halveth-scarlet/blob/b768ca093d9bd68b1453a8ccc5b6d02ecaa1eb07/LICENSES.md) und die dortigen Asset-Hinweise gelten weiter; diese Website erweitert sie nicht.
