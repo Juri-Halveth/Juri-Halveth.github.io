@@ -34,14 +34,14 @@ the byte-preserved MIT model. Static SVG remains readable without JavaScript;
 interactive controls require it. Playback is explicit, finite and pauses when
 hidden. `showcase.css` provides responsive layouts.
 
-`data/projects.json` describes 14 selected entries with source revisions and
+`data/projects.json` describes 10 selected entries with source revisions and
 limited review states. Local model checks bind to that exact source revision.
-`data/public-repositories.json` lists 18 public repositories observed at its
-timestamp; licence-review revisions remain separate. Inventory is not a full
+`data/public-repositories.json` lists 15 selected public repositories from its dated
+snapshot; licence-review revisions remain separate. Inventory is not a full
 security audit of those projects. Download releases retain their own versions.
 
-The deterministic builder produces 43 HTML pages. The technical map links 14 work
-samples across seven areas to pinned functions, tests and build definitions.
+The deterministic builder produces 43 HTML pages. The technical map links 12 work
+samples across six areas to pinned functions, tests and build definitions.
 Its profile-source byte binding remains explicit. `/forschung/` is a static
 source/relationship index, not a running cross-project backend. The build does
 execute the retained local geometric model to produce SVG.

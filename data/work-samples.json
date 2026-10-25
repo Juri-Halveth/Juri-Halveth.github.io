@@ -88,49 +88,6 @@
         "reuse": "Интерактивные объяснения, художественные симуляции и интерфейсы с видимым состоянием.",
         "limit": "Для живого снимка не проверен хеш сборки. Исходники и успешный запуск развёртывания привязаны отдельно. Сцена — графическая симуляция."
       }
-    },
-    {
-      "id": "cpp-state",
-      "repository": "Juri-Halveth/halveth-unreal",
-      "revision": "44ccf28ffb80829def79a4f44ae5c6bcf8646de6",
-      "sourcePath": "Source/HALVETHRealms/Public/KnowledgeSystem.h",
-      "testPath": "tests/knowledge_test.cpp",
-      "ci": {
-        "id": 39413729989,
-        "headSha": "44ccf28ffb80829def79a4f44ae5c6bcf8646de6",
-        "name": "Source contracts",
-        "conclusion": "success",
-        "updatedAt": "2026-10-20T11:17:02Z"
-      },
-      "localCheck": "LOCAL_CPP_TESTS",
-      "commands": "git clone https://github.com/Juri-Halveth/halveth-unreal.git\ncd halveth-unreal\ngit checkout 44ccf28ffb80829def79a4f44ae5c6bcf8646de6\ng++ -std=c++20 -Wall -Wextra -Werror tests/knowledge_test.cpp -o knowledge_test\n./knowledge_test\ng++ -std=c++20 -Wall -Wextra -Werror tests/layout_test.cpp -o layout_test\n./layout_test",
-      "de": {
-        "title": "Spielfortschritt vor der Übernahme prüfen",
-        "problem": "Ein beschädigter Spielstand darf den gültigen Zustand nicht teilweise überschreiben.",
-        "input": "Ein C++-Zustandsmodell für Wissen, Rezepte und Fortschritt; bewusst veränderte Importkandidaten.",
-        "result": "Der Import prüft den Kandidaten vor der Übernahme. Der verlinkte CI-Lauf ist erfolgreich; seine Pipeline kompiliert die portablen Tests mit GCC und MSVC. Lokal am 20.10.2026 mit Clang kompiliert und ausgeführt: 18.008 Prüfungen im Wissenstest sowie der Layout-Test bestanden.",
-        "counterexample": "RejectSave verändert einzelne Felder. RejectUnchanged verlangt anschließend denselben unveränderten exportierten Zustand wie vor dem abgelehnten Vorgang.",
-        "reuse": "Transaktionale Zustandsübernahme in Spielen und lokalen Anwendungen.",
-        "limit": "Dieser Nachweis betrifft den portablen C++-Kern. Er ist kein Unreal-Engine-Build, kein Leistungstest und keine Abnahme der Spielgrafik."
-      },
-      "en": {
-        "title": "Validate progress before accepting it",
-        "problem": "A damaged save must not partially overwrite valid state.",
-        "input": "A C++ state model for knowledge, recipes and progress, with deliberately modified import candidates.",
-        "result": "Import validates the candidate before applying it. The linked CI run succeeded; its pipeline compiles portable tests with GCC and MSVC. Compiled and executed locally with Clang on 20 Oct 2026: 18,008 knowledge checks and the layout test passed.",
-        "counterexample": "RejectSave alters individual fields. RejectUnchanged then requires the exported state to equal the pre-rejection state exactly.",
-        "reuse": "Transactional state admission in games and local applications.",
-        "limit": "This evidence covers the portable C++ core. It is not an Unreal Engine build, performance benchmark or graphics acceptance test."
-      },
-      "ru": {
-        "title": "Проверить прогресс до принятия",
-        "problem": "Повреждённое сохранение не должно частично перезаписывать корректное состояние.",
-        "input": "Модель C++ для знаний, рецептов и прогресса; намеренно изменённые кандидаты импорта.",
-        "result": "Импорт проверяет кандидата до применения. Указанный запуск CI успешен; конвейер компилирует переносимые тесты GCC и MSVC. Локальная компиляция Clang и запуск 20.10.2026: 18 008 проверок знаний и тест компоновки пройдены.",
-        "counterexample": "RejectSave изменяет отдельные поля. RejectUnchanged требует полного равенства экспортированного состояния до и после отклонения.",
-        "reuse": "Транзакционное принятие состояния в играх и локальных приложениях.",
-        "limit": "Доказательство относится к переносимому ядру C++. Это не сборка Unreal Engine, не тест производительности и не приёмка графики."
-      }
     }
   ]
 }

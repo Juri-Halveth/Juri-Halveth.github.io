@@ -2,7 +2,7 @@
   "schema": "halveth.public-repositories.v2",
   "observedAt": "2026-10-24T14:16:03.641074+00:00",
   "source": "https://github.com/Juri-Halveth?tab=repositories",
-  "coverage": "Public repositories returned by the owner repository API at observation time; not a full security audit.",
+  "coverage": "Curated portfolio selection from the dated public-repository snapshot. This is not a complete account inventory or a new product audit.",
   "repositories": [
     {
       "name": "c-drohne-red-room",
@@ -130,31 +130,6 @@
       }
     },
     {
-      "name": "halveth-morrowind-genesis",
-      "url": "https://github.com/Juri-Halveth/halveth-morrowind-genesis",
-      "defaultBranch": "codex/public-release",
-      "fork": false,
-      "archived": false,
-      "purpose": {
-        "de": "OpenMW-Werkzeuge für Dialoge, Figurengedächtnis und Weltprototypen.",
-        "en": "OpenMW tools for dialogue, character memory and world prototypes.",
-        "ru": "Инструменты OpenMW: диалоги, память персонажей и прототипы миров."
-      },
-      "revision": "ebca40a1a9434da1ef194749dc546da5d722687e",
-      "revisionObservedAt": "2026-10-24T14:16:03.641074+00:00",
-      "source": "https://github.com/Juri-Halveth/halveth-morrowind-genesis/tree/ebca40a1a9434da1ef194749dc546da5d722687e",
-      "licenseReview": {
-        "revision": "6c9d981379c75ac822f3538f9508f3ed0b70230f",
-        "classification": "MIT_CODE_DOCS_CC0_DESIGNATED_ART_EXTERNAL_ENGINE_GAME_RIGHTS",
-        "scope": "Bound license-surface snapshot; not proof of title or a new licence grant."
-      },
-      "displayTitle": {
-        "de": "Werkzeuge für einen Rollenspiel-Umbau",
-        "en": "Tools for a role-playing game conversion",
-        "ru": "Инструменты для преобразования ролевой игры"
-      }
-    },
-    {
       "name": "halveth-project0-keeper",
       "url": "https://github.com/Juri-Halveth/halveth-project0-keeper",
       "defaultBranch": "main",
@@ -180,40 +155,15 @@
       }
     },
     {
-      "name": "halveth-realms",
-      "url": "https://github.com/Juri-Halveth/halveth-realms",
-      "defaultBranch": "codex/scarlet-garden",
-      "fork": false,
-      "archived": false,
-      "purpose": {
-        "de": "Prozedurale Fantasywelten und experimentelle Figurendialoge.",
-        "en": "Procedural fantasy worlds and experimental character dialogue.",
-        "ru": "Процедурные фэнтезийные миры и экспериментальные диалоги."
-      },
-      "revision": "019ff203ed4636b48fb6a2325f6af80b3f935c35",
-      "revisionObservedAt": "2026-10-24T14:16:03.641074+00:00",
-      "source": "https://github.com/Juri-Halveth/halveth-realms/tree/019ff203ed4636b48fb6a2325f6af80b3f935c35",
-      "licenseReview": {
-        "revision": "c353bf650ecd9aa1bc5dfeaf10649c601f0c39a4",
-        "classification": "MIT_ORIGINAL_CODE_WITH_COMPONENT_NOTICES",
-        "scope": "Bound license-surface snapshot; not proof of title or a new licence grant."
-      },
-      "displayTitle": {
-        "de": "Prozedurale Welten erzeugen",
-        "en": "Generate procedural worlds",
-        "ru": "Создавать процедурные миры"
-      }
-    },
-    {
       "name": "halveth-scarlet",
       "url": "https://github.com/Juri-Halveth/halveth-scarlet",
       "defaultBranch": "main",
       "fork": false,
       "archived": false,
       "purpose": {
-        "de": "Text setzen, eine Variante ableiten, Zustände beobachten und als JSON mitnehmen. Lichtkörper zeigen die Entwicklung des lokalen Modells.",
-        "en": "Set text, derive a variant, observe states and take the result as JSON. Light bodies show how the local model evolves.",
-        "ru": "Задайте текст, создайте вариант, наблюдайте состояния и сохраните результат в JSON. Световые тела показывают развитие локальной модели."
+        "de": "Textzustände, Zeit und Varianten in einer lokalen Browseroberfläche beobachten und vergleichen.",
+        "en": "Observe and compare text states, time and variants in a local browser interface.",
+        "ru": "Наблюдать и сравнивать текстовые состояния, время и варианты в локальном браузерном интерфейсе."
       },
       "revision": "a590ed6c35a9dd5fc89c259ef057bb143850bae5",
       "revisionObservedAt": "2026-10-24T17:19:41.164053+00:00",
@@ -277,31 +227,6 @@
         "de": "Quorum und Verfügbarkeit vergleichen",
         "en": "Compare quorum and availability",
         "ru": "Сравнивать кворум и доступность"
-      }
-    },
-    {
-      "name": "halveth-unreal",
-      "url": "https://github.com/Juri-Halveth/halveth-unreal",
-      "defaultBranch": "codex/knowledge-crafting-0.2",
-      "fork": false,
-      "archived": false,
-      "purpose": {
-        "de": "Native C++-Spielprototypen mit Portalen, Flug und Weltzuständen.",
-        "en": "Native C++ game prototypes with portals, flight and world state.",
-        "ru": "Нативные прототипы игр C++: порталы, полёт и состояния мира."
-      },
-      "revision": "1f01f584bed053c62e61013083391566f8478123",
-      "revisionObservedAt": "2026-10-24T14:16:03.641074+00:00",
-      "source": "https://github.com/Juri-Halveth/halveth-unreal/tree/1f01f584bed053c62e61013083391566f8478123",
-      "licenseReview": {
-        "revision": "44ccf28ffb80829def79a4f44ae5c6bcf8646de6",
-        "classification": "MIT_ORIGINAL_CODE_CC0_ASSETS_SEPARATE_EPIC_ENGINE",
-        "scope": "Bound license-surface snapshot; not proof of title or a new licence grant."
-      },
-      "displayTitle": {
-        "de": "Räume und Bewegung in 3D erproben",
-        "en": "Explore spaces and movement in 3D",
-        "ru": "Исследовать пространство и движение в 3D"
       }
     },
     {
@@ -458,5 +383,6 @@
   "initialInventoryObservationWindow": {
     "start": "2026-10-24T13:04:35Z",
     "end": "2026-10-24T13:05:41.907093+00:00"
-  }
+  },
+  "curatedAt": "2026-10-25T14:00:24.360614+00:00"
 }

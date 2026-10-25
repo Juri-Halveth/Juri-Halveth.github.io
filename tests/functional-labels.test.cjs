@@ -22,7 +22,7 @@ test('public entrances and cards describe functions in every language while reta
   const doc=new JSDOM(fs.readFileSync(path.join(root,prefix,route,'index.html'),'utf8')).window.document;
   checkLabels(doc);
   if(!route){
-   assert.deepEqual([...doc.querySelectorAll('[data-scene]')].map(e=>e.dataset.scene),['scarlet','endeck','astralis']);
+   assert.deepEqual([...doc.querySelectorAll('[data-scene]')].map(e=>e.dataset.scene),['scarlet','endeck']);
    assert.match(doc.querySelector('[data-scene="scarlet"]').href,/\/halveth-scarlet\//);
   }
  }

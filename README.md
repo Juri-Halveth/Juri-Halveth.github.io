@@ -30,18 +30,18 @@ Arbeitsverzeichnis; vertrauliche Dateien gehören in einen getrennten Speicher.
 
 ## Quellen und Darstellung
 
-- `data/scene-stage.json` bindet drei Aufnahmen, Verarbeitung, Maße, Digests und
+- `data/scene-stage.json` bindet zwei Aufnahmen, Verarbeitung, Maße, Digests und
   den exakt übernommenen MIT-Modellcode. `assets/ASSET-SOURCES.json` erhält die
   Asset-Herkunft. Eine Bildschirmaufnahme ist eine zeitgebundene Beobachtung.
 - `tools/render-showcase.cjs`, `scene-stage.mjs` und `showcase.css` erzeugen
   Darstellung und Bedienung. Eine statische SVG-Ansicht bleibt ohne JavaScript
   lesbar; die interaktiven Steuerelemente benötigen JavaScript. Abspielen ist
   bewusst, endlich und bei unsichtbarer Seite pausiert.
-- `data/projects.json` enthält 14 ausgewählte Einstiege mit Zweck, Quellrevision
+- `data/projects.json` enthält 10 ausgewählte Einstiege mit Zweck, Quellrevision
   und Prüfart. Lokale Modelltests sind an genau dieselbe Revision gebunden.
   Historische Download-Releases behalten ihren eigenen Stand.
-- `data/public-repositories.json` führt alle 18 beim datierten Abruf sichtbaren
-  öffentlichen Repositories mit Zweck und beobachtetem Standardbranch-HEAD.
+- `data/public-repositories.json` führt 15 ausgewählte
+  öffentliche Repositories aus dem datierten Abruf mit Zweck und beobachtetem Standardbranch-HEAD.
   Lizenzquellen haben ihre eigene Prüfungsrevision. Das Verzeichnis ist kein
   Vollaudit der verlinkten Produkte.
 
@@ -53,11 +53,11 @@ committeten Baum nach Build, Driftprüfung und Tests.
 ## Nachvollziehbare Arbeit
 
 Die [Schnittstellenkarte](https://juri-halveth.github.io/koennen/) verbindet
-14 Arbeitsproben in sieben Bereichen mit versionierten Funktionen, Tests und
+12 Arbeitsproben in sechs Bereichen mit versionierten Funktionen, Tests und
 Builddefinitionen. `data/technical-map.json` bleibt eine bytegebundene Kopie aus
 dem Profilrepository; der Build prüft sie gegen `technical-map-source.json`.
 
-`/belege/` zeigt drei datierte Fälle. Das [Prüfprotokoll vom 20. Oktober](docs/WORK-SAMPLE-VALIDATION-2026-10-20.md)
+`/belege/` zeigt zwei datierte Fälle. Das [Prüfprotokoll vom 20. Oktober](docs/WORK-SAMPLE-VALIDATION-2026-10-20.md)
 und die damaligen CI-Zuordnungen bleiben historische Belege ihrer eigenen
 Revision. Der neue [Änderungs- und Prüfstand](docs/SCENE-FIRST-2026-10-24.md)
 trennt diese Ergebnisse vom aktuellen lokalen Lauf.
