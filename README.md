@@ -15,6 +15,13 @@ und Auswahl: Juri / HALVETH; Entwicklung mit KI-Unterstützung.
 
 ## Lokal bauen
 
+Auf der Projektübersicht lassen sich die vorhandenen zehn Arbeitsproben nach
+Aufgabe durchsuchen und auf Werkzeuge, Lernen oder Modelle begrenzen.
+Ein leeres Ergebnis besitzt einen direkten Rückweg zu allen Projekten.
+Suche und Filter arbeiten lokal, ohne Navigation oder automatisches Scrollen.
+Deutsch, Englisch und Russisch verwenden dieselben Projektquellen; ohne
+JavaScript bleibt die vollständige Liste lesbar.
+
 Voraussetzung: Node.js 24.
 
 ```sh
