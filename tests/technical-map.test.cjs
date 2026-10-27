@@ -72,6 +72,7 @@ test('profile and overview point to the map while keeping the project catalog',(
  for(const prefix of ['','en/','ru/'])for(const route of ['','profil/']){
   const page=path.join(root,prefix+route+'index.html');const doc=new JSDOM(fs.readFileSync(page,'utf8')).window.document;
   assert.equal(path.resolve(path.dirname(page),doc.querySelector('.map-teaser a').getAttribute('href')),path.join(root,prefix,'koennen'));
-  assert.equal(doc.querySelectorAll('[data-project]').length,10);
+  assert.equal(doc.querySelectorAll('[data-project]').length,0);
+  assert.equal(doc.querySelectorAll('[data-flagship]').length,4);
  }
 });

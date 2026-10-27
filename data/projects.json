@@ -1,7 +1,37 @@
 {
   "schema": "halveth.technical-portfolio.v2",
-  "sourceDate": "2026-10-24",
+  "sourceDate": "2026-10-27",
   "projects": [
+    {
+      "id": "lucinet-seedspace",
+      "category": "software",
+      "title": {
+        "de": "NOVA · frühere Arbeit wiederfinden",
+        "en": "NOVA · recover earlier work",
+        "ru": "NOVA · находить прежние результаты"
+      },
+      "description": {
+        "de": "Notizen und Code lokal durchsuchen, Korrekturen erhalten und mit belegtem nächsten Schritt weiterarbeiten.",
+        "en": "Search local notes and code, preserve corrections and continue with a recorded next step.",
+        "ru": "Ищите в локальных заметках и коде, сохраняйте исправления и продолжайте с записанным следующим шагом."
+      },
+      "stage": {
+        "de": "Python-Werkzeug · NOVA 2.1.2",
+        "en": "Python tool · NOVA 2.1.2",
+        "ru": "Инструмент Python · NOVA 2.1.2"
+      },
+      "repository": "https://github.com/Juri-Halveth/lucinet-seedspace",
+      "revision": "6d0e91c056caee46e2ca2d4faaf7bcdd1975dddc",
+      "source": "https://github.com/Juri-Halveth/lucinet-seedspace/tree/6d0e91c056caee46e2ca2d4faaf7bcdd1975dddc",
+      "demo": "https://github.com/Juri-Halveth/lucinet-seedspace/tree/ea25405b7b1c7a37ac32497d58ad858481ccde60/nova",
+      "actionLabel": {
+        "de": "Anleitung & Offline-Demo",
+        "en": "Guide & offline demo",
+        "ru": "Руководство и офлайн-демо"
+      },
+      "command": "python nova/nova.py --workspace ./nova-demo demo",
+      "verification": "HEAD_METADATA_ONLY"
+    },
     {
       "id": "halveth-forschungslabor",
       "category": "research",
@@ -21,22 +51,11 @@
         "ru": "Локально проверенная модель"
       },
       "repository": "https://github.com/Juri-Halveth/halveth-forschungslabor",
-      "revision": "8d6d53bd67d548c1f66923fa2eefa6295a13668b",
-      "source": "https://github.com/Juri-Halveth/halveth-forschungslabor/tree/8d6d53bd67d548c1f66923fa2eefa6295a13668b",
+      "revision": "07417d3cdadda426c2b51cc98bcbae72d7b5d651",
+      "source": "https://github.com/Juri-Halveth/halveth-forschungslabor/tree/07417d3cdadda426c2b51cc98bcbae72d7b5d651",
       "demo": null,
       "command": "npm test",
-      "verification": "LOCAL_MODEL_TESTS",
-      "verificationRecord": {
-        "revision": "8d6d53bd67d548c1f66923fa2eefa6295a13668b",
-        "observedAt": "2026-10-24T13:46:57.108617+00:00",
-        "command": "npm test",
-        "javascriptTests": 156,
-        "pythonTests": 49,
-        "scope": "Fresh isolated archive of this exact revision; supplied local model contracts only.",
-        "recordedAt": "2026-10-24T14:04:02.933063+00:00",
-        "timeBasis": "Local completed test-log write timestamp; not source-commit event time.",
-        "localLogSha256": "df3b83bb663113bca20a764b48cf01240b62de2cd85022752abc4c1ea6ba9741"
-      }
+      "verification": "HEAD_METADATA_ONLY"
     },
     {
       "id": "mein-lernportal",
@@ -57,11 +76,16 @@
         "ru": "Веб-приложение"
       },
       "repository": "https://github.com/Juri-Halveth/mein-lernportal",
-      "revision": "561002e15d226015370c6b5def85b88f76ff9d39",
-      "source": "https://github.com/Juri-Halveth/mein-lernportal/tree/561002e15d226015370c6b5def85b88f76ff9d39",
+      "revision": "8ff9c2fa3e4fbf3a5795b06d1d9c77819b592292",
+      "source": "https://github.com/Juri-Halveth/mein-lernportal/tree/8ff9c2fa3e4fbf3a5795b06d1d9c77819b592292",
       "demo": "https://juri-halveth.github.io/mein-lernportal/",
       "command": null,
-      "verification": "SOURCE_REVIEW_ONLY"
+      "verification": "HEAD_METADATA_ONLY",
+      "actionLabel": {
+        "de": "Im Browser lernen",
+        "en": "Learn in the browser",
+        "ru": "Учиться в браузере"
+      }
     },
     {
       "id": "lernstudio",
@@ -82,11 +106,11 @@
         "ru": "Веб-приложение"
       },
       "repository": "https://github.com/Juri-Halveth/lernstudio",
-      "revision": "ac941d9bda5a32acf937618c532d9f56106d7727",
-      "source": "https://github.com/Juri-Halveth/lernstudio/tree/ac941d9bda5a32acf937618c532d9f56106d7727",
+      "revision": "9309f69883e9ae66290829722012deda5ed982c9",
+      "source": "https://github.com/Juri-Halveth/lernstudio/tree/9309f69883e9ae66290829722012deda5ed982c9",
       "demo": "https://juri-halveth.github.io/lernstudio/",
       "command": null,
-      "verification": "SOURCE_REVIEW_ONLY"
+      "verification": "HEAD_METADATA_ONLY"
     },
     {
       "id": "halveth-tresor",
@@ -97,9 +121,9 @@
         "ru": "Локально управлять учётными данными"
       },
       "description": {
-        "de": "Windows-Projekt mit veröffentlichtem Quellstand, Desktop-Oberfläche und dokumentiertem Release-Prozess.",
-        "en": "A Windows project with published source, a desktop interface and a documented release process.",
-        "ru": "Проект Windows с опубликованными исходниками, интерфейсом и документированным процессом выпуска."
+        "de": "Passwörter, Schlüssel und Verbindungsdaten in einer verschlüsselten lokalen Datei verwalten.",
+        "en": "Manage passwords, keys and connection details in an encrypted local file.",
+        "ru": "Храните пароли, ключи и параметры подключения в зашифрованном локальном файле."
       },
       "stage": {
         "de": "Desktop-Projekt",
@@ -107,11 +131,16 @@
         "ru": "Настольный проект"
       },
       "repository": "https://github.com/Juri-Halveth/halveth-tresor",
-      "revision": "72a257bf93c3daaf7ae6145cc798d48a8866467f",
-      "source": "https://github.com/Juri-Halveth/halveth-tresor/tree/72a257bf93c3daaf7ae6145cc798d48a8866467f",
-      "demo": null,
+      "revision": "e1ca9830e84099f0e4a9a4bfdede919a5ab0eee6",
+      "source": "https://github.com/Juri-Halveth/halveth-tresor/tree/e1ca9830e84099f0e4a9a4bfdede919a5ab0eee6",
+      "demo": "https://github.com/Juri-Halveth/halveth-tresor/releases",
       "command": null,
-      "verification": "SOURCE_REVIEW_ONLY"
+      "verification": "HEAD_METADATA_ONLY",
+      "actionLabel": {
+        "de": "Windows-Release ansehen",
+        "en": "View Windows release",
+        "ru": "Выпуск для Windows"
+      }
     },
     {
       "id": "fortuna",
@@ -132,11 +161,11 @@
         "ru": "Браузерный прототип"
       },
       "repository": "https://github.com/Juri-Halveth/fortuna",
-      "revision": "af8eb2ae4d78e2d34ab0b59d6ae089f179b882e6",
-      "source": "https://github.com/Juri-Halveth/fortuna/tree/af8eb2ae4d78e2d34ab0b59d6ae089f179b882e6",
+      "revision": "69f436978b0492269fb66accd0beb6d3347750d9",
+      "source": "https://github.com/Juri-Halveth/fortuna/tree/69f436978b0492269fb66accd0beb6d3347750d9",
       "demo": "https://juri-halveth.github.io/fortuna/",
       "command": null,
-      "verification": "SOURCE_REVIEW_ONLY"
+      "verification": "HEAD_METADATA_ONLY"
     },
     {
       "id": "halveth-scarlet",
@@ -157,11 +186,11 @@
         "ru": "Локальное браузерное приложение"
       },
       "repository": "https://github.com/Juri-Halveth/halveth-scarlet",
-      "revision": "a590ed6c35a9dd5fc89c259ef057bb143850bae5",
-      "source": "https://github.com/Juri-Halveth/halveth-scarlet/tree/a590ed6c35a9dd5fc89c259ef057bb143850bae5",
+      "revision": "9f706b9f6bba255f30cde703f851ba80cd64d9bc",
+      "source": "https://github.com/Juri-Halveth/halveth-scarlet/tree/9f706b9f6bba255f30cde703f851ba80cd64d9bc",
       "demo": "https://juri-halveth.github.io/halveth-scarlet/",
       "command": null,
-      "verification": "SOURCE_REVIEW_ONLY"
+      "verification": "HEAD_METADATA_ONLY"
     },
     {
       "id": "halveth-field-difference-lab",
@@ -172,9 +201,9 @@
         "ru": "Движение и различия состояний"
       },
       "description": {
-        "de": "Interaktive Visualisierungen von Bewegung und Zustandsunterschieden in einem Browsermodell.",
-        "en": "Interactive visualisations of motion and state differences in a browser model.",
-        "ru": "Интерактивная визуализация движения и различий состояний в браузерной модели."
+        "de": "Gleiche Ausgangslage, andere Regel: Bewegungen nebeneinander vergleichen und Unterschiede im Modell erklären.",
+        "en": "Same initial state, different rule: compare motion side by side and explain model differences.",
+        "ru": "Одинаковое начало, разные правила: сравните движение и объясните различия модели."
       },
       "stage": {
         "de": "Visuelles Modell",
@@ -186,7 +215,12 @@
       "source": "https://github.com/Juri-Halveth/halveth-field-difference-lab/tree/572734742951819993b10d89b22591951a49dbc8",
       "demo": "https://juri-halveth.github.io/halveth-field-difference-lab/",
       "command": null,
-      "verification": "SOURCE_REVIEW_ONLY"
+      "verification": "SOURCE_REVIEW_ONLY",
+      "actionLabel": {
+        "de": "Modell ausprobieren",
+        "en": "Try the model",
+        "ru": "Открыть модель"
+      }
     },
     {
       "id": "halveth-project0-keeper",
@@ -207,11 +241,11 @@
         "ru": "Экспериментальные инструменты"
       },
       "repository": "https://github.com/Juri-Halveth/halveth-project0-keeper",
-      "revision": "2cf77b66e54c87434f54b2cbf9a09f3645fe2e11",
-      "source": "https://github.com/Juri-Halveth/halveth-project0-keeper/tree/2cf77b66e54c87434f54b2cbf9a09f3645fe2e11",
+      "revision": "f4349d013efb7105e2875784a0c7c16d2026e3da",
+      "source": "https://github.com/Juri-Halveth/halveth-project0-keeper/tree/f4349d013efb7105e2875784a0c7c16d2026e3da",
       "demo": null,
       "command": null,
-      "verification": "SOURCE_REVIEW_ONLY"
+      "verification": "HEAD_METADATA_ONLY"
     },
     {
       "id": "halveth-tron-security-lab",
@@ -257,11 +291,17 @@
         "ru": "Концепция и интерфейс"
       },
       "repository": "https://github.com/Juri-Halveth/c-drohne-red-room",
-      "revision": "89398fccf993ad361a5230a6adefb8b559f547d8",
-      "source": "https://github.com/Juri-Halveth/c-drohne-red-room/tree/89398fccf993ad361a5230a6adefb8b559f547d8",
+      "revision": "f0b072571ccb1a7894a32b1ba03c9a8620995352",
+      "source": "https://github.com/Juri-Halveth/c-drohne-red-room/tree/f0b072571ccb1a7894a32b1ba03c9a8620995352",
       "demo": null,
       "command": null,
-      "verification": "SOURCE_REVIEW_ONLY"
+      "verification": "HEAD_METADATA_ONLY"
     }
+  ],
+  "flagshipOrder": [
+    "lucinet-seedspace",
+    "halveth-tresor",
+    "mein-lernportal",
+    "halveth-field-difference-lab"
   ]
 }

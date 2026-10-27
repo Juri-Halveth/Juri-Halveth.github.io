@@ -4,7 +4,8 @@
 
 [Portfolio öffnen](https://juri-halveth.github.io/) · [Projekte](https://juri-halveth.github.io/arbeiten/) · [Technik & Code](https://juri-halveth.github.io/koennen/)
 
-Der Einstieg zeigt bedienbare Funktionen für Textzustände, Varianten,
+Der Einstieg führt zuerst zu NOVA, Tresor, Mein Lernportal und Field Difference Lab.
+Die weiteren Arbeitsproben zeigen bedienbare Funktionen für Textzustände, Varianten,
 Beobachtungsvergleich und räumliche Anwendungen.
 Direkt auf der Seite berechnet JavaScript zwei Ansichten derselben vier Punkte.
 Zweck, Modellregeln, lokale Ausführung und mögliche Anwendung bleiben erkennbar.
@@ -15,7 +16,7 @@ und Auswahl: Juri / HALVETH; Entwicklung mit KI-Unterstützung.
 
 ## Lokal bauen
 
-Auf der Projektübersicht lassen sich die vorhandenen zehn Arbeitsproben nach
+Auf der Projektübersicht lassen sich die vorhandenen elf Arbeitsproben nach
 Aufgabe durchsuchen und auf Werkzeuge, Lernen oder Modelle begrenzen.
 Ein leeres Ergebnis besitzt einen direkten Rückweg zu allen Projekten.
 Suche und Filter arbeiten lokal, ohne Navigation oder automatisches Scrollen.
@@ -35,6 +36,16 @@ Die Vorschau bindet ausschließlich `127.0.0.1:4187`. `SPACE_PORT` kann einen
 anderen lokalen Port wählen. Der Preview-Root ist ein öffentliches
 Arbeitsverzeichnis; vertrauliche Dateien gehören in einen getrennten Speicher.
 
+## Projektquellen aktuell halten
+
+`npm run refresh` liest die öffentlichen Standardbranch-HEADs der ausgewählten
+Repositories über die GitHub-API. Mit `GH_TOKEN` ist ein authentifizierter Abruf
+möglich; ohne Token gilt das öffentliche API-Limit. Danach `npm run build` und
+`npm test` ausführen und den Quelldiff prüfen. Ein geänderter HEAD erhält den
+Prüfstatus „Quellstand aus GitHub“; alte Testergebnisse werden nicht auf neue
+Revisionen übertragen. Der TRON-Arbeitsbeleg bleibt absichtlich auf seinen
+unveröffentlichten PR-Quellstand gebunden.
+
 ## Quellen und Darstellung
 
 - `data/scene-stage.json` bindet zwei Aufnahmen, Verarbeitung, Maße, Digests und
@@ -44,10 +55,10 @@ Arbeitsverzeichnis; vertrauliche Dateien gehören in einen getrennten Speicher.
   Darstellung und Bedienung. Eine statische SVG-Ansicht bleibt ohne JavaScript
   lesbar; die interaktiven Steuerelemente benötigen JavaScript. Abspielen ist
   bewusst, endlich und bei unsichtbarer Seite pausiert.
-- `data/projects.json` enthält 10 ausgewählte Einstiege mit Zweck, Quellrevision
+- `data/projects.json` enthält 11 ausgewählte Einstiege mit Zweck, Quellrevision
   und Prüfart. Lokale Modelltests sind an genau dieselbe Revision gebunden.
   Historische Download-Releases behalten ihren eigenen Stand.
-- `data/public-repositories.json` führt 15 ausgewählte
+- `data/public-repositories.json` führt 14 ausgewählte
   öffentliche Repositories aus dem datierten Abruf mit Zweck und beobachtetem Standardbranch-HEAD.
   Lizenzquellen haben ihre eigene Prüfungsrevision. Das Verzeichnis ist kein
   Vollaudit der verlinkten Produkte.
@@ -85,4 +96,4 @@ Die Website ist source-available unter der pfad- und versionsgebundenen
 haben eigene Bedingungen; frühere wirksame Grants bleiben bestehen. Eine
 kommerzielle Anfrage nennt das konkrete Werk, die Revision und den Einsatz.
 
-[Sicherheit](SECURITY.md) · Kontakt: **security@halveth.de**
+Zusammenarbeit: **juri@halveth.de** · [Sicherheitsmeldungen](SECURITY.md): **security@halveth.de**

@@ -1,6 +1,8 @@
 'use strict';
 // Original portfolio presentation. Per-path terms are in LICENSES.md.
 const fs = require('node:fs');
+const {renderFlagships}=require('./render-flagships.cjs');
+const projects=require('../data/projects.json');
 const path = require('node:path');
 const {createHash} = require('node:crypto');
 const model = require('../assets/endeck-model.mjs');
@@ -9,10 +11,10 @@ const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&
 const LANGUAGES = ['de','en','ru'];
 const words = {
   "de": {
-    "eyebrow": "JURI / GESTALTUNG & SOFTWARE",
-    "title": "Zustände. Zeit.<br><em>Möglichkeiten entfalten.</em>",
-    "intro": "Zustände verändern, Abläufe beobachten und Varianten vergleichen. Ich baue die Werkzeuge dazu: zum Ausprobieren, Lernen und Weiterentwickeln.",
-    "try": "Funktionsraum öffnen",
+    "eyebrow": "JURI / PYTHON · JAVASCRIPT · WINDOWS",
+    "title": "Ich baue lokale Software<br><em>und prüfbare Werkzeuge.</em>",
+    "intro": "Quellen wiederfinden, Zugangsdaten verwalten, selbstständig lernen oder Modellregeln vergleichen. Hier führen vier Projekte direkt zur Anwendung oder zur nachvollziehbaren Startanleitung.",
+    "try": "Vier Projekte ansehen",
     "code": "Zum Code",
     "native": "ANWENDUNG · C++ / UNREAL",
     "web": "FUNKTIONEN · IM BROWSER",
@@ -43,10 +45,10 @@ const words = {
     "mechanism": "JavaScript berechnet bei jeder Modellzeit vier Punktpositionen. Links werden ihre x/y-Koordinaten gezeigt, rechts dieselben IDs mit gekippter Tiefenansicht. Die Berechnung läuft lokal in deinem Browser; die Bewegung folgt einem festgelegten geometrischen Modell."
   },
   "en": {
-    "eyebrow": "JURI / DESIGN & SOFTWARE",
-    "title": "States. Time.<br><em>Explore possibilities.</em>",
-    "intro": "Change states, observe sequences and compare variants. I build the tools to try, learn and develop those ideas further.",
-    "try": "Open the function space",
+    "eyebrow": "JURI / PYTHON · JAVASCRIPT · WINDOWS",
+    "title": "I build local software<br><em>and verifiable tools.</em>",
+    "intro": "Recover sources, manage credentials, learn independently or compare model rules. Four projects lead straight to an application or a reproducible start guide.",
+    "try": "Explore four projects",
     "code": "View code",
     "native": "APPLICATION · C++ / UNREAL",
     "web": "FUNCTIONS · IN YOUR BROWSER",
@@ -77,10 +79,10 @@ const words = {
     "mechanism": "At each model time, JavaScript calculates four point positions. The left view shows their x/y coordinates; the right shows the same IDs with a tilted depth view. The calculation runs locally in your browser; movement follows a defined geometric model."
   },
   "ru": {
-    "eyebrow": "JURI / ДИЗАЙН И ПРОГРАММЫ",
-    "title": "Состояния. Время.<br><em>Открывайте возможности.</em>",
-    "intro": "Меняйте состояния, наблюдайте последовательности и сравнивайте варианты. Я создаю инструменты, чтобы пробовать, учиться и развивать идеи.",
-    "try": "Открыть пространство функций",
+    "eyebrow": "JURI / PYTHON · JAVASCRIPT · WINDOWS",
+    "title": "Я создаю локальные программы<br><em>и проверяемые инструменты.</em>",
+    "intro": "Находить источники, хранить учётные данные, учиться и сравнивать правила моделей. Четыре проекта ведут прямо к приложению или понятной инструкции.",
+    "try": "Четыре проекта",
     "code": "Код",
     "native": "ПРИЛОЖЕНИЕ · C++ / UNREAL",
     "web": "ФУНКЦИИ · В БРАУЗЕРЕ",
@@ -145,7 +147,7 @@ function renderHero(catalog,lang){
   const prefix=lang==='de'?'/':`/${lang}/`;
   const captions={scarlet:t.web,endeck:t.model};
   const scenes=presentationScenes(catalog),lead=scenes[0];
-  return `<section class="hero scene-hero shell"><div class="scene-heading"><div><p class="eyebrow">${t.eyebrow}</p><h1>${t.title}</h1></div><div class="scene-intro"><p>${t.intro}</p><div class="hero-actions"><a class="button" href="${esc(sceneHref(lead,lang))}">${t.try} ↗</a><a class="text-link" href="#scene-lab">${t.observe} ↓</a><a class="text-link" href="${prefix}koennen/">${t.code} ↗</a></div></div></div><div class="scene-wall">${scenes.map((s,i)=>`<a class="scene-tile scene-tile-${s.id}" href="${esc(sceneHref(s,lang))}" data-scene="${s.id}"><img src="${esc(s.image)}" alt="${esc(s.alt[lang])}" width="${s.width}" height="${s.height}" ${i===0?'fetchpriority="high"':'loading="lazy"'}><span class="scene-caption"><span class="scene-type">${captions[s.id]}</span><strong>${esc(s.title[lang])}</strong><span>${esc(s.action[lang])} ↗</span></span></a>`).join('')}</div><p class="scene-note">${esc(lead.scope[lang])}</p></section>`;
+  return `<section class="hero scene-hero shell"><div class="scene-heading"><div><p class="eyebrow">${t.eyebrow}</p><h1>${t.title}</h1></div><div class="scene-intro"><p>${t.intro}</p><div class="hero-actions"><a class="button" href="#flagships">${t.try} ↗</a><a class="text-link" href="#scene-lab">${t.observe} ↓</a><a class="text-link" href="${prefix}koennen/">${t.code} ↗</a></div></div></div>${renderFlagships(projects,lang)}<div class="scene-wall">${scenes.map((s,i)=>`<a class="scene-tile scene-tile-${s.id}" href="${esc(sceneHref(s,lang))}" data-scene="${s.id}"><img src="${esc(s.image)}" alt="${esc(s.alt[lang])}" width="${s.width}" height="${s.height}" ${i===0?'fetchpriority="high"':'loading="lazy"'}><span class="scene-caption"><span class="scene-type">${captions[s.id]}</span><strong>${esc(s.title[lang])}</strong><span>${esc(s.action[lang])} ↗</span></span></a>`).join('')}</div><p class="scene-note">${esc(lead.scope[lang])}</p></section>`;
 }
 function renderSceneShowcase(catalog,lang){
   const t=language(lang);validateSceneCatalog(catalog);

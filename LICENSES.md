@@ -27,7 +27,7 @@ Commons or other permissions. Platform terms and statutory exceptions remain
 applicable. The license covers no person, identity, fictional character or
 independent system.
 
-Contact **security@halveth.de** with the exact work, revision and proposed use
+Contact **juri@halveth.de** with the exact work, revision and proposed use
 for permission requests. No price or payment obligation arises from access,
 download, a fork, a reference or silence.
 
