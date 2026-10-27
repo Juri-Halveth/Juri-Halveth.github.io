@@ -38,6 +38,7 @@ function validateRepositorySnapshot(data){
 }
 function validateProjects(data){
  if(data?.schema!=='halveth.technical-portfolio.v2'||!Array.isArray(data.projects)||!data.projects.length)throw Error('Invalid project catalog');
+ if(typeof data.sourceDate!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(data.sourceDate)||!timestamp(data.sourceDate+'T00:00:00Z'))throw Error('Invalid project source date');
  const ids=new Set();
  for(const p of data.projects){
   if(typeof p.id!=='string'||!/^[a-z][a-z0-9-]*$/.test(p.id)||ids.has(p.id))throw Error('Invalid project identity');ids.add(p.id);

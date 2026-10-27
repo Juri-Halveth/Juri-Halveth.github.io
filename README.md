@@ -46,6 +46,10 @@ Prüfstatus „Quellstand aus GitHub“; alte Testergebnisse werden nicht auf ne
 Revisionen übertragen. Der TRON-Arbeitsbeleg bleibt absichtlich auf seinen
 unveröffentlichten PR-Quellstand gebunden.
 
+Startseiten und Footer zeigen denselben Projektquellenstand aus
+`data/projects.json` (`sourceDate`). Ein Build erhält dieses Abrufdatum;
+`npm run refresh` aktualisiert es zusammen mit den Quellrevisionen.
+
 ## Quellen und Darstellung
 
 - `data/scene-stage.json` bindet zwei Aufnahmen, Verarbeitung, Maße, Digests und
