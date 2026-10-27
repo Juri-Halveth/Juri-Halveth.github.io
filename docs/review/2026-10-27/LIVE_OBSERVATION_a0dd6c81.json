@@ -1,0 +1,1241 @@
+{
+  "schema": "halveth.public-source-and-live-observation.v1",
+  "classification": "FRESH_PUBLIC_HTTP_RECHECK",
+  "commit": "a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+  "startedAt": "2026-10-27T22:56:53.627619Z",
+  "observedAt": "2026-10-27T22:56:58.715977Z",
+  "clock": {
+    "source": "HOST_OS_UTC",
+    "independentCalibration": "UNKNOWN"
+  },
+  "observer": "HALVETH local verifier; same engineering provenance cluster as the prior package",
+  "package": {
+    "file": "HALVETH_PRUEFPAKET_20261027.zip",
+    "bytes": 113617,
+    "sha256": "7124f2b958f5bbbefe1d6554c98b8b9e7bc8b392ae8c2ee799e4ddf1366e5613"
+  },
+  "expectations": {
+    "member": "HALVETH_PRUEFPAKET/PUBLIC_RESOURCES.json",
+    "sha256": "2dd7297262f9a1245418ea3f03760c739ec4b95eafd5d2c589ab5501cdfba47c"
+  },
+  "method": {
+    "name": "HTTPS_GET_AND_RAW_BYTE_SHA256",
+    "parallelWorkers": 4,
+    "maxResourceBytes": 16000000,
+    "timeoutSeconds": 30
+  },
+  "coverage": "48 explicitly listed resources at the immutable source commit and current public website; 96 HTTP byte observations",
+  "result": {
+    "SOURCE_BYTES": {
+      "matching": 48,
+      "total": 48
+    },
+    "LIVE_BYTES": {
+      "matching": 48,
+      "total": 48
+    }
+  },
+  "claimCeiling": "Byte equality within the declared resource set and observation window; linked application runtimes and independent human use are separate checks",
+  "rows": [
+    {
+      "path": "arbeiten/index.html",
+      "expectedBytes": 15496,
+      "expectedSha256": "69ebda885821616378b97fcf81f75bb41c1712c2059bf853c92f7dcbfa62baaa",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/arbeiten/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/arbeiten/index.html",
+        "startedAt": "2026-10-27T22:56:53.631179Z",
+        "observedAt": "2026-10-27T22:56:53.911362Z",
+        "status": 200,
+        "bytes": 15496,
+        "sha256": "69ebda885821616378b97fcf81f75bb41c1712c2059bf853c92f7dcbfa62baaa",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/arbeiten/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/arbeiten/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:53.911379Z",
+        "observedAt": "2026-10-27T22:56:54.084551Z",
+        "status": 200,
+        "bytes": 15496,
+        "sha256": "69ebda885821616378b97fcf81f75bb41c1712c2059bf853c92f7dcbfa62baaa",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "audits/index.html",
+      "expectedBytes": 3658,
+      "expectedSha256": "cf308d7fdece548faa42181279ce0b12e185b8c159c263ec62af279a0cd7cf32",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/audits/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/audits/index.html",
+        "startedAt": "2026-10-27T22:56:53.631681Z",
+        "observedAt": "2026-10-27T22:56:53.891504Z",
+        "status": 200,
+        "bytes": 3658,
+        "sha256": "cf308d7fdece548faa42181279ce0b12e185b8c159c263ec62af279a0cd7cf32",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/audits/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/audits/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:53.891519Z",
+        "observedAt": "2026-10-27T22:56:54.097089Z",
+        "status": 200,
+        "bytes": 3658,
+        "sha256": "cf308d7fdece548faa42181279ce0b12e185b8c159c263ec62af279a0cd7cf32",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "belege/index.html",
+      "expectedBytes": 8447,
+      "expectedSha256": "2fefb9f053096bc26065db9e15bd6faa3c1946d1780bb6c699a29f9e95fce5ba",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/belege/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/belege/index.html",
+        "startedAt": "2026-10-27T22:56:53.632130Z",
+        "observedAt": "2026-10-27T22:56:53.887411Z",
+        "status": 200,
+        "bytes": 8447,
+        "sha256": "2fefb9f053096bc26065db9e15bd6faa3c1946d1780bb6c699a29f9e95fce5ba",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/belege/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/belege/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:53.887445Z",
+        "observedAt": "2026-10-27T22:56:54.072750Z",
+        "status": 200,
+        "bytes": 8447,
+        "sha256": "2fefb9f053096bc26065db9e15bd6faa3c1946d1780bb6c699a29f9e95fce5ba",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "data/projects.json",
+      "expectedBytes": 15620,
+      "expectedSha256": "2ee25112c746d2101ee43b752bc612e7ca669232a713b6b5be72e534930cbc99",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/data/projects.json",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/data/projects.json",
+        "startedAt": "2026-10-27T22:56:53.632368Z",
+        "observedAt": "2026-10-27T22:56:53.887607Z",
+        "status": 200,
+        "bytes": 15620,
+        "sha256": "2ee25112c746d2101ee43b752bc612e7ca669232a713b6b5be72e534930cbc99",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/data/projects.json?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/data/projects.json?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:53.887621Z",
+        "observedAt": "2026-10-27T22:56:54.094247Z",
+        "status": 200,
+        "bytes": 15620,
+        "sha256": "2ee25112c746d2101ee43b752bc612e7ca669232a713b6b5be72e534930cbc99",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "data/public-repositories.json",
+      "expectedBytes": 17845,
+      "expectedSha256": "628b81d94a5030579832ee4ca7dc957901b7e350eda4f6cef05d58eb75db5463",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/data/public-repositories.json",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/data/public-repositories.json",
+        "startedAt": "2026-10-27T22:56:54.072801Z",
+        "observedAt": "2026-10-27T22:56:54.285469Z",
+        "status": 200,
+        "bytes": 17845,
+        "sha256": "628b81d94a5030579832ee4ca7dc957901b7e350eda4f6cef05d58eb75db5463",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/data/public-repositories.json?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/data/public-repositories.json?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:54.285488Z",
+        "observedAt": "2026-10-27T22:56:54.515905Z",
+        "status": 200,
+        "bytes": 17845,
+        "sha256": "628b81d94a5030579832ee4ca7dc957901b7e350eda4f6cef05d58eb75db5463",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "en/arbeiten/index.html",
+      "expectedBytes": 15117,
+      "expectedSha256": "1d577bb9f4f4c849c6dab13bfb4abc50b5fe5da04c34e1f79802a6b475b2a9e7",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/arbeiten/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/arbeiten/index.html",
+        "startedAt": "2026-10-27T22:56:54.084601Z",
+        "observedAt": "2026-10-27T22:56:54.303810Z",
+        "status": 200,
+        "bytes": 15117,
+        "sha256": "1d577bb9f4f4c849c6dab13bfb4abc50b5fe5da04c34e1f79802a6b475b2a9e7",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/en/arbeiten/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/en/arbeiten/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:54.303826Z",
+        "observedAt": "2026-10-27T22:56:54.474352Z",
+        "status": 200,
+        "bytes": 15117,
+        "sha256": "1d577bb9f4f4c849c6dab13bfb4abc50b5fe5da04c34e1f79802a6b475b2a9e7",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "en/audits/index.html",
+      "expectedBytes": 3589,
+      "expectedSha256": "a5f725aaaae60dd72216942fa1743118dc0c3467b8b64ddb4a8a5ad4e7f86bca",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/audits/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/audits/index.html",
+        "startedAt": "2026-10-27T22:56:54.094333Z",
+        "observedAt": "2026-10-27T22:56:54.287916Z",
+        "status": 200,
+        "bytes": 3589,
+        "sha256": "a5f725aaaae60dd72216942fa1743118dc0c3467b8b64ddb4a8a5ad4e7f86bca",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/en/audits/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/en/audits/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:54.287930Z",
+        "observedAt": "2026-10-27T22:56:54.460845Z",
+        "status": 200,
+        "bytes": 3589,
+        "sha256": "a5f725aaaae60dd72216942fa1743118dc0c3467b8b64ddb4a8a5ad4e7f86bca",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "en/belege/index.html",
+      "expectedBytes": 8109,
+      "expectedSha256": "66c4e8a5761139378ef0f8f369f4ad765a6716dab65f8f24ef534cf032401fca",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/belege/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/belege/index.html",
+        "startedAt": "2026-10-27T22:56:54.097155Z",
+        "observedAt": "2026-10-27T22:56:54.296885Z",
+        "status": 200,
+        "bytes": 8109,
+        "sha256": "66c4e8a5761139378ef0f8f369f4ad765a6716dab65f8f24ef534cf032401fca",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/en/belege/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/en/belege/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:54.296901Z",
+        "observedAt": "2026-10-27T22:56:54.466800Z",
+        "status": 200,
+        "bytes": 8109,
+        "sha256": "66c4e8a5761139378ef0f8f369f4ad765a6716dab65f8f24ef534cf032401fca",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "en/forschung/index.html",
+      "expectedBytes": 43977,
+      "expectedSha256": "10705052046acf565bb4f095cabc3be4bfaf048e2a457e3651b893554f61e5a1",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/forschung/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/forschung/index.html",
+        "startedAt": "2026-10-27T22:56:54.460888Z",
+        "observedAt": "2026-10-27T22:56:54.697879Z",
+        "status": 200,
+        "bytes": 43977,
+        "sha256": "10705052046acf565bb4f095cabc3be4bfaf048e2a457e3651b893554f61e5a1",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/en/forschung/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/en/forschung/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:54.697906Z",
+        "observedAt": "2026-10-27T22:56:54.912807Z",
+        "status": 200,
+        "bytes": 43977,
+        "sha256": "10705052046acf565bb4f095cabc3be4bfaf048e2a457e3651b893554f61e5a1",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "en/handbuch/index.html",
+      "expectedBytes": 3597,
+      "expectedSha256": "960a5dbd26593a3aaf7aa6ffdacd5d5b60917c8df9bd200cf6715706ea79b9f6",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/handbuch/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/handbuch/index.html",
+        "startedAt": "2026-10-27T22:56:54.466874Z",
+        "observedAt": "2026-10-27T22:56:54.676398Z",
+        "status": 200,
+        "bytes": 3597,
+        "sha256": "960a5dbd26593a3aaf7aa6ffdacd5d5b60917c8df9bd200cf6715706ea79b9f6",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/en/handbuch/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/en/handbuch/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:54.676415Z",
+        "observedAt": "2026-10-27T22:56:54.894190Z",
+        "status": 200,
+        "bytes": 3597,
+        "sha256": "960a5dbd26593a3aaf7aa6ffdacd5d5b60917c8df9bd200cf6715706ea79b9f6",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "en/index.html",
+      "expectedBytes": 12736,
+      "expectedSha256": "753eff7fcf9dfa91e5169e92950189df644bb4ab6ae875a72e51eac051b55037",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/index.html",
+        "startedAt": "2026-10-27T22:56:54.474390Z",
+        "observedAt": "2026-10-27T22:56:54.698120Z",
+        "status": 200,
+        "bytes": 12736,
+        "sha256": "753eff7fcf9dfa91e5169e92950189df644bb4ab6ae875a72e51eac051b55037",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/en/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/en/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:54.698133Z",
+        "observedAt": "2026-10-27T22:56:54.875699Z",
+        "status": 200,
+        "bytes": 12736,
+        "sha256": "753eff7fcf9dfa91e5169e92950189df644bb4ab6ae875a72e51eac051b55037",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "en/koennen/index.html",
+      "expectedBytes": 23702,
+      "expectedSha256": "e6614b34b5b30af9ac366de076a681a64c3f52b330d99def920d57d9b4906dd5",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/koennen/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/koennen/index.html",
+        "startedAt": "2026-10-27T22:56:54.515960Z",
+        "observedAt": "2026-10-27T22:56:54.736164Z",
+        "status": 200,
+        "bytes": 23702,
+        "sha256": "e6614b34b5b30af9ac366de076a681a64c3f52b330d99def920d57d9b4906dd5",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/en/koennen/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/en/koennen/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:54.736186Z",
+        "observedAt": "2026-10-27T22:56:54.924840Z",
+        "status": 200,
+        "bytes": 23702,
+        "sha256": "e6614b34b5b30af9ac366de076a681a64c3f52b330d99def920d57d9b4906dd5",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "en/lernen/index.html",
+      "expectedBytes": 5453,
+      "expectedSha256": "8c65226cd7f307a871cc4c40082c9ae71f9671e21f61f4ccb267bbdae2d3c92b",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/lernen/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/lernen/index.html",
+        "startedAt": "2026-10-27T22:56:54.875742Z",
+        "observedAt": "2026-10-27T22:56:55.084215Z",
+        "status": 200,
+        "bytes": 5453,
+        "sha256": "8c65226cd7f307a871cc4c40082c9ae71f9671e21f61f4ccb267bbdae2d3c92b",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/en/lernen/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/en/lernen/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:55.084257Z",
+        "observedAt": "2026-10-27T22:56:55.271477Z",
+        "status": 200,
+        "bytes": 5453,
+        "sha256": "8c65226cd7f307a871cc4c40082c9ae71f9671e21f61f4ccb267bbdae2d3c92b",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "en/modelle/index.html",
+      "expectedBytes": 3593,
+      "expectedSha256": "6d90304f54d1d85173b4588d3913d400051eeada793ff049313f6d2d6838a759",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/modelle/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/modelle/index.html",
+        "startedAt": "2026-10-27T22:56:54.894242Z",
+        "observedAt": "2026-10-27T22:56:55.100396Z",
+        "status": 200,
+        "bytes": 3593,
+        "sha256": "6d90304f54d1d85173b4588d3913d400051eeada793ff049313f6d2d6838a759",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/en/modelle/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/en/modelle/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:55.100412Z",
+        "observedAt": "2026-10-27T22:56:55.256047Z",
+        "status": 200,
+        "bytes": 3593,
+        "sha256": "6d90304f54d1d85173b4588d3913d400051eeada793ff049313f6d2d6838a759",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "en/motion/index.html",
+      "expectedBytes": 4073,
+      "expectedSha256": "790cb6a620919003bde0056f54dfb106ebbf4e9e463d156939d99265b72d16f9",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/motion/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/motion/index.html",
+        "startedAt": "2026-10-27T22:56:54.912859Z",
+        "observedAt": "2026-10-27T22:56:55.123624Z",
+        "status": 200,
+        "bytes": 4073,
+        "sha256": "790cb6a620919003bde0056f54dfb106ebbf4e9e463d156939d99265b72d16f9",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/en/motion/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/en/motion/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:55.123640Z",
+        "observedAt": "2026-10-27T22:56:55.271995Z",
+        "status": 200,
+        "bytes": 4073,
+        "sha256": "790cb6a620919003bde0056f54dfb106ebbf4e9e463d156939d99265b72d16f9",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "en/profil/index.html",
+      "expectedBytes": 12830,
+      "expectedSha256": "3b6413d70bdefa3803bea860fe971a65b4d740c09d8af139ff73ce081730158f",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/profil/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/profil/index.html",
+        "startedAt": "2026-10-27T22:56:54.924891Z",
+        "observedAt": "2026-10-27T22:56:55.128461Z",
+        "status": 200,
+        "bytes": 12830,
+        "sha256": "3b6413d70bdefa3803bea860fe971a65b4d740c09d8af139ff73ce081730158f",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/en/profil/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/en/profil/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:55.128477Z",
+        "observedAt": "2026-10-27T22:56:55.322063Z",
+        "status": 200,
+        "bytes": 12830,
+        "sha256": "3b6413d70bdefa3803bea860fe971a65b4d740c09d8af139ff73ce081730158f",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "en/pulsar/index.html",
+      "expectedBytes": 3589,
+      "expectedSha256": "23bb41ecc39eb35589078b704b12794d10863373cf035c7f9a21f2427a1f628c",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/pulsar/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/pulsar/index.html",
+        "startedAt": "2026-10-27T22:56:55.256173Z",
+        "observedAt": "2026-10-27T22:56:55.471283Z",
+        "status": 200,
+        "bytes": 3589,
+        "sha256": "23bb41ecc39eb35589078b704b12794d10863373cf035c7f9a21f2427a1f628c",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/en/pulsar/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/en/pulsar/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:55.471301Z",
+        "observedAt": "2026-10-27T22:56:55.638286Z",
+        "status": 200,
+        "bytes": 3589,
+        "sha256": "23bb41ecc39eb35589078b704b12794d10863373cf035c7f9a21f2427a1f628c",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "en/werkzertifikate/index.html",
+      "expectedBytes": 3625,
+      "expectedSha256": "63727cbed731ccd9ca6c78feb0f2a9718e948e4ff45e55dbe798d1211bdaeabc",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/werkzertifikate/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/werkzertifikate/index.html",
+        "startedAt": "2026-10-27T22:56:55.271526Z",
+        "observedAt": "2026-10-27T22:56:55.503078Z",
+        "status": 200,
+        "bytes": 3625,
+        "sha256": "63727cbed731ccd9ca6c78feb0f2a9718e948e4ff45e55dbe798d1211bdaeabc",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/en/werkzertifikate/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/en/werkzertifikate/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:55.503095Z",
+        "observedAt": "2026-10-27T22:56:55.691386Z",
+        "status": 200,
+        "bytes": 3625,
+        "sha256": "63727cbed731ccd9ca6c78feb0f2a9718e948e4ff45e55dbe798d1211bdaeabc",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "en/zertifikate/index.html",
+      "expectedBytes": 3609,
+      "expectedSha256": "0a9b4136f66fa90da1d7904d5ff53fb87acf4e1732129a7ef93b5c26e5dee8f4",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/zertifikate/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/en/zertifikate/index.html",
+        "startedAt": "2026-10-27T22:56:55.272028Z",
+        "observedAt": "2026-10-27T22:56:55.480126Z",
+        "status": 200,
+        "bytes": 3609,
+        "sha256": "0a9b4136f66fa90da1d7904d5ff53fb87acf4e1732129a7ef93b5c26e5dee8f4",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/en/zertifikate/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/en/zertifikate/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:55.480144Z",
+        "observedAt": "2026-10-27T22:56:55.650850Z",
+        "status": 200,
+        "bytes": 3609,
+        "sha256": "0a9b4136f66fa90da1d7904d5ff53fb87acf4e1732129a7ef93b5c26e5dee8f4",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "forschung/index.html",
+      "expectedBytes": 44090,
+      "expectedSha256": "ea4c5bb9bfe1163f6ddb7aaa450c5fc109888ceea785326b220cecc1ee1d8d2e",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/forschung/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/forschung/index.html",
+        "startedAt": "2026-10-27T22:56:55.322118Z",
+        "observedAt": "2026-10-27T22:56:55.520069Z",
+        "status": 200,
+        "bytes": 44090,
+        "sha256": "ea4c5bb9bfe1163f6ddb7aaa450c5fc109888ceea785326b220cecc1ee1d8d2e",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/forschung/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/forschung/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:55.520086Z",
+        "observedAt": "2026-10-27T22:56:55.704218Z",
+        "status": 200,
+        "bytes": 44090,
+        "sha256": "ea4c5bb9bfe1163f6ddb7aaa450c5fc109888ceea785326b220cecc1ee1d8d2e",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "handbuch/index.html",
+      "expectedBytes": 3666,
+      "expectedSha256": "8c8701279764c1cc108615fc9cd05b2498765c0ae8f767782e73d9f47e93b7c0",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/handbuch/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/handbuch/index.html",
+        "startedAt": "2026-10-27T22:56:55.638336Z",
+        "observedAt": "2026-10-27T22:56:55.843980Z",
+        "status": 200,
+        "bytes": 3666,
+        "sha256": "8c8701279764c1cc108615fc9cd05b2498765c0ae8f767782e73d9f47e93b7c0",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/handbuch/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/handbuch/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:55.843996Z",
+        "observedAt": "2026-10-27T22:56:56.023269Z",
+        "status": 200,
+        "bytes": 3666,
+        "sha256": "8c8701279764c1cc108615fc9cd05b2498765c0ae8f767782e73d9f47e93b7c0",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "index.html",
+      "expectedBytes": 12984,
+      "expectedSha256": "b7c371d58c8cbe5dbb55c18148551dfe1a16fecb4b16c37bdcade02410f6a3db",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/index.html",
+        "startedAt": "2026-10-27T22:56:55.650887Z",
+        "observedAt": "2026-10-27T22:56:55.860719Z",
+        "status": 200,
+        "bytes": 12984,
+        "sha256": "b7c371d58c8cbe5dbb55c18148551dfe1a16fecb4b16c37bdcade02410f6a3db",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:55.860736Z",
+        "observedAt": "2026-10-27T22:56:56.054576Z",
+        "status": 200,
+        "bytes": 12984,
+        "sha256": "b7c371d58c8cbe5dbb55c18148551dfe1a16fecb4b16c37bdcade02410f6a3db",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "koennen/index.html",
+      "expectedBytes": 24326,
+      "expectedSha256": "ca2751c7b5b5cb677cb75eda975a8324c5ae993b308791838fcfd227e7f9ada1",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/koennen/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/koennen/index.html",
+        "startedAt": "2026-10-27T22:56:55.691433Z",
+        "observedAt": "2026-10-27T22:56:55.924050Z",
+        "status": 200,
+        "bytes": 24326,
+        "sha256": "ca2751c7b5b5cb677cb75eda975a8324c5ae993b308791838fcfd227e7f9ada1",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/koennen/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/koennen/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:55.924069Z",
+        "observedAt": "2026-10-27T22:56:56.123187Z",
+        "status": 200,
+        "bytes": 24326,
+        "sha256": "ca2751c7b5b5cb677cb75eda975a8324c5ae993b308791838fcfd227e7f9ada1",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "lernen/index.html",
+      "expectedBytes": 5473,
+      "expectedSha256": "6355b783b0b45b06f19e724dcc25e6a31b82b0fddd01f2175b261a6eb3ed5da4",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/lernen/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/lernen/index.html",
+        "startedAt": "2026-10-27T22:56:55.704277Z",
+        "observedAt": "2026-10-27T22:56:55.894151Z",
+        "status": 200,
+        "bytes": 5473,
+        "sha256": "6355b783b0b45b06f19e724dcc25e6a31b82b0fddd01f2175b261a6eb3ed5da4",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/lernen/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/lernen/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:55.894166Z",
+        "observedAt": "2026-10-27T22:56:56.080072Z",
+        "status": 200,
+        "bytes": 5473,
+        "sha256": "6355b783b0b45b06f19e724dcc25e6a31b82b0fddd01f2175b261a6eb3ed5da4",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "modelle/index.html",
+      "expectedBytes": 3662,
+      "expectedSha256": "f2fd0d9e037504c47a1b3fab32eafb12b5aeadb621e2dc6c9cf9bf9bc99ca717",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/modelle/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/modelle/index.html",
+        "startedAt": "2026-10-27T22:56:56.023314Z",
+        "observedAt": "2026-10-27T22:56:56.241723Z",
+        "status": 200,
+        "bytes": 3662,
+        "sha256": "f2fd0d9e037504c47a1b3fab32eafb12b5aeadb621e2dc6c9cf9bf9bc99ca717",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/modelle/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/modelle/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:56.241739Z",
+        "observedAt": "2026-10-27T22:56:56.428929Z",
+        "status": 200,
+        "bytes": 3662,
+        "sha256": "f2fd0d9e037504c47a1b3fab32eafb12b5aeadb621e2dc6c9cf9bf9bc99ca717",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "motion/index.html",
+      "expectedBytes": 4102,
+      "expectedSha256": "54e4be75b27c6c0fd0ae50305932cce923085fcebe99e31b087267ed364112f3",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/motion/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/motion/index.html",
+        "startedAt": "2026-10-27T22:56:56.054635Z",
+        "observedAt": "2026-10-27T22:56:56.249000Z",
+        "status": 200,
+        "bytes": 4102,
+        "sha256": "54e4be75b27c6c0fd0ae50305932cce923085fcebe99e31b087267ed364112f3",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/motion/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/motion/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:56.249019Z",
+        "observedAt": "2026-10-27T22:56:56.419364Z",
+        "status": 200,
+        "bytes": 4102,
+        "sha256": "54e4be75b27c6c0fd0ae50305932cce923085fcebe99e31b087267ed364112f3",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "profil/index.html",
+      "expectedBytes": 13034,
+      "expectedSha256": "02ecd3216b224e1b5a4a1ef8d8176818c5ba81c9c3229c610cd0ecb1a669579e",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/profil/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/profil/index.html",
+        "startedAt": "2026-10-27T22:56:56.080115Z",
+        "observedAt": "2026-10-27T22:56:56.299119Z",
+        "status": 200,
+        "bytes": 13034,
+        "sha256": "02ecd3216b224e1b5a4a1ef8d8176818c5ba81c9c3229c610cd0ecb1a669579e",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/profil/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/profil/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:56.299136Z",
+        "observedAt": "2026-10-27T22:56:56.490425Z",
+        "status": 200,
+        "bytes": 13034,
+        "sha256": "02ecd3216b224e1b5a4a1ef8d8176818c5ba81c9c3229c610cd0ecb1a669579e",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "pulsar/index.html",
+      "expectedBytes": 3658,
+      "expectedSha256": "57aec1c0afebff09455813be79523d1d63adef2ccf22303b3b4dc6ef295c6165",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/pulsar/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/pulsar/index.html",
+        "startedAt": "2026-10-27T22:56:56.123236Z",
+        "observedAt": "2026-10-27T22:56:56.332664Z",
+        "status": 200,
+        "bytes": 3658,
+        "sha256": "57aec1c0afebff09455813be79523d1d63adef2ccf22303b3b4dc6ef295c6165",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/pulsar/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/pulsar/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:56.332680Z",
+        "observedAt": "2026-10-27T22:56:56.511572Z",
+        "status": 200,
+        "bytes": 3658,
+        "sha256": "57aec1c0afebff09455813be79523d1d63adef2ccf22303b3b4dc6ef295c6165",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "ru/arbeiten/index.html",
+      "expectedBytes": 19608,
+      "expectedSha256": "0ba20518eeb87dbb234003cfaab9b45164b58824036264477dc0546adcf987f4",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/arbeiten/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/arbeiten/index.html",
+        "startedAt": "2026-10-27T22:56:56.419404Z",
+        "observedAt": "2026-10-27T22:56:56.633742Z",
+        "status": 200,
+        "bytes": 19608,
+        "sha256": "0ba20518eeb87dbb234003cfaab9b45164b58824036264477dc0546adcf987f4",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/ru/arbeiten/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/ru/arbeiten/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:56.633760Z",
+        "observedAt": "2026-10-27T22:56:56.831619Z",
+        "status": 200,
+        "bytes": 19608,
+        "sha256": "0ba20518eeb87dbb234003cfaab9b45164b58824036264477dc0546adcf987f4",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "ru/audits/index.html",
+      "expectedBytes": 4502,
+      "expectedSha256": "c4ec7656364a1f967132c4fda584d6d21860a0d05a42104a96a10e6c4b407b2d",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/audits/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/audits/index.html",
+        "startedAt": "2026-10-27T22:56:56.428988Z",
+        "observedAt": "2026-10-27T22:56:56.652777Z",
+        "status": 200,
+        "bytes": 4502,
+        "sha256": "c4ec7656364a1f967132c4fda584d6d21860a0d05a42104a96a10e6c4b407b2d",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/ru/audits/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/ru/audits/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:56.652793Z",
+        "observedAt": "2026-10-27T22:56:56.836967Z",
+        "status": 200,
+        "bytes": 4502,
+        "sha256": "c4ec7656364a1f967132c4fda584d6d21860a0d05a42104a96a10e6c4b407b2d",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "ru/belege/index.html",
+      "expectedBytes": 10489,
+      "expectedSha256": "043cb22c8fad96614ab51843d1426dcd919385ac645c05f8ea6314b39ce325ca",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/belege/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/belege/index.html",
+        "startedAt": "2026-10-27T22:56:56.490478Z",
+        "observedAt": "2026-10-27T22:56:56.702793Z",
+        "status": 200,
+        "bytes": 10489,
+        "sha256": "043cb22c8fad96614ab51843d1426dcd919385ac645c05f8ea6314b39ce325ca",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/ru/belege/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/ru/belege/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:56.702837Z",
+        "observedAt": "2026-10-27T22:56:56.905741Z",
+        "status": 200,
+        "bytes": 10489,
+        "sha256": "043cb22c8fad96614ab51843d1426dcd919385ac645c05f8ea6314b39ce325ca",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "ru/forschung/index.html",
+      "expectedBytes": 45610,
+      "expectedSha256": "bf768641838a71c6cad8d6f5a0eee071b2d49689606a56bdbed45f7a04510ec6",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/forschung/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/forschung/index.html",
+        "startedAt": "2026-10-27T22:56:56.511629Z",
+        "observedAt": "2026-10-27T22:56:56.738291Z",
+        "status": 200,
+        "bytes": 45610,
+        "sha256": "bf768641838a71c6cad8d6f5a0eee071b2d49689606a56bdbed45f7a04510ec6",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/ru/forschung/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/ru/forschung/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:56.738308Z",
+        "observedAt": "2026-10-27T22:56:56.914038Z",
+        "status": 200,
+        "bytes": 45610,
+        "sha256": "bf768641838a71c6cad8d6f5a0eee071b2d49689606a56bdbed45f7a04510ec6",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "ru/handbuch/index.html",
+      "expectedBytes": 4510,
+      "expectedSha256": "11deb0f72d39245f9b0cb4b66cf6319fe2195d312947b591950d088dafdaaa30",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/handbuch/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/handbuch/index.html",
+        "startedAt": "2026-10-27T22:56:56.831683Z",
+        "observedAt": "2026-10-27T22:56:57.034541Z",
+        "status": 200,
+        "bytes": 4510,
+        "sha256": "11deb0f72d39245f9b0cb4b66cf6319fe2195d312947b591950d088dafdaaa30",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/ru/handbuch/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/ru/handbuch/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:57.034556Z",
+        "observedAt": "2026-10-27T22:56:57.251470Z",
+        "status": 200,
+        "bytes": 4510,
+        "sha256": "11deb0f72d39245f9b0cb4b66cf6319fe2195d312947b591950d088dafdaaa30",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "ru/index.html",
+      "expectedBytes": 16144,
+      "expectedSha256": "e361726afaf451807b876f41d375dcbbdf6a8344c1e8322f40a6800b952cdce7",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/index.html",
+        "startedAt": "2026-10-27T22:56:56.837002Z",
+        "observedAt": "2026-10-27T22:56:57.026416Z",
+        "status": 200,
+        "bytes": 16144,
+        "sha256": "e361726afaf451807b876f41d375dcbbdf6a8344c1e8322f40a6800b952cdce7",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/ru/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/ru/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:57.026436Z",
+        "observedAt": "2026-10-27T22:56:57.233509Z",
+        "status": 200,
+        "bytes": 16144,
+        "sha256": "e361726afaf451807b876f41d375dcbbdf6a8344c1e8322f40a6800b952cdce7",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "ru/koennen/index.html",
+      "expectedBytes": 30294,
+      "expectedSha256": "e1c53b34500c26d011b355fab99384e9c23c9ba4e0860b8d78b843bf02ade1f6",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/koennen/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/koennen/index.html",
+        "startedAt": "2026-10-27T22:56:56.905788Z",
+        "observedAt": "2026-10-27T22:56:57.139844Z",
+        "status": 200,
+        "bytes": 30294,
+        "sha256": "e1c53b34500c26d011b355fab99384e9c23c9ba4e0860b8d78b843bf02ade1f6",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/ru/koennen/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/ru/koennen/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:57.139859Z",
+        "observedAt": "2026-10-27T22:56:57.382378Z",
+        "status": 200,
+        "bytes": 30294,
+        "sha256": "e1c53b34500c26d011b355fab99384e9c23c9ba4e0860b8d78b843bf02ade1f6",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "ru/lernen/index.html",
+      "expectedBytes": 6653,
+      "expectedSha256": "d3f6e621cdb7c69cca38abe3f9d81d9bdadc68605ab6b24a6cf975232f79c7be",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/lernen/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/lernen/index.html",
+        "startedAt": "2026-10-27T22:56:56.914091Z",
+        "observedAt": "2026-10-27T22:56:57.137736Z",
+        "status": 200,
+        "bytes": 6653,
+        "sha256": "d3f6e621cdb7c69cca38abe3f9d81d9bdadc68605ab6b24a6cf975232f79c7be",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/ru/lernen/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/ru/lernen/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:57.137753Z",
+        "observedAt": "2026-10-27T22:56:57.327526Z",
+        "status": 200,
+        "bytes": 6653,
+        "sha256": "d3f6e621cdb7c69cca38abe3f9d81d9bdadc68605ab6b24a6cf975232f79c7be",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "ru/modelle/index.html",
+      "expectedBytes": 4506,
+      "expectedSha256": "76858e78599d3bdbd6ba149bad932e61edd3870b930089aaabe6a27d6511df38",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/modelle/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/modelle/index.html",
+        "startedAt": "2026-10-27T22:56:57.233614Z",
+        "observedAt": "2026-10-27T22:56:57.445925Z",
+        "status": 200,
+        "bytes": 4506,
+        "sha256": "76858e78599d3bdbd6ba149bad932e61edd3870b930089aaabe6a27d6511df38",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/ru/modelle/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/ru/modelle/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:57.445942Z",
+        "observedAt": "2026-10-27T22:56:57.605525Z",
+        "status": 200,
+        "bytes": 4506,
+        "sha256": "76858e78599d3bdbd6ba149bad932e61edd3870b930089aaabe6a27d6511df38",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "ru/motion/index.html",
+      "expectedBytes": 4818,
+      "expectedSha256": "92373da5c931e7fb4cf9c97c274eb6317266d4bca930033cfb443f05b4473516",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/motion/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/motion/index.html",
+        "startedAt": "2026-10-27T22:56:57.251526Z",
+        "observedAt": "2026-10-27T22:56:57.466459Z",
+        "status": 200,
+        "bytes": 4818,
+        "sha256": "92373da5c931e7fb4cf9c97c274eb6317266d4bca930033cfb443f05b4473516",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/ru/motion/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/ru/motion/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:57.466495Z",
+        "observedAt": "2026-10-27T22:56:57.646902Z",
+        "status": 200,
+        "bytes": 4818,
+        "sha256": "92373da5c931e7fb4cf9c97c274eb6317266d4bca930033cfb443f05b4473516",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "ru/profil/index.html",
+      "expectedBytes": 16238,
+      "expectedSha256": "e85b17b10d8ab75d8d3e8af0aeebcb363343625bc0695f2b3194e2b9944cf974",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/profil/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/profil/index.html",
+        "startedAt": "2026-10-27T22:56:57.327569Z",
+        "observedAt": "2026-10-27T22:56:57.528439Z",
+        "status": 200,
+        "bytes": 16238,
+        "sha256": "e85b17b10d8ab75d8d3e8af0aeebcb363343625bc0695f2b3194e2b9944cf974",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/ru/profil/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/ru/profil/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:57.528456Z",
+        "observedAt": "2026-10-27T22:56:57.686103Z",
+        "status": 200,
+        "bytes": 16238,
+        "sha256": "e85b17b10d8ab75d8d3e8af0aeebcb363343625bc0695f2b3194e2b9944cf974",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "ru/pulsar/index.html",
+      "expectedBytes": 4502,
+      "expectedSha256": "9bef35b6e4db5cc79d169051a2a14ccd1b5de37b9ad6f8eb0de51c18d239a0c9",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/pulsar/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/pulsar/index.html",
+        "startedAt": "2026-10-27T22:56:57.382429Z",
+        "observedAt": "2026-10-27T22:56:57.568474Z",
+        "status": 200,
+        "bytes": 4502,
+        "sha256": "9bef35b6e4db5cc79d169051a2a14ccd1b5de37b9ad6f8eb0de51c18d239a0c9",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/ru/pulsar/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/ru/pulsar/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:57.568493Z",
+        "observedAt": "2026-10-27T22:56:57.718871Z",
+        "status": 200,
+        "bytes": 4502,
+        "sha256": "9bef35b6e4db5cc79d169051a2a14ccd1b5de37b9ad6f8eb0de51c18d239a0c9",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "ru/werkzertifikate/index.html",
+      "expectedBytes": 4538,
+      "expectedSha256": "cc0585530733854f2bc3c868b4ce171acb9a0ad1f2ca604f022f71ccbef7a7d8",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/werkzertifikate/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/werkzertifikate/index.html",
+        "startedAt": "2026-10-27T22:56:57.605587Z",
+        "observedAt": "2026-10-27T22:56:57.806718Z",
+        "status": 200,
+        "bytes": 4538,
+        "sha256": "cc0585530733854f2bc3c868b4ce171acb9a0ad1f2ca604f022f71ccbef7a7d8",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/ru/werkzertifikate/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/ru/werkzertifikate/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:57.806735Z",
+        "observedAt": "2026-10-27T22:56:57.964357Z",
+        "status": 200,
+        "bytes": 4538,
+        "sha256": "cc0585530733854f2bc3c868b4ce171acb9a0ad1f2ca604f022f71ccbef7a7d8",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "ru/zertifikate/index.html",
+      "expectedBytes": 4522,
+      "expectedSha256": "60050be7c9392d9b06d5c8f6fa3699feaf39e3b407a7f77fe697adf6ece356b0",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/zertifikate/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/ru/zertifikate/index.html",
+        "startedAt": "2026-10-27T22:56:57.646949Z",
+        "observedAt": "2026-10-27T22:56:57.850323Z",
+        "status": 200,
+        "bytes": 4522,
+        "sha256": "60050be7c9392d9b06d5c8f6fa3699feaf39e3b407a7f77fe697adf6ece356b0",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/ru/zertifikate/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/ru/zertifikate/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:57.850362Z",
+        "observedAt": "2026-10-27T22:56:58.003615Z",
+        "status": 200,
+        "bytes": 4522,
+        "sha256": "60050be7c9392d9b06d5c8f6fa3699feaf39e3b407a7f77fe697adf6ece356b0",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "showcase.css",
+      "expectedBytes": 11070,
+      "expectedSha256": "6a781a0e0d69811fe67b38a3bfe7090a3f6581bf96569609f187cb3f5f4cec26",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/showcase.css",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/showcase.css",
+        "startedAt": "2026-10-27T22:56:57.686149Z",
+        "observedAt": "2026-10-27T22:56:57.916012Z",
+        "status": 200,
+        "bytes": 11070,
+        "sha256": "6a781a0e0d69811fe67b38a3bfe7090a3f6581bf96569609f187cb3f5f4cec26",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/showcase.css?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/showcase.css?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:57.916030Z",
+        "observedAt": "2026-10-27T22:56:58.087750Z",
+        "status": 200,
+        "bytes": 11070,
+        "sha256": "6a781a0e0d69811fe67b38a3bfe7090a3f6581bf96569609f187cb3f5f4cec26",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "werkzertifikate/index.html",
+      "expectedBytes": 3694,
+      "expectedSha256": "24dd67b5674c42c24204b25a2fd761b16ffc77bf81e9ceae58c3a97b9b5be22f",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/werkzertifikate/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/werkzertifikate/index.html",
+        "startedAt": "2026-10-27T22:56:57.718917Z",
+        "observedAt": "2026-10-27T22:56:58.185352Z",
+        "status": 200,
+        "bytes": 3694,
+        "sha256": "24dd67b5674c42c24204b25a2fd761b16ffc77bf81e9ceae58c3a97b9b5be22f",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/werkzertifikate/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/werkzertifikate/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:58.185369Z",
+        "observedAt": "2026-10-27T22:56:58.333117Z",
+        "status": 200,
+        "bytes": 3694,
+        "sha256": "24dd67b5674c42c24204b25a2fd761b16ffc77bf81e9ceae58c3a97b9b5be22f",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "zertifikate/index.html",
+      "expectedBytes": 3678,
+      "expectedSha256": "725aa9a080005be2ef2ea0d306bf3057118039c81dd7a50c2b30f3a1545621bf",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/zertifikate/index.html",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/zertifikate/index.html",
+        "startedAt": "2026-10-27T22:56:57.964406Z",
+        "observedAt": "2026-10-27T22:56:58.175955Z",
+        "status": 200,
+        "bytes": 3678,
+        "sha256": "725aa9a080005be2ef2ea0d306bf3057118039c81dd7a50c2b30f3a1545621bf",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/zertifikate/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/zertifikate/index.html?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:58.175971Z",
+        "observedAt": "2026-10-27T22:56:58.370484Z",
+        "status": 200,
+        "bytes": 3678,
+        "sha256": "725aa9a080005be2ef2ea0d306bf3057118039c81dd7a50c2b30f3a1545621bf",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "assets/scene-state-space.webp",
+      "expectedBytes": 38654,
+      "expectedSha256": "8a137c8e5bbaee8b869c2230554274597ef38d9ee08bd9771f4b1b5a41a1d48e",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/assets/scene-state-space.webp",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/assets/scene-state-space.webp",
+        "startedAt": "2026-10-27T22:56:58.003665Z",
+        "observedAt": "2026-10-27T22:56:58.224347Z",
+        "status": 200,
+        "bytes": 38654,
+        "sha256": "8a137c8e5bbaee8b869c2230554274597ef38d9ee08bd9771f4b1b5a41a1d48e",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/assets/scene-state-space.webp?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/assets/scene-state-space.webp?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:58.224368Z",
+        "observedAt": "2026-10-27T22:56:58.418813Z",
+        "status": 200,
+        "bytes": 38654,
+        "sha256": "8a137c8e5bbaee8b869c2230554274597ef38d9ee08bd9771f4b1b5a41a1d48e",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "assets/scene-endeck.webp",
+      "expectedBytes": 10602,
+      "expectedSha256": "4d4939b745fbaad453e3b63151e8fa324d0afdcbe8253230ad7e1b68a969749c",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/assets/scene-endeck.webp",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/assets/scene-endeck.webp",
+        "startedAt": "2026-10-27T22:56:58.087797Z",
+        "observedAt": "2026-10-27T22:56:58.308402Z",
+        "status": 200,
+        "bytes": 10602,
+        "sha256": "4d4939b745fbaad453e3b63151e8fa324d0afdcbe8253230ad7e1b68a969749c",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/assets/scene-endeck.webp?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/assets/scene-endeck.webp?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:58.308424Z",
+        "observedAt": "2026-10-27T22:56:58.486088Z",
+        "status": 200,
+        "bytes": 10602,
+        "sha256": "4d4939b745fbaad453e3b63151e8fa324d0afdcbe8253230ad7e1b68a969749c",
+        "matchesExpectedSha256": true
+      }
+    },
+    {
+      "path": "assets/endeck-model.mjs",
+      "expectedBytes": 1851,
+      "expectedSha256": "3824d725caaed2d437561573533a59bee1251cc4b0a224902ca0965d0b578c11",
+      "source": {
+        "url": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/assets/endeck-model.mjs",
+        "finalUrl": "https://raw.githubusercontent.com/Juri-Halveth/Juri-Halveth.github.io/a0dd6c81f54a025c01c54b0408066c5f6daa3e01/assets/endeck-model.mjs",
+        "startedAt": "2026-10-27T22:56:58.333163Z",
+        "observedAt": "2026-10-27T22:56:58.536176Z",
+        "status": 200,
+        "bytes": 1851,
+        "sha256": "3824d725caaed2d437561573533a59bee1251cc4b0a224902ca0965d0b578c11",
+        "matchesExpectedSha256": true
+      },
+      "live": {
+        "url": "https://juri-halveth.github.io/assets/endeck-model.mjs?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "finalUrl": "https://juri-halveth.github.io/assets/endeck-model.mjs?verify=a0dd6c81f54a025c01c54b0408066c5f6daa3e01",
+        "startedAt": "2026-10-27T22:56:58.536194Z",
+        "observedAt": "2026-10-27T22:56:58.715508Z",
+        "status": 200,
+        "bytes": 1851,
+        "sha256": "3824d725caaed2d437561573533a59bee1251cc4b0a224902ca0965d0b578c11",
+        "matchesExpectedSha256": true
+      }
+    }
+  ]
+}

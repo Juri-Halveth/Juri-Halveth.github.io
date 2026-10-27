@@ -74,6 +74,10 @@ committeten Baum nach Build, Driftprüfung und Tests.
 
 ## Nachvollziehbare Arbeit
 
+Das [öffentliche Prüfpaket](docs/review/2026-10-27/README.md) enthält die
+69er-Projektkarte, Paketprüfsummen und einen frischen Bytebeleg für 48 Quell-
+und Live-Ressourcen. ZIP, Veröffentlichung und Beobachtungszeit sind getrennt gebunden.
+
 Die [Schnittstellenkarte](https://juri-halveth.github.io/koennen/) verbindet
 12 Arbeitsproben in sechs Bereichen mit versionierten Funktionen, Tests und
 Builddefinitionen. `data/technical-map.json` bleibt eine bytegebundene Kopie aus
