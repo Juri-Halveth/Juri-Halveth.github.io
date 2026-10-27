@@ -41,7 +41,7 @@ function validateProjects(data){
  const ids=new Set();
  for(const p of data.projects){
   if(typeof p.id!=='string'||!/^[a-z][a-z0-9-]*$/.test(p.id)||ids.has(p.id))throw Error('Invalid project identity');ids.add(p.id);
-  if(!['research','learning','software'].includes(p.category)||!['LOCAL_MODEL_TESTS','SOURCE_REVIEW_ONLY'].includes(p.verification))throw Error('Invalid project state');
+  if(!['research','learning','software'].includes(p.category)||!['LOCAL_MODEL_TESTS','SOURCE_REVIEW_ONLY','HEAD_METADATA_ONLY'].includes(p.verification))throw Error('Invalid project state');
   if(typeof p.repository!=='string'||!p.repository.startsWith('https://github.com/')||!githubRepository(p.repository.slice('https://github.com/'.length)))throw Error('Exact repository URL required');
   publicUrl(p.repository);publicUrl(p.source);
   if(typeof p.revision!=='string'||!/^[a-f0-9]{40}$/.test(p.revision))throw Error('Pinned project revision required');

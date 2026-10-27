@@ -7,7 +7,7 @@ test('the first screen presents two actual scene captures and an accessible demo
   const doc=new JSDOM(renderHero(catalog,lang)+renderSceneShowcase(catalog,lang)).window.document;
   assert.equal(doc.querySelectorAll('h1').length,1);assert.equal(doc.querySelectorAll('.scene-wall img').length,2);
   const primary=catalog.scenes.find(s=>s.id==='scarlet').href+(lang==='de'?'':'?lang='+lang);
-  assert.equal(doc.querySelector('.hero-actions a').getAttribute('href'),primary);
+  assert.equal(doc.querySelector('.hero-actions a').getAttribute('href'),'#flagships');
   assert.equal(doc.querySelector('[data-scene="scarlet"]').getAttribute('href'),primary);
   assert.equal(doc.querySelector('[data-feature="halveth-scarlet"] a').getAttribute('href'),primary);
   assert.equal(doc.querySelector('.hero-actions a:nth-child(2)').getAttribute('href'),'#scene-lab');assert.ok(doc.getElementById('scene-lab'));
@@ -64,10 +64,10 @@ test('display order preserves every source packet exactly once and rejects incom
  }
 });
 test('the curated directory exposes each selected repository once without pretending a complete account inventory',()=>{
- const snapshot=JSON.parse(fs.readFileSync(path.join(root,'data/public-repositories.json'),'utf8'));assert.equal(snapshot.repositories.length,15);
+ const snapshot=JSON.parse(fs.readFileSync(path.join(root,'data/public-repositories.json'),'utf8'));assert.equal(snapshot.repositories.length,14);
  for(const lang of ['','en/','ru/']){
   const doc=new JSDOM(fs.readFileSync(path.join(root,lang,'arbeiten/index.html'),'utf8')).window.document;
-  const links=[...doc.querySelectorAll('.repository-list a')];assert.equal(links.length,15);
+  const links=[...doc.querySelectorAll('.repository-list a')];assert.equal(links.length,14);
   assert.deepEqual(links.map(a=>a.getAttribute('href')).sort(),snapshot.repositories.map(r=>r.url).sort());
  }
  assert.match(snapshot.coverage,/not a complete account inventory/);

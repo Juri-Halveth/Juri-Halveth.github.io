@@ -3,8 +3,8 @@ const root=path.resolve(__dirname,'..'),{JSDOM}=require('jsdom');
 const data=JSON.parse(fs.readFileSync(path.join(root,'data/projects.json'),'utf8'));
 const read=p=>fs.readFileSync(path.join(root,p),'utf8');
 test('technical catalog is unique, source-pinned and records limited check states',()=>{
- assert.equal(data.projects.length,10);assert.equal(new Set(data.projects.map(x=>x.id)).size,10);
- for(const x of data.projects){assert.match(x.revision,/^[0-9a-f]{40}$/);assert.ok(x.source.includes(x.revision));assert.ok(['LOCAL_MODEL_TESTS','SOURCE_REVIEW_ONLY'].includes(x.verification));}
+ assert.equal(data.projects.length,11);assert.equal(new Set(data.projects.map(x=>x.id)).size,11);
+ for(const x of data.projects){assert.match(x.revision,/^[0-9a-f]{40}$/);assert.ok(x.source.includes(x.revision));assert.ok(['LOCAL_MODEL_TESTS','SOURCE_REVIEW_ONLY','HEAD_METADATA_ONLY'].includes(x.verification));}
 });
 test('all generated language entrances link only to available local files and anchors',()=>{
  for(const lang of ['','en/','ru/'])for(const page of ['','profil/','arbeiten/','koennen/','belege/','modelle/','audits/','lernen/','motion/','handbuch/','pulsar/','zertifikate/','werkzertifikate/','forschung/']){

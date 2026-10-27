@@ -9,7 +9,9 @@ test('catalog URLs reject attribute breaks, other schemes, identity changes and 
 });
 
 test('a newer project revision cannot inherit a local test declaration',()=>{
- const altered=structuredClone(catalog),lab=altered.projects.find(p=>p.verification==='LOCAL_MODEL_TESTS');
+ const altered=structuredClone(catalog),lab=altered.projects[0];
+ lab.command='npm test';lab.verification='LOCAL_MODEL_TESTS';
+ lab.verificationRecord={revision:lab.revision,observedAt:'2026-10-24T12:00:00Z',command:lab.command};
  lab.revision='f'.repeat(40);lab.source=lab.repository+'/tree/'+lab.revision;
  assert.throws(()=>validateProjects(altered),/Local checks must bind/);
 });

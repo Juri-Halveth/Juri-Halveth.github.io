@@ -28,7 +28,7 @@ test('retained crawler choices survive every deterministic build',()=>{
 });
 test('image suffix matches existing JPEG bytes and SCARLET source is pinned',()=>{
  const bytes=fs.readFileSync(path.join(root,'assets/scarlet-cannon-live.jpg'));assert.deepEqual([...bytes.subarray(0,3)],[255,216,255]);
- const doc=new JSDOM(read('index.html')).window.document;
+ const doc=new JSDOM(read('arbeiten/index.html')).window.document;
  const source=catalog.projects.find(p=>p.id==='halveth-scarlet').source;
  assert.ok(doc.querySelector(`[data-project="halveth-scarlet"] a[href="${source}"]`));
 });

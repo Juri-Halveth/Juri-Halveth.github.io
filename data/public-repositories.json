@@ -1,6 +1,6 @@
 {
   "schema": "halveth.public-repositories.v2",
-  "observedAt": "2026-10-24T14:16:03.641074+00:00",
+  "observedAt": "2026-10-27T20:10:12.220861+00:00",
   "source": "https://github.com/Juri-Halveth?tab=repositories",
   "coverage": "Curated portfolio selection from the dated public-repository snapshot. This is not a complete account inventory or a new product audit.",
   "repositories": [
@@ -15,9 +15,9 @@
         "en": "System films and documented drone and swarm concepts.",
         "ru": "Системные фильмы и документированные концепции дронов и роёв."
       },
-      "revision": "89398fccf993ad361a5230a6adefb8b559f547d8",
-      "revisionObservedAt": "2026-10-24T14:16:03.641074+00:00",
-      "source": "https://github.com/Juri-Halveth/c-drohne-red-room/tree/89398fccf993ad361a5230a6adefb8b559f547d8",
+      "revision": "f0b072571ccb1a7894a32b1ba03c9a8620995352",
+      "revisionObservedAt": "2026-10-27T20:08:25.209Z",
+      "source": "https://github.com/Juri-Halveth/c-drohne-red-room/tree/f0b072571ccb1a7894a32b1ba03c9a8620995352",
       "licenseReview": {
         "revision": "89398fccf993ad361a5230a6adefb8b559f547d8",
         "classification": "UNASSIGNED_GENERAL_REUSE",
@@ -40,9 +40,9 @@
         "en": "Compare your own options in a local browser interface.",
         "ru": "Сравнивать свои варианты в локальном браузерном интерфейсе."
       },
-      "revision": "af8eb2ae4d78e2d34ab0b59d6ae089f179b882e6",
-      "revisionObservedAt": "2026-10-24T14:16:03.641074+00:00",
-      "source": "https://github.com/Juri-Halveth/fortuna/tree/af8eb2ae4d78e2d34ab0b59d6ae089f179b882e6",
+      "revision": "69f436978b0492269fb66accd0beb6d3347750d9",
+      "revisionObservedAt": "2026-10-27T20:08:25.209Z",
+      "source": "https://github.com/Juri-Halveth/fortuna/tree/69f436978b0492269fb66accd0beb6d3347750d9",
       "licenseReview": {
         "revision": "247d6d4d4fb029571af4da591675dc3650cafe44",
         "classification": "UNASSIGNED_OWN_WORK_WITH_PIRL_AND_OSS_COMPONENTS",
@@ -66,7 +66,7 @@
         "ru": "Исследование реформы каннабиса с источниками и планом измерений."
       },
       "revision": "bb8af6d74f3a556c7969de45228b6986512c81d6",
-      "revisionObservedAt": "2026-10-24T14:16:03.641074+00:00",
+      "revisionObservedAt": "2026-10-27T20:08:25.209Z",
       "source": "https://github.com/Juri-Halveth/halveth-cannabis-reform-forschung/tree/bb8af6d74f3a556c7969de45228b6986512c81d6",
       "licenseReview": {
         "revision": "51cfbbdce9efcb00def308e5a399f8e0c7d6a233",
@@ -91,7 +91,7 @@
         "ru": "Сравнивать движение, правила полей и проекции."
       },
       "revision": "572734742951819993b10d89b22591951a49dbc8",
-      "revisionObservedAt": "2026-10-24T14:16:03.641074+00:00",
+      "revisionObservedAt": "2026-10-27T20:08:25.209Z",
       "source": "https://github.com/Juri-Halveth/halveth-field-difference-lab/tree/572734742951819993b10d89b22591951a49dbc8",
       "licenseReview": {
         "revision": "572734742951819993b10d89b22591951a49dbc8",
@@ -115,9 +115,9 @@
         "en": "Model comparisons and local tools with counterexamples and tests.",
         "ru": "Сравнение моделей и локальные инструменты с контрпримерами и тестами."
       },
-      "revision": "8d6d53bd67d548c1f66923fa2eefa6295a13668b",
-      "revisionObservedAt": "2026-10-24T14:16:03.641074+00:00",
-      "source": "https://github.com/Juri-Halveth/halveth-forschungslabor/tree/8d6d53bd67d548c1f66923fa2eefa6295a13668b",
+      "revision": "07417d3cdadda426c2b51cc98bcbae72d7b5d651",
+      "revisionObservedAt": "2026-10-27T20:08:25.209Z",
+      "source": "https://github.com/Juri-Halveth/halveth-forschungslabor/tree/07417d3cdadda426c2b51cc98bcbae72d7b5d651",
       "licenseReview": {
         "revision": "8d6d53bd67d548c1f66923fa2eefa6295a13668b",
         "classification": "MIT_CC_BY_CC0_ACTIVE_MAP_WITH_UNASSIGNED_LICENSE_TEMPLATES",
@@ -140,9 +140,9 @@
         "en": "PowerShell scripts and notes for an experimental keeper.",
         "ru": "Скрипты PowerShell и документация экспериментального keeper."
       },
-      "revision": "2cf77b66e54c87434f54b2cbf9a09f3645fe2e11",
-      "revisionObservedAt": "2026-10-24T14:16:03.641074+00:00",
-      "source": "https://github.com/Juri-Halveth/halveth-project0-keeper/tree/2cf77b66e54c87434f54b2cbf9a09f3645fe2e11",
+      "revision": "f4349d013efb7105e2875784a0c7c16d2026e3da",
+      "revisionObservedAt": "2026-10-27T20:08:25.209Z",
+      "source": "https://github.com/Juri-Halveth/halveth-project0-keeper/tree/f4349d013efb7105e2875784a0c7c16d2026e3da",
       "licenseReview": {
         "revision": "aee4cfdaafdaad2c8cfcb829b572c5dabec195df",
         "classification": "GENERAL_REUSE_GRANT_NOT_FOUND_IN_REVIEWED_SURFACES",
@@ -165,9 +165,9 @@
         "en": "Observe and compare text states, time and variants in a local browser interface.",
         "ru": "Наблюдать и сравнивать текстовые состояния, время и варианты в локальном браузерном интерфейсе."
       },
-      "revision": "a590ed6c35a9dd5fc89c259ef057bb143850bae5",
-      "revisionObservedAt": "2026-10-24T17:19:41.164053+00:00",
-      "source": "https://github.com/Juri-Halveth/halveth-scarlet/tree/a590ed6c35a9dd5fc89c259ef057bb143850bae5",
+      "revision": "9f706b9f6bba255f30cde703f851ba80cd64d9bc",
+      "revisionObservedAt": "2026-10-27T20:08:25.209Z",
+      "source": "https://github.com/Juri-Halveth/halveth-scarlet/tree/9f706b9f6bba255f30cde703f851ba80cd64d9bc",
       "licenseReview": {
         "revision": "c339043258a59a55ddc1f3ad64d17160c18b9672",
         "classification": "PIRL_ORIGINAL_CONTRIBUTIONS_WITH_EXPLICIT_THIRD_PARTY_EXCLUSIONS",
@@ -190,9 +190,9 @@
         "en": "Local credential management for Windows with published source.",
         "ru": "Локальное хранение учётных данных для Windows с опубликованным кодом."
       },
-      "revision": "72a257bf93c3daaf7ae6145cc798d48a8866467f",
-      "revisionObservedAt": "2026-10-24T14:16:03.641074+00:00",
-      "source": "https://github.com/Juri-Halveth/halveth-tresor/tree/72a257bf93c3daaf7ae6145cc798d48a8866467f",
+      "revision": "e1ca9830e84099f0e4a9a4bfdede919a5ab0eee6",
+      "revisionObservedAt": "2026-10-27T20:10:12.220861+00:00",
+      "source": "https://github.com/Juri-Halveth/halveth-tresor/tree/e1ca9830e84099f0e4a9a4bfdede919a5ab0eee6",
       "licenseReview": {
         "revision": "05a6aa5d2fc8c58af9959c4b88dd4da6685d5e64",
         "classification": "VERSION_SPLIT_MIT_AND_NEW_PIRL_WITH_SUMMARY_AMBIGUITY",
@@ -216,7 +216,7 @@
         "ru": "Исследовательский форк java-tron для локальных проверок протокола."
       },
       "revision": "d25e104e6b887bc4d782185a96ecf3c4eb782d8c",
-      "revisionObservedAt": "2026-10-24T14:16:03.641074+00:00",
+      "revisionObservedAt": "2026-10-27T20:08:25.209Z",
       "source": "https://github.com/Juri-Halveth/halveth-tron-security-lab/tree/d25e104e6b887bc4d782185a96ecf3c4eb782d8c",
       "licenseReview": {
         "revision": "d25e104e6b887bc4d782185a96ecf3c4eb782d8c",
@@ -240,9 +240,9 @@
         "en": "The public profile with selected scenes and work samples.",
         "ru": "Публичный профиль с избранными сценами и примерами работы."
       },
-      "revision": "42b80b5051336b43427e82caccfc5840ee131f86",
-      "revisionObservedAt": "2026-10-24T14:16:03.641074+00:00",
-      "source": "https://github.com/Juri-Halveth/Juri-Halveth/tree/42b80b5051336b43427e82caccfc5840ee131f86",
+      "revision": "7585fdc9557cfdb4737cd3dfc3349e9323205c55",
+      "revisionObservedAt": "2026-10-27T20:10:12.220861+00:00",
+      "source": "https://github.com/Juri-Halveth/Juri-Halveth/tree/7585fdc9557cfdb4737cd3dfc3349e9323205c55",
       "licenseReview": {
         "revision": "42b80b5051336b43427e82caccfc5840ee131f86",
         "classification": "PROFILE_NO_GENERAL_REUSE_GRANT_FOUND",
@@ -265,9 +265,9 @@
         "en": "This portfolio with demos, source and work samples.",
         "ru": "Это портфолио с демонстрациями, кодом и примерами работы."
       },
-      "revision": "896e61e5a05f3efc4106d18c31c7f96513bd8adf",
-      "revisionObservedAt": "2026-10-24T14:16:03.641074+00:00",
-      "source": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/tree/896e61e5a05f3efc4106d18c31c7f96513bd8adf",
+      "revision": "67154cc4a53a078847d91c4398ac4ba3654710d4",
+      "revisionObservedAt": "2026-10-27T20:08:25.209Z",
+      "source": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/tree/67154cc4a53a078847d91c4398ac4ba3654710d4",
       "licenseReview": {
         "revision": "896e61e5a05f3efc4106d18c31c7f96513bd8adf",
         "classification": "PIRL_PORTAL_WITH_MIT_MOTION_AND_LANGUAGE_EXCEPTIONS",
@@ -290,9 +290,9 @@
         "en": "Interactive learning missions and learning paths in the browser.",
         "ru": "Интерактивные учебные миссии и маршруты в браузере."
       },
-      "revision": "ac941d9bda5a32acf937618c532d9f56106d7727",
-      "revisionObservedAt": "2026-10-24T14:16:03.641074+00:00",
-      "source": "https://github.com/Juri-Halveth/lernstudio/tree/ac941d9bda5a32acf937618c532d9f56106d7727",
+      "revision": "9309f69883e9ae66290829722012deda5ed982c9",
+      "revisionObservedAt": "2026-10-27T20:08:25.209Z",
+      "source": "https://github.com/Juri-Halveth/lernstudio/tree/9309f69883e9ae66290829722012deda5ed982c9",
       "licenseReview": {
         "revision": "a1cd5b3b9e3b8b2debb5f37346411dc8b1fb116d",
         "classification": "VERSION_SPLIT_ISC_PIRL_WITH_FILE_SPECIFIC_MIT",
@@ -305,53 +305,28 @@
       }
     },
     {
-      "name": "leviathan-wallet-portal",
-      "url": "https://github.com/Juri-Halveth/leviathan-wallet-portal",
-      "defaultBranch": "main",
-      "fork": false,
-      "archived": false,
-      "purpose": {
-        "de": "Öffentliche Adressansicht und Browserportal für Wallet-Daten.",
-        "en": "A public address view and browser portal for wallet data.",
-        "ru": "Просмотр публичных адресов и браузерный портал данных кошелька."
-      },
-      "revision": "1bfaef54985826fcc00250ce5b29372cd05af21f",
-      "revisionObservedAt": "2026-10-24T14:16:03.641074+00:00",
-      "source": "https://github.com/Juri-Halveth/leviathan-wallet-portal/tree/1bfaef54985826fcc00250ce5b29372cd05af21f",
-      "licenseReview": {
-        "revision": "1bfaef54985826fcc00250ce5b29372cd05af21f",
-        "classification": "PIRL_NAMED_NEW_CONTRIBUTIONS_OLDER_BASE_UNRESOLVED",
-        "scope": "Bound license-surface snapshot; not proof of title or a new licence grant."
-      },
-      "displayTitle": {
-        "de": "Öffentliche Wallet-Adressen ansehen",
-        "en": "View public wallet addresses",
-        "ru": "Просматривать публичные адреса кошельков"
-      }
-    },
-    {
       "name": "lucinet-seedspace",
       "url": "https://github.com/Juri-Halveth/lucinet-seedspace",
       "defaultBranch": "main",
       "fork": false,
       "archived": false,
       "purpose": {
-        "de": "Ein Browser-Prototyp für editierbare, ausführbare Oberflächen.",
-        "en": "A browser prototype for editable, runnable interfaces.",
-        "ru": "Браузерный прототип редактируемых и исполняемых интерфейсов."
+        "de": "Notizen und Code lokal durchsuchen, Korrekturen erhalten und mit belegtem nächsten Schritt weiterarbeiten.",
+        "en": "Search local notes and code, preserve corrections and continue with a recorded next step.",
+        "ru": "Ищите в локальных заметках и коде, сохраняйте исправления и продолжайте с записанным следующим шагом."
       },
-      "revision": "98b1c3165fa701bce5aa5fa0ad13b86a20d8b8c3",
-      "revisionObservedAt": "2026-10-24T14:16:03.641074+00:00",
-      "source": "https://github.com/Juri-Halveth/lucinet-seedspace/tree/98b1c3165fa701bce5aa5fa0ad13b86a20d8b8c3",
+      "revision": "6d0e91c056caee46e2ca2d4faaf7bcdd1975dddc",
+      "revisionObservedAt": "2026-10-27T20:10:12.220861+00:00",
+      "source": "https://github.com/Juri-Halveth/lucinet-seedspace/tree/6d0e91c056caee46e2ca2d4faaf7bcdd1975dddc",
       "licenseReview": {
         "revision": "5700fb936bb7d491f5caddb28b7765e17680b348",
         "classification": "GENERAL_REUSE_GRANT_NOT_FOUND_IN_REVIEWED_SURFACES",
         "scope": "Bound license-surface snapshot; not proof of title or a new licence grant."
       },
       "displayTitle": {
-        "de": "Oberflächen bearbeiten und ausführen",
-        "en": "Edit and run interfaces",
-        "ru": "Редактировать и запускать интерфейсы"
+        "de": "NOVA · Quellen und Fortsetzung",
+        "en": "NOVA · sources and continuity",
+        "ru": "NOVA · источники и продолжение"
       }
     },
     {
@@ -365,9 +340,9 @@
         "en": "702 accessible lessons and exercises without a required account.",
         "ru": "702 доступных урока и упражнения без обязательной регистрации."
       },
-      "revision": "561002e15d226015370c6b5def85b88f76ff9d39",
-      "revisionObservedAt": "2026-10-24T14:16:03.641074+00:00",
-      "source": "https://github.com/Juri-Halveth/mein-lernportal/tree/561002e15d226015370c6b5def85b88f76ff9d39",
+      "revision": "8ff9c2fa3e4fbf3a5795b06d1d9c77819b592292",
+      "revisionObservedAt": "2026-10-27T20:08:25.209Z",
+      "source": "https://github.com/Juri-Halveth/mein-lernportal/tree/8ff9c2fa3e4fbf3a5795b06d1d9c77819b592292",
       "licenseReview": {
         "revision": "539d954856349bd792f9abff7abc0b718ebbbfef",
         "classification": "ISC_ORIGINAL_PLATFORM_AND_LESSONS",
@@ -384,5 +359,5 @@
     "start": "2026-10-24T13:04:35Z",
     "end": "2026-10-24T13:05:41.907093+00:00"
   },
-  "curatedAt": "2026-10-25T14:00:24.360614+00:00"
+  "curatedAt": "2026-10-27T19:59:08.022915+00:00"
 }

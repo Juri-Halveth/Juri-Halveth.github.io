@@ -6,4 +6,4 @@ Entwicklung mit KI-Unterstützung.
 
 [Projekte und Arbeitsproben](https://juri-halveth.github.io/profil/)
 
-Kontakt: security@halveth.de
+Kontakt: juri@halveth.de
