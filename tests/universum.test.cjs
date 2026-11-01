@@ -38,6 +38,7 @@ test('Starship site includes only public runtime and license material', () => {
   const publishedText = files.filter(file => /\.(?:html|js|mjs|css|md|txt|json)$/.test(file))
     .map(file => fs.readFileSync(path.join(route, file), 'utf8')).join('\n');
   assert.doesNotMatch(publishedText, /C:\\Users\\|HALVETH-LUCINET-RUNTIME-v1|Dragonwilds|perspective-corridor\/0\.1\.0|HALVETH_PRO_ATLAS_V1/i);
+  assert.doesNotMatch(publishedText, /START\.cmd|privaten gepinnten Kern|konnte nicht lokal geladen werden/i);
 });
 
 test('Starship static document has no broken same-route resources or credits links', () => {
