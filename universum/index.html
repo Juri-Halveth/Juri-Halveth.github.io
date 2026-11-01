@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#06070d">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; font-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
+  <link rel="canonical" href="https://juri-halveth.github.io/universum/">
+  <title>HALVETH NETZ · Starship Lab</title>
+  <meta name="description" content="Interaktiver Browserprototyp: durch öffentliche HALVETH-Projekte fliegen, SCARLET und ENDECK erkunden, eigene NETZ-Schritte erfassen und gepinnte Modelle prüfen.">
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="workshop-ui.css">
+  <link rel="stylesheet" href="atlas-ui.css">
+  <link rel="stylesheet" href="field-ui.css">
+  <link rel="stylesheet" href="editable-ledger.css">
+  <link rel="stylesheet" href="portal-time-ui.css">
+  <link rel="stylesheet" href="cockpit-realms.css">
+  <link rel="stylesheet" href="cockpit-fold.css">
+  <link rel="stylesheet" href="source-netz-ui.css">
+  <link rel="stylesheet" href="scarlet-delta-ui.css">
+  <link rel="stylesheet" href="endeck-path-ui.css">
+  <link rel="stylesheet" href="scarlet-reshape-ui.css">
+</head>
+<body>
+  <a class="skip-link" href="#cockpit">Zum Cockpit</a>
+  <div class="app-shell" id="appShell">
+    <header class="topbar">
+      <div class="brand">
+        <img src="assets/mark.svg" alt="" width="34" height="34">
+        <div><strong>HALVETH <span>NETZ</span></strong><small>STARSHIP LAB · BROWSERPROTOTYP</small></div>
+      </div>
+      <div class="topbar-center"><span class="live-dot"></span><span id="sceneMode">FLUGMODUS</span><span class="topbar-sep">/</span><span id="catalogCount">18 PORTALE</span></div>
+      <div class="topbar-actions">
+        <button class="text-button lab-entry" id="labButton" type="button" aria-expanded="false" aria-controls="labPanel">Modelle starten ↗</button>
+        <button class="text-button" id="motionButton" type="button" aria-pressed="false">Bewegung reduzieren</button>
+        <button class="text-button" id="helpButton" type="button" aria-expanded="false" aria-controls="helpPanel">Steuerung</button>
+      </div>
+    </header>
+
+    <main id="cockpit" class="cockpit">
+      <div class="space-stage" id="spaceStage" aria-label="Interaktiver Projekt-Raum">
+        <canvas id="spaceCanvas" aria-hidden="true"></canvas>
+        <div class="space-vignette" aria-hidden="true"></div>
+        <div class="horizon-label" aria-hidden="true"><span>RAUMZEIT · PROJEKTION</span><i></i><span>ZUSTAND / BEOBACHTUNG</span></div>
+        <div id="portalLayer" class="portal-layer"></div>
+        <div class="crosshair" aria-hidden="true"><span></span></div>
+        <div id="warp" class="warp" aria-hidden="true"><div class="warp-core"></div><div class="warp-caption">ÖFFNE PROJEKT</div></div>
+        <div class="flight-readout" aria-live="polite">
+          <span class="readout-label">POSITION</span><strong id="positionReadout">Z 0.0 · WINKEL 0°</strong>
+          <span class="readout-label">NÄCHSTER KONTAKT</span><strong id="nearReadout">—</strong>
+        </div>
+        <div class="flight-controls" aria-label="Flugsteuerung">
+          <button type="button" id="turnLeft" aria-label="Nach links drehen">↶</button>
+          <button type="button" id="moveBack" aria-label="Zurückfliegen">−</button>
+          <button type="button" id="moveForward" aria-label="Vorwärtsfliegen">+</button>
+          <button type="button" id="turnRight" aria-label="Nach rechts drehen">↷</button>
+        </div>
+      </div>
+
+      <aside class="side-rail" aria-label="Navigation und Projektübersicht">
+        <section class="rail-intro">
+          <div class="eyebrow">EINGANG / 01</div>
+          <h1>Flieg durch<br><em>das Werden.</em></h1>
+          <p>Ein Projekt ist der sichtbare Knoten. Sein Weg dorthin bleibt als eigene Spur lesbar.</p>
+          <div class="rail-line"></div>
+          <div class="micro-grid"><span>RAUM</span><strong>18 öffentliche Einstiege</strong><span>NETZ</span><strong>Modell- &amp; Quellspur mit Zeit</strong><span>AKTION</span><strong>Öffnen erst nach Auswahl</strong></div>
+        </section>
+
+        <section class="rail-projects">
+          <div class="section-head"><div><div class="eyebrow">NAVIGATION / 02</div><h2>Projektportale</h2></div><span id="visibleCount">18 / 18</span></div>
+          <label class="field-label" for="projectSearch">Projekt finden</label>
+          <input id="projectSearch" type="search" placeholder="Name, Thema, Repository …" autocomplete="off">
+          <label class="field-label" for="categoryFilter">Themenraum</label>
+          <select id="categoryFilter"><option value="all">Alle Themen</option></select>
+          <div id="projectList" class="project-list" role="list"></div>
+        </section>
+      </aside>
+
+      <section id="inspectPanel" class="inspect-panel" aria-labelledby="inspectTitle" hidden>
+        <div class="inspect-head"><span class="eyebrow">PROJEKT / INSPEKTION</span><button type="button" class="icon-button" id="closeInspect" aria-label="Projektansicht schließen">×</button></div>
+        <div class="inspect-art" id="inspectArt"><img id="inspectImage" src="assets/system-banner.svg" alt="Geometrisches HALVETH Sternnetz"><span id="inspectArtLabel">HALVETH-SYSTEMMOTIV · KEIN PROJEKTSCREENSHOT</span><a id="inspectImageSource" class="image-credit" target="_blank" rel="noopener noreferrer" hidden>Bildquelle ↗</a><button id="inspectImageNext" class="image-next" type="button" aria-label="Nächste belegte SCARLET-Vorschau" hidden>↻</button></div>
+        <div class="inspect-body">
+          <div id="inspectCategory" class="eyebrow">MODELL</div>
+          <h2 id="inspectTitle" tabindex="-1">Projekt</h2>
+          <p class="inspect-tagline" id="inspectTagline"></p>
+          <p id="inspectDescription"></p>
+          <dl class="inspect-facts"><div><dt>Art</dt><dd id="inspectKind"></dd></div><div><dt>Quellstand</dt><dd id="inspectEvidence"></dd></div><div><dt>Herkunft</dt><dd>Öffentlicher Katalog, 01.11.2026</dd></div></dl>
+          <div class="inspect-tech"><span class="eyebrow">TECHNIKSPUR</span><ul id="inspectTech"></ul></div>
+          <div class="inspect-actions"><a id="inspectOpen" class="primary-button" target="_blank" rel="noopener noreferrer">Öffentliches Projekt öffnen <span>↗</span></a><a id="inspectDirect" class="subtle-link" target="_blank" rel="noopener noreferrer" hidden>ENDECK direkt öffnen ↗</a><a id="inspectSource" class="subtle-link" target="_blank" rel="noopener noreferrer">Quellseite ↗</a></div>
+          <button type="button" class="trace-cta" id="traceButton"><span>◌</span><span><strong>Entfaltung untersuchen</strong><small>Synthetische Modellspur · keine Projekthistorie</small></span><b>→</b></button>
+          <button type="button" class="trace-cta source-cta" id="sourceButton" hidden><span>⌁</span><span><strong>Öffentliche Quellspur ansehen</strong><small>Vier ausgewählte Commits · gebundene Git-Metadaten</small></span><b>→</b></button>
+          <button type="button" class="trace-cta source-netz-cta" id="sourceNetzButton" hidden><span>⌁</span><span><strong>Quellrevisionen im NETZ entfalten</strong><small>Lesender Auswahlzweig · Committer-Metadatenzeiten und sichtbare Lücken</small></span><b>→</b></button>
+          <button type="button" class="trace-cta scarlet-room-cta" id="scarletRoomButton" hidden><span>✦</span><span><strong>SCARLET-Zellraum betreten</strong><small>Eigenständiger lokaler Modelllauf · Seed 3491</small></span><b>→</b></button>
+          <button type="button" class="trace-cta endeck-room-cta" id="endeckRoomButton" hidden><span>◇</span><span><strong>ENDECK-Projektionsraum betreten</strong><small>Vier stabile Quell-IDs · Operator, Zeit und Blickwinkel</small></span><b>→</b></button>
+          <button type="button" class="trace-cta fold-room-cta" id="foldRoomButton" hidden><span>≋</span><span><strong>Faltgrenze vergleichen</strong><small>Idealer Stapel / hypothetische Kompression · getrennte Operatoren</small></span><b>→</b></button>
+          <button type="button" class="trace-cta realms-room-cta" id="realmsRoomButton" hidden><span>✧</span><span><strong>REALMS-Weltregelraum betreten</strong><small>Drei Seeds · Epochen 0–10 · fiktionale lokale Welt</small></span><b>→</b></button>
+          <button type="button" class="trace-cta field-room-cta" id="fieldRoomButton" hidden><span>⌁</span><span><strong>FIELD-Grenzregelraum betreten</strong><small>Drei Modellbahnen · gemeinsame Zeit · linke/rechte Regel</small></span><b>→</b></button>
+        </div>
+      </section>
+
+      <section id="endeckRoom" class="endeck-room" role="dialog" aria-modal="true" aria-labelledby="endeckRoomTitle" hidden>
+        <div class="endeck-main" aria-label="ENDECK-Quellzustand und Beobachtungsprojektion">
+          <div class="endeck-main-head"><span class="eyebrow">ENDECK / QUELLE → BEOBACHTUNG</span><button id="endeckExitWorld" type="button" class="endeck-exit-world">← Kosmos</button></div>
+          <div class="endeck-diagrams">
+            <figure><figcaption><strong>Quellzustand</strong><span>XYZ-Schema · Z nur als Zeichnungsversatz</span></figcaption><svg id="endeckRoomSource" viewBox="0 0 420 300" role="img" aria-label="Schematische Ansicht der Quellpunkte A bis D"></svg></figure>
+            <figure><figcaption><strong>Beobachtung</strong><span>2D-Projektion · überlagerte IDs bleiben sichtbar</span></figcaption><svg id="endeckRoomObserved" viewBox="0 0 420 300" role="img" aria-label="Beobachtete Projektion der Punkte A bis D"></svg></figure>
+          </div>
+          <div class="endeck-room-table-wrap"><table class="endeck-room-table"><caption>Quellen- und Beobachtungstabelle · jede Zeile behält dieselbe ID</caption><thead><tr><th scope="col">ID wählen</th><th scope="col">Quelle X</th><th scope="col">Quelle Y</th><th scope="col">Quelle Z</th><th scope="col">Beob. U</th><th scope="col">Beob. V</th><th scope="col">Gleiche Position</th></tr></thead><tbody id="endeckRoomRows"></tbody></table></div>
+        </div>
+        <aside class="endeck-console" aria-label="ENDECK-Projektionssteuerung">
+          <div class="endeck-console-head"><div><span class="eyebrow">FORSCHUNGSLABOR / ENDECK</span><h2 id="endeckRoomTitle" tabindex="-1">Projektionsraum</h2></div><button id="endeckExit" type="button" class="icon-button" aria-label="Projektionsraum schließen und zum Kosmos zurückkehren">×</button></div>
+          <p>Ein unverändertes lokales ENDECK-Modul berechnet vier Quellpunkte und deren Ansicht. Operator, Modellzeit und Blickwinkel ändern die Projektion; A–D behalten ihre Identität.</p>
+          <div class="endeck-control"><label for="endeckRoomMode">Operator</label><select id="endeckRoomMode"><option value="projection">Projektion</option><option value="shrink">Schrumpfung</option><option value="merge">Zusammenführung</option><option value="history">Verlauf · Gerade/Arc</option></select></div>
+          <div class="endeck-control"><label for="endeckRoomTime">Modellparameter t <output id="endeckRoomTimeValue" for="endeckRoomTime">0.00</output></label><input id="endeckRoomTime" type="range" min="0" max="100" step="1" value="0"></div>
+          <div class="endeck-control"><label for="endeckRoomAngle">Blickwinkel <output id="endeckRoomAngleValue" for="endeckRoomAngle">40°</output></label><input id="endeckRoomAngle" type="range" min="0" max="80" step="1" value="40"></div>
+          <div class="endeck-compare" role="group" aria-label="Projektionsgegenfall"><button id="endeckZero" type="button">T 1 · 0° bündeln</button><button id="endeckForty" type="button">T 1 · 40° trennen</button></div>
+          <section id="endeckPathPanel" class="endeck-path-panel" aria-labelledby="endeckPathTitle" hidden>
+            <h3 id="endeckPathTitle">Zwei Wege, ein Modellschritt</h3>
+            <p class="endeck-path-key"><span><i class="endeck-path-line-straight" aria-hidden="true"></i> Gerade · Grundansicht</span><span><i class="endeck-path-line-arc" aria-hidden="true"></i> Arc · gestrichelte Geisterpunkte</span></p>
+            <div class="endeck-path-quick" role="group" aria-label="Modellzeit direkt wählen"><button type="button" data-endeck-path-t="0">T 0</button><button type="button" data-endeck-path-t="50">T 0,5</button><button type="button" data-endeck-path-t="100">T 1</button></div>
+            <p id="endeckPathStatus" class="endeck-path-status" role="status" aria-live="polite">Wähle den Verlauf.</p>
+            <div class="endeck-path-ids" role="group" aria-label="Quell-ID für den Pfadvergleich wählen"><button type="button" data-endeck-path-id="A">A</button><button type="button" data-endeck-path-id="B">B</button><button type="button" data-endeck-path-id="C">C</button><button type="button" data-endeck-path-id="D">D</button></div>
+            <div id="endeckPathReadout" class="endeck-path-readout" aria-live="polite"></div>
+            <p class="endeck-path-claim">Aussagegrenze: zwei deklarierte Pfade eines gepinnten lokalen Geometriemodells bei gleicher Modellzeit und gleichem Blickwinkel. Endpunktgleichheit sagt nichts über den Zwischenweg. Dies ist weder eine Projekt- oder Git-Historie noch eine echte 3D-Messung.</p>
+          </section>
+          <dl class="endeck-room-metrics"><div><dt>Quelle unterscheidbar</dt><dd id="endeckSourceCount">4/4</dd></div><div><dt>Beobachtung unterscheidbar</dt><dd id="endeckObservedCount">4/4</dd></div></dl>
+          <div id="endeckCollision" class="endeck-collision" role="status" aria-live="polite">—</div>
+          <div id="endeckSelection" class="endeck-selection" aria-live="polite">ID A gewählt.</div>
+          <button id="endeckMotion" class="endeck-motion" type="button" aria-pressed="false">Bewegung reduzieren</button>
+          <p class="endeck-room-claim">Aussagegrenze: gepinntes lokales Geometriemodell mit schematischer 2D-Darstellung. Die Quellkoordinaten sind Modellwerte; der Winkel ist eine Bedienvariable. Kollision in einer Projektion löscht keine Quell-ID und belegt keine echte 3D-Messung, Projekthistorie oder Außenwirkung. Keine automatische Bewegung oder Außenaktion.</p>
+        </aside>
+      </section>
+
+      <section id="scarletRoom" class="scarlet-room" role="dialog" aria-modal="true" aria-labelledby="scarletRoomTitle" hidden>
+        <div id="scarletWorld" class="scarlet-world" role="region" aria-label="Begehbare Zellprojektion; Pfeiltasten oder WASD bewegen die Ansicht" tabindex="0">
+          <canvas id="scarletWorldCanvas" aria-hidden="true"></canvas>
+          <button id="scarletExitWorld" class="scarlet-exit-world" type="button">← Kosmos</button>
+          <div class="scarlet-world-top" aria-hidden="true"><span>SCARLET / ZELL-BEOBACHTUNGSRAUM</span><span>LOKALES MODELL · KEINE AUSSENWIRKUNG</span></div>
+          <div class="scarlet-world-bottom"><span>Ansicht bewegen: Fokus auf den Raum, dann WASD oder Pfeiltasten</span><div class="scarlet-walk-controls" aria-label="Zellraum-Ansicht bewegen"><button id="scarletMoveLeft" type="button" aria-label="Ansicht nach links bewegen">←</button><button id="scarletMoveUp" type="button" aria-label="Ansicht nach oben bewegen">↑</button><button id="scarletMoveDown" type="button" aria-label="Ansicht nach unten bewegen">↓</button><button id="scarletMoveRight" type="button" aria-label="Ansicht nach rechts bewegen">→</button></div></div>
+        </div>
+        <aside class="scarlet-console" aria-label="Zellraum-Steuerung und lineare Zellansicht">
+          <div class="scarlet-console-head"><div><span class="eyebrow">SCARLET / EIGENER LAUF</span><h2 id="scarletRoomTitle" tabindex="-1">Zellraum</h2></div><button id="scarletExit" type="button" class="icon-button" aria-label="Zellraum schließen und zum Kosmos zurückkehren">×</button></div>
+          <p class="scarlet-room-intro">Ein separater Lauf des gepinnten GStarLiving-Moduls. Seed 3491 und lokale Themenprofile formen eine endliche Zellökologie. Der Lab-Lauf und öffentliche Commitzeiten sind davon getrennt.</p>
+          <div class="scarlet-room-metrics"><div><small>MODELLZEIT</small><strong id="scarletModelTime">0 ms</strong></div><div><small>ZELLEN</small><strong id="scarletCellCount">—</strong></div><div><small>KONTAKTE</small><strong id="scarletContactCount">—</strong></div><div><small>SIGNALE</small><strong id="scarletSignalCount">—</strong></div></div>
+          <div class="scarlet-room-controls"><button id="scarletPlay" type="button">▶ Abspielen</button><button id="scarletStep" type="button">+ 500 ms</button><button id="scarletReset" type="button">Zurücksetzen</button><button id="scarletProjection" type="button" aria-pressed="false">Full ansehen</button><button id="scarletDelta" type="button">Projektionen pausiert vergleichen</button><button id="scarletMotion" type="button" aria-pressed="false">Bewegung reduzieren</button></div>
+          <section class="scarlet-reshape" aria-labelledby="scarletReshapeTitle">
+            <h3 id="scarletReshapeTitle">Weltform bewusst ändern</h3>
+            <p>Eine lokale Umformung dieses eigenen Zelllaufs. Auswahl allein verändert keine Zelle; erst „Anwenden“ löst den Modelloperator aus und pausiert den Lauf.</p>
+            <label for="scarletReshapeAspect">Seitenverhältnis der Modellwelt</label>
+            <div class="scarlet-reshape-controls"><select id="scarletReshapeAspect"><option value="1">1:1 · Quadrat</option><option value="2">2:1 · Breit</option><option value="0.5">1:2 · Hoch</option><option value="1.6">1,6:1 · Ausgangsform</option></select><button id="scarletReshapeApply" type="button">Weltform anwenden</button></div>
+            <p id="scarletReshapeStatus" class="scarlet-reshape-status" role="status" aria-live="polite">Bereit für eine ausdrückliche lokale Umformung.</p>
+            <article id="scarletReshapeReport" class="scarlet-reshape-report" tabindex="-1" aria-labelledby="scarletReshapeResultTitle" hidden><h4 id="scarletReshapeResultTitle">Umformungsbeleg</h4><p id="scarletReshapeStale" class="scarlet-reshape-stale" hidden></p><div id="scarletReshapeFacts"></div></article>
+            <p class="scarlet-reshape-claim">Aussagegrenze: synthetische lokale Modellgeometrie, bewusst am privaten gepinnten Kern verändert. Modellzeit und Zell-IDs bleiben im Beleg getrennt von realer Projekthistorie, Biologie oder Außenwirkung. Digests stammen aus den Full-Snapshots dieses Adapters.</p>
+          </section>
+          <p id="scarletCoverage" class="scarlet-room-coverage">Renderprojektion: Ereignisdetails ausgelassen.</p>
+          <div class="scarlet-cell-head"><h3>Stabile Zell-IDs</h3><span>Die Liste bedient dieselben Zellen wie die Raumgrafik.</span></div>
+          <ul id="scarletCellList" class="scarlet-cell-list" aria-label="Zellen auswählen"></ul>
+          <div id="scarletCellDetail" class="scarlet-cell-detail">Zelle in der Grafik oder Liste wählen.</div>
+          <p id="scarletRoomStatus" class="scarlet-room-status" role="status" aria-live="polite">Modell bereit. Kein automatischer Außenpfad.</p>
+          <p class="scarlet-room-claim">Aussagegrenze: gepinntes synthetisches Lokalmodell. Kameraposition ist eine Bedienkoordinate; Kontakte und Modellzeit belegen keine reale Projekt-, Bio- oder Außenweltbeobachtung. Schließen oder Hintergrund pausiert den Lauf.</p>
+        </aside>
+      </section>
+
+      <section id="sourcePanel" class="source-panel" role="dialog" aria-modal="true" aria-labelledby="sourceTitle" hidden>
+        <div class="netz-header"><div><span class="eyebrow">NETZ / ÖFFENTLICHE QUELLE</span><h2 id="sourceTitle">Ausgewählte Revisionen</h2></div><button id="closeSource" type="button" class="icon-button" aria-label="Quellspur schließen">×</button></div>
+        <p class="source-intro">Auswahl öffentlicher Git-Commits. Der Zeitstempel stammt aus Commit-Metadaten; er ist kein belegter Beginn einer Idee oder eine vollständige Entwicklungsgeschichte.</p>
+        <div class="source-controls"><span id="sourceStep">—</span><input id="sourceSlider" type="range" min="0" max="1" step="1" value="0" aria-label="Ausgewählte Quellrevision wählen"></div>
+        <div class="source-strand-wrap"><svg id="sourceStrand" viewBox="0 0 1000 120" role="img" aria-label="Gefaltete ausgewählte Commitfolge: ziehen zum Wechseln, tatsächliche Abstände sind beschriftet"></svg><small>Darstellung gefaltet · gleiche Bildabstände sind keine gleichen Zeitabstände · dazwischenliegende Geschichte bleibt offen</small></div>
+        <div id="sourceNodes" class="source-nodes" role="group" aria-label="Ausgewählte Revisionen"></div>
+        <p id="sourceElapsed" class="source-elapsed">—</p>
+        <article class="source-event"><span id="sourceTime" class="eyebrow">—</span><h3 id="sourceEventTitle">—</h3><p id="sourceSummary">—</p><dl class="source-facts"><div><dt>Commit</dt><dd id="sourceSha">—</dd></div><div><dt>Committer-Zeit</dt><dd id="sourceCommittedAt">—</dd></div><div><dt>Erfasst</dt><dd id="sourceRecordedAt">—</dd></div></dl><div class="eyebrow">GEBUNDENE DATEISPUR</div><ul id="sourceEvidence"></ul><a id="sourceCommitLink" class="subtle-link" target="_blank" rel="noopener noreferrer">Gepinnten Commit öffnen ↗</a></article>
+        <div class="source-coverage"><strong>AUSWAHL UND LÜCKEN</strong><p id="sourceCoverage">—</p><ul id="sourceGaps"></ul><small id="sourceDigest">—</small></div>
+      </section>
+
+      <section id="netzPanel" class="netz-panel" role="dialog" aria-modal="true" aria-labelledby="netzTitle" hidden>
+        <div class="netz-header"><div><span class="eyebrow">NETZ / MODELLSPUR</span><h2 id="netzTitle" tabindex="-1">Entfaltung</h2></div><button id="closeNetz" type="button" class="icon-button" aria-label="Zeitansicht schließen">×</button></div>
+        <div class="netz-meta"><span id="traceProject">—</span><span class="model-badge">SYNTHETISCHER ABLAUF · MODELLTICKS</span><span id="traceTick">T 0 / 4</span></div>
+        <div class="netz-controls"><button id="playTrace" type="button" aria-label="Modellspur abspielen">▶ Abspielen</button><input id="timeSlider" type="range" min="0" max="4" step="1" value="0" aria-label="Modellzeit wählen"><button id="projectionButton" type="button" aria-pressed="false">Vollansicht</button></div>
+        <div class="strand-wrap"><svg id="strandSvg" viewBox="0 0 1000 170" role="img" aria-label="Verzweigte Modellspur mit sichtbarer Beobachtungslücke"></svg><div class="strand-hint">Punkte wählen oder entlang der Spur ziehen · Ereignisse rasten ein</div><div class="strand-grips" role="group" aria-label="Zweig aufklappen"><button id="gripExplore" type="button" aria-pressed="false">↗ Exploration greifen</button><button id="gripVerify" type="button" aria-pressed="false">↘ Prüfung greifen</button></div><div id="branchReveal" class="branch-reveal" aria-live="polite" hidden></div></div>
+        <div class="netz-bottom"><div class="event-detail"><span id="eventState" class="eyebrow">MODELL</span><h3 id="eventTitle">Am Ursprung</h3><p id="eventDetail">Wähle einen Punkt auf der Spur.</p></div><div class="branch-panel"><span class="eyebrow">VERBINDUNGSPRÜFUNG</span><p>Zwei Zweige können sich im Bild begegnen. Eine Integration ist damit noch nicht erfolgt.</p><button type="button" id="mergeButton">A + B als Vorschau prüfen</button><div id="mergeResult" aria-live="polite"></div></div></div>
+        <div class="path-demo"><div><span class="eyebrow">ZEITRESPEKTIERENDER PFAD</span><p>Gleiche Pfeile A → B → C. Die Kontaktreihenfolge entscheidet, ob ein Signal C erreichen kann.</p></div><div class="path-buttons"><button id="pathWrong" type="button" aria-pressed="true">T1 B→C · T2 A→B</button><button id="pathRight" type="button" aria-pressed="false">T1 A→B · T2 B→C</button></div><output id="pathResult" aria-live="polite">—</output></div>
+      </section>
+
+      <section id="labPanel" class="lab-panel" role="dialog" aria-modal="true" aria-labelledby="labTitle" hidden>
+        <div class="lab-head"><div><span class="eyebrow">QUELLCODE / LOKAL</span><h2 id="labTitle" tabindex="-1">Bewegte Modelle</h2></div><button type="button" class="icon-button" id="closeLab" aria-label="Modellansicht schließen">×</button></div>
+        <p class="lab-intro">Lokale Modellkerne aus SCARLET, ENDECK, Perspektivkorridor und Field Difference; dazu PRO-ATLAS-Phase und Prüfmembran, ein fiktionaler RED-ROOM-Vergleich und ein Rachel-inspiriertes Auftragspaar. Jeder beschreibt seinen eigenen Modellzustand.</p>
+        <div class="lab-tabs" role="tablist" aria-label="Modell wählen"><button type="button" id="scarletTab" role="tab" aria-selected="true" aria-controls="scarletView">SCARLET · Zellökologie</button><button type="button" id="endeckTab" role="tab" aria-selected="false" aria-controls="endeckView">ENDECK · Projektion</button><button type="button" id="perspectiveTab" role="tab" aria-selected="false" aria-controls="perspectiveView">Korridor · 4 Ansichten</button><button type="button" id="redRoomTab" role="tab" aria-selected="false" aria-controls="redRoomView">RED ROOM · T±</button><button type="button" id="missionTab" role="tab" aria-selected="false" aria-controls="missionView">Rachel · Auftragspaar</button></div>
+        <div id="scarletView" role="tabpanel" aria-labelledby="scarletTab">
+          <div class="lab-canvas-wrap"><canvas id="ecologyCanvas" width="640" height="320" aria-label="Lokale endliche Zellensimulation"></canvas><div class="lab-canvas-caption">DETERMINISTISCHES MODELL · KEINE AUSSENWIRKUNG</div></div>
+          <div class="lab-metrics"><div><small>MODELLZEIT</small><strong id="ecoTime">0 ms</strong></div><div><small>ZELLEN</small><strong id="ecoCells">—</strong></div><div><small>KONTAKTE</small><strong id="ecoContacts">—</strong></div><div><small>SIGNALE</small><strong id="ecoSignals">—</strong></div></div>
+          <div class="lab-controls"><button type="button" id="ecoPlay">▶ Starten</button><button type="button" id="ecoStep">+ 500 ms</button><button type="button" id="ecoReset">Zurücksetzen</button><button type="button" id="ecoProjection" aria-pressed="false">Full Snapshot</button></div>
+          <div id="ecoSnapshot" class="lab-snapshot" aria-live="polite">Modell bereit.</div>
+          <div class="ledger-block"><div class="eyebrow">GSTAR / TEXTZUSTAND</div><h3>Entstehung im lokalen Ledger</h3><p>Die Operationen erzeugen eigene Zustände und Receipts. Sie verändern weder Portale noch GitHub.</p><div class="lab-controls"><button id="ledgerSeed" type="button">Seed setzen</button><button id="ledgerBranch" type="button" disabled>Variante ableiten</button><button id="ledgerSnapshot" type="button" disabled>Snapshot</button><button id="ledgerVerify" type="button" disabled>Replay prüfen</button></div><div id="ledgerStatus" class="ledger-status" aria-live="polite">Noch kein lokaler Textzustand.</div></div>
+        </div>
+        <div id="endeckView" role="tabpanel" aria-labelledby="endeckTab" hidden>
+          <p class="model-copy">Vier Punktidentitäten bleiben gebunden, während Quelle und beobachtete Projektion auseinanderfallen können.</p>
+          <div class="endeck-controls"><label for="endeckMode">Operator</label><select id="endeckMode"><option value="projection">Projektion</option><option value="shrink">Schrumpfung</option><option value="merge">Zusammenführung</option><option value="history">Verlauf</option></select><label for="endeckTilt">Blickwinkel <span id="tiltValue">40°</span></label><input id="endeckTilt" type="range" min="0" max="80" value="40"><label for="endeckTime">Modellschritt <span id="endeckTimeValue">0.00</span></label><input id="endeckTime" type="range" min="0" max="100" value="0"></div>
+          <div class="endeck-pair"><div><span>QUELLPUNKTE · X/Y GEZEIGT, Z ERHALTEN</span><svg id="endeckSource" viewBox="0 0 300 230" role="img" aria-label="Quellpunkte"></svg></div><div><span>BEOBACHTUNG · PROJEKTION</span><svg id="endeckObserved" viewBox="0 0 300 230" role="img" aria-label="Projizierte Punkte"></svg></div></div>
+          <div id="endeckReadout" class="endeck-readout" aria-live="polite">Modell wird geladen.</div>
+        </div>
+        <div id="perspectiveView" role="tabpanel" aria-labelledby="perspectiveTab" hidden>
+          <p class="model-copy">Ein synthetischer 3D-Quellzustand wird durch vier definierte Beobachtungsoperatoren gesehen. Die Punkt-ID bleibt in allen Ansichten gleich.</p>
+          <div class="perspective-controls"><label for="corridorTime">Modellzeit <span id="corridorTimeValue">1.25</span></label><input id="corridorTime" type="range" min="0" max="20" step="0.05" value="1.25"><label for="corridorPoint">Punkt-ID <span id="corridorPointValue">0</span></label><input id="corridorPoint" type="range" min="0" max="239" step="1" value="0"><button id="countermodelButton" type="button" aria-pressed="false">Unabhängiges Gegenmodell zeigen</button></div>
+          <div class="perspective-grid"><div><span>AUGE</span><svg id="corridorEye" viewBox="0 0 260 190" role="img" aria-label="Augenansicht"></svg></div><div><span>WIRBEL</span><svg id="corridorVortex" viewBox="0 0 260 190" role="img" aria-label="Wirbelansicht"></svg></div><div><span>KORRIDOR</span><svg id="corridorCorridor" viewBox="0 0 260 190" role="img" aria-label="Korridoransicht"></svg></div><div><span>SCHUB</span><svg id="corridorThrust" viewBox="0 0 260 190" role="img" aria-label="Schubansicht"></svg></div></div>
+          <div id="corridorReadout" class="endeck-readout" aria-live="polite">Modell wird geladen.</div>
+        </div>
+        <div id="redRoomView" role="tabpanel" aria-labelledby="redRoomTab" hidden>
+          <p class="model-copy">Gepinntes, geschlossenes <strong>fiktionales</strong> SCARLET-Schwarmmodell. Pfeile zeigen nur die im Quellmodell definierten gerichteten Hops. Personen, Kopien, Orte, Echos und Laufzeit sind erfundene Modellwerte; die Ansicht hat keinen Netz- oder Identitätszugriff.</p>
+          <div class="red-controls"><label for="redScenario">Szenario</label><select id="redScenario"><option value="archive">Archiv</option><option value="blocked">Blockiert</option><option value="active">Aktiv im Modell</option><option value="erased">Daten entfernt</option></select><label for="redCompare">Gegenprobe</label><select id="redCompare"><option value="active">Aktiv im Modell</option><option value="archive">Archiv</option><option value="blocked">Blockiert</option><option value="erased">Daten entfernt</option></select><label for="redTick">Modellzeit <span id="redTickLabel">T−3</span></label><input id="redTick" type="range" min="-3" max="4" step="1" value="-3"><div class="red-buttons"><button id="redPlay" type="button">▶ Ab hier abspielen</button><button id="redStep" type="button">+ 1 Tick</button><button id="redReset" type="button">Zu T−3</button></div></div>
+          <div class="red-grid"><article><span class="eyebrow">GEWÄHLTES MODELL</span><h3 id="redLeftTitle">—</h3><svg id="redLeftGraph" viewBox="0 0 320 170" role="img" aria-label="Fiktionaler gerichteter Sechs-Knoten-Graph im gewählten Szenario"></svg><dl id="redLeftFacts"></dl></article><article><span class="eyebrow">GEGENMODELL</span><h3 id="redRightTitle">—</h3><svg id="redRightGraph" viewBox="0 0 320 170" role="img" aria-label="Fiktionaler gerichteter Sechs-Knoten-Graph im Gegenmodell"></svg><dl id="redRightFacts"></dl></article></div>
+          <div id="redComparison" class="endeck-readout" aria-live="polite">Modell wird geladen.</div>
+          <p class="red-attribution">Unverändertes Quellmodul: <a href="https://github.com/Juri-Halveth/halveth-scarlet/blob/6913b81d3e2414b20149406cb3e2fe9bb314adf4/assets/red-room-swarm-model.mjs" target="_blank" rel="noopener noreferrer">Juri Janovski (Projekt HALVETH), @Juri-Halveth · SCARLET-Commit 6913b81 ↗</a> · <a href="vendor/red-room/LICENSE-HALVETH-PIRL-2.0.md" target="_blank" rel="noopener noreferrer">HALVETH PIRL 2.0</a>. Adapter und UI sind lokale Ergänzungen; keine Billigung der neuen Oberfläche wird behauptet.</p>
+        </div>
+        <div id="missionView" role="tabpanel" aria-labelledby="missionTab" hidden>
+          <p class="model-copy">Eigenständige, Rachel-inspirierte lokale Demo: Ein Auftrag und sein Gegenauftrag sind getrennte Datensätze. Ausgleich ändert beide gemeinsam. Die echte Rachel-Ablage wird nicht berührt.</p>
+          <div class="mission-form"><label for="missionTitle">Auftrag</label><input id="missionTitle" type="text" maxlength="120" placeholder="Was soll erkundet werden?"><button id="missionCreate" type="button">Auftrag anlegen</button></div>
+          <div id="missionBoard" class="mission-board" aria-live="polite"><article class="mission-card"><span>TEILCHEN / AUFTRAG</span><strong id="missionName">Noch kein Auftrag</strong><small id="missionStage">—</small></article><div class="mission-link" aria-hidden="true">⇄</div><article class="mission-card counter"><span>ANTITEILCHEN / GEGENAUFTRAG</span><strong id="counterName">Separat anlegen</strong><small id="counterStage">—</small></article></div>
+          <div class="mission-controls"><button id="missionCounter" type="button" disabled>Gegenauftrag anlegen</button><button id="missionStart" type="button" disabled>Beide in Arbeit</button><button id="missionResolve" type="button" disabled>Paar ausgleichen</button><button id="missionRotate" type="button" aria-pressed="false">180° Ansicht</button><button id="missionExport" type="button" disabled>JSON exportieren</button></div>
+          <div id="missionResult" class="endeck-readout" aria-live="polite">Flüchtige lokale Sitzung. Kein Rachel-Speicher und kein Unternehmenssystem verbunden.</div>
+          <div class="mission-journal"><span class="eyebrow">CHRONOLOGIE / LOKAL</span><ol id="missionJournal"><li>Noch kein Ereignis.</li></ol></div>
+        </div>
+      </section>
+
+      <section id="helpPanel" class="help-panel" aria-labelledby="helpTitle" hidden>
+        <div class="inspect-head"><span class="eyebrow">BEDIENUNG</span><button type="button" class="icon-button" id="closeHelp" aria-label="Steuerung schließen">×</button></div>
+        <h2 id="helpTitle">Flugsteuerung</h2>
+        <p><kbd>W</kbd> / <kbd>S</kbd> oder Mausrad: vor und zurück. <kbd>A</kbd> / <kbd>D</kbd> oder <kbd>←</kbd> / <kbd>→</kbd>: drehen. Ziehen im Raum: Blickrichtung. <kbd>Esc</kbd>: zurück.</p>
+        <p>Die Projektliste ist die gleichwertige Bedienung ohne Flugbewegung. Der Zeitregler kann mit Tastatur, Maus oder Touch gesteuert werden.</p>
+        <p class="help-boundary">Die Portale stammen aus einem redaktionellen öffentlichen Katalog. Die allgemeine Entfaltung und die eigene 0→1-Werkstatt sind ausdrücklich synthetische Modelle. SCARLET, ENDECK und Field Difference haben zusätzlich je eine begrenzte öffentliche Quellspur und einen getrennten lesenden NETZ-Quellraum; die gewählten Commits sind keine Modell-Ticks. SCARLET-Zellraum, ENDECK-Projektionsraum, Faltgrenzen-Vergleich, Realms-Weltregelraum und Field-Grenzregelraum führen getrennte lokale Softwaremodelle aus. Keine Live-Steuerung, kein Versand und keine Repository-Änderung.</p>
+        <p><a href="https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/83e9be26793e319aef422df0e50afae619b8de6b/universum/CREDITS.md" target="_blank" rel="noopener noreferrer">Quellen, Lizenzen und Bildnachweise ↗</a></p>
+      </section>
+    </main>
+
+    <footer class="statusbar"><span>HALVETH / NETZ · BEOBACHTUNGSFENSTER OFFEN</span><span id="statusMessage" aria-live="polite">Bereit zum Fliegen</span><span>BROWSERLOKAL · v0.13</span></footer>
+  </div>
+  <script src="data/catalog.js"></script>
+  <script src="vendor/scarlet/core.js"></script>
+  <script src="vendor/scarlet/live-core.js"></script>
+  <script src="engine.js"></script>
+  <script src="history.js"></script>
+  <script src="data/scarlet-history-data.js"></script>
+  <script src="data/endeck-history-data.js"></script>
+  <script src="data/field-difference-history-data.js"></script>
+  <script src="portal-time.js"></script>
+  <script src="source-netz.js"></script>
+  <script src="missions.js"></script>
+  <script src="workshop.js"></script>
+  <script src="atlas-model.js"></script>
+  <script src="atlas-ui.js"></script>
+  <script src="app.js"></script>
+  <script src="scarlet-projection-delta.js"></script>
+  <script src="scarlet-delta-ui.js"></script>
+  <script src="scarlet-reshape.js"></script>
+  <script src="cockpit-scarlet.js"></script>
+  <script src="cockpit-endeck.js"></script>
+  <script src="lab.js"></script>
+  <script src="source-time.js"></script>
+  <script src="source.js"></script>
+  <script src="portal-time-ui.js"></script>
+  <script src="source-netz-ui.js"></script>
+  <script src="red-ui.js"></script>
+  <script src="workshop-ui.js"></script>
+</body>
+</html>

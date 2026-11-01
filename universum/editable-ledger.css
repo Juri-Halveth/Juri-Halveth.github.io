@@ -1,0 +1,11 @@
+.ledger-inputs{display:grid;gap:7px;margin:16px 0 14px}
+.ledger-inputs label{color:#bed3dc;font-size:.75rem;letter-spacing:.05em;text-transform:uppercase;margin-top:6px}
+.ledger-inputs input,.ledger-inputs textarea{width:100%;min-width:0;background:#0b1724;color:#f6fdff;border:1px solid #456474;border-radius:5px;padding:10px 12px;font:inherit}
+.ledger-inputs textarea{resize:vertical;min-height:72px;line-height:1.45}
+.ledger-inputs :is(input,textarea):focus-visible{outline:2px solid #8fe0e9;outline-offset:2px}
+.ledger-history{display:grid;gap:8px;margin-top:15px}
+.ledger-history>small{color:#a6c1cd}
+.ledger-history article{border:1px solid #344d5c;background:#0c1a27;border-radius:6px;padding:10px 12px}
+.ledger-history article strong{display:block;color:#eef8fb;font-size:.78rem;overflow-wrap:anywhere}
+.ledger-history article p{color:#d6e6eb;white-space:pre-wrap;overflow-wrap:anywhere;max-height:110px;overflow:auto;margin:7px 0}
+.ledger-history article small{display:block;color:#a9bdc7;overflow-wrap:anywhere}

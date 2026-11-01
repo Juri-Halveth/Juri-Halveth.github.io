@@ -14,6 +14,14 @@ Die Präsentationsreihenfolge ist getrennt von den unveränderten Quellpaket-IDs
 Die Oberfläche ist auf Deutsch, Englisch und Russisch verfügbar. Projektleitung
 und Auswahl: Juri / HALVETH; Entwicklung mit KI-Unterstützung.
 
+Das [Starship Lab](universum/) ist ein eigenständiger interaktiver Browserraum
+für 18 öffentliche Projekteinträge. Er verbindet räumliche Navigation,
+synthetische Modelle und drei ausgewählte Quellspuren. Die Kategorien bleiben
+im Lab getrennt: Software, Sicherheit, Modelle und Visualisierung, Welten,
+Lernen sowie gesellschaftliche Quellen. Seine Berechnungen laufen im Browser;
+die [Quellen- und Lizenzkarte](universum/CREDITS.md) benennt die eingebundenen
+Module und Bilder. Die Portfolio-Navigation führt direkt zu dieser einen Route.
+
 ## Lokal bauen
 
 Auf der Projektübersicht lassen sich die vorhandenen elf Arbeitsproben nach

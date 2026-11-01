@@ -1,0 +1,23 @@
+.atlas-demo{color:#dce9ee}
+.atlas-demo .model-copy{line-height:1.55}
+.atlas-phase-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 14px;margin:18px 0}
+.atlas-phase-controls label{font-size:.75rem;letter-spacing:.05em;text-transform:uppercase;color:#b7ced7}
+.atlas-phase-controls output{display:block;font-weight:700;color:#effaff;margin-top:4px;font-size:.92rem;letter-spacing:0;text-transform:none}
+.atlas-phase-controls input{width:100%;accent-color:#77dbe7}
+#atlasWave{display:block;width:100%;height:auto;background:linear-gradient(#0c1622,#111925);border:1px solid #344f5e;border-radius:8px}
+.atlas-readout{display:block;margin:13px 0;padding:12px 14px;border-left:3px solid #83d6df;background:#10222c;color:#ecf7fa;line-height:1.55}
+.atlas-gate{margin-top:26px;padding-top:18px;border-top:1px solid #3b5763}
+.atlas-gate p{color:#b4c6ce;line-height:1.5}
+.atlas-checks{display:grid;gap:7px}
+.atlas-check-row{display:grid;grid-template-columns:minmax(100px,1fr) minmax(145px,1fr) minmax(90px,auto);gap:10px;align-items:center;padding:8px 10px;background:#0d1a25;border:1px solid #2b4553;border-radius:5px}
+.atlas-check-row label{color:#e5f2f5}
+.atlas-check-row select{min-width:0;width:100%;font:inherit;color:#fff;background:#142838;border:1px solid #55707d;border-radius:4px;padding:7px}
+.atlas-check-row .atlas-conflict{white-space:nowrap;color:#e7bec0}
+.atlas-check-row input{accent-color:#ed7680}
+.atlas-gate-actions{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+.atlas-gate-actions button{font:inherit;cursor:pointer;color:#f7fbfd;background:#1a3443;border:1px solid #689ba5;padding:9px 12px;border-radius:5px}
+.atlas-gate-actions button:hover{background:#255064}
+.atlas-demo :is(input,select,button,a):focus-visible{outline:2px solid #a8eaf0;outline-offset:2px}
+.atlas-source{font-size:.81rem;line-height:1.55;color:#a9bdc6}
+.atlas-source a{color:#bdebf2}
+@media(max-width:650px){.atlas-phase-controls{grid-template-columns:1fr}.atlas-check-row{grid-template-columns:1fr 1fr}.atlas-check-row>label:first-child{grid-column:1/-1}}
