@@ -1,17 +1,21 @@
-# Juri · Tools, models and applications
+# HALVETH / NETZ · Projects and interactive models
+
+[![HALVETH NETZ: six connected themes](universum/assets/system-banner.svg)](https://juri-halveth.github.io/universum/)
+
+**[Open Starship Lab →](https://juri-halveth.github.io/universum/)** · Software · Security · Models and visualization · Worlds · Learning · Public research
 
 Person: **Juri**. Project: **HALVETH**. [Identity](IDENTITY.md).
 
 [Portfolio](https://juri-halveth.github.io/en/) · [Projects](https://juri-halveth.github.io/en/arbeiten/) · [Technology and code](https://juri-halveth.github.io/en/koennen/)
 
-The entrance explains usable functions: text states and variants,
+The homepage starts with the NETZ gateway. Its project areas explain usable functions: text states and variants,
 observation comparison and spatial applications.
 JavaScript calculates two views of the same four points directly on the page.
 Purpose, model rules, local execution and potential uses remain explicit.
 Presentation order is separate from the unchanged source-packet identities.
 
-Project lead and curation: Juri / HALVETH. AI-assisted development. German,
-English and Russian interfaces are generated from the same sources.
+Project lead and curation: Juri / HALVETH. AI-assisted development. The portfolio
+has German, English and Russian interfaces; Starship Lab currently uses German.
 
 ## Build locally
 
