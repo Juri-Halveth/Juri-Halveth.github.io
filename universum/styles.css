@@ -65,3 +65,4 @@
 .field-room-cta:hover{border-color:#ffd9a6}
 .field-room-cta[hidden]{display:none}
 @media(max-width:470px){.scarlet-walk-controls button{width:44px;height:44px}}
+.list-label{min-width:0;flex:1}
