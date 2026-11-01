@@ -48,6 +48,13 @@
     catch { return "#"; }
   }
   function categoryOf(project) { return categories.get(project.categories[0]) || { label: "Projekt", short: "PROJEKT" }; }
+  function visibleCategories(project) {
+    const ids = [...new Set(project.categories)];
+    const selected = e.filter.value;
+    const ordered = selected !== "all" && ids.includes(selected) ? [selected, ...ids.filter((id) => id !== selected)] : ids;
+    return ordered.map((id) => categories.get(id)).filter(Boolean);
+  }
+  function categoryLabels(project) { return visibleCategories(project).map((category) => category.label).join(" · ") || "Projekt"; }
   function projectHue(project) { return hues[project.categories[0]] || 350; }
   function clear(element) { while (element.firstChild) element.removeChild(element.firstChild); }
   function flightBlocked() {
@@ -71,7 +78,7 @@
     button.addEventListener("click", () => warpTo(project));
     e.layer.appendChild(button);
     const world = { x: lanes[index % lanes.length] + (Math.floor(index / lanes.length) ? 2.5 : 0), y: ((index * 3) % 5 - 2) * 1.35, z: 19 + index * 9 };
-    return { project, world, button, distance };
+    return { project, world, button, kicker, distance };
   });
 
   for (let i = 0; i < 190; i += 1) {
@@ -97,6 +104,7 @@
   }
   function renderList() {
     clear(e.projectList); scene.filteredIds.clear();
+    scene.portals.forEach((item) => { item.kicker.textContent = visibleCategories(item.project)[0]?.short || "PROJEKT"; });
     projects.forEach((project, index) => {
       if (!matches(project)) return;
       scene.filteredIds.add(project.id);
@@ -105,15 +113,17 @@
       button.setAttribute("role", "listitem");
       if (scene.activeId === project.id) button.classList.add("active");
       const number = document.createElement("span"); number.className = "list-index"; number.textContent = String(index + 1).padStart(2, "0");
-      const label = document.createElement("span");
+      const label = document.createElement("span"); label.className = "list-label";
       const title = document.createElement("strong"); title.textContent = project.title;
-      const small = document.createElement("small"); small.textContent = categoryOf(project).label;
+      const small = document.createElement("small"); small.textContent = categoryLabels(project);
       const arrow = document.createElement("span"); arrow.className = "list-arrow"; arrow.setAttribute("aria-hidden", "true"); arrow.textContent = "↗";
       label.append(title, small); button.append(number, label, arrow);
       button.addEventListener("click", () => warpTo(project));
       e.projectList.appendChild(button);
     });
     e.visibleCount.textContent = scene.filteredIds.size + " / " + projects.length;
+    const active = projects.find((project) => project.id === scene.activeId);
+    if (active) e.inspectCategory.textContent = categoryLabels(active).toUpperCase();
     if (scene.filteredIds.size === 0) {
       const empty = document.createElement("p"); empty.className = "empty-list"; empty.textContent = "Kein Portal in dieser Auswahl.";
       e.projectList.appendChild(empty);
@@ -146,7 +156,7 @@
     window.HALVETH_PORTAL_TIME_UI?.setProject(project.id);
     byId("sourceNetzButton").hidden = !window.HALVETH_SOURCE_NETZ_UI?.setProject(project.id);
     scene.activeId = project.id;
-    e.inspectCategory.textContent = categoryOf(project).label.toUpperCase();
+    e.inspectCategory.textContent = categoryLabels(project).toUpperCase();
     e.inspectTitle.textContent = project.title;
     e.inspectTagline.textContent = project.tagline;
     e.inspectDescription.textContent = project.description;

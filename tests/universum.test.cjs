@@ -54,6 +54,39 @@ test('Starship static document has no broken same-route resources or credits lin
   }
 });
 
+test('filtered projects show the chosen topic first and retain each other topic once', async () => {
+  const dom = new JSDOM(html, {url: 'https://juri-halveth.github.io/universum/', runScripts: 'outside-only'});
+  const {window} = dom;
+  window.HTMLCanvasElement.prototype.getContext = () => ({setTransform() {}});
+  window.matchMedia = () => ({matches: true});
+  window.requestAnimationFrame = () => 0;
+  window.NETZ_ENGINE = {};
+  window.eval(fs.readFileSync(path.join(route, 'data/catalog.js'), 'utf8'));
+  window.eval(fs.readFileSync(path.join(route, 'app.js'), 'utf8'));
+  const filter = window.document.getElementById('categoryFilter');
+  filter.value = 'security';
+  filter.dispatchEvent(new window.Event('change'));
+
+  const catalog = window.HALVETH_CATALOG;
+  const names = new Map(catalog.categories.map(category => [category.id, category.label]));
+  const visible = [...window.document.querySelectorAll('#projectList .list-item')];
+  assert.equal(visible.length, catalog.projects.filter(project => project.visibility === 'public' && project.categories.includes('security')).length);
+  assert.equal(new Set(visible.map(row => row.dataset.projectId)).size, visible.length);
+  for (const row of visible) {
+    const project = catalog.projects.find(project => project.id === row.dataset.projectId);
+    const labels = [...new Set(project.categories)].map(id => names.get(id));
+    const expected = [names.get('security'), ...labels.filter(label => label !== names.get('security'))];
+    assert.deepEqual(row.querySelector('small').textContent.split(' · '), expected, project.id);
+    assert.equal(window.document.querySelector(`.portal[data-project-id="${project.id}"] .portal-kicker`).textContent, 'SICHERHEIT');
+  }
+
+  const selected = visible.find(row => row.dataset.projectId === 'halveth-forschungslabor');
+  selected.click();
+  await new Promise(resolve => setTimeout(resolve, 25));
+  assert.equal(window.document.getElementById('inspectCategory').textContent, selected.querySelector('small').textContent.toUpperCase());
+  dom.window.close();
+});
+
 test('portfolio entrances expose one working Starship Lab route and sitemap entry', () => {
   const root = path.join(__dirname, '..');
   for (const page of ['index.html', 'en/index.html', 'ru/index.html', 'arbeiten/index.html', 'en/arbeiten/index.html', 'ru/arbeiten/index.html']) {
