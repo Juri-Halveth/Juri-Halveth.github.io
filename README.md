@@ -1,17 +1,21 @@
-# Juri · Werkzeuge, Modelle und Anwendungen
+# HALVETH / NETZ · Projekte und interaktive Modelle
+
+[![HALVETH NETZ: sechs verbundene Themenfelder](universum/assets/system-banner.svg)](https://juri-halveth.github.io/universum/)
+
+**[Starship Lab öffnen →](https://juri-halveth.github.io/universum/)** · Software · Sicherheit · Modelle und Visualisierung · Welten · Lernen · gesellschaftliche Quellen
 
 **Person: Juri. Projekt: HALVETH.** [Namenszuordnung](IDENTITY.md).
 
 [Portfolio öffnen](https://juri-halveth.github.io/) · [Projekte](https://juri-halveth.github.io/arbeiten/) · [Technik & Code](https://juri-halveth.github.io/koennen/)
 
-Der Einstieg führt zuerst zu NOVA, Tresor, Mein Lernportal und Field Difference Lab.
+Die Website beginnt mit dem NETZ-Gateway; danach führen NOVA, Tresor, Mein Lernportal und Field Difference Lab in die Arbeitsproben.
 Die weiteren Arbeitsproben zeigen bedienbare Funktionen für Textzustände, Varianten,
 Beobachtungsvergleich und räumliche Anwendungen.
 Direkt auf der Seite berechnet JavaScript zwei Ansichten derselben vier Punkte.
 Zweck, Modellregeln, lokale Ausführung und mögliche Anwendung bleiben erkennbar.
 Die Präsentationsreihenfolge ist getrennt von den unveränderten Quellpaket-IDs.
 
-Die Oberfläche ist auf Deutsch, Englisch und Russisch verfügbar. Projektleitung
+Die Portfolio-Oberfläche ist auf Deutsch, Englisch und Russisch verfügbar; das Starship Lab ist derzeit deutschsprachig. Projektleitung
 und Auswahl: Juri / HALVETH; Entwicklung mit KI-Unterstützung.
 
 Das [Starship Lab](universum/) ist ein eigenständiger interaktiver Browserraum
