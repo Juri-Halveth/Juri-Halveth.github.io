@@ -110,7 +110,7 @@
       scene.filteredIds.add(project.id);
       const button = document.createElement("button"); button.type = "button"; button.className = "list-item";
       button.dataset.projectId = project.id;
-      button.setAttribute("role", "listitem");
+      button.setAttribute("aria-label", project.title + " · " + categoryLabels(project) + " · Projektportal öffnen");
       if (scene.activeId === project.id) button.classList.add("active");
       const number = document.createElement("span"); number.className = "list-index"; number.textContent = String(index + 1).padStart(2, "0");
       const label = document.createElement("span"); label.className = "list-label";

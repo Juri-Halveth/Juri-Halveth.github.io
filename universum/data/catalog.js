@@ -362,7 +362,7 @@ window.HALVETH_CATALOG =
       "repository": "Juri-Halveth/Juri-Halveth",
       "title": "PROFILQUELLE",
       "tagline": "Der Einstieg hat eine Quelle.",
-      "description": "Das Profil-Repository trägt die README auf der GitHub-Profilseite. Der neue Entwurf ersetzt noch keine veröffentlichte Fassung.",
+      "description": "Das Profil-Repository trägt die README auf der GitHub-Profilseite. Sie ist ein eigener öffentlicher Einstieg und bleibt getrennt von dieser Projektübersicht.",
       "categories": [
         "software"
       ],
