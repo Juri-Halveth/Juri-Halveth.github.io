@@ -10,7 +10,7 @@
   const CEILING = "USER_AUTHORED_SYNTHETIC_MODEL_ONLY";
   const PROJECT = /^[A-Za-z0-9][A-Za-z0-9._-]{0,79}$/;
   const ACTION = /^a[1-9][0-9]*$/;
-  const BRANCH = /^a[1-9][0-9]*_(?:main|b[2-9][0-9]*)$/;
+  const BRANCH = /^a[1-9][0-9]*_(?:main|b(?:[2-9]|[1-9][0-9]+))$/;
   const TYPES = new Set(["ACTION_STARTED", "STEP", "GAP", "BRANCH_CREATED", "ACTION_COMPLETED", "NEXT_ACTION_STARTED"]);
   const MAX_EVENTS = 128;
   const MAX_ACTIONS = 16;
