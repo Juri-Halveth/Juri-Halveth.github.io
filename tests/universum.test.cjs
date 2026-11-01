@@ -69,11 +69,16 @@ test('filtered projects show the chosen topic first and retain each other topic 
 
   const catalog = window.HALVETH_CATALOG;
   const names = new Map(catalog.categories.map(category => [category.id, category.label]));
+  assert.equal(window.document.getElementById('projectList').hasAttribute('role'), false);
   const visible = [...window.document.querySelectorAll('#projectList .list-item')];
   assert.equal(visible.length, catalog.projects.filter(project => project.visibility === 'public' && project.categories.includes('security')).length);
   assert.equal(new Set(visible.map(row => row.dataset.projectId)).size, visible.length);
   for (const row of visible) {
     const project = catalog.projects.find(project => project.id === row.dataset.projectId);
+    assert.equal(row.tagName, 'BUTTON', project.id);
+    assert.equal(row.type, 'button', project.id);
+    assert.equal(row.hasAttribute('role'), false, project.id);
+    assert.equal(row.getAttribute('aria-label'), `${project.title} · ${row.querySelector('small').textContent} · Projektportal öffnen`, project.id);
     const labels = [...new Set(project.categories)].map(id => names.get(id));
     const expected = [names.get('security'), ...labels.filter(label => label !== names.get('security'))];
     assert.deepEqual(row.querySelector('small').textContent.split(' · '), expected, project.id);
@@ -85,6 +90,15 @@ test('filtered projects show the chosen topic first and retain each other topic 
   await new Promise(resolve => setTimeout(resolve, 25));
   assert.equal(window.document.getElementById('inspectCategory').textContent, selected.querySelector('small').textContent.toUpperCase());
   dom.window.close();
+});
+
+test('profile source entry describes its own public destination', () => {
+  const data = fs.readFileSync(path.join(route, 'data/catalog.js'), 'utf8');
+  const profile = data.match(/"id": "Juri-Halveth"[\s\S]*?"description": "([^"]+)"/)?.[1];
+  assert.ok(profile);
+  assert.match(profile, /GitHub-Profilseite/);
+  assert.match(profile, /eigener öffentlicher Einstieg/);
+  assert.doesNotMatch(profile, /Der neue Entwurf ersetzt noch keine veröffentlichte Fassung/);
 });
 
 test('portfolio entrances expose one working Starship Lab route and sitemap entry', () => {
