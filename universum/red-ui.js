@@ -97,7 +97,7 @@
       render();
       status("Fiktionales Red-Room-Modell lokal geladen. Acht feste Modellticks.");
     }).catch((error) => {
-      byId("redComparison").textContent = "Das lokale Modell konnte nicht geladen werden. Bitte über START.cmd öffnen.";
+      byId("redComparison").textContent = "Red-Room-Modell derzeit nicht verfügbar. Seite neu laden und erneut versuchen.";
       console.error("Red Room model load failed:", error);
       loading = null;
     });

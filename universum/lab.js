@@ -85,7 +85,8 @@
       fieldController = module.mount(fieldView);
       if (fieldPortalLaunch) { fieldController.showBoundaryFactors(); fieldPortalLaunch = false; }
     } catch (error) {
-      fieldView.textContent = "Field-Difference-Demo konnte nicht lokal geladen werden: " + error.message;
+      fieldView.textContent = "Field-Difference-Modul derzeit nicht verfügbar. Seite neu laden und erneut versuchen.";
+      console.error("Field Difference module load failed:", error);
     } finally { fieldLoading = false; }
   }
   function openLab(trigger = byId("labButton")) {
@@ -363,7 +364,8 @@
       endeck = await import("./vendor/endeck/model.mjs");
       renderEndeck();
     } catch (error) {
-      byId("endeckReadout").textContent = "ENDECK-Modul nicht geladen. Bitte START.cmd verwenden (lokaler HTTP-Server). " + error.message;
+      byId("endeckReadout").textContent = "ENDECK-Modul derzeit nicht verfügbar. Seite neu laden und erneut versuchen.";
+      console.error("ENDECK module load failed:", error);
     } finally { endeckLoading = false; }
   }
   function svgElement(name, attributes) {
@@ -413,7 +415,8 @@
       corridor = await import("./vendor/perspective/source-model.mjs");
       renderCorridor();
     } catch (error) {
-      byId("corridorReadout").textContent = "Perspektivmodell nicht geladen. Bitte START.cmd verwenden. " + error.message;
+      byId("corridorReadout").textContent = "Perspektivmodell derzeit nicht verfügbar. Seite neu laden und erneut versuchen.";
+      console.error("Perspective model load failed:", error);
     } finally { corridorLoading = false; }
   }
   function drawCorridorView(target, points, selectedId) {
