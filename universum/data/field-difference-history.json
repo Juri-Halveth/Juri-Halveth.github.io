@@ -1,0 +1,136 @@
+{
+  "schema": "halveth.public-project-history.v1",
+  "projectId": "halveth-field-difference-lab",
+  "repository": "Juri-Halveth/halveth-field-difference-lab",
+  "observedHead": "7ed3788aec2593bfbaa4d6433aec8870ccbc4ff7",
+  "retrievedAt": "2026-11-01T20:17:09Z",
+  "coverage": {
+    "selection": "SELECTED_PUBLIC_COMMITS_NOT_COMPLETE_HISTORY",
+    "source": "GITHUB_COMMIT_AND_FILE_DIFF",
+    "notes": "Vier ausgewählte öffentliche Commits aus 2026-10-19 bis 2026-10-31. GitHub-Compare bestätigte jeden als Vorfahren des beobachteten main-HEAD. Die Auswahl ist repositoryweit: das anfängliche dimensionslose Bahnmodell und der spätere Zuse-Gitterzweig sind verschiedene Modellfamilien. Weder die vollständige Git-Geschichte noch ein historischer Browser- oder CI-Lauf ist inventarisiert."
+  },
+  "events": [
+    {
+      "id": "FIELD-BASELINE-20261019",
+      "commit": "76058612f745b2166de8c0c2bb0fd4a906b29c44",
+      "authorAt": "2026-10-19T18:50:44Z",
+      "committerAt": "2026-10-19T18:50:44Z",
+      "eventTime": "2026-10-19T18:50:44Z",
+      "eventTimeBasis": "COMMITTER_TIMESTAMP",
+      "recordedAt": "2026-11-01T20:17:09Z",
+      "title": "Dimensionsloses Feldlabor als Repository-Basis",
+      "summary": "Der erste öffentliche Commit fügte zwei getrennte deterministische Regelmodelle hinzu: ein abgeschwächtes Zentralfeld und einen stückweisen vertikalen Feldübergang. Quelltests prüfen unter anderem den κ=1-Fall, wechselndes Beschleunigungsvorzeichen und Stetigkeit an der Grenze. Das sind Softwareverträge, keine gemessenen Kräfte oder Bahnen.",
+      "url": "https://github.com/Juri-Halveth/halveth-field-difference-lab/commit/76058612f745b2166de8c0c2bb0fd4a906b29c44",
+      "evidence": [
+        {
+          "path": "physics.js",
+          "status": "added",
+          "url": "https://github.com/Juri-Halveth/halveth-field-difference-lab/blob/76058612f745b2166de8c0c2bb0fd4a906b29c44/physics.js",
+          "note": "Definiert CENTRAL und BOUNDARY sowie die berechneten Bahnfunktionen; die Regeln sind dimensionslos. Diese frühe Dateiversion ist nicht die später vendorte HEAD-Version."
+        },
+        {
+          "path": "physics.test.mjs",
+          "status": "added",
+          "url": "https://github.com/Juri-Halveth/halveth-field-difference-lab/blob/76058612f745b2166de8c0c2bb0fd4a906b29c44/physics.test.mjs",
+          "note": "Fügt Testquelltext für gleiche Anfangszustände, κ=1 und stetige Position/Geschwindigkeit am Grenzübertritt hinzu; kein historischer Testlauf wird behauptet."
+        }
+      ],
+      "claimCeiling": "PUBLIC_REPOSITORY_COMMIT_AND_CHANGED_FILES_ONLY"
+    },
+    {
+      "id": "FIELD-ZUSE-LATTICE-20261020",
+      "commit": "89bcd7858ad2b3373620bf1b51d0f64b0d74be92",
+      "authorAt": "2026-10-20T19:51:15Z",
+      "committerAt": "2026-10-20T19:51:18Z",
+      "eventTime": "2026-10-20T19:51:18Z",
+      "eventTimeBasis": "COMMITTER_TIMESTAMP",
+      "recordedAt": "2026-11-01T20:17:09Z",
+      "title": "Getrennter begrenzter Zuse-Gitterzweig",
+      "summary": "Dieser Commit ergänzte ein viernachbariges Pulsmodell mit ganzzahligen Schritten von 0 bis 64 und Kennzahlen für Masse und Ausdehnung. Neue Tests formulieren Massenerhalt, richtungsabhängige Front und Eingabegrenzen. Der Gitterzweig ist ein eigenständiges Softwaremodell und kein zeitlicher Zustand des Bahnpartikels.",
+      "url": "https://github.com/Juri-Halveth/halveth-field-difference-lab/commit/89bcd7858ad2b3373620bf1b51d0f64b0d74be92",
+      "evidence": [
+        {
+          "path": "experiments/zuse-lattice.mjs",
+          "status": "added",
+          "url": "https://github.com/Juri-Halveth/halveth-field-difference-lab/blob/89bcd7858ad2b3373620bf1b51d0f64b0d74be92/experiments/zuse-lattice.mjs",
+          "note": "fourNeighbourPulse begrenzt steps auf ganze Werte 0 bis 64; pulseMetrics berechnet Masse, belegte Zellen und Achsen-/Diagonalradien."
+        },
+        {
+          "path": "experiments/zuse-lattice.test.mjs",
+          "status": "added",
+          "url": "https://github.com/Juri-Halveth/halveth-field-difference-lab/blob/89bcd7858ad2b3373620bf1b51d0f64b0d74be92/experiments/zuse-lattice.test.mjs",
+          "note": "Fügt drei Quelltests für deklarierte Massensumme, Frontunterschied trotz gleicher zweiter Momente und ungültige Schritte hinzu."
+        }
+      ],
+      "claimCeiling": "PUBLIC_REPOSITORY_COMMIT_AND_CHANGED_FILES_ONLY"
+    },
+    {
+      "id": "FIELD-SOURCE-CHECKS-20261027",
+      "commit": "321a00dc85951a3dc7463b31ec9183716f8a4c4a",
+      "authorAt": "2026-10-27T20:15:08Z",
+      "committerAt": "2026-10-27T20:15:08Z",
+      "eventTime": "2026-10-27T20:15:08Z",
+      "eventTimeBasis": "COMMITTER_TIMESTAMP",
+      "recordedAt": "2026-11-01T20:17:09Z",
+      "title": "Quelltest-Workflow im Repository definiert",
+      "summary": "Dieser Commit fügte eine GitHub-Actions-Definition für Push, Pull Request und manuelle Auslösung hinzu. Der Job checkt den Quellstand aus, richtet Node 24 ein und ruft npm test auf. Die Workflowdatei belegt den vorgesehenen Prüfweg, aber weder einen ausgeführten noch einen erfolgreichen Lauf an diesem Commit.",
+      "url": "https://github.com/Juri-Halveth/halveth-field-difference-lab/commit/321a00dc85951a3dc7463b31ec9183716f8a4c4a",
+      "evidence": [
+        {
+          "path": ".github/workflows/source-checks.yml",
+          "status": "added",
+          "url": "https://github.com/Juri-Halveth/halveth-field-difference-lab/blob/321a00dc85951a3dc7463b31ec9183716f8a4c4a/.github/workflows/source-checks.yml",
+          "note": "Deklariert Trigger und einen source-checks-Job mit npm test; Commit-Diff und gepinnter Dateitext wurden gelesen."
+        }
+      ],
+      "claimCeiling": "PUBLIC_REPOSITORY_COMMIT_AND_CHANGED_FILES_ONLY"
+    },
+    {
+      "id": "FIELD-ZUSE-TRAIL-20261031",
+      "commit": "7ed3788aec2593bfbaa4d6433aec8870ccbc4ff7",
+      "authorAt": "2026-10-31T01:20:28Z",
+      "committerAt": "2026-10-31T01:20:28Z",
+      "eventTime": "2026-10-31T01:20:28Z",
+      "eventTimeBasis": "COMMITTER_TIMESTAMP",
+      "recordedAt": "2026-11-01T20:17:09Z",
+      "title": "Zuse-Körperpfade chronologisch aufgezeichnet",
+      "summary": "Am beobachteten HEAD änderte der Commit das Zuse-Begegnungsmodell so, dass trail jede Position einschließlich Wiederbesuchen und Stillstandsschritten in Reihenfolge führt; visited bleibt eine einzigartige Menge für Neuheitswertung. Ein neuer Testfall prüft die Folge und die begrenzte Schrittbewegung. Dies betrifft den Zuse-Zweig, nicht die vendorte physics.js-Bahndemo.",
+      "url": "https://github.com/Juri-Halveth/halveth-field-difference-lab/commit/7ed3788aec2593bfbaa4d6433aec8870ccbc4ff7",
+      "evidence": [
+        {
+          "path": "experiments/four-encounters.js",
+          "status": "modified",
+          "url": "https://github.com/Juri-Halveth/halveth-field-difference-lab/blob/7ed3788aec2593bfbaa4d6433aec8870ccbc4ff7/experiments/four-encounters.js",
+          "note": "Führt eine chronologische trail-Liste zusätzlich zur einzigartigen visited-Liste und hängt die gewählte Position je Schritt an."
+        },
+        {
+          "path": "experiments/four-encounters.test.mjs",
+          "status": "modified",
+          "url": "https://github.com/Juri-Halveth/halveth-field-difference-lab/blob/7ed3788aec2593bfbaa4d6433aec8870ccbc4ff7/experiments/four-encounters.test.mjs",
+          "note": "Neuer Testfall prüft chronologische Wiederbesuche, erhaltene Präfixe und höchstens einen Gitterschritt zwischen Positionen; Ausführung ist hier nicht beobachtet."
+        }
+      ],
+      "claimCeiling": "PUBLIC_REPOSITORY_COMMIT_AND_CHANGED_FILES_ONLY"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "GAP-FIELD-UNSELECTED-COMMITS",
+      "kind": "UNSELECTED_PUBLIC_HISTORY_AND_MODEL_FAMILIES",
+      "scope": "GitHub-Geschichte von Juri-Halveth/halveth-field-difference-lab bis 7ed3788aec2593bfbaa4d6433aec8870ccbc4ff7",
+      "reason": "Vier Commits sind eine kuratierte repositoryweite Auswahl. Dazwischenliegende Änderungen, insbesondere die Weiterentwicklung von physics.js und die Brücke zum Zuse-Zweig, sind nicht als eigene Ereignisse inventarisiert. Die beiden Modellfamilien werden nicht als eine Partikel-Zeitbahn verbunden.",
+      "reopenTrigger": "Für eine konkrete Evolutionsbehauptung die fehlenden Commit-Diffs und Dateiversionen derselben Modellfamilie gesondert lesen."
+    },
+    {
+      "id": "GAP-FIELD-ORIGIN-AND-RUNTIME",
+      "kind": "ORIGIN_CI_AND_RUNTIME_NOT_VERIFIED",
+      "scope": "Ideenursprung, historische CI-Ausführung, Browserzustand und externe Wirkung",
+      "reason": "Commit-Uhren datieren Repository-Metadaten; sie beweisen keinen ursprünglichen Ideenzeitpunkt. Quelltests und Workflowdefinition belegen keine damalige Testausführung oder einen veröffentlichten Browserlauf. Der v0.4-Lokallauf der vendorten HEAD-physics.js ist ein getrenntes Receipt.",
+      "reopenTrigger": "Den jeweiligen Anspruch mit unabhängiger Originalquelle oder gepinntem Checkout, CI-Run und versionsgebundenem Browser-Witness mit Zeit und Coverage prüfen."
+    }
+  ],
+  "integrity": {
+    "algorithm": "SHA-256-CANONICAL-JSON-V1",
+    "digest": "86d6e4671f017438ccec4e2b5cbff0f5f5aba968a10a32f4330f701ac051bbcb"
+  }
+}
