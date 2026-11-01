@@ -1,6 +1,6 @@
 # Starship Lab · Quellen und Rechte
 
-Diese öffentliche Browserfassung basiert auf dem lokal geprüften Starship Lab v0.13 vom 1. November 2026. Sie enthält die für die Ansicht benötigten statischen Dateien. Die lokale Startsoftware, Tests und internen Arbeitsbelege sind nicht Teil dieser Route. Die Modelle arbeiten im Browser; aus ihnen folgt keine Aussage über reale Physik, Biologie, Personen oder eine vollständige Projektgeschichte. Öffentliche Projektlinks werden erst nach einer Auswahl geöffnet.
+Diese öffentliche Browserfassung entstand am 1. November 2026 als statische Teilmenge des lokal geprüften Starship Lab v0.13. Spätere Korrekturen an Bedienung und Katalogtext brachten die öffentliche Oberfläche auf v0.15. Das aktuelle vollständige lokale Paket v0.15 wurde frisch entpackt und mit 172/172 bestandenen Tests geprüft; Paket und Testumgebung sind von der veröffentlichten Route getrennt. Die Route enthält die für die Browseransicht benötigten statischen Dateien, aber keine lokale Startsoftware oder internen Arbeitsbelege. Die Modelle arbeiten im Browser; aus ihnen folgt keine Aussage über reale Physik, Biologie, Personen oder eine vollständige Projektgeschichte. Öffentliche Projektlinks werden erst nach einer Auswahl geöffnet.
 
 Die neue Oberfläche und ihre Adapter stehen unter [HALVETH PIRL 2.0](vendor/licenses/LICENSE-HALVETH-PIRL-2.0.md), soweit eigene schutzfähige Rechte bestehen. Die folgenden übernommenen Module und Bilder behalten **ihre jeweiligen** Bedingungen. Die Zuordnung ist auch in der [Lizenzkarte des Website-Repositories](../LICENSES.md) vermerkt.
 
@@ -28,4 +28,4 @@ Die neue Oberfläche und ihre Adapter stehen unter [HALVETH PIRL 2.0](vendor/lic
 
 Der Atlas-Raum verwendet einen eigenen JavaScript-Adapter zu einem für die lokale Prototypentwicklung bereitgestellten PRO-ATLAS-Pythonmodell. Diese öffentliche Route enthält weder das Quellarchiv noch dessen interne Prüfschritte. Der Adapter erzeugt Modellansichten; er belegt keine physikalische Materialisierung, fremde Zustimmung oder Release-Autorität.
 
-Alle gepinnten Quellangaben bezeichnen einen Quellstand. Sie sind kein Beweis für die Wirkung der neuen Browserintegration. Die lokalen Tests der vollständigen v0.13-Fassung und die Beobachtung dieser veröffentlichten Route werden getrennt geführt.
+Alle gepinnten Quellangaben bezeichnen einen Quellstand. Sie sind kein Beweis für die Wirkung der neuen Browserintegration. Die lokalen Tests des vollständigen v0.15-Pakets und die Beobachtung dieser veröffentlichten Route werden getrennt geführt.
