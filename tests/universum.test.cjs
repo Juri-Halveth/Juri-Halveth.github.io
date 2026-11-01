@@ -52,3 +52,16 @@ test('Starship static document has no broken same-route resources or credits lin
     assert.ok(fs.existsSync(target), `Missing ${raw}`);
   }
 });
+
+test('portfolio entrances expose one working Starship Lab route and sitemap entry', () => {
+  const root = path.join(__dirname, '..');
+  for (const page of ['index.html', 'en/index.html', 'ru/index.html', 'arbeiten/index.html', 'en/arbeiten/index.html', 'ru/arbeiten/index.html']) {
+    const doc = new JSDOM(fs.readFileSync(path.join(root, page), 'utf8')).window.document;
+    const links = [...doc.querySelectorAll('header nav a')].filter(a => a.textContent === 'Starship Lab');
+    assert.equal(links.length, 1, page);
+    const target = new URL(links[0].getAttribute('href'), `https://juri-halveth.github.io/${page}`);
+    assert.equal(target.pathname, '/universum/', page);
+  }
+  const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
+  assert.equal((sitemap.match(/<loc>https:\/\/juri-halveth\.github\.io\/universum\/<\/loc>/g) || []).length, 1);
+});

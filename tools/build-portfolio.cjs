@@ -60,6 +60,10 @@ for(const lang of Object.keys(copy)){
   // Keep all local resources relative to the generated route.
   const relativeRoot='../'.repeat((lang==='de'?0:1)+(route?1:0))||'./';
   let portableHtml=html.replace(/\b(href|src)="\/([^"]*)"/g,(_,attribute,target)=>`${attribute}="${relativeRoot}${target}"`);
+  // The browser lab has one German route; its product name is the same in every navigation.
+  const contactNav=`<a href="#contact">${t.contact}</a>`;
+  if(!portableHtml.includes(contactNav))throw new Error('Contact navigation missing');
+  portableHtml=portableHtml.replace(contactNav,`<a href="${relativeRoot}universum/">Starship Lab</a>${contactNav}`);
   if(route==='forschung/'){
    const links=['portal.css','portfolio.css','showcase.css','research-os.css'].map(name=>`<link rel="stylesheet" href="${relativeRoot}${name}">`).join('');
    if(!portableHtml.includes(links))throw new Error('Research stylesheet links missing');
@@ -77,6 +81,6 @@ for(const lang of Object.keys(copy)){
 }
 put('404.html',`<!doctype html><html lang="de"><meta charset="utf-8"><title>HALVETH · Übersicht</title><h1>Diese Adresse wurde neu geordnet.</h1><p><a href="/">Projekte & Arbeitsproben öffnen</a></p></html>\n`);
 put('robots.txt',fs.readFileSync(path.join(root,'data/robots.txt'),'utf8'));
-put('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+Object.keys(copy).flatMap(l=>routes.filter(r=>!['pulsar/','zertifikate/','werkzertifikate/'].includes(r)).map(r=>'<url><loc>https://juri-halveth.github.io/'+(l==='de'?'':l+'/')+r+'</loc></url>')).join('')+'</urlset>\n');
+put('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+Object.keys(copy).flatMap(l=>routes.filter(r=>!['pulsar/','zertifikate/','werkzertifikate/'].includes(r)).map(r=>'<url><loc>https://juri-halveth.github.io/'+(l==='de'?'':l+'/')+r+'</loc></url>')).join('')+'<url><loc>https://juri-halveth.github.io/universum/</loc></url></urlset>\n');
 put('profil/CV-Juri-Halveth.md','# Juri\n\nSoftwareentwicklung · interaktive Grafik · Lernangebote\n\nEntwicklung mit KI-Unterstützung.\n\n[Projekte und Arbeitsproben](https://juri-halveth.github.io/profil/)\n\nKontakt: juri@halveth.de\n');
 console.log(`Built ${routes.length*3+1} public pages from ${data.projects.length} technical projects.`);

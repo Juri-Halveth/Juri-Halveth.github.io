@@ -36,7 +36,7 @@
       <svg id="atlasWave" viewBox="0 0 800 180" role="img" aria-label="Zwei lokal berechnete endliche Sinusfolgen"></svg>
       <p id="atlasPhaseReadout" class="atlas-readout" aria-live="polite">Modell bereit.</p>
       <div class="atlas-gate"><span class="eyebrow">FÜNFFACH-PRÜFMEMBRAN · NUR DEKLARIERT</span><p>Jeder Wert ist eine Eingabe. „Pass“ prüft hier keinen realen Test, „Konflikt“ braucht eine eigene Klärung. Der letzte Zustand ist immer nur ein Vorschlag.</p><div id="atlasChecks" class="atlas-checks"></div><div class="atlas-gate-actions"><button id="atlasGateCheck" type="button">Kandidat lokal auswerten</button><button id="atlasGateReset" type="button">Eingaben zurücksetzen</button></div><output id="atlasGateResult" class="atlas-readout" aria-live="polite">HOLD · fünf Bedingungen sind unbekannt</output></div>
-      <p class="atlas-source">Quelle: bereitgestellter PRO ATLAS, <code>atlas.py</code> → eigener reiner JavaScript-Adapter. <a href="CREDITS.md#atlas" target="_blank" rel="noopener noreferrer">Öffentlicher Herkunftshinweis ↗</a>. Keine physikalische Zustandsbehauptung, keine Review- oder Merge-Autorität.</p>`;
+      <p class="atlas-source">Quelle: bereitgestellter PRO ATLAS, <code>atlas.py</code> → eigener reiner JavaScript-Adapter. <a href="https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/83e9be26793e319aef422df0e50afae619b8de6b/universum/CREDITS.md#atlas" target="_blank" rel="noopener noreferrer">Öffentlicher Herkunftshinweis ↗</a>. Keine physikalische Zustandsbehauptung, keine Review- oder Merge-Autorität.</p>`;
     const by = (id) => container.querySelector("#" + id);
     const chart = by("atlasWave");
     const checks = by("atlasChecks");
