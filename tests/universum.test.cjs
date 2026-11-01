@@ -132,3 +132,26 @@ test('portfolio entrances expose one working Starship Lab route and sitemap entr
   const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
   assert.equal((sitemap.match(/<loc>https:\/\/juri-halveth\.github\.io\/universum\/<\/loc>/g) || []).length, 1);
 });
+
+test('three language homepages lead with a visible Starship gateway and local image', () => {
+  const root = path.join(__dirname, '..');
+  const expectedTitles = {
+    'index.html': '18 Projekte. Ein begehbares Netz.',
+    'en/index.html': '18 projects. One navigable network.',
+    'ru/index.html': '18 проектов. Одна исследуемая сеть.'
+  };
+  for (const [page, title] of Object.entries(expectedTitles)) {
+    const doc = new JSDOM(fs.readFileSync(path.join(root, page), 'utf8'), {
+      url: `https://juri-halveth.github.io/${page}`
+    }).window.document;
+    const main = doc.querySelector('main');
+    const gateway = main.firstElementChild;
+    assert.ok(gateway.classList.contains('universe-gateway'), page);
+    assert.equal(gateway.querySelector('h2')?.textContent, title, page);
+    assert.ok(gateway.querySelector('a')?.href.endsWith('/universum/'), page);
+    const image = gateway.querySelector('img');
+    assert.ok(image?.alt, page);
+    const imageUrl = new URL(image.getAttribute('src'), `https://juri-halveth.github.io/${page}`);
+    assert.ok(fs.existsSync(path.join(root, imageUrl.pathname.slice(1))), page);
+  }
+});

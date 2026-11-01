@@ -1,5 +1,16 @@
 /* Original scene-first portfolio presentation. See LICENSES.md. */
 .site-header{min-height:88px}
+.universe-gateway{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.18fr);align-items:center;gap:5%;margin:0 auto 46px;padding:34px;background:#07131c;color:#f7f8f5;overflow:hidden;isolation:isolate}
+.universe-gateway-copy{position:relative;z-index:1}
+.universe-gateway .eyebrow{color:#67ddd1;margin-bottom:18px}
+.universe-gateway h2{font-size:clamp(30px,3.3vw,50px);line-height:1.12;letter-spacing:-.035em;margin:0 0 18px}
+.universe-gateway-copy>p:not(.eyebrow):not(.universe-gateway-note){font-size:16px;line-height:1.6;max-width:520px;color:#dce7e8}
+.universe-gateway-link{display:inline-block;margin:23px 0 12px;padding:13px 18px;background:#db525d;color:#fff;text-decoration:none;font-weight:700;border:1px solid #ef7780}
+.universe-gateway-link:hover{background:#f16974;color:#fff}
+.universe-gateway a:focus-visible{outline:3px solid #67ddd1;outline-offset:4px}
+.universe-gateway-note{font:11px/1.5 ui-monospace,Consolas,monospace;color:#9bb9c0;margin:0}
+.universe-gateway img{display:block;width:100%;height:auto;min-width:0;filter:drop-shadow(0 12px 28px rgba(21,218,201,.12))}
+@media(max-width:760px){.universe-gateway{grid-template-columns:1fr;gap:15px;padding:24px;margin-bottom:34px}.universe-gateway img{order:-1}.universe-gateway h2{font-size:clamp(28px,8vw,42px)}}
 .scene-hero.hero{display:block;padding:40px 0 42px}
 .scene-heading{display:grid;grid-template-columns:1.05fr 1fr;gap:7%;align-items:end;margin-bottom:30px}
 .scene-heading .eyebrow{margin-bottom:15px}
