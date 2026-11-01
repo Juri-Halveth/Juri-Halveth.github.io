@@ -4,6 +4,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
+const vm = require('node:vm');
 const {JSDOM} = require('jsdom');
 
 const route = path.join(__dirname, '..', 'universum');
@@ -39,6 +40,24 @@ test('Starship site includes only public runtime and license material', () => {
     .map(file => fs.readFileSync(path.join(route, file), 'utf8')).join('\n');
   assert.doesNotMatch(publishedText, /C:\\Users\\|HALVETH-LUCINET-RUNTIME-v1|Dragonwilds|perspective-corridor\/0\.1\.0|HALVETH_PRO_ATLAS_V1/i);
   assert.doesNotMatch(publishedText, /START\.cmd|privaten gepinnten Kern|konnte nicht lokal geladen werden/i);
+});
+
+test('public history JSON matches browser manifests and both Node adapters load every selection', () => {
+  const manifests = [
+    ['halveth-scarlet', 'scarlet', 'HALVETH_SCARLET_HISTORY'],
+    ['halveth-forschungslabor', 'endeck', 'HALVETH_ENDECK_HISTORY'],
+    ['halveth-field-difference-lab', 'field-difference', 'HALVETH_FIELD_DIFFERENCE_HISTORY']
+  ];
+  const portalTime = require(path.join(route, 'portal-time.js'));
+  const sourceNetz = require(path.join(route, 'source-netz.js'));
+  for (const [projectId, filename, globalName] of manifests) {
+    const json = JSON.parse(fs.readFileSync(path.join(route, 'data', `${filename}-history.json`), 'utf8'));
+    const browser = {window: {}};
+    vm.runInNewContext(fs.readFileSync(path.join(route, 'data', `${filename}-history-data.js`), 'utf8'), browser);
+    assert.deepEqual(json, JSON.parse(JSON.stringify(browser.window[globalName])), projectId);
+    assert.equal(portalTime.forProject(projectId).events.length, 4, projectId);
+    assert.equal(sourceNetz.forProject(projectId).revisions.length, 4, projectId);
+  }
 });
 
 test('Starship static document has no broken same-route resources or credits links', () => {
