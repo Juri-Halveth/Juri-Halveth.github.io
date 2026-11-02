@@ -56,6 +56,19 @@ test('FORTUNA browser, separate local, loopback and external goal remain distinc
   }
 });
 
+test('SCARLET public subspaces retain their own source revision in the agent context', () => {
+  const source = catalog.projects.find(project => project.id === 'halveth-scarlet');
+  const context = require('../universum/api/projects/halveth-scarlet.json');
+  assert.equal(context.publicSubspaces.length, 2);
+  for (const [index, space] of context.publicSubspaces.entries()) {
+    assert.equal(space.id, source.site.subspaces[index].id);
+    assert.equal(space.url, source.site.subspaces[index].url);
+    assert.equal(space.source.revision, source.site.subspaces[index].source_revision);
+    assert.equal(space.source.observedAt, '2026-11-03');
+  }
+  assert.notEqual(context.publicSubspaces[0].source.revision, context.source.revision);
+});
+
 test('a newer catalog source cannot inherit reviewed project claims', () => {
   const changed = structuredClone(catalog);
   changed.projects[10].site.revision = 'a'.repeat(40);

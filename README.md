@@ -40,6 +40,13 @@ Der Atlas zeigt alle Einstiege mit eigenen Motiven auf der gesamten Bühne.
 Schematische Motive sind als Illustrationen gekennzeichnet und keine
 Laufzeitaufnahmen.
 
+Die SCARLET-Karte führt jetzt auch direkt in die öffentliche 1001-Konstellation
+mit 68 Entitäten und in deren Wellenmodus. Beide Adressen gehören zum selben
+SCARLET-Repository und sind keine zusätzlichen Projekte. Ihr eigener
+Quellstand und Beobachtungstag stehen im Katalog getrennt vom älteren
+Quellstand der Hauptkarte. Der Starship-Projektfokus zeigt dieselben direkten
+Einstiege neben seinem eigenständigen lokalen Zellmodell.
+
 ## Lokal bauen
 
 Auf der Projektübersicht lassen sich die 13 aktuell präsentierten Projekte nach

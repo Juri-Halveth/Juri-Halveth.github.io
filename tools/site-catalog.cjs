@@ -22,6 +22,21 @@ function safeUrl(value){
  if(url.hostname==='juri-halveth.github.io'&&url.pathname.includes('..'))throw Error('Unsafe catalog path');
  return value;
 }
+function validateSubspaces(project){
+ const rows=project.site.subspaces;
+ if(rows===undefined)return;
+ if(project.id!=='halveth-scarlet'||!Array.isArray(rows)||rows.length!==2||rows.map(row=>row.id).join(',')!=='entity-space-1001,entity-wave')throw Error('Unexpected project subspaces');
+ const destinations={
+  'entity-space-1001':'https://juri-halveth.github.io/halveth-scarlet/entities/',
+  'entity-wave':'https://juri-halveth.github.io/halveth-scarlet/entities/?view=chain#scarlet'
+ };
+ for(const row of rows){
+  if(row.url!==destinations[row.id])throw Error('Unreviewed subspace destination');
+  if(!/^[0-9a-f]{40}$/.test(row.source_revision)||row.source_url!==`https://github.com/Juri-Halveth/halveth-scarlet/blob/${row.source_revision}/assets/entity-world.mjs`)throw Error('Subspace source binding mismatch');
+  if(typeof row.observed_at!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(row.observed_at)||new Date(row.observed_at+'T00:00:00Z').toISOString().slice(0,10)!==row.observed_at)throw Error('Invalid subspace observation date');
+  for(const field of ['label','description'])for(const lang of languages)if(typeof row[field]?.[lang]!=='string'||!row[field][lang].trim()||row[field][lang].length>140)throw Error('Localized subspace text required');
+ }
+}
 function validateSiteCatalog(catalog){
  if(catalog?.schema!=='halveth.portal.catalog.v1'||!Array.isArray(catalog.projects)||catalog.projects.length!==18)throw Error('Public catalog must bind current 18-entry snapshot');
  if(typeof catalog.source_date!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(catalog.source_date)||new Date(catalog.source_date+'T00:00:00Z').toISOString().slice(0,10)!==catalog.source_date)throw Error('Invalid catalog source date');
@@ -46,6 +61,7 @@ function validateSiteCatalog(catalog){
    if(!Number.isSafeInteger(p.site.pr_number)||p.site.pr_number<1||entryUrl.pathname!==`/Juri-Halveth/${p.id}/pull/${p.site.pr_number}`)throw Error('PR entry mismatch');
   }else if(p.site.pr_number!==undefined&&p.site.pr_number!==null)throw Error('PR number without PR entry');
   if((p.site.editorial_state==='WITHDRAWN_FROM_PORTFOLIO')!==withdrawnFromPortfolio.has(p.id))throw Error('Portfolio editorial state mismatch');
+  validateSubspaces(p);
   if(p.site.entry_type==='PROJECT')projectCount++;else metaCount++;
   for(const field of ['title','summary','action'])for(const lang of languages)if(typeof p.site[field]?.[lang]!=='string'||!p.site[field][lang].trim())throw Error('Localized '+field+' required');
   if(p.site.revision!==null&&!/^[0-9a-f]{40}$/.test(p.site.revision))throw Error('Invalid optional pinned revision');
@@ -78,6 +94,16 @@ function entryHref(project,lang){
  if(project.id!=='halveth-scarlet'||lang==='de')return project.url;
  const url=new URL(project.url);url.searchParams.set('lang',lang);return url.href;
 }
+function subspaceHref(subspace,lang){
+ if(lang==='de')return subspace.url;
+ const url=new URL(subspace.url);url.searchParams.set('lang',lang);return url.href;
+}
+function renderSubspaces(project,lang){
+ const rows=project.site.subspaces;
+ if(!rows)return '';
+ const title={de:'Weitere Räume dieses Projekts',en:'More spaces in this project',ru:'Другие пространства проекта'}[lang];
+ return `<nav class="directory-subspaces" aria-label="${escape(title)}"><span>${escape(title)}</span>${rows.map(row=>`<a href="${escape(subspaceHref(row,lang))}" title="${escape(row.description[lang])}">${escape(row.label[lang])} ↗</a>`).join('')}</nav>`;
+}
 function featureCard(project,lang,hero=false){
  const t=copy[lang];const s=project.site;
  return `<article class="service-card${hero?' service-card-first':''}" data-featured-project="${escape(project.id)}"><p class="work-kind">${escape(entryStatus(project,lang))}</p><h${hero?2:3}>${escape(s.title[lang])}</h${hero?2:3}><p>${escape(s.summary[lang])}</p><div class="service-card-actions"><a class="button" href="${escape(entryHref(project,lang))}">${escape(s.action[lang])} ↗</a><a class="text-link" href="${escape(project.source_url)}">${escape(sourceAction(project,lang))} ↗</a></div><p class="source-caption">${escape(project.title)} · ${escape(project.repository)}</p></article>`;
@@ -90,7 +116,7 @@ function renderHome(catalog,lang){
 }
 function directoryCard(project,lang){
  const t=copy[lang],s=project.site;
- return `<article class="directory-project" data-project="${escape(project.id)}" data-category="${escape(s.primary_category)}"><p class="work-kind">${escape(entryStatus(project,lang))}</p><h3>${escape(s.title[lang])}</h3><p>${escape(s.summary[lang])}</p><div class="directory-actions"><a class="button" href="${escape(entryHref(project,lang))}">${escape(s.action[lang])} ↗</a><a class="text-link" href="${escape(project.source_url)}">${escape(sourceAction(project,lang))} ↗</a></div><p class="source-caption">${escape(project.title)} · ${escape(project.repository)}</p></article>`;
+ return `<article class="directory-project" data-project="${escape(project.id)}" data-category="${escape(s.primary_category)}"><p class="work-kind">${escape(entryStatus(project,lang))}</p><h3>${escape(s.title[lang])}</h3><p>${escape(s.summary[lang])}</p>${renderSubspaces(project,lang)}<div class="directory-actions"><a class="button" href="${escape(entryHref(project,lang))}">${escape(s.action[lang])} ↗</a><a class="text-link" href="${escape(project.source_url)}">${escape(sourceAction(project,lang))} ↗</a></div><p class="source-caption">${escape(project.title)} · ${escape(project.repository)}</p></article>`;
 }
 function renderDirectory(catalog,lang){
  validateSiteCatalog(catalog);const t=copy[lang];if(!t)throw Error('Unknown site language');

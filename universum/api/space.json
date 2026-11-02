@@ -1,9 +1,9 @@
 {
   "schema": "halveth.agent-space.v1",
   "baseURL": "https://juri-halveth.github.io/universum/",
-  "revision": "d0368e2d3789546ce5ba35b9ec912235464a4038572abffb8d5031072452ced7",
+  "revision": "08535124ec99bc551b90c1a9404ef845dc58176fa896eb8190d9726796a40cca",
   "sourceDate": "2026-11-02",
-  "catalogSha256": "1f6c53d4589d0be524db2999fd9a6657aa4353b4e5a75539f71097b2295fb234",
+  "catalogSha256": "fd4411907c181d63179e1293a2be1669acbe5d7e6f69054584623565f4a1ee9e",
   "briefSha256": "d8f7206c88e072c5c1fecabdbf86db60d6c3e426f430f37b47c4c23c87269059",
   "count": 18,
   "access": {
@@ -23,8 +23,8 @@
         "worlds"
       ],
       "path": "api/projects/halveth-scarlet.json",
-      "bytes": 1130,
-      "sha256": "8b7d29998ef828914303ad0e2dbba153c70e2612ba7a96ff82b0b00c6469585f"
+      "bytes": 2935,
+      "sha256": "587d02747695041892890b0f2537eb4be4fd965be21006ad002c0db29f015d68"
     },
     {
       "id": "lucinet-seedspace",

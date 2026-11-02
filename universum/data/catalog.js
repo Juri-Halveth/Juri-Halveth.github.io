@@ -2,7 +2,7 @@ window.HALVETH_CATALOG =
 {
   "schema": "halveth.portal.catalog.v1",
   "source_date": "2026-11-02",
-  "source_kind": "2026-11-01 connected GitHub inventory, supplemented by 2026-11-02 source-bound README/code review; editorial navigation, not runtime verification",
+  "source_kind": "2026-11-01 connected GitHub inventory, supplemented by 2026-11-02 source-bound README/code review and 2026-11-03 SCARLET subspace check; editorial navigation, not runtime verification",
   "inventory_scope": "The 18 public entries come from the earlier connected inventory; account-wide completeness was not rechecked on 2026-11-02. No private names exported.",
   "categories": [
     {
@@ -82,7 +82,43 @@ window.HALVETH_CATALOG =
         "status": "BROWSER_ENTRY",
         "revision": "9f706b9f6bba255f30cde703f851ba80cd64d9bc",
         "editorial_state": "CURRENT",
-        "revision_observed_at": "2026-10-27"
+        "revision_observed_at": "2026-10-27",
+        "subspaces": [
+          {
+            "id": "entity-space-1001",
+            "url": "https://juri-halveth.github.io/halveth-scarlet/entities/",
+            "label": {
+              "de": "1001 / Konstellation · 68",
+              "en": "1001 / Constellation · 68",
+              "ru": "1001 / Созвездие · 68"
+            },
+            "description": {
+              "de": "SCARLETs 68 Entitäten und ihre Formen im Browser erkunden.",
+              "en": "Explore SCARLET's 68 entities and their forms in the browser.",
+              "ru": "Исследуйте 68 сущностей SCARLET и их формы в браузере."
+            },
+            "source_revision": "c36150b55fe9ed4207f185d7092b3184c353df93",
+            "source_url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/c36150b55fe9ed4207f185d7092b3184c353df93/assets/entity-world.mjs",
+            "observed_at": "2026-11-03"
+          },
+          {
+            "id": "entity-wave",
+            "url": "https://juri-halveth.github.io/halveth-scarlet/entities/?view=chain#scarlet",
+            "label": {
+              "de": "Welle · 68 Formen",
+              "en": "Wave · 68 forms",
+              "ru": "Волна · 68 форм"
+            },
+            "description": {
+              "de": "Alle Formen als eine bewegliche Kette verfolgen.",
+              "en": "Follow every form in one moving chain.",
+              "ru": "Проследите все формы как одну движущуюся цепь."
+            },
+            "source_revision": "c36150b55fe9ed4207f185d7092b3184c353df93",
+            "source_url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/c36150b55fe9ed4207f185d7092b3184c353df93/assets/entity-world.mjs",
+            "observed_at": "2026-11-03"
+          }
+        ]
       }
     },
     {

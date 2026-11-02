@@ -62,6 +62,26 @@ test('SCARLET direct actions preserve the requested language in the directory',(
  }
 });
 
+test('SCARLET exposes its two distinct 68-entity rooms without a duplicate project card',()=>{
+ const scarlet=catalog.projects.find(p=>p.id==='halveth-scarlet');
+ assert.deepEqual(scarlet.site.subspaces.map(row=>row.id),['entity-space-1001','entity-wave']);
+ for(const [route,lang] of [['arbeiten/','de'],['en/arbeiten/','en'],['ru/arbeiten/','ru']]){
+  const doc=read(route);
+  assert.equal(doc.querySelectorAll('[data-project="halveth-scarlet"]').length,1);
+  const links=[...doc.querySelectorAll('[data-project="halveth-scarlet"] .directory-subspaces a')];
+  assert.equal(links.length,2);
+  for(const [index,link] of links.entries()){
+   const url=new URL(link.href);
+   const source=scarlet.site.subspaces[index];
+   assert.equal(url.pathname,'/halveth-scarlet/entities/');
+   assert.equal(url.searchParams.get('lang'),lang==='de'?null:lang);
+   assert.equal(url.searchParams.get('view'),index===1?'chain':null);
+   assert.equal(url.hash,index===1?'#scarlet':'');
+   assert.ok(link.textContent.includes(source.label[lang]));
+  }
+ }
+});
+
 test('catalog rejects duplicate identity, wrong source revision, URL origin and withdrawn reentry',()=>{
  const bad=change=>{const copy=structuredClone(catalog);change(copy);assert.throws(()=>validateSiteCatalog(copy));};
  bad(x=>x.projects[1].id=x.projects[0].id);
@@ -73,6 +93,9 @@ test('catalog rejects duplicate identity, wrong source revision, URL origin and 
  bad(x=>x.projects.find(p=>p.id==='halveth-tresor').site.release_tag='v2.0.0');
  bad(x=>x.projects.find(p=>p.id==='halveth-tron-security-lab').site.pr_number=2);
  bad(x=>x.projects.find(p=>p.id==='halveth-realms').site.editorial_state='CURRENT');
+ bad(x=>x.projects[0].site.subspaces[0].url='https://example.com/halveth-scarlet/entities/');
+ bad(x=>x.projects[0].site.subspaces[0].source_revision='a'.repeat(40));
+ bad(x=>x.projects[0].site.subspaces[0].label.en='');
 });
 
 test('release, research PR and browser vault actions lead to their stated destinations',()=>{

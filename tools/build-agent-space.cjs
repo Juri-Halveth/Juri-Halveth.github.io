@@ -54,6 +54,11 @@ function buildAgentSpace(root, catalog) {
       schema: 'halveth.project-context.v1', id: project.id, title: project.title,
       categories: project.categories, state: brief.state,
       publicEntry: {url: project.url, action: project.action},
+      ...(project.site?.subspaces ? {publicSubspaces: project.site.subspaces.map(space => ({
+        id: space.id, url: space.url, label: space.label, description: space.description,
+        source: {url: space.source_url, revision: space.source_revision, observedAt: space.observed_at},
+        evidenceLevel: 'PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION'
+      }))} : {}),
       capability: {core: brief.core, value: brief.value, boundary: brief.boundary},
       ...(brief.local ? {separateLocalPrototype: brief.local} : {}),
       ...(brief.local ? {separateLocalPrototypeEvidence: brief.localEvidence} : {}),
