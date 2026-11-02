@@ -34,6 +34,10 @@ function validateSubspaces(project){
   'halveth-forschungslabor':{
    paths:{'number-doors-1001':'https://juri-halveth.github.io/halveth-forschungslabor/branches/1001-doors/'},
    sourcePath:'branches/1001-doors/index.html'
+  },
+  'lucinet-seedspace':{
+   paths:{'seedspace-capsules':'https://juri-halveth.github.io/lucinet-seedspace/'},
+   sourcePath:'index.html'
   }
  };
  const definition=definitions[project.id];
@@ -45,7 +49,7 @@ function validateSubspaces(project){
   if(project.id==='halveth-scarlet'){
    if(row.availability!==undefined||row.published_at!==undefined)throw Error('SCARLET subspace publication state changed');
   }else{
-   if(!['PENDING_PUBLICATION','PUBLISHED'].includes(row.availability))throw Error('Forschungslabor subspace publication state required');
+   if(!['PENDING_PUBLICATION','PUBLISHED'].includes(row.availability))throw Error('Subspace publication state required');
    if(row.availability==='PENDING_PUBLICATION'&&row.published_at!==undefined)throw Error('Pending subspace cannot claim publication');
    if(row.availability==='PUBLISHED'&&(typeof row.published_at!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(row.published_at)||new Date(row.published_at+'T00:00:00Z').toISOString().slice(0,10)!==row.published_at))throw Error('Published subspace needs observation date');
   }
@@ -58,6 +62,11 @@ function publishedSubspaces(project){
 function validateSiteCatalog(catalog){
  if(catalog?.schema!=='halveth.portal.catalog.v1'||!Array.isArray(catalog.projects)||catalog.projects.length!==18)throw Error('Public catalog must bind current 18-entry snapshot');
  if(typeof catalog.source_date!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(catalog.source_date)||new Date(catalog.source_date+'T00:00:00Z').toISOString().slice(0,10)!==catalog.source_date)throw Error('Invalid catalog source date');
+ if(typeof catalog.inventory_observed_at!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(catalog.inventory_observed_at)||new Date(catalog.inventory_observed_at+'T00:00:00Z').toISOString().slice(0,10)!==catalog.inventory_observed_at)throw Error('Invalid inventory observation date');
+ const inventory=catalog.inventory_counts;
+ if(!inventory||!Number.isSafeInteger(inventory.owner_repositories)||!Number.isSafeInteger(inventory.public_repositories)||!Number.isSafeInteger(inventory.private_repositories)||!Number.isSafeInteger(inventory.public_pages)
+  ||inventory.public_repositories!==catalog.projects.length||inventory.private_repositories<0||inventory.public_pages<0||inventory.public_pages>inventory.public_repositories
+  ||inventory.owner_repositories!==inventory.public_repositories+inventory.private_repositories)throw Error('Inventory count mismatch');
  if(!Array.isArray(catalog.home_featured_ids)||catalog.home_featured_ids.length!==4||new Set(catalog.home_featured_ids).size!==4)throw Error('Four unique selected entries required');
  const ids=new Set(),repositories=new Set();let projectCount=0,metaCount=0;
  for(const p of catalog.projects){

@@ -1,8 +1,15 @@
 {
   "schema": "halveth.portal.catalog.v1",
   "source_date": "2026-11-02",
-  "source_kind": "2026-11-01 connected GitHub inventory, supplemented by 2026-11-02 source-bound README/code review and 2026-11-03 SCARLET and 1001-door Pages observations; editorial navigation, not runtime verification",
-  "inventory_scope": "The 18 public entries come from the earlier connected inventory; account-wide completeness was not rechecked on 2026-11-02. No private names exported.",
+  "source_kind": "2026-11-02 editorial source review, supplemented by 2026-11-03 owner inventory and source-bound Pages observations; navigation, not complete runtime verification",
+  "inventory_scope": "Read-only owner inventory on 2026-11-03: 29 repositories, 18 public and 11 private; 11 public repositories with Pages configured. This catalog exposes only the 18 public entries. No private names exported.",
+  "inventory_observed_at": "2026-11-03",
+  "inventory_counts": {
+    "owner_repositories": 29,
+    "public_repositories": 18,
+    "private_repositories": 11,
+    "public_pages": 11
+  },
   "categories": [
     {
       "id": "software",
@@ -159,7 +166,28 @@
         "status": "SOURCE_AND_GUIDE",
         "revision": "6d0e91c056caee46e2ca2d4faaf7bcdd1975dddc",
         "editorial_state": "CURRENT",
-        "revision_observed_at": "2026-10-27"
+        "revision_observed_at": "2026-10-27",
+        "subspaces": [
+          {
+            "id": "seedspace-capsules",
+            "url": "https://juri-halveth.github.io/lucinet-seedspace/",
+            "label": {
+              "de": "Seedspace · Lichtkapseln (DE)",
+              "en": "Seedspace · light capsules (DE)",
+              "ru": "Seedspace · световые капсулы (DE)"
+            },
+            "description": {
+              "de": "Eigenständige Browser-Szene: fünf Lichtkapseln werfen und Räume entfalten; kein NOVA-Dienst.",
+              "en": "Separate German-language browser scene: throw five light capsules to unfold scenes; not a NOVA service.",
+              "ru": "Отдельная немецкоязычная браузерная сцена: бросьте пять световых капсул; это не сервис NOVA."
+            },
+            "source_revision": "66e13a7b6bc7976963ec5d26ad055232fa57ab3a",
+            "source_url": "https://github.com/Juri-Halveth/lucinet-seedspace/blob/66e13a7b6bc7976963ec5d26ad055232fa57ab3a/index.html",
+            "observed_at": "2026-11-03",
+            "availability": "PUBLISHED",
+            "published_at": "2026-11-02"
+          }
+        ]
       }
     },
     {

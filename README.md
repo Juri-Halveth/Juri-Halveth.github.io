@@ -15,6 +15,12 @@ zurückgezogene Spielpräsentationen sind weiterhin nur im Quellenbestand und
 im optionalen Lab erfasst; die redaktionelle Sperre aus
 `tools/validate-portfolio-selection.cjs` bleibt bestehen.
 
+Ein lesender Account-Bestandsabruf vom 3. November zählt 29 eigene Repositories:
+18 öffentliche und 11 private; für 11 öffentliche Repositories ist Pages
+konfiguriert. Der öffentliche Katalog zeigt weiterhin nur die 18 öffentlichen
+Einträge. Sein redaktionelles `source_date` vom 2. November ist ein anderer
+Zeitstand als dieser Inventarabruf; private Namen werden nicht exportiert.
+
 [Starship Lab öffnen](https://juri-halveth.github.io/universum/) ·
 [Szenen und Modelle ansehen](https://juri-halveth.github.io/modelle/) ·
 [Technische Karte](https://juri-halveth.github.io/koennen/)
@@ -52,6 +58,13 @@ Ein anderer, eigenständiger Raum des Forschungslabors heißt „1001 Türen“ 
 ist beim Forschungslabor als zusätzlicher Projekteinstieg verknüpft. Die
 SCARLET-Konstellation mit 68 Entitäten und dieses Zahlenlabor haben getrennte
 Quellen und Funktionen.
+
+Die NOVA-Karte führt die lokale Python-Demo als Hauptaktion. Daneben öffnet sie
+den öffentlich erreichbaren [Seedspace-Kapselraum](https://juri-halveth.github.io/lucinet-seedspace/)
+als eigene deutschsprachige Browser-Szene desselben Repositories. Dort werden
+Lichtkapseln in einen Raum geworfen und Szenen entfaltet. Der Seedspace-Raum ist
+kein gehosteter NOVA-Dienst. Sein eigener Quellstand und der Beobachtungstag
+stehen getrennt vom älteren Quellstand der NOVA-Hauptkarte.
 
 ## Lokal bauen
 

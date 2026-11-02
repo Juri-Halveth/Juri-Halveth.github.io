@@ -80,6 +80,19 @@ test('published Forschungslabor 1001 doors has its own source-bound agent link',
   assert.notEqual(context.publicSubspaces[0].source.revision, context.source.revision);
 });
 
+test('Seedspace agent context distinguishes its published scene from the local NOVA action', () => {
+  const source = catalog.projects.find(project => project.id === 'lucinet-seedspace');
+  const context = require('../universum/api/projects/lucinet-seedspace.json');
+  assert.equal(context.publicEntry.url, source.url);
+  assert.equal(context.publicSubspaces.length, 1);
+  assert.equal(context.publicSubspaces[0].id, 'seedspace-capsules');
+  assert.equal(context.publicSubspaces[0].url, source.site.subspaces[0].url);
+  assert.equal(context.publicSubspaces[0].source.revision, '66e13a7b6bc7976963ec5d26ad055232fa57ab3a');
+  assert.equal(context.publicSubspaces[0].source.observedAt, '2026-11-03');
+  assert.notEqual(context.publicSubspaces[0].source.revision, context.source.revision);
+  assert.match(context.capability.boundary, /keinen gehosteten NOVA-Dienst/);
+});
+
 test('a newer catalog source cannot inherit reviewed project claims', () => {
   const changed = structuredClone(catalog);
   changed.projects[10].site.revision = 'a'.repeat(40);
