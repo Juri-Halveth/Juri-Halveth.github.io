@@ -83,6 +83,7 @@ test('filtered projects show the chosen topic first and retain each other topic 
   window.eval(fs.readFileSync(path.join(route, 'data/catalog.js'), 'utf8'));
   window.eval(fs.readFileSync(path.join(route, 'flight-model.js'), 'utf8'));
   window.eval(fs.readFileSync(path.join(route, 'app.js'), 'utf8'));
+  assert.equal(window.document.getElementById('catalogCount').textContent, '18 EINSTIEGE · 6 THEMEN');
   const filter = window.document.getElementById('categoryFilter');
   filter.value = 'security';
   filter.dispatchEvent(new window.Event('change'));

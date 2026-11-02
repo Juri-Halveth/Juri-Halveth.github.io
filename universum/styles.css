@@ -123,6 +123,7 @@
 .portal[data-range=mid]{width:205px;min-height:76px}
 .portal[data-range=near]{width:262px;min-height:96px}
 .portal[data-editorial-state=source-only]{border-style:dashed;opacity:.86}
+.portal[data-editorial-state=source-only] .portal-art{border-style:dashed}
 .portal[data-editorial-state=source-only] .portal-distance{color:#d8b985}
 .portal[data-signature=halveth-scarlet] .portal-art{clip-path:polygon(50% 0,92% 22%,92% 78%,50% 100%,8% 78%,8% 22%)}
 .portal[data-signature=lucinet-seedspace] .portal-art{border-radius:45% 45% 17% 17%}

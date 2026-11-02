@@ -44,7 +44,7 @@
   let realmsRoom = null;
   let foldRoom = null;
   const ctx = e.canvas.getContext("2d", { alpha: false });
-  e.catalogCount.textContent = projects.length + " PROJEKTE · " + catalog.categories.length + " THEMEN";
+  e.catalogCount.textContent = projects.length + " EINSTIEGE · " + catalog.categories.length + " THEMEN";
   e.motionButton.setAttribute("aria-pressed", String(scene.reduced));
   e.shell.classList.toggle("reduced-motion", scene.reduced);
 
