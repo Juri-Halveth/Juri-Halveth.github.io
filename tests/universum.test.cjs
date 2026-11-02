@@ -3,6 +3,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
+const {createHash} = require('node:crypto');
 const path = require('node:path');
 const vm = require('node:vm');
 const {JSDOM} = require('jsdom');
@@ -70,6 +71,17 @@ test('Starship static document has no broken same-route resources or credits lin
     assert.ok(url.pathname.startsWith('/universum/'), `${raw} escapes the route`);
     const target = path.join(route, decodeURIComponent(url.pathname.slice('/universum/'.length)));
     assert.ok(fs.existsSync(target), `Missing ${raw}`);
+  }
+});
+
+test('Starship catalog and app URLs follow their content to avoid stale browser code', () => {
+  for (const asset of ['data/catalog.js', 'app.js']) {
+    const script = [...document.querySelectorAll('script[src]')].find(node =>
+      new URL(node.src, 'https://juri-halveth.github.io/universum/').pathname.endsWith(`/universum/${asset}`));
+    assert.ok(script, asset);
+    const url = new URL(script.getAttribute('src'), 'https://juri-halveth.github.io/universum/');
+    const digest = createHash('sha256').update(fs.readFileSync(path.join(route, asset))).digest('hex');
+    assert.equal(url.searchParams.get('v'), digest.slice(0, 12), asset);
   }
 });
 
