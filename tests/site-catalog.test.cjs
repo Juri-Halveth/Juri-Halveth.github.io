@@ -105,6 +105,28 @@ test('published Forschungslabor 1001 doors opens from its own project without ch
  }
 });
 
+test('Seedspace opens as a separate capsule scene while NOVA retains its local guide action',()=>{
+ const nova=catalog.projects.find(p=>p.id==='lucinet-seedspace');
+ const scene=nova.site.subspaces[0];
+ assert.equal(nova.site.status,'SOURCE_AND_GUIDE');
+ assert.equal(nova.url,'https://github.com/Juri-Halveth/lucinet-seedspace');
+ assert.equal(scene.id,'seedspace-capsules');
+ assert.equal(scene.url,'https://juri-halveth.github.io/lucinet-seedspace/');
+ assert.equal(scene.source_revision,'66e13a7b6bc7976963ec5d26ad055232fa57ab3a');
+ assert.equal(scene.observed_at,'2026-11-03');
+ assert.equal(scene.availability,'PUBLISHED');
+ for(const [route,lang] of [['arbeiten/','de'],['en/arbeiten/','en'],['ru/arbeiten/','ru']]){
+  const doc=read(route);
+  const cards=doc.querySelectorAll('[data-project="lucinet-seedspace"]');
+  assert.equal(cards.length,1);
+  assert.equal(cards[0].querySelector('.directory-actions .button').href,nova.url);
+  const links=cards[0].querySelectorAll('.directory-subspaces a');
+  assert.equal(links.length,1);
+  assert.equal(links[0].href,scene.url);
+  assert.ok(links[0].textContent.includes(scene.label[lang]));
+ }
+});
+
 test('catalog rejects duplicate identity, wrong source revision, URL origin and withdrawn reentry',()=>{
  const bad=change=>{const copy=structuredClone(catalog);change(copy);assert.throws(()=>validateSiteCatalog(copy));};
  bad(x=>x.projects[1].id=x.projects[0].id);
@@ -112,6 +134,9 @@ test('catalog rejects duplicate identity, wrong source revision, URL origin and 
  bad(x=>x.projects[0].url='javascript:alert(1)');
  bad(x=>x.projects[0].site.status='SOURCE_AND_GUIDE');
  bad(x=>x.source_date='2026-02-30');
+ bad(x=>x.inventory_observed_at='2026-02-30');
+ bad(x=>x.inventory_counts.owner_repositories=28);
+ bad(x=>x.inventory_counts.public_pages=19);
  bad(x=>x.projects[0].site.revision_observed_at='2026-02-30');
  bad(x=>x.projects.find(p=>p.id==='halveth-tresor').site.release_tag='v2.0.0');
  bad(x=>x.projects.find(p=>p.id==='halveth-tron-security-lab').site.pr_number=2);
@@ -122,6 +147,8 @@ test('catalog rejects duplicate identity, wrong source revision, URL origin and 
  bad(x=>x.projects.find(p=>p.id==='halveth-forschungslabor').site.subspaces[0].url='https://example.com/1001-doors/');
  bad(x=>x.projects.find(p=>p.id==='halveth-forschungslabor').site.subspaces[0].source_url='https://github.com/Juri-Halveth/halveth-forschungslabor/blob/main/branches/1001-doors/index.html');
  bad(x=>{delete x.projects.find(p=>p.id==='halveth-forschungslabor').site.subspaces[0].published_at;});
+ bad(x=>x.projects.find(p=>p.id==='lucinet-seedspace').site.subspaces[0].url='https://example.com/lucinet-seedspace/');
+ bad(x=>x.projects.find(p=>p.id==='lucinet-seedspace').site.subspaces[0].source_url='https://github.com/Juri-Halveth/lucinet-seedspace/blob/main/index.html');
 });
 
 test('release, research PR and browser vault actions lead to their stated destinations',()=>{

@@ -11,6 +11,28 @@
     "url": "https://github.com/Juri-Halveth/lucinet-seedspace",
     "action": "Anleitung öffnen"
   },
+  "publicSubspaces": [
+    {
+      "id": "seedspace-capsules",
+      "url": "https://juri-halveth.github.io/lucinet-seedspace/",
+      "label": {
+        "de": "Seedspace · Lichtkapseln (DE)",
+        "en": "Seedspace · light capsules (DE)",
+        "ru": "Seedspace · световые капсулы (DE)"
+      },
+      "description": {
+        "de": "Eigenständige Browser-Szene: fünf Lichtkapseln werfen und Räume entfalten; kein NOVA-Dienst.",
+        "en": "Separate German-language browser scene: throw five light capsules to unfold scenes; not a NOVA service.",
+        "ru": "Отдельная немецкоязычная браузерная сцена: бросьте пять световых капсул; это не сервис NOVA."
+      },
+      "source": {
+        "url": "https://github.com/Juri-Halveth/lucinet-seedspace/blob/66e13a7b6bc7976963ec5d26ad055232fa57ab3a/index.html",
+        "revision": "66e13a7b6bc7976963ec5d26ad055232fa57ab3a",
+        "observedAt": "2026-11-03"
+      },
+      "evidenceLevel": "PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION"
+    }
+  ],
   "capability": {
     "core": "Eine lokale Python-CLI indiziert Quellspans und Revisionen von Notizen und Code und führt Korrekturen mit Belegen fort.",
     "value": "Frühere Arbeit wird auffindbar, prüfbar und für einen nächsten Schritt anschlussfähig.",
