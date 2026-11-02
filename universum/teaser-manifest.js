@@ -36,7 +36,7 @@
       alt: 'Projektvorschau der Chronosphere aus dem Forschungslabor.',
       label: 'Projektvorschau · Chronosphere-Experiment',
       source: 'https://github.com/Juri-Halveth/halveth-forschungslabor/blob/2cb8eb38e4276b0b821731d4f1056cd06a8b8631/branches/temporal-clock/preview.png',
-      credit: 'HALVETH Open Research contributors · CC BY 4.0', kind: 'screenshot'
+      credit: 'HALVETH Open Research contributors ↗', kind: 'screenshot'
     }, [
       ['Experiment öffnen', 'Im Werkzeugkatalog ENDECK oder das ausführbare Encounter-Labor auswählen.'],
       ['Gegenprobe ausführen', 'Stabile Punkt-IDs gegen 2D/3D-Projektionen oder zwölf Encounter-Vergleiche prüfen.'],
@@ -47,7 +47,7 @@
       alt: 'Tatsächlicher Tresor-Dashboard-Screenshot mit synthetischen Beispieldaten.',
       label: 'Screenshot · Tresor-Dashboard mit Beispieldaten',
       source: 'https://github.com/Juri-Halveth/halveth-tresor/blob/e1ca9830e84099f0e4a9a4bfdede919a5ab0eee6/assets/screenshots/dashboard.png',
-      credit: 'Juri Janovski / HALVETH · Bildbytes aus dem Projekt, Rechte dort maßgeblich', kind: 'screenshot'
+      credit: 'Juri Janovski / HALVETH ↗', kind: 'screenshot'
     }, [
       ['Release prüfen', 'Windows-v1.8.0-EXE herunterladen und ihren SHA-256-Wert mit der Releaseangabe vergleichen.'],
       ['Test-Tresor anlegen', 'Einträge lokal mit AES-256-GCM speichern; den Recovery-Key getrennt sichern.'],
