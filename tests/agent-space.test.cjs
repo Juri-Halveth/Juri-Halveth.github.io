@@ -69,6 +69,17 @@ test('SCARLET public subspaces retain their own source revision in the agent con
   assert.notEqual(context.publicSubspaces[0].source.revision, context.source.revision);
 });
 
+test('published Forschungslabor 1001 doors has its own source-bound agent link', () => {
+  const source = catalog.projects.find(project => project.id === 'halveth-forschungslabor');
+  assert.equal(source.site.subspaces[0].availability, 'PUBLISHED');
+  const context = require('../universum/api/projects/halveth-forschungslabor.json');
+  assert.equal(context.publicSubspaces.length, 1);
+  assert.equal(context.publicSubspaces[0].id, 'number-doors-1001');
+  assert.equal(context.publicSubspaces[0].url, source.site.subspaces[0].url);
+  assert.equal(context.publicSubspaces[0].source.revision, '459f292df235550717d03c275a573a28abd269bb');
+  assert.notEqual(context.publicSubspaces[0].source.revision, context.source.revision);
+});
+
 test('a newer catalog source cannot inherit reviewed project claims', () => {
   const changed = structuredClone(catalog);
   changed.projects[10].site.revision = 'a'.repeat(40);

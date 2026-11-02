@@ -1,9 +1,9 @@
 {
   "schema": "halveth.agent-space.v1",
   "baseURL": "https://juri-halveth.github.io/universum/",
-  "revision": "08535124ec99bc551b90c1a9404ef845dc58176fa896eb8190d9726796a40cca",
+  "revision": "41966d2f25b4b9d3a47abeaf80df2256fe5bce6bb697762ae6374751e40ab722",
   "sourceDate": "2026-11-02",
-  "catalogSha256": "fd4411907c181d63179e1293a2be1669acbe5d7e6f69054584623565f4a1ee9e",
+  "catalogSha256": "da29696c8547a4af1ae78d99f4230bf99fc6b042c6e48baa3aa535c5cc46a2e7",
   "briefSha256": "d8f7206c88e072c5c1fecabdbf86db60d6c3e426f430f37b47c4c23c87269059",
   "count": 18,
   "access": {
@@ -48,8 +48,8 @@
         "software"
       ],
       "path": "api/projects/halveth-forschungslabor.json",
-      "bytes": 1165,
-      "sha256": "804570044f295c8d1e1eb3c13869978009e3932b50913e1ceea8194b2a1fe34e"
+      "bytes": 2219,
+      "sha256": "99c1eb6e821d7865b04dee22994cb0ff9aa45f696324a742d99d2a420207db97"
     },
     {
       "id": "halveth-tresor",

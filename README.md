@@ -47,6 +47,12 @@ Quellstand und Beobachtungstag stehen im Katalog getrennt vom älteren
 Quellstand der Hauptkarte. Der Starship-Projektfokus zeigt dieselben direkten
 Einstiege neben seinem eigenständigen lokalen Zellmodell.
 
+Ein anderer, eigenständiger Raum des Forschungslabors heißt „1001 Türen“ und
+öffnet das Zahlenregister von 0 bis 1000. Seine veröffentlichte Browseradresse
+ist beim Forschungslabor als zusätzlicher Projekteinstieg verknüpft. Die
+SCARLET-Konstellation mit 68 Entitäten und dieses Zahlenlabor haben getrennte
+Quellen und Funktionen.
+
 ## Lokal bauen
 
 Auf der Projektübersicht lassen sich die 13 aktuell präsentierten Projekte nach

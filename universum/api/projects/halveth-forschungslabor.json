@@ -12,6 +12,28 @@
     "url": "https://juri-halveth.github.io/halveth-forschungslabor/wissen/",
     "action": "Werkzeuge entdecken"
   },
+  "publicSubspaces": [
+    {
+      "id": "number-doors-1001",
+      "url": "https://juri-halveth.github.io/halveth-forschungslabor/branches/1001-doors/",
+      "label": {
+        "de": "1001 Türen · 0–1000",
+        "en": "1001 doors · 0–1000",
+        "ru": "1001 дверь · 0–1000"
+      },
+      "description": {
+        "de": "Zahlenregister, Darstellungswechsel, 555-Zeitmodell und 999-Modellstimmen.",
+        "en": "Number register, representation changes, a 555 timing model and 999 model votes.",
+        "ru": "Числовой реестр, преобразования представления, модель 555 и 999 модельных голосов."
+      },
+      "source": {
+        "url": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/459f292df235550717d03c275a573a28abd269bb/branches/1001-doors/index.html",
+        "revision": "459f292df235550717d03c275a573a28abd269bb",
+        "observedAt": "2026-11-03"
+      },
+      "evidenceLevel": "PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION"
+    }
+  ],
   "capability": {
     "core": "Ausführbare JavaScript- und Python-Modelle untersuchen Projektionen, Optik, Ereignisse, Quellenpakete und Regeln.",
     "value": "Besucher können Annahmen verändern und die Unterschiede in einzelnen Experimenten gegenprüfen.",

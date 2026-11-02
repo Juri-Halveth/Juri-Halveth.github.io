@@ -312,7 +312,7 @@
     direct.hidden = project.id !== "halveth-forschungslabor";
     if (!direct.hidden) direct.href = "https://juri-halveth.github.io/halveth-forschungslabor/endeck/";
     const subspaces = byId("inspectSubspaces"); clear(subspaces);
-    for (const space of project.site?.subspaces || []) {
+    for (const space of (project.site?.subspaces || []).filter(row => row.availability === undefined || row.availability === "PUBLISHED")) {
       const link = document.createElement("a");
       link.href = safeHref(space.url);
       link.target = "_blank";

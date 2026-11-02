@@ -1,7 +1,7 @@
 {
   "schema": "halveth.portal.catalog.v1",
   "source_date": "2026-11-02",
-  "source_kind": "2026-11-01 connected GitHub inventory, supplemented by 2026-11-02 source-bound README/code review and 2026-11-03 SCARLET subspace check; editorial navigation, not runtime verification",
+  "source_kind": "2026-11-01 connected GitHub inventory, supplemented by 2026-11-02 source-bound README/code review and 2026-11-03 SCARLET and 1001-door Pages observations; editorial navigation, not runtime verification",
   "inventory_scope": "The 18 public entries come from the earlier connected inventory; account-wide completeness was not rechecked on 2026-11-02. No private names exported.",
   "categories": [
     {
@@ -202,7 +202,28 @@
         "status": "BROWSER_ENTRY",
         "revision": "07417d3cdadda426c2b51cc98bcbae72d7b5d651",
         "editorial_state": "CURRENT",
-        "revision_observed_at": "2026-10-27"
+        "revision_observed_at": "2026-10-27",
+        "subspaces": [
+          {
+            "id": "number-doors-1001",
+            "url": "https://juri-halveth.github.io/halveth-forschungslabor/branches/1001-doors/",
+            "label": {
+              "de": "1001 Türen · 0–1000",
+              "en": "1001 doors · 0–1000",
+              "ru": "1001 дверь · 0–1000"
+            },
+            "description": {
+              "de": "Zahlenregister, Darstellungswechsel, 555-Zeitmodell und 999-Modellstimmen.",
+              "en": "Number register, representation changes, a 555 timing model and 999 model votes.",
+              "ru": "Числовой реестр, преобразования представления, модель 555 и 999 модельных голосов."
+            },
+            "source_revision": "459f292df235550717d03c275a573a28abd269bb",
+            "source_url": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/459f292df235550717d03c275a573a28abd269bb/branches/1001-doors/index.html",
+            "observed_at": "2026-11-03",
+            "availability": "PUBLISHED",
+            "published_at": "2026-11-03"
+          }
+        ]
       }
     },
     {
