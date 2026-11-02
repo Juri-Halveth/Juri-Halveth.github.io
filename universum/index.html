@@ -33,34 +33,36 @@
       </div>
       <div class="topbar-center"><span class="live-dot"></span><span id="sceneMode">FLUGMODUS</span><span class="topbar-sep">/</span><span id="catalogCount">18 PORTALE</span></div>
       <div class="topbar-actions">
-        <button class="text-button lab-entry" id="labButton" type="button" aria-expanded="false" aria-controls="labPanel">Modelle starten ↗</button>
-        <button class="text-button" id="motionButton" type="button" aria-pressed="false">Bewegung reduzieren</button>
-        <button class="text-button" id="helpButton" type="button" aria-expanded="false" aria-controls="helpPanel">Steuerung</button>
+        <button class="text-button catalog-toggle" id="catalogToggle" type="button" aria-label="Projektatlas öffnen" aria-controls="sideRail" aria-expanded="false"><span class="full-label">Projektatlas</span><span class="compact-label">Atlas</span> <span aria-hidden="true">↗</span></button>
+        <button class="text-button lab-entry" id="labButton" type="button" aria-label="Modelle starten" aria-expanded="false" aria-controls="labPanel"><span class="full-label">Modelle starten</span><span class="compact-label">Modelle</span> <span aria-hidden="true">↗</span></button>
+        <button class="text-button" id="motionButton" type="button" aria-label="Bewegung reduzieren" aria-pressed="false"><span class="full-label">Bewegung reduzieren</span><span class="compact-label">Ruhe</span></button>
+        <button class="text-button" id="helpButton" type="button" aria-label="Steuerung öffnen" aria-expanded="false" aria-controls="helpPanel"><span class="full-label">Steuerung</span><span class="compact-label">Hilfe</span></button>
       </div>
     </header>
 
     <main id="cockpit" class="cockpit">
-      <div class="space-stage" id="spaceStage" aria-label="Interaktiver Projekt-Raum">
+      <div class="space-stage" id="spaceStage" aria-label="Interaktiver Projekt-Raum mit Vorwärts- und Rückwärtsflug">
         <canvas id="spaceCanvas" aria-hidden="true"></canvas>
         <div class="space-vignette" aria-hidden="true"></div>
-        <div class="horizon-label" aria-hidden="true"><span>RAUMZEIT · PROJEKTION</span><i></i><span>ZUSTAND / BEOBACHTUNG</span></div>
+        <div class="horizon-label" aria-hidden="true"><span>HALVETH · RAUMZEIT-ILLUSTRATION</span><i></i><span>KEINE PHYSIKSIMULATION</span></div>
         <div id="portalLayer" class="portal-layer"></div>
         <div class="crosshair" aria-hidden="true"><span></span></div>
         <div id="warp" class="warp" aria-hidden="true"><div class="warp-core"></div><div class="warp-caption">ÖFFNE PROJEKT</div></div>
+        <div class="flight-prompt" aria-hidden="true"><span>DEIN BLICKPUNKT / 01</span><strong>In die Tiefe fliegen</strong><small>Scrollen · vertikal wischen · mit zwei Fingern zoomen</small></div>
         <div class="flight-readout" aria-live="polite">
-          <span class="readout-label">POSITION</span><strong id="positionReadout">Z 0.0 · WINKEL 0°</strong>
-          <span class="readout-label">NÄCHSTER KONTAKT</span><strong id="nearReadout">—</strong>
+          <span class="readout-label">FLUGTIEFE</span><strong id="positionReadout">FERNE · 0</strong>
+          <span class="readout-label">IM BLICK</span><strong id="nearReadout">—</strong>
         </div>
+        <div class="travel-meter" aria-hidden="true"><span>FERNE</span><div class="travel-track"><i id="travelProgress"></i></div><span>NÄHE</span></div>
         <div class="flight-controls" aria-label="Flugsteuerung">
-          <button type="button" id="turnLeft" aria-label="Nach links drehen">↶</button>
-          <button type="button" id="moveBack" aria-label="Zurückfliegen">−</button>
-          <button type="button" id="moveForward" aria-label="Vorwärtsfliegen">+</button>
-          <button type="button" id="turnRight" aria-label="Nach rechts drehen">↷</button>
+          <button type="button" id="moveBack" aria-label="Zurückfliegen"><span aria-hidden="true">←</span> Zurück</button>
+          <button type="button" id="moveForward" aria-label="Vorwärtsfliegen">Vorwärts <span aria-hidden="true">→</span></button>
         </div>
       </div>
 
-      <aside class="side-rail" aria-label="Navigation und Projektübersicht">
+      <aside class="side-rail" id="sideRail" aria-label="Navigation und Projektübersicht" aria-hidden="true" inert>
         <section class="rail-intro">
+          <div class="rail-dismiss"><span class="eyebrow">PROJEKTATLAS / 18 ENTITÄTEN</span><button id="catalogClose" type="button" aria-label="Projektatlas schließen">×</button></div>
           <div class="eyebrow">EINGANG / 01</div>
           <h1>Flieg durch<br><em>das Werden.</em></h1>
           <p>Ein Projekt ist der sichtbare Knoten. Sein Weg dorthin bleibt als eigene Spur lesbar.</p>
@@ -226,14 +228,15 @@
       <section id="helpPanel" class="help-panel" aria-labelledby="helpTitle" hidden>
         <div class="inspect-head"><span class="eyebrow">BEDIENUNG</span><button type="button" class="icon-button" id="closeHelp" aria-label="Steuerung schließen">×</button></div>
         <h2 id="helpTitle">Flugsteuerung</h2>
-        <p><kbd>W</kbd> / <kbd>S</kbd> oder Mausrad: vor und zurück. <kbd>A</kbd> / <kbd>D</kbd> oder <kbd>←</kbd> / <kbd>→</kbd>: drehen. Ziehen im Raum: Blickrichtung. <kbd>Esc</kbd>: zurück.</p>
-        <p>Die Projektliste ist die gleichwertige Bedienung ohne Flugbewegung. Der Zeitregler kann mit Tastatur, Maus oder Touch gesteuert werden.</p>
+        <p><kbd>W</kbd> / <kbd>S</kbd>, <kbd>↑</kbd> / <kbd>↓</kbd> oder Mausrad: vor und zurück. Auf Touchscreens vertikal wischen oder mit zwei Fingern zoomen. <kbd>Esc</kbd>: zurück.</p>
+        <p>Projektentitäten fliegen aus der Ferne auf dich zu und ziehen beim Vorwärtsflug vorbei. Der Projektatlas bietet dieselbe Auswahl ohne Flugbewegung. Der Zeitregler in den Modellräumen bleibt mit Tastatur, Maus oder Touch bedienbar.</p>
+        <p>Die dunkle Mitte, Sterne und Materiespuren sind eine künstlerische Raumzeit-Projektion, keine Simulation eines realen schwarzen Lochs.</p>
         <p class="help-boundary">Die Portale stammen aus einem redaktionellen öffentlichen Katalog. Die allgemeine Entfaltung und die eigene 0→1-Werkstatt sind ausdrücklich synthetische Modelle. SCARLET, ENDECK und Field Difference haben zusätzlich je eine begrenzte öffentliche Quellspur und einen getrennten lesenden NETZ-Quellraum; die gewählten Commits sind keine Modell-Ticks. SCARLET-Zellraum, ENDECK-Projektionsraum, Faltgrenzen-Vergleich, Realms-Weltregelraum und Field-Grenzregelraum führen getrennte lokale Softwaremodelle aus. Keine Live-Steuerung, kein Versand und keine Repository-Änderung.</p>
-        <p><a href="https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/83e9be26793e319aef422df0e50afae619b8de6b/universum/CREDITS.md" target="_blank" rel="noopener noreferrer">Quellen, Lizenzen und Bildnachweise ↗</a></p>
+        <p><a href="https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/universum/CREDITS.md" target="_blank" rel="noopener noreferrer">Quellen, Lizenzen und Bildnachweise ↗</a></p>
       </section>
     </main>
 
-    <footer class="statusbar"><span>HALVETH / NETZ · BEOBACHTUNGSFENSTER OFFEN</span><span id="statusMessage" aria-live="polite">Bereit zum Fliegen</span><span>BROWSERLOKAL · v0.15</span></footer>
+    <footer class="statusbar"><span>HALVETH / NETZ · BEOBACHTUNGSFENSTER OFFEN</span><span id="statusMessage" aria-live="polite">Bereit zum Fliegen</span><span>BROWSERFASSUNG · FLUGRAUM 2026-11-02</span></footer>
   </div>
   <script src="data/catalog.js"></script>
   <script src="vendor/scarlet/core.js"></script>
@@ -249,6 +252,7 @@
   <script src="workshop.js"></script>
   <script src="atlas-model.js"></script>
   <script src="atlas-ui.js"></script>
+  <script src="flight-model.js"></script>
   <script src="app.js"></script>
   <script src="scarlet-projection-delta.js"></script>
   <script src="scarlet-delta-ui.js"></script>

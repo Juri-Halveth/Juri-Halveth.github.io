@@ -29,6 +29,10 @@ im Lab getrennt: Software, Sicherheit, Modelle und Visualisierung, Welten,
 Lernen sowie gesellschaftliche Quellen. Seine Berechnungen laufen im Browser;
 die [Quellen- und Lizenzkarte](universum/CREDITS.md) benennt die eingebundenen
 Module und Bilder. Das Lab ist über die Projektübersicht und den Footer erreichbar.
+Im Flugraum führt Scrollen vorwärts und rückwärts entlang einer festen Blickachse;
+auf Touchgeräten dienen vertikales Wischen und Pinch der Tiefenbewegung.
+Projekt- und Themensymbole behalten eigene Identitäten. Der Stern- und
+Raumzeitraum ist eine künstlerische Projektion, keine physikalische Simulation.
 
 ## Lokal bauen
 
