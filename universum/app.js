@@ -2,17 +2,24 @@
   "use strict";
   const catalog = window.HALVETH_CATALOG;
   const engine = window.NETZ_ENGINE;
+  const flight = window.HALVETH_FLIGHT_MODEL;
   const byId = (id) => document.getElementById(id);
-  if (!catalog || catalog.schema !== "halveth.portal.catalog.v1" || !Array.isArray(catalog.projects) || !engine) {
-    byId("statusMessage").textContent = "Katalog oder NETZ-Modell fehlt.";
+  if (!catalog || catalog.schema !== "halveth.portal.catalog.v1" || !Array.isArray(catalog.projects) || !engine || !flight) {
+    byId("statusMessage").textContent = "Katalog, Flugraum oder NETZ-Modell fehlt.";
     return;
   }
 
   const projects = catalog.projects.filter((p) => p.visibility === "public" && typeof p.id === "string");
+  if (projects.length !== flight.PROJECT_IDS.length || projects.some((project, index) => project.id !== flight.PROJECT_IDS[index])
+    || catalog.categories.length !== flight.TOPIC_IDS.length || catalog.categories.some((category, index) => category.id !== flight.TOPIC_IDS[index])) {
+    byId("statusMessage").textContent = "Flugraum und öffentlicher Katalog haben unterschiedliche Identitäten.";
+    return;
+  }
   const categories = new Map(catalog.categories.map((category) => [category.id, category]));
-  const hues = { software: 195, security: 12, models: 348, worlds: 265, learning: 43, society: 155 };
   const e = {
     shell: byId("appShell"), stage: byId("spaceStage"), canvas: byId("spaceCanvas"), layer: byId("portalLayer"),
+    sideRail: byId("sideRail"), catalogToggle: byId("catalogToggle"), catalogClose: byId("catalogClose"),
+    travelProgress: byId("travelProgress"),
     projectList: byId("projectList"), search: byId("projectSearch"), filter: byId("categoryFilter"),
     visibleCount: byId("visibleCount"), catalogCount: byId("catalogCount"), position: byId("positionReadout"),
     near: byId("nearReadout"), status: byId("statusMessage"), sceneMode: byId("sceneMode"),
@@ -28,15 +35,16 @@
   };
 
   const scene = {
-    x: 0, z: 0, yaw: 0, keys: new Set(), pointer: null, activeId: null, filteredIds: new Set(), lastTriggerKind: "portal",
+    z: 0, previousZ: 0, keys: new Set(), pointers: new Map(), pinchDistance: null,
+    activeId: null, filteredIds: new Set(), lastTriggerKind: "portal",
     trace: null, traceTick: 0, traceTimer: null, fullProjection: false, focusBranch: null,
     reduced: window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-    lastFrame: 0, lastReadout: 0, stars: [], portals: []
+    lastFrame: 0, lastReadout: -Infinity, stars: flight.stars(1150, 3491), portals: [], topics: []
   };
   let realmsRoom = null;
   let foldRoom = null;
   const ctx = e.canvas.getContext("2d", { alpha: false });
-  e.catalogCount.textContent = projects.length + " PORTALE";
+  e.catalogCount.textContent = projects.length + " EINSTIEGE · " + catalog.categories.length + " THEMEN";
   e.motionButton.setAttribute("aria-pressed", String(scene.reduced));
   e.shell.classList.toggle("reduced-motion", scene.reduced);
 
@@ -55,21 +63,40 @@
     return ordered.map((id) => categories.get(id)).filter(Boolean);
   }
   function categoryLabels(project) { return visibleCategories(project).map((category) => category.label).join(" · ") || "Projekt"; }
-  function projectHue(project) { return hues[project.categories[0]] || 350; }
   function clear(element) { while (element.firstChild) element.removeChild(element.firstChild); }
+  function setCatalogOpen(open) {
+    const shown = Boolean(open);
+    if (!shown && e.sideRail.contains(document.activeElement)) e.catalogToggle.focus();
+    e.shell.classList.toggle("catalog-open", shown);
+    e.catalogToggle.setAttribute("aria-expanded", String(shown));
+    e.sideRail.setAttribute("aria-hidden", String(!shown));
+    e.sideRail.toggleAttribute("inert", !shown);
+  }
+  e.catalogToggle.addEventListener("click", () => {
+    const open = !e.shell.classList.contains("catalog-open");
+    setCatalogOpen(open);
+    if (open) e.search.focus();
+  });
+  e.catalogClose.addEventListener("click", () => setCatalogOpen(false));
+  setCatalogOpen(false);
   function flightBlocked() {
-    return !e.inspect.hidden || !e.netz.hidden || !byId("sourcePanel").hidden || !byId("labPanel").hidden || !byId("scarletRoom").hidden || !byId("endeckRoom").hidden || Boolean(realmsRoom?.isOpen()) || Boolean(foldRoom?.isOpen()) || Boolean(window.HALVETH_SOURCE_NETZ_UI?.isOpen()) || !e.help.hidden;
+    return e.shell.classList.contains("catalog-open") || !e.inspect.hidden || !e.netz.hidden || !byId("sourcePanel").hidden || !byId("labPanel").hidden || !byId("scarletRoom").hidden || !byId("endeckRoom").hidden || Boolean(realmsRoom?.isOpen()) || Boolean(foldRoom?.isOpen()) || Boolean(window.HALVETH_SOURCE_NETZ_UI?.isOpen()) || !e.help.hidden;
   }
 
-  // The public catalogue is editorial. Spatial coordinates are generated for this local view.
-  const lanes = [-4.5, 5.8, -3.2, 7.2, -7.4, 2.8, -5.1, 6.6, 0];
+  // Stable synthetic coordinates are visual navigation only, not project history or physical space.
   scene.portals = projects.map((project, index) => {
+    const identity = flight.identity(project.id, index);
     const button = document.createElement("button");
     button.type = "button"; button.className = "portal";
     button.dataset.projectId = project.id;
+    button.dataset.signature = identity.signature;
+    button.dataset.range = "far";
+    if (project.site?.editorial_state === "WITHDRAWN_FROM_PORTFOLIO") button.dataset.editorialState = "source-only";
     button.setAttribute("aria-label", project.title + " als Projektportal öffnen");
-    button.style.setProperty("--hue", String(projectHue(project)));
+    button.style.setProperty("--hue", String(identity.hue));
     const art = document.createElement("span"); art.className = "portal-art"; art.setAttribute("aria-hidden", "true");
+    const glyph = document.createElement("span"); glyph.className = "portal-glyph"; glyph.textContent = identity.glyph;
+    art.appendChild(glyph);
     const copy = document.createElement("span"); copy.className = "portal-copy";
     const kicker = document.createElement("span"); kicker.className = "portal-kicker"; kicker.textContent = categoryOf(project).short;
     const title = document.createElement("span"); title.className = "portal-title"; title.textContent = project.title;
@@ -77,17 +104,30 @@
     copy.append(kicker, title, distance); button.append(art, copy);
     button.addEventListener("click", () => warpTo(project));
     e.layer.appendChild(button);
-    const world = { x: lanes[index % lanes.length] + (Math.floor(index / lanes.length) ? 2.5 : 0), y: ((index * 3) % 5 - 2) * 1.35, z: 19 + index * 9 };
-    return { project, world, button, kicker, distance };
+    const world = { id: project.id, ...flight.projectWorld(index) };
+    return { project, identity, world, button, kicker, distance };
   });
 
-  for (let i = 0; i < 190; i += 1) {
-    const n = (i * 1664525 + 1013904223) >>> 0;
-    const x = ((n & 65535) / 65535 - .5) * 100;
-    const y = (((n >>> 8) & 65535) / 65535 - .5) * 62;
-    const z = 8 + (((n >>> 15) & 65535) / 65535) * 220;
-    scene.stars.push({ x, y, z, radius: i % 13 === 0 ? 1.7 : .8, alpha: .2 + (i % 7) * .09 });
-  }
+  scene.topics = catalog.categories.map((category, index) => {
+    const identity = flight.topicIdentity(category.id);
+    const button = document.createElement("button");
+    button.type = "button"; button.className = "topic-beacon";
+    button.dataset.signature = identity.signature;
+    button.setAttribute("aria-label", "Themenraum " + category.label + " filtern");
+    button.style.setProperty("--hue", String(identity.hue));
+    const glyph = document.createElement("span"); glyph.className = "topic-glyph"; glyph.textContent = identity.glyph;
+    const label = document.createElement("span"); label.className = "topic-label"; label.textContent = category.label;
+    button.append(glyph, label);
+    button.addEventListener("click", () => {
+      e.filter.value = category.id;
+      renderList();
+      setCatalogOpen(true);
+      e.search.focus();
+      setStatus(category.label + " als Themenraum gefiltert.");
+    });
+    e.layer.appendChild(button);
+    return { category, world: { id: "topic-" + category.id, ...flight.topicWorld(index) }, button };
+  });
 
   catalog.categories.forEach((category) => {
     const option = document.createElement("option"); option.value = category.id; option.textContent = category.label;
@@ -110,12 +150,14 @@
       scene.filteredIds.add(project.id);
       const button = document.createElement("button"); button.type = "button"; button.className = "list-item";
       button.dataset.projectId = project.id;
+      if (project.site?.editorial_state === "WITHDRAWN_FROM_PORTFOLIO") button.dataset.editorialState = "source-only";
       button.setAttribute("aria-label", project.title + " · " + categoryLabels(project) + " · Projektportal öffnen");
       if (scene.activeId === project.id) button.classList.add("active");
       const number = document.createElement("span"); number.className = "list-index"; number.textContent = String(index + 1).padStart(2, "0");
       const label = document.createElement("span"); label.className = "list-label";
       const title = document.createElement("strong"); title.textContent = project.title;
-      const small = document.createElement("small"); small.textContent = categoryLabels(project);
+      const small = document.createElement("small"); small.textContent = categoryLabels(project)
+        + (project.site?.editorial_state === "WITHDRAWN_FROM_PORTFOLIO" ? " · Quelle/Lab" : "");
       const arrow = document.createElement("span"); arrow.className = "list-arrow"; arrow.setAttribute("aria-hidden", "true"); arrow.textContent = "↗";
       label.append(title, small); button.append(number, label, arrow);
       button.addEventListener("click", () => warpTo(project));
@@ -128,6 +170,7 @@
       const empty = document.createElement("p"); empty.className = "empty-list"; empty.textContent = "Kein Portal in dieser Auswahl.";
       e.projectList.appendChild(empty);
     }
+    scene.dirty = true;
   }
   e.search.addEventListener("input", renderList);
   e.filter.addEventListener("change", renderList);
@@ -151,6 +194,7 @@
   });
 
   function openInspect(project) {
+    setCatalogOpen(false);
     if (!e.netz.hidden) closeNetz();
     window.HALVETH_SOURCE_UI?.setProject(project.id);
     window.HALVETH_PORTAL_TIME_UI?.setProject(project.id);
@@ -171,7 +215,8 @@
     previewIndex = 0;
     renderPreview();
     e.inspectKind.textContent = project.kind;
-    e.inspectEvidence.textContent = project.evidence + (project.reviewed ? " · redaktionell geprüft" : " · Funktion offen");
+    e.inspectEvidence.textContent = project.evidence + (project.reviewed ? " · redaktionell geprüft" : " · Funktion offen")
+      + (project.site?.editorial_state === "WITHDRAWN_FROM_PORTFOLIO" ? " · aus aktivem Portfolio zurückgezogen; Quelle/Lab" : "");
     const tech = project.id === "halveth-scarlet" ? ["GStar: Seed, Ableitung, Snapshot und Replay", "GStarLiving: endliche Zellökologie mit Render-/Full-Projektion"] :
       project.id === "halveth-forschungslabor" ? ["ENDECK: vier stabile Punktidentitäten und Projektionen", "Faltgrenze: zwei getrennte mathematische Gegenmodelle", "Temporal Clock als eigenes öffentliches Teilprojekt"] :
       project.id === "halveth-field-difference-lab" ? ["Drei zeitgleiche Grenzbahnen aus gepinntem dimensionslosem Quellmodell", "Linke und rechte Regel getrennt verändern; Zentralfeld und Zwei-Bahn-Modus erhalten"] :
@@ -212,6 +257,7 @@
     const oldId = scene.activeId;
     closeNetz(); window.HALVETH_SOURCE_UI?.close(); e.inspect.hidden = true; scene.activeId = null;
     e.sceneMode.textContent = "FLUGMODUS"; renderList(); setStatus("Zurück im Flugraum.");
+    if (scene.lastTriggerKind === "list") setCatalogOpen(true);
     const stageRect = e.stage.getBoundingClientRect();
     updatePortals(stageRect.width, stageRect.height);
     const listTarget = Array.from(e.projectList.querySelectorAll(".list-item")).find((item) => item.dataset.projectId === oldId);
@@ -442,54 +488,67 @@
     scene.reduced = Boolean(enabled); e.shell.classList.toggle("reduced-motion", scene.reduced);
     e.motionButton.setAttribute("aria-pressed", String(scene.reduced));
     setStatus(scene.reduced ? "Bewegung reduziert." : "Bewegung aktiviert.");
+    scene.dirty = true;
     return scene.reduced;
   }
   e.motionButton.addEventListener("click", () => setReducedMotion(!scene.reduced));
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       event.preventDefault();
-      if (window.HALVETH_SOURCE_NETZ_UI?.isOpen()) window.HALVETH_SOURCE_NETZ_UI.close(); else if (foldRoom?.isOpen()) foldRoom.close(); else if (realmsRoom?.isOpen()) realmsRoom.close(); else if (!byId("scarletRoom").hidden) window.HALVETH_SCARLET_ROOM?.close(); else if (!byId("endeckRoom").hidden) window.HALVETH_ENDECK_ROOM?.close(); else if (!byId("sourcePanel").hidden) window.HALVETH_SOURCE_UI?.close(); else if (!e.netz.hidden) closeNetz(); else if (!byId("labPanel").hidden) byId("closeLab").click(); else if (!e.inspect.hidden) byId("closeInspect").click(); else if (!e.help.hidden) byId("closeHelp").click();
+      if (window.HALVETH_SOURCE_NETZ_UI?.isOpen()) window.HALVETH_SOURCE_NETZ_UI.close(); else if (foldRoom?.isOpen()) foldRoom.close(); else if (realmsRoom?.isOpen()) realmsRoom.close(); else if (!byId("scarletRoom").hidden) window.HALVETH_SCARLET_ROOM?.close(); else if (!byId("endeckRoom").hidden) window.HALVETH_ENDECK_ROOM?.close(); else if (!byId("sourcePanel").hidden) window.HALVETH_SOURCE_UI?.close(); else if (!e.netz.hidden) closeNetz(); else if (!byId("labPanel").hidden) byId("closeLab").click(); else if (!e.inspect.hidden) byId("closeInspect").click(); else if (!e.help.hidden) byId("closeHelp").click(); else if (e.shell.classList.contains("catalog-open")) setCatalogOpen(false);
       return;
     }
     if (flightBlocked() || isInput(event.target) || event.target?.closest?.("button,a,[role=tab]")) return;
     const key = event.key.toLowerCase();
-    if (["w", "s", "a", "d", "arrowleft", "arrowright"].includes(key)) { scene.keys.add(key); event.preventDefault(); }
+    if (["w", "s", "arrowup", "arrowdown"].includes(key)) { scene.keys.add(key); event.preventDefault(); }
   });
   document.addEventListener("keyup", (event) => scene.keys.delete(event.key.toLowerCase()));
-  window.addEventListener("blur", () => scene.keys.clear());
-  function stepCamera(forward, turn) {
-    scene.yaw = clamp(scene.yaw + turn, -1.25, 1.25);
-    scene.x = clamp(scene.x + Math.sin(scene.yaw) * forward, -20, 20);
-    scene.z = clamp(scene.z + Math.cos(scene.yaw) * forward, 0, 170);
-    scene.lastReadout = 0;
+  window.addEventListener("blur", () => { scene.keys.clear(); scene.pointers.clear(); scene.pinchDistance = null; });
+  function moveTravel(distance) {
+    if (!Number.isFinite(distance)) return;
+    scene.z = flight.clampTravel(scene.z + distance);
+    scene.lastReadout = -Infinity;
+    scene.dirty = true;
   }
-  byId("turnLeft").addEventListener("click", () => stepCamera(0, -.16));
-  byId("turnRight").addEventListener("click", () => stepCamera(0, .16));
-  byId("moveForward").addEventListener("click", () => stepCamera(6, 0));
-  byId("moveBack").addEventListener("click", () => stepCamera(-6, 0));
-  e.stage.addEventListener("wheel", (event) => { event.preventDefault(); stepCamera(clamp(event.deltaY * .025, -8, 8), 0); }, { passive: false });
+  byId("moveForward").addEventListener("click", () => moveTravel(7));
+  byId("moveBack").addEventListener("click", () => moveTravel(-7));
+  e.stage.addEventListener("wheel", (event) => {
+    if (flightBlocked()) return;
+    event.preventDefault();
+    const pixels = event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? e.stage.clientHeight : 1);
+    moveTravel(clamp(pixels * .035, -14, 14));
+  }, { passive: false });
   e.stage.addEventListener("pointerdown", (event) => {
-    if (event.target.closest("button")) return;
-    scene.pointer = { id: event.pointerId, x: event.clientX, moved: false };
+    if (flightBlocked() || event.button !== 0 || event.target.closest("button,a,input,select")) return;
+    scene.pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    scene.pinchDistance = null;
     e.stage.classList.add("dragging"); e.stage.setPointerCapture?.(event.pointerId);
   });
   e.stage.addEventListener("pointermove", (event) => {
-    if (!scene.pointer || scene.pointer.id !== event.pointerId) return;
-    const delta = event.clientX - scene.pointer.x; scene.pointer.x = event.clientX;
-    if (Math.abs(delta) > 0) { scene.pointer.moved = true; scene.yaw = clamp(scene.yaw - delta * .005, -1.15, 1.15); scene.lastReadout = 0; }
+    if (flightBlocked()) { scene.pointers.clear(); scene.pinchDistance = null; return; }
+    const previous = scene.pointers.get(event.pointerId);
+    if (!previous) return;
+    scene.pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    if (scene.pointers.size > 1) {
+      const [a, b] = [...scene.pointers.values()];
+      const distance = Math.hypot(a.x - b.x, a.y - b.y);
+      if (scene.pinchDistance !== null) moveTravel(clamp((distance - scene.pinchDistance) * .11, -7, 7));
+      scene.pinchDistance = distance;
+    } else {
+      scene.pinchDistance = null;
+      moveTravel(clamp((previous.y - event.clientY) * .085, -6, 6));
+    }
   });
-  function endDrag() { scene.pointer = null; e.stage.classList.remove("dragging"); }
+  function endDrag(event) {
+    scene.pointers.delete(event.pointerId);
+    scene.pinchDistance = null;
+    if (!scene.pointers.size) e.stage.classList.remove("dragging");
+  }
   e.stage.addEventListener("pointerup", endDrag); e.stage.addEventListener("pointercancel", endDrag);
+  e.stage.addEventListener("lostpointercapture", endDrag);
 
   function cameraPoint(point, width, height) {
-    const dz = point.z - scene.z;
-    const dx = point.x - scene.x;
-    const cy = Math.cos(scene.yaw), sy = Math.sin(scene.yaw);
-    const x = dx * cy - dz * sy;
-    const z = dx * sy + dz * cy;
-    if (z <= 2) return null;
-    const focal = Math.min(width * .9, height * 1.15);
-    return { x: width / 2 + x * focal / z, y: height / 2 - point.y * focal / z, depth: z };
+    return flight.projectPoint(point, scene.z, width, height);
   }
   function resizeCanvas() {
     const bounds = e.stage.getBoundingClientRect();
@@ -497,69 +556,176 @@
     e.canvas.width = Math.max(1, Math.round(bounds.width * ratio));
     e.canvas.height = Math.max(1, Math.round(bounds.height * ratio));
     ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+    scene.dirty = true;
   }
   window.addEventListener("resize", resizeCanvas); resizeCanvas();
-  function drawSpace(width, height, seconds) {
-    ctx.fillStyle = "#04060d"; ctx.fillRect(0, 0, width, height);
-    const hx = width * .5 - scene.yaw * width * .16 - scene.x * 2;
-    const hy = height * .255;
-    const glow = ctx.createRadialGradient(hx, hy, 5, hx, hy, Math.max(width, height) * .46);
-    glow.addColorStop(0, "rgba(218,72,80,.16)"); glow.addColorStop(.28, "rgba(60,38,73,.2)"); glow.addColorStop(1, "rgba(2,3,9,0)");
-    ctx.fillStyle = glow; ctx.fillRect(0, 0, width, height);
-    for (const star of scene.stars) {
-      const pos = cameraPoint(star, width, height);
-      if (!pos || pos.x < 0 || pos.x > width || pos.y < 0 || pos.y > height) continue;
-      const intensity = clamp(1 - pos.depth / 240, .1, 1) * star.alpha;
-      const r = star.radius * clamp(38 / pos.depth, .3, 1.7);
-      ctx.fillStyle = "rgba(215,227,244," + intensity.toFixed(3) + ")";
-      ctx.beginPath(); ctx.arc(pos.x, pos.y, r, 0, Math.PI * 2); ctx.fill();
-      if (!scene.reduced && pos.depth < 45 && r > 1) {
-        ctx.strokeStyle = "rgba(194,211,239," + (intensity * .24).toFixed(3) + ")";
-        ctx.beginPath(); ctx.moveTo(pos.x, pos.y); ctx.lineTo(pos.x + (pos.x - width / 2) * .08, pos.y + (pos.y - height / 2) * .08); ctx.stroke();
+  function drawSpace(width, height) {
+    const cx = width / 2, cy = height / 2;
+    const span = Math.max(width, height);
+    const focal = Math.min(width * .98, height * 1.35);
+    const movement = scene.z - scene.previousZ;
+    ctx.fillStyle = "#02040a"; ctx.fillRect(0, 0, width, height);
+
+    // Layered matter and incomplete curved filaments create depth without a visible ball.
+    const atmosphere = ctx.createRadialGradient(cx, cy, 12, cx, cy, span * .74);
+    atmosphere.addColorStop(0, "#01030a");
+    atmosphere.addColorStop(.16, "#07101e");
+    atmosphere.addColorStop(.49, "#0a1221");
+    atmosphere.addColorStop(1, "#02040a");
+    ctx.fillStyle = atmosphere; ctx.fillRect(0, 0, width, height);
+    const cloudA = ctx.createRadialGradient(width * .29, height * .62, 5, width * .29, height * .62, span * .42);
+    cloudA.addColorStop(0, "rgba(34,116,144,.105)"); cloudA.addColorStop(1, "rgba(34,116,144,0)");
+    ctx.fillStyle = cloudA; ctx.fillRect(0, 0, width, height);
+    const cloudB = ctx.createRadialGradient(width * .72, height * .29, 5, width * .72, height * .29, span * .38);
+    cloudB.addColorStop(0, "rgba(145,71,112,.095)"); cloudB.addColorStop(1, "rgba(145,71,112,0)");
+    ctx.fillStyle = cloudB; ctx.fillRect(0, 0, width, height);
+
+    for (let line = 0; line < 14; line += 1) {
+      const angle = line * Math.PI * 2 / 14 + .09;
+      const reach = span * .77;
+      ctx.beginPath();
+      ctx.moveTo(cx + Math.cos(angle) * 25, cy + Math.sin(angle) * 25);
+      ctx.bezierCurveTo(
+        cx + Math.cos(angle + .24) * reach * .23, cy + Math.sin(angle + .24) * reach * .23,
+        cx + Math.cos(angle - .13) * reach * .61, cy + Math.sin(angle - .13) * reach * .61,
+        cx + Math.cos(angle) * reach, cy + Math.sin(angle) * reach
+      );
+      ctx.strokeStyle = line % 3 === 0 ? "rgba(172,121,158,.052)" : "rgba(105,166,193,.045)";
+      ctx.lineWidth = 1; ctx.stroke();
+    }
+    const firstWave = Math.ceil((scene.z + 5) / 17) * 17;
+    for (let worldZ = firstWave; worldZ < scene.z + 185; worldZ += 17) {
+      const depth = worldZ - scene.z;
+      const radius = focal * 11.5 / depth;
+      if (radius < 22 || radius > span * 1.25) continue;
+      const alpha = clamp((1 - depth / 190) * .11, .008, .09);
+      for (let arc = 0; arc < 3; arc += 1) {
+        const start = arc * Math.PI * 2 / 3 + .25;
+        ctx.beginPath();
+        ctx.ellipse(cx, cy, radius * 1.26, radius * .84, .08, start, start + .83);
+        ctx.strokeStyle = arc === 1 ? "rgba(220,142,164," + alpha.toFixed(3) + ")" : "rgba(124,198,217," + alpha.toFixed(3) + ")";
+        ctx.lineWidth = clamp(2.4 - depth / 110, .7, 2.1);
+        ctx.stroke();
       }
     }
-    // A drawn attractor is visual navigation, not a physical black-hole simulation.
-    const pulse = scene.reduced ? 0 : Math.sin(seconds * .6) * .04;
-    const radius = Math.min(width, height) * (.115 + pulse);
-    ctx.save(); ctx.translate(hx, hy); ctx.rotate(-.2 - scene.yaw * .09);
-    for (let i = 4; i >= 0; i -= 1) {
-      ctx.beginPath(); ctx.ellipse(0, 0, radius * (1.35 + i * .16), radius * (.36 + i * .055), 0, 0, Math.PI * 2);
-      ctx.lineWidth = i === 0 ? 2.2 : 8 + i * 2;
-      ctx.strokeStyle = i === 0 ? "rgba(255,216,172,.67)" : "rgba(229,65,79," + (.022 + (4 - i) * .018) + ")";
-      ctx.shadowColor = "#f65768"; ctx.shadowBlur = 23; ctx.stroke();
+
+    for (let index = 0; index < scene.stars.length; index += 1) {
+      const star = scene.stars[index];
+      const pos = cameraPoint(star, width, height);
+      if (!pos || pos.depth > 325 || pos.x < -25 || pos.x > width + 25 || pos.y < -25 || pos.y > height + 25) continue;
+      const intensity = star.alpha * clamp(1.17 - pos.depth / 390, .2, 1);
+      const radius = star.radius * clamp(42 / pos.depth, .47, 2.8);
+      if (!scene.reduced && Math.abs(movement) > .06 && pos.depth < 155) {
+        const before = flight.projectPoint(star, scene.previousZ, width, height);
+        if (before) {
+          ctx.beginPath(); ctx.moveTo(before.x, before.y); ctx.lineTo(pos.x, pos.y);
+          ctx.strokeStyle = star.kind === "star" ? "rgba(211,236,247," + clamp(intensity * .47, .04, .5).toFixed(3) + ")" : "rgba(148,195,215," + clamp(intensity * .25, .02, .18).toFixed(3) + ")";
+          ctx.lineWidth = star.kind === "star" ? Math.max(.55, radius * .65) : .6;
+          ctx.stroke();
+        }
+      }
+      if (star.kind === "star" && pos.depth < 80 && index % 3 === 0) {
+        const bloomRadius = Math.max(3, radius * 5);
+        const bloom = ctx.createRadialGradient(pos.x, pos.y, 0, pos.x, pos.y, bloomRadius);
+        bloom.addColorStop(0, "rgba(201,229,249," + clamp(intensity * .18, .04, .18).toFixed(3) + ")");
+        bloom.addColorStop(1, "rgba(201,229,249,0)");
+        ctx.fillStyle = bloom; ctx.beginPath(); ctx.arc(pos.x, pos.y, bloomRadius, 0, Math.PI * 2); ctx.fill();
+      }
+      ctx.fillStyle = star.kind === "star" ? "rgba(224,240,250," + intensity.toFixed(3) + ")"
+        : index % 5 === 0 ? "rgba(228,160,194," + intensity.toFixed(3) + ")"
+          : "rgba(151,197,220," + intensity.toFixed(3) + ")";
+      ctx.beginPath(); ctx.arc(pos.x, pos.y, Math.max(.25, radius), 0, Math.PI * 2); ctx.fill();
     }
-    ctx.shadowBlur = 0;
-    const disk = ctx.createRadialGradient(-radius * .22, -radius * .16, radius * .12, 0, 0, radius);
-    disk.addColorStop(0, "#020209"); disk.addColorStop(.75, "#010207"); disk.addColorStop(.92, "#10101b"); disk.addColorStop(1, "#f28c7d");
-    ctx.fillStyle = disk; ctx.beginPath(); ctx.arc(0, 0, radius, 0, Math.PI * 2); ctx.fill();
-    ctx.restore();
-    const gridY = height * .72;
-    ctx.strokeStyle = "rgba(147,67,86,.12)"; ctx.lineWidth = 1;
-    for (let i = -6; i <= 6; i += 1) { ctx.beginPath(); ctx.moveTo(width / 2 + i * 30, gridY); ctx.lineTo(width / 2 + i * 130, height); ctx.stroke(); }
-    for (let i = 0; i < 5; i += 1) { const p = i / 5; const y = gridY + (height - gridY) * p * p; ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(width, y); ctx.stroke(); }
+
+    // The center is an almost invisible occlusion, not a simulated event horizon.
+    const shadowRadius = clamp(Math.min(width, height) * .041, 12, 31);
+    const shadow = ctx.createRadialGradient(cx, cy, 0, cx, cy, shadowRadius * 2.8);
+    shadow.addColorStop(0, "#000107"); shadow.addColorStop(.38, "#000107");
+    shadow.addColorStop(.72, "rgba(1,3,9,.88)"); shadow.addColorStop(1, "rgba(1,3,9,0)");
+    ctx.fillStyle = shadow; ctx.beginPath(); ctx.arc(cx, cy, shadowRadius * 2.8, 0, Math.PI * 2); ctx.fill();
   }
   function updatePortals(width, height) {
     let nearest = null;
+    const compact = width <= 470;
+    const occupied = [];
+    const stageBounds = compact ? e.stage.getBoundingClientRect() : null;
+    let focusedCard = false;
+    let focusEntity = null;
+    if (compact) {
+      for (const selector of [".flight-prompt", ".flight-readout", ".flight-controls", ".travel-meter"]) {
+        const rect = e.stage.querySelector(selector)?.getBoundingClientRect();
+        if (rect?.width && rect.height) occupied.push(rect);
+      }
+    }
+    function occluded(rect) {
+      return occupied.some((other) => rect.left < other.right + 5 && rect.right + 5 > other.left
+        && rect.top < other.bottom + 5 && rect.bottom + 5 > other.top);
+    }
+    // Keep the same depth and radial direction on small screens, but move distant
+    // glyphs outward in screen space until their touch targets no longer overlap.
+    function placeCompact(button, point, canSpread) {
+      const dx = point.x - width / 2, dy = point.y - height / 2;
+      const length = Math.hypot(dx, dy) || 1;
+      for (let step = 0; step <= (canSpread ? 12 : 0); step += 1) {
+        const shift = step * 19;
+        button.style.left = (point.x + dx / length * shift).toFixed(1) + "px";
+        button.style.top = (point.y + dy / length * shift).toFixed(1) + "px";
+        const rect = button.getBoundingClientRect();
+        if (rect.left < stageBounds.left + 4 || rect.right > stageBounds.right - 4
+          || rect.top < stageBounds.top + 4 || rect.bottom > stageBounds.bottom - 4 || occluded(rect)) continue;
+        occupied.push(rect);
+        return true;
+      }
+      button.hidden = true;
+      return false;
+    }
     for (const item of scene.portals) {
       const visible = scene.filteredIds.has(item.project.id);
       const p = visible ? cameraPoint(item.world, width, height) : null;
-      if (!p || p.depth > (width > 850 ? 43 : 33) || p.x < 60 || p.x > width - 60 || p.y < 80 || p.y > height - 45) {
+      if (!p || p.depth > 138 || p.x < -40 || p.x > width + 40 || p.y < -40 || p.y > height + 40) {
+        item.button.hidden = true; continue;
+      }
+      const projectedRange = p.depth < 32 ? "near" : p.depth < 76 ? "mid" : "far";
+      const range = compact && focusedCard ? "far" : projectedRange;
+      item.button.hidden = false;
+      item.button.dataset.range = range;
+      item.button.style.left = p.x.toFixed(1) + "px";
+      item.button.style.top = p.y.toFixed(1) + "px";
+      const scale = range === "near" ? clamp(27 / p.depth, .78, 1.26)
+        : range === "mid" ? clamp(43 / p.depth, .61, .9) : clamp(65 / p.depth, .42, .68);
+      item.button.style.setProperty("--scale", scale.toFixed(3));
+      item.button.style.opacity = clamp((155 - p.depth) / 47, .38, 1).toFixed(2);
+      item.button.style.zIndex = String(Math.max(1, 300 - Math.round(p.depth)));
+      item.button.classList.toggle("near", range === "near");
+      if (compact && !placeCompact(item.button, p, range === "far")) continue;
+      if (compact && range !== "far") {
+        focusedCard = true;
+        focusEntity = { title: item.project.title, depth: p.depth };
+      }
+      item.distance.textContent = range === "near"
+        ? (item.project.site?.editorial_state === "WITHDRAWN_FROM_PORTFOLIO" ? "QUELLE / LAB ÖFFNEN" : item.project.action.toUpperCase())
+        : Math.round(p.depth) + " RAUMEINHEITEN";
+      if (!nearest || p.depth < nearest.depth) nearest = { title: item.project.title, depth: p.depth };
+    }
+    for (const item of scene.topics) {
+      const p = cameraPoint(item.world, width, height);
+      if (!p || p.depth > 125 || p.x < -30 || p.x > width + 30 || p.y < -30 || p.y > height + 30) {
         item.button.hidden = true; continue;
       }
       item.button.hidden = false;
       item.button.style.left = p.x.toFixed(1) + "px";
       item.button.style.top = p.y.toFixed(1) + "px";
-      item.button.style.setProperty("--scale", clamp(1.25 - p.depth / 90, .43, 1.35).toFixed(3));
-      item.button.style.opacity = clamp(1.25 - p.depth / 150, .5, 1).toFixed(2);
-      item.button.style.zIndex = String(Math.max(1, 100 - Math.round(p.depth)));
-      item.button.classList.toggle("near", p.depth < 29);
-      item.distance.textContent = p.depth < 29 ? "IN REICHWEITE · ÖFFNEN" : Math.round(p.depth) + " RAUMEINHEITEN";
-      if (!nearest || p.depth < nearest.depth) nearest = { title: item.project.title, depth: p.depth };
+      item.button.style.setProperty("--scale", clamp(40 / p.depth, .68, 1.35).toFixed(3));
+      item.button.style.opacity = clamp((144 - p.depth) / 57, .35, .93).toFixed(2);
+      item.button.style.zIndex = String(Math.max(1, 260 - Math.round(p.depth)));
+      if (compact && !placeCompact(item.button, p, true)) continue;
     }
     const now = performance.now();
     if (now - scene.lastReadout > 300) {
-      e.position.textContent = "X " + scene.x.toFixed(1) + " · Z " + scene.z.toFixed(1) + " · " + Math.round(scene.yaw * 180 / Math.PI) + "°";
-      e.near.textContent = nearest ? nearest.title.toUpperCase() + " / " + Math.round(nearest.depth) : "—";
+      e.position.textContent = scene.z.toFixed(1) + " / " + flight.MAX_TRAVEL + " RAUMEINHEITEN";
+      const inView = focusEntity || nearest;
+      e.near.textContent = inView ? inView.title.toUpperCase() + " / " + Math.round(inView.depth) : "—";
+      e.travelProgress.style.width = (scene.z / flight.MAX_TRAVEL * 100).toFixed(1) + "%";
       scene.lastReadout = now;
     }
   }
@@ -567,18 +733,15 @@
     const dt = scene.lastFrame ? clamp((now - scene.lastFrame) / 1000, 0, .06) : 0;
     scene.lastFrame = now;
     if (flightBlocked() && scene.keys.size) scene.keys.clear();
-    const forward = (scene.keys.has("w") ? 1 : 0) - (scene.keys.has("s") ? 1 : 0);
-    if (forward) {
-      scene.x += Math.sin(scene.yaw) * dt * 13 * forward;
-      scene.z += Math.cos(scene.yaw) * dt * 13 * forward;
-    }
-    if (scene.keys.has("a") || scene.keys.has("arrowleft")) scene.yaw -= dt * .75;
-    if (scene.keys.has("d") || scene.keys.has("arrowright")) scene.yaw += dt * .75;
-    scene.x = clamp(scene.x, -20, 20); scene.z = clamp(scene.z, 0, 170); scene.yaw = clamp(scene.yaw, -1.25, 1.25);
+    const forward = (scene.keys.has("w") || scene.keys.has("arrowup") ? 1 : 0)
+      - (scene.keys.has("s") || scene.keys.has("arrowdown") ? 1 : 0);
+    if (forward) moveTravel(dt * 20 * forward);
     const rect = e.stage.getBoundingClientRect();
-    if (byId("scarletRoom").hidden && byId("endeckRoom").hidden && !realmsRoom?.isOpen() && !foldRoom?.isOpen() && !window.HALVETH_SOURCE_NETZ_UI?.isOpen()) {
-      drawSpace(rect.width, rect.height, now / 1000);
+    if ((scene.dirty || scene.z !== scene.previousZ) && byId("scarletRoom").hidden && byId("endeckRoom").hidden && !realmsRoom?.isOpen() && !foldRoom?.isOpen() && !window.HALVETH_SOURCE_NETZ_UI?.isOpen()) {
+      drawSpace(rect.width, rect.height);
       updatePortals(rect.width, rect.height);
+      scene.previousZ = scene.z;
+      scene.dirty = false;
     }
     requestAnimationFrame(frame);
   }

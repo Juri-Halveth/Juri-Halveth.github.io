@@ -81,7 +81,9 @@ test('filtered projects show the chosen topic first and retain each other topic 
   window.requestAnimationFrame = () => 0;
   window.NETZ_ENGINE = {};
   window.eval(fs.readFileSync(path.join(route, 'data/catalog.js'), 'utf8'));
+  window.eval(fs.readFileSync(path.join(route, 'flight-model.js'), 'utf8'));
   window.eval(fs.readFileSync(path.join(route, 'app.js'), 'utf8'));
+  assert.equal(window.document.getElementById('catalogCount').textContent, '18 EINSTIEGE · 6 THEMEN');
   const filter = window.document.getElementById('categoryFilter');
   filter.value = 'security';
   filter.dispatchEvent(new window.Event('change'));
@@ -108,6 +110,71 @@ test('filtered projects show the chosen topic first and retain each other topic 
   selected.click();
   await new Promise(resolve => setTimeout(resolve, 25));
   assert.equal(window.document.getElementById('inspectCategory').textContent, selected.querySelector('small').textContent.toUpperCase());
+  dom.window.close();
+});
+
+test('wheel, vertical swipe and pinch move only along depth and reverse to the same portal projection', () => {
+  const dom = new JSDOM(html, {url: 'https://juri-halveth.github.io/universum/', runScripts: 'outside-only'});
+  const {window} = dom;
+  const gradient = {addColorStop() {}};
+  const context = new Proxy({createRadialGradient: () => gradient}, {
+    get(target, key) { return key in target ? target[key] : () => {}; }
+  });
+  window.HTMLCanvasElement.prototype.getContext = () => context;
+  window.matchMedia = () => ({matches: true});
+  let nextFrame;
+  window.requestAnimationFrame = callback => { nextFrame = callback; return 1; };
+  window.NETZ_ENGINE = {};
+  const stage = window.document.getElementById('spaceStage');
+  stage.getBoundingClientRect = () => ({left: 0, top: 0, right: 1280, bottom: 720, width: 1280, height: 720});
+  window.eval(fs.readFileSync(path.join(route, 'data/catalog.js'), 'utf8'));
+  window.eval(fs.readFileSync(path.join(route, 'flight-model.js'), 'utf8'));
+  window.eval(fs.readFileSync(path.join(route, 'app.js'), 'utf8'));
+  const frame = () => nextFrame(window.performance.now() + 1000);
+  const position = window.document.getElementById('positionReadout');
+  const scarlet = window.document.querySelector('.portal[data-project-id="halveth-scarlet"]');
+  frame();
+  const start = {left: scarlet.style.left, top: scarlet.style.top};
+  assert.match(position.textContent, /^0\.0 \/ 240/);
+
+  stage.dispatchEvent(new window.WheelEvent('wheel', {deltaY: 400, bubbles: true, cancelable: true}));
+  frame();
+  assert.match(position.textContent, /^14\.0 \/ 240/);
+  assert.notEqual(scarlet.style.left, start.left);
+  stage.dispatchEvent(new window.WheelEvent('wheel', {deltaY: -400, bubbles: true, cancelable: true}));
+  frame();
+  assert.match(position.textContent, /^0\.0 \/ 240/);
+  assert.deepEqual({left: scarlet.style.left, top: scarlet.style.top}, start);
+
+  const pointer = (type, id, x, y) => {
+    const event = new window.Event(type, {bubbles: true});
+    Object.defineProperties(event, {
+      button: {value: 0}, pointerId: {value: id}, clientX: {value: x}, clientY: {value: y}
+    });
+    stage.dispatchEvent(event);
+  };
+  pointer('pointerdown', 1, 200, 300);
+  pointer('pointermove', 1, 200, 220);
+  frame();
+  assert.match(position.textContent, /^6\.0 \/ 240/);
+  pointer('pointermove', 1, 200, 300);
+  pointer('pointerup', 1, 200, 300);
+  frame();
+  assert.match(position.textContent, /^0\.0 \/ 240/);
+  assert.deepEqual({left: scarlet.style.left, top: scarlet.style.top}, start);
+
+  pointer('pointerdown', 1, 100, 250);
+  pointer('pointerdown', 2, 200, 250);
+  pointer('pointermove', 2, 210, 250);
+  pointer('pointermove', 2, 260, 250);
+  frame();
+  assert.match(position.textContent, /^5\.5 \/ 240/);
+  pointer('pointermove', 2, 210, 250);
+  pointer('pointerup', 2, 210, 250);
+  pointer('pointerup', 1, 100, 250);
+  frame();
+  assert.match(position.textContent, /^0\.0 \/ 240/);
+  assert.deepEqual({left: scarlet.style.left, top: scarlet.style.top}, start);
   dom.window.close();
 });
 
