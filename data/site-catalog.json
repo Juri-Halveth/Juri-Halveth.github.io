@@ -196,9 +196,9 @@
           "ru": "Локально управлять учётными данными"
         },
         "summary": {
-          "de": "Passwörter, Schlüssel und Verbindungsdaten in einer verschlüsselten lokalen Datei verwalten.",
-          "en": "Manage passwords, keys and connection details in an encrypted local file.",
-          "ru": "Храните пароли, ключи и параметры подключения в зашифрованном локальном файле."
+        "de": "Passwörter, Schlüssel und Verbindungsdaten in einer verschlüsselten lokalen Datei verwalten. Die Windows-EXE v1.8.0 ist derzeit nicht code-signiert.",
+        "en": "Manage passwords, keys and connection details in an encrypted local file. The Windows executable v1.8.0 is currently not code signed.",
+        "ru": "Храните пароли, ключи и параметры подключения в зашифрованном локальном файле. Исполняемый файл Windows v1.8.0 сейчас не подписан кодовой подписью."
         },
         "action": {
           "de": "Windows-Release v1.8.0",
@@ -693,9 +693,9 @@
           "ru": "Изучить интерфейс кошелька"
         },
         "summary": {
-          "de": "Unterstützte Wallets erkennen oder eine öffentliche Adresse ansehen. Verbinden und Senden benötigen eine kompatible Wallet; Netzwerkabdeckung bleibt begrenzt.",
-          "en": "Detect supported wallets or inspect a public address. Connecting and sending need a compatible wallet; network coverage remains limited.",
-          "ru": "Распознайте поддерживаемые кошельки или просмотрите публичный адрес. Для подключения и отправки нужен совместимый кошелёк; охват сетей ограничен."
+        "de": "Öffentliche Adressen ohne Wallet ansehen oder unterstützte Wallets verbinden. Senden benötigt gesonderte Wallet-Freigabe und kann Netzwerkgebühren auslösen; die Abdeckung bleibt begrenzt.",
+        "en": "View public addresses without a wallet or connect supported wallets. Sending needs separate wallet approval and may incur network fees; coverage remains limited.",
+        "ru": "Просматривайте публичные адреса без кошелька или подключайте поддерживаемые кошельки. Для отправки нужно отдельное подтверждение в кошельке, возможны сетевые комиссии; охват ограничен."
         },
         "action": {
           "de": "Browser-Vault öffnen",

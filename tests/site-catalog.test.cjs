@@ -56,15 +56,18 @@ test('release, research PR and browser vault actions lead to their stated destin
  const wallet=catalog.projects.find(p=>p.id==='leviathan-wallet-portal');
  assert.equal(tresor.site.status,'RELEASE_ENTRY');
  assert.equal(tresor.url,'https://github.com/Juri-Halveth/halveth-tresor/releases/tag/v1.8.0');
+ assert.match(tresor.site.summary.de,/nicht code-signiert/);
  assert.equal(tron.site.status,'PR_ENTRY');
  assert.equal(tron.url,'https://github.com/Juri-Halveth/halveth-tron-security-lab/pull/1');
  assert.equal(wallet.site.status,'BROWSER_ENTRY');
  assert.equal(wallet.url,'https://juri-halveth.github.io/leviathan-wallet-portal/');
+ assert.match(wallet.site.summary.de,/Wallet-Freigabe.*Netzwerkgebühren/);
  for(const lang of ['','en/','ru/']){
   const doc=read(lang+'arbeiten/');
   for(const [id,project] of [['halveth-tresor',tresor],['halveth-tron-security-lab',tron],['leviathan-wallet-portal',wallet]]){
    const card=doc.querySelector(`[data-project="${id}"]`);
    assert.equal(card.querySelector('.directory-actions .button').getAttribute('href'),project.url);
+   assert.ok(card.textContent.includes(project.site.summary[lang?lang.slice(0,2):'de']));
    assert.ok(card.querySelector('.work-kind').textContent.trim());
   }
   assert.ok(doc.querySelector('[data-project="halveth-tresor"] .work-kind').textContent.includes('v1.8.0'));
