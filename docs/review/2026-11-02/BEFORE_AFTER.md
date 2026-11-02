@@ -40,6 +40,8 @@ At 390 px, the before gateway began at y=194 and showed no project card in the f
 
 The compact directory keeps project search visible. Category buttons sit inside a native disclosure, so the first software card enters the 390 px first viewport. See [directory screenshot](after-directory-390.png). The 13 cards remain in the HTML when JavaScript is unavailable; the finder only narrows what is shown.
 
+The retained handbook URL also has a [320 px screenshot](after-handbook-320.png): the long title remains readable as whole words, and the checkout command scrolls inside its own code box rather than widening the page.
+
 ## Review and publication boundary
 
 The full local test suite passed 94/94. A 30-target HEAD probe returned HTTP 200 for current cards and meta links on 2026-11-02. These checks establish generated structure and observed reachability. They do not establish application behavior, content quality, broad security coverage, or a successful Pages deployment. The PR remains open for visual and link review; after merge, the published URL and deployed bytes still need a separate check.
