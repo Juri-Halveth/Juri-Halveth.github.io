@@ -96,8 +96,7 @@
     panel.hidden = false;
     byId("labButton").setAttribute("aria-expanded", "true");
     app.closeTrace();
-    [byId("spaceStage"), byId("inspectPanel"), document.querySelector(".topbar"), document.querySelector(".side-rail"), document.querySelector(".statusbar")]
-      .forEach((element) => { element.inert = true; });
+    app.syncLayerInert();
     if (!eco) resetEco();
     if (!missionState && !byId("missionTitle").value) {
       const selected = app.getProject();
@@ -113,8 +112,7 @@
     fieldController?.pause();
     fieldPortalLaunch = false;
     panel.hidden = true;
-    [byId("spaceStage"), byId("inspectPanel"), document.querySelector(".topbar"), document.querySelector(".side-rail"), document.querySelector(".statusbar")]
-      .forEach((element) => { element.inert = false; });
+    app.syncLayerInert();
     byId("labButton").setAttribute("aria-expanded", "false");
     ecoRunning = false;
     byId("ecoPlay").textContent = "▶ Starten";

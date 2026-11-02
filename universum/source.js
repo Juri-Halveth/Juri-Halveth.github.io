@@ -119,8 +119,7 @@
     if (!byId("netzPanel").hidden) byId("closeNetz").click();
     if (!byId("labPanel").hidden) byId("closeLab").click();
     panel.hidden = false;
-    ["spaceStage", "inspectPanel"].forEach((id) => { byId(id).inert = true; });
-    [".topbar", ".side-rail", ".statusbar"].forEach((selector) => { document.querySelector(selector).inert = true; });
+    window.HALVETH_APP.syncLayerInert();
     byId("sceneMode").textContent = "NETZ / QUELLSPUR";
     panel.scrollTop = 0;
     slider.max = String(bound.timeline.length - 1);
@@ -139,8 +138,7 @@
     if (!panel.hidden) {
       byId("sceneMode").textContent = byId("inspectPanel").hidden ? "FLUGMODUS" : "PROJEKTFOKUS";
       panel.hidden = true;
-      ["spaceStage", "inspectPanel"].forEach((id) => { byId(id).inert = false; });
-      [".topbar", ".side-rail", ".statusbar"].forEach((selector) => { document.querySelector(selector).inert = false; });
+      window.HALVETH_APP.syncLayerInert();
     }
     if (shouldRestore) {
       const target = lastTrigger?.isConnected && !lastTrigger.closest("[hidden], [inert]") && lastTrigger.getClientRects().length

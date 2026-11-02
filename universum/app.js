@@ -82,11 +82,12 @@
   let netzBackgroundInert = false;
   function syncLayerInert() {
     const atlasOpen = e.shell.classList.contains("catalog-open");
-    e.stage.inert = atlasOpen || !e.inspect.hidden || netzBackgroundInert;
-    e.sideRail.inert = !atlasOpen || netzBackgroundInert;
-    e.inspect.inert = atlasOpen || netzBackgroundInert;
-    document.querySelector(".topbar").inert = !e.inspect.hidden || netzBackgroundInert;
-    document.querySelector(".statusbar").inert = !e.inspect.hidden || netzBackgroundInert;
+    const modalOpen = netzBackgroundInert || !byId("labPanel").hidden || !byId("sourcePanel").hidden;
+    e.stage.inert = atlasOpen || !e.inspect.hidden || modalOpen;
+    e.sideRail.inert = !atlasOpen || modalOpen;
+    e.inspect.inert = atlasOpen || modalOpen;
+    document.querySelector(".topbar").inert = !e.inspect.hidden || modalOpen;
+    document.querySelector(".statusbar").inert = !e.inspect.hidden || modalOpen;
   }
   function setCatalogOpen(open) {
     const shown = Boolean(open);
@@ -847,5 +848,5 @@
     requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
-  window.HALVETH_APP = Object.freeze({ getProject: () => projects.find((p) => p.id === scene.activeId) || null, setStatus, closeTrace: closeNetz, cancelWarp, returnToCosmos: closeInspect, reducedMotion: () => scene.reduced, setReducedMotion });
+  window.HALVETH_APP = Object.freeze({ getProject: () => projects.find((p) => p.id === scene.activeId) || null, setStatus, closeTrace: closeNetz, cancelWarp, returnToCosmos: closeInspect, reducedMotion: () => scene.reduced, setReducedMotion, syncLayerInert });
 })();
