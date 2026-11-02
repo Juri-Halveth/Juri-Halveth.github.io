@@ -75,13 +75,14 @@ window.HALVETH_CATALOG =
           "ru": "Задайте текст, создайте вариант, наблюдайте состояния и сохраните результат в JSON. Световые тела показывают развитие локальной модели."
         },
         "action": {
-          "de": "Direkt öffnen",
-          "en": "Open directly",
-          "ru": "Открыть"
+          "de": "Zustandsmodell öffnen",
+          "en": "Open state model",
+          "ru": "Открыть модель состояний"
         },
         "status": "BROWSER_ENTRY",
         "revision": "9f706b9f6bba255f30cde703f851ba80cd64d9bc",
-        "editorial_state": "CURRENT"
+        "editorial_state": "CURRENT",
+        "revision_observed_at": "2026-10-27"
       }
     },
     {
@@ -122,7 +123,8 @@ window.HALVETH_CATALOG =
         },
         "status": "SOURCE_AND_GUIDE",
         "revision": "6d0e91c056caee46e2ca2d4faaf7bcdd1975dddc",
-        "editorial_state": "CURRENT"
+        "editorial_state": "CURRENT",
+        "revision_observed_at": "2026-10-27"
       }
     },
     {
@@ -158,13 +160,14 @@ window.HALVETH_CATALOG =
           "ru": "Локальные модели JavaScript и Python: перспективы, пакеты источников, оптика, события и правила. С исполняемыми проверками."
         },
         "action": {
-          "de": "Direkt öffnen",
-          "en": "Open directly",
-          "ru": "Открыть"
+          "de": "Werkzeugauswahl öffnen",
+          "en": "Open tool selector",
+          "ru": "Открыть выбор инструментов"
         },
         "status": "BROWSER_ENTRY",
         "revision": "07417d3cdadda426c2b51cc98bcbae72d7b5d651",
-        "editorial_state": "CURRENT"
+        "editorial_state": "CURRENT",
+        "revision_observed_at": "2026-10-27"
       }
     },
     {
@@ -178,7 +181,7 @@ window.HALVETH_CATALOG =
         "security"
       ],
       "kind": "Desktopprojekt",
-      "url": "https://github.com/Juri-Halveth/halveth-tresor",
+      "url": "https://github.com/Juri-Halveth/halveth-tresor/releases/tag/v1.8.0",
       "action": "Projekt ansehen",
       "evidence": "Profil- und Portfolioquelle gelesen",
       "reviewed": true,
@@ -199,13 +202,15 @@ window.HALVETH_CATALOG =
           "ru": "Храните пароли, ключи и параметры подключения в зашифрованном локальном файле."
         },
         "action": {
-          "de": "Windows-Release ansehen",
-          "en": "View Windows release",
-          "ru": "Выпуск для Windows"
+          "de": "Windows-Release v1.8.0",
+          "en": "Windows release v1.8.0",
+          "ru": "Выпуск для Windows v1.8.0"
         },
-        "status": "SOURCE_AND_GUIDE",
+        "status": "RELEASE_ENTRY",
         "revision": "e1ca9830e84099f0e4a9a4bfdede919a5ab0eee6",
-        "editorial_state": "CURRENT"
+        "editorial_state": "CURRENT",
+        "revision_observed_at": "2026-10-27",
+        "release_tag": "v1.8.0"
       }
     },
     {
@@ -245,7 +250,8 @@ window.HALVETH_CATALOG =
         },
         "status": "BROWSER_ENTRY",
         "revision": "8ff9c2fa3e4fbf3a5795b06d1d9c77819b592292",
-        "editorial_state": "CURRENT"
+        "editorial_state": "CURRENT",
+        "revision_observed_at": "2026-10-27"
       }
     },
     {
@@ -285,7 +291,8 @@ window.HALVETH_CATALOG =
         },
         "status": "BROWSER_ENTRY",
         "revision": "572734742951819993b10d89b22591951a49dbc8",
-        "editorial_state": "CURRENT"
+        "editorial_state": "CURRENT",
+        "revision_observed_at": "2026-10-27"
       }
     },
     {
@@ -321,13 +328,14 @@ window.HALVETH_CATALOG =
           "ru": "Браузерный интерфейс, визуализация и концептуальные материалы для идей дронов и роёв. Акцент: представление и проектирование системы."
         },
         "action": {
-          "de": "Direkt öffnen",
-          "en": "Open directly",
-          "ru": "Открыть"
+          "de": "RED-ROOM-Szene öffnen",
+          "en": "Open RED ROOM scene",
+          "ru": "Открыть сцену RED ROOM"
         },
         "status": "BROWSER_ENTRY",
         "revision": "f0b072571ccb1a7894a32b1ba03c9a8620995352",
-        "editorial_state": "CURRENT"
+        "editorial_state": "CURRENT",
+        "revision_observed_at": "2026-10-27"
       }
     },
     {
@@ -367,7 +375,8 @@ window.HALVETH_CATALOG =
         },
         "status": "SOURCE_AND_GUIDE",
         "revision": null,
-        "editorial_state": "WITHDRAWN_FROM_PORTFOLIO"
+        "editorial_state": "WITHDRAWN_FROM_PORTFOLIO",
+        "revision_observed_at": null
       }
     },
     {
@@ -401,13 +410,14 @@ window.HALVETH_CATALOG =
           "ru": "Исследование реформы каннабиса с источниками и планом измерений."
         },
         "action": {
-          "de": "Direkt öffnen",
-          "en": "Open directly",
-          "ru": "Открыть"
+          "de": "Quellenübersicht öffnen",
+          "en": "Open source overview",
+          "ru": "Открыть обзор источников"
         },
         "status": "BROWSER_ENTRY",
         "revision": null,
-        "editorial_state": "CURRENT"
+        "editorial_state": "CURRENT",
+        "revision_observed_at": null
       }
     },
     {
@@ -441,13 +451,14 @@ window.HALVETH_CATALOG =
           "ru": "Учебная карта, игровые задания и отображение прогресса для самостоятельного обучения."
         },
         "action": {
-          "de": "Direkt öffnen",
-          "en": "Open directly",
-          "ru": "Открыть"
+          "de": "Lernstudio öffnen",
+          "en": "Open learning studio",
+          "ru": "Открыть учебную студию"
         },
         "status": "BROWSER_ENTRY",
         "revision": "9309f69883e9ae66290829722012deda5ed982c9",
-        "editorial_state": "CURRENT"
+        "editorial_state": "CURRENT",
+        "revision_observed_at": "2026-10-27"
       }
     },
     {
@@ -488,7 +499,8 @@ window.HALVETH_CATALOG =
         },
         "status": "BROWSER_ENTRY",
         "revision": "69f436978b0492269fb66accd0beb6d3347750d9",
-        "editorial_state": "CURRENT"
+        "editorial_state": "CURRENT",
+        "revision_observed_at": "2026-10-27"
       }
     },
     {
@@ -528,7 +540,8 @@ window.HALVETH_CATALOG =
         },
         "status": "SOURCE_AND_GUIDE",
         "revision": "f4349d013efb7105e2875784a0c7c16d2026e3da",
-        "editorial_state": "CURRENT"
+        "editorial_state": "CURRENT",
+        "revision_observed_at": "2026-10-27"
       }
     },
     {
@@ -568,7 +581,8 @@ window.HALVETH_CATALOG =
         },
         "status": "SOURCE_AND_GUIDE",
         "revision": null,
-        "editorial_state": "WITHDRAWN_FROM_PORTFOLIO"
+        "editorial_state": "WITHDRAWN_FROM_PORTFOLIO",
+        "revision_observed_at": null
       }
     },
     {
@@ -608,7 +622,8 @@ window.HALVETH_CATALOG =
         },
         "status": "SOURCE_AND_GUIDE",
         "revision": null,
-        "editorial_state": "WITHDRAWN_FROM_PORTFOLIO"
+        "editorial_state": "WITHDRAWN_FROM_PORTFOLIO",
+        "revision_observed_at": null
       }
     },
     {
@@ -621,7 +636,7 @@ window.HALVETH_CATALOG =
         "security"
       ],
       "kind": "Inventareintrag",
-      "url": "https://github.com/Juri-Halveth/halveth-tron-security-lab",
+      "url": "https://github.com/Juri-Halveth/halveth-tron-security-lab/pull/1",
       "action": "Repository ansehen",
       "evidence": "Nur Metadaten geprüft",
       "reviewed": false,
@@ -637,18 +652,20 @@ window.HALVETH_CATALOG =
           "ru": "Сравнивать кворум и доступность"
         },
         "summary": {
-          "de": "Eigenes Offline-Modell für Quorumschnittmenge und Verfügbarkeit im offenen PR #1. Der Standardzweig enthält den java-tron-Fork; das Modell ist dort noch nicht integriert und bildet keinen laufenden TRON-Konsens ab.",
-          "en": "An offline quorum-intersection and availability model in open PR #1. The default branch contains the java-tron fork; this model is not merged there and does not implement running TRON consensus.",
-          "ru": "Офлайн-модель пересечения кворумов и доступности в открытом PR #1. Основная ветка содержит форк java-tron; модель ещё не включена в неё и не реализует действующий консенсус TRON."
+          "de": "Offline-Modell für Quorumschnittmenge und Verfügbarkeit im Entwurf PR #1; der Standardbranch enthält dieses Modell nicht.",
+          "en": "Offline quorum intersection and availability model in draft PR #1; this model is not on the default branch.",
+          "ru": "Офлайн-модель пересечения кворумов и доступности в черновом PR #1; в основной ветке этой модели нет."
         },
         "action": {
-          "de": "Code & Anleitung",
-          "en": "Code & guide",
-          "ru": "Код и руководство"
+          "de": "Forschungs-PR #1 öffnen",
+          "en": "Open research PR #1",
+          "ru": "Открыть исследовательский PR #1"
         },
-        "status": "SOURCE_AND_GUIDE",
+        "status": "PR_ENTRY",
         "revision": "0d25fb9945d01629c85beeb0768e102eb247c8d1",
-        "editorial_state": "CURRENT"
+        "editorial_state": "CURRENT",
+        "revision_observed_at": "2026-10-27",
+        "pr_number": 1
       }
     },
     {
@@ -661,7 +678,7 @@ window.HALVETH_CATALOG =
         "software"
       ],
       "kind": "Inventareintrag",
-      "url": "https://github.com/Juri-Halveth/leviathan-wallet-portal",
+      "url": "https://juri-halveth.github.io/leviathan-wallet-portal/",
       "action": "Repository ansehen",
       "evidence": "Nur Metadaten geprüft",
       "reviewed": false,
@@ -677,18 +694,19 @@ window.HALVETH_CATALOG =
           "ru": "Изучить интерфейс кошелька"
         },
         "summary": {
-          "de": "Öffentliche Portaloberfläche mit ausdrücklich begrenztem Wallet- und Transaktionsumfang.",
-          "en": "A public portal interface with an explicitly bounded wallet and transaction scope.",
-          "ru": "Публичный интерфейс портала с явно ограниченными функциями кошелька и транзакций."
+          "de": "Unterstützte Wallets erkennen oder eine öffentliche Adresse ansehen. Verbinden und Senden benötigen eine kompatible Wallet; Netzwerkabdeckung bleibt begrenzt.",
+          "en": "Detect supported wallets or inspect a public address. Connecting and sending need a compatible wallet; network coverage remains limited.",
+          "ru": "Распознайте поддерживаемые кошельки или просмотрите публичный адрес. Для подключения и отправки нужен совместимый кошелёк; охват сетей ограничен."
         },
         "action": {
-          "de": "Code & Anleitung",
-          "en": "Code & guide",
-          "ru": "Код и руководство"
+          "de": "Browser-Vault öffnen",
+          "en": "Open browser vault",
+          "ru": "Открыть браузерный Vault"
         },
-        "status": "SOURCE_AND_GUIDE",
+        "status": "BROWSER_ENTRY",
         "revision": null,
-        "editorial_state": "CURRENT"
+        "editorial_state": "CURRENT",
+        "revision_observed_at": null
       }
     },
     {
@@ -728,7 +746,8 @@ window.HALVETH_CATALOG =
         },
         "status": "BROWSER_ENTRY",
         "revision": null,
-        "editorial_state": "CURRENT"
+        "editorial_state": "CURRENT",
+        "revision_observed_at": null
       }
     },
     {
@@ -768,7 +787,8 @@ window.HALVETH_CATALOG =
         },
         "status": "SOURCE_AND_GUIDE",
         "revision": null,
-        "editorial_state": "CURRENT"
+        "editorial_state": "CURRENT",
+        "revision_observed_at": null
       }
     }
   ],

@@ -25,7 +25,7 @@ const mapBytes=fs.readFileSync(path.join(root,'data/technical-map.json'));
 const technicalMap=JSON.parse(mapBytes.toString('utf8'));
 const {validatePortfolioSelection}=require('./validate-portfolio-selection.cjs');
 validatePortfolioSelection([data,sceneCatalog,publicRepositories,workSamples,technicalMap,researchIndex]);
-for(const p of data.projects)if(!siteCatalog.projects.some(row=>row.id===p.id))throw Error('Selected project missing from public site catalog');
+for(const p of data.projects){const row=siteCatalog.projects.find(row=>row.id===p.id);if(!row||row.site.revision!==p.revision||row.site.revision_observed_at!==data.sourceDate)throw Error('Selected project revision/date missing from public site catalog');}
 for(const p of publicRepositories.repositories)if(!siteCatalog.projects.some(row=>row.id===p.name))throw Error('Repository snapshot identity missing from public site catalog');
 const mapSource=JSON.parse(fs.readFileSync(path.join(root,'data/technical-map-source.json'),'utf8'));
 validateMap(technicalMap,mapSource,mapBytes);

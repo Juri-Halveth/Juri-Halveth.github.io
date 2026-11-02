@@ -28,7 +28,11 @@ test('one public source binds 18 repository entries, 16 projects and the 13 acti
    const p=catalog.projects.find(row=>row.id===card.dataset.project);
    assert.equal(p.site.editorial_state,'CURRENT');
    assert.equal(card.querySelector('.directory-actions .button').getAttribute('href'),p.url);
-   assert.equal(card.querySelector('.directory-actions .text-link').getAttribute('href'),p.source_url);
+   const source=card.querySelector('.directory-actions .text-link');
+   assert.equal(source.getAttribute('href'),p.source_url);
+   if(p.site.revision){assert.ok(source.textContent.includes(p.site.revision.slice(0,7)));assert.ok(source.textContent.includes(p.site.revision_observed_at));}
+   else assert.ok(source.textContent.length>12);
+   if(!lang&&p.site.status==='BROWSER_ENTRY')assert.equal(card.querySelector('.work-kind').textContent,'Im Browser verfügbar');
   }
  }
 });
@@ -40,7 +44,32 @@ test('catalog rejects duplicate identity, wrong source revision, URL origin and 
  bad(x=>x.projects[0].url='javascript:alert(1)');
  bad(x=>x.projects[0].site.status='SOURCE_AND_GUIDE');
  bad(x=>x.source_date='2026-02-30');
+ bad(x=>x.projects[0].site.revision_observed_at='2026-02-30');
+ bad(x=>x.projects.find(p=>p.id==='halveth-tresor').site.release_tag='v2.0.0');
+ bad(x=>x.projects.find(p=>p.id==='halveth-tron-security-lab').site.pr_number=2);
  bad(x=>x.projects.find(p=>p.id==='halveth-realms').site.editorial_state='CURRENT');
+});
+
+test('release, research PR and browser vault actions lead to their stated destinations',()=>{
+ const tresor=catalog.projects.find(p=>p.id==='halveth-tresor');
+ const tron=catalog.projects.find(p=>p.id==='halveth-tron-security-lab');
+ const wallet=catalog.projects.find(p=>p.id==='leviathan-wallet-portal');
+ assert.equal(tresor.site.status,'RELEASE_ENTRY');
+ assert.equal(tresor.url,'https://github.com/Juri-Halveth/halveth-tresor/releases/tag/v1.8.0');
+ assert.equal(tron.site.status,'PR_ENTRY');
+ assert.equal(tron.url,'https://github.com/Juri-Halveth/halveth-tron-security-lab/pull/1');
+ assert.equal(wallet.site.status,'BROWSER_ENTRY');
+ assert.equal(wallet.url,'https://juri-halveth.github.io/leviathan-wallet-portal/');
+ for(const lang of ['','en/','ru/']){
+  const doc=read(lang+'arbeiten/');
+  for(const [id,project] of [['halveth-tresor',tresor],['halveth-tron-security-lab',tron],['leviathan-wallet-portal',wallet]]){
+   const card=doc.querySelector(`[data-project="${id}"]`);
+   assert.equal(card.querySelector('.directory-actions .button').getAttribute('href'),project.url);
+   assert.ok(card.querySelector('.work-kind').textContent.trim());
+  }
+  assert.ok(doc.querySelector('[data-project="halveth-tresor"] .work-kind').textContent.includes('v1.8.0'));
+  assert.ok(doc.querySelector('[data-project="halveth-tron-security-lab"] .work-kind').textContent.includes('#1'));
+ }
 });
 
 test('home has one hero, four distinct direct cards and four primary navigation links in each language',()=>{

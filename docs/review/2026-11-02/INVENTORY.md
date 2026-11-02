@@ -15,6 +15,12 @@ Base for this review: `origin/main` at `3bdf0b3851ee592860c9518dbd7e66e8630db39c
 
 `source_date` in the new public catalog is **2026-11-01**. It is a dated source snapshot, not a claim that all 18 repositories were re-audited on 2026-11-02. A `site.revision` is present only where an earlier selected project source supplied a 40-character commit; those source links point to the exact tree. Entries without it retain an explicitly mutable README/source URL.
 
+Cards label those two source states differently: pinned links show `Quellstand 2026-10-27 · <SHA>` (localized in EN/RU), where the date is the older source-snapshot observation date, while unpinned links say `Code im Standardbranch`. A pinned historical tree is not presented as the current repository HEAD or as a commit made on that date.
+
+Primary actions were checked against their labels. Tresor now opens the owned Windows release tag `v1.8.0`, with its earlier source snapshot separately linked. Leviathan opens the live Browser Vault page; its card names public-address viewing, compatible-wallet requirements and limited network coverage. The TRON research card points to its owned draft PR #1, where the described offline quorum model lives, instead of the default branch. The Forschungslabor action names its `/wissen/` destination as a tool selector.
+
+Seedspace also has a browser page, but that page is a separate ball/room experience rather than the NOVA local search and offline demo described by its card. NOVA remains source-and-guide-first. The guessed Pages roots for Tresor, Project0 Keeper and TRON returned 404 in the 2026-11-02 probe; their usable primary destinations are the release, repository guide and research PR respectively. This does not rule out other Pages routes.
+
 ## Route disposition
 
 All 14 Website routes remain for each DE/EN/RU language, plus the generated 404 page (43 HTML outputs). Historical links, canonicals, sitemap entries, research evidence, assets, and license files remain available.
@@ -42,8 +48,8 @@ The former homepage gateway, scenic hero, scene band, purpose band and map tease
 
 - `npm ci --ignore-scripts`: completed, zero vulnerabilities in the installed 37-package audit scope.
 - `npm run build`: 43 HTML pages generated from the same inputs.
-- `npm test`: 91/91 local tests passed, including catalog identity, withdrawn presentation gate, destination routes, local paths, language parity, and CSP checks.
+- `npm test`: 92/92 local tests passed, including catalog identity, withdrawn presentation gate, destination routes, local paths, language parity, and CSP checks.
 - Local Chrome with Playwright viewport emulation: homepage and directory at 320, 375, 390, 768 and 1440 CSS px had `documentElement.scrollWidth === clientWidth`; the directory showed 13 cards and four primary navigation links at every width.
-- 2026-11-02 11:22 UTC link probe: HEAD requests for the 13 current cards and two meta entries, primary and source URL each, returned HTTP 200 in all 30 cases. This is reachability at probe time, not a run of those applications.
+- 2026-11-02 11:30 UTC link probe: HEAD requests for the 13 current cards and two meta entries, primary and source URL each, returned HTTP 200 in all 30 cases. This is reachability at probe time, not a run of those applications.
 
 Open review edges: manual smartphone touch and accessibility review by the PR reviewer; post-merge Pages deployment and rendered public URL check. The mutable source URLs without `site.revision` should be pinned only after a separate current-source review. No repository-level security claim follows from this Website test run.

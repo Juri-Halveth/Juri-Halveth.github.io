@@ -4,9 +4,12 @@ const {renderProjectControls}=require('./render-project-controls.cjs');
 const languages=['de','en','ru'];
 const groups=['software','worlds','research','learning'];
 const withdrawnFromPortfolio=new Set(['halveth-unreal','halveth-realms','halveth-morrowind-genesis']);
+const sourceLabels={de:{snapshot:'Quellstand',branch:'Code im Standardbranch'},en:{snapshot:'Source snapshot',branch:'Code on default branch'},ru:{snapshot:'Версия исходников',branch:'Код в основной ветке'}};
+const releaseLabels={de:'Windows-Release',en:'Windows release',ru:'Выпуск для Windows'};
+const prLabels={de:'Forschungsentwurf · PR',en:'Research draft · PR',ru:'Черновик исследования · PR'};
 const escape=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const copy={
- de:{eyebrow:'JURI · SOFTWAREENTWICKLUNG',headline:'Software bauen. Ergebnisse prüfen.',lead:'Ich entwickle lokale Werkzeuge, Webanwendungen und interaktive 3D-Prototypen. Ausgewählte Ergebnisse kannst du direkt öffnen; Code und Prüfwege stehen daneben.',projects:'Projekte ansehen',contact:'Zusammenarbeit anfragen',github:'GitHub-Code',first:'Direkt öffnen',more:'Drei weitere ausgewählte Arbeiten',selection:'Vier ausgewählte Arbeiten aus dem aktuellen Portfolio.',method:'Wie ich arbeite',methodText:'Jede Arbeitsprobe nennt ihren Zweck, den aktuellen Stand und einen überprüfbaren Quell- oder Testpfad. Modelle und Prototypen bleiben als solche gekennzeichnet.',cases:'Arbeitsproben prüfen',all:'Alle aktuellen Projekte ansehen',directory:'Projekte',directoryLead:'13 aktuelle Projekte: Anwendung oder Anleitung direkt öffnen, Quellcode daneben.',meta:'Website und Profil',metaLead:'Zwei zusätzliche öffentliche Einstiege gehören zum Repository-Bestand, sind aber keine weiteren Produkte.',source:'Quellcode',guide:'Code & Anleitung',browser:'Im Browser geöffnet',sourceOnly:'Anleitung und Code',lab:'Interaktives Labor',labText:'Das Starship Lab ist ein optionaler Modell- und Erlebnisraum.',models:'Szenen und Modelle',group:{software:'Software & Werkzeuge',worlds:'Visualisierung & Interaktion',research:'Forschung & Modelle',learning:'Lernen'}},
+ de:{eyebrow:'JURI · SOFTWAREENTWICKLUNG',headline:'Software bauen. Ergebnisse prüfen.',lead:'Ich entwickle lokale Werkzeuge, Webanwendungen und interaktive 3D-Prototypen. Ausgewählte Ergebnisse kannst du direkt öffnen; Code und Prüfwege stehen daneben.',projects:'Projekte ansehen',contact:'Zusammenarbeit anfragen',github:'GitHub-Code',first:'Direkt öffnen',more:'Drei weitere ausgewählte Arbeiten',selection:'Vier ausgewählte Arbeiten aus dem aktuellen Portfolio.',method:'Wie ich arbeite',methodText:'Jede Arbeitsprobe nennt ihren Zweck, den aktuellen Stand und einen überprüfbaren Quell- oder Testpfad. Modelle und Prototypen bleiben als solche gekennzeichnet.',cases:'Arbeitsproben prüfen',all:'Alle aktuellen Projekte ansehen',directory:'Projekte',directoryLead:'13 aktuelle Projekte: Anwendung oder Anleitung direkt öffnen, Quellcode daneben.',meta:'Website und Profil',metaLead:'Zwei zusätzliche öffentliche Einstiege gehören zum Repository-Bestand, sind aber keine weiteren Produkte.',source:'Quellcode',guide:'Code & Anleitung',browser:'Im Browser verfügbar',sourceOnly:'Anleitung und Code',lab:'Interaktives Labor',labText:'Das Starship Lab ist ein optionaler Modell- und Erlebnisraum.',models:'Szenen und Modelle',group:{software:'Software & Werkzeuge',worlds:'Visualisierung & Interaktion',research:'Forschung & Modelle',learning:'Lernen'}},
  en:{eyebrow:'JURI · SOFTWARE DEVELOPMENT',headline:'Build software. Check results.',lead:'I build local tools, web applications and interactive 3D prototypes. Open selected results directly; source code and verification paths sit alongside them.',projects:'View projects',contact:'Discuss a project',github:'GitHub code',first:'Open directly',more:'Three more selected works',selection:'Four selected works from the current portfolio.',method:'How I work',methodText:'Each work sample states its purpose, current scope and a checkable source or test path. Models and prototypes are identified as such.',cases:'Review work samples',all:'View current projects',directory:'Projects',directoryLead:'13 current projects: open the application or guide directly, with source code alongside.',meta:'Website and profile',metaLead:'Two additional public entries belong to the repository inventory but are not additional products.',source:'Source code',guide:'Code & guide',browser:'Available in browser',sourceOnly:'Guide and code',lab:'Interactive lab',labText:'The Starship Lab is an optional model and exploration space.',models:'Scenes and models',group:{software:'Software & tools',worlds:'Visuals & interaction',research:'Research & models',learning:'Learning'}},
  ru:{eyebrow:'ЮРИ · РАЗРАБОТКА ПРОГРАММ',headline:'Создавать программы. Проверять результат.',lead:'Я разрабатываю локальные инструменты, веб-приложения и интерактивные 3D-прототипы. Избранные результаты можно открыть сразу; рядом есть код и пути проверки.',projects:'Смотреть проекты',contact:'Обсудить проект',github:'Код на GitHub',first:'Открыть сразу',more:'Ещё три избранные работы',selection:'Четыре избранные работы из актуального портфолио.',method:'Как я работаю',methodText:'У каждой работы указаны цель, текущий объём и проверяемый путь к коду или тесту. Модели и прототипы обозначены как таковые.',cases:'Проверить примеры работы',all:'Все актуальные проекты',directory:'Проекты',directoryLead:'13 актуальных проектов: открыть приложение или руководство, рядом — исходный код.',meta:'Сайт и профиль',metaLead:'Ещё два публичных входа входят в список репозиториев, но не являются отдельными продуктами.',source:'Исходный код',guide:'Код и руководство',browser:'Доступно в браузере',sourceOnly:'Руководство и код',lab:'Интерактивная лаборатория',labText:'Starship Lab — дополнительное пространство моделей и исследования.',models:'Сцены и модели',group:{software:'Программы и инструменты',worlds:'Визуализация и взаимодействие',research:'Исследования и модели',learning:'Обучение'}}
 };
@@ -31,23 +34,39 @@ function validateSiteCatalog(catalog){
   safeUrl(p.url);safeUrl(p.source_url);
   const entryUrl=new URL(p.url),sourceUrl=new URL(p.source_url);
   if(sourceUrl.hostname!=='github.com'||!sourceUrl.pathname.startsWith(`/Juri-Halveth/${p.id}/`))throw Error('Source URL identity mismatch');
-  if(entryUrl.hostname==='github.com'&&entryUrl.pathname!==`/Juri-Halveth/${p.id}`)throw Error('Entry URL identity mismatch');
+  if(entryUrl.hostname==='github.com'&&entryUrl.pathname!==`/Juri-Halveth/${p.id}`&&entryUrl.pathname!==`/Juri-Halveth/${p.id}/releases/tag/${p.site?.release_tag}`&&entryUrl.pathname!==`/Juri-Halveth/${p.id}/pull/${p.site?.pr_number}`)throw Error('Entry URL identity mismatch');
   if(entryUrl.hostname==='juri-halveth.github.io'&&p.id!=='Juri-Halveth.github.io'&&!entryUrl.pathname.startsWith(`/${p.id}/`))throw Error('Pages entry identity mismatch');
-  if(!p.site||!groups.includes(p.site.primary_category)||!['PROJECT','META'].includes(p.site.entry_type)||!['BROWSER_ENTRY','SOURCE_AND_GUIDE'].includes(p.site.status))throw Error('Invalid site entry');
+  if(!p.site||!groups.includes(p.site.primary_category)||!['PROJECT','META'].includes(p.site.entry_type)||!['BROWSER_ENTRY','SOURCE_AND_GUIDE','RELEASE_ENTRY','PR_ENTRY'].includes(p.site.status))throw Error('Invalid site entry');
   if((p.site.status==='BROWSER_ENTRY')!==(entryUrl.hostname==='juri-halveth.github.io'))throw Error('Entry status and destination mismatch');
+  if(p.site.status==='RELEASE_ENTRY'){
+   if(!/^v\d+\.\d+\.\d+$/.test(p.site.release_tag)||entryUrl.pathname!==`/Juri-Halveth/${p.id}/releases/tag/${p.site.release_tag}`)throw Error('Release entry mismatch');
+  }else if(p.site.release_tag!==undefined&&p.site.release_tag!==null)throw Error('Release tag without release entry');
+  if(p.site.status==='PR_ENTRY'){
+   if(!Number.isSafeInteger(p.site.pr_number)||p.site.pr_number<1||entryUrl.pathname!==`/Juri-Halveth/${p.id}/pull/${p.site.pr_number}`)throw Error('PR entry mismatch');
+  }else if(p.site.pr_number!==undefined&&p.site.pr_number!==null)throw Error('PR number without PR entry');
   if((p.site.editorial_state==='WITHDRAWN_FROM_PORTFOLIO')!==withdrawnFromPortfolio.has(p.id))throw Error('Portfolio editorial state mismatch');
   if(p.site.entry_type==='PROJECT')projectCount++;else metaCount++;
   for(const field of ['title','summary','action'])for(const lang of languages)if(typeof p.site[field]?.[lang]!=='string'||!p.site[field][lang].trim())throw Error('Localized '+field+' required');
   if(p.site.revision!==null&&!/^[0-9a-f]{40}$/.test(p.site.revision))throw Error('Invalid optional pinned revision');
+  if(p.site.revision===null&&p.site.revision_observed_at!==null)throw Error('Unpinned source cannot claim a revision date');
+  if(p.site.revision!==null&&(typeof p.site.revision_observed_at!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(p.site.revision_observed_at)||new Date(p.site.revision_observed_at+'T00:00:00Z').toISOString().slice(0,10)!==p.site.revision_observed_at))throw Error('Pinned revision needs a valid observation date');
   if(p.site.revision!==null&&p.source_url!==`https://github.com/${p.repository}/tree/${p.site.revision}`)throw Error('Pinned source URL and revision mismatch');
  }
  if(projectCount!==16||metaCount!==2||!catalog.projects.find(p=>p.id==='Juri-Halveth'&&p.site.entry_type==='META')||!catalog.projects.find(p=>p.id==='Juri-Halveth.github.io'&&p.site.entry_type==='META'))throw Error('Project and meta entry split required');
  for(const id of catalog.home_featured_ids)if(!catalog.projects.some(p=>p.id===id&&p.site.entry_type==='PROJECT'))throw Error('Featured project missing');
  return catalog;
 }
+function sourceAction(project,lang){
+ const labels=sourceLabels[lang];if(!labels)throw Error('Unknown source language');
+ return project.site.revision?`${labels.snapshot} ${project.site.revision_observed_at} · ${project.site.revision.slice(0,7)}`:labels.branch;
+}
+function entryStatus(project,lang){
+ const s=project.site.status,t=copy[lang];
+ return s==='BROWSER_ENTRY'?t.browser:s==='RELEASE_ENTRY'?`${releaseLabels[lang]} ${project.site.release_tag}`:s==='PR_ENTRY'?`${prLabels[lang]} #${project.site.pr_number}`:t.sourceOnly;
+}
 function featureCard(project,lang,hero=false){
  const t=copy[lang];const s=project.site;
- return `<article class="service-card${hero?' service-card-first':''}" data-featured-project="${escape(project.id)}"><p class="work-kind">${escape(s.status==='BROWSER_ENTRY'?t.browser:t.sourceOnly)}</p><h${hero?2:3}>${escape(s.title[lang])}</h${hero?2:3}><p>${escape(s.summary[lang])}</p><div class="service-card-actions"><a class="button" href="${escape(project.url)}">${escape(s.action[lang])} ↗</a><a class="text-link" href="${escape(project.source_url)}">${t.source} ↗</a></div><p class="source-caption">${escape(project.title)} · ${escape(project.repository)}</p></article>`;
+ return `<article class="service-card${hero?' service-card-first':''}" data-featured-project="${escape(project.id)}"><p class="work-kind">${escape(entryStatus(project,lang))}</p><h${hero?2:3}>${escape(s.title[lang])}</h${hero?2:3}><p>${escape(s.summary[lang])}</p><div class="service-card-actions"><a class="button" href="${escape(project.url)}">${escape(s.action[lang])} ↗</a><a class="text-link" href="${escape(project.source_url)}">${escape(sourceAction(project,lang))} ↗</a></div><p class="source-caption">${escape(project.title)} · ${escape(project.repository)}</p></article>`;
 }
 function renderHome(catalog,lang){
  validateSiteCatalog(catalog);const t=copy[lang];if(!t)throw Error('Unknown site language');
@@ -57,7 +76,7 @@ function renderHome(catalog,lang){
 }
 function directoryCard(project,lang){
  const t=copy[lang],s=project.site;
- return `<article class="directory-project" data-project="${escape(project.id)}" data-category="${escape(s.primary_category)}"><p class="work-kind">${escape(s.status==='BROWSER_ENTRY'?t.browser:t.sourceOnly)}</p><h3>${escape(s.title[lang])}</h3><p>${escape(s.summary[lang])}</p><div class="directory-actions"><a class="button" href="${escape(project.url)}">${escape(s.action[lang])} ↗</a><a class="text-link" href="${escape(project.source_url)}">${t.source} ↗</a></div><p class="source-caption">${escape(project.title)} · ${escape(project.repository)}</p></article>`;
+ return `<article class="directory-project" data-project="${escape(project.id)}" data-category="${escape(s.primary_category)}"><p class="work-kind">${escape(entryStatus(project,lang))}</p><h3>${escape(s.title[lang])}</h3><p>${escape(s.summary[lang])}</p><div class="directory-actions"><a class="button" href="${escape(project.url)}">${escape(s.action[lang])} ↗</a><a class="text-link" href="${escape(project.source_url)}">${escape(sourceAction(project,lang))} ↗</a></div><p class="source-caption">${escape(project.title)} · ${escape(project.repository)}</p></article>`;
 }
 function renderDirectory(catalog,lang){
  validateSiteCatalog(catalog);const t=copy[lang];if(!t)throw Error('Unknown site language');
