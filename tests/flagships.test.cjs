@@ -4,12 +4,13 @@ const {JSDOM}=require('jsdom');
 const {renderFlagships,flagshipProjects}=require('../tools/render-flagships.cjs');
 const {refresh}=require('../tools/refresh-public-heads.cjs');
 const data=require('../data/projects.json'),snapshot=require('../data/public-repositories.json');
-test('all language entrances lead with the four selected usable projects and separate contact channels',()=>{
+test('all language entrances lead with one service hero, four directly usable projects and separate contact channels',()=>{
  for(const prefix of ['','en/','ru/']){
   const doc=new JSDOM(fs.readFileSync(path.join(__dirname,'..',prefix,'index.html'),'utf8')).window.document;
-  assert.deepEqual([...doc.querySelectorAll('[data-flagship]')].map(n=>n.dataset.flagship),['lucinet-seedspace','halveth-tresor','mein-lernportal','halveth-field-difference-lab']);
-  assert.equal(doc.querySelector('.hero-actions a').getAttribute('href'),'#flagships');
-  assert.ok(doc.querySelector('#flagships').compareDocumentPosition(doc.querySelector('.scene-wall'))&4);
+  assert.equal(doc.querySelectorAll('.service-hero').length,1);
+  assert.deepEqual([...doc.querySelectorAll('[data-featured-project]')].map(n=>n.dataset.featuredProject),['mein-lernportal','lucinet-seedspace','halveth-tresor','halveth-field-difference-lab']);
+  assert.ok(doc.querySelector('.service-hero a[href$="arbeiten/"]'));
+  assert.equal(doc.querySelector('.scene-wall'),null);
   assert.ok(doc.querySelector('#contact a[href="mailto:juri@halveth.de"]'));
   assert.ok(doc.querySelector('a[href="mailto:security@halveth.de"]'));
   assert.equal(doc.querySelector('a[href*="leviathan-wallet-portal"]'),null);

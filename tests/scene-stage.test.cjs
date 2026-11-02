@@ -43,12 +43,12 @@ test('presentation strings are escaped while the model has native usable control
  assert.equal(doc.querySelectorAll('svg circle').length,8);
  assert.equal(new Set([...doc.querySelectorAll('[id]')].map(x=>x.id)).size,doc.querySelectorAll('[id]').length);
 });
-test('generated entrances use the model controller, translated routes and exactly one page title',()=>{
- for(const lang of ['','en/','ru/'])for(const route of ['','profil/']){
+test('the optional model page uses the controller while primary entrances keep one page title',()=>{
+ for(const lang of ['','en/','ru/'])for(const route of ['','profil/','modelle/']){
   const page=path.join(root,lang,route,'index.html'),doc=new JSDOM(fs.readFileSync(page,'utf8')).window.document;
-  assert.equal(doc.querySelectorAll('h1').length,1);assert.equal(doc.querySelectorAll('script[type="module"][src$="scene-stage.mjs"]').length,1);
+  assert.equal(doc.querySelectorAll('h1').length,1);assert.equal(doc.querySelectorAll('script[type="module"][src$="scene-stage.mjs"]').length,route==='modelle/'?1:0);
   assert.equal(doc.querySelectorAll('[data-ambient-motion]').length,0);
-  assert.equal(path.resolve(path.dirname(page),doc.querySelector('.hero-actions a:nth-child(3)').getAttribute('href')),path.join(root,lang,'koennen'));
+  if(route==='modelle/')assert.ok(doc.querySelector('#scene-lab'));
   const stylesheet=doc.querySelector('link[rel="stylesheet"][href*="showcase.css"]').getAttribute('href'),[stylesheetPath,stylesheetQuery]=stylesheet.split('?');
   assert.equal(path.resolve(path.dirname(page),stylesheetPath),path.join(root,'showcase.css'));
   assert.equal(new URLSearchParams(stylesheetQuery).get('v'),require('node:crypto').createHash('sha256').update(fs.readFileSync(path.join(root,'showcase.css'),'utf8').replace(/\r\n/g,'\n')).digest('hex'));
@@ -63,12 +63,14 @@ test('display order preserves every source packet exactly once and rejects incom
   assert.throws(()=>renderHero(altered,'de'),/presentation order/);
  }
 });
-test('the curated directory exposes each selected repository once without pretending a complete account inventory',()=>{
+test('the curated directory exposes each current project once while the full source catalog remains distinct',()=>{
  const snapshot=JSON.parse(fs.readFileSync(path.join(root,'data/public-repositories.json'),'utf8'));assert.equal(snapshot.repositories.length,14);
+ const site=JSON.parse(fs.readFileSync(path.join(root,'data/site-catalog.json'),'utf8'));
+ assert.equal(site.projects.length,18);
  for(const lang of ['','en/','ru/']){
   const doc=new JSDOM(fs.readFileSync(path.join(root,lang,'arbeiten/index.html'),'utf8')).window.document;
-  const links=[...doc.querySelectorAll('.repository-list a')];assert.equal(links.length,14);
-  assert.deepEqual(links.map(a=>a.getAttribute('href')).sort(),snapshot.repositories.map(r=>r.url).sort());
+  const cards=[...doc.querySelectorAll('.directory-project')];assert.equal(cards.length,13);
+  assert.deepEqual(cards.map(c=>c.dataset.project).sort(),site.projects.filter(p=>p.site.entry_type==='PROJECT'&&p.site.editorial_state==='CURRENT').map(p=>p.id).sort());
  }
  assert.match(snapshot.coverage,/not a complete account inventory/);
 });

@@ -1,35 +1,39 @@
-# HALVETH / NETZ · Projekte und interaktive Modelle
+# Juri · Software und überprüfbare Projekte
 
-[![HALVETH NETZ: sechs verbundene Themenfelder](universum/assets/system-banner.svg)](https://juri-halveth.github.io/universum/)
+Ich entwickle lokale Werkzeuge, Webanwendungen und interaktive Modelle. Die
+[Portfolio-Startseite](https://juri-halveth.github.io/) zeigt direkt nutzbare
+Ergebnisse; die [Projektübersicht](https://juri-halveth.github.io/arbeiten/)
+führt zu Anwendung oder Anleitung und daneben zum Quellcode. Zwei
+[Arbeitsproben](https://juri-halveth.github.io/belege/) zeigen Eingabe, Ergebnis
+und Gegenprobe. **Person: Juri. Projekt: HALVETH.**
+[Namenszuordnung](IDENTITY.md).
 
-**[Starship Lab öffnen →](https://juri-halveth.github.io/universum/)** · Software · Sicherheit · Modelle und Visualisierung · Welten · Lernen · gesellschaftliche Quellen
+Der öffentliche Quellenkatalog bindet **18 Repository-Einträge**: **16
+Projektrepositories**, die Website und das GitHub-Profil. Auf der
+Projektübersicht stehen **13 aktuelle Projektkarten**. Drei früher
+zurückgezogene Spielpräsentationen sind weiterhin nur im Quellenbestand und
+im optionalen Lab erfasst; die redaktionelle Sperre aus
+`tools/validate-portfolio-selection.cjs` bleibt bestehen.
 
-**Person: Juri. Projekt: HALVETH.** [Namenszuordnung](IDENTITY.md).
-
-[Portfolio öffnen](https://juri-halveth.github.io/) · [Projekte](https://juri-halveth.github.io/arbeiten/) · [Technik & Code](https://juri-halveth.github.io/koennen/)
-
-Die Website beginnt mit dem NETZ-Gateway; danach führen NOVA, Tresor, Mein Lernportal und Field Difference Lab in die Arbeitsproben.
-Die weiteren Arbeitsproben zeigen bedienbare Funktionen für Textzustände, Varianten,
-Beobachtungsvergleich und räumliche Anwendungen.
-Direkt auf der Seite berechnet JavaScript zwei Ansichten derselben vier Punkte.
-Zweck, Modellregeln, lokale Ausführung und mögliche Anwendung bleiben erkennbar.
-Die Präsentationsreihenfolge ist getrennt von den unveränderten Quellpaket-IDs.
+[Starship Lab öffnen](https://juri-halveth.github.io/universum/) ·
+[Szenen und Modelle ansehen](https://juri-halveth.github.io/modelle/) ·
+[Technische Karte](https://juri-halveth.github.io/koennen/)
 
 Die Portfolio-Oberfläche ist auf Deutsch, Englisch und Russisch verfügbar; das Starship Lab ist derzeit deutschsprachig. Projektleitung
 und Auswahl: Juri / HALVETH; Entwicklung mit KI-Unterstützung.
 
 Das [Starship Lab](universum/) ist ein eigenständiger interaktiver Browserraum
-für 18 öffentliche Projekteinträge. Er verbindet räumliche Navigation,
+für 18 öffentliche Repository-Einträge. Er verbindet räumliche Navigation,
 synthetische Modelle und drei ausgewählte Quellspuren. Die Kategorien bleiben
 im Lab getrennt: Software, Sicherheit, Modelle und Visualisierung, Welten,
 Lernen sowie gesellschaftliche Quellen. Seine Berechnungen laufen im Browser;
 die [Quellen- und Lizenzkarte](universum/CREDITS.md) benennt die eingebundenen
-Module und Bilder. Die Portfolio-Navigation führt direkt zu dieser einen Route.
+Module und Bilder. Das Lab ist über die Projektübersicht und den Footer erreichbar.
 
 ## Lokal bauen
 
-Auf der Projektübersicht lassen sich die vorhandenen elf Arbeitsproben nach
-Aufgabe durchsuchen und auf Werkzeuge, Lernen oder Modelle begrenzen.
+Auf der Projektübersicht lassen sich die 13 aktuell präsentierten Projekte nach
+Aufgabe durchsuchen und auf Werkzeuge, Visualisierung, Lernen oder Modelle begrenzen.
 Ein leeres Ergebnis besitzt einen direkten Rückweg zu allen Projekten.
 Suche und Filter arbeiten lokal, ohne Navigation oder automatisches Scrollen.
 Deutsch, Englisch und Russisch verwenden dieselben Projektquellen; ohne
@@ -58,9 +62,11 @@ Prüfstatus „Quellstand aus GitHub“; alte Testergebnisse werden nicht auf ne
 Revisionen übertragen. Der TRON-Arbeitsbeleg bleibt absichtlich auf seinen
 unveröffentlichten PR-Quellstand gebunden.
 
-Startseiten und Footer zeigen denselben Projektquellenstand aus
-`data/projects.json` (`sourceDate`). Ein Build erhält dieses Abrufdatum;
-`npm run refresh` aktualisiert es zusammen mit den Quellrevisionen.
+Der Footer zeigt den Katalogstand aus `data/site-catalog.json`
+(`source_date`). `npm run refresh` aktualisiert separat die ältere ausgewählte
+Quellmenge in `data/projects.json`; es ändert den Website-Katalog derzeit nicht
+automatisch. Ein neues öffentliches Projekt wird in den Website-Katalog
+eingetragen und redaktionell geprüft, bevor es als Karte erscheint.
 
 ## Quellen und Darstellung
 
@@ -78,6 +84,11 @@ Startseiten und Footer zeigen denselben Projektquellenstand aus
   öffentliche Repositories aus dem datierten Abruf mit Zweck und beobachtetem Standardbranch-HEAD.
   Lizenzquellen haben ihre eigene Prüfungsrevision. Das Verzeichnis ist kein
   Vollaudit der verlinkten Produkte.
+- `data/site-catalog.json` ist die öffentliche Identitäts- und
+  Navigationsquelle für Website und Starship Lab: 18 Repository-Einträge,
+  16 Projekte, 2 Meta-Einstiege. Ein eigener redaktioneller Status begrenzt die
+  13 aktuell präsentierten Karten. Die alten datierten Teilmengen bleiben
+  als Belege erhalten.
 
 `tools/build-portfolio.cjs` erzeugt 43 HTML-Seiten deterministisch. Tests prüfen
 Quelladressen, Darstellungsgrenzen, Sprachfassungen, lokale Dateipfade,

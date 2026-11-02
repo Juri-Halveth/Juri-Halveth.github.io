@@ -21,25 +21,30 @@ test('public entrances and cards describe functions in every language while reta
  for(const prefix of ['','en/','ru/'])for(const route of ['','profil/','arbeiten/','koennen/','belege/','forschung/','modelle/','audits/','lernen/','motion/','handbuch/','pulsar/','zertifikate/','werkzertifikate/']){
   const doc=new JSDOM(fs.readFileSync(path.join(root,prefix,route,'index.html'),'utf8')).window.document;
   checkLabels(doc);
-  if(!route){
-   assert.deepEqual([...doc.querySelectorAll('[data-scene]')].map(e=>e.dataset.scene),['scarlet','endeck']);
-   assert.match(doc.querySelector('[data-scene="scarlet"]').href,/\/halveth-scarlet\//);
+  if(route==='modelle/'){
+   assert.ok(doc.querySelector('#scene-lab'));
+   assert.ok(doc.querySelector('script[src$="scene-stage.mjs"]'));
   }
  }
  const doc=new JSDOM(fs.readFileSync(path.join(root,'index.html'),'utf8')).window.document;
  doc.querySelector('h1').textContent='SCARLET';
  assert.throws(()=>checkLabels(doc),/SCARLET/);
 });
-test('every repository keeps its URL but uses a complete functional display title',()=>{
+test('the current directory keeps direct URLs and functional titles while withdrawn presentations stay out',()=>{
  const {validateRepositorySnapshot}=require('../tools/validate-projects.cjs');
  const data=JSON.parse(fs.readFileSync(path.join(root,'data/public-repositories.json'),'utf8'));
+ const catalog=JSON.parse(fs.readFileSync(path.join(root,'data/site-catalog.json'),'utf8'));
  const doc=new JSDOM(fs.readFileSync(path.join(root,'arbeiten/index.html'),'utf8')).window.document;
- const links=[...doc.querySelectorAll('.repository-list a')];
- assert.equal(links.length,data.repositories.length);
- for(let i=0;i<links.length;i++){
-  assert.equal(links[i].getAttribute('href'),data.repositories[i].url);
-  assert.equal(links[i].textContent,data.repositories[i].displayTitle.de+' ↗');
+ const cards=[...doc.querySelectorAll('.directory-project')];
+ assert.equal(cards.length,13);
+ for(const card of cards){
+  const project=catalog.projects.find(p=>p.id===card.dataset.project);assert.ok(project);
+  assert.equal(project.site.editorial_state,'CURRENT');
+  assert.equal(card.querySelector('h3').textContent,project.site.title.de);
+  assert.equal(card.querySelector('.directory-actions a.button').getAttribute('href'),project.url);
  }
+ assert.equal(doc.querySelectorAll('.directory-meta li').length,2);
+ assert.equal(new Set(cards.map(card=>card.dataset.project)).size,13);
  const incomplete=structuredClone(data);delete incomplete.repositories[0].displayTitle.ru;
  assert.throws(()=>validateRepositorySnapshot(incomplete),/functional repository title/);
 });
