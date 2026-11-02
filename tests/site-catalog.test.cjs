@@ -27,13 +27,23 @@ test('one public source binds 18 repository entries, 16 projects and the 13 acti
   for(const card of cards){
    const p=catalog.projects.find(row=>row.id===card.dataset.project);
    assert.equal(p.site.editorial_state,'CURRENT');
-   assert.equal(card.querySelector('.directory-actions .button').getAttribute('href'),p.url);
+   const expected=p.id==='halveth-scarlet'&&lang?`${p.url}?lang=${lang.slice(0,2)}`:p.url;
+   assert.equal(card.querySelector('.directory-actions .button').getAttribute('href'),expected);
    const source=card.querySelector('.directory-actions .text-link');
    assert.equal(source.getAttribute('href'),p.source_url);
    if(p.site.revision){assert.ok(source.textContent.includes(p.site.revision.slice(0,7)));assert.ok(source.textContent.includes(p.site.revision_observed_at));}
    else assert.ok(source.textContent.length>12);
    if(!lang&&p.site.status==='BROWSER_ENTRY')assert.equal(card.querySelector('.work-kind').textContent,'Im Browser verfügbar');
   }
+ }
+});
+
+test('SCARLET direct actions preserve the requested language in the directory',()=>{
+ for(const [route,lang] of [['arbeiten/','de'],['en/arbeiten/','en'],['ru/arbeiten/','ru']]){
+  const doc=read(route);
+  const url=new URL(doc.querySelector('[data-project="halveth-scarlet"] .directory-actions .button').getAttribute('href'));
+  assert.equal(url.pathname,'/halveth-scarlet/');
+  assert.equal(url.searchParams.get('lang'),lang==='de'?null:lang);
  }
 });
 
@@ -106,5 +116,16 @@ test('legacy routes retain distinct destinations and learning cards come from th
   assert.equal(cards.length,2);
   assert.deepEqual(cards.map(c=>c.dataset.project).sort(),catalog.projects.filter(p=>p.site.primary_category==='learning'&&p.site.editorial_state==='CURRENT').map(p=>p.id).sort());
   assert.equal(learning.querySelector('.project-finder'),null);
+ }
+});
+
+test('handbook command retains a bounded horizontal scroll container',()=>{
+ const css=fs.readFileSync(path.join(root,'portfolio.css'),'utf8');
+ assert.match(css,/\.legacy-destination pre\{[^}]*max-width:100%;overflow-x:auto/);
+ assert.match(css,/\.legacy-destination pre code\{[^}]*max-width:100%;overflow-x:auto/);
+ assert.match(css,/\.legacy-destination h1\{[^}]*overflow-wrap:anywhere/);
+ for(const lang of ['','en/','ru/']){
+  const doc=read(lang+'handbuch/');
+  assert.ok(doc.querySelector('.legacy-destination pre code'));
  }
 });

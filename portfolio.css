@@ -83,3 +83,8 @@
 .category-toggle{margin-top:12px}
 .category-toggle summary{display:list-item;cursor:pointer;font-size:14px;font-weight:650;padding:7px 0}
 .category-toggle .project-filters{margin-top:8px}
+/* Keep visual and keyboard focus order aligned on narrow screens. */
+@media(max-width:760px){.site-header .primary-nav{order:2}.site-header .language-switch{order:3;flex:0 0 100%;margin-top:9px}}
+.legacy-destination pre{max-width:100%;overflow-x:auto;padding:20px;background:#e1e6d6;border:1px solid var(--line);white-space:pre}
+.legacy-destination pre code{display:block;max-width:100%;overflow-x:auto}
+.legacy-destination h1{overflow-wrap:anywhere}

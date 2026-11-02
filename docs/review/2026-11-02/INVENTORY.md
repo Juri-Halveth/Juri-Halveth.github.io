@@ -48,8 +48,10 @@ The former homepage gateway, scenic hero, scene band, purpose band and map tease
 
 - `npm ci --ignore-scripts`: completed, zero vulnerabilities in the installed 37-package audit scope.
 - `npm run build`: 43 HTML pages generated from the same inputs.
-- `npm test`: 92/92 local tests passed, including catalog identity, withdrawn presentation gate, destination routes, local paths, language parity, and CSP checks.
+- `npm test`: 94/94 local tests passed, including catalog identity, withdrawn presentation gate, destination routes, local paths, language parity, and CSP checks.
 - Local Chrome with Playwright viewport emulation: homepage and directory at 320, 375, 390, 768 and 1440 CSS px had `documentElement.scrollWidth === clientWidth`; the directory showed 13 cards and four primary navigation links at every width.
+- The `/handbuch/` command and long German heading were checked in DE/EN/RU at 320 and 390 CSS px: document width matched the viewport while command text scrolled inside the code container. At narrow widths keyboard focus follows visual order: skip link, brand, four primary links, languages, then hero action.
+- SCARLET direct cards preserve the chosen UI language with `?lang=en` and `?lang=ru`; DE retains the canonical URL.
 - 2026-11-02 11:30 UTC link probe: HEAD requests for the 13 current cards and two meta entries, primary and source URL each, returned HTTP 200 in all 30 cases. This is reachability at probe time, not a run of those applications.
 
 Open review edges: manual smartphone touch and accessibility review by the PR reviewer; post-merge Pages deployment and rendered public URL check. The mutable source URLs without `site.revision` should be pinned only after a separate current-source review. No repository-level security claim follows from this Website test run.

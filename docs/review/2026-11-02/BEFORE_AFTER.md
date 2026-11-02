@@ -36,10 +36,10 @@ The images below were rendered locally with Chrome at **390 × 844 CSS px**. The
 
 ![Candidate after at 390 CSS px](after-390.png)
 
-At 390 px, the before gateway began at y=194 and showed no project card in the first viewport. The candidate hero begins at y=143; the first project card begins at y=607 and its action is visible by the bottom edge. At 320 px, the candidate primary CTA ends at y=596 and the first card begins at y=677. At 375 px, the first card begins at y=607. Home and directory had no horizontal document overflow at 320, 375, 390, 768 or 1440 px in the local Chrome run.
+At 390 px, the before gateway began at y=194 and showed no project card in the first viewport. The candidate hero begins at y=186; the first project card begins at y=623 and its action appears at the bottom edge. At 320 px, the candidate primary CTA ends at y=586 and the first card begins at y=666. At 375 px, the first card begins at y=623. Home and directory had no horizontal document overflow at 320, 375, 390, 768 or 1440 px in the local Chrome run. Header visual order matches keyboard focus order on narrow screens.
 
 The compact directory keeps project search visible. Category buttons sit inside a native disclosure, so the first software card enters the 390 px first viewport. See [directory screenshot](after-directory-390.png). The 13 cards remain in the HTML when JavaScript is unavailable; the finder only narrows what is shown.
 
 ## Review and publication boundary
 
-The full local test suite passed 92/92. A 30-target HEAD probe returned HTTP 200 for current cards and meta links on 2026-11-02. These checks establish generated structure and observed reachability. They do not establish application behavior, content quality, broad security coverage, or a successful Pages deployment. The PR remains open for visual and link review; after merge, the published URL and deployed bytes still need a separate check.
+The full local test suite passed 94/94. A 30-target HEAD probe returned HTTP 200 for current cards and meta links on 2026-11-02. These checks establish generated structure and observed reachability. They do not establish application behavior, content quality, broad security coverage, or a successful Pages deployment. The PR remains open for visual and link review; after merge, the published URL and deployed bytes still need a separate check.
