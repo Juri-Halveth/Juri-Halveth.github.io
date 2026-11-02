@@ -1,7 +1,7 @@
 {
   "schema": "halveth.portal.catalog.v1",
   "source_date": "2026-11-02",
-  "source_kind": "2026-11-01 connected GitHub inventory, supplemented by 2026-11-02 source-bound README/code review, 2026-11-03 SCARLET subspace check and a merged 1001-door source pending Pages observation; editorial navigation, not runtime verification",
+  "source_kind": "2026-11-01 connected GitHub inventory, supplemented by 2026-11-02 source-bound README/code review and 2026-11-03 SCARLET and 1001-door Pages observations; editorial navigation, not runtime verification",
   "inventory_scope": "The 18 public entries come from the earlier connected inventory; account-wide completeness was not rechecked on 2026-11-02. No private names exported.",
   "categories": [
     {
@@ -220,7 +220,8 @@
             "source_revision": "459f292df235550717d03c275a573a28abd269bb",
             "source_url": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/459f292df235550717d03c275a573a28abd269bb/branches/1001-doors/index.html",
             "observed_at": "2026-11-03",
-            "availability": "PENDING_PUBLICATION"
+            "availability": "PUBLISHED",
+            "published_at": "2026-11-03"
           }
         ]
       }
