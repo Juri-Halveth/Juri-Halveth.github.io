@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="t d" color="#7edcd7">
+<title id="t">LEVIATHAN PORTAL – schematische Illustration</title><desc id="d">ÖFFENTLICHE ANSICHT · WALLET-FREIGABE</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset="1" stop-color="#142439"/></linearGradient><radialGradient id="glow"><stop stop-color="#7edcd7" stop-opacity=".17"/><stop offset="1" stop-color="#7edcd7" stop-opacity="0"/></radialGradient></defs>
+<rect width="960" height="540" fill="url(#bg)"/><ellipse cx="520" cy="340" rx="420" ry="240" fill="url(#glow)"/>
+<g font-family="Arial, sans-serif" font-weight="600"><text x="61" y="39" font-size="14" letter-spacing="3" fill="#7edcd7">FUNKTIONSILLUSTRATION</text><text x="59" y="96" font-size="37" fill="#f2f7fa">LEVIATHAN PORTAL</text><text x="61" y="128" font-size="13" letter-spacing="2" fill="#a9b7c5">ÖFFENTLICHE ANSICHT · WALLET-FREIGABE</text></g>
+<style>.faint{fill:#0e2234;stroke:#7edcd7;stroke-opacity:.37;stroke-width:2;stroke-linejoin:round}.line{fill:none;stroke:#7edcd7;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}.copy{fill:#b5c8d5;font-family:Arial,sans-serif;font-size:14px;font-weight:700;letter-spacing:1px}</style>
+<g class="faint"><path d="M124 244h313v169H124zM544 244h286v169H544z"/></g>
+<g class="line"><path d="M157 290h199m-199 29h147m-147 29h181m-181 30h118M435 327h108" stroke-dasharray="8 10"/><path d="M621 297v-26c0-47 94-47 94 0v26m-105 0h116v87H610z"/><circle cx="667" cy="337" r="11"/><path d="M667 348v17"/></g>
+<g class="copy"><text x="143" y="222">PUBLIC ADDRESS</text><text x="567" y="222">SEPARATE FREIGABE</text></g>
+<path d="M60 482h840" stroke="#7edcd7" stroke-opacity=".26"/><text x="61" y="510" fill="#8ca2b1" font-family="Arial, sans-serif" font-size="12" letter-spacing="1.5">SCHEMATISCH · KEIN SCREENSHOT UND KEINE RUNTIME-BEOBACHTUNG</text>
+</svg>

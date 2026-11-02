@@ -3,16 +3,23 @@
   const catalog = window.HALVETH_CATALOG;
   const engine = window.NETZ_ENGINE;
   const flight = window.HALVETH_FLIGHT_MODEL;
+  const teasers = window.HALVETH_TEASERS;
   const byId = (id) => document.getElementById(id);
-  if (!catalog || catalog.schema !== "halveth.portal.catalog.v1" || !Array.isArray(catalog.projects) || !engine || !flight) {
-    byId("statusMessage").textContent = "Katalog, Flugraum oder NETZ-Modell fehlt.";
+  if (!catalog || catalog.schema !== "halveth.portal.catalog.v1" || !Array.isArray(catalog.projects) || !engine || !flight
+    || !teasers || teasers.schema !== "halveth.teasers.v1" || !teasers.entries) {
+    byId("statusMessage").textContent = "Katalog, Vorschauen, Flugraum oder NETZ-Modell fehlt.";
     return;
   }
 
   const projects = catalog.projects.filter((p) => p.visibility === "public" && typeof p.id === "string");
   if (projects.length !== flight.PROJECT_IDS.length || projects.some((project, index) => project.id !== flight.PROJECT_IDS[index])
-    || catalog.categories.length !== flight.TOPIC_IDS.length || catalog.categories.some((category, index) => category.id !== flight.TOPIC_IDS[index])) {
-    byId("statusMessage").textContent = "Flugraum und öffentlicher Katalog haben unterschiedliche Identitäten.";
+    || catalog.categories.length !== flight.TOPIC_IDS.length || catalog.categories.some((category, index) => category.id !== flight.TOPIC_IDS[index])
+    || Object.keys(teasers.entries).length !== projects.length || projects.some((project) => {
+      const entry = teasers.entries[project.id];
+      return !entry || entry.id !== project.id || !entry.media || !/^assets\/(?:teasers|previews)\/[a-z0-9._/-]+$/i.test(entry.media.src)
+        || !Array.isArray(entry.steps) || entry.steps.length !== 3;
+    })) {
+    byId("statusMessage").textContent = "Flugraum, Vorschauen und öffentlicher Katalog haben unterschiedliche Identitäten.";
     return;
   }
   const categories = new Map(catalog.categories.map((category) => [category.id, category]));
@@ -26,6 +33,10 @@
     inspect: byId("inspectPanel"), inspectTitle: byId("inspectTitle"), inspectTagline: byId("inspectTagline"),
     inspectDescription: byId("inspectDescription"), inspectKind: byId("inspectKind"), inspectEvidence: byId("inspectEvidence"),
     inspectCategory: byId("inspectCategory"), inspectOpen: byId("inspectOpen"), inspectSource: byId("inspectSource"),
+    inspectDeep: byId("inspectDeep"), inspectHeroModel: byId("inspectHeroModel"),
+    inspectTeaser: byId("inspectTeaser"), inspectTeaserTitle: byId("inspectTeaserTitle"),
+    inspectTeaserStep: byId("inspectTeaserStep"), inspectTeaserIndex: byId("inspectTeaserIndex"),
+    inspectTeaserPrev: byId("inspectTeaserPrev"), inspectTeaserNext: byId("inspectTeaserNext"),
     warp: byId("warp"), help: byId("helpPanel"), helpButton: byId("helpButton"),
     netz: byId("netzPanel"), traceProject: byId("traceProject"), traceTick: byId("traceTick"),
     timeSlider: byId("timeSlider"), playTrace: byId("playTrace"), projectionButton: byId("projectionButton"),
@@ -64,13 +75,22 @@
   }
   function categoryLabels(project) { return visibleCategories(project).map((category) => category.label).join(" · ") || "Projekt"; }
   function clear(element) { while (element.firstChild) element.removeChild(element.firstChild); }
+  let netzBackgroundInert = false;
+  function syncLayerInert() {
+    const atlasOpen = e.shell.classList.contains("catalog-open");
+    e.stage.inert = atlasOpen || !e.inspect.hidden || netzBackgroundInert;
+    e.sideRail.inert = !atlasOpen || netzBackgroundInert;
+    e.inspect.inert = atlasOpen || netzBackgroundInert;
+    document.querySelector(".topbar").inert = !e.inspect.hidden || netzBackgroundInert;
+    document.querySelector(".statusbar").inert = !e.inspect.hidden || netzBackgroundInert;
+  }
   function setCatalogOpen(open) {
     const shown = Boolean(open);
     if (!shown && e.sideRail.contains(document.activeElement)) e.catalogToggle.focus();
     e.shell.classList.toggle("catalog-open", shown);
     e.catalogToggle.setAttribute("aria-expanded", String(shown));
     e.sideRail.setAttribute("aria-hidden", String(!shown));
-    e.sideRail.toggleAttribute("inert", !shown);
+    syncLayerInert();
   }
   e.catalogToggle.addEventListener("click", () => {
     const open = !e.shell.classList.contains("catalog-open");
@@ -102,7 +122,7 @@
     const title = document.createElement("span"); title.className = "portal-title"; title.textContent = project.title;
     const distance = document.createElement("span"); distance.className = "portal-distance"; distance.textContent = "ANNÄHERN / ÖFFNEN";
     copy.append(kicker, title, distance); button.append(art, copy);
-    button.addEventListener("click", () => warpTo(project));
+    button.addEventListener("click", (event) => warpTo(project, event.currentTarget, "portal"));
     e.layer.appendChild(button);
     const world = { id: project.id, ...flight.projectWorld(index) };
     return { project, identity, world, button, kicker, distance };
@@ -150,17 +170,25 @@
       scene.filteredIds.add(project.id);
       const button = document.createElement("button"); button.type = "button"; button.className = "list-item";
       button.dataset.projectId = project.id;
+      button.style.setProperty("--hue", String(flight.identity(project.id).hue));
       if (project.site?.editorial_state === "WITHDRAWN_FROM_PORTFOLIO") button.dataset.editorialState = "source-only";
       button.setAttribute("aria-label", project.title + " · " + categoryLabels(project) + " · Projektportal öffnen");
       if (scene.activeId === project.id) button.classList.add("active");
+      const preview = document.createElement("span"); preview.className = "list-preview";
+      const previewImage = document.createElement("img");
+      previewImage.src = teasers.entries[project.id].media.src; previewImage.alt = "";
+      previewImage.loading = "lazy"; previewImage.decoding = "async";
+      preview.appendChild(previewImage);
+      const glyph = document.createElement("span"); glyph.className = "list-glyph";
+      glyph.setAttribute("aria-hidden", "true"); glyph.textContent = flight.identity(project.id).glyph;
       const number = document.createElement("span"); number.className = "list-index"; number.textContent = String(index + 1).padStart(2, "0");
       const label = document.createElement("span"); label.className = "list-label";
       const title = document.createElement("strong"); title.textContent = project.title;
       const small = document.createElement("small"); small.textContent = categoryLabels(project)
         + (project.site?.editorial_state === "WITHDRAWN_FROM_PORTFOLIO" ? " · Quelle/Lab" : "");
       const arrow = document.createElement("span"); arrow.className = "list-arrow"; arrow.setAttribute("aria-hidden", "true"); arrow.textContent = "↗";
-      label.append(title, small); button.append(number, label, arrow);
-      button.addEventListener("click", () => warpTo(project));
+      label.append(title, small); button.append(preview, glyph, number, label, arrow);
+      button.addEventListener("click", (event) => warpTo(project, event.currentTarget, "list"));
       e.projectList.appendChild(button);
     });
     e.visibleCount.textContent = scene.filteredIds.size + " / " + projects.length;
@@ -178,6 +206,8 @@
 
   let previewSet = [];
   let previewIndex = 0;
+  let teaserSteps = [];
+  let teaserIndex = 0;
   function renderPreview() {
     const preview = previewSet[previewIndex];
     byId("inspectImage").src = preview.src;
@@ -185,15 +215,43 @@
     byId("inspectArtLabel").textContent = preview.label;
     const source = byId("inspectImageSource");
     source.hidden = !preview.source;
-    if (preview.source) { source.href = preview.source; source.textContent = preview.credit; }
+    if (preview.source) { source.href = safeHref(preview.source); source.textContent = preview.credit; }
     byId("inspectImageNext").hidden = previewSet.length < 2;
   }
+  function renderTeaser() {
+    const step = teaserSteps[teaserIndex];
+    if (!step) return;
+    e.inspectTeaserTitle.textContent = step.title;
+    e.inspectTeaserStep.textContent = step.detail;
+    e.inspectTeaserIndex.textContent = String(teaserIndex + 1).padStart(2, "0") + " / " + String(teaserSteps.length).padStart(2, "0");
+    e.inspectTeaser.dataset.step = String(teaserIndex + 1);
+  }
+  e.inspectTeaserPrev.addEventListener("click", () => {
+    teaserIndex = (teaserIndex + teaserSteps.length - 1) % teaserSteps.length;
+    renderTeaser();
+  });
+  e.inspectTeaserNext.addEventListener("click", () => {
+    teaserIndex = (teaserIndex + 1) % teaserSteps.length;
+    renderTeaser();
+  });
+  const heroModelButtons = {
+    "halveth-scarlet": ["scarletRoomButton", "SCARLET-Zellraum betreten"],
+    "halveth-forschungslabor": ["endeckRoomButton", "ENDECK-Modell betreten"],
+    "halveth-field-difference-lab": ["fieldRoomButton", "Grenzregeln ausprobieren"],
+    "halveth-realms": ["realmsRoomButton", "REALMS-Weltmodell betreten"]
+  };
+  e.inspectHeroModel.addEventListener("click", () => {
+    const target = heroModelButtons[scene.activeId]?.[0];
+    if (!target) return;
+    e.inspectDeep.open = true;
+    byId(target).click();
+  });
   byId("inspectImageNext").addEventListener("click", () => {
     previewIndex = (previewIndex + 1) % previewSet.length;
     renderPreview();
   });
 
-  function openInspect(project) {
+  function openInspect(project, origin) {
     setCatalogOpen(false);
     if (!e.netz.hidden) closeNetz();
     window.HALVETH_SOURCE_UI?.setProject(project.id);
@@ -204,16 +262,19 @@
     e.inspectTitle.textContent = project.title;
     e.inspectTagline.textContent = project.tagline;
     e.inspectDescription.textContent = project.description;
-    previewSet = project.id === "halveth-scarlet" ? [
-      {src: "assets/previews/scarlet-capability.svg", alt: "SCARLET Capability Room Vorschau", label: "SCARLET · CAPABILITY ROOM VORSCHAU", source: "https://github.com/Juri-Halveth/halveth-scarlet/blob/6913b81d3e2414b20149406cb3e2fe9bb314adf4/assets/capability-room-preview.svg", credit: "Juri Janovski (Projekt HALVETH), @Juri-Halveth · PIRL 2.0 ↗"},
-      {src: "assets/previews/scarlet-wegweiser.png", alt: "SCARLET Wegweiser Vorschau", label: "SCARLET · WEGWEISER VORSCHAU", source: "https://github.com/Juri-Halveth/halveth-scarlet/blob/6913b81d3e2414b20149406cb3e2fe9bb314adf4/forschung/wegweiser/preview.png", credit: "Juri Janovski (Projekt HALVETH), @Juri-Halveth · PIRL 2.0 ↗"}
-    ] : project.id === "halveth-forschungslabor" ? [
-      {src: "assets/previews/forschungslabor-chronosphere.png", alt: "Forschungslabor Temporal Clock Teilprojekt", label: "FORSCHUNGSLABOR · TEMPORAL CLOCK TEILPROJEKT", source: "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/2cb8eb38e4276b0b821731d4f1056cd06a8b8631/branches/temporal-clock/preview.png", credit: "HALVETH Open Research contributors · CC BY 4.0 ↗"}
-    ] : [
-      {src: "assets/system-banner.svg", alt: "Geometrisches HALVETH Sternnetz", label: "HALVETH-SYSTEMMOTIV · KEIN PROJEKTSCREENSHOT"}
-    ];
+    const teaser = teasers.entries[project.id];
+    previewSet = [teaser.media];
     previewIndex = 0;
     renderPreview();
+    teaserSteps = teaser.steps;
+    teaserIndex = 0;
+    renderTeaser();
+    e.inspect.dataset.projectId = project.id;
+    e.inspect.dataset.mediaKind = teaser.media.kind;
+    e.inspect.style.setProperty("--focus-origin-x", origin.x.toFixed(1) + "px");
+    e.inspect.style.setProperty("--focus-origin-y", origin.y.toFixed(1) + "px");
+    e.inspect.style.setProperty("--focus-hue", String(flight.identity(project.id).hue));
+    e.inspectDeep.open = false;
     e.inspectKind.textContent = project.kind;
     e.inspectEvidence.textContent = project.evidence + (project.reviewed ? " · redaktionell geprüft" : " · Funktion offen")
       + (project.site?.editorial_state === "WITHDRAWN_FROM_PORTFOLIO" ? " · aus aktivem Portfolio zurückgezogen; Quelle/Lab" : "");
@@ -225,6 +286,10 @@
     const techList = byId("inspectTech"); clear(techList);
     tech.forEach((item) => { const li = document.createElement("li"); li.textContent = item; techList.appendChild(li); });
     e.inspectOpen.href = safeHref(project.url);
+    e.inspectOpen.firstChild.textContent = project.site?.editorial_state === "WITHDRAWN_FROM_PORTFOLIO" ? "Quellen ansehen " : "Projekt öffnen ";
+    const heroModel = heroModelButtons[project.id];
+    e.inspectHeroModel.hidden = !heroModel;
+    if (heroModel) e.inspectHeroModel.firstChild.textContent = heroModel[1] + " ";
     const direct = byId("inspectDirect");
     direct.hidden = project.id !== "halveth-forschungslabor";
     if (!direct.hidden) direct.href = "https://juri-halveth.github.io/halveth-forschungslabor/endeck/";
@@ -235,6 +300,7 @@
     byId("fieldRoomButton").hidden = project.id !== "halveth-field-difference-lab";
     e.inspectSource.href = safeHref(project.source_url);
     e.inspect.hidden = false;
+    syncLayerInert();
     e.help.hidden = true; e.helpButton.setAttribute("aria-expanded", "false");
     e.sceneMode.textContent = "PROJEKTFOKUS";
     renderList();
@@ -243,19 +309,26 @@
   }
   let warpToken = 0;
   function cancelWarp() { warpToken += 1; e.warp.classList.remove("active"); }
-  function warpTo(project) {
+  function warpTo(project, trigger, kind) {
     if (!project || !scene.filteredIds.has(project.id)) return;
-    scene.lastTriggerKind = e.projectList.contains(document.activeElement) ? "list" : "portal";
+    scene.lastTriggerKind = kind;
+    const stageRect = e.stage.getBoundingClientRect();
+    const triggerRect = trigger?.getBoundingClientRect();
+    const origin = triggerRect ? {
+      x: clamp((triggerRect.left + triggerRect.right) / 2 - stageRect.left, 0, stageRect.width),
+      y: clamp((triggerRect.top + triggerRect.bottom) / 2 - stageRect.top, 0, stageRect.height)
+    } : { x: stageRect.width / 2, y: stageRect.height / 2 };
     const token = ++warpToken;
     e.warp.classList.remove("active");
     void e.warp.offsetWidth;
     e.warp.classList.add("active");
-    setTimeout(() => { if (token === warpToken && byId("labPanel").hidden && byId("sourcePanel").hidden && e.netz.hidden) openInspect(project); }, scene.reduced ? 0 : 340);
+    setTimeout(() => { if (token === warpToken && byId("labPanel").hidden && byId("sourcePanel").hidden && e.netz.hidden) openInspect(project, origin); }, scene.reduced ? 0 : 340);
     setTimeout(() => { if (token === warpToken) e.warp.classList.remove("active"); }, scene.reduced ? 20 : 900);
   }
   function closeInspect() {
     const oldId = scene.activeId;
     closeNetz(); window.HALVETH_SOURCE_UI?.close(); e.inspect.hidden = true; scene.activeId = null;
+    syncLayerInert();
     e.sceneMode.textContent = "FLUGMODUS"; renderList(); setStatus("Zurück im Flugraum.");
     if (scene.lastTriggerKind === "list") setCatalogOpen(true);
     const stageRect = e.stage.getBoundingClientRect();
@@ -266,6 +339,17 @@
     target?.focus();
   }
   byId("closeInspect").addEventListener("click", closeInspect);
+  e.inspect.addEventListener("keydown", (event) => {
+    if (event.key !== "Tab") return;
+    const items = Array.from(e.inspect.querySelectorAll("button:not([disabled]), a[href], input:not([disabled]), summary"))
+      .filter((element) => !element.hidden && element.getClientRects().length > 0);
+    if (!items.length) return;
+    if (event.shiftKey && (document.activeElement === items[0] || document.activeElement === e.inspectTitle)) {
+      items.at(-1).focus(); event.preventDefault();
+    } else if (!event.shiftKey && document.activeElement === items.at(-1)) {
+      items[0].focus(); event.preventDefault();
+    }
+  });
   byId("scarletRoomButton").addEventListener("click", () => {
     if (scene.activeId !== "halveth-scarlet") return;
     cancelWarp();
@@ -327,8 +411,8 @@
   });
   byId("closeNetz").addEventListener("click", closeNetz);
   function setNetzBackgroundInert(enabled) {
-    [e.stage, e.inspect, document.querySelector(".topbar"), document.querySelector(".side-rail"), document.querySelector(".statusbar")]
-      .forEach((element) => { element.inert = enabled; });
+    netzBackgroundInert = Boolean(enabled);
+    syncLayerInert();
   }
   function closeNetz() {
     const shouldRestore = !e.netz.hidden && e.netz.contains(document.activeElement) && !e.inspect.hidden;

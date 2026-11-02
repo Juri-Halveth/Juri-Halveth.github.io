@@ -82,6 +82,7 @@ test('filtered projects show the chosen topic first and retain each other topic 
   window.NETZ_ENGINE = {};
   window.eval(fs.readFileSync(path.join(route, 'data/catalog.js'), 'utf8'));
   window.eval(fs.readFileSync(path.join(route, 'flight-model.js'), 'utf8'));
+  window.eval(fs.readFileSync(path.join(route, 'teaser-manifest.js'), 'utf8'));
   window.eval(fs.readFileSync(path.join(route, 'app.js'), 'utf8'));
   assert.equal(window.document.getElementById('catalogCount').textContent, '18 EINSTIEGE · 6 THEMEN');
   const filter = window.document.getElementById('categoryFilter');
@@ -113,6 +114,48 @@ test('filtered projects show the chosen topic first and retain each other topic 
   dom.window.close();
 });
 
+test('project focus grows from the selected entity and its own teaser leads into the local model', async () => {
+  const dom = new JSDOM(html, {url: 'https://juri-halveth.github.io/universum/', runScripts: 'outside-only'});
+  const {window} = dom;
+  window.HTMLCanvasElement.prototype.getContext = () => ({setTransform() {}});
+  window.matchMedia = () => ({matches: true});
+  window.requestAnimationFrame = () => 0;
+  window.NETZ_ENGINE = {};
+  let scarletOpened = 0;
+  window.HALVETH_SCARLET_ROOM = {open() { scarletOpened += 1; return true; }};
+  const stage = window.document.getElementById('spaceStage');
+  stage.getBoundingClientRect = () => ({left: 0, top: 0, right: 1280, bottom: 720, width: 1280, height: 720});
+  for (const script of ['data/catalog.js', 'flight-model.js', 'teaser-manifest.js', 'app.js']) {
+    window.eval(fs.readFileSync(path.join(route, script), 'utf8'));
+  }
+  window.eval(fs.readFileSync(path.join(route, 'portal-time-ui.js'), 'utf8'));
+  assert.equal(window.document.getElementById('portalTime').closest('details')?.id, 'inspectDeep');
+  const entry = window.HALVETH_TEASERS.entries['halveth-scarlet'];
+  const tile = window.document.querySelector('.list-item[data-project-id="halveth-scarlet"]');
+  tile.getBoundingClientRect = () => ({left: 240, right: 480, top: 120, bottom: 300});
+  tile.click();
+  await new Promise(resolve => setTimeout(resolve, 25));
+  const focus = window.document.getElementById('inspectPanel');
+  assert.equal(focus.hidden, false);
+  assert.equal(focus.dataset.projectId, 'halveth-scarlet');
+  assert.equal(focus.style.getPropertyValue('--focus-origin-x'), '360.0px');
+  assert.equal(focus.style.getPropertyValue('--focus-origin-y'), '210.0px');
+  assert.equal(stage.inert, true);
+  assert.equal(window.document.querySelector('.topbar').inert, true);
+  assert.equal(window.document.getElementById('inspectImage').getAttribute('src'), entry.media.src);
+  assert.equal(window.document.getElementById('inspectTeaserTitle').textContent, entry.steps[0].title);
+  window.document.getElementById('inspectTeaserNext').click();
+  assert.equal(window.document.getElementById('inspectTeaserTitle').textContent, entry.steps[1].title);
+  assert.equal(window.document.getElementById('inspectTeaserIndex').textContent, '02 / 03');
+  window.document.getElementById('inspectHeroModel').click();
+  assert.equal(scarletOpened, 1);
+  window.document.getElementById('closeInspect').click();
+  assert.equal(focus.hidden, true);
+  assert.equal(stage.inert, true, 'returning to an open Atlas keeps the flight stage inert');
+  assert.equal(window.document.getElementById('sideRail').inert, false);
+  dom.window.close();
+});
+
 test('wheel, vertical swipe and pinch move only along depth and reverse to the same portal projection', () => {
   const dom = new JSDOM(html, {url: 'https://juri-halveth.github.io/universum/', runScripts: 'outside-only'});
   const {window} = dom;
@@ -129,6 +172,7 @@ test('wheel, vertical swipe and pinch move only along depth and reverse to the s
   stage.getBoundingClientRect = () => ({left: 0, top: 0, right: 1280, bottom: 720, width: 1280, height: 720});
   window.eval(fs.readFileSync(path.join(route, 'data/catalog.js'), 'utf8'));
   window.eval(fs.readFileSync(path.join(route, 'flight-model.js'), 'utf8'));
+  window.eval(fs.readFileSync(path.join(route, 'teaser-manifest.js'), 'utf8'));
   window.eval(fs.readFileSync(path.join(route, 'app.js'), 'utf8'));
   const frame = () => nextFrame(window.performance.now() + 1000);
   const position = window.document.getElementById('positionReadout');

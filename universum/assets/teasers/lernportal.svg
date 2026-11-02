@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="t d" color="#ffcc75">
+<title id="t">MEIN LERNPORTAL – schematische Illustration</title><desc id="d">DIGITALES · PROGRAMMIEREN · MATHEMATIK</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset="1" stop-color="#142439"/></linearGradient><radialGradient id="glow"><stop stop-color="#ffcc75" stop-opacity=".17"/><stop offset="1" stop-color="#ffcc75" stop-opacity="0"/></radialGradient></defs>
+<rect width="960" height="540" fill="url(#bg)"/><ellipse cx="520" cy="340" rx="420" ry="240" fill="url(#glow)"/>
+<g font-family="Arial, sans-serif" font-weight="600"><text x="61" y="39" font-size="14" letter-spacing="3" fill="#ffcc75">FUNKTIONSILLUSTRATION</text><text x="59" y="96" font-size="37" fill="#f2f7fa">MEIN LERNPORTAL</text><text x="61" y="128" font-size="13" letter-spacing="2" fill="#a9b7c5">DIGITALES · PROGRAMMIEREN · MATHEMATIK</text></g>
+<style>.faint{fill:#0e2234;stroke:#ffcc75;stroke-opacity:.37;stroke-width:2;stroke-linejoin:round}.line{fill:none;stroke:#ffcc75;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}.copy{fill:#b5c8d5;font-family:Arial,sans-serif;font-size:14px;font-weight:700;letter-spacing:1px}</style>
+<g class="faint"><path d="M125 209h208v228H125zM376 209h208v228H376zM627 209h208v228H627z"/></g>
+<g class="line"><path d="M154 265h92m-92 27h121m-121 27h75m-75 57h118M405 265h111m-111 27h89m-89 27h115m-115 57h76M655 265h118m-118 27h85m-85 27h122m-122 57h96"/><path d="m173 226 22-26 22 26m186 0 25-26 25 26m205 0 25-26 25 26"/><circle cx="295" cy="407" r="13"/><circle cx="546" cy="407" r="13"/><circle cx="797" cy="407" r="13"/></g>
+<g class="copy"><text x="150" y="242">01 · GRUNDLAGEN</text><text x="400" y="242">02 · CODE</text><text x="652" y="242">03 · ÜBUNGEN</text></g>
+<path d="M60 482h840" stroke="#ffcc75" stroke-opacity=".26"/><text x="61" y="510" fill="#8ca2b1" font-family="Arial, sans-serif" font-size="12" letter-spacing="1.5">SCHEMATISCH · KEIN SCREENSHOT UND KEINE RUNTIME-BEOBACHTUNG</text>
+</svg>

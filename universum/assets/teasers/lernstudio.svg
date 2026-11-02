@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="t d" color="#ffbc6b">
+<title id="t">LERNSTUDIO – schematische Illustration</title><desc id="d">LERNKARTE · MISSION · FORTSCHRITT</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset="1" stop-color="#142439"/></linearGradient><radialGradient id="glow"><stop stop-color="#ffbc6b" stop-opacity=".17"/><stop offset="1" stop-color="#ffbc6b" stop-opacity="0"/></radialGradient></defs>
+<rect width="960" height="540" fill="url(#bg)"/><ellipse cx="520" cy="340" rx="420" ry="240" fill="url(#glow)"/>
+<g font-family="Arial, sans-serif" font-weight="600"><text x="61" y="39" font-size="14" letter-spacing="3" fill="#ffbc6b">FUNKTIONSILLUSTRATION</text><text x="59" y="96" font-size="37" fill="#f2f7fa">LERNSTUDIO</text><text x="61" y="128" font-size="13" letter-spacing="2" fill="#a9b7c5">LERNKARTE · MISSION · FORTSCHRITT</text></g>
+<style>.faint{fill:#0e2234;stroke:#ffbc6b;stroke-opacity:.37;stroke-width:2;stroke-linejoin:round}.line{fill:none;stroke:#ffbc6b;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}.copy{fill:#b5c8d5;font-family:Arial,sans-serif;font-size:14px;font-weight:700;letter-spacing:1px}</style>
+<g class="line"><path d="M134 352c123-143 211 101 325-41s200-93 355-8" stroke-width="7"/><circle cx="168" cy="320" r="47"/><circle cx="460" cy="308" r="60"/><circle cx="746" cy="291" r="49"/><path d="m151 322 13 14 24-27m244 5 18 18 31-41m250 5 14 15 23-30" stroke-width="8"/><path d="M143 431h649M143 431h426" stroke-width="12"/></g>
+<g class="copy"><text x="116" y="246">KARTE</text><text x="426" y="217">MISSION</text><text x="688" y="215">WEITER</text><text x="142" y="468">FORTSCHRITT IM MODELL</text></g>
+<path d="M60 482h840" stroke="#ffbc6b" stroke-opacity=".26"/><text x="61" y="510" fill="#8ca2b1" font-family="Arial, sans-serif" font-size="12" letter-spacing="1.5">SCHEMATISCH · KEIN SCREENSHOT UND KEINE RUNTIME-BEOBACHTUNG</text>
+</svg>

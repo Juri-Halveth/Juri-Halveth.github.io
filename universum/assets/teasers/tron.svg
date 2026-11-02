@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="t d" color="#ee9eac">
+<title id="t">TRON SECURITY LAB – schematische Illustration</title><desc id="d">QUORUMSCHNITT · OFFLINE-ENTWURF</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset="1" stop-color="#142439"/></linearGradient><radialGradient id="glow"><stop stop-color="#ee9eac" stop-opacity=".17"/><stop offset="1" stop-color="#ee9eac" stop-opacity="0"/></radialGradient></defs>
+<rect width="960" height="540" fill="url(#bg)"/><ellipse cx="520" cy="340" rx="420" ry="240" fill="url(#glow)"/>
+<g font-family="Arial, sans-serif" font-weight="600"><text x="61" y="39" font-size="14" letter-spacing="3" fill="#ee9eac">FUNKTIONSILLUSTRATION</text><text x="59" y="96" font-size="37" fill="#f2f7fa">TRON SECURITY LAB</text><text x="61" y="128" font-size="13" letter-spacing="2" fill="#a9b7c5">QUORUMSCHNITT · OFFLINE-ENTWURF</text></g>
+<style>.faint{fill:#0e2234;stroke:#ee9eac;stroke-opacity:.37;stroke-width:2;stroke-linejoin:round}.line{fill:none;stroke:#ee9eac;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}.copy{fill:#b5c8d5;font-family:Arial,sans-serif;font-size:14px;font-weight:700;letter-spacing:1px}</style>
+<g class="line"><circle cx="375" cy="325" r="127"/><circle cx="543" cy="325" r="127"/><path d="M457 230c48 54 48 135 0 190" stroke-width="7"/><circle cx="339" cy="277" r="12"/><circle cx="346" cy="371" r="12"/><circle cx="451" cy="321" r="12"/><circle cx="552" cy="276" r="12"/><circle cx="566" cy="370" r="12"/><path d="M299 440h321" stroke-dasharray="7 9"/></g>
+<g class="copy"><text x="246" y="185">QUORUM A</text><text x="544" y="185">QUORUM B</text><text x="400" y="468">SCHNITTMENGE</text></g>
+<path d="M60 482h840" stroke="#ee9eac" stroke-opacity=".26"/><text x="61" y="510" fill="#8ca2b1" font-family="Arial, sans-serif" font-size="12" letter-spacing="1.5">SCHEMATISCH · KEIN SCREENSHOT UND KEINE RUNTIME-BEOBACHTUNG</text>
+</svg>

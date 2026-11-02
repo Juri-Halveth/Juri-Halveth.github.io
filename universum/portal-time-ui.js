@@ -66,7 +66,8 @@
 
   function mount(root, doc) {
     const inspect = doc.getElementById("inspectPanel");
-    const anchor = doc.querySelector("#inspectPanel .inspect-tagline");
+    const slot = doc.getElementById("inspectTimelineSlot");
+    const anchor = slot || doc.querySelector("#inspectPanel .inspect-tagline");
     if (!inspect || !anchor) return Object.freeze({ setProject: () => false });
     const make = (tag, className, value) => {
       const node = doc.createElement(tag);
@@ -110,7 +111,8 @@
     const gaps = make("ul", "portal-time__gaps");
     const receipt = make("p", "portal-time__receipt");
     section.append(head, coverage, track, detail, gapsHead, gaps, receipt);
-    anchor.after(section);
+    if (slot) slot.append(section);
+    else anchor.after(section);
 
     let bound = null;
     let selected = 0;

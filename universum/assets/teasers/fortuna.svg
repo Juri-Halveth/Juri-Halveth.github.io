@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="t d" color="#d1b7ff">
+<title id="t">FORTUNA – schematische Illustration</title><desc id="d">SELBST EINGEGEBENE MÖGLICHKEITEN</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset="1" stop-color="#142439"/></linearGradient><radialGradient id="glow"><stop stop-color="#d1b7ff" stop-opacity=".17"/><stop offset="1" stop-color="#d1b7ff" stop-opacity="0"/></radialGradient></defs>
+<rect width="960" height="540" fill="url(#bg)"/><ellipse cx="520" cy="340" rx="420" ry="240" fill="url(#glow)"/>
+<g font-family="Arial, sans-serif" font-weight="600"><text x="61" y="39" font-size="14" letter-spacing="3" fill="#d1b7ff">FUNKTIONSILLUSTRATION</text><text x="59" y="96" font-size="37" fill="#f2f7fa">FORTUNA</text><text x="61" y="128" font-size="13" letter-spacing="2" fill="#a9b7c5">SELBST EINGEGEBENE MÖGLICHKEITEN</text></g>
+<style>.faint{fill:#0e2234;stroke:#d1b7ff;stroke-opacity:.37;stroke-width:2;stroke-linejoin:round}.line{fill:none;stroke:#d1b7ff;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}.copy{fill:#b5c8d5;font-family:Arial,sans-serif;font-size:14px;font-weight:700;letter-spacing:1px}</style>
+<g class="line"><circle cx="263" cy="318" r="54"/><path d="M317 318h104m0 0 90-102m-90 102 90 0m-90 0 90 102" stroke-width="6"/><circle cx="544" cy="216" r="27"/><circle cx="544" cy="318" r="27"/><circle cx="544" cy="420" r="27"/><path d="M572 216h207m-207 102h168m-168 102h194"/><path d="M180 249h166v137H180z" stroke-dasharray="8 8"/></g>
+<g class="copy"><text x="225" y="322">EINGABE</text><text x="635" y="204">OPTION A</text><text x="635" y="306">OPTION B</text><text x="635" y="408">OPTION C</text></g>
+<path d="M60 482h840" stroke="#d1b7ff" stroke-opacity=".26"/><text x="61" y="510" fill="#8ca2b1" font-family="Arial, sans-serif" font-size="12" letter-spacing="1.5">SCHEMATISCH · KEIN SCREENSHOT UND KEINE RUNTIME-BEOBACHTUNG</text>
+</svg>

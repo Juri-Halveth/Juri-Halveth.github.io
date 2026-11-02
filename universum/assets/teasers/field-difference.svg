@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="t d" color="#8cc6ff">
+<title id="t">FIELD DIFFERENCE – schematische Illustration</title><desc id="d">EINE AUSGANGSLAGE · ZWEI MODELLREGELN</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset="1" stop-color="#142439"/></linearGradient><radialGradient id="glow"><stop stop-color="#8cc6ff" stop-opacity=".17"/><stop offset="1" stop-color="#8cc6ff" stop-opacity="0"/></radialGradient></defs>
+<rect width="960" height="540" fill="url(#bg)"/><ellipse cx="520" cy="340" rx="420" ry="240" fill="url(#glow)"/>
+<g font-family="Arial, sans-serif" font-weight="600"><text x="61" y="39" font-size="14" letter-spacing="3" fill="#8cc6ff">FUNKTIONSILLUSTRATION</text><text x="59" y="96" font-size="37" fill="#f2f7fa">FIELD DIFFERENCE</text><text x="61" y="128" font-size="13" letter-spacing="2" fill="#a9b7c5">EINE AUSGANGSLAGE · ZWEI MODELLREGELN</text></g>
+<style>.faint{fill:#0e2234;stroke:#8cc6ff;stroke-opacity:.37;stroke-width:2;stroke-linejoin:round}.line{fill:none;stroke:#8cc6ff;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}.copy{fill:#b5c8d5;font-family:Arial,sans-serif;font-size:14px;font-weight:700;letter-spacing:1px}</style>
+<g class="faint"><path d="M119 203h342v236H119zM499 203h342v236H499z"/></g>
+<g class="line"><path d="M139 398h300m-280-166v188M519 398h300m-280-166v188" stroke-width="2"/><path d="M161 364c68-5 101-26 155-51s77-69 110-81" stroke-width="7"/><path d="M541 364c66-1 101-9 150-73s80-19 122-59" stroke-width="7"/><circle cx="161" cy="364" r="11"/><circle cx="541" cy="364" r="11"/><path d="M460 319h40" stroke-dasharray="6 7"/></g>
+<g class="copy"><text x="142" y="192">REGEL A</text><text x="521" y="192">REGEL B</text><text x="333" y="450">ZEIT →</text><text x="714" y="450">ZEIT →</text></g>
+<path d="M60 482h840" stroke="#8cc6ff" stroke-opacity=".26"/><text x="61" y="510" fill="#8ca2b1" font-family="Arial, sans-serif" font-size="12" letter-spacing="1.5">SCHEMATISCH · KEIN SCREENSHOT UND KEINE RUNTIME-BEOBACHTUNG</text>
+</svg>
