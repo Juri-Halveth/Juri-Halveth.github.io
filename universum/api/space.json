@@ -1,10 +1,10 @@
 {
   "schema": "halveth.agent-space.v1",
   "baseURL": "https://juri-halveth.github.io/universum/",
-  "revision": "d601228eed2cebeb0fa75a6e1868b35bfc882c95d6a4a7b81c21e7ab1aa7e79e",
+  "revision": "d0368e2d3789546ce5ba35b9ec912235464a4038572abffb8d5031072452ced7",
   "sourceDate": "2026-11-02",
-  "catalogSha256": "ae93d8f4149b07c63187cf22d34b5e2d6d2fb8149bc6b17637c74195232f2fd0",
-  "briefSha256": "ac2545f095701adca15ebc07e9a35572c1db11d49d21f2bc8fc787de471717a6",
+  "catalogSha256": "1f6c53d4589d0be524db2999fd9a6657aa4353b4e5a75539f71097b2295fb234",
+  "briefSha256": "d8f7206c88e072c5c1fecabdbf86db60d6c3e426f430f37b47c4c23c87269059",
   "count": 18,
   "access": {
     "mode": "READ_PUBLIC",
@@ -134,14 +134,14 @@
     {
       "id": "fortuna",
       "title": "FORTUNA",
-      "state": "Browserprototyp",
+      "state": "Browserlabor",
       "categories": [
         "software",
         "models"
       ],
       "path": "api/projects/fortuna.json",
-      "bytes": 1798,
-      "sha256": "3f3834b0519890dbf0e0514cd32908cb8247ea345863133094f8a59834ad9612"
+      "bytes": 2433,
+      "sha256": "02db8ab43cad7117d714321a3834d91b4fc9ccf2894e3304139c8907dcf04cfe"
     },
     {
       "id": "halveth-project0-keeper",

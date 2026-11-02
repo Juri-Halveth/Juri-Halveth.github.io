@@ -38,7 +38,7 @@ Die neue Oberfläche und ihre Adapter stehen unter [HALVETH PIRL 2.0](vendor/lic
 | Field Difference / `assets/teasers/field-difference.svg` | Zwei gezeichnete Bewegungsbahnen unter verschiedenen Regeln | Eigene HALVETH-Funktionsillustration nach der verlinkten Field-Lab-Quelle |
 | Realms / `assets/teasers/realms.svg` | Weltseed und gespeicherte Veränderung | Eigene HALVETH-Funktionsillustration nach der verlinkten Realms-Quelle |
 | Lernstudio / `assets/teasers/lernstudio.svg` | Lernkarte, Mission und Fortschrittslinie | Eigene HALVETH-Funktionsillustration nach der verlinkten Lernstudio-Quelle |
-| FORTUNA / `assets/teasers/fortuna.svg` | Lokales Bernoulli-Modell mit Ziehungsserie und Ergebnisbeleg; keine Fremdserver-Anbindung | Eigene HALVETH-Konzeptillustration nach getrennt geprüftem lokalem Prototyp; nicht als Screenshot oder Inhalt des öffentlichen FORTUNA-Repositories zu verstehen |
+| FORTUNA / `assets/teasers/fortuna.svg` | Eigene Browser-Ziehungsserie und getrenntes lokales Bernoulli-Modell; keine Fremdserver-Anbindung | Eigene HALVETH-Konzeptillustration nach dem veröffentlichten Browserlabor und separat geprüften lokalen Prototypen; kein Runtime-Screenshot |
 | Project0 Keeper / `assets/teasers/keeper.svg` | PowerShell-Werkzeug und Zustandsdatei | Eigene HALVETH-Funktionsillustration nach der verlinkten Keeper-Quelle |
 | Morrowind Genesis / `assets/teasers/morrowind.svg` | OpenMW-Weltbau und Modding-Baustein | Eigene HALVETH-Funktionsillustration nach der verlinkten Projektquelle |
 | HALVETH Unreal / `assets/teasers/unreal.svg` | 3D-Szenengitter und Entwicklungsnotiz | Eigene HALVETH-Funktionsillustration nach der verlinkten Projektquelle |

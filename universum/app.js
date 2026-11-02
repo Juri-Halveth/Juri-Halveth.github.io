@@ -276,7 +276,7 @@
       element.hidden = !brief[field];
       element.textContent = brief[field] ? (brief.presentation?.[field] || label + " · " + brief[field]) : "";
     }
-    for (const [elementId, field, label] of [["inspectLocalDetail", "local", "Separater lokaler Prototyp: "], ["inspectGoalDetail", "goal", "Entwicklungsziel: "]]) {
+    for (const [elementId, field, label] of [["inspectLocalDetail", "local", "Separates lokales Labor: "], ["inspectServerDetail", "server", "Separater Loopback-Prototyp: "], ["inspectGoalDetail", "goal", "Entwicklungsziel: "]]) {
       const element = byId(elementId);
       element.hidden = !brief[field];
       element.textContent = brief[field] ? label + brief[field] : "";
