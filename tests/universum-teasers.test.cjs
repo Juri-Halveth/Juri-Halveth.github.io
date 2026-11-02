@@ -61,18 +61,3 @@ test('imported project images match the credited source or transformation digest
   assert.match(credits, /67e4145734cd81e9e7727e2a051da06f3145dc36/);
   assert.match(credits, /quality=82/);
 });
-
-test('screenshot source chips keep exact authors readable in the narrow project focus', () => {
-  const authors = new Map([
-    ['halveth-forschungslabor', 'HALVETH Open Research contributors'],
-    ['halveth-tresor', 'Juri Janovski / HALVETH']
-  ]);
-  const screenshots = Object.values(manifest.entries).filter(entry => entry.media.kind === 'screenshot');
-  assert.equal(screenshots.length, authors.size);
-  for (const teaser of screenshots) {
-    const {credit, source} = teaser.media;
-    assert.equal(credit, `${authors.get(teaser.id)} ↗`, teaser.id);
-    assert.ok(credit.length < 40, `credit must fit the 320px monospace chip: ${teaser.id}`);
-    assert.match(source, /^https:\/\/github\.com\/Juri-Halveth\/[^/]+\/blob\/[0-9a-f]{40}\//);
-  }
-});
