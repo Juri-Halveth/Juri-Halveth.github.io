@@ -9,10 +9,15 @@ test('the sitemap includes every canonical route in all three languages',()=>{
  for(const prefix of ['','en/','ru/'])for(const route of ['','profil/','arbeiten/','koennen/','belege/','modelle/','audits/','lernen/','motion/','handbuch/'])assert.ok(urls.includes('https://juri-halveth.github.io/'+prefix+route),prefix+route);
  assert.equal(urls.length,new Set(urls).size);
 });
-test('each card renders its limited review state and supplied command',()=>{
+test('current directory cards name their scope and preserve direct source links',()=>{
+ const site=JSON.parse(read('data/site-catalog.json'));
  for(const prefix of ['','en/','ru/']){
   const doc=new JSDOM(read(prefix+'arbeiten/index.html')).window.document;
-  for(const p of catalog.projects){const card=doc.querySelector(`[data-project="${p.id}"]`);assert.ok(card.querySelector('.verification-state').textContent.trim());if(p.command)assert.equal(card.querySelector('.project-command code').textContent,p.command);}
+  for(const p of site.projects.filter(p=>p.site.entry_type==='PROJECT'&&p.site.editorial_state==='CURRENT')){
+   const card=doc.querySelector(`[data-project="${p.id}"]`);assert.ok(card,p.id);
+   assert.ok(card.querySelector('.work-kind').textContent.trim());
+   assert.equal(card.querySelector('.directory-actions a:nth-child(2)').getAttribute('href'),p.source_url);
+  }
  }
 });
 test('generated motion pages wire all existing player controls rather than ambient playback',()=>{
@@ -29,7 +34,7 @@ test('retained crawler choices survive every deterministic build',()=>{
 test('image suffix matches existing JPEG bytes and SCARLET source is pinned',()=>{
  const bytes=fs.readFileSync(path.join(root,'assets/scarlet-cannon-live.jpg'));assert.deepEqual([...bytes.subarray(0,3)],[255,216,255]);
  const doc=new JSDOM(read('arbeiten/index.html')).window.document;
- const source=catalog.projects.find(p=>p.id==='halveth-scarlet').source;
+ const source=JSON.parse(read('data/site-catalog.json')).projects.find(p=>p.id==='halveth-scarlet').source_url;
  assert.ok(doc.querySelector(`[data-project="halveth-scarlet"] a[href="${source}"]`));
 });
 test('retained reproduction paths bind each displayed revision',()=>{

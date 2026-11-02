@@ -68,11 +68,12 @@ test('map text stays text and evidence remains available without JavaScript',()=
  assert.ok(doc.querySelector('[data-sample]').textContent.includes('<img src=x'));
  assert.equal(doc.querySelectorAll('details').length,data.items.length);
 });
-test('profile and overview point to the map while keeping the project catalog',()=>{
- for(const prefix of ['','en/','ru/'])for(const route of ['','profil/']){
-  const page=path.join(root,prefix+route+'index.html');const doc=new JSDOM(fs.readFileSync(page,'utf8')).window.document;
+test('the optional model page points to the map and the home page stays focused',()=>{
+ for(const prefix of ['','en/','ru/']){
+  const home=new JSDOM(fs.readFileSync(path.join(root,prefix,'index.html'),'utf8')).window.document;
+  assert.equal(home.querySelector('.map-teaser'),null);
+  assert.equal(home.querySelectorAll('[data-flagship]').length,0);
+  const page=path.join(root,prefix,'modelle/index.html');const doc=new JSDOM(fs.readFileSync(page,'utf8')).window.document;
   assert.equal(path.resolve(path.dirname(page),doc.querySelector('.map-teaser a').getAttribute('href')),path.join(root,prefix,'koennen'));
-  assert.equal(doc.querySelectorAll('[data-project]').length,0);
-  assert.equal(doc.querySelectorAll('[data-flagship]').length,4);
  }
 });

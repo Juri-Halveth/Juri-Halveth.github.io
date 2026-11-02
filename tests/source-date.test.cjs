@@ -6,6 +6,7 @@ const path = require('node:path');
 const { JSDOM } = require('jsdom');
 const { validateProjects } = require('../tools/validate-projects.cjs');
 const data = require('../data/projects.json');
+const siteCatalog = require('../data/site-catalog.json');
 const root = path.resolve(__dirname, '..');
 
 function htmlFiles(folder) {
@@ -24,8 +25,8 @@ test('all generated portfolio footers retain the catalog source date across lang
     if (!footer) continue;
     const stamp = footer.querySelector('time[data-project-source-date]');
     assert.ok(stamp, `Missing source date in ${path.relative(root, file)}`);
-    assert.equal(stamp.dateTime, data.sourceDate, file);
-    assert.equal(stamp.textContent, data.sourceDate, file);
+    assert.equal(stamp.dateTime, siteCatalog.source_date, file);
+    assert.equal(stamp.textContent, siteCatalog.source_date, file);
     for (const flagshipStamp of document.querySelectorAll('.flagship-snapshot time')) {
       assert.equal(flagshipStamp.dateTime, stamp.dateTime, file);
     }

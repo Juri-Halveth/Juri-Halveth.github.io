@@ -120,12 +120,13 @@ test('profile source entry describes its own public destination', () => {
   assert.doesNotMatch(profile, /Der neue Entwurf ersetzt noch keine veröffentlichte Fassung/);
 });
 
-test('portfolio entrances expose one working Starship Lab route and sitemap entry', () => {
+test('portfolio entrances retain an optional working Starship Lab route and sitemap entry', () => {
   const root = path.join(__dirname, '..');
   for (const page of ['index.html', 'en/index.html', 'ru/index.html', 'arbeiten/index.html', 'en/arbeiten/index.html', 'ru/arbeiten/index.html']) {
     const doc = new JSDOM(fs.readFileSync(path.join(root, page), 'utf8')).window.document;
-    const links = [...doc.querySelectorAll('header nav a')].filter(a => a.textContent === 'Starship Lab');
+    const links = [...doc.querySelectorAll('footer nav a')].filter(a => a.textContent.includes('Starship Lab'));
     assert.equal(links.length, 1, page);
+    assert.equal(doc.querySelectorAll('header .primary-nav a').length, 4, page);
     const target = new URL(links[0].getAttribute('href'), `https://juri-halveth.github.io/${page}`);
     assert.equal(target.pathname, '/universum/', page);
   }
@@ -133,25 +134,25 @@ test('portfolio entrances expose one working Starship Lab route and sitemap entr
   assert.equal((sitemap.match(/<loc>https:\/\/juri-halveth\.github\.io\/universum\/<\/loc>/g) || []).length, 1);
 });
 
-test('three language homepages lead with a visible Starship gateway and local image', () => {
+test('three language homepages lead with one service hero and direct project actions', () => {
   const root = path.join(__dirname, '..');
   const expectedTitles = {
-    'index.html': '18 Projekte. Ein begehbares Netz.',
-    'en/index.html': '18 projects. One navigable network.',
-    'ru/index.html': '18 проектов. Одна исследуемая сеть.'
+    'index.html': 'Software bauen. Ergebnisse prüfen.',
+    'en/index.html': 'Build software. Check results.',
+    'ru/index.html': 'Создавать программы. Проверять результат.'
   };
   for (const [page, title] of Object.entries(expectedTitles)) {
     const doc = new JSDOM(fs.readFileSync(path.join(root, page), 'utf8'), {
       url: `https://juri-halveth.github.io/${page}`
     }).window.document;
     const main = doc.querySelector('main');
-    const gateway = main.firstElementChild;
-    assert.ok(gateway.classList.contains('universe-gateway'), page);
-    assert.equal(gateway.querySelector('h2')?.textContent, title, page);
-    assert.ok(gateway.querySelector('a')?.href.endsWith('/universum/'), page);
-    const image = gateway.querySelector('img');
-    assert.ok(image?.alt, page);
-    const imageUrl = new URL(image.getAttribute('src'), `https://juri-halveth.github.io/${page}`);
-    assert.ok(fs.existsSync(path.join(root, imageUrl.pathname.slice(1))), page);
+    const hero = main.firstElementChild;
+    assert.ok(hero.classList.contains('service-hero'), page);
+    assert.equal(hero.querySelector('h1')?.textContent, title, page);
+    assert.equal(main.querySelectorAll('.service-hero').length,1,page);
+    assert.equal(main.querySelectorAll('[data-featured-project]').length,4,page);
+    assert.equal(main.querySelector('.universe-gateway'),null,page);
+    assert.equal(main.querySelector('.scene-wall'),null,page);
+    assert.ok(hero.querySelector('.service-card-first a.button')?.href.startsWith('https://'),page);
   }
 });
