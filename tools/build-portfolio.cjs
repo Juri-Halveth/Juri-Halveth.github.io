@@ -36,6 +36,8 @@ const copy={
 };
 function put(name,text){const p=path.join(root,name);fs.mkdirSync(path.dirname(p),{recursive:true});fs.writeFileSync(p,text);}
 put('universum/data/catalog.js','window.HALVETH_CATALOG =\n'+JSON.stringify(siteCatalog,null,2)+';\n');
+const {buildAgentSpace}=require('./build-agent-space.cjs');
+buildAgentSpace(root,siteCatalog);
 const routes=['','profil/','arbeiten/','koennen/','belege/','forschung/','modelle/','audits/','lernen/','motion/','handbuch/','pulsar/','zertifikate/','werkzertifikate/'];
 for(const lang of Object.keys(copy)){
  const t=copy[lang],prefix=lang==='de'?'/':`/${lang}/`;
@@ -58,6 +60,7 @@ for(const lang of Object.keys(copy)){
   // Keep all local resources relative to the generated route.
   const relativeRoot='../'.repeat((lang==='de'?0:1)+(route?1:0))||'./';
   let portableHtml=html.replace(/\b(href|src)="\/([^"]*)"/g,(_,attribute,target)=>`${attribute}="${relativeRoot}${target}"`);
+  portableHtml=portableHtml.replace('</head>',`<link rel="alternate" type="application/json" title="HALVETH agent space" href="${relativeRoot}universum/api/space.json"></head>`);
   if(route==='forschung/'){
    const links=['portal.css','portfolio.css','showcase.css','research-os.css'].map(name=>`<link rel="stylesheet" href="${relativeRoot}${name}">`).join('');
    if(!portableHtml.includes(links))throw new Error('Research stylesheet links missing');
@@ -75,6 +78,17 @@ for(const lang of Object.keys(copy)){
 }
 put('404.html',`<!doctype html><html lang="de"><meta charset="utf-8"><title>HALVETH · Übersicht</title><h1>Diese Adresse wurde neu geordnet.</h1><p><a href="/">Projekte & Arbeitsproben öffnen</a></p></html>\n`);
 put('robots.txt',fs.readFileSync(path.join(root,'data/robots.txt'),'utf8'));
+put('llms.txt',[
+ '# HALVETH',
+ '',
+ 'Human project entrance: https://juri-halveth.github.io/',
+ 'Interactive Starship Lab: https://juri-halveth.github.io/universum/',
+ 'Machine-readable project overview: https://juri-halveth.github.io/universum/api/space.json',
+ 'Read only the relevant hashed context listed in projects[].path after the overview.',
+ 'Scope and claim limits: https://juri-halveth.github.io/universum/AGENT_SPACE.md',
+ 'Static source descriptions do not prove runtime behavior or grant an agent authority.',
+ ''
+].join('\n'));
 put('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+Object.keys(copy).flatMap(l=>routes.filter(r=>!['pulsar/','zertifikate/','werkzertifikate/'].includes(r)).map(r=>'<url><loc>https://juri-halveth.github.io/'+(l==='de'?'':l+'/')+r+'</loc></url>')).join('')+'<url><loc>https://juri-halveth.github.io/universum/</loc></url></urlset>\n');
 put('profil/CV-Juri-Halveth.md','# Juri\n\nSoftwareentwicklung · interaktive Grafik · Lernangebote\n\nEntwicklung mit KI-Unterstützung.\n\n[Projekte und Arbeitsproben](https://juri-halveth.github.io/profil/)\n\nKontakt: juri@halveth.de\n');
 console.log(`Built ${routes.length*3+1} public pages with 13 curated projects from 18 public source entries.`);

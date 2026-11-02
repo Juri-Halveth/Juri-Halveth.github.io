@@ -83,6 +83,7 @@ test('filtered projects show the chosen topic first and retain each other topic 
   window.eval(fs.readFileSync(path.join(route, 'data/catalog.js'), 'utf8'));
   window.eval(fs.readFileSync(path.join(route, 'flight-model.js'), 'utf8'));
   window.eval(fs.readFileSync(path.join(route, 'teaser-manifest.js'), 'utf8'));
+  window.eval(fs.readFileSync(path.join(route, 'data/briefs.js'), 'utf8'));
   window.eval(fs.readFileSync(path.join(route, 'app.js'), 'utf8'));
   assert.equal(window.document.getElementById('catalogCount').textContent, '18 EINSTIEGE · 6 THEMEN');
   const filter = window.document.getElementById('categoryFilter');
@@ -125,7 +126,7 @@ test('project focus grows from the selected entity and its own teaser leads into
   window.HALVETH_SCARLET_ROOM = {open() { scarletOpened += 1; return true; }};
   const stage = window.document.getElementById('spaceStage');
   stage.getBoundingClientRect = () => ({left: 0, top: 0, right: 1280, bottom: 720, width: 1280, height: 720});
-  for (const script of ['data/catalog.js', 'flight-model.js', 'teaser-manifest.js', 'app.js']) {
+  for (const script of ['data/catalog.js', 'flight-model.js', 'teaser-manifest.js', 'data/briefs.js', 'app.js']) {
     window.eval(fs.readFileSync(path.join(route, script), 'utf8'));
   }
   window.eval(fs.readFileSync(path.join(route, 'portal-time-ui.js'), 'utf8'));
@@ -173,6 +174,7 @@ test('wheel, vertical swipe and pinch move only along depth and reverse to the s
   window.eval(fs.readFileSync(path.join(route, 'data/catalog.js'), 'utf8'));
   window.eval(fs.readFileSync(path.join(route, 'flight-model.js'), 'utf8'));
   window.eval(fs.readFileSync(path.join(route, 'teaser-manifest.js'), 'utf8'));
+  window.eval(fs.readFileSync(path.join(route, 'data/briefs.js'), 'utf8'));
   window.eval(fs.readFileSync(path.join(route, 'app.js'), 'utf8'));
   const frame = () => nextFrame(window.performance.now() + 1000);
   const position = window.document.getElementById('positionReadout');

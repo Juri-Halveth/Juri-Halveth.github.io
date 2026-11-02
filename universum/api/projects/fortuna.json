@@ -1,0 +1,38 @@
+{
+  "schema": "halveth.project-context.v1",
+  "id": "fortuna",
+  "title": "FORTUNA",
+  "categories": [
+    "software",
+    "models"
+  ],
+  "state": "Browserprototyp",
+  "publicEntry": {
+    "url": "https://juri-halveth.github.io/fortuna/",
+    "action": "Vergleich öffnen"
+  },
+  "capability": {
+    "core": "Das veröffentlichte Browsermodell bewertet eingegebene Möglichkeiten mit offengelegten Gewichten und einer deterministischen Rangfolge.",
+    "value": "Eigene Optionen und ihre Bewertung lassen sich sichtbar vergleichen und hinterfragen.",
+    "boundary": "Der Code verändert keine externen Zufallschancen, führt keine Serveraktionen aus und enthält keinen belegten Wiederholungsautomaten."
+  },
+  "separateLocalPrototype": "Ein getrenntes lokales Bernoulli-Labor zieht mit secrets.randbelow aus einem eigenen Modell; pro Lauf sind 1 bis 1.000.000 Ziehungen möglich, mit Baseline-, Änderungs- und Rückstellbeleg.",
+  "separateLocalPrototypeEvidence": {
+    "scope": "Eigenes lokales Bernoulli-Modell",
+    "observedAt": "2026-11-02",
+    "testsPassed": 33,
+    "drawsObserved": 999999,
+    "publicSource": false
+  },
+  "userGoalNotYetPublished": "Nutzerziel sind wiederholte wahrscheinlichkeitabhängige Versuche bis 999.999 oder zur technischen Grenze über eigene oder autorisierte lokale und serverseitige Adapter; diese Anbindung ist nicht veröffentlicht.",
+  "source": {
+    "repository": "Juri-Halveth/fortuna",
+    "url": "https://github.com/Juri-Halveth/fortuna/tree/4bacf76726687ba2fa9c24d1da638da8fa130e10",
+    "revision": "4bacf76726687ba2fa9c24d1da638da8fa130e10",
+    "observedAt": "2026-11-02",
+    "pinState": "PINNED",
+    "reviewedAt": "2026-11-02",
+    "editorialState": "CURRENT"
+  },
+  "evidenceLevel": "PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION"
+}

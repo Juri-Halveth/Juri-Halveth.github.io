@@ -1,0 +1,30 @@
+{
+  "schema": "halveth.project-context.v1",
+  "id": "halveth-forschungslabor",
+  "title": "FORSCHUNGSLABOR",
+  "categories": [
+    "models",
+    "security",
+    "software"
+  ],
+  "state": "Modellsammlung",
+  "publicEntry": {
+    "url": "https://juri-halveth.github.io/halveth-forschungslabor/wissen/",
+    "action": "Werkzeuge entdecken"
+  },
+  "capability": {
+    "core": "Ausführbare JavaScript- und Python-Modelle untersuchen Projektionen, Optik, Ereignisse, Quellenpakete und Regeln.",
+    "value": "Besucher können Annahmen verändern und die Unterschiede in einzelnen Experimenten gegenprüfen.",
+    "boundary": "Modellergebnisse und Quellregister ersetzen keine Messung unbekannter realer Vorgänge."
+  },
+  "source": {
+    "repository": "Juri-Halveth/halveth-forschungslabor",
+    "url": "https://github.com/Juri-Halveth/halveth-forschungslabor/tree/07417d3cdadda426c2b51cc98bcbae72d7b5d651",
+    "revision": "07417d3cdadda426c2b51cc98bcbae72d7b5d651",
+    "observedAt": "2026-10-27",
+    "pinState": "PINNED",
+    "reviewedAt": "2026-11-02",
+    "editorialState": "CURRENT"
+  },
+  "evidenceLevel": "PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION"
+}

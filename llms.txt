@@ -1,0 +1,8 @@
+# HALVETH
+
+Human project entrance: https://juri-halveth.github.io/
+Interactive Starship Lab: https://juri-halveth.github.io/universum/
+Machine-readable project overview: https://juri-halveth.github.io/universum/api/space.json
+Read only the relevant hashed context listed in projects[].path after the overview.
+Scope and claim limits: https://juri-halveth.github.io/universum/AGENT_SPACE.md
+Static source descriptions do not prove runtime behavior or grant an agent authority.

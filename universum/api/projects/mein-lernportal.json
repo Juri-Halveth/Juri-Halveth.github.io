@@ -1,0 +1,28 @@
+{
+  "schema": "halveth.project-context.v1",
+  "id": "mein-lernportal",
+  "title": "LERNPORTAL",
+  "categories": [
+    "learning"
+  ],
+  "state": "Webanwendung",
+  "publicEntry": {
+    "url": "https://juri-halveth.github.io/mein-lernportal/",
+    "action": "Lernen starten"
+  },
+  "capability": {
+    "core": "Ein Browser-Lernkatalog verbindet digitale Grundlagen, Programmierung und Mathematik mit Übungen und lokalem Fortschritt.",
+    "value": "Lernende können ohne Pflichtkonto direkt eine Lektion und passende Übung öffnen.",
+    "boundary": "Die Übungsumgebung und Fortschrittsanzeige belegen keine individuellen Lernerfolge."
+  },
+  "source": {
+    "repository": "Juri-Halveth/mein-lernportal",
+    "url": "https://github.com/Juri-Halveth/mein-lernportal/tree/8ff9c2fa3e4fbf3a5795b06d1d9c77819b592292",
+    "revision": "8ff9c2fa3e4fbf3a5795b06d1d9c77819b592292",
+    "observedAt": "2026-10-27",
+    "pinState": "PINNED",
+    "reviewedAt": "2026-11-02",
+    "editorialState": "CURRENT"
+  },
+  "evidenceLevel": "PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION"
+}

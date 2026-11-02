@@ -1,8 +1,8 @@
 {
   "schema": "halveth.portal.catalog.v1",
-  "source_date": "2026-11-01",
-  "source_kind": "Connected GitHub inventory and README/portfolio reads; editorial navigation, not runtime verification",
-  "inventory_scope": "Public repositories returned by the connected inventory. No promise of account-wide completeness. No private names exported.",
+  "source_date": "2026-11-02",
+  "source_kind": "2026-11-01 connected GitHub inventory, supplemented by 2026-11-02 source-bound README/code review; editorial navigation, not runtime verification",
+  "inventory_scope": "The 18 public entries come from the earlier connected inventory; account-wide completeness was not rechecked on 2026-11-02. No private names exported.",
   "categories": [
     {
       "id": "software",
@@ -46,8 +46,8 @@
       "id": "halveth-scarlet",
       "repository": "Juri-Halveth/halveth-scarlet",
       "title": "SCARLET",
-      "tagline": "Zustände werden sichtbar.",
-      "description": "Text setzen, Varianten ableiten und ihre Herkunft verfolgen. Die lokale Zellensimulation ist ein getrenntes, endliches Modell.",
+      "tagline": "Zustandsledger, Herkunft und endliche Zellmodelle.",
+      "description": "GStar bindet Textvarianten über IDs, Digests und Elternbezüge mit Snapshot, Replay und JSON-Export. GStarLiving ist ein getrenntes endliches Zellmodell.",
       "categories": [
         "models",
         "worlds"
@@ -88,8 +88,8 @@
       "id": "lucinet-seedspace",
       "repository": "Juri-Halveth/lucinet-seedspace",
       "title": "LUCINET / NOVA",
-      "tagline": "Frühere Arbeit wird wieder anschlussfähig.",
-      "description": "Notizen und Code lokal durchsuchen, Korrekturen erhalten und mit belegtem nächsten Schritt fortsetzen.",
+      "tagline": "Frühere Arbeit quellgebunden fortsetzen.",
+      "description": "Die lokale Python-CLI indiziert Quellspans und Revisionen, erhält Korrekturen und schreibt prüfbare Ergebnis- und Fortsetzungsbelege.",
       "categories": [
         "software",
         "security"
@@ -130,8 +130,8 @@
       "id": "halveth-forschungslabor",
       "repository": "Juri-Halveth/halveth-forschungslabor",
       "title": "FORSCHUNGSLABOR",
-      "tagline": "Nicht nur sehen. Gegenprüfen.",
-      "description": "Modelle für Perspektiven, Optik, Quellenpakete, Ereignisse und Regeln. Der Werkzeugkatalog führt zu den einzelnen Experimenten.",
+      "tagline": "Ausführbare Modelle. Sichtbare Gegenproben.",
+      "description": "JavaScript- und Python-Experimente zu Projektionen, Optik, Ereignissen und Quellenpaketen mit eigenem Start- und Prüfweg.",
       "categories": [
         "models",
         "security",
@@ -173,8 +173,8 @@
       "id": "halveth-tresor",
       "repository": "Juri-Halveth/halveth-tresor",
       "title": "TRESOR",
-      "tagline": "Zugangsdaten bleiben lokal.",
-      "description": "Windows-Desktopprojekt für Zugangsdaten. Quellcode, Release und Sicherheitsmodell sind gemeinsam zu betrachten.",
+      "tagline": "Ein verschlüsselter Vault für eigene Zugangsdaten.",
+      "description": "Windows-Werkzeug mit scrypt, AES-256-GCM, lokalem Dateispeicher und getrenntem Wiederherstellungsschlüssel; v1.8.0 ist nicht codesigniert.",
       "categories": [
         "software",
         "security"
@@ -216,8 +216,8 @@
       "id": "mein-lernportal",
       "repository": "Juri-Halveth/mein-lernportal",
       "title": "LERNPORTAL",
-      "tagline": "Wissen öffnet neue Wege.",
-      "description": "Digitale Grundlagen, Programmierung und Mathematik mit Übungen kennenlernen. Ohne Pflichtkonto lesbar.",
+      "tagline": "Lernen und üben ohne Pflichtkonto.",
+      "description": "Ein Browserkatalog mit Lektionen, Übungen, Suche und lokalem Fortschritt zu digitalen Grundlagen, Programmierung und Mathematik.",
       "categories": [
         "learning"
       ],
@@ -257,8 +257,8 @@
       "id": "halveth-field-difference-lab",
       "repository": "Juri-Halveth/halveth-field-difference-lab",
       "title": "FIELD DIFFERENCE",
-      "tagline": "Eine Ausgangslage. Andere Regeln.",
-      "description": "Bewegungen nebeneinander vergleichen und die Wirkung einer veränderten Modellregel untersuchen.",
+      "tagline": "Gleicher Start. Andere Regel. Messbarer Modellunterschied.",
+      "description": "Drei Browserexperimente zu Feldbewegung, analytischem Übergang und doppelten Softwareschlüsseln trennen Eingabe, Regel und Ergebnis.",
       "categories": [
         "models"
       ],
@@ -298,16 +298,16 @@
       "id": "c-drohne-red-room",
       "repository": "Juri-Halveth/c-drohne-red-room",
       "title": "C-DROHNE / RED ROOM",
-      "tagline": "Ein Fall. Mehrere Blickwinkel.",
-      "description": "Synthetische 3D-Szene und Quellenprobe: Meldung, Weitergabe und frische Beobachtung auseinanderhalten. Keine angeschlossene Drohne.",
+      "tagline": "Ein fiktiver Fall mit prüfbarer Quellenkette.",
+      "description": "Das ausführbare Falllabor trennt Meldung, Kopie, Zeitpunkt und Gegenprobe; die Nightlight-3D-Szene zeigt den räumlichen Kontext.",
       "categories": [
         "models",
         "security",
         "worlds"
       ],
       "kind": "Synthetischer Prototyp",
-      "url": "https://juri-halveth.github.io/c-drohne-red-room/nachtlicht.html",
-      "action": "Perspektiven öffnen",
+      "url": "https://juri-halveth.github.io/c-drohne-red-room/#falllabor",
+      "action": "Falllabor öffnen",
       "evidence": "README gelesen",
       "reviewed": true,
       "visibility": "public",
@@ -341,14 +341,14 @@
       "id": "halveth-realms",
       "repository": "Juri-Halveth/halveth-realms",
       "title": "HALVETH REALMS",
-      "tagline": "Eine Welt mit Geschichte.",
-      "description": "Prozeduraler Fantasy-Sandbox-Prototyp mit lokaler Weltlaufzeit und gespeicherten Veränderungen.",
+      "tagline": "Eine erzeugte Welt mit speicherbarer Geschichte.",
+      "description": "Die lokale Electron-/WebGL-Vorschau verbindet Weltseed, Begegnungen und gespeicherte Veränderungen; sie ist ein Spielprototyp.",
       "categories": [
         "worlds"
       ],
-      "kind": "Spielprototyp",
-      "url": "https://github.com/Juri-Halveth/halveth-realms",
-      "action": "Spielprojekt öffnen",
+      "kind": "Spielbare Desktop-Vorschau",
+      "url": "https://github.com/Juri-Halveth/halveth-realms/releases/tag/v0.2.0",
+      "action": "Windows-Vorschau v0.2.0 öffnen",
       "evidence": "README gelesen",
       "reviewed": true,
       "visibility": "public",
@@ -372,18 +372,19 @@
           "en": "Code & guide",
           "ru": "Код и руководство"
         },
-        "status": "SOURCE_AND_GUIDE",
+        "status": "RELEASE_ENTRY",
         "revision": null,
         "editorial_state": "WITHDRAWN_FROM_PORTFOLIO",
-        "revision_observed_at": null
+        "revision_observed_at": null,
+        "release_tag": "v0.2.0"
       }
     },
     {
       "id": "halveth-cannabis-reform-forschung",
       "repository": "Juri-Halveth/halveth-cannabis-reform-forschung",
       "title": "QUELLEN & REFORM",
-      "tagline": "Studien und Vorschläge trennen.",
-      "description": "Öffentliche Quellenarbeit zur Cannabisreform und zu Verkehrsentscheidungen. Politische Positionen bleiben von empirischen Befunden getrennt.",
+      "tagline": "Quellen, Messplan und Reform getrennt prüfen.",
+      "description": "Die öffentliche Arbeit trennt Studien zu Cannabis und Verkehr, einen technischen Messplan und politische Vorschläge; eigene Humanmessungen sind nicht belegt.",
       "categories": [
         "society"
       ],
@@ -423,8 +424,8 @@
       "id": "lernstudio",
       "repository": "Juri-Halveth/lernstudio",
       "title": "LERNSTUDIO",
-      "tagline": "Lernpfade selbst erkunden.",
-      "description": "Lernkarte, Übungen, Spielmissionen und Fortschrittsansicht für selbstständiges Lernen.",
+      "tagline": "Lernpfade für Menschen und lesbare Daten für Agenten.",
+      "description": "Interaktive Missionen, browserlokaler Fortschritt und ein gehashter, adressierbarer JSON-Lernkatalog verbinden Lernen und maschinenlesbare Orientierung.",
       "categories": [
         "learning"
       ],
@@ -464,8 +465,8 @@
       "id": "fortuna",
       "repository": "Juri-Halveth/fortuna",
       "title": "FORTUNA",
-      "tagline": "Möglichkeiten vergleichen.",
-      "description": "Browseroberfläche zum Vergleichen selbst eingegebener Möglichkeiten.",
+      "tagline": "Glück als berechenbares Modell und Integrationsziel.",
+      "description": "Öffentlich: deterministischer Vergleich gewichteter Optionen. Getrennt lokal: Bernoulli-Ziehungen bis 1.000.000 pro Lauf. Autorisierte Serveradapter sind ein Ziel, keine veröffentlichte Funktion.",
       "categories": [
         "software",
         "models"
@@ -473,23 +474,23 @@
       "kind": "Browserprototyp",
       "url": "https://juri-halveth.github.io/fortuna/",
       "action": "Vergleich öffnen",
-      "evidence": "Portfolioquelle gelesen",
+      "evidence": "README und Quellcode gelesen",
       "reviewed": true,
       "visibility": "public",
       "featured": false,
-      "source_url": "https://github.com/Juri-Halveth/fortuna/tree/69f436978b0492269fb66accd0beb6d3347750d9",
+      "source_url": "https://github.com/Juri-Halveth/fortuna/tree/4bacf76726687ba2fa9c24d1da638da8fa130e10",
       "site": {
         "entry_type": "PROJECT",
         "primary_category": "software",
         "title": {
-          "de": "Möglichkeiten vergleichen",
-          "en": "Compare options",
-          "ru": "Сравнивать варианты"
+          "de": "Glücksmodell und Entscheidungsanalyse",
+          "en": "Probability model and decision analysis",
+          "ru": "Модель вероятности и анализ решений"
         },
         "summary": {
-          "de": "Browseroberfläche und JavaScript-Modelle zum Vergleichen selbst eingegebener Möglichkeiten. Der öffentliche Bestand ist eine Browserfassung.",
-          "en": "A browser interface and JavaScript models for comparing user-entered options. The public source is a browser version.",
-          "ru": "Браузерный интерфейс и модели JavaScript для сравнения введённых вариантов. Публичные исходники относятся к браузерной версии."
+          "de": "Die öffentliche Browserfassung bewertet eigene Optionen deterministisch. Ein getrenntes lokales Wahrscheinlichkeitslabor kann Ziehungsserien ausführen; Serveradapter sind ein Entwicklungsziel.",
+          "en": "The public browser version ranks entered options deterministically. A separate local probability lab can run draws; server adapters remain a development goal.",
+          "ru": "Публичная браузерная версия детерминированно сравнивает варианты. Отдельная локальная лаборатория выполняет серии случайных проб; серверные адаптеры пока лишь цель разработки."
         },
         "action": {
           "de": "Direkt öffnen",
@@ -497,17 +498,17 @@
           "ru": "Открыть"
         },
         "status": "BROWSER_ENTRY",
-        "revision": "69f436978b0492269fb66accd0beb6d3347750d9",
+        "revision": "4bacf76726687ba2fa9c24d1da638da8fa130e10",
         "editorial_state": "CURRENT",
-        "revision_observed_at": "2026-10-27"
+        "revision_observed_at": "2026-11-02"
       }
     },
     {
       "id": "halveth-project0-keeper",
       "repository": "Juri-Halveth/halveth-project0-keeper",
       "title": "PROJECT0 KEEPER",
-      "tagline": "Lokale Aufträge koordinieren.",
-      "description": "PowerShell-Werkzeuge und Zustandsdateien für experimentelle lokale Projektsteuerung.",
+      "tagline": "Lokale Zustände und Entscheidungen nachvollziehen.",
+      "description": "PowerShell-Werkzeuge und Zustandsdateien halten Beobachtungen, Kontinuität und nächste Prüfungen für ASTER, RACHEL und SHELLA auseinander.",
       "categories": [
         "software"
       ],
@@ -547,16 +548,16 @@
       "id": "halveth-morrowind-genesis",
       "repository": "Juri-Halveth/halveth-morrowind-genesis",
       "title": "MORROWIND GENESIS",
-      "tagline": "Weiteren Projektzweig prüfen.",
-      "description": "Öffentliches Repository im Inventar. Funktionsumfang und Startweg werden hier noch nicht zusätzlich behauptet.",
+      "tagline": "OpenMW erweitert: Dialoge, Gedächtnis und Weltwerkzeuge.",
+      "description": "Die OpenMW-0.51-Erweiterung verbindet NPC-Dialoge, lokales Gedächtnis, Wissen, Alchemie und Weltleben mit einem dokumentierten Startweg.",
       "categories": [
         "worlds"
       ],
-      "kind": "Inventareintrag",
+      "kind": "OpenMW-Erweiterung",
       "url": "https://github.com/Juri-Halveth/halveth-morrowind-genesis",
-      "action": "Repository ansehen",
-      "evidence": "Nur Metadaten geprüft",
-      "reviewed": false,
+      "action": "Setup und Code öffnen",
+      "evidence": "README gelesen",
+      "reviewed": true,
       "visibility": "public",
       "featured": false,
       "source_url": "https://github.com/Juri-Halveth/halveth-morrowind-genesis/blob/main/README.md",
@@ -588,16 +589,16 @@
       "id": "halveth-unreal",
       "repository": "Juri-Halveth/halveth-unreal",
       "title": "HALVETH UNREAL",
-      "tagline": "Weiteren Projektzweig prüfen.",
-      "description": "Öffentliches Repository im Inventar. Die redaktionelle Einordnung ist eine Navigationshilfe, kein bestätigter Funktionsnachweis.",
+      "tagline": "Native Portalwelt mit Seed, Handwerk und Speicherstand.",
+      "description": "Unreal C++ erzeugt vier Portalräume mit lokalen Weltregeln und einem Wissens- und Handwerkssystem. v0.1.0 ist eine Windows-Vorschau; 0.2 bleibt Validierungsstand.",
       "categories": [
         "worlds"
       ],
-      "kind": "Inventareintrag",
-      "url": "https://github.com/Juri-Halveth/halveth-unreal",
-      "action": "Repository ansehen",
-      "evidence": "Nur Metadaten geprüft",
-      "reviewed": false,
+      "kind": "Unreal-Prototyp",
+      "url": "https://github.com/Juri-Halveth/halveth-unreal/releases/tag/v0.1.0",
+      "action": "Windows-Vorschau v0.1.0 öffnen",
+      "evidence": "README gelesen",
+      "reviewed": true,
       "visibility": "public",
       "featured": false,
       "source_url": "https://github.com/Juri-Halveth/halveth-unreal/blob/main/README.md",
@@ -619,26 +620,27 @@
           "en": "Code & guide",
           "ru": "Код и руководство"
         },
-        "status": "SOURCE_AND_GUIDE",
+        "status": "RELEASE_ENTRY",
         "revision": null,
         "editorial_state": "WITHDRAWN_FROM_PORTFOLIO",
-        "revision_observed_at": null
+        "revision_observed_at": null,
+        "release_tag": "v0.1.0"
       }
     },
     {
       "id": "halveth-tron-security-lab",
       "repository": "Juri-Halveth/halveth-tron-security-lab",
       "title": "TRON SECURITY LAB",
-      "tagline": "Forschungsbestand nachvollziehen.",
-      "description": "Öffentlicher Repository-Einstieg. Keine Aussage über aktuelle Schwachstellen, erfolgreiche Angriffe oder externe Anerkennung.",
+      "tagline": "Quellfork und Offline-Modell sauber trennen.",
+      "description": "Der java-tron-Fork bewahrt Quellarbeit; ein Quorumschnittmengen-Modell liegt nur im offenen Entwurf PR #1. Kein Produktions- oder Schwachstellenbeleg.",
       "categories": [
         "security"
       ],
-      "kind": "Inventareintrag",
+      "kind": "Forschungsfork mit PR-Entwurf",
       "url": "https://github.com/Juri-Halveth/halveth-tron-security-lab/pull/1",
       "action": "Repository ansehen",
-      "evidence": "Nur Metadaten geprüft",
-      "reviewed": false,
+      "evidence": "Fork-README und PR-Entwurf gelesen",
+      "reviewed": true,
       "visibility": "public",
       "featured": false,
       "source_url": "https://github.com/Juri-Halveth/halveth-tron-security-lab/tree/0d25fb9945d01629c85beeb0768e102eb247c8d1",
@@ -671,16 +673,16 @@
       "id": "leviathan-wallet-portal",
       "repository": "Juri-Halveth/leviathan-wallet-portal",
       "title": "LEVIATHAN PORTAL",
-      "tagline": "Weiteren Projektzweig prüfen.",
-      "description": "Öffentliches Repository im Inventar. Dieses Verzeichnis verbindet keine Wallet und startet keine Transaktionen.",
+      "tagline": "Öffentliche Positionen lesen. Aktionen bewusst freigeben.",
+      "description": "Der Browser-Vault liest unterstützte Cosmos- und EVM-Adressen. Simulation, Vorprüfung, Signatur und Versand sind getrennte nutzerinitiierte Schritte.",
       "categories": [
         "software"
       ],
-      "kind": "Inventareintrag",
+      "kind": "Browser-Vault",
       "url": "https://juri-halveth.github.io/leviathan-wallet-portal/",
-      "action": "Repository ansehen",
-      "evidence": "Nur Metadaten geprüft",
-      "reviewed": false,
+      "action": "Vault öffnen",
+      "evidence": "README gelesen",
+      "reviewed": true,
       "visibility": "public",
       "featured": false,
       "source_url": "https://github.com/Juri-Halveth/leviathan-wallet-portal/blob/main/README.md",
@@ -712,8 +714,8 @@
       "id": "Juri-Halveth.github.io",
       "repository": "Juri-Halveth/Juri-Halveth.github.io",
       "title": "WEB-EINGANG",
-      "tagline": "Bestehende Veröffentlichungen erhalten.",
-      "description": "Der vorhandene Webauftritt mit Arbeitsproben, Belegen und technischer Übersicht bleibt erreichbar.",
+      "tagline": "Anwendungen, Quellcode und Belege verbinden.",
+      "description": "Das mehrsprachige Portfolio führt zu 13 aktuellen Projektkarten, zwei Fallstudien und dem Starship-Katalog mit 18 öffentlichen Einstiegen.",
       "categories": [
         "software"
       ],
@@ -753,8 +755,8 @@
       "id": "Juri-Halveth",
       "repository": "Juri-Halveth/Juri-Halveth",
       "title": "PROFILQUELLE",
-      "tagline": "Der Einstieg hat eine Quelle.",
-      "description": "Das Profil-Repository trägt die README auf der GitHub-Profilseite. Sie ist ein eigener öffentlicher Einstieg und bleibt getrennt von dieser Projektübersicht.",
+      "tagline": "Mensch, Projekte und erster Einstieg am selben Ort.",
+      "description": "Die README auf der GitHub-Profilseite ist ein eigener öffentlicher Einstieg: Sie ordnet Juri und HALVETH zu und führt direkt zu Projektbeispielen, Fallstudien und dem Starship Lab.",
       "categories": [
         "software"
       ],

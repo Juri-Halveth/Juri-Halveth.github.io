@@ -1,0 +1,256 @@
+{
+  "schema": "halveth.project-briefs.v1",
+  "source_date": "2026-11-02",
+  "projects": [
+    {
+      "id": "halveth-scarlet",
+      "core": "Ein GStar-Ledger bindet Textzustände über IDs, Digests und Elternbezüge; ein getrenntes Zellmodell zeigt endliche lokale Dynamik.",
+      "value": "Varianten lassen sich im Browser erzeugen, zurückverfolgen und als JSON mitnehmen.",
+      "boundary": "Die dargestellten Zustände und Zellen sind Browsermodelle, keine Messung eines äußeren physikalischen Vorgangs.",
+      "state": "Browsermodell",
+      "reviewedSource": {
+        "url": "https://github.com/Juri-Halveth/halveth-scarlet/tree/9f706b9f6bba255f30cde703f851ba80cd64d9bc",
+        "revision": "9f706b9f6bba255f30cde703f851ba80cd64d9bc",
+        "pinState": "PINNED",
+        "reviewedAt": "2026-11-02"
+      }
+    },
+    {
+      "id": "lucinet-seedspace",
+      "core": "Eine lokale Python-CLI indiziert Quellspans und Revisionen von Notizen und Code und führt Korrekturen mit Belegen fort.",
+      "value": "Frühere Arbeit wird auffindbar, prüfbar und für einen nächsten Schritt anschlussfähig.",
+      "boundary": "Der öffentliche Einstieg bietet Quellcode und eine Offline-Demo, keinen gehosteten NOVA-Dienst.",
+      "state": "Lokales Werkzeug",
+      "reviewedSource": {
+        "url": "https://github.com/Juri-Halveth/lucinet-seedspace/tree/6d0e91c056caee46e2ca2d4faaf7bcdd1975dddc",
+        "revision": "6d0e91c056caee46e2ca2d4faaf7bcdd1975dddc",
+        "pinState": "PINNED",
+        "reviewedAt": "2026-11-02"
+      }
+    },
+    {
+      "id": "halveth-forschungslabor",
+      "core": "Ausführbare JavaScript- und Python-Modelle untersuchen Projektionen, Optik, Ereignisse, Quellenpakete und Regeln.",
+      "value": "Besucher können Annahmen verändern und die Unterschiede in einzelnen Experimenten gegenprüfen.",
+      "boundary": "Modellergebnisse und Quellregister ersetzen keine Messung unbekannter realer Vorgänge.",
+      "state": "Modellsammlung",
+      "reviewedSource": {
+        "url": "https://github.com/Juri-Halveth/halveth-forschungslabor/tree/07417d3cdadda426c2b51cc98bcbae72d7b5d651",
+        "revision": "07417d3cdadda426c2b51cc98bcbae72d7b5d651",
+        "pinState": "PINNED",
+        "reviewedAt": "2026-11-02"
+      }
+    },
+    {
+      "id": "halveth-tresor",
+      "core": "Ein Windows-Vault verwaltet Zugangsdaten in einer lokal verschlüsselten Datei mit scrypt, AES-256-GCM und getrenntem Wiederherstellungsschlüssel.",
+      "value": "Passwörter, Schlüssel und Verbindungsdaten bleiben in einem lokal bedienbaren Werkzeug zusammen.",
+      "boundary": "Die Windows-x64-Ausgabe v1.8.0 ist unsigniert; ein unabhängiges Sicherheitsaudit ist damit nicht belegt.",
+      "state": "Windows-Release",
+      "reviewedSource": {
+        "url": "https://github.com/Juri-Halveth/halveth-tresor/tree/e1ca9830e84099f0e4a9a4bfdede919a5ab0eee6",
+        "revision": "e1ca9830e84099f0e4a9a4bfdede919a5ab0eee6",
+        "pinState": "PINNED",
+        "reviewedAt": "2026-11-02"
+      }
+    },
+    {
+      "id": "mein-lernportal",
+      "core": "Ein Browser-Lernkatalog verbindet digitale Grundlagen, Programmierung und Mathematik mit Übungen und lokalem Fortschritt.",
+      "value": "Lernende können ohne Pflichtkonto direkt eine Lektion und passende Übung öffnen.",
+      "boundary": "Die Übungsumgebung und Fortschrittsanzeige belegen keine individuellen Lernerfolge.",
+      "state": "Webanwendung",
+      "reviewedSource": {
+        "url": "https://github.com/Juri-Halveth/mein-lernportal/tree/8ff9c2fa3e4fbf3a5795b06d1d9c77819b592292",
+        "revision": "8ff9c2fa3e4fbf3a5795b06d1d9c77819b592292",
+        "pinState": "PINNED",
+        "reviewedAt": "2026-11-02"
+      }
+    },
+    {
+      "id": "halveth-field-difference-lab",
+      "core": "Drei Browserexperimente vergleichen eine Feldbewegung, einen analytischen Übergang und die Auswertung doppelter Schlüssel.",
+      "value": "Eine veränderte Modellregel und ihr sichtbarer Effekt können direkt nebeneinander geprüft werden.",
+      "boundary": "Die Experimente sind synthetische Modelle, keine Messung realer Physik oder Nachweis einer Sicherheitslücke.",
+      "state": "Browserlabor",
+      "reviewedSource": {
+        "url": "https://github.com/Juri-Halveth/halveth-field-difference-lab/tree/572734742951819993b10d89b22591951a49dbc8",
+        "revision": "572734742951819993b10d89b22591951a49dbc8",
+        "pinState": "PINNED",
+        "reviewedAt": "2026-11-02"
+      }
+    },
+    {
+      "id": "c-drohne-red-room",
+      "core": "Eine kurze 3D-Szene und ein Falllabor trennen fiktive Meldungen, Kopien, Zeiten und Gegenprüfungen.",
+      "value": "Ein Ereignis lässt sich aus mehreren Quellen und Blickwinkeln nachvollziehen.",
+      "boundary": "Die Fallbelege sind fiktiv; weder eine Drohne noch ein realer Schwarm ist an die Seite angeschlossen.",
+      "state": "Szenenprototyp",
+      "reviewedSource": {
+        "url": "https://github.com/Juri-Halveth/c-drohne-red-room/tree/f0b072571ccb1a7894a32b1ba03c9a8620995352",
+        "revision": "f0b072571ccb1a7894a32b1ba03c9a8620995352",
+        "pinState": "PINNED",
+        "reviewedAt": "2026-11-02"
+      }
+    },
+    {
+      "id": "halveth-realms",
+      "core": "Ein lokaler Electron- und WebGL-Prototyp erzeugt eine Spielwelt aus einem Seed und speichert ausgewählte Veränderungen und Begegnungen.",
+      "value": "Die veröffentlichte Desktop-Vorschau lässt eine eigene Welt mit wiederkehrenden Zuständen erkunden.",
+      "boundary": "Lokale Gastsitzungen und gespeicherte Weltzustände sind kein öffentlich betriebener MMO-Dienst.",
+      "state": "Desktop-Release",
+      "reviewedSource": {
+        "url": "https://github.com/Juri-Halveth/halveth-realms/blob/main/README.md",
+        "revision": null,
+        "pinState": "UNPINNED",
+        "reviewedAt": "2026-11-02"
+      }
+    },
+    {
+      "id": "halveth-cannabis-reform-forschung",
+      "core": "Das Projekt trennt öffentliche Studienquellen, einen technischen Messplan und politische Reformvorschläge.",
+      "value": "Lesende können Befunde, geplante Prüfungen und normative Forderungen getrennt beurteilen.",
+      "boundary": "Eigene Geräte- oder Humanmessungen und ein validierter neuer Verkehrstest sind hier nicht belegt.",
+      "state": "Quellenprojekt",
+      "reviewedSource": {
+        "url": "https://github.com/Juri-Halveth/halveth-cannabis-reform-forschung/blob/main/README.md",
+        "revision": null,
+        "pinState": "UNPINNED",
+        "reviewedAt": "2026-11-02"
+      }
+    },
+    {
+      "id": "lernstudio",
+      "core": "Interaktive Lektionen und Missionen werden durch lokal gespeicherten Fortschritt und eine adressierbare, gehashte JSON-Lernkarte ergänzt.",
+      "value": "Menschen starten direkt mit einer Aufgabe; Programme können gezielt den benötigten Lernpfad lesen.",
+      "boundary": "Ein Konto ist optional; die statische Agent-Schnittstelle führt nichts selbstständig aus und beweist keinen Lernerfolg.",
+      "state": "Webanwendung",
+      "reviewedSource": {
+        "url": "https://github.com/Juri-Halveth/lernstudio/tree/9309f69883e9ae66290829722012deda5ed982c9",
+        "revision": "9309f69883e9ae66290829722012deda5ed982c9",
+        "pinState": "PINNED",
+        "reviewedAt": "2026-11-02"
+      }
+    },
+    {
+      "id": "fortuna",
+      "core": "Das veröffentlichte Browsermodell bewertet eingegebene Möglichkeiten mit offengelegten Gewichten und einer deterministischen Rangfolge.",
+      "value": "Eigene Optionen und ihre Bewertung lassen sich sichtbar vergleichen und hinterfragen.",
+      "boundary": "Der Code verändert keine externen Zufallschancen, führt keine Serveraktionen aus und enthält keinen belegten Wiederholungsautomaten.",
+      "state": "Browserprototyp",
+      "local": "Ein getrenntes lokales Bernoulli-Labor zieht mit secrets.randbelow aus einem eigenen Modell; pro Lauf sind 1 bis 1.000.000 Ziehungen möglich, mit Baseline-, Änderungs- und Rückstellbeleg.",
+      "localEvidence": {
+        "scope": "Eigenes lokales Bernoulli-Modell",
+        "observedAt": "2026-11-02",
+        "testsPassed": 33,
+        "drawsObserved": 999999,
+        "publicSource": false
+      },
+      "goal": "Nutzerziel sind wiederholte wahrscheinlichkeitabhängige Versuche bis 999.999 oder zur technischen Grenze über eigene oder autorisierte lokale und serverseitige Adapter; diese Anbindung ist nicht veröffentlicht.",
+      "presentation": {
+        "core": "Browser: gewichtete Optionen → deterministische Rangfolge.",
+        "value": "Eigene Wahlmodelle transparent prüfen.",
+        "boundary": "Keine externe Zufalls- oder Serverwirkung.",
+        "local": "Lokal geprüft: 999.999 Bernoulli-Ziehungen.",
+        "goal": "Ziel: wiederholte Versuche über autorisierte Adapter."
+      },
+      "reviewedSource": {
+        "url": "https://github.com/Juri-Halveth/fortuna/tree/4bacf76726687ba2fa9c24d1da638da8fa130e10",
+        "revision": "4bacf76726687ba2fa9c24d1da638da8fa130e10",
+        "pinState": "PINNED",
+        "reviewedAt": "2026-11-02"
+      }
+    },
+    {
+      "id": "halveth-project0-keeper",
+      "core": "PowerShell-Skripte und Zustandsdateien ordnen Beobachtungen, Kontinuität und Entscheidungen für ASTER, RACHEL und SHELLA.",
+      "value": "Lokale Projektzustände und nächste Prüfungen bleiben lesbar und nachvollziehbar.",
+      "boundary": "Der Quellprototyp ist weder ein gehosteter Steuerdienst noch ein Handels- oder Ertragsdienst.",
+      "state": "Lokaler Prototyp",
+      "reviewedSource": {
+        "url": "https://github.com/Juri-Halveth/halveth-project0-keeper/tree/f4349d013efb7105e2875784a0c7c16d2026e3da",
+        "revision": "f4349d013efb7105e2875784a0c7c16d2026e3da",
+        "pinState": "PINNED",
+        "reviewedAt": "2026-11-02"
+      }
+    },
+    {
+      "id": "halveth-morrowind-genesis",
+      "core": "Eine OpenMW-Erweiterung verbindet lokale Figurendialoge und Gesprächsgedächtnis mit Wissens-, Alchemie- und Weltleben-Werkzeugen im Spiel.",
+      "value": "Die eigene Morrowind-Welt erhält bedienbare zusätzliche Wege, ohne Originalspielstände zu ersetzen.",
+      "boundary": "OpenMW und eine lizenzierte Morrowind-Installation sind erforderlich; Bethesda-Spieldaten werden nicht mitgeliefert.",
+      "state": "OpenMW-Erweiterung",
+      "reviewedSource": {
+        "url": "https://github.com/Juri-Halveth/halveth-morrowind-genesis/blob/main/README.md",
+        "revision": null,
+        "pinState": "UNPINNED",
+        "reviewedAt": "2026-11-02"
+      }
+    },
+    {
+      "id": "halveth-unreal",
+      "core": "Ein nativer Unreal-C++-Prototyp erzeugt vier Portalräume und verbindet Erkundung mit Büchern, Rezepten, Handwerk und lokalen Speicherständen.",
+      "value": "Eine veröffentlichte Windows-Vorschau macht die Portalwelt direkt spielbar.",
+      "boundary": "v0.1.0 ist veröffentlicht; die dokumentierte 0.2-Validierung ist kein veröffentlichtes 0.2-Release.",
+      "state": "Windows-Vorschau",
+      "reviewedSource": {
+        "url": "https://github.com/Juri-Halveth/halveth-unreal/blob/main/README.md",
+        "revision": null,
+        "pinState": "UNPINNED",
+        "reviewedAt": "2026-11-02"
+      }
+    },
+    {
+      "id": "halveth-tron-security-lab",
+      "core": "Ein java-tron-Forschungsfork bewahrt Quellhistorie; ein getrenntes Offline-Modell berechnet Quorumschnittmengen im offenen Entwurf PR #1.",
+      "value": "Quellen und Modellannahmen zu Überschneidung und Verfügbarkeit lassen sich getrennt prüfen.",
+      "boundary": "Das Modell liegt nicht im Standardbranch und belegt weder TRON-Produktionsverhalten noch einen Sicherheitsimpact.",
+      "state": "Forschungsentwurf",
+      "reviewedSource": {
+        "url": "https://github.com/Juri-Halveth/halveth-tron-security-lab/tree/0d25fb9945d01629c85beeb0768e102eb247c8d1",
+        "revision": "0d25fb9945d01629c85beeb0768e102eb247c8d1",
+        "pinState": "PINNED",
+        "reviewedAt": "2026-11-02"
+      }
+    },
+    {
+      "id": "leviathan-wallet-portal",
+      "core": "Ein Browser-Vault liest unterstützte öffentliche Cosmos- und EVM-Positionen und trennt Simulation, Vorprüfung und Wallet-Freigabe für Aktionen.",
+      "value": "Öffentliche Adressen sind ohne Wallet-Verbindung einsehbar; ETH- und GTC-Aktionen erfolgen erst nach eigener Freigabe.",
+      "boundary": "Abdeckung und Netzwerkdaten sind begrenzt; lokale Tests ersetzen keinen realen Wallet- oder Mainnet-Beleg, und Senden kann Gebühren auslösen.",
+      "state": "Browserprototyp",
+      "reviewedSource": {
+        "url": "https://github.com/Juri-Halveth/leviathan-wallet-portal/blob/main/README.md",
+        "revision": null,
+        "pinState": "UNPINNED",
+        "reviewedAt": "2026-11-02"
+      }
+    },
+    {
+      "id": "Juri-Halveth.github.io",
+      "core": "Das mehrsprachige Portfolio führt aktuelle Projektkarten, zwei Fallstudien, technische Quellen und das Starship Lab zusammen.",
+      "value": "Besucher gelangen von einer Aufgabe zur Anwendung, zum Quellcode und zu ausgewählten Gegenproben.",
+      "boundary": "Die Website ordnet öffentliche Einstiege; sie bestätigt nicht die Laufzeit oder Qualität jedes verlinkten Produkts.",
+      "state": "Portfolio",
+      "reviewedSource": {
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/README.md",
+        "revision": null,
+        "pinState": "UNPINNED",
+        "reviewedAt": "2026-11-02"
+      }
+    },
+    {
+      "id": "Juri-Halveth",
+      "core": "Die GitHub-Profil-README ordnet Juri und HALVETH zu und verlinkt direkte Projektbeispiele, Fallstudien und das Starship Lab.",
+      "value": "Ein Profilbesucher findet Person, Projekte und einen konkreten ersten Einstieg am selben Ort.",
+      "boundary": "Das Profil ist ein öffentliches Verzeichnis, keine eigenständige Anwendung oder Ausführungsumgebung.",
+      "state": "Profilquelle",
+      "reviewedSource": {
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth/blob/main/README.md",
+        "revision": null,
+        "pinState": "UNPINNED",
+        "reviewedAt": "2026-11-02"
+      }
+    }
+  ]
+}

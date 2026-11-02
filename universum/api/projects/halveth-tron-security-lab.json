@@ -1,0 +1,28 @@
+{
+  "schema": "halveth.project-context.v1",
+  "id": "halveth-tron-security-lab",
+  "title": "TRON SECURITY LAB",
+  "categories": [
+    "security"
+  ],
+  "state": "Forschungsentwurf",
+  "publicEntry": {
+    "url": "https://github.com/Juri-Halveth/halveth-tron-security-lab/pull/1",
+    "action": "Repository ansehen"
+  },
+  "capability": {
+    "core": "Ein java-tron-Forschungsfork bewahrt Quellhistorie; ein getrenntes Offline-Modell berechnet Quorumschnittmengen im offenen Entwurf PR #1.",
+    "value": "Quellen und Modellannahmen zu Überschneidung und Verfügbarkeit lassen sich getrennt prüfen.",
+    "boundary": "Das Modell liegt nicht im Standardbranch und belegt weder TRON-Produktionsverhalten noch einen Sicherheitsimpact."
+  },
+  "source": {
+    "repository": "Juri-Halveth/halveth-tron-security-lab",
+    "url": "https://github.com/Juri-Halveth/halveth-tron-security-lab/tree/0d25fb9945d01629c85beeb0768e102eb247c8d1",
+    "revision": "0d25fb9945d01629c85beeb0768e102eb247c8d1",
+    "observedAt": "2026-10-27",
+    "pinState": "PINNED",
+    "reviewedAt": "2026-11-02",
+    "editorialState": "CURRENT"
+  },
+  "evidenceLevel": "PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION"
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "halveth.project-context.v1",
+  "id": "Juri-Halveth.github.io",
+  "title": "WEB-EINGANG",
+  "categories": [
+    "software"
+  ],
+  "state": "Portfolio",
+  "publicEntry": {
+    "url": "https://juri-halveth.github.io/",
+    "action": "Website öffnen"
+  },
+  "capability": {
+    "core": "Das mehrsprachige Portfolio führt aktuelle Projektkarten, zwei Fallstudien, technische Quellen und das Starship Lab zusammen.",
+    "value": "Besucher gelangen von einer Aufgabe zur Anwendung, zum Quellcode und zu ausgewählten Gegenproben.",
+    "boundary": "Die Website ordnet öffentliche Einstiege; sie bestätigt nicht die Laufzeit oder Qualität jedes verlinkten Produkts."
+  },
+  "source": {
+    "repository": "Juri-Halveth/Juri-Halveth.github.io",
+    "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/README.md",
+    "revision": null,
+    "observedAt": null,
+    "pinState": "UNPINNED",
+    "reviewedAt": "2026-11-02",
+    "editorialState": "CURRENT"
+  },
+  "evidenceLevel": "PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION"
+}

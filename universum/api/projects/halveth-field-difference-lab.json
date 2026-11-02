@@ -1,0 +1,28 @@
+{
+  "schema": "halveth.project-context.v1",
+  "id": "halveth-field-difference-lab",
+  "title": "FIELD DIFFERENCE",
+  "categories": [
+    "models"
+  ],
+  "state": "Browserlabor",
+  "publicEntry": {
+    "url": "https://juri-halveth.github.io/halveth-field-difference-lab/",
+    "action": "Modell öffnen"
+  },
+  "capability": {
+    "core": "Drei Browserexperimente vergleichen eine Feldbewegung, einen analytischen Übergang und die Auswertung doppelter Schlüssel.",
+    "value": "Eine veränderte Modellregel und ihr sichtbarer Effekt können direkt nebeneinander geprüft werden.",
+    "boundary": "Die Experimente sind synthetische Modelle, keine Messung realer Physik oder Nachweis einer Sicherheitslücke."
+  },
+  "source": {
+    "repository": "Juri-Halveth/halveth-field-difference-lab",
+    "url": "https://github.com/Juri-Halveth/halveth-field-difference-lab/tree/572734742951819993b10d89b22591951a49dbc8",
+    "revision": "572734742951819993b10d89b22591951a49dbc8",
+    "observedAt": "2026-10-27",
+    "pinState": "PINNED",
+    "reviewedAt": "2026-11-02",
+    "editorialState": "CURRENT"
+  },
+  "evidenceLevel": "PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION"
+}

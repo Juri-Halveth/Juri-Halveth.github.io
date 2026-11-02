@@ -16,7 +16,8 @@ const copy={
 function safeUrl(value){
  if(typeof value!=='string')throw Error('Catalog URL required');
  const url=new URL(value);
- if(url.protocol!=='https:'||url.username||url.password||url.hash||!['github.com','juri-halveth.github.io'].includes(url.hostname))throw Error('Unsafe catalog URL');
+ const caseLabAnchor=value==='https://juri-halveth.github.io/c-drohne-red-room/#falllabor';
+ if(url.protocol!=='https:'||url.username||url.password||(url.hash&&!caseLabAnchor)||!['github.com','juri-halveth.github.io'].includes(url.hostname))throw Error('Unsafe catalog URL');
  if(url.hostname==='github.com'&&!url.pathname.startsWith('/Juri-Halveth/'))throw Error('Foreign catalog owner');
  if(url.hostname==='juri-halveth.github.io'&&url.pathname.includes('..'))throw Error('Unsafe catalog path');
  return value;

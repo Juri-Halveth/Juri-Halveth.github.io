@@ -1,0 +1,29 @@
+{
+  "schema": "halveth.project-context.v1",
+  "id": "lucinet-seedspace",
+  "title": "LUCINET / NOVA",
+  "categories": [
+    "software",
+    "security"
+  ],
+  "state": "Lokales Werkzeug",
+  "publicEntry": {
+    "url": "https://github.com/Juri-Halveth/lucinet-seedspace",
+    "action": "Anleitung öffnen"
+  },
+  "capability": {
+    "core": "Eine lokale Python-CLI indiziert Quellspans und Revisionen von Notizen und Code und führt Korrekturen mit Belegen fort.",
+    "value": "Frühere Arbeit wird auffindbar, prüfbar und für einen nächsten Schritt anschlussfähig.",
+    "boundary": "Der öffentliche Einstieg bietet Quellcode und eine Offline-Demo, keinen gehosteten NOVA-Dienst."
+  },
+  "source": {
+    "repository": "Juri-Halveth/lucinet-seedspace",
+    "url": "https://github.com/Juri-Halveth/lucinet-seedspace/tree/6d0e91c056caee46e2ca2d4faaf7bcdd1975dddc",
+    "revision": "6d0e91c056caee46e2ca2d4faaf7bcdd1975dddc",
+    "observedAt": "2026-10-27",
+    "pinState": "PINNED",
+    "reviewedAt": "2026-11-02",
+    "editorialState": "CURRENT"
+  },
+  "evidenceLevel": "PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION"
+}

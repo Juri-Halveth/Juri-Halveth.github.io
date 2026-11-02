@@ -328,6 +328,10 @@
 @media(prefers-reduced-motion:reduce){.inspect-panel{animation:none;clip-path:none}.inspect-deep summary span,.list-item{transition:none}}
 .reduced-motion .inspect-panel{animation:none;clip-path:none}
 .reduced-motion .list-preview img{transition:none}
+/* Source-bound capability copy sits in the project world, before the optional trace. */
+.inspect-technical{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px 18px;max-width:640px;margin:-5px 0 16px}.inspect-technical>div{min-width:0}.inspect-technical .eyebrow{display:block;color:hsl(var(--focus-hue) 78% 78%);font-size:9px;letter-spacing:.11em}.inspect-technical p{margin:3px 0 0;color:#dfebee;font-size:12px;line-height:1.4}.inspect-state{grid-column:1/-1;justify-self:start;border:1px solid hsla(var(--focus-hue),72%,72%,.35);border-radius:3px;padding:3px 6px;color:hsl(var(--focus-hue) 78% 80%);font:9px/1.2 Consolas,monospace;letter-spacing:.1em;text-transform:uppercase}.inspect-technical .inspect-boundary{grid-column:1/-1;margin:0;padding-left:9px;border-left:2px solid rgba(183,207,218,.35);color:#a6bbc4;font-size:10px}.inspect-technical .inspect-layer{grid-column:1/-1;margin:0;color:#cbe8e5;font-size:11px}.inspect-technical .inspect-layer[hidden]{display:none}.rail-intro .micro-grid a{color:#a8e8ee;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:470px){.inspect-technical{gap:8px 12px;margin-bottom:11px}.inspect-technical p{font-size:11px}.inspect-technical .inspect-boundary{font-size:10px}}
+@media(max-width:470px){.inspect-art{height:clamp(180px,22vh,260px)}}
 /* Existing model and source dialogs still open above the project world. */
 .netz-panel,.source-panel,.lab-panel,.help-panel{z-index:35}
 

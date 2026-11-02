@@ -1,0 +1,28 @@
+{
+  "schema": "halveth.project-context.v1",
+  "id": "halveth-realms",
+  "title": "HALVETH REALMS",
+  "categories": [
+    "worlds"
+  ],
+  "state": "Desktop-Release",
+  "publicEntry": {
+    "url": "https://github.com/Juri-Halveth/halveth-realms/releases/tag/v0.2.0",
+    "action": "Windows-Vorschau v0.2.0 öffnen"
+  },
+  "capability": {
+    "core": "Ein lokaler Electron- und WebGL-Prototyp erzeugt eine Spielwelt aus einem Seed und speichert ausgewählte Veränderungen und Begegnungen.",
+    "value": "Die veröffentlichte Desktop-Vorschau lässt eine eigene Welt mit wiederkehrenden Zuständen erkunden.",
+    "boundary": "Lokale Gastsitzungen und gespeicherte Weltzustände sind kein öffentlich betriebener MMO-Dienst."
+  },
+  "source": {
+    "repository": "Juri-Halveth/halveth-realms",
+    "url": "https://github.com/Juri-Halveth/halveth-realms/blob/main/README.md",
+    "revision": null,
+    "observedAt": null,
+    "pinState": "UNPINNED",
+    "reviewedAt": "2026-11-02",
+    "editorialState": "WITHDRAWN_FROM_PORTFOLIO"
+  },
+  "evidenceLevel": "PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION"
+}

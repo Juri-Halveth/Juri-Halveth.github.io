@@ -1,0 +1,29 @@
+{
+  "schema": "halveth.project-context.v1",
+  "id": "halveth-tresor",
+  "title": "TRESOR",
+  "categories": [
+    "software",
+    "security"
+  ],
+  "state": "Windows-Release",
+  "publicEntry": {
+    "url": "https://github.com/Juri-Halveth/halveth-tresor/releases/tag/v1.8.0",
+    "action": "Projekt ansehen"
+  },
+  "capability": {
+    "core": "Ein Windows-Vault verwaltet Zugangsdaten in einer lokal verschlüsselten Datei mit scrypt, AES-256-GCM und getrenntem Wiederherstellungsschlüssel.",
+    "value": "Passwörter, Schlüssel und Verbindungsdaten bleiben in einem lokal bedienbaren Werkzeug zusammen.",
+    "boundary": "Die Windows-x64-Ausgabe v1.8.0 ist unsigniert; ein unabhängiges Sicherheitsaudit ist damit nicht belegt."
+  },
+  "source": {
+    "repository": "Juri-Halveth/halveth-tresor",
+    "url": "https://github.com/Juri-Halveth/halveth-tresor/tree/e1ca9830e84099f0e4a9a4bfdede919a5ab0eee6",
+    "revision": "e1ca9830e84099f0e4a9a4bfdede919a5ab0eee6",
+    "observedAt": "2026-10-27",
+    "pinState": "PINNED",
+    "reviewedAt": "2026-11-02",
+    "editorialState": "CURRENT"
+  },
+  "evidenceLevel": "PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION"
+}
