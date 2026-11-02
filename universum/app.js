@@ -311,6 +311,17 @@
     const direct = byId("inspectDirect");
     direct.hidden = project.id !== "halveth-forschungslabor";
     if (!direct.hidden) direct.href = "https://juri-halveth.github.io/halveth-forschungslabor/endeck/";
+    const subspaces = byId("inspectSubspaces"); clear(subspaces);
+    for (const space of project.site?.subspaces || []) {
+      const link = document.createElement("a");
+      link.href = safeHref(space.url);
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = space.label.de + " ↗";
+      link.title = space.description.de;
+      subspaces.appendChild(link);
+    }
+    subspaces.hidden = subspaces.childElementCount === 0;
     byId("scarletRoomButton").hidden = project.id !== "halveth-scarlet";
     byId("endeckRoomButton").hidden = project.id !== "halveth-forschungslabor";
     byId("foldRoomButton").hidden = project.id !== "halveth-forschungslabor";

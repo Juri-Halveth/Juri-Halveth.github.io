@@ -11,6 +11,48 @@
     "url": "https://juri-halveth.github.io/halveth-scarlet/",
     "action": "Selbst ausprobieren"
   },
+  "publicSubspaces": [
+    {
+      "id": "entity-space-1001",
+      "url": "https://juri-halveth.github.io/halveth-scarlet/entities/",
+      "label": {
+        "de": "1001 / Konstellation · 68",
+        "en": "1001 / Constellation · 68",
+        "ru": "1001 / Созвездие · 68"
+      },
+      "description": {
+        "de": "SCARLETs 68 Entitäten und ihre Formen im Browser erkunden.",
+        "en": "Explore SCARLET's 68 entities and their forms in the browser.",
+        "ru": "Исследуйте 68 сущностей SCARLET и их формы в браузере."
+      },
+      "source": {
+        "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/c36150b55fe9ed4207f185d7092b3184c353df93/assets/entity-world.mjs",
+        "revision": "c36150b55fe9ed4207f185d7092b3184c353df93",
+        "observedAt": "2026-11-03"
+      },
+      "evidenceLevel": "PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION"
+    },
+    {
+      "id": "entity-wave",
+      "url": "https://juri-halveth.github.io/halveth-scarlet/entities/?view=chain#scarlet",
+      "label": {
+        "de": "Welle · 68 Formen",
+        "en": "Wave · 68 forms",
+        "ru": "Волна · 68 форм"
+      },
+      "description": {
+        "de": "Alle Formen als eine bewegliche Kette verfolgen.",
+        "en": "Follow every form in one moving chain.",
+        "ru": "Проследите все формы как одну движущуюся цепь."
+      },
+      "source": {
+        "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/c36150b55fe9ed4207f185d7092b3184c353df93/assets/entity-world.mjs",
+        "revision": "c36150b55fe9ed4207f185d7092b3184c353df93",
+        "observedAt": "2026-11-03"
+      },
+      "evidenceLevel": "PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION"
+    }
+  ],
   "capability": {
     "core": "Ein GStar-Ledger bindet Textzustände über IDs, Digests und Elternbezüge; ein getrenntes Zellmodell zeigt endliche lokale Dynamik.",
     "value": "Varianten lassen sich im Browser erzeugen, zurückverfolgen und als JSON mitnehmen.",

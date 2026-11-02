@@ -139,6 +139,11 @@ test('project focus grows from the selected entity and its own teaser leads into
   const focus = window.document.getElementById('inspectPanel');
   assert.equal(focus.hidden, false);
   assert.equal(focus.dataset.projectId, 'halveth-scarlet');
+  const subspaces = window.document.getElementById('inspectSubspaces');
+  assert.equal(subspaces.hidden, false);
+  assert.deepEqual([...subspaces.querySelectorAll('a')].map(link=>new URL(link.href).pathname),
+    ['/halveth-scarlet/entities/','/halveth-scarlet/entities/']);
+  assert.equal(new URL(subspaces.querySelectorAll('a')[1].href).searchParams.get('view'),'chain');
   assert.equal(focus.style.getPropertyValue('--focus-origin-x'), '360.0px');
   assert.equal(focus.style.getPropertyValue('--focus-origin-y'), '210.0px');
   assert.equal(stage.inert, true);

@@ -49,6 +49,9 @@
 .directory-group h2{font-size:clamp(30px,3vw,45px);padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:22px}
 .directory-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 .directory-project{display:flex;flex-direction:column}
+.directory-subspaces{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:14px 0 2px;border-top:1px solid var(--line);font-size:13px}
+.directory-subspaces span{flex-basis:100%;color:var(--muted);font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+.directory-subspaces a{color:var(--green);text-underline-offset:3px;overflow-wrap:anywhere}
 .directory-project .directory-actions{margin-top:auto;padding-top:22px}
 .directory-project .source-caption{margin-top:19px}
 .directory-meta,.directory-lab{padding-block:45px;border-top:1px solid var(--line)}
