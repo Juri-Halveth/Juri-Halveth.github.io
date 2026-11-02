@@ -69,6 +69,13 @@ test('SCARLET public subspaces retain their own source revision in the agent con
   assert.notEqual(context.publicSubspaces[0].source.revision, context.source.revision);
 });
 
+test('unpublished Forschungslabor 1001 doors is absent from the agent-facing project context', () => {
+  const source = catalog.projects.find(project => project.id === 'halveth-forschungslabor');
+  assert.equal(source.site.subspaces[0].availability, 'PENDING_PUBLICATION');
+  const context = require('../universum/api/projects/halveth-forschungslabor.json');
+  assert.equal(context.publicSubspaces, undefined);
+});
+
 test('a newer catalog source cannot inherit reviewed project claims', () => {
   const changed = structuredClone(catalog);
   changed.projects[10].site.revision = 'a'.repeat(40);

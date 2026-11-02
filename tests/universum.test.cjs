@@ -157,6 +157,11 @@ test('project focus grows from the selected entity and its own teaser leads into
   assert.equal(scarletOpened, 1);
   window.document.getElementById('closeInspect').click();
   assert.equal(focus.hidden, true);
+  window.document.querySelector('.list-item[data-project-id="halveth-forschungslabor"]').click();
+  await new Promise(resolve => setTimeout(resolve, 25));
+  assert.equal(subspaces.hidden, true, 'unpublished 1001-door route is not offered in project focus');
+  assert.equal(subspaces.childElementCount, 0);
+  window.document.getElementById('closeInspect').click();
   assert.equal(stage.inert, true, 'returning to an open Atlas keeps the flight stage inert');
   assert.equal(window.document.getElementById('sideRail').inert, false);
   dom.window.close();

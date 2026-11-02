@@ -1,9 +1,9 @@
 {
   "schema": "halveth.agent-space.v1",
   "baseURL": "https://juri-halveth.github.io/universum/",
-  "revision": "08535124ec99bc551b90c1a9404ef845dc58176fa896eb8190d9726796a40cca",
+  "revision": "66509a28c475c39e4b96e3c9f841e4b841666ee883d961ddc8184aebe10f3799",
   "sourceDate": "2026-11-02",
-  "catalogSha256": "fd4411907c181d63179e1293a2be1669acbe5d7e6f69054584623565f4a1ee9e",
+  "catalogSha256": "595fa295830475f4080d7cbb5e2863f5d3aa13b55c0ed06a0ef774ee3e8051e6",
   "briefSha256": "d8f7206c88e072c5c1fecabdbf86db60d6c3e426f430f37b47c4c23c87269059",
   "count": 18,
   "access": {

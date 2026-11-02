@@ -4,7 +4,7 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const path=require('node:path');
 const {JSDOM}=require('jsdom');
-const {validateSiteCatalog,validateCatalogMembership}=require('../tools/site-catalog.cjs');
+const {validateSiteCatalog,validateCatalogMembership,renderDirectory}=require('../tools/site-catalog.cjs');
 const {refresh}=require('../tools/refresh-public-heads.cjs');
 const root=path.resolve(__dirname,'..');
 const catalog=require('../data/site-catalog.json');
@@ -82,6 +82,28 @@ test('SCARLET exposes its two distinct 68-entity rooms without a duplicate proje
  }
 });
 
+test('Forschungslabor 1001 doors stays hidden until a bound publication observation',()=>{
+ const research=catalog.projects.find(p=>p.id==='halveth-forschungslabor');
+ const doors=research.site.subspaces[0];
+ assert.equal(doors.id,'number-doors-1001');
+ assert.equal(doors.availability,'PENDING_PUBLICATION');
+ assert.equal(doors.url,'https://juri-halveth.github.io/halveth-forschungslabor/branches/1001-doors/');
+ assert.equal(doors.source_revision,'459f292df235550717d03c275a573a28abd269bb');
+ for(const route of ['arbeiten/','en/arbeiten/','ru/arbeiten/']){
+  const doc=read(route);
+  assert.equal(doc.querySelector(`[data-project="${research.id}"] .directory-subspaces`),null);
+  assert.ok(!doc.querySelector(`[href="${doors.url}"]`));
+ }
+ const released=structuredClone(catalog);
+ const candidate=released.projects.find(p=>p.id===research.id).site.subspaces[0];
+ candidate.availability='PUBLISHED';candidate.published_at='2026-11-03';
+ assert.equal(validateSiteCatalog(released),released);
+ for(const lang of ['de','en','ru']){
+  const page=new JSDOM(renderDirectory(released,lang)).window.document;
+  assert.equal(page.querySelector(`[data-project="${research.id}"] .directory-subspaces a`).href,doors.url);
+ }
+});
+
 test('catalog rejects duplicate identity, wrong source revision, URL origin and withdrawn reentry',()=>{
  const bad=change=>{const copy=structuredClone(catalog);change(copy);assert.throws(()=>validateSiteCatalog(copy));};
  bad(x=>x.projects[1].id=x.projects[0].id);
@@ -96,6 +118,9 @@ test('catalog rejects duplicate identity, wrong source revision, URL origin and 
  bad(x=>x.projects[0].site.subspaces[0].url='https://example.com/halveth-scarlet/entities/');
  bad(x=>x.projects[0].site.subspaces[0].source_revision='a'.repeat(40));
  bad(x=>x.projects[0].site.subspaces[0].label.en='');
+ bad(x=>x.projects.find(p=>p.id==='halveth-forschungslabor').site.subspaces[0].url='https://example.com/1001-doors/');
+ bad(x=>x.projects.find(p=>p.id==='halveth-forschungslabor').site.subspaces[0].source_url='https://github.com/Juri-Halveth/halveth-forschungslabor/blob/main/branches/1001-doors/index.html');
+ bad(x=>x.projects.find(p=>p.id==='halveth-forschungslabor').site.subspaces[0].availability='PUBLISHED');
 });
 
 test('release, research PR and browser vault actions lead to their stated destinations',()=>{

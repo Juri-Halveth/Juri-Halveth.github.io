@@ -25,17 +25,35 @@ function safeUrl(value){
 function validateSubspaces(project){
  const rows=project.site.subspaces;
  if(rows===undefined)return;
- if(project.id!=='halveth-scarlet'||!Array.isArray(rows)||rows.length!==2||rows.map(row=>row.id).join(',')!=='entity-space-1001,entity-wave')throw Error('Unexpected project subspaces');
- const destinations={
-  'entity-space-1001':'https://juri-halveth.github.io/halveth-scarlet/entities/',
-  'entity-wave':'https://juri-halveth.github.io/halveth-scarlet/entities/?view=chain#scarlet'
+ const definitions={
+  'halveth-scarlet':{
+   paths:{'entity-space-1001':'https://juri-halveth.github.io/halveth-scarlet/entities/',
+    'entity-wave':'https://juri-halveth.github.io/halveth-scarlet/entities/?view=chain#scarlet'},
+   sourcePath:'assets/entity-world.mjs'
+  },
+  'halveth-forschungslabor':{
+   paths:{'number-doors-1001':'https://juri-halveth.github.io/halveth-forschungslabor/branches/1001-doors/'},
+   sourcePath:'branches/1001-doors/index.html'
+  }
  };
+ const definition=definitions[project.id];
+ if(!definition||!Array.isArray(rows)||rows.map(row=>row.id).join(',')!==Object.keys(definition.paths).join(','))throw Error('Unexpected project subspaces');
  for(const row of rows){
-  if(row.url!==destinations[row.id])throw Error('Unreviewed subspace destination');
-  if(!/^[0-9a-f]{40}$/.test(row.source_revision)||row.source_url!==`https://github.com/Juri-Halveth/halveth-scarlet/blob/${row.source_revision}/assets/entity-world.mjs`)throw Error('Subspace source binding mismatch');
+  if(row.url!==definition.paths[row.id])throw Error('Unreviewed subspace destination');
+  if(!/^[0-9a-f]{40}$/.test(row.source_revision)||row.source_url!==`https://github.com/${project.repository}/blob/${row.source_revision}/${definition.sourcePath}`)throw Error('Subspace source binding mismatch');
   if(typeof row.observed_at!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(row.observed_at)||new Date(row.observed_at+'T00:00:00Z').toISOString().slice(0,10)!==row.observed_at)throw Error('Invalid subspace observation date');
+  if(project.id==='halveth-scarlet'){
+   if(row.availability!==undefined||row.published_at!==undefined)throw Error('SCARLET subspace publication state changed');
+  }else{
+   if(!['PENDING_PUBLICATION','PUBLISHED'].includes(row.availability))throw Error('Forschungslabor subspace publication state required');
+   if(row.availability==='PENDING_PUBLICATION'&&row.published_at!==undefined)throw Error('Pending subspace cannot claim publication');
+   if(row.availability==='PUBLISHED'&&(typeof row.published_at!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(row.published_at)||new Date(row.published_at+'T00:00:00Z').toISOString().slice(0,10)!==row.published_at))throw Error('Published subspace needs observation date');
+  }
   for(const field of ['label','description'])for(const lang of languages)if(typeof row[field]?.[lang]!=='string'||!row[field][lang].trim()||row[field][lang].length>140)throw Error('Localized subspace text required');
  }
+}
+function publishedSubspaces(project){
+ return (project.site.subspaces||[]).filter(row=>row.availability===undefined||row.availability==='PUBLISHED');
 }
 function validateSiteCatalog(catalog){
  if(catalog?.schema!=='halveth.portal.catalog.v1'||!Array.isArray(catalog.projects)||catalog.projects.length!==18)throw Error('Public catalog must bind current 18-entry snapshot');
@@ -94,15 +112,15 @@ function entryHref(project,lang){
  if(project.id!=='halveth-scarlet'||lang==='de')return project.url;
  const url=new URL(project.url);url.searchParams.set('lang',lang);return url.href;
 }
-function subspaceHref(subspace,lang){
- if(lang==='de')return subspace.url;
+function subspaceHref(project,subspace,lang){
+ if(lang==='de'||project.id!=='halveth-scarlet')return subspace.url;
  const url=new URL(subspace.url);url.searchParams.set('lang',lang);return url.href;
 }
 function renderSubspaces(project,lang){
- const rows=project.site.subspaces;
- if(!rows)return '';
+ const rows=publishedSubspaces(project);
+ if(!rows.length)return '';
  const title={de:'Weitere Räume dieses Projekts',en:'More spaces in this project',ru:'Другие пространства проекта'}[lang];
- return `<nav class="directory-subspaces" aria-label="${escape(title)}"><span>${escape(title)}</span>${rows.map(row=>`<a href="${escape(subspaceHref(row,lang))}" title="${escape(row.description[lang])}">${escape(row.label[lang])} ↗</a>`).join('')}</nav>`;
+ return `<nav class="directory-subspaces" aria-label="${escape(title)}"><span>${escape(title)}</span>${rows.map(row=>`<a href="${escape(subspaceHref(project,row,lang))}" title="${escape(row.description[lang])}">${escape(row.label[lang])} ↗</a>`).join('')}</nav>`;
 }
 function featureCard(project,lang,hero=false){
  const t=copy[lang];const s=project.site;
@@ -138,4 +156,4 @@ function renderLearning(catalog,lang){
  if(rows.length!==2)throw Error('Learning selection changed');
  return `<section class="shell section directory-intro"><p class="eyebrow">HALVETH</p><h1>${t.group.learning}</h1><p class="lead">${lead}</p></section><section class="shell section directory-group"><div class="directory-grid">${rows.map(p=>directoryCard(p,lang)).join('')}</div><a class="text-link" href="${prefix}arbeiten/">${t.all} ↗</a></section>`;
 }
-module.exports={validateSiteCatalog,validateCatalogMembership,renderHome,renderDirectory,renderProfile,renderLearning,copy};
+module.exports={validateSiteCatalog,validateCatalogMembership,publishedSubspaces,renderHome,renderDirectory,renderProfile,renderLearning,copy};

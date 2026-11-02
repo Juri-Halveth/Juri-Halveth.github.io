@@ -3,6 +3,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const {createHash} = require('node:crypto');
+const {publishedSubspaces} = require('./site-catalog.cjs');
 
 const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
 const json = value => JSON.stringify(value, null, 2) + '\n';
@@ -50,11 +51,12 @@ function buildAgentSpace(root, catalog) {
       || !Number.isSafeInteger(brief.serverEvidence.testsPassed) || brief.serverEvidence.testsPassed < 0
       || !Number.isSafeInteger(brief.serverEvidence.drawsObservedPerSeries) || brief.serverEvidence.drawsObservedPerSeries < 1 || brief.serverEvidence.drawsObservedPerSeries > 1000000
       || brief.serverEvidence.publicSource !== false)) throw Error('Loopback FORTUNA receipt mismatch');
+    const publicSubspaces = publishedSubspaces(project);
     const context = {
       schema: 'halveth.project-context.v1', id: project.id, title: project.title,
       categories: project.categories, state: brief.state,
       publicEntry: {url: project.url, action: project.action},
-      ...(project.site?.subspaces ? {publicSubspaces: project.site.subspaces.map(space => ({
+      ...(publicSubspaces.length ? {publicSubspaces: publicSubspaces.map(space => ({
         id: space.id, url: space.url, label: space.label, description: space.description,
         source: {url: space.source_url, revision: space.source_revision, observedAt: space.observed_at},
         evidenceLevel: 'PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION'

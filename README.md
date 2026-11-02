@@ -47,6 +47,12 @@ Quellstand und Beobachtungstag stehen im Katalog getrennt vom älteren
 Quellstand der Hauptkarte. Der Starship-Projektfokus zeigt dieselben direkten
 Einstiege neben seinem eigenständigen lokalen Zellmodell.
 
+Ein anderes Forschungslabor enthält den gemergten Quellstand „1001 Türen“ für
+die Zahlen 0 bis 1000. Seine geplante Browseradresse ist im Katalog noch als
+`PENDING_PUBLICATION` gebunden und erscheint bis zur geprüften
+Pages-Veröffentlichung weder als Besucherlink noch im öffentlichen
+Agent-Kontext.
+
 ## Lokal bauen
 
 Auf der Projektübersicht lassen sich die 13 aktuell präsentierten Projekte nach
