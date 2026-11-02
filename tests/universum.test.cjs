@@ -157,6 +157,58 @@ test('project focus grows from the selected entity and its own teaser leads into
   dom.window.close();
 });
 
+test('closing source and model dialogs restores the active project layer without exposing the flight controls', async () => {
+  const dom = new JSDOM(html, {url: 'https://juri-halveth.github.io/universum/', runScripts: 'outside-only'});
+  const {window} = dom;
+  window.HTMLCanvasElement.prototype.getContext = () => ({setTransform() {}});
+  window.matchMedia = () => ({matches: true});
+  window.requestAnimationFrame = () => 0;
+  window.NETZ_ENGINE = {};
+  const stage = window.document.getElementById('spaceStage');
+  stage.getBoundingClientRect = () => ({left: 0, top: 0, right: 1280, bottom: 720, width: 1280, height: 720});
+  for (const script of [
+    'data/catalog.js', 'flight-model.js', 'teaser-manifest.js', 'data/briefs.js',
+    'history.js', 'data/scarlet-history-data.js', 'data/endeck-history-data.js',
+    'data/field-difference-history-data.js', 'source-time.js', 'app.js', 'lab.js', 'source.js'
+  ]) window.eval(fs.readFileSync(path.join(route, script), 'utf8'));
+
+  const focus = window.document.getElementById('inspectPanel');
+  const topbar = window.document.querySelector('.topbar');
+  const rail = window.document.getElementById('sideRail');
+  window.document.querySelector('.list-item[data-project-id="halveth-scarlet"]').click();
+  await new Promise(resolve => setTimeout(resolve, 25));
+  assert.equal(focus.hidden, false);
+  window.document.getElementById('sourceButton').click();
+  assert.equal(window.document.getElementById('sourcePanel').hidden, false);
+  assert.equal(focus.inert, true);
+  window.document.getElementById('closeSource').click();
+  assert.equal(focus.inert, false, 'project focus must become operable again');
+  assert.equal(stage.inert, true, 'flight stays unavailable behind project focus');
+  assert.equal(topbar.inert, true);
+  assert.equal(rail.inert, true);
+  assert.equal(window.document.activeElement, window.document.getElementById('sourceButton'), 'focus returns to the source control');
+
+  window.document.getElementById('closeInspect').click();
+  assert.equal(topbar.inert, false, 'top bar returns after project focus closes');
+  window.document.querySelector('.list-item[data-project-id="halveth-field-difference-lab"]').click();
+  await new Promise(resolve => setTimeout(resolve, 25));
+  // In JSDOM, dynamic import resolves relative to this test file, not the browser route.
+  window.console.error = (message, error) => {
+    assert.equal(message, 'Field Difference module load failed:');
+    assert.equal(error?.code, 'ERR_MODULE_NOT_FOUND');
+  };
+  assert.equal(window.HALVETH_LAB.openField(window.document.getElementById('inspectHeroModel')), true);
+  assert.equal(window.document.getElementById('labPanel').hidden, false);
+  assert.equal(focus.inert, true);
+  window.document.getElementById('closeLab').click();
+  assert.equal(focus.inert, false);
+  assert.equal(stage.inert, true);
+  assert.equal(topbar.inert, true);
+  assert.equal(rail.inert, true);
+  assert.equal(window.document.activeElement, window.document.getElementById('inspectHeroModel'), 'focus returns to the model control');
+  dom.window.close();
+});
+
 test('wheel, vertical swipe and pinch move only along depth and reverse to the same portal projection', () => {
   const dom = new JSDOM(html, {url: 'https://juri-halveth.github.io/universum/', runScripts: 'outside-only'});
   const {window} = dom;
