@@ -20,6 +20,7 @@ test('one public source binds 18 repository entries, 16 projects and the 13 acti
  assert.equal(lab,'window.HALVETH_CATALOG =\n'+JSON.stringify(catalog,null,2)+';\n');
  for(const lang of ['','en/','ru/']){
   const doc=read(lang+'arbeiten/');
+  assert.equal(doc.querySelectorAll('#repositories').length,1);
   const cards=[...doc.querySelectorAll('.directory-project')];
   assert.equal(cards.length,13);
   assert.equal(new Set(cards.map(c=>c.dataset.project)).size,13);
