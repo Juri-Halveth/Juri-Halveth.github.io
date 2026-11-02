@@ -186,11 +186,17 @@ test('closing source and model dialogs restores the active project layer without
   assert.equal(stage.inert, true, 'flight stays unavailable behind project focus');
   assert.equal(topbar.inert, true);
   assert.equal(rail.inert, true);
+  assert.equal(window.document.activeElement, window.document.getElementById('sourceButton'), 'focus returns to the source control');
 
   window.document.getElementById('closeInspect').click();
   assert.equal(topbar.inert, false, 'top bar returns after project focus closes');
   window.document.querySelector('.list-item[data-project-id="halveth-field-difference-lab"]').click();
   await new Promise(resolve => setTimeout(resolve, 25));
+  // In JSDOM, dynamic import resolves relative to this test file, not the browser route.
+  window.console.error = (message, error) => {
+    assert.equal(message, 'Field Difference module load failed:');
+    assert.equal(error?.code, 'ERR_MODULE_NOT_FOUND');
+  };
   assert.equal(window.HALVETH_LAB.openField(window.document.getElementById('inspectHeroModel')), true);
   assert.equal(window.document.getElementById('labPanel').hidden, false);
   assert.equal(focus.inert, true);
@@ -199,6 +205,7 @@ test('closing source and model dialogs restores the active project layer without
   assert.equal(stage.inert, true);
   assert.equal(topbar.inert, true);
   assert.equal(rail.inert, true);
+  assert.equal(window.document.activeElement, window.document.getElementById('inspectHeroModel'), 'focus returns to the model control');
   dom.window.close();
 });
 
