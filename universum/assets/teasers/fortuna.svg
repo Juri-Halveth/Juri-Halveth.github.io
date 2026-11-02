@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title description">
-<title id="title">FORTUNA – lokales Wahrscheinlichkeitslabor</title>
-<desc id="description">Technische Konzeptgrafik: eine einstellbare Ereigniswahrscheinlichkeit p gleich n durch d, bis zu einer Million lokale Ziehungen pro Versuch, Treffertest und Wiederherstellung der Ausgangskonfiguration. Keine Verbindung zu einem fremden Server.</desc>
+<title id="title">FORTUNA – Browser- und lokales Wahrscheinlichkeitslabor</title>
+<desc id="description">Technische Konzeptgrafik: einstellbare Ereigniswahrscheinlichkeit, zwei Browser-Ziehungsserien mit bis zu 999.999 Versuchen je Serie und gezählte Treffer. Ein getrenntes lokales Labor reicht bis eine Million Ziehungen. Keine Verbindung zu einem fremden Server.</desc>
 <defs>
   <linearGradient id="background" x2="1" y2="1"><stop stop-color="#06101e"/><stop offset=".54" stop-color="#101a2c"/><stop offset="1" stop-color="#151323"/></linearGradient>
   <linearGradient id="flow" x2="1"><stop stop-color="#b88aff"/><stop offset=".55" stop-color="#60c6f7"/><stop offset="1" stop-color="#49e3bd"/></linearGradient>
@@ -23,11 +23,11 @@
 <text x="46" y="38" class="mono eyebrow" fill="#cfb7ff">HALVETH / FORSCHUNGSMODELL  ·  01</text>
 <text x="44" y="94" class="sans" font-size="48" font-weight="800" letter-spacing="-2" fill="#f4f7fb">FORTUNA</text>
 <text x="330" y="88" class="sans" font-size="20" font-weight="600" fill="#c9d7e7">Chance als wiederholbarer Versuch.</text>
-<text x="332" y="111" class="mono small">Eigener Zufallskern · exakte p(E) · dokumentierte Serien</text>
+<text x="332" y="111" class="mono small">Web Crypto · eigene Serien · exakte p(E)</text>
 <g transform="translate(710 25)"><rect width="204" height="87" rx="12" fill="#17233a" stroke="#9a83d2" stroke-opacity=".75"/>
-  <text x="15" y="23" class="mono label" fill="#c5acee">SERIENLÄNGE</text>
-  <text x="15" y="54" class="mono" font-size="25" font-weight="700" fill="#f5efff">1–1.000.000</text>
-  <text x="15" y="73" class="mono" font-size="11" fill="#b9d1de">999.999 eingeschlossen</text></g>
+  <text x="15" y="23" class="mono label" fill="#c5acee">BROWSER JE SERIE</text>
+  <text x="15" y="54" class="mono" font-size="25" font-weight="700" fill="#f5efff">1–999.999</text>
+  <text x="15" y="73" class="mono" font-size="11" fill="#b9d1de">lokal bis 1.000.000</text></g>
 <rect x="45" y="153" width="235" height="254" rx="16" class="panel"/>
 <rect x="295" y="153" width="365" height="254" rx="16" class="panel"/>
 <rect x="675" y="153" width="240" height="254" rx="16" class="panel"/>
@@ -52,7 +52,7 @@
 <text x="519" y="246" class="mono small">···</text><text x="610" y="246" class="mono small">rk</text>
 <path d="M314 336H640" stroke="#547295" stroke-opacity=".55"/>
 <text x="314" y="362" class="mono" font-size="15" font-weight="700" fill="#d8e7f8">r_i ∈ {0, …, d−1}</text>
-<text x="314" y="385" class="mono small">k = 1 … 1.000.000 · nur dieses Modell</text>
+<text x="314" y="385" class="mono small">k = 1 … 999.999 · nur dieses Modell</text>
 <text x="694" y="182" class="mono eyebrow">03  ZIELEREIGNIS E</text>
 <circle cx="796" cy="251" r="45" fill="none" stroke="#284a5a" stroke-width="12"/>
 <circle cx="796" cy="251" r="36" fill="none" stroke="#56d8bf" stroke-width="2"/>
@@ -68,10 +68,10 @@
 <path d="M46 428H914" stroke="#52657f" stroke-opacity=".5"/>
 <text x="47" y="455" class="mono label">KONTROLLIERTER ABLAUF</text>
 <g class="mono" font-size="12" font-weight="700" fill="#d2e0f0">
-  <text x="47" y="483">AUSGANGSWERT</text><text x="257" y="483">BASELINE</text>
-  <text x="432" y="483">p(E) ÄNDERN + SERIE</text><text x="705" y="483">RÜCKSTELLEN + BELEG</text></g>
+  <text x="47" y="483">AUSGANGSCHANCE</text><text x="257" y="483">BASELINE</text>
+  <text x="432" y="483">SZENARIO + SERIE</text><text x="705" y="483">TREFFER ZÄHLEN</text></g>
 <g stroke="#7598bc" stroke-width="1.4" marker-end="url(#arrow)"><path d="M181 478h54"/><path d="M340 478h72"/><path d="M616 478h70"/></g>
 <path d="M45 500H915" stroke="#52657f" stroke-opacity=".5"/>
 <text x="46" y="523" class="mono" font-size="11" font-weight="700" letter-spacing=".45" fill="#a9bdd3">SCHEMATISCH · KEIN SCREENSHOT</text>
-<text x="915" y="523" text-anchor="end" class="mono" font-size="11" letter-spacing=".4" fill="#8cb4c5">LOKALES MODELL · KEINE FREMD-SERVER-ANBINDUNG</text>
+<text x="915" y="523" text-anchor="end" class="mono" font-size="11" letter-spacing=".4" fill="#8cb4c5">BROWSER-MODELL · KEINE FREMD-SERVER-ANBINDUNG</text>
 </svg>

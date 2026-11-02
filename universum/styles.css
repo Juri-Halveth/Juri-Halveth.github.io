@@ -371,3 +371,8 @@
   .inspect-panel[data-media-kind="illustration"] .inspect-art{width:100%;margin-left:0}
   .inspect-panel[data-media-kind="illustration"] .inspect-body{margin:0;padding:0}
 }
+.inspect-panel[data-media-kind="illustration"] .inspect-art{overflow:visible;margin-bottom:24px}
+.inspect-panel[data-media-kind="illustration"] .inspect-art .image-credit{
+  left:0;bottom:-23px;max-width:100%;padding:2px 0;border:0;background:transparent;
+  color:#a9c4d1;font-size:9px;white-space:normal;text-overflow:clip;
+}

@@ -466,32 +466,32 @@ window.HALVETH_CATALOG =
       "id": "fortuna",
       "repository": "Juri-Halveth/fortuna",
       "title": "FORTUNA",
-      "tagline": "Glück als berechenbares Modell und Integrationsziel.",
-      "description": "Öffentlich: deterministischer Vergleich gewichteter Optionen. Getrennt lokal: Bernoulli-Ziehungen bis 1.000.000 pro Lauf. Autorisierte Serveradapter sind ein Ziel, keine veröffentlichte Funktion.",
+      "tagline": "Chance als wiederholbarer Versuch im eigenen Modell.",
+      "description": "Öffentlich: zwei Web-Crypto-Ziehungsserien mit bis zu 999.999 Versuchen je Serie, Fortschritt und Abbruch; daneben ein getrennter deterministischer Optionenvergleich. Ein lokaler Loopback-Prototyp führt eigene Serien serverseitig aus. Fremde Spiele und Server werden nicht verändert.",
       "categories": [
         "software",
         "models"
       ],
       "kind": "Browserprototyp",
       "url": "https://juri-halveth.github.io/fortuna/",
-      "action": "Vergleich öffnen",
+      "action": "Glücksversuch öffnen",
       "evidence": "README und Quellcode gelesen",
       "reviewed": true,
       "visibility": "public",
       "featured": false,
-      "source_url": "https://github.com/Juri-Halveth/fortuna/tree/4bacf76726687ba2fa9c24d1da638da8fa130e10",
+      "source_url": "https://github.com/Juri-Halveth/fortuna/tree/5d735c8fa3b052c00feca3b55f5e7122bc5e5686",
       "site": {
         "entry_type": "PROJECT",
         "primary_category": "software",
         "title": {
-          "de": "Glücksmodell und Entscheidungsanalyse",
-          "en": "Probability model and decision analysis",
-          "ru": "Модель вероятности и анализ решений"
+          "de": "Wahrscheinlichkeitslabor und Optionenvergleich",
+          "en": "Probability lab and option comparison",
+          "ru": "Лаборатория вероятности и сравнение вариантов"
         },
         "summary": {
-          "de": "Die öffentliche Browserfassung bewertet eigene Optionen deterministisch. Ein getrenntes lokales Wahrscheinlichkeitslabor kann Ziehungsserien ausführen; Serveradapter sind ein Entwicklungsziel.",
-          "en": "The public browser version ranks entered options deterministically. A separate local probability lab can run draws; server adapters remain a development goal.",
-          "ru": "Публичная браузерная версия детерминированно сравнивает варианты. Отдельная локальная лаборатория выполняет серии случайных проб; серверные адаптеры пока лишь цель разработки."
+          "de": "Der Browser führt zwei eigene Zufallsserien bis 999.999 Ziehungen je Serie aus und zählt Treffer. Ein separater Optionenvergleich und ein lokaler Loopback-Prototyp ergänzen das Modell; fremde Ergebnisse bleiben unberührt.",
+          "en": "The browser runs two owned random-draw series of up to 999,999 each and counts hits. A separate option comparison and local loopback prototype extend the model; external outcomes remain untouched.",
+          "ru": "Браузер выполняет две собственные серии до 999 999 случайных проб и считает попадания. Отдельно есть сравнение вариантов и локальный loopback-прототип; внешние результаты не меняются."
         },
         "action": {
           "de": "Direkt öffnen",
@@ -499,7 +499,7 @@ window.HALVETH_CATALOG =
           "ru": "Открыть"
         },
         "status": "BROWSER_ENTRY",
-        "revision": "4bacf76726687ba2fa9c24d1da638da8fa130e10",
+        "revision": "5d735c8fa3b052c00feca3b55f5e7122bc5e5686",
         "editorial_state": "CURRENT",
         "revision_observed_at": "2026-11-02"
       }

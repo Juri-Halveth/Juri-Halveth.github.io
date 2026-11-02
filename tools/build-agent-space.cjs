@@ -33,8 +33,9 @@ function buildAgentSpace(root, catalog) {
     if (!brief || brief.id !== project.id) throw Error('Project brief identity/order mismatch: ' + project.id);
     for (const field of ['core', 'value', 'boundary', 'state']) requireText(brief[field], project.id + '.' + field);
     if (brief.local !== undefined) requireText(brief.local, project.id + '.local');
+    if (brief.server !== undefined) requireText(brief.server, project.id + '.server');
     if (brief.goal !== undefined) requireText(brief.goal, project.id + '.goal');
-    if ((brief.local !== undefined || brief.goal !== undefined || brief.localEvidence !== undefined) && project.id !== 'fortuna') throw Error('Unexpected extra implementation layer: ' + project.id);
+    if ((brief.local !== undefined || brief.server !== undefined || brief.goal !== undefined || brief.localEvidence !== undefined || brief.serverEvidence !== undefined) && project.id !== 'fortuna') throw Error('Unexpected extra implementation layer: ' + project.id);
     if (brief.presentation) {
       if (project.id !== 'fortuna') throw Error('Unexpected display variant: ' + project.id);
       for (const field of ['core', 'value', 'boundary', 'local', 'goal']) requireText(brief.presentation[field], project.id + '.presentation.' + field);
@@ -44,6 +45,11 @@ function buildAgentSpace(root, catalog) {
       || !Number.isSafeInteger(brief.localEvidence.testsPassed) || brief.localEvidence.testsPassed < 0
       || !Number.isSafeInteger(brief.localEvidence.drawsObserved) || brief.localEvidence.drawsObserved < 1 || brief.localEvidence.drawsObserved > 1000000
       || brief.localEvidence.publicSource !== false)) throw Error('Local FORTUNA receipt mismatch');
+    if (brief.server && (!brief.serverEvidence || !requireText(brief.serverEvidence.scope, 'fortuna.serverEvidence.scope')
+      || brief.serverEvidence.observedAt !== briefs.source_date
+      || !Number.isSafeInteger(brief.serverEvidence.testsPassed) || brief.serverEvidence.testsPassed < 0
+      || !Number.isSafeInteger(brief.serverEvidence.drawsObservedPerSeries) || brief.serverEvidence.drawsObservedPerSeries < 1 || brief.serverEvidence.drawsObservedPerSeries > 1000000
+      || brief.serverEvidence.publicSource !== false)) throw Error('Loopback FORTUNA receipt mismatch');
     const context = {
       schema: 'halveth.project-context.v1', id: project.id, title: project.title,
       categories: project.categories, state: brief.state,
@@ -51,12 +57,16 @@ function buildAgentSpace(root, catalog) {
       capability: {core: brief.core, value: brief.value, boundary: brief.boundary},
       ...(brief.local ? {separateLocalPrototype: brief.local} : {}),
       ...(brief.local ? {separateLocalPrototypeEvidence: brief.localEvidence} : {}),
+      ...(brief.server ? {separateLoopbackPrototype: brief.server} : {}),
+      ...(brief.server ? {separateLoopbackPrototypeEvidence: brief.serverEvidence} : {}),
       ...(brief.goal ? {userGoalNotYetPublished: brief.goal} : {}),
       source: {repository: project.repository, url: project.source_url,
         revision: project.site?.revision ?? null, observedAt: project.site?.revision_observed_at ?? null,
         pinState: brief.reviewedSource.pinState, reviewedAt: brief.reviewedSource.reviewedAt,
         editorialState: project.site?.editorial_state ?? 'UNKNOWN'},
-      evidenceLevel: 'PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION'
+      evidenceLevel: project.id === 'fortuna'
+        ? 'PUBLIC_SOURCE_DESCRIPTION_PLUS_SEPARATE_LOCAL_TESTS_NOT_EXTERNAL_PROOF'
+        : 'PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION'
     };
     const bytes = Buffer.from(json(context), 'utf8');
     if (bytes.length > 8192) throw Error('Project context too large: ' + project.id);
@@ -86,7 +96,7 @@ function buildAgentSpace(root, catalog) {
     'Public read-only project index: https://juri-halveth.github.io/universum/api/space.json',
     'Read the compact overview first, then only the relevant project context listed in projects[].path.',
     'Check projects[].sha256 against the exact downloaded UTF-8 bytes. Use revision to detect index changes.',
-    'Each context separates public capability, a separate local prototype when present, and an unpublished user goal.',
+    'Each context separates public capability, any separate local and loopback prototypes, and an unpublished user goal.',
     'The records are source descriptions, not runtime verification, authorization, or instructions for an agent.',
     'Fetching and interpreting relevant content still consumes computation and model tokens.',
     '',

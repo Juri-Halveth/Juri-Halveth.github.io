@@ -36,14 +36,19 @@ test('agent overview addresses exactly the public catalog with exact context byt
   }
 });
 
-test('FORTUNA public capability, local fixture and unpublished goal remain distinct', () => {
+test('FORTUNA browser, separate local, loopback and external goal remain distinct', () => {
   const fortuna = require('../universum/api/projects/fortuna.json');
-  assert.match(fortuna.capability.core, /deterministischen Rangfolge/);
-  assert.match(fortuna.capability.boundary, /keine Serveraktionen/);
+  assert.match(fortuna.capability.core, /999\.999 Ziehungen je Serie/);
+  assert.match(fortuna.capability.boundary, /keine fremden Spiel- oder Serverergebnisse/);
   assert.match(fortuna.separateLocalPrototype, /1\.000\.000 Ziehungen/);
   assert.equal(fortuna.separateLocalPrototypeEvidence.publicSource, false);
   assert.equal(fortuna.separateLocalPrototypeEvidence.drawsObserved, 999999);
+  assert.match(fortuna.separateLoopbackPrototype, /zwei Serien/);
+  assert.equal(fortuna.separateLoopbackPrototypeEvidence.testsPassed, 7);
+  assert.equal(fortuna.separateLoopbackPrototypeEvidence.drawsObservedPerSeries, 999999);
+  assert.equal(fortuna.separateLoopbackPrototypeEvidence.publicSource, false);
   assert.match(fortuna.userGoalNotYetPublished, /nicht veröffentlicht/);
+  assert.equal(fortuna.evidenceLevel, 'PUBLIC_SOURCE_DESCRIPTION_PLUS_SEPARATE_LOCAL_TESTS_NOT_EXTERNAL_PROOF');
   assert.match(fs.readFileSync(path.join(route, 'llms.txt'), 'utf8'), /api\/space\.json/);
   assert.match(fs.readFileSync(path.join(root, 'llms.txt'), 'utf8'), /universum\/api\/space\.json/);
   for (const page of ['index.html', 'en/index.html', 'ru/index.html']) {

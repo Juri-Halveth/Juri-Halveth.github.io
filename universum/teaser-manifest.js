@@ -106,15 +106,15 @@
     ]),
     'fortuna': item('fortuna', 'FORTUNA', {
       src: 'assets/teasers/fortuna.svg',
-      alt: 'Schematische RNG-Konzeptgrafik: lokale Bernoulli-Ziehungen, Ergebniszähler und Prüfung ohne Serveranbindung.',
-      label: 'Konzeptgrafik · separates lokales Wahrscheinlichkeitslabor',
+      alt: 'Schematische RNG-Konzeptgrafik: Bernoulli-Ziehungen im eigenen Browsermodell, Ergebniszähler und getrennte lokale Versuche.',
+      label: 'Konzeptgrafik · Browserlabor und getrennte lokale Versuche',
       source: 'https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/universum/assets/teasers/fortuna.svg',
-      credit: 'HALVETH · eigene Konzeptgrafik nach getrenntem lokalem Prototyp; nicht Teil der verlinkten Browserfassung',
+      credit: 'HALVETH · eigene Konzeptgrafik; Browserlabor und lokaler Prototyp haben unterschiedliche Grenzen',
       kind: 'illustration'
     }, [
-      ['Öffentliche Demo rechnen', '„Beispiel vergleichen“ berechnet eine deterministische Rangfolge aus Optionen und Gewichten.'],
-      ['Lokales Labor trennen', 'Das Wahrscheinlichkeitslabor ist ein separater lokaler Arbeitsstand, nicht Teil dieses Browser-Repos.'],
-      ['999.999 Läufe unterscheiden', 'Eine lokale 999.999-Ziehungsserie wurde geprüft; autorisierte Serveradapter sind Entwicklungsziel.']
+      ['Glücksversuch starten', 'Zwei eigene Web-Crypto-Serien mit bis zu 999.999 Ziehungen je Serie ausführen; Treffer, Fortschritt und Abbruch sind sichtbar.'],
+      ['Optionen separat vergleichen', 'Der zweite Browserpfad berechnet aus eingegebenen Optionen und Gewichten eine deterministische Rangfolge.'],
+      ['Lokale und externe Wirkung trennen', 'Ein separater Loopback-Prototyp führt eigene Serverprozesse aus. Fremde Spiel- oder Serverergebnisse werden nicht verändert.']
     ]),
     'halveth-project0-keeper': item('halveth-project0-keeper', 'PROJECT0 KEEPER', diagram('keeper',
       'PowerShell-Fenster neben einer schematischen lokalen Zustandsdatei.',

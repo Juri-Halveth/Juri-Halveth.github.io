@@ -134,10 +134,10 @@
     },
     {
       "id": "fortuna",
-      "core": "Das veröffentlichte Browsermodell bewertet eingegebene Möglichkeiten mit offengelegten Gewichten und einer deterministischen Rangfolge.",
-      "value": "Eigene Optionen und ihre Bewertung lassen sich sichtbar vergleichen und hinterfragen.",
-      "boundary": "Der Code verändert keine externen Zufallschancen, führt keine Serveraktionen aus und enthält keinen belegten Wiederholungsautomaten.",
-      "state": "Browserprototyp",
+      "core": "Das veröffentlichte Browserlabor vergleicht zwei unabhängig modellierte Bernoulli-Serien mit Web Crypto und bis zu 999.999 Ziehungen je Serie. Der Optionenvergleich bleibt eine getrennte deterministische Funktion.",
+      "value": "Eigene Chancenannahmen, beobachtete Treffer und Optionen lassen sich im Browser sichtbar vergleichen; Fortschritt und Abbruch sind bedienbar.",
+      "boundary": "Nur das eigene Modell wird simuliert. Der Code verändert keine fremden Spiel- oder Serverergebnisse und sagt diese nicht voraus.",
+      "state": "Browserlabor",
       "local": "Ein getrenntes lokales Bernoulli-Labor zieht mit secrets.randbelow aus einem eigenen Modell; pro Lauf sind 1 bis 1.000.000 Ziehungen möglich, mit Baseline-, Änderungs- und Rückstellbeleg.",
       "localEvidence": {
         "scope": "Eigenes lokales Bernoulli-Modell",
@@ -146,17 +146,25 @@
         "drawsObserved": 999999,
         "publicSource": false
       },
-      "goal": "Nutzerziel sind wiederholte wahrscheinlichkeitabhängige Versuche bis 999.999 oder zur technischen Grenze über eigene oder autorisierte lokale und serverseitige Adapter; diese Anbindung ist nicht veröffentlicht.",
+      "server": "Ein getrennter lokaler Loopback-Prototyp nimmt nur eigene Wahrscheinlichkeitsparameter an, führt in einem Worker zwei Serien mit bis zu 1.000.000 Ziehungen je Serie aus und bietet Abbruch, Zeitlimit und Belege. Er ist kein Adapter für fremde Server.",
+      "serverEvidence": {
+        "scope": "Eigener Loopback-Server auf 127.0.0.1",
+        "observedAt": "2026-11-02",
+        "testsPassed": 7,
+        "drawsObservedPerSeries": 999999,
+        "publicSource": false
+      },
+      "goal": "Nutzerziel sind wiederholte wahrscheinlichkeitabhängige Versuche über eigene oder ausdrücklich autorisierte externe Schnittstellen. Eine solche Fremdsystemanbindung ist nicht veröffentlicht.",
       "presentation": {
-        "core": "Browser: gewichtete Optionen → deterministische Rangfolge.",
-        "value": "Eigene Wahlmodelle transparent prüfen.",
-        "boundary": "Keine externe Zufalls- oder Serverwirkung.",
-        "local": "Lokal geprüft: 999.999 Bernoulli-Ziehungen.",
-        "goal": "Ziel: wiederholte Versuche über autorisierte Adapter."
+        "core": "Browser: zwei Web-Crypto-Serien bis je 999.999 Ziehungen.",
+        "value": "Treffer zählen, Chancenannahmen und Optionen vergleichen.",
+        "boundary": "Keine Wirkung auf fremde Spiele oder Server.",
+        "local": "Separat lokal: Python-Labor und Loopback-API geprüft.",
+        "goal": "Ziel: autorisierte Schnittstellen mit echter Rücklesung."
       },
       "reviewedSource": {
-        "url": "https://github.com/Juri-Halveth/fortuna/tree/4bacf76726687ba2fa9c24d1da638da8fa130e10",
-        "revision": "4bacf76726687ba2fa9c24d1da638da8fa130e10",
+        "url": "https://github.com/Juri-Halveth/fortuna/tree/5d735c8fa3b052c00feca3b55f5e7122bc5e5686",
+        "revision": "5d735c8fa3b052c00feca3b55f5e7122bc5e5686",
         "pinState": "PINNED",
         "reviewedAt": "2026-11-02"
       }
