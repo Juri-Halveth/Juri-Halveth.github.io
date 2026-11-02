@@ -1,0 +1,28 @@
+{
+  "schema": "halveth.project-context.v1",
+  "id": "leviathan-wallet-portal",
+  "title": "LEVIATHAN PORTAL",
+  "categories": [
+    "software"
+  ],
+  "state": "Browserprototyp",
+  "publicEntry": {
+    "url": "https://juri-halveth.github.io/leviathan-wallet-portal/",
+    "action": "Vault öffnen"
+  },
+  "capability": {
+    "core": "Ein Browser-Vault liest unterstützte öffentliche Cosmos- und EVM-Positionen und trennt Simulation, Vorprüfung und Wallet-Freigabe für Aktionen.",
+    "value": "Öffentliche Adressen sind ohne Wallet-Verbindung einsehbar; ETH- und GTC-Aktionen erfolgen erst nach eigener Freigabe.",
+    "boundary": "Abdeckung und Netzwerkdaten sind begrenzt; lokale Tests ersetzen keinen realen Wallet- oder Mainnet-Beleg, und Senden kann Gebühren auslösen."
+  },
+  "source": {
+    "repository": "Juri-Halveth/leviathan-wallet-portal",
+    "url": "https://github.com/Juri-Halveth/leviathan-wallet-portal/blob/main/README.md",
+    "revision": null,
+    "observedAt": null,
+    "pinState": "UNPINNED",
+    "reviewedAt": "2026-11-02",
+    "editorialState": "CURRENT"
+  },
+  "evidenceLevel": "PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION"
+}

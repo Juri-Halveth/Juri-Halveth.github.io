@@ -1,0 +1,28 @@
+{
+  "schema": "halveth.project-context.v1",
+  "id": "halveth-unreal",
+  "title": "HALVETH UNREAL",
+  "categories": [
+    "worlds"
+  ],
+  "state": "Windows-Vorschau",
+  "publicEntry": {
+    "url": "https://github.com/Juri-Halveth/halveth-unreal/releases/tag/v0.1.0",
+    "action": "Windows-Vorschau v0.1.0 öffnen"
+  },
+  "capability": {
+    "core": "Ein nativer Unreal-C++-Prototyp erzeugt vier Portalräume und verbindet Erkundung mit Büchern, Rezepten, Handwerk und lokalen Speicherständen.",
+    "value": "Eine veröffentlichte Windows-Vorschau macht die Portalwelt direkt spielbar.",
+    "boundary": "v0.1.0 ist veröffentlicht; die dokumentierte 0.2-Validierung ist kein veröffentlichtes 0.2-Release."
+  },
+  "source": {
+    "repository": "Juri-Halveth/halveth-unreal",
+    "url": "https://github.com/Juri-Halveth/halveth-unreal/blob/main/README.md",
+    "revision": null,
+    "observedAt": null,
+    "pinState": "UNPINNED",
+    "reviewedAt": "2026-11-02",
+    "editorialState": "WITHDRAWN_FROM_PORTFOLIO"
+  },
+  "evidenceLevel": "PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION"
+}

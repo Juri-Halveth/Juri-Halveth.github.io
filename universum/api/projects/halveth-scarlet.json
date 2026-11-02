@@ -1,0 +1,29 @@
+{
+  "schema": "halveth.project-context.v1",
+  "id": "halveth-scarlet",
+  "title": "SCARLET",
+  "categories": [
+    "models",
+    "worlds"
+  ],
+  "state": "Browsermodell",
+  "publicEntry": {
+    "url": "https://juri-halveth.github.io/halveth-scarlet/",
+    "action": "Selbst ausprobieren"
+  },
+  "capability": {
+    "core": "Ein GStar-Ledger bindet Textzustände über IDs, Digests und Elternbezüge; ein getrenntes Zellmodell zeigt endliche lokale Dynamik.",
+    "value": "Varianten lassen sich im Browser erzeugen, zurückverfolgen und als JSON mitnehmen.",
+    "boundary": "Die dargestellten Zustände und Zellen sind Browsermodelle, keine Messung eines äußeren physikalischen Vorgangs."
+  },
+  "source": {
+    "repository": "Juri-Halveth/halveth-scarlet",
+    "url": "https://github.com/Juri-Halveth/halveth-scarlet/tree/9f706b9f6bba255f30cde703f851ba80cd64d9bc",
+    "revision": "9f706b9f6bba255f30cde703f851ba80cd64d9bc",
+    "observedAt": "2026-10-27",
+    "pinState": "PINNED",
+    "reviewedAt": "2026-11-02",
+    "editorialState": "CURRENT"
+  },
+  "evidenceLevel": "PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION"
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "halveth.project-context.v1",
+  "id": "halveth-cannabis-reform-forschung",
+  "title": "QUELLEN & REFORM",
+  "categories": [
+    "society"
+  ],
+  "state": "Quellenprojekt",
+  "publicEntry": {
+    "url": "https://juri-halveth.github.io/halveth-cannabis-reform-forschung/",
+    "action": "Forschungsseite öffnen"
+  },
+  "capability": {
+    "core": "Das Projekt trennt öffentliche Studienquellen, einen technischen Messplan und politische Reformvorschläge.",
+    "value": "Lesende können Befunde, geplante Prüfungen und normative Forderungen getrennt beurteilen.",
+    "boundary": "Eigene Geräte- oder Humanmessungen und ein validierter neuer Verkehrstest sind hier nicht belegt."
+  },
+  "source": {
+    "repository": "Juri-Halveth/halveth-cannabis-reform-forschung",
+    "url": "https://github.com/Juri-Halveth/halveth-cannabis-reform-forschung/blob/main/README.md",
+    "revision": null,
+    "observedAt": null,
+    "pinState": "UNPINNED",
+    "reviewedAt": "2026-11-02",
+    "editorialState": "CURRENT"
+  },
+  "evidenceLevel": "PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION"
+}

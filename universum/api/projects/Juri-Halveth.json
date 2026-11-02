@@ -1,0 +1,28 @@
+{
+  "schema": "halveth.project-context.v1",
+  "id": "Juri-Halveth",
+  "title": "PROFILQUELLE",
+  "categories": [
+    "software"
+  ],
+  "state": "Profilquelle",
+  "publicEntry": {
+    "url": "https://github.com/Juri-Halveth/Juri-Halveth",
+    "action": "Profilquelle ansehen"
+  },
+  "capability": {
+    "core": "Die GitHub-Profil-README ordnet Juri und HALVETH zu und verlinkt direkte Projektbeispiele, Fallstudien und das Starship Lab.",
+    "value": "Ein Profilbesucher findet Person, Projekte und einen konkreten ersten Einstieg am selben Ort.",
+    "boundary": "Das Profil ist ein öffentliches Verzeichnis, keine eigenständige Anwendung oder Ausführungsumgebung."
+  },
+  "source": {
+    "repository": "Juri-Halveth/Juri-Halveth",
+    "url": "https://github.com/Juri-Halveth/Juri-Halveth/blob/main/README.md",
+    "revision": null,
+    "observedAt": null,
+    "pinState": "UNPINNED",
+    "reviewedAt": "2026-11-02",
+    "editorialState": "CURRENT"
+  },
+  "evidenceLevel": "PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION"
+}

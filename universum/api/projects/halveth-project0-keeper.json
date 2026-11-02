@@ -1,0 +1,28 @@
+{
+  "schema": "halveth.project-context.v1",
+  "id": "halveth-project0-keeper",
+  "title": "PROJECT0 KEEPER",
+  "categories": [
+    "software"
+  ],
+  "state": "Lokaler Prototyp",
+  "publicEntry": {
+    "url": "https://github.com/Juri-Halveth/halveth-project0-keeper",
+    "action": "Quellcode ansehen"
+  },
+  "capability": {
+    "core": "PowerShell-Skripte und Zustandsdateien ordnen Beobachtungen, Kontinuität und Entscheidungen für ASTER, RACHEL und SHELLA.",
+    "value": "Lokale Projektzustände und nächste Prüfungen bleiben lesbar und nachvollziehbar.",
+    "boundary": "Der Quellprototyp ist weder ein gehosteter Steuerdienst noch ein Handels- oder Ertragsdienst."
+  },
+  "source": {
+    "repository": "Juri-Halveth/halveth-project0-keeper",
+    "url": "https://github.com/Juri-Halveth/halveth-project0-keeper/tree/f4349d013efb7105e2875784a0c7c16d2026e3da",
+    "revision": "f4349d013efb7105e2875784a0c7c16d2026e3da",
+    "observedAt": "2026-10-27",
+    "pinState": "PINNED",
+    "reviewedAt": "2026-11-02",
+    "editorialState": "CURRENT"
+  },
+  "evidenceLevel": "PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION"
+}

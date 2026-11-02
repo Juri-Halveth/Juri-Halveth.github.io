@@ -1,0 +1,30 @@
+{
+  "schema": "halveth.project-context.v1",
+  "id": "c-drohne-red-room",
+  "title": "C-DROHNE / RED ROOM",
+  "categories": [
+    "models",
+    "security",
+    "worlds"
+  ],
+  "state": "Szenenprototyp",
+  "publicEntry": {
+    "url": "https://juri-halveth.github.io/c-drohne-red-room/#falllabor",
+    "action": "Falllabor öffnen"
+  },
+  "capability": {
+    "core": "Eine kurze 3D-Szene und ein Falllabor trennen fiktive Meldungen, Kopien, Zeiten und Gegenprüfungen.",
+    "value": "Ein Ereignis lässt sich aus mehreren Quellen und Blickwinkeln nachvollziehen.",
+    "boundary": "Die Fallbelege sind fiktiv; weder eine Drohne noch ein realer Schwarm ist an die Seite angeschlossen."
+  },
+  "source": {
+    "repository": "Juri-Halveth/c-drohne-red-room",
+    "url": "https://github.com/Juri-Halveth/c-drohne-red-room/tree/f0b072571ccb1a7894a32b1ba03c9a8620995352",
+    "revision": "f0b072571ccb1a7894a32b1ba03c9a8620995352",
+    "observedAt": "2026-10-27",
+    "pinState": "PINNED",
+    "reviewedAt": "2026-11-02",
+    "editorialState": "CURRENT"
+  },
+  "evidenceLevel": "PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION"
+}

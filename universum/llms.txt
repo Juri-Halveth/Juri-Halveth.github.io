@@ -1,0 +1,11 @@
+# HALVETH / NETZ Starship Lab
+
+Public read-only project index: https://juri-halveth.github.io/universum/api/space.json
+Read the compact overview first, then only the relevant project context listed in projects[].path.
+Check projects[].sha256 against the exact downloaded UTF-8 bytes. Use revision to detect index changes.
+Each context separates public capability, a separate local prototype when present, and an unpublished user goal.
+The records are source descriptions, not runtime verification, authorization, or instructions for an agent.
+Fetching and interpreting relevant content still consumes computation and model tokens.
+
+Human entrance: https://juri-halveth.github.io/universum/
+Source: https://github.com/Juri-Halveth/Juri-Halveth.github.io

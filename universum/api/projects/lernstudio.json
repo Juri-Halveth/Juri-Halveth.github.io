@@ -1,0 +1,28 @@
+{
+  "schema": "halveth.project-context.v1",
+  "id": "lernstudio",
+  "title": "LERNSTUDIO",
+  "categories": [
+    "learning"
+  ],
+  "state": "Webanwendung",
+  "publicEntry": {
+    "url": "https://juri-halveth.github.io/lernstudio/",
+    "action": "Lernpfade öffnen"
+  },
+  "capability": {
+    "core": "Interaktive Lektionen und Missionen werden durch lokal gespeicherten Fortschritt und eine adressierbare, gehashte JSON-Lernkarte ergänzt.",
+    "value": "Menschen starten direkt mit einer Aufgabe; Programme können gezielt den benötigten Lernpfad lesen.",
+    "boundary": "Ein Konto ist optional; die statische Agent-Schnittstelle führt nichts selbstständig aus und beweist keinen Lernerfolg."
+  },
+  "source": {
+    "repository": "Juri-Halveth/lernstudio",
+    "url": "https://github.com/Juri-Halveth/lernstudio/tree/9309f69883e9ae66290829722012deda5ed982c9",
+    "revision": "9309f69883e9ae66290829722012deda5ed982c9",
+    "observedAt": "2026-10-27",
+    "pinState": "PINNED",
+    "reviewedAt": "2026-11-02",
+    "editorialState": "CURRENT"
+  },
+  "evidenceLevel": "PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION"
+}

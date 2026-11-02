@@ -1,0 +1,224 @@
+{
+  "schema": "halveth.agent-space.v1",
+  "baseURL": "https://juri-halveth.github.io/universum/",
+  "revision": "d601228eed2cebeb0fa75a6e1868b35bfc882c95d6a4a7b81c21e7ab1aa7e79e",
+  "sourceDate": "2026-11-02",
+  "catalogSha256": "ae93d8f4149b07c63187cf22d34b5e2d6d2fb8149bc6b17637c74195232f2fd0",
+  "briefSha256": "ac2545f095701adca15ebc07e9a35572c1db11d49d21f2bc8fc787de471717a6",
+  "count": 18,
+  "access": {
+    "mode": "READ_PUBLIC",
+    "transport": "HTTPS_GET",
+    "writes": false,
+    "usage": "READ_OVERVIEW_THEN_ONLY_RELEVANT_PROJECT_CONTEXTS"
+  },
+  "claimCeiling": "STATIC_SOURCE_DESCRIPTIONS_NOT_RUNTIME_PROOF_OR_AUTOMATIC_UNDERSTANDING",
+  "projects": [
+    {
+      "id": "halveth-scarlet",
+      "title": "SCARLET",
+      "state": "Browsermodell",
+      "categories": [
+        "models",
+        "worlds"
+      ],
+      "path": "api/projects/halveth-scarlet.json",
+      "bytes": 1130,
+      "sha256": "8b7d29998ef828914303ad0e2dbba153c70e2612ba7a96ff82b0b00c6469585f"
+    },
+    {
+      "id": "lucinet-seedspace",
+      "title": "LUCINET / NOVA",
+      "state": "Lokales Werkzeug",
+      "categories": [
+        "software",
+        "security"
+      ],
+      "path": "api/projects/lucinet-seedspace.json",
+      "bytes": 1128,
+      "sha256": "1f55b61f4bfcb527bd6ec49861e997b9a415229ed4545af13ea43053b05fff6e"
+    },
+    {
+      "id": "halveth-forschungslabor",
+      "title": "FORSCHUNGSLABOR",
+      "state": "Modellsammlung",
+      "categories": [
+        "models",
+        "security",
+        "software"
+      ],
+      "path": "api/projects/halveth-forschungslabor.json",
+      "bytes": 1165,
+      "sha256": "804570044f295c8d1e1eb3c13869978009e3932b50913e1ceea8194b2a1fe34e"
+    },
+    {
+      "id": "halveth-tresor",
+      "title": "TRESOR",
+      "state": "Windows-Release",
+      "categories": [
+        "software",
+        "security"
+      ],
+      "path": "api/projects/halveth-tresor.json",
+      "bytes": 1168,
+      "sha256": "346d71fc81c0dc9bc58e1fcad0921bfe422b4474cd8519be02506c1d4e38608c"
+    },
+    {
+      "id": "mein-lernportal",
+      "title": "LERNPORTAL",
+      "state": "Webanwendung",
+      "categories": [
+        "learning"
+      ],
+      "path": "api/projects/mein-lernportal.json",
+      "bytes": 1075,
+      "sha256": "d49630db0d8c0ffaf0da81ed66d6529fa2826cf50858229c9016b38c866e6094"
+    },
+    {
+      "id": "halveth-field-difference-lab",
+      "title": "FIELD DIFFERENCE",
+      "state": "Browserlabor",
+      "categories": [
+        "models"
+      ],
+      "path": "api/projects/halveth-field-difference-lab.json",
+      "bytes": 1175,
+      "sha256": "e4d685ad8a8392e3bc6f9c7d5eb1790adf2d3acf2ba67b8a6e2b23d148f537c3"
+    },
+    {
+      "id": "c-drohne-red-room",
+      "title": "C-DROHNE / RED ROOM",
+      "state": "Szenenprototyp",
+      "categories": [
+        "models",
+        "security",
+        "worlds"
+      ],
+      "path": "api/projects/c-drohne-red-room.json",
+      "bytes": 1125,
+      "sha256": "a1a9e6a3182cf3b43d7847062c5018fa622c25845081a3f668f7e8e3d6ca98ec"
+    },
+    {
+      "id": "halveth-realms",
+      "title": "HALVETH REALMS",
+      "state": "Desktop-Release",
+      "categories": [
+        "worlds"
+      ],
+      "path": "api/projects/halveth-realms.json",
+      "bytes": 1107,
+      "sha256": "73146f85d21a40c04a60b4083f1466ba71b51e605b7b492c84f0ad13c163e136"
+    },
+    {
+      "id": "halveth-cannabis-reform-forschung",
+      "title": "QUELLEN & REFORM",
+      "state": "Quellenprojekt",
+      "categories": [
+        "society"
+      ],
+      "path": "api/projects/halveth-cannabis-reform-forschung.json",
+      "bytes": 1101,
+      "sha256": "b989f4f590f13ea14dd96e6ab283bcdae8d1714eea73d71b47ae73ddcbba1b8f"
+    },
+    {
+      "id": "lernstudio",
+      "title": "LERNSTUDIO",
+      "state": "Webanwendung",
+      "categories": [
+        "learning"
+      ],
+      "path": "api/projects/lernstudio.json",
+      "bytes": 1128,
+      "sha256": "18112dd273583d9b5dba6103c9cda2918bd09d8aae4f932062da0b9ec9e5d3cc"
+    },
+    {
+      "id": "fortuna",
+      "title": "FORTUNA",
+      "state": "Browserprototyp",
+      "categories": [
+        "software",
+        "models"
+      ],
+      "path": "api/projects/fortuna.json",
+      "bytes": 1798,
+      "sha256": "3f3834b0519890dbf0e0514cd32908cb8247ea345863133094f8a59834ad9612"
+    },
+    {
+      "id": "halveth-project0-keeper",
+      "title": "PROJECT0 KEEPER",
+      "state": "Lokaler Prototyp",
+      "categories": [
+        "software"
+      ],
+      "path": "api/projects/halveth-project0-keeper.json",
+      "bytes": 1129,
+      "sha256": "da5d8bc399becb30ac0e4290c23f9e86fa0914ec5373b0875103553d02a34db7"
+    },
+    {
+      "id": "halveth-morrowind-genesis",
+      "title": "MORROWIND GENESIS",
+      "state": "OpenMW-Erweiterung",
+      "categories": [
+        "worlds"
+      ],
+      "path": "api/projects/halveth-morrowind-genesis.json",
+      "bytes": 1150,
+      "sha256": "c2dbce10ae4b8703931cbbb96a60dd921b09f772119762e2ff2869f1a53300cd"
+    },
+    {
+      "id": "halveth-unreal",
+      "title": "HALVETH UNREAL",
+      "state": "Windows-Vorschau",
+      "categories": [
+        "worlds"
+      ],
+      "path": "api/projects/halveth-unreal.json",
+      "bytes": 1093,
+      "sha256": "c0414ff055848f926203cc437a6b06c4d5df5ad0f68ff954324e405376265f2a"
+    },
+    {
+      "id": "halveth-tron-security-lab",
+      "title": "TRON SECURITY LAB",
+      "state": "Forschungsentwurf",
+      "categories": [
+        "security"
+      ],
+      "path": "api/projects/halveth-tron-security-lab.json",
+      "bytes": 1193,
+      "sha256": "cbfaa3a3f03b57c8a1aacddcba901b909bd0207d188cf2d246d384531c345e83"
+    },
+    {
+      "id": "leviathan-wallet-portal",
+      "title": "LEVIATHAN PORTAL",
+      "state": "Browserprototyp",
+      "categories": [
+        "software"
+      ],
+      "path": "api/projects/leviathan-wallet-portal.json",
+      "bytes": 1165,
+      "sha256": "1e03ab29898a6522d9b994134efff952e5958e8f591ab57b68e0a61e27db1b3d"
+    },
+    {
+      "id": "Juri-Halveth.github.io",
+      "title": "WEB-EINGANG",
+      "state": "Portfolio",
+      "categories": [
+        "software"
+      ],
+      "path": "api/projects/Juri-Halveth.github.io.json",
+      "bytes": 1062,
+      "sha256": "1c6ea7324d6ab3037e6cbda2cf88c7b1a5ad80a503cda7f3842b4b3d79ef7e92"
+    },
+    {
+      "id": "Juri-Halveth",
+      "title": "PROFILQUELLE",
+      "state": "Profilquelle",
+      "categories": [
+        "software"
+      ],
+      "path": "api/projects/Juri-Halveth.json",
+      "bytes": 1032,
+      "sha256": "845735fe164a5ecc9c959dfb7e5327e896a78afe5f943d189eae900d3c5f1993"
+    }
+  ]
+}

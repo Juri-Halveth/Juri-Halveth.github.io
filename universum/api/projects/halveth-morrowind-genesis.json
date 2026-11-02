@@ -1,0 +1,28 @@
+{
+  "schema": "halveth.project-context.v1",
+  "id": "halveth-morrowind-genesis",
+  "title": "MORROWIND GENESIS",
+  "categories": [
+    "worlds"
+  ],
+  "state": "OpenMW-Erweiterung",
+  "publicEntry": {
+    "url": "https://github.com/Juri-Halveth/halveth-morrowind-genesis",
+    "action": "Setup und Code öffnen"
+  },
+  "capability": {
+    "core": "Eine OpenMW-Erweiterung verbindet lokale Figurendialoge und Gesprächsgedächtnis mit Wissens-, Alchemie- und Weltleben-Werkzeugen im Spiel.",
+    "value": "Die eigene Morrowind-Welt erhält bedienbare zusätzliche Wege, ohne Originalspielstände zu ersetzen.",
+    "boundary": "OpenMW und eine lizenzierte Morrowind-Installation sind erforderlich; Bethesda-Spieldaten werden nicht mitgeliefert."
+  },
+  "source": {
+    "repository": "Juri-Halveth/halveth-morrowind-genesis",
+    "url": "https://github.com/Juri-Halveth/halveth-morrowind-genesis/blob/main/README.md",
+    "revision": null,
+    "observedAt": null,
+    "pinState": "UNPINNED",
+    "reviewedAt": "2026-11-02",
+    "editorialState": "WITHDRAWN_FROM_PORTFOLIO"
+  },
+  "evidenceLevel": "PUBLIC_SOURCE_DESCRIPTION_NOT_RUNTIME_VERIFICATION"
+}

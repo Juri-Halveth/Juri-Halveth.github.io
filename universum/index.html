@@ -7,6 +7,7 @@
   <meta name="theme-color" content="#06070d">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; font-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
   <link rel="canonical" href="https://juri-halveth.github.io/universum/">
+  <link rel="alternate" type="application/json" title="HALVETH agent space" href="api/space.json">
   <title>HALVETH NETZ · Starship Lab</title>
   <meta name="description" content="Interaktiver Browserprototyp: durch öffentliche HALVETH-Projekte fliegen, SCARLET und ENDECK erkunden, eigene NETZ-Schritte erfassen und gepinnte Modelle prüfen.">
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
@@ -67,7 +68,7 @@
           <h1>Flieg durch<br><em>das Werden.</em></h1>
           <p>Ein Projekt ist der sichtbare Knoten. Sein Weg dorthin bleibt als eigene Spur lesbar.</p>
           <div class="rail-line"></div>
-          <div class="micro-grid"><span>RAUM</span><strong>18 öffentliche Einstiege</strong><span>NETZ</span><strong>Modell- &amp; Quellspur mit Zeit</strong><span>AKTION</span><strong>Öffnen erst nach Auswahl</strong></div>
+          <div class="micro-grid"><span>RAUM</span><strong>18 öffentliche Einstiege</strong><span>NETZ</span><strong>Modell- &amp; Quellspur mit Zeit</strong><span>AKTION</span><strong>Öffnen erst nach Auswahl</strong><span>KI</span><strong><a href="api/space.json">Quellgebundener Datenindex ↗</a></strong></div>
         </section>
 
         <section class="rail-projects">
@@ -93,6 +94,14 @@
             <div id="inspectCategory" class="eyebrow">PROJEKT</div>
             <h2 id="inspectTitle" tabindex="-1">Projekt</h2>
             <p class="inspect-tagline" id="inspectTagline"></p>
+            <div class="inspect-technical" aria-label="Technischer Projektkern">
+              <span id="inspectState" class="inspect-state"></span>
+              <div><span class="eyebrow">TECHNISCHER KERN</span><p id="inspectCore"></p></div>
+              <div><span class="eyebrow">WOFÜR</span><p id="inspectValue"></p></div>
+              <p id="inspectBoundary" class="inspect-boundary"></p>
+              <p id="inspectLocal" class="inspect-layer" hidden></p>
+              <p id="inspectGoal" class="inspect-layer" hidden></p>
+            </div>
             <div id="inspectTeaser" class="inspect-teaser" aria-label="Projektvorschau">
               <div class="inspect-teaser-head"><span class="eyebrow">IM PROJEKT</span><span id="inspectTeaserIndex">01 / 03</span></div>
               <h3 id="inspectTeaserTitle"></h3>
@@ -102,7 +111,7 @@
             <div class="inspect-actions"><a id="inspectOpen" class="primary-button" target="_blank" rel="noopener noreferrer">Projekt öffnen <span>↗</span></a><button id="inspectHeroModel" class="hero-model-button" type="button" hidden>Modell betreten <span aria-hidden="true">→</span></button><a id="inspectDirect" class="subtle-link" target="_blank" rel="noopener noreferrer" hidden>ENDECK direkt öffnen ↗</a></div>
           </div>
           <details id="inspectDeep" class="inspect-deep"><summary>Mehr zum Projekt <span aria-hidden="true">＋</span></summary><div class="inspect-deep-inner">
-            <div class="inspect-deep-description"><div class="eyebrow">KONTEXT</div><p id="inspectDescription"></p><dl class="inspect-facts"><div><dt>Art</dt><dd id="inspectKind"></dd></div><div><dt>Quellstand</dt><dd id="inspectEvidence"></dd></div><div><dt>Herkunft</dt><dd>Öffentlicher Katalog, 01.11.2026</dd></div></dl><div class="inspect-tech"><span class="eyebrow">TECHNIKSPUR</span><ul id="inspectTech"></ul></div><a id="inspectSource" class="subtle-link" target="_blank" rel="noopener noreferrer">Quellseite ↗</a></div>
+            <div class="inspect-deep-description"><div class="eyebrow">KONTEXT</div><p id="inspectDescription"></p><p id="inspectLocalDetail" hidden></p><p id="inspectGoalDetail" hidden></p><dl class="inspect-facts"><div><dt>Art</dt><dd id="inspectKind"></dd></div><div><dt>Quellstand</dt><dd id="inspectEvidence"></dd></div><div><dt>Herkunft</dt><dd id="inspectOrigin"></dd></div></dl><div class="inspect-tech"><span class="eyebrow">TECHNIKSPUR</span><ul id="inspectTech"></ul></div><a id="inspectSource" class="subtle-link" target="_blank" rel="noopener noreferrer">Quellseite ↗</a></div>
             <div class="inspect-deep-actions">
               <button type="button" class="trace-cta" id="traceButton"><span>◌</span><span><strong>Entfaltung untersuchen</strong><small>Synthetische Modellspur · keine Projekthistorie</small></span><b>→</b></button>
               <button type="button" class="trace-cta source-cta" id="sourceButton" hidden><span>⌁</span><span><strong>Öffentliche Quellspur ansehen</strong><small>Vier ausgewählte Commits · gebundene Git-Metadaten</small></span><b>→</b></button>
@@ -269,6 +278,7 @@
   <script src="atlas-ui.js"></script>
   <script src="flight-model.js"></script>
   <script src="teaser-manifest.js"></script>
+  <script src="data/briefs.js"></script>
   <script src="app.js"></script>
   <script src="scarlet-projection-delta.js"></script>
   <script src="scarlet-delta-ui.js"></script>

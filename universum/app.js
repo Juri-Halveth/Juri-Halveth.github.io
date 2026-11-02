@@ -4,9 +4,11 @@
   const engine = window.NETZ_ENGINE;
   const flight = window.HALVETH_FLIGHT_MODEL;
   const teasers = window.HALVETH_TEASERS;
+  const briefs = window.HALVETH_BRIEFS;
   const byId = (id) => document.getElementById(id);
   if (!catalog || catalog.schema !== "halveth.portal.catalog.v1" || !Array.isArray(catalog.projects) || !engine || !flight
-    || !teasers || teasers.schema !== "halveth.teasers.v1" || !teasers.entries) {
+    || !teasers || teasers.schema !== "halveth.teasers.v1" || !teasers.entries
+    || !briefs || briefs.schema !== "halveth.project-briefs.v1" || !briefs.entries) {
     byId("statusMessage").textContent = "Katalog, Vorschauen, Flugraum oder NETZ-Modell fehlt.";
     return;
   }
@@ -14,9 +16,11 @@
   const projects = catalog.projects.filter((p) => p.visibility === "public" && typeof p.id === "string");
   if (projects.length !== flight.PROJECT_IDS.length || projects.some((project, index) => project.id !== flight.PROJECT_IDS[index])
     || catalog.categories.length !== flight.TOPIC_IDS.length || catalog.categories.some((category, index) => category.id !== flight.TOPIC_IDS[index])
-    || Object.keys(teasers.entries).length !== projects.length || projects.some((project) => {
+    || Object.keys(teasers.entries).length !== projects.length || Object.keys(briefs.entries).length !== projects.length || projects.some((project) => {
       const entry = teasers.entries[project.id];
-      return !entry || entry.id !== project.id || !entry.media || !/^assets\/(?:teasers|previews)\/[a-z0-9._/-]+$/i.test(entry.media.src)
+      const brief = briefs.entries[project.id];
+      return !brief || brief.id !== project.id || !brief.core || !brief.value || !brief.boundary || !brief.state
+        || !entry || entry.id !== project.id || !entry.media || !/^assets\/(?:teasers|previews)\/[a-z0-9._/-]+$/i.test(entry.media.src)
         || !Array.isArray(entry.steps) || entry.steps.length !== 3;
     })) {
     byId("statusMessage").textContent = "Flugraum, Vorschauen und öffentlicher Katalog haben unterschiedliche Identitäten.";
@@ -262,6 +266,21 @@
     e.inspectTitle.textContent = project.title;
     e.inspectTagline.textContent = project.tagline;
     e.inspectDescription.textContent = project.description;
+    const brief = briefs.entries[project.id];
+    byId("inspectState").textContent = brief.state;
+    byId("inspectCore").textContent = brief.presentation?.core || brief.core;
+    byId("inspectValue").textContent = brief.presentation?.value || brief.value;
+    byId("inspectBoundary").textContent = brief.presentation?.boundary || brief.boundary;
+    for (const [elementId, field, label] of [["inspectLocal", "local", "SEPARATER LOKALER PROTOTYP"], ["inspectGoal", "goal", "ZIELBILD"]]) {
+      const element = byId(elementId);
+      element.hidden = !brief[field];
+      element.textContent = brief[field] ? (brief.presentation?.[field] || label + " · " + brief[field]) : "";
+    }
+    for (const [elementId, field, label] of [["inspectLocalDetail", "local", "Separater lokaler Prototyp: "], ["inspectGoalDetail", "goal", "Entwicklungsziel: "]]) {
+      const element = byId(elementId);
+      element.hidden = !brief[field];
+      element.textContent = brief[field] ? label + brief[field] : "";
+    }
     const teaser = teasers.entries[project.id];
     previewSet = [teaser.media];
     previewIndex = 0;
@@ -278,15 +297,13 @@
     e.inspectKind.textContent = project.kind;
     e.inspectEvidence.textContent = project.evidence + (project.reviewed ? " · redaktionell geprüft" : " · Funktion offen")
       + (project.site?.editorial_state === "WITHDRAWN_FROM_PORTFOLIO" ? " · aus aktivem Portfolio zurückgezogen; Quelle/Lab" : "");
-    const tech = project.id === "halveth-scarlet" ? ["GStar: Seed, Ableitung, Snapshot und Replay", "GStarLiving: endliche Zellökologie mit Render-/Full-Projektion"] :
-      project.id === "halveth-forschungslabor" ? ["ENDECK: vier stabile Punktidentitäten und Projektionen", "Faltgrenze: zwei getrennte mathematische Gegenmodelle", "Temporal Clock als eigenes öffentliches Teilprojekt"] :
-      project.id === "halveth-field-difference-lab" ? ["Drei zeitgleiche Grenzbahnen aus gepinntem dimensionslosem Quellmodell", "Linke und rechte Regel getrennt verändern; Zentralfeld und Zwei-Bahn-Modus erhalten"] :
-      project.id === "halveth-realms" ? ["Realms: gepinnte lokale Weltregeln mit Seed und Epochen", "Fiktionale Landmarken, Personen und Gildenbildung"] :
-      ["Öffentlicher Quell- oder Projekteinstieg im Katalog"];
+    byId("inspectOrigin").textContent = "Öffentlicher Katalog, " + catalog.source_date;
+    const tech = [brief.core, brief.boundary];
     const techList = byId("inspectTech"); clear(techList);
     tech.forEach((item) => { const li = document.createElement("li"); li.textContent = item; techList.appendChild(li); });
     e.inspectOpen.href = safeHref(project.url);
-    e.inspectOpen.firstChild.textContent = project.site?.editorial_state === "WITHDRAWN_FROM_PORTFOLIO" ? "Quellen ansehen " : "Projekt öffnen ";
+    e.inspectOpen.firstChild.textContent = project.site?.status === "RELEASE_ENTRY" ? "Windows-Vorschau öffnen "
+      : project.site?.editorial_state === "WITHDRAWN_FROM_PORTFOLIO" ? "Quellen ansehen " : "Projekt öffnen ";
     const heroModel = heroModelButtons[project.id];
     e.inspectHeroModel.hidden = !heroModel;
     if (heroModel) e.inspectHeroModel.firstChild.textContent = heroModel[1] + " ";
