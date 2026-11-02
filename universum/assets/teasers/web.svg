@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="t d" color="#81c7ff">
+<title id="t">HALVETH WEB-EINGANG – schematische Illustration</title><desc id="d">DEMOS · QUELLEN · ARBEITSPROBEN</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset="1" stop-color="#142439"/></linearGradient><radialGradient id="glow"><stop stop-color="#81c7ff" stop-opacity=".17"/><stop offset="1" stop-color="#81c7ff" stop-opacity="0"/></radialGradient></defs>
+<rect width="960" height="540" fill="url(#bg)"/><ellipse cx="520" cy="340" rx="420" ry="240" fill="url(#glow)"/>
+<g font-family="Arial, sans-serif" font-weight="600"><text x="61" y="39" font-size="14" letter-spacing="3" fill="#81c7ff">FUNKTIONSILLUSTRATION</text><text x="59" y="96" font-size="37" fill="#f2f7fa">HALVETH WEB-EINGANG</text><text x="61" y="128" font-size="13" letter-spacing="2" fill="#a9b7c5">DEMOS · QUELLEN · ARBEITSPROBEN</text></g>
+<style>.faint{fill:#0e2234;stroke:#81c7ff;stroke-opacity:.37;stroke-width:2;stroke-linejoin:round}.line{fill:none;stroke:#81c7ff;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}.copy{fill:#b5c8d5;font-family:Arial,sans-serif;font-size:14px;font-weight:700;letter-spacing:1px}</style>
+<g class="faint"><path d="M115 198h730v256H115z"/></g>
+<g class="line"><path d="M115 248h730m-703-27h29m19 0h29m19 0h29M147 288h198v134H147zM381 288h198v134H381zM616 288h198v134H616z"/><path d="m173 383 50-50 33 28 52-58m103 70 52-53 35 32 50-52m105 73 42-46 40 27 46-41"/><circle cx="183" cy="305" r="7"/><circle cx="416" cy="305" r="7"/><circle cx="651" cy="305" r="7"/></g>
+<g class="copy"><text x="147" y="443">PROJEKT A</text><text x="380" y="443">PROJEKT B</text><text x="616" y="443">QUELLEN</text></g>
+<path d="M60 482h840" stroke="#81c7ff" stroke-opacity=".26"/><text x="61" y="510" fill="#8ca2b1" font-family="Arial, sans-serif" font-size="12" letter-spacing="1.5">SCHEMATISCH · KEIN SCREENSHOT UND KEINE RUNTIME-BEOBACHTUNG</text>
+</svg>

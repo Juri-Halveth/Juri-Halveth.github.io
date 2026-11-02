@@ -33,6 +33,12 @@ Im Flugraum führt Scrollen vorwärts und rückwärts entlang einer festen Blick
 auf Touchgeräten dienen vertikales Wischen und Pinch der Tiefenbewegung.
 Projekt- und Themensymbole behalten eigene Identitäten. Der Stern- und
 Raumzeitraum ist eine künstlerische Projektion, keine physikalische Simulation.
+Ein gewähltes Projekt öffnet seinen Bild- und Aktionsraum vom jeweiligen Portal
+aus. Drei kurze, quellengebundene Einblicke führen zur direkten Projektaktion;
+technische Details und ausgewählte Git-Zeiten liegen hinter „Mehr zum Projekt“.
+Der Atlas zeigt alle Einstiege mit eigenen Motiven auf der gesamten Bühne.
+Schematische Motive sind als Illustrationen gekennzeichnet und keine
+Laufzeitaufnahmen.
 
 ## Lokal bauen
 

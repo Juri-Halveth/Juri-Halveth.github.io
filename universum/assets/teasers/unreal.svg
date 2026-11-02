@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="t d" color="#92b8ff">
+<title id="t">HALVETH UNREAL – schematische Illustration</title><desc id="d">3D-PROTOTYPEN · ENTWICKLUNGSNOTIZEN</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset="1" stop-color="#142439"/></linearGradient><radialGradient id="glow"><stop stop-color="#92b8ff" stop-opacity=".17"/><stop offset="1" stop-color="#92b8ff" stop-opacity="0"/></radialGradient></defs>
+<rect width="960" height="540" fill="url(#bg)"/><ellipse cx="520" cy="340" rx="420" ry="240" fill="url(#glow)"/>
+<g font-family="Arial, sans-serif" font-weight="600"><text x="61" y="39" font-size="14" letter-spacing="3" fill="#92b8ff">FUNKTIONSILLUSTRATION</text><text x="59" y="96" font-size="37" fill="#f2f7fa">HALVETH UNREAL</text><text x="61" y="128" font-size="13" letter-spacing="2" fill="#a9b7c5">3D-PROTOTYPEN · ENTWICKLUNGSNOTIZEN</text></g>
+<style>.faint{fill:#0e2234;stroke:#92b8ff;stroke-opacity:.37;stroke-width:2;stroke-linejoin:round}.line{fill:none;stroke:#92b8ff;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}.copy{fill:#b5c8d5;font-family:Arial,sans-serif;font-size:14px;font-weight:700;letter-spacing:1px}</style>
+<g class="line"><path d="m163 407 217-111 223 111-217 110zM380 296V181l223 111v115m-217-3V289M163 407V291l217-110 223 111M271 351l109-56 111 56-109 57z"/><path d="M641 228h154v130H641zM659 247h118v77H659zM685 346h70"/><path d="M700 299c-13-54 54-56 40 0"/><circle cx="382" cy="354" r="25"/></g>
+<g class="copy"><text x="169" y="208">SZENENRAUM</text><text x="656" y="210">BUILD-NOTIZ</text></g>
+<path d="M60 482h840" stroke="#92b8ff" stroke-opacity=".26"/><text x="61" y="510" fill="#8ca2b1" font-family="Arial, sans-serif" font-size="12" letter-spacing="1.5">SCHEMATISCH · KEIN SCREENSHOT UND KEINE RUNTIME-BEOBACHTUNG</text>
+</svg>

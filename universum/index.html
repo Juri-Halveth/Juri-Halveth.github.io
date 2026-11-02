@@ -80,25 +80,40 @@
         </section>
       </aside>
 
-      <section id="inspectPanel" class="inspect-panel" aria-labelledby="inspectTitle" hidden>
-        <div class="inspect-head"><span class="eyebrow">PROJEKT / INSPEKTION</span><button type="button" class="icon-button" id="closeInspect" aria-label="Projektansicht schließen">×</button></div>
-        <div class="inspect-art" id="inspectArt"><img id="inspectImage" src="assets/system-banner.svg" alt="Geometrisches HALVETH Sternnetz"><span id="inspectArtLabel">HALVETH-SYSTEMMOTIV · KEIN PROJEKTSCREENSHOT</span><a id="inspectImageSource" class="image-credit" target="_blank" rel="noopener noreferrer" hidden>Bildquelle ↗</a><button id="inspectImageNext" class="image-next" type="button" aria-label="Nächste belegte SCARLET-Vorschau" hidden>↻</button></div>
-        <div class="inspect-body">
-          <div id="inspectCategory" class="eyebrow">MODELL</div>
-          <h2 id="inspectTitle" tabindex="-1">Projekt</h2>
-          <p class="inspect-tagline" id="inspectTagline"></p>
-          <p id="inspectDescription"></p>
-          <dl class="inspect-facts"><div><dt>Art</dt><dd id="inspectKind"></dd></div><div><dt>Quellstand</dt><dd id="inspectEvidence"></dd></div><div><dt>Herkunft</dt><dd>Öffentlicher Katalog, 01.11.2026</dd></div></dl>
-          <div class="inspect-tech"><span class="eyebrow">TECHNIKSPUR</span><ul id="inspectTech"></ul></div>
-          <div class="inspect-actions"><a id="inspectOpen" class="primary-button" target="_blank" rel="noopener noreferrer">Öffentliches Projekt öffnen <span>↗</span></a><a id="inspectDirect" class="subtle-link" target="_blank" rel="noopener noreferrer" hidden>ENDECK direkt öffnen ↗</a><a id="inspectSource" class="subtle-link" target="_blank" rel="noopener noreferrer">Quellseite ↗</a></div>
-          <button type="button" class="trace-cta" id="traceButton"><span>◌</span><span><strong>Entfaltung untersuchen</strong><small>Synthetische Modellspur · keine Projekthistorie</small></span><b>→</b></button>
-          <button type="button" class="trace-cta source-cta" id="sourceButton" hidden><span>⌁</span><span><strong>Öffentliche Quellspur ansehen</strong><small>Vier ausgewählte Commits · gebundene Git-Metadaten</small></span><b>→</b></button>
-          <button type="button" class="trace-cta source-netz-cta" id="sourceNetzButton" hidden><span>⌁</span><span><strong>Quellrevisionen im NETZ entfalten</strong><small>Lesender Auswahlzweig · Committer-Metadatenzeiten und sichtbare Lücken</small></span><b>→</b></button>
-          <button type="button" class="trace-cta scarlet-room-cta" id="scarletRoomButton" hidden><span>✦</span><span><strong>SCARLET-Zellraum betreten</strong><small>Eigenständiger lokaler Modelllauf · Seed 3491</small></span><b>→</b></button>
-          <button type="button" class="trace-cta endeck-room-cta" id="endeckRoomButton" hidden><span>◇</span><span><strong>ENDECK-Projektionsraum betreten</strong><small>Vier stabile Quell-IDs · Operator, Zeit und Blickwinkel</small></span><b>→</b></button>
-          <button type="button" class="trace-cta fold-room-cta" id="foldRoomButton" hidden><span>≋</span><span><strong>Faltgrenze vergleichen</strong><small>Idealer Stapel / hypothetische Kompression · getrennte Operatoren</small></span><b>→</b></button>
-          <button type="button" class="trace-cta realms-room-cta" id="realmsRoomButton" hidden><span>✧</span><span><strong>REALMS-Weltregelraum betreten</strong><small>Drei Seeds · Epochen 0–10 · fiktionale lokale Welt</small></span><b>→</b></button>
-          <button type="button" class="trace-cta field-room-cta" id="fieldRoomButton" hidden><span>⌁</span><span><strong>FIELD-Grenzregelraum betreten</strong><small>Drei Modellbahnen · gemeinsame Zeit · linke/rechte Regel</small></span><b>→</b></button>
+      <section id="inspectPanel" class="inspect-panel" role="dialog" aria-modal="true" aria-labelledby="inspectTitle" hidden>
+        <div class="inspect-head"><span class="eyebrow">PROJEKTRAUM / EINBLICK</span><button type="button" class="icon-button" id="closeInspect" aria-label="Projektansicht schließen">← <span>Zurück zum Flugraum</span></button></div>
+        <div class="inspect-view">
+          <div class="inspect-art" id="inspectArt">
+            <div id="inspectTeaserVisual" class="inspect-teaser-visual"><img id="inspectImage" alt=""></div>
+            <span id="inspectArtLabel">PROJEKTVORSCHAU</span>
+            <a id="inspectImageSource" class="image-credit" target="_blank" rel="noopener noreferrer" hidden>Bildquelle ↗</a>
+            <button id="inspectImageNext" class="image-next" type="button" aria-label="Nächste Projektvorschau" hidden>↻</button>
+          </div>
+          <div class="inspect-body">
+            <div id="inspectCategory" class="eyebrow">PROJEKT</div>
+            <h2 id="inspectTitle" tabindex="-1">Projekt</h2>
+            <p class="inspect-tagline" id="inspectTagline"></p>
+            <div id="inspectTeaser" class="inspect-teaser" aria-label="Projektvorschau">
+              <div class="inspect-teaser-head"><span class="eyebrow">IM PROJEKT</span><span id="inspectTeaserIndex">01 / 03</span></div>
+              <h3 id="inspectTeaserTitle"></h3>
+              <p id="inspectTeaserStep"></p>
+              <div class="inspect-teaser-controls" aria-label="Vorschau durchblättern"><button id="inspectTeaserPrev" type="button" aria-label="Vorheriger Einblick">←</button><button id="inspectTeaserNext" type="button" aria-label="Nächster Einblick">→</button></div>
+            </div>
+            <div class="inspect-actions"><a id="inspectOpen" class="primary-button" target="_blank" rel="noopener noreferrer">Projekt öffnen <span>↗</span></a><button id="inspectHeroModel" class="hero-model-button" type="button" hidden>Modell betreten <span aria-hidden="true">→</span></button><a id="inspectDirect" class="subtle-link" target="_blank" rel="noopener noreferrer" hidden>ENDECK direkt öffnen ↗</a></div>
+          </div>
+          <details id="inspectDeep" class="inspect-deep"><summary>Mehr zum Projekt <span aria-hidden="true">＋</span></summary><div class="inspect-deep-inner">
+            <div class="inspect-deep-description"><div class="eyebrow">KONTEXT</div><p id="inspectDescription"></p><dl class="inspect-facts"><div><dt>Art</dt><dd id="inspectKind"></dd></div><div><dt>Quellstand</dt><dd id="inspectEvidence"></dd></div><div><dt>Herkunft</dt><dd>Öffentlicher Katalog, 01.11.2026</dd></div></dl><div class="inspect-tech"><span class="eyebrow">TECHNIKSPUR</span><ul id="inspectTech"></ul></div><a id="inspectSource" class="subtle-link" target="_blank" rel="noopener noreferrer">Quellseite ↗</a></div>
+            <div class="inspect-deep-actions">
+              <button type="button" class="trace-cta" id="traceButton"><span>◌</span><span><strong>Entfaltung untersuchen</strong><small>Synthetische Modellspur · keine Projekthistorie</small></span><b>→</b></button>
+              <button type="button" class="trace-cta source-cta" id="sourceButton" hidden><span>⌁</span><span><strong>Öffentliche Quellspur ansehen</strong><small>Vier ausgewählte Commits · gebundene Git-Metadaten</small></span><b>→</b></button>
+              <button type="button" class="trace-cta source-netz-cta" id="sourceNetzButton" hidden><span>⌁</span><span><strong>Quellrevisionen im NETZ entfalten</strong><small>Lesender Auswahlzweig · Committer-Metadatenzeiten und sichtbare Lücken</small></span><b>→</b></button>
+              <button type="button" class="trace-cta scarlet-room-cta" id="scarletRoomButton" hidden><span>✦</span><span><strong>SCARLET-Zellraum betreten</strong><small>Eigenständiger lokaler Modelllauf · Seed 3491</small></span><b>→</b></button>
+              <button type="button" class="trace-cta endeck-room-cta" id="endeckRoomButton" hidden><span>◇</span><span><strong>ENDECK-Projektionsraum betreten</strong><small>Vier stabile Quell-IDs · Operator, Zeit und Blickwinkel</small></span><b>→</b></button>
+              <button type="button" class="trace-cta fold-room-cta" id="foldRoomButton" hidden><span>≋</span><span><strong>Faltgrenze vergleichen</strong><small>Idealer Stapel / hypothetische Kompression · getrennte Operatoren</small></span><b>→</b></button>
+              <button type="button" class="trace-cta realms-room-cta" id="realmsRoomButton" hidden><span>✧</span><span><strong>REALMS-Weltregelraum betreten</strong><small>Drei Seeds · Epochen 0–10 · fiktionale lokale Welt</small></span><b>→</b></button>
+              <button type="button" class="trace-cta field-room-cta" id="fieldRoomButton" hidden><span>⌁</span><span><strong>FIELD-Grenzregelraum betreten</strong><small>Drei Modellbahnen · gemeinsame Zeit · linke/rechte Regel</small></span><b>→</b></button>
+            </div>
+          </div><div id="inspectTimelineSlot" class="inspect-timeline-slot"></div></details>
         </div>
       </section>
 
@@ -253,6 +268,7 @@
   <script src="atlas-model.js"></script>
   <script src="atlas-ui.js"></script>
   <script src="flight-model.js"></script>
+  <script src="teaser-manifest.js"></script>
   <script src="app.js"></script>
   <script src="scarlet-projection-delta.js"></script>
   <script src="scarlet-delta-ui.js"></script>
