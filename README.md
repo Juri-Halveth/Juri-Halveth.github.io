@@ -67,6 +67,10 @@ Der Footer zeigt den Katalogstand aus `data/site-catalog.json`
 Quellmenge in `data/projects.json`; es ändert den Website-Katalog derzeit nicht
 automatisch. Ein neues öffentliches Projekt wird in den Website-Katalog
 eingetragen und redaktionell geprüft, bevor es als Karte erscheint.
+Ein HEAD-Refresh ändert nur das Datum und die Revisionen seiner eigenen
+datierten Quellmenge. Der anschließende Build verlangt übereinstimmende
+Repository-Identitäten, aber keine künstliche Gleichheit der getrennten
+Snapshots; ältere gebundene Katalog-Links bleiben als historische Stände stehen.
 
 ## Quellen und Darstellung
 

@@ -56,6 +56,15 @@ function validateSiteCatalog(catalog){
  for(const id of catalog.home_featured_ids)if(!catalog.projects.some(p=>p.id===id&&p.site.entry_type==='PROJECT'))throw Error('Featured project missing');
  return catalog;
 }
+function validateCatalogMembership(catalog,selected,snapshot){
+ validateSiteCatalog(catalog);
+ if(!Array.isArray(selected?.projects)||!Array.isArray(snapshot?.repositories))throw Error('Dated source snapshots required');
+ const entries=new Map(catalog.projects.map(p=>[p.id,p]));
+ for(const p of selected.projects)if(entries.get(p.id)?.site.entry_type!=='PROJECT')throw Error('Selected project identity missing from public site catalog');
+ for(const p of snapshot.repositories)if(!entries.has(p.name))throw Error('Repository snapshot identity missing from public site catalog');
+ // Dates and revisions are independent: a HEAD refresh must not rewrite pinned site snapshots.
+ return true;
+}
 function sourceAction(project,lang){
  const labels=sourceLabels[lang];if(!labels)throw Error('Unknown source language');
  return project.site.revision?`${labels.snapshot} ${project.site.revision_observed_at} · ${project.site.revision.slice(0,7)}`:labels.branch;
@@ -102,4 +111,4 @@ function renderLearning(catalog,lang){
  if(rows.length!==2)throw Error('Learning selection changed');
  return `<section class="shell section directory-intro"><p class="eyebrow">HALVETH</p><h1>${t.group.learning}</h1><p class="lead">${lead}</p></section><section class="shell section directory-group"><div class="directory-grid">${rows.map(p=>directoryCard(p,lang)).join('')}</div><a class="text-link" href="${prefix}arbeiten/">${t.all} ↗</a></section>`;
 }
-module.exports={validateSiteCatalog,renderHome,renderDirectory,renderProfile,renderLearning,copy};
+module.exports={validateSiteCatalog,validateCatalogMembership,renderHome,renderDirectory,renderProfile,renderLearning,copy};

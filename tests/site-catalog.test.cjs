@@ -4,7 +4,8 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const path=require('node:path');
 const {JSDOM}=require('jsdom');
-const {validateSiteCatalog}=require('../tools/site-catalog.cjs');
+const {validateSiteCatalog,validateCatalogMembership}=require('../tools/site-catalog.cjs');
+const {refresh}=require('../tools/refresh-public-heads.cjs');
 const root=path.resolve(__dirname,'..');
 const catalog=require('../data/site-catalog.json');
 const read=route=>new JSDOM(fs.readFileSync(path.join(root,route,'index.html'),'utf8')).window.document;
@@ -36,6 +37,19 @@ test('one public source binds 18 repository entries, 16 projects and the 13 acti
    if(!lang&&p.site.status==='BROWSER_ENTRY')assert.equal(card.querySelector('.work-kind').textContent,'Im Browser verfügbar');
   }
  }
+});
+
+test('a synthetic public HEAD refresh can build against the unchanged older site snapshot',()=>{
+ const selected=require('../data/projects.json'),snapshot=require('../data/public-repositories.json');
+ const metadata=Object.fromEntries([...new Set([...selected.projects.map(p=>p.id),...snapshot.repositories.map(p=>p.name)])].map(id=>[id,{private:false,visibility:'public',sha:'a'.repeat(40)}]));
+ const before=JSON.stringify(catalog);
+ const next=refresh(selected,snapshot,metadata,'2026-11-02T12:00:00Z');
+ assert.equal(next.projects.sourceDate,'2026-11-02');
+ assert.notEqual(next.projects.projects[0].revision,catalog.projects.find(p=>p.id===next.projects.projects[0].id).site.revision);
+ assert.equal(validateCatalogMembership(catalog,next.projects,next.repos),true);
+ assert.equal(JSON.stringify(catalog),before);
+ const missing=structuredClone(next.projects);missing.projects[0].id='missing-public-id';
+ assert.throws(()=>validateCatalogMembership(catalog,missing,next.repos),/identity missing/);
 });
 
 test('SCARLET direct actions preserve the requested language in the directory',()=>{

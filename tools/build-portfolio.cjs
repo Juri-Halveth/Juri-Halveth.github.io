@@ -5,7 +5,7 @@ const {validateProjects,validateRepositorySnapshot}=require('./validate-projects
 const root=path.resolve(__dirname,'..'),data=validateProjects(JSON.parse(fs.readFileSync(path.join(root,'data/projects.json'),'utf8')));
 const {validateMap,renderTechnicalMap,renderMapTeaser,mapCopy}=require('./render-technical-map.cjs');
 const {renderSceneShowcase,validateSceneCatalog,words:sceneWords}=require('./render-showcase.cjs');
-const {validateSiteCatalog,renderHome,renderDirectory,renderProfile,renderLearning,copy:siteWords}=require('./site-catalog.cjs');
+const {validateSiteCatalog,validateCatalogMembership,renderHome,renderDirectory,renderProfile,renderLearning,copy:siteWords}=require('./site-catalog.cjs');
 const {renderLegacyDestination,legacyTitle}=require('./render-legacy-destinations.cjs');
 const sceneCatalog=validateSceneCatalog(JSON.parse(fs.readFileSync(path.join(root,'data/scene-stage.json'),'utf8')),root);
 const publicRepositories=validateRepositorySnapshot(JSON.parse(fs.readFileSync(path.join(root,'data/public-repositories.json'),'utf8')));
@@ -25,8 +25,7 @@ const mapBytes=fs.readFileSync(path.join(root,'data/technical-map.json'));
 const technicalMap=JSON.parse(mapBytes.toString('utf8'));
 const {validatePortfolioSelection}=require('./validate-portfolio-selection.cjs');
 validatePortfolioSelection([data,sceneCatalog,publicRepositories,workSamples,technicalMap,researchIndex]);
-for(const p of data.projects){const row=siteCatalog.projects.find(row=>row.id===p.id);if(!row||row.site.revision!==p.revision||row.site.revision_observed_at!==data.sourceDate)throw Error('Selected project revision/date missing from public site catalog');}
-for(const p of publicRepositories.repositories)if(!siteCatalog.projects.some(row=>row.id===p.name))throw Error('Repository snapshot identity missing from public site catalog');
+validateCatalogMembership(siteCatalog,data,publicRepositories);
 const mapSource=JSON.parse(fs.readFileSync(path.join(root,'data/technical-map-source.json'),'utf8'));
 validateMap(technicalMap,mapSource,mapBytes);
 const escape=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));

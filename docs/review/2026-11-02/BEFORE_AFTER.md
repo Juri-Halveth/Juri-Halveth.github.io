@@ -44,4 +44,4 @@ The retained handbook URL also has a [320 px screenshot](after-handbook-320.png)
 
 ## Review and publication boundary
 
-The full local test suite passed 94/94. A 30-target HEAD probe returned HTTP 200 for current cards and meta links on 2026-11-02. These checks establish generated structure and observed reachability. They do not establish application behavior, content quality, broad security coverage, or a successful Pages deployment. The PR remains open for visual and link review; after merge, the published URL and deployed bytes still need a separate check.
+The full local test suite passed 95/95. A 30-target HEAD probe returned HTTP 200 for current cards and meta links on 2026-11-02. These checks establish generated structure and observed reachability. They do not establish application behavior, content quality, broad security coverage, or a successful Pages deployment. The PR remains open for visual and link review; after merge, the published URL and deployed bytes still need a separate check.

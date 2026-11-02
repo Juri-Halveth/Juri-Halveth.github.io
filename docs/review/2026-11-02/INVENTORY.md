@@ -17,6 +17,8 @@ Base for this review: `origin/main` at `3bdf0b3851ee592860c9518dbd7e66e8630db39c
 
 Cards label those two source states differently: pinned links show `Quellstand 2026-10-27 · <SHA>` (localized in EN/RU), where the date is the older source-snapshot observation date, while unpinned links say `Code im Standardbranch`. A pinned historical tree is not presented as the current repository HEAD or as a commit made on that date.
 
+`npm run refresh` can advance `data/projects.json` and `data/public-repositories.json` independently of this Website snapshot. The builder checks repository identity membership but does not require equal source dates or SHAs across those datasets. The pinned Website links are changed only after their own separate editorial review; a synthetic later HEAD refresh is covered by a regression test.
+
 Primary actions were checked against their labels. Tresor now opens the owned Windows release tag `v1.8.0`, with its earlier source snapshot separately linked; the card states that the executable is not code signed. Leviathan opens the live Browser Vault page; its card names public-address viewing without a wallet, separate wallet approval for sending, possible network fees and limited coverage. The TRON research card points to its owned draft PR #1, where the described offline quorum model lives, instead of the default branch. The Forschungslabor action names its `/wissen/` destination as a tool selector.
 
 Seedspace also has a browser page, but that page is a separate ball/room experience rather than the NOVA local search and offline demo described by its card. NOVA remains source-and-guide-first. The guessed Pages roots for Tresor, Project0 Keeper and TRON returned 404 in the 2026-11-02 probe; their usable primary destinations are the release, repository guide and research PR respectively. This does not rule out other Pages routes.
@@ -48,7 +50,7 @@ The former homepage gateway, scenic hero, scene band, purpose band and map tease
 
 - `npm ci --ignore-scripts`: completed, zero vulnerabilities in the installed 37-package audit scope.
 - `npm run build`: 43 HTML pages generated from the same inputs.
-- `npm test`: 94/94 local tests passed, including catalog identity, withdrawn presentation gate, destination routes, local paths, language parity, and CSP checks.
+- `npm test`: 95/95 local tests passed, including catalog identity, synthetic HEAD-refresh drift, withdrawn presentation gate, destination routes, local paths, language parity, and CSP checks.
 - Local Chrome with Playwright viewport emulation: homepage and directory at 320, 375, 390, 768 and 1440 CSS px had `documentElement.scrollWidth === clientWidth`; the directory showed 13 cards and four primary navigation links at every width.
 - The `/handbuch/` command and long German heading were checked in DE/EN/RU at 320 and 390 CSS px: document width matched the viewport while command text scrolled inside the code container. At narrow widths keyboard focus follows visual order: skip link, brand, four primary links, languages, then hero action.
 - SCARLET direct cards preserve the chosen UI language with `?lang=en` and `?lang=ru`; DE retains the canonical URL.
