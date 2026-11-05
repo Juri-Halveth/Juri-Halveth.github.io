@@ -3,6 +3,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
+const {createHash, webcrypto} = require('node:crypto');
 const {JSDOM} = require('jsdom');
 const {fromSpace} = require('../universum/relation-model.js');
 
@@ -86,5 +87,56 @@ test('project list remains usable when the browser cannot create a canvas contex
   await new Promise(resolve => setImmediate(resolve));
   assert.equal(window.document.querySelectorAll('#projectList button').length, source.count);
   assert.match(window.document.getElementById('status').textContent, /Projektliste bedienbar/);
+  window.close();
+});
+
+test('a new index revision updates an existing node label and revalidates its open card', async () => {
+  const html = fs.readFileSync(path.join(route, 'faden', 'index.html'), 'utf8');
+  const dom = new JSDOM(html, {url: 'https://juri-halveth.github.io/universum/faden/', runScripts: 'outside-only'});
+  const {window} = dom;
+  const labels = [];
+  const drawing = {
+    setTransform() {}, measureText(value) { return {width: value.length * 7}; },
+    createLinearGradient() { return {addColorStop() {}}; }, beginPath() {}, moveTo() {},
+    lineTo() {}, stroke() {}, arc() {}, fill() {}, fillRect() {}, fillText(value) { labels.push(value); }
+  };
+  window.HTMLCanvasElement.prototype.getContext = () => drawing;
+  window.document.querySelector('.stage').getBoundingClientRect = () => ({width: 900, height: 600});
+  window.document.querySelector('.stage').scrollIntoView = () => {};
+  window.matchMedia = () => ({matches: true});
+  Object.defineProperty(window.crypto, 'subtle', {value: webcrypto.subtle});
+  let frame, nextRefresh;
+  window.requestAnimationFrame = callback => { frame = callback; return 1; };
+  window.setTimeout = callback => { nextRefresh = callback; return 1; };
+  let index = structuredClone(source);
+  let contextBytes = Buffer.from(fs.readFileSync(path.join(route, index.projects[0].path)));
+  window.fetch = async address => address.includes('space.json')
+    ? {ok: true, json: async () => index}
+    : {ok: true, arrayBuffer: async () => Uint8Array.from(contextBytes).buffer};
+  window.HALVETH_RELATION_MODEL = {fromSpace};
+  window.eval(fs.readFileSync(path.join(route, 'faden', 'app.js'), 'utf8'));
+  for (let i = 0; i < 20 && !nextRefresh; i += 1) await new Promise(setImmediate);
+  const first = window.document.querySelector('#projectList button');
+  assert.equal(first.textContent, 'SCARLET');
+  first.click();
+  for (let i = 0; i < 20 && !window.document.getElementById('detailCore').textContent; i += 1) await new Promise(setImmediate);
+  assert.match(window.document.getElementById('detailCore').textContent, /GStar-Ledger/);
+
+  const newContext = JSON.parse(contextBytes.toString('utf8'));
+  newContext.title = 'SCARLET AKTUELL';
+  newContext.capability.core = 'Neu geprüfter öffentlicher Kontext';
+  contextBytes = Buffer.from(JSON.stringify(newContext));
+  index.projects[0].title = 'SCARLET AKTUELL';
+  index.projects[0].bytes = contextBytes.length;
+  index.projects[0].sha256 = createHash('sha256').update(contextBytes).digest('hex');
+  index.revision = 'b'.repeat(64);
+  nextRefresh();
+  for (let i = 0; i < 20 && window.document.getElementById('detailCore').textContent !== newContext.capability.core; i += 1) await new Promise(setImmediate);
+  assert.equal(window.document.querySelector('#projectList button').textContent, 'SCARLET AKTUELL');
+  assert.equal(window.document.getElementById('detailTitle').textContent, 'SCARLET AKTUELL');
+  assert.equal(window.document.getElementById('detailCore').textContent, newContext.capability.core);
+  frame(0);
+  assert.ok(labels.includes('SCARLET AKTUELL'));
+  assert.equal(labels.includes('SCARLET'), false);
   window.close();
 });
