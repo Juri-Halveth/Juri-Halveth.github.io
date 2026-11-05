@@ -43,7 +43,12 @@
   function adopt(next) {
     const previous = particles;
     const fresh = new Map();
-    for (const node of next.nodes) fresh.set(node.id, previous.get(node.id) || particle(node));
+    for (const node of next.nodes) {
+      const point = previous.get(node.id) || particle(node);
+      point.kind = node.kind;
+      point.label = node.label;
+      fresh.set(node.id, point);
+    }
     graph = next;
     particles = fresh;
     if (context) {
@@ -53,6 +58,7 @@
     generation += 1;
     renderList();
     if (selectedId && !fresh.has(selectedId)) closeCard();
+    else if (selectedId) void select(selectedId);
     status.textContent = `${next.coverage.projectCount} Projekte · ${next.coverage.categoryCount} Themen · ${next.coverage.relationCount} belegte Zuordnungen${context ? '' : ' · Grafik nicht verfügbar, Projektliste bedienbar'}`;
     sourceNote.textContent = `Index ${next.source.indexRevision.slice(0, 12)} · Quellenstand ${next.source.sourceDate} · hier gesehen ${new Date(observedAt).toLocaleString('de-DE')}`;
   }
@@ -91,12 +97,11 @@
     const response = await fetch(`../${node.contextPath}`, { cache: 'no-store' });
     if (!response.ok) throw Error(`Kontext HTTP ${response.status}`);
     const bytes = new Uint8Array(await response.arrayBuffer());
-    const expected = graph.nodes.find(item => item.id === node.id);
-    if (!expected || bytes.length !== expected.contextBytes || bytes.length > 8192 ||
-        !/^[0-9a-f]{64}$/.test(expected.contextSha256)) throw Error('Kontext außerhalb des Indexvertrags');
+    if (bytes.length !== node.contextBytes || bytes.length > 8192 ||
+        !/^[0-9a-f]{64}$/.test(node.contextSha256)) throw Error('Kontext außerhalb des Indexvertrags');
     const digest = [...new Uint8Array(await crypto.subtle.digest('SHA-256', bytes))]
       .map(byte => byte.toString(16).padStart(2, '0')).join('');
-    if (digest !== expected.contextSha256) throw Error('Kontext stimmt nicht mit dem Index überein');
+    if (digest !== node.contextSha256) throw Error('Kontext stimmt nicht mit dem Index überein');
     const value = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes));
     if (value.schema !== 'halveth.project-context.v1' || `project:${value.id}` !== node.id) throw Error('Projektidentität stimmt nicht');
     return value;
@@ -129,7 +134,7 @@
       }
       placeCard();
     } catch (error) {
-      if (selectedId === id) document.getElementById('detailState').textContent = `QUELLE NICHT VERIFIZIERT · ${error.message}`;
+      if (selectedId === id && generation === requestGeneration) document.getElementById('detailState').textContent = `QUELLE NICHT VERIFIZIERT · ${error.message}`;
     }
   }
   function closeCard() {
