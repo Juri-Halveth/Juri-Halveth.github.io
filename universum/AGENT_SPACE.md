@@ -1,6 +1,8 @@
 # HALVETH / NETZ: lesbarer Projekteinstieg für KI-Systeme
 
-Das Starship Lab hat zwei Ansichten derselben öffentlichen Auswahl: den Flugraum für Menschen und einen statischen, lesenden JSON-Index für Programme. Der Einstieg ist [`api/space.json`](api/space.json). Er nennt 18 stabile Projekt-IDs, Themen, den Revisionsdigest und für jedes Projekt den Pfad, die Bytelänge und den SHA-256-Digest eines kleinen Kontextdokuments.
+Das Starship Lab hat zwei Ansichten derselben öffentlichen Auswahl: den Flugraum für Menschen und einen statischen, lesenden JSON-Index für Programme. Der Einstieg ist [`api/space.json`](api/space.json). Er nennt die zum jeweiligen Build öffentlich katalogisierten Projekt-IDs, Themen, den Revisionsdigest und für jedes Projekt den Pfad, die Bytelänge und den SHA-256-Digest eines kleinen Kontextdokuments. Der Index ist ein datierter Auswahlstand, kein automatisches Inventar aller GitHub-Repositories.
+
+[`api/relations.json`](api/relations.json) leitet aus dem jeweils gebauten öffentlichen Index eine typisierte Projekt-zu-Thema-Relation pro deklarierter Zugehörigkeit ab. Der [Fadennetz-Raum](faden/) zeigt dieselben Relationen als bewegliche Darstellung und als Tastaturliste. Er prüft beim Aufruf einer Projektkarte die exakten Kontextbytes gegen den Index und erkennt neue Indexrevisionen während eines geöffneten Besuchs. Die Animation ist keine Messung von laufenden Prozessen oder Raumzeit. Private VERACHEL-Daten sind keine Quelle dieser öffentlichen Relationendatei.
 
 ## Leseweg
 
