@@ -4,6 +4,8 @@ Diese öffentliche Browserfassung entstand am 1. November 2026 als statische Tei
 
 Die neue Oberfläche und ihre Adapter stehen unter [HALVETH PIRL 2.0](vendor/licenses/LICENSE-HALVETH-PIRL-2.0.md), soweit eigene schutzfähige Rechte bestehen. Die folgenden übernommenen Module und Bilder behalten **ihre jeweiligen** Bedingungen. Die Zuordnung ist auch in der [Lizenzkarte des Website-Repositories](../LICENSES.md) vermerkt.
 
+Der öffentliche [Fadennetz-Raum](faden/) und `relation-model.js` sind eine neue, eigenständige Darstellung der ausdrücklich im öffentlichen `api/space.json` deklarierten Projekt-Themen-Zuordnungen. Sie übernehmen weder Quellcode noch private Journale oder persönliche Inhalte aus VERACHEL. Ein Faden belegt nur die angegebene Katalogrelation; räumliche Nähe, Bewegung und Lichtimpulse sind Gestaltung. Der Raum prüft die Bytes des ausgewählten Projektkontexts gegen den zugehörigen Indexeintrag, bevor er dessen Projektlinks zeigt. Der Index selbst ist keine unabhängige Signatur oder Laufzeitmessung.
+
 | Datei in dieser Route | Gepinnte öffentliche Quelle oder Herkunft | Bedingungen |
 | --- | --- | --- |
 | `vendor/scarlet/core.js`, `vendor/scarlet/live-core.js` | [SCARLET Weltkeimwerk, Commit 6913b81](https://github.com/Juri-Halveth/halveth-scarlet/tree/6913b81d3e2414b20149406cb3e2fe9bb314adf4/forschung/weltkeimwerk) | [HALVETH PIRL 2.0](vendor/licenses/LICENSE-HALVETH-PIRL-2.0.md), Juri Janovski / HALVETH |

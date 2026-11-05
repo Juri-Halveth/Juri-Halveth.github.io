@@ -4,6 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const {createHash} = require('node:crypto');
 const {publishedSubspaces} = require('./site-catalog.cjs');
+const {fromSpace} = require('../universum/relation-model.js');
 
 const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
 const json = value => JSON.stringify(value, null, 2) + '\n';
@@ -97,10 +98,13 @@ function buildAgentSpace(root, catalog) {
   };
   fs.mkdirSync(path.join(output, 'api'), {recursive: true});
   fs.writeFileSync(path.join(output, 'api/space.json'), json(overview));
+  fs.writeFileSync(path.join(output, 'api/relations.json'), json(fromSpace(overview)));
   fs.writeFileSync(path.join(output, 'llms.txt'), [
     '# HALVETH / NETZ Starship Lab',
     '',
     'Public read-only project index: https://juri-halveth.github.io/universum/api/space.json',
+    'Typed public project-topic relations: https://juri-halveth.github.io/universum/api/relations.json',
+    'Relations are catalog membership snapshots, not causal links or live process events.',
     'Read the compact overview first, then only the relevant project context listed in projects[].path.',
     'Check projects[].sha256 against the exact downloaded UTF-8 bytes. Use revision to detect index changes.',
     'Each context separates public capability, any separate local and loopback prototypes, and an unpublished user goal.',
