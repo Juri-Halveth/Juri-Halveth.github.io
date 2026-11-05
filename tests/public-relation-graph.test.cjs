@@ -91,6 +91,11 @@ test('project list remains usable when the browser cannot create a canvas contex
 });
 
 test('a new index revision updates an existing node label and revalidates its open card', async () => {
+  const waitFor = async (predicate, label) => {
+    const deadline = Date.now() + 5000;
+    while (!predicate() && Date.now() < deadline) await new Promise(resolve => setTimeout(resolve, 10));
+    assert.ok(predicate(), `timed out waiting for ${label}`);
+  };
   const html = fs.readFileSync(path.join(route, 'faden', 'index.html'), 'utf8');
   const dom = new JSDOM(html, {url: 'https://juri-halveth.github.io/universum/faden/', runScripts: 'outside-only'});
   const {window} = dom;
@@ -115,11 +120,11 @@ test('a new index revision updates an existing node label and revalidates its op
     : {ok: true, arrayBuffer: async () => Uint8Array.from(contextBytes).buffer};
   window.HALVETH_RELATION_MODEL = {fromSpace};
   window.eval(fs.readFileSync(path.join(route, 'faden', 'app.js'), 'utf8'));
-  for (let i = 0; i < 20 && !nextRefresh; i += 1) await new Promise(setImmediate);
+  await waitFor(() => Boolean(nextRefresh), 'initial index');
   const first = window.document.querySelector('#projectList button');
   assert.equal(first.textContent, 'SCARLET');
   first.click();
-  for (let i = 0; i < 20 && !window.document.getElementById('detailCore').textContent; i += 1) await new Promise(setImmediate);
+  await waitFor(() => Boolean(window.document.getElementById('detailCore').textContent), 'initial project context');
   assert.match(window.document.getElementById('detailCore').textContent, /GStar-Ledger/);
 
   const newContext = JSON.parse(contextBytes.toString('utf8'));
@@ -131,7 +136,7 @@ test('a new index revision updates an existing node label and revalidates its op
   index.projects[0].sha256 = createHash('sha256').update(contextBytes).digest('hex');
   index.revision = 'b'.repeat(64);
   nextRefresh();
-  for (let i = 0; i < 20 && window.document.getElementById('detailCore').textContent !== newContext.capability.core; i += 1) await new Promise(setImmediate);
+  await waitFor(() => window.document.getElementById('detailCore').textContent === newContext.capability.core, 'new project context');
   assert.equal(window.document.querySelector('#projectList button').textContent, 'SCARLET AKTUELL');
   assert.equal(window.document.getElementById('detailTitle').textContent, 'SCARLET AKTUELL');
   assert.equal(window.document.getElementById('detailCore').textContent, newContext.capability.core);
