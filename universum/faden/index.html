@@ -7,9 +7,9 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'none'; font-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
   <title>HALVETH · öffentliches Fadennetz</title>
   <meta name="description" content="Quellgebundene Beziehungen zwischen öffentlichen HALVETH-Projekten und Themen, als bewegliches Netz und lesbare Liste.">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20261106-1">
   <script defer src="../relation-model.js"></script>
-  <script defer src="app.js"></script>
+  <script defer src="app.js?v=20261106-1"></script>
 </head>
 <body>
   <a class="skip" href="#projects">Zur Projektliste</a>
@@ -35,11 +35,11 @@
         <p id="detailCore"></p>
         <p id="detailValue"></p>
         <p class="boundary" id="detailBoundary"></p>
-        <div class="detail-links"><a id="detailOpen" target="_blank" rel="noopener noreferrer">Projekt öffnen ↗</a><a id="detailSource" target="_blank" rel="noopener noreferrer">Quellstand ↗</a></div>
+        <div class="detail-links"><a id="detailOpen" hidden target="_blank" rel="noopener noreferrer">Projekt öffnen ↗</a><a id="detailSource" hidden target="_blank" rel="noopener noreferrer">Quellstand ↗</a></div>
       </article>
     </section>
     <section class="directory" id="projects" aria-labelledby="directoryTitle">
-      <div><p class="eyebrow">DIESELBEN KNOTEN, DIREKT BEDIENBAR</p><h2 id="directoryTitle">Projekte</h2><p>Die Liste ist die Tastatur- und Textansicht des Netzes. Auswahl öffnet die Karte direkt am Projektpunkt.</p></div>
+      <div><p class="eyebrow">DIESELBEN KNOTEN, DIREKT BEDIENBAR</p><h2 id="directoryTitle" tabindex="-1">Projekte</h2><p>Die Liste ist die Tastatur- und Textansicht des Netzes. Auswahl öffnet die Karte direkt am Projektpunkt.</p></div>
       <div class="project-list" id="projectList"></div>
     </section>
     <footer><span id="sourceNote">Quellstand wird geladen.</span><span>Projektkategorien aus dem öffentlichen HALVETH-Index. Kein privater VERACHEL-Verlauf.</span></footer>

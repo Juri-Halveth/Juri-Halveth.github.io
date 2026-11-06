@@ -22,13 +22,24 @@
     return value >>> 0;
   }
   function resize() {
+    const previousWidth = width, previousHeight = height;
     const rect = stage.getBoundingClientRect();
     width = Math.max(1, rect.width);
     height = Math.max(1, rect.height);
     const pixelRatio = Math.min(devicePixelRatio || 1, 2);
     canvas.width = Math.round(width * pixelRatio);
     canvas.height = Math.round(height * pixelRatio);
-    if (context) context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    if (context) {
+      context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+      context.font = '12px Segoe UI, sans-serif';
+      for (const point of particles.values()) {
+        point.x *= width / previousWidth;
+        point.y *= height / previousHeight;
+        point.vx *= width / previousWidth;
+        point.vy *= height / previousHeight;
+        confine(point);
+      }
+    }
     placeCard();
   }
   function particle(node) {
@@ -63,6 +74,7 @@
     sourceNote.textContent = `Index ${next.source.indexRevision.slice(0, 12)} · Quellenstand ${next.source.sourceDate} · hier gesehen ${new Date(observedAt).toLocaleString('de-DE')}`;
   }
   function renderList() {
+    const focusedId = list.contains(document.activeElement) ? document.activeElement.dataset.nodeId : null;
     list.replaceChildren();
     for (const node of graph.nodes.filter(item => item.kind === 'PUBLIC_PROJECT')) {
       const button = document.createElement('button');
@@ -72,6 +84,19 @@
       button.setAttribute('aria-pressed', String(node.id === selectedId));
       button.addEventListener('click', () => select(node.id, true));
       list.append(button);
+    }
+    if (focusedId) focusProject(focusedId);
+  }
+  function focusProject(id) {
+    const buttons = [...list.querySelectorAll('button')];
+    const target = buttons.find(button => button.dataset.nodeId === id) || buttons[0] || document.getElementById('directoryTitle');
+    target.focus({ preventScroll: true });
+  }
+  function clearLinks() {
+    for (const name of ['detailOpen', 'detailSource']) {
+      const anchor = document.getElementById(name);
+      anchor.hidden = true;
+      anchor.removeAttribute('href');
     }
   }
   function placeCard() {
@@ -116,9 +141,10 @@
     document.getElementById('detailState').textContent = 'ÖFFENTLICHER PROJEKTKONTEXT LADEN …';
     document.getElementById('detailTitle').textContent = node.label;
     for (const name of ['detailCore', 'detailValue', 'detailBoundary']) document.getElementById(name).textContent = '';
-    for (const name of ['detailOpen', 'detailSource']) document.getElementById(name).hidden = true;
+    clearLinks();
     placeCard();
-    const requestGeneration = generation;
+    if (fromDirectory) document.getElementById('close').focus({ preventScroll: true });
+    const requestGeneration = ++generation;
     try {
       const value = await projectContext(node);
       if (selectedId !== id || generation !== requestGeneration) return;
@@ -138,9 +164,19 @@
     }
   }
   function closeCard() {
+    const returnId = selectedId;
+    const returnFocus = detail.contains(document.activeElement);
+    generation += 1;
     selectedId = null;
     detail.hidden = true;
+    clearLinks();
     if (graph) renderList();
+    if (returnFocus) focusProject(returnId);
+  }
+  function confine(point) {
+    const margin = Math.min(width / 2, 105, Math.max(35, context.measureText(point.label).width / 2 + 10));
+    point.x = Math.max(margin, Math.min(width - margin, point.x));
+    point.y = Math.max(Math.min(35, height / 2), Math.min(Math.max(height / 2, height - 42), point.y));
   }
   function evolve() {
     if (!graph) return;
@@ -182,9 +218,9 @@
       point.vx += (width / 2 - point.x) * 0.00008;
       point.vy += (height / 2 - point.y) * 0.00008;
       point.vx *= 0.91; point.vy *= 0.91;
-      const labelMargin = Math.min(105, Math.max(35, context.measureText(point.label).width / 2 + 10));
-      point.x = Math.max(labelMargin, Math.min(width - labelMargin, point.x + point.vx));
-      point.y = Math.max(35, Math.min(height - 42, point.y + point.vy));
+      point.x += point.vx;
+      point.y += point.vy;
+      confine(point);
     }
   }
   function draw(now) {
