@@ -56,7 +56,7 @@
       "open": "Open the state space for this example",
       "steps": [
         "In the application, click “Pause”. Enter “Meine erste Idee.” in “What should begin in this space?”. Keep the model seed at 555 and click “Plant your own seed”.",
-        "Enter “Meine erste Idee bekommt eine Fortsetzung.” in “Content of your next variant” and click “Create variant”. Expect two text states; the original text remains.",
+        "Enter “Meine erste Idee bekommt eine Fortsetzung.” in “Content of your next variant” and click “Create a variant”. Expect two text states; the original text remains.",
         "Click “+ 1 s”. Model time increases from 0.00 to 1.00. “Inspect the current text state” shows your continuation.",
         "Click “Take JSON with you”. Save zustaende-zeit.json before resetting. It contains the text ledger and the separate cell simulation."
       ],
@@ -64,7 +64,7 @@
       "checks": [
         "Open the JSON file in a text editor: contentLedger.projection.states must contain both texts with different IDs. In the second state, parents[0].id must refer to the first state’s ID.",
         "ecology.modelMs must be 1000 after the paused one-second step. “Check replay” checks the text ledger, not the biological or physical truth of the light forms.",
-        "Countercheck: click “Create variant” again without changing the variant text. Expect a readable error; the count stays at two text states.",
+        "Countercheck: click “Create a variant” again without changing the variant text. Expect a readable error; the count stays at two text states.",
         "Return: “Reset” starts from the current seed text with one text state and model time 0.00. The downloaded export remains your separate copy."
       ],
       "failure": "If an action fails, read the error and check the input. A variant needs different text. If graphics are unavailable, text states and export remain usable. This guide works without JavaScript; the application requires it.",
