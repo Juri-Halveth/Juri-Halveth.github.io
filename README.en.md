@@ -47,6 +47,14 @@ npm test
 npm run preview
 ```
 
+Install Chromium once with
+`npx playwright install --with-deps --only-shell chromium`. Then
+`npm run test:browser` starts its own local preview and checks two visitor
+flows in all three languages: search and category → results or empty state →
+reset, and missing page → projects or work samples → back. The actual browser
+module is loaded. CI runs the same check before publication; linked project
+applications are outside its scope.
+
 Preview binds only to `127.0.0.1:4187`; `SPACE_PORT` selects another local port.
 Keep confidential files outside this public working directory.
 
