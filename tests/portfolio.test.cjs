@@ -31,7 +31,7 @@ test('current public pages contain work samples without historical certificate o
 });
 test('archive collectors cannot republish removed material',()=>{
  const workflows=fs.readdirSync(path.join(root,'.github/workflows'));assert.deepEqual(workflows,['pages.yml']);
- for(const p of ['schuelervz-halveth','werkzertifikate/2026-09-28-v1.1','data/claims.json'])assert.equal(fs.existsSync(path.join(root,p)),false);
+ for(const p of ['schuelervz-halveth/archive','schuelervz-mantel/archive','werkzertifikate/2026-09-28-v1.1','data/claims.json'])assert.equal(fs.existsSync(path.join(root,p)),false);
 });
 
 test('the selected project list contains learning, tools and models with no withdrawn game category',()=>{
