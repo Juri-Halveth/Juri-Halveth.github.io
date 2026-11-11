@@ -86,6 +86,14 @@ npm test
 npm run preview
 ```
 
+Die Browser-Prüfung installiert einmalig Chromium mit
+`npx playwright install --with-deps --only-shell chromium`. Danach startet
+`npm run test:browser` die lokale Vorschau selbst und prüft in allen drei
+Sprachen zwei Besucherwege: Suche und Kategorie → Treffer oder leeres Ergebnis
+→ Zurücksetzen sowie fehlende Seite → Projekte oder Arbeitsproben → zurück.
+Dabei wird das echte Browser-Modul geladen. Dieselbe Prüfung läuft vor jeder
+Veröffentlichung in CI; die verlinkten Projektanwendungen gehören nicht dazu.
+
 Die Vorschau bindet ausschließlich `127.0.0.1:4187`. `SPACE_PORT` kann einen
 anderen lokalen Port wählen. Der Preview-Root ist ein öffentliches
 Arbeitsverzeichnis; vertrauliche Dateien gehören in einen getrennten Speicher.

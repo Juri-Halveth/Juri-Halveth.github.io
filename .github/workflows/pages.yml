@@ -28,6 +28,10 @@ jobs:
       - run: npm run build
       - run: git diff --exit-code
       - run: npm test
+      - name: Install Chromium for visitor flows
+        run: npx playwright install --with-deps --only-shell chromium
+      - name: Check browser input, results and recovery links
+        run: npm run test:browser
       - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
       - name: Stage committed static website
         shell: bash
