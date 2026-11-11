@@ -1,0 +1,29 @@
+{
+  "source_revision": "903ab43391238ce9723dfb282ed4aa08606c1b93",
+  "source_sha256": {
+    "schuelervz-halveth\\assets\\mycelium.js": "280b3a8af7f59e85e96d90a45b0e2d3e36bc9e1d04c542c3946e2cb97f484e8b",
+    "schuelervz-halveth\\assets\\mycelium.css": "c5f52bce4a5ed0b663ac1dbeb4b49179eb3ee1bb10c20f837ad1a350115f3645",
+    "schuelervz-halveth\\assets\\people.js": "040a5944d905051c51c940b16a7909b09d8317121e239c35f6a4419e840d3420",
+    "schuelervz-halveth\\assets\\people.css": "177a17fe1e36272fdb3278dce87ea6d2605b0fb4ffc7a7a664576b0df1f43391",
+    "schuelervz-halveth\\assets\\archaeology.js": "650a488722ea2798e64c52c69e5fac5b7bc74887bbde116923af204162ae16d3",
+    "schuelervz-halveth\\assets\\archaeology.css": "928e2ac099a0996392c594d0cd4a6bec1a337c9634252e51baa3e129a2665538",
+    "schuelervz-halveth\\assets\\prestige.js": "8c769a82e302f4dd31559fe494cf8f38a15b238aad8222b0a2aea14e5c67dfb9",
+    "schuelervz-halveth\\assets\\prestige.css": "54544db537dedfc093657250977902215198c7d76c274847018c5e9cdfd718f3",
+    "return.css": "254a21a90fb94cef76417831c55564c38e666ada6894ba63d4665b6b4f384f9d",
+    "schuelervz-halveth/index.html": "d64ec02a8ba821839730acc8c973ceabcfb868eb8f514a201df2906b30e168f1",
+    "schuelervz-halveth/people.html": "ab1b813a2aaa8e8095baad1a81a35039dec1b42b55f37e42c6e1ca11e44a408f",
+    "schuelervz-halveth/archaeology.html": "6038c2064957a58247276aa7b4af1f67bf295c500933f5d3ef6267007f102643",
+    "schuelervz-halveth/prestige.html": "4df80cefa2e16c59a08786432e5a59bfb94061097603f5d60e523e05a72075e3",
+    "schuelervz-halveth\\data\\people.json": "53a9f601317a973a67753ebd5c90e3a2669f8ecb35c9023805c1496c6f3161b1",
+    "schuelervz-halveth\\data\\route-templates.json": "f3e74074c797e1ef2b2f3703297d48e3ee418817d76e92aebb2adabdaeb08fca",
+    ".github\\ISSUE_TEMPLATE\\profile-claim.yml": "fc7282b881d4b7cfdcfcf7b2964aeb79c49f0b9fd7e46aae6e89744d4eff35f4"
+  },
+  "changes": [
+    "requested publication name",
+    "HTML encoding repair",
+    "standalone relative dependencies; removed retired language hub",
+    "historical archive data excluded, explicitly labeled",
+    "old entrance redirects to mantle"
+  ],
+  "behavior": "Original application scripts and styles copied byte-for-byte. Existing GitHub issue profile claims; no legacy login backend."
+}
