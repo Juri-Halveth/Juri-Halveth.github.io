@@ -76,7 +76,13 @@ for(const lang of Object.keys(copy)){
   put((lang==='de'?'':lang+'/')+route+'index.html',portableHtml);
  }
 }
-put('404.html',`<!doctype html><html lang="de"><meta charset="utf-8"><title>HALVETH · Übersicht</title><h1>Diese Adresse wurde neu geordnet.</h1><p><a href="/">Projekte & Arbeitsproben öffnen</a></p></html>\n`);
+const notFound={
+ de:{title:'Seite nicht gefunden',description:'Unter dieser Adresse ist keine Seite veröffentlicht. Die aktuellen Projekte und Arbeitsproben findest du hier.',projects:'Aktuelle Projekte',evidence:'Arbeitsproben'},
+ en:{title:'Page not found',description:'No page is published at this address. Explore the current projects and work samples here.',projects:'Current projects',evidence:'Work samples'},
+ ru:{title:'Страница не найдена',description:'По этому адресу нет опубликованной страницы. Здесь доступны актуальные проекты и примеры работы.',projects:'Актуальные проекты',evidence:'Примеры работы'}
+};
+// The fallback is served at arbitrary missing paths, so its recovery links and assets use origin-root URLs.
+put('404.html',`<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><meta name="theme-color" content="#f2f1e9"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'none'; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'"><title>404 · Seite nicht gefunden · Juri</title><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/portal.css"><link rel="stylesheet" href="/portfolio.css"></head><body><a class="skip-link" href="#main">Zum Inhalt</a><header class="site-header shell"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">H</span><span>JURI</span></a><nav aria-label="Languages"><a href="#de" lang="de">Deutsch</a><a href="#en" lang="en">English</a><a href="#ru" lang="ru">Русский</a></nav></header><main id="main" class="shell subpage"><p class="eyebrow">404</p>${Object.entries(notFound).map(([lang,t],i)=>{const prefix=lang==='de'?'/':`/${lang}/`,heading=i?'h2':'h1';return `<section id="${lang}" lang="${lang}"${i?' class="directory-section"':''}><${heading}>${t.title}</${heading}><p class="lead">${t.description}</p><div class="service-actions"><a class="button" href="${prefix}arbeiten/">${t.projects} ↗</a><a class="text-link" href="${prefix}belege/">${t.evidence} ↗</a></div></section>`;}).join('')}</main></body></html>\n`);
 put('robots.txt',fs.readFileSync(path.join(root,'data/robots.txt'),'utf8'));
 put('llms.txt',[
  '# HALVETH',

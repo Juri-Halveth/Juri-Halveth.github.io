@@ -1,21 +1,40 @@
-# HALVETH / NETZ · Projects and interactive models
+# Juri · Software and verifiable projects
+
+[Deutsch](README.md) · [English](README.en.md) · [Русский](README.ru.md)
+
+I build local tools, web applications and interactive models. Start with the
+[portfolio](https://juri-halveth.github.io/en/) or the
+[project directory](https://juri-halveth.github.io/en/arbeiten/), where each
+project leads to its application or guide alongside its source code. Two
+[work samples](https://juri-halveth.github.io/en/belege/) show input, result
+and counterexample.
+
+Person: **Juri**. Project: **HALVETH**. [Identity](IDENTITY.md).
+
+The homepage presents four selected projects. The directory contains **13
+current project cards** from a public catalog of **18 repository entries**:
+16 project repositories, this website and the GitHub profile. Three withdrawn
+game presentations remain in the source catalog and optional Lab; they are
+excluded from the current portfolio.
+
+[Scenes and models](https://juri-halveth.github.io/en/modelle/) retain the
+interactive comparison of two views of the same four points, alongside scene
+captures and explicit model rules. The
+[technical map](https://juri-halveth.github.io/en/koennen/) links to functions,
+tests and build definitions.
+
+Project lead and curation: Juri / HALVETH. AI-assisted development. The portfolio
+has German, English and Russian interfaces; Starship Lab currently uses German.
+
+## Optional Starship Lab
 
 [![HALVETH NETZ: six connected themes](universum/assets/system-banner.svg)](https://juri-halveth.github.io/universum/)
 
 **[Open Starship Lab →](https://juri-halveth.github.io/universum/)** · Software · Security · Models and visualization · Worlds · Learning · Public research
 
-Person: **Juri**. Project: **HALVETH**. [Identity](IDENTITY.md).
-
-[Portfolio](https://juri-halveth.github.io/en/) · [Projects](https://juri-halveth.github.io/en/arbeiten/) · [Technology and code](https://juri-halveth.github.io/en/koennen/)
-
-The homepage starts with the NETZ gateway. Its project areas explain usable functions: text states and variants,
-observation comparison and spatial applications.
-JavaScript calculates two views of the same four points directly on the page.
-Purpose, model rules, local execution and potential uses remain explicit.
-Presentation order is separate from the unchanged source-packet identities.
-
-Project lead and curation: Juri / HALVETH. AI-assisted development. The portfolio
-has German, English and Russian interfaces; Starship Lab currently uses German.
+This separate browser space is linked from the directory and footer. It covers
+the same 18 public repository entries; its local models and source links have
+their own stated scope. [Sources and licences](universum/CREDITS.md).
 
 ## Build locally
 
@@ -38,11 +57,20 @@ the byte-preserved MIT model. Static SVG remains readable without JavaScript;
 interactive controls require it. Playback is explicit, finite and pauses when
 hidden. `showcase.css` provides responsive layouts.
 
-`data/projects.json` describes 10 selected entries with source revisions and
+`data/site-catalog.json` is the shared navigation source for the website and
+Starship Lab. Its dated snapshot and editorial selection are distinct from the
+older source sets below.
+
+`data/projects.json` describes 11 selected entries with source revisions and
 limited review states. Local model checks bind to that exact source revision.
-`data/public-repositories.json` lists 15 selected public repositories from its dated
+`data/public-repositories.json` lists 14 selected public repositories from its dated
 snapshot; licence-review revisions remain separate. Inventory is not a full
 security audit of those projects. Download releases retain their own versions.
+
+`npm run refresh` updates those two older source sets from public default-branch
+HEADs; it does not update the website catalog automatically. After a refresh,
+run the build and tests and review the source diff. A newer source revision does
+not inherit a test result from an older one.
 
 The deterministic builder produces 43 HTML pages. The technical map links 12 work
 samples across six areas to pinned functions, tests and build definitions.
@@ -51,7 +79,9 @@ source/relationship index, not a running cross-project backend. The build does
 execute the retained local geometric model to produce SVG.
 
 Historical `/belege/` results retain their original dates and revisions.
-See [the 24 October change record](docs/SCENE-FIRST-2026-10-24.md) for the new scope.
+The [24 October change record](docs/SCENE-FIRST-2026-10-24.md) and
+[2 November navigation inventory](docs/review/2026-11-02/INVENTORY.md) document
+their respective change and verification scopes.
 
 ## Collaboration and rights
 
@@ -60,4 +90,4 @@ as a concrete engagement with goals and acceptance criteria. The website is
 source-available under its [path/version licence map](LICENSES.md), preserving
 MIT exceptions and earlier grants. Linked projects retain their own terms.
 
-[Security](SECURITY.md) · **security@halveth.de**
+Collaboration: **juri@halveth.de** · [Security](SECURITY.md): **security@halveth.de**

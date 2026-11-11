@@ -1,5 +1,7 @@
 # Juri · Software und überprüfbare Projekte
 
+[Deutsch](README.md) · [English](README.en.md) · [Русский](README.ru.md)
+
 Ich entwickle lokale Werkzeuge, Webanwendungen und interaktive Modelle. Die
 [Portfolio-Startseite](https://juri-halveth.github.io/) zeigt direkt nutzbare
 Ergebnisse; die [Projektübersicht](https://juri-halveth.github.io/arbeiten/)
