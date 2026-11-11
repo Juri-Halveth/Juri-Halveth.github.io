@@ -1,6 +1,7 @@
 'use strict';
 const {URL}=require('node:url');
 const {renderProjectControls}=require('./render-project-controls.cjs');
+const {guideLink,renderVisitorCorridor}=require('./render-visitor-corridor.cjs');
 const languages=['de','en','ru'];
 const groups=['software','worlds','research','learning'];
 const withdrawnFromPortfolio=new Set(['halveth-unreal','halveth-realms','halveth-morrowind-genesis']);
@@ -139,11 +140,11 @@ function renderHome(catalog,lang){
  validateSiteCatalog(catalog);const t=copy[lang];if(!t)throw Error('Unknown site language');
  const prefix=lang==='de'?'/':`/${lang}/`;
  const featured=catalog.home_featured_ids.map(id=>catalog.projects.find(p=>p.id===id));
- return `<section class="service-hero shell" aria-labelledby="service-title"><div class="service-hero-copy"><p class="eyebrow">${t.eyebrow}</p><h1 id="service-title">${t.headline}</h1><p class="service-lead">${t.lead}</p><div class="service-actions"><a class="button" href="${prefix}arbeiten/">${t.projects} ↗</a><a class="text-link" href="#contact">${t.contact} ↓</a><a class="quiet-link" href="https://github.com/Juri-Halveth">${t.github} ↗</a></div></div>${featureCard(featured[0],lang,true)}</section><section class="shell service-featured" id="featured"><h2>${t.more}</h2><div class="service-featured-grid">${featured.slice(1).map(p=>featureCard(p,lang)).join('')}</div><a class="text-link" href="${prefix}arbeiten/">${t.all} ↗</a></section><section class="service-method"><div class="shell"><p class="eyebrow">${t.method}</p><h2>${t.method}</h2><p>${t.methodText}</p><a class="text-link" href="${prefix}belege/">${t.cases} ↗</a></div></section>`;
+ return `<section class="service-hero shell" aria-labelledby="service-title"><div class="service-hero-copy"><p class="eyebrow">${t.eyebrow}</p><h1 id="service-title">${t.headline}</h1><p class="service-lead">${t.lead}</p><div class="service-actions"><a class="button" href="${prefix}arbeiten/">${t.projects} ↗</a><a class="text-link" href="#contact">${t.contact} ↓</a><a class="quiet-link" href="https://github.com/Juri-Halveth">${t.github} ↗</a>${guideLink(lang)}</div></div>${featureCard(featured[0],lang,true)}</section><section class="shell service-featured" id="featured"><h2>${t.more}</h2><div class="service-featured-grid">${featured.slice(1).map(p=>featureCard(p,lang)).join('')}</div><a class="text-link" href="${prefix}arbeiten/">${t.all} ↗</a></section><section class="service-method"><div class="shell"><p class="eyebrow">${t.method}</p><h2>${t.method}</h2><p>${t.methodText}</p><a class="text-link" href="${prefix}belege/">${t.cases} ↗</a></div></section>`;
 }
 function directoryCard(project,lang){
  const t=copy[lang],s=project.site;
- return `<article class="directory-project" data-project="${escape(project.id)}" data-category="${escape(s.primary_category)}"><p class="work-kind">${escape(entryStatus(project,lang))}</p><h3>${escape(s.title[lang])}</h3><p>${escape(s.summary[lang])}</p>${renderSubspaces(project,lang)}<div class="directory-actions"><a class="button" href="${escape(entryHref(project,lang))}">${escape(s.action[lang])} ↗</a><a class="text-link" href="${escape(project.source_url)}">${escape(sourceAction(project,lang))} ↗</a></div><p class="source-caption">${escape(project.title)} · ${escape(project.repository)}</p></article>`;
+ return `<article class="directory-project" data-project="${escape(project.id)}" data-category="${escape(s.primary_category)}"><p class="work-kind">${escape(entryStatus(project,lang))}</p><h3>${escape(s.title[lang])}</h3><p>${escape(s.summary[lang])}</p>${renderSubspaces(project,lang)}${project.id==='halveth-scarlet'?renderVisitorCorridor(lang):''}<div class="directory-actions"><a class="button" href="${escape(entryHref(project,lang))}">${escape(s.action[lang])} ↗</a><a class="text-link" href="${escape(project.source_url)}">${escape(sourceAction(project,lang))} ↗</a></div><p class="source-caption">${escape(project.title)} · ${escape(project.repository)}</p></article>`;
 }
 function renderDirectory(catalog,lang){
  validateSiteCatalog(catalog);const t=copy[lang];if(!t)throw Error('Unknown site language');
