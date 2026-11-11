@@ -52,6 +52,7 @@
       "sourcePath": "forschung/singularity-cannon/index.html",
       "testPath": "tests/source-state.test.mjs",
       "demo": "https://juri-halveth.github.io/halveth-scarlet/forschung/singularity-cannon/",
+      "capture": "assets/scarlet-cannon-live.jpg",
       "ci": {
         "id": 39418583498,
         "headSha": "b768ca093d9bd68b1453a8ccc5b6d02ecaa1eb07",
@@ -65,7 +66,7 @@
         "title": "Interaktion sichtbar und rücknehmbar machen",
         "problem": "Eine grafische Idee soll unmittelbar bedienbar sein und ihren Zustand sichtbar machen.",
         "input": "Ein Klick in der Singularity-Cannon-Szene; Feldzähler und Rücknahme als sichtbare Zustände.",
-        "result": "Am 20.10.2026 im Browser beobachtet: Auslösen erzeugt eine Singularität und aktiviert die Rücknahme. Eine echte Browseraufnahme ist auf der Startseite verlinkt.",
+        "result": "Am 20.10.2026 im Browser beobachtet: Auslösen erzeugt eine Singularität und aktiviert die Rücknahme. Die erhaltene Browseraufnahme ist hier direkt verlinkt.",
         "counterexample": "Vergleiche leeren Zustand, ausgelöstes Feld und Rücknahme. Die verlinkten Quellzustands-Tests prüfen zusätzlich die Artefaktbindung; sie sind kein visueller Akzeptanztest.",
         "reuse": "Interaktive Erklärstücke, gestaltete Simulationen und Oberflächen mit sichtbarem Zustand.",
         "limit": "Die Live-Aufnahme besitzt keinen verifizierten Build-Digest. Der Quellstand und sein erfolgreicher Deploy-Lauf sind separat gebunden. Die Szene ist eine grafische Simulation."
@@ -74,7 +75,7 @@
         "title": "Make an interaction visible and reversible",
         "problem": "A visual idea needs direct controls and an observable state.",
         "input": "A click in Singularity Cannon; the field counter and Undo control expose state.",
-        "result": "Observed in the browser on 20 Oct 2026: firing creates a singularity and enables Undo. The homepage includes an actual browser capture.",
+        "result": "Observed in the browser on 20 Oct 2026: firing creates a singularity and enables Undo. The preserved browser capture is linked directly here.",
         "counterexample": "Compare the empty state, a fired field and Undo. Linked source-state tests separately check artifact binding; they are not visual acceptance tests.",
         "reuse": "Interactive explanations, designed simulations and interfaces with visible state.",
         "limit": "The live capture has no verified build digest. The pinned source and successful deploy run are separate evidence. This is a graphic simulation."
@@ -83,7 +84,7 @@
         "title": "Сделать взаимодействие видимым и обратимым",
         "problem": "Графической идее нужны понятное управление и видимое состояние.",
         "input": "Щелчок в Singularity Cannon; счётчик полей и кнопка отмены показывают состояние.",
-        "result": "В браузере 20.10.2026 наблюдалось: запуск создаёт сингулярность и включает отмену. На главной есть настоящий снимок браузера.",
+        "result": "В браузере 20.10.2026 наблюдалось: запуск создаёт сингулярность и включает отмену. Сохранённый снимок браузера доступен по прямой ссылке здесь.",
         "counterexample": "Сравните пустую сцену, созданное поле и отмену. Тесты исходников отдельно проверяют привязку артефактов, а не визуальное качество.",
         "reuse": "Интерактивные объяснения, художественные симуляции и интерфейсы с видимым состоянием.",
         "limit": "Для живого снимка не проверен хеш сборки. Исходники и успешный запуск развёртывания привязаны отдельно. Сцена — графическая симуляция."

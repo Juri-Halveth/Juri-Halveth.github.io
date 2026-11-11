@@ -3,6 +3,27 @@ const test=require('node:test'),assert=require('node:assert/strict'),fs=require(
 const {JSDOM}=require('jsdom'),root=path.resolve(__dirname,'..');
 const read=p=>fs.readFileSync(path.join(root,p),'utf8');
 const catalog=JSON.parse(read('data/projects.json'));
+test('missing and retired URLs keep 404 status and offer working recovery paths in every language',()=>{
+ const handler=require('../tools/serve-space.cjs').createPreviewHandler(root);
+ const request=(url,method='GET')=>{const response={};handler({url,method},{writeHead(status){response.status=status;},end(body){response.body=body?.toString()??'';}});return response;};
+ for(const route of ['/en/schuelervz-halveth/index.html','/en/schuelervz-halveth/archaeology.html','/en/schuelervz-halveth/people.html','/unknown/nested/page']){
+  const response=request(route);assert.equal(response.status,404,route);assert.equal(request(route,'HEAD').status,404);assert.equal(request(route,'HEAD').body,'');
+  const doc=new JSDOM(response.body,{url:'https://juri-halveth.github.io'+route}).window.document;
+  assert.match(doc.title,/404/);assert.equal(doc.querySelectorAll('h1').length,1);
+  assert.equal(doc.querySelector('meta[name="robots"]').content,'noindex,follow');
+  assert.equal(doc.querySelectorAll('script,meta[http-equiv="refresh"],link[rel="canonical"]').length,0);
+  assert.doesNotMatch(doc.body.textContent,/neu geordnet|relocated|moved/i);
+  for(const lang of ['de','en','ru']){
+   const section=doc.querySelector(`section[lang="${lang}"]`),prefix=lang==='de'?'/':`/${lang}/`;assert.ok(section,lang);
+   for(const destination of ['arbeiten/','belege/'])assert.ok(section.querySelector(`a[href="${prefix}${destination}"]`));
+  }
+  for(const node of doc.querySelectorAll('[href],[src]')){
+   const value=node.getAttribute('href')||node.getAttribute('src');
+   if(value.startsWith('#')){assert.ok(doc.getElementById(value.slice(1)));continue;}
+   const url=new URL(value,doc.URL);assert.equal(url.origin,'https://juri-halveth.github.io');assert.equal(request(url.pathname).status,200,value);
+  }
+ }
+});
 test('the sitemap includes every canonical route in all three languages',()=>{
  const xml=new JSDOM(read('sitemap.xml'),{contentType:'text/xml'}).window.document;
  const urls=[...xml.querySelectorAll('loc')].map(x=>x.textContent);

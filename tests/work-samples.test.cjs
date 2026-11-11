@@ -24,10 +24,28 @@ test('invalid paths and script-like presentation text do not become executable m
  const wrong=structuredClone(data);wrong.samples[0].sourcePath='../private';assert.throws(()=>validateWorkSamples(wrong),/relative/);
  const injected=structuredClone(data);injected.samples[1].demo='https://juri-halveth.github.io/" onclick="alert(1)';assert.throws(()=>validateWorkSamples(injected),/Owned demo/);
  const foreign=structuredClone(data);foreign.samples[1].demo='https://juri-halveth.github.io.attacker.example/';assert.throws(()=>validateWorkSamples(foreign),/Owned demo/);
+ for(const capture of ['../private.jpg','assets/../private.jpg','https://example.invalid/capture.jpg','assets/capture.jpg" onclick="alert(1)',null]){
+  const wrongCapture=structuredClone(data);wrongCapture.samples[1].capture=capture;assert.throws(()=>validateWorkSamples(wrongCapture),/Local capture asset/);
+ }
  const text=structuredClone(data);text.samples[0].de.title='<script>alert(1)</script>';
  const doc=new JSDOM(renderWorkSamples(text,'de')).window.document;
  assert.equal(doc.querySelectorAll('script,iframe').length,0);
  assert.match(doc.querySelector('.evidence-case h2').textContent,/<script>/);
+});
+
+test('the preserved browser capture is reachable from every evidence page and matches its provenance',()=>{
+ const {createHash}=require('node:crypto');
+ const sample=data.samples.find(s=>s.id==='scarlet-interaction');
+ const sources=JSON.parse(fs.readFileSync(path.join(root,'assets/ASSET-SOURCES.json'),'utf8'));
+ const record=sources.records.find(r=>r.path===sample.capture);assert.ok(record);
+ assert.equal(record.sourceUrl,sample.demo);assert.equal(record.transfer,'BROWSER_SCREENSHOT');
+ assert.equal(createHash('sha256').update(fs.readFileSync(path.join(root,sample.capture))).digest('hex'),record.sha256);
+ for(const prefix of ['','en/','ru/']){
+  const page=path.join(root,prefix,'belege/index.html');const doc=new JSDOM(fs.readFileSync(page,'utf8')).window.document;
+  const targets=[...doc.querySelectorAll('#scarlet-interaction .card-links a[href]')].map(a=>path.resolve(path.dirname(page),a.getAttribute('href')));
+  assert.ok(targets.includes(path.join(root,sample.capture)),prefix);
+  assert.ok(targets.includes(path.join(root,'assets/ASSET-SOURCES.json')),prefix);
+ }
 });
 
 test('source evidence rejects dot repositories and safely encodes filenames with spaces',()=>{
