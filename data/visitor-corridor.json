@@ -1,0 +1,110 @@
+{
+  "schema": "halveth.visitor-corridor.v1",
+  "project": "halveth-scarlet",
+  "entry": "https://juri-halveth.github.io/halveth-scarlet/",
+  "sourceRevision": "c36150b55fe9ed4207f185d7092b3184c353df93",
+  "observedAt": "2026-11-11",
+  "runtime": "Browser JavaScript",
+  "maturity": "FUNCTIONAL_PROTOTYPE",
+  "sample": {
+    "seed": "Meine erste Idee.",
+    "variant": "Meine erste Idee bekommt eine Fortsetzung.",
+    "modelSeed": 555,
+    "download": "zustaende-zeit.json"
+  },
+  "copy": {
+    "de": {
+      "jump": "Mit einem Beispiel starten",
+      "title": "Eine Idee verändern und den Ursprung behalten",
+      "summary": "Beispielweg: eigener Text → Variante → überprüfbare JSON-Datei",
+      "conditions": "Für Neugierige und Prototypenbauer · funktionsfähiger Prototyp · moderner Browser mit JavaScript · kein Konto, keine Installation · Berechnung auf deinem Gerät.",
+      "experience": "Erleben",
+      "understand": "Verstehen",
+      "check": "Prüfen",
+      "build": "Weiterbauen",
+      "open": "Zustandsraum für dieses Beispiel öffnen",
+      "steps": [
+        "Klicke in der Anwendung auf „Pause“. Trage bei „Was soll in diesem Raum beginnen?“ den Text „Meine erste Idee.“ ein. Lasse den Modell-Seed auf 555 und klicke „Eigenen Keim setzen“.",
+        "Trage unter „Inhalt deiner nächsten Variante“ „Meine erste Idee bekommt eine Fortsetzung.“ ein und klicke „Variante erzeugen“. Erwartet: zwei Textzustände; der ursprüngliche Text bleibt erhalten.",
+        "Klicke „+ 1 s“. Die Modellzeit steigt von 0.00 auf 1.00. „Aktuellen Textzustand ansehen“ zeigt deine Fortsetzung.",
+        "Klicke „JSON mitnehmen“. Speichere zustaende-zeit.json vor dem Zurücksetzen. Diese Datei enthält das Textledger und die getrennte Zellensimulation."
+      ],
+      "explanation": "Ein Keim ist hier dein Ausgangstext. Eine Variante erhält eine neue Zustands-ID und verweist auf ihren Elternzustand. Lichtformen zeigen eine regelbasierte Zellensimulation; sie sind keine biologische Messung und kein gehosteter KI-Agent.",
+      "checks": [
+        "Öffne die JSON-Datei in einem Texteditor: contentLedger.projection.states muss beide Texte mit unterschiedlichen IDs enthalten. Im zweiten Zustand muss parents[0].id auf die ID des ersten zeigen.",
+        "ecology.modelMs muss nach dem pausierten Ein-Sekunden-Schritt 1000 sein. „Replay prüfen“ prüft das Textledger, nicht die biologische oder physikalische Wahrheit der Lichtformen.",
+        "Gegenprobe: Klicke mit unverändertem Variantentext erneut „Variante erzeugen“. Es muss eine verständliche Fehlermeldung erscheinen; es bleiben zwei Textzustände.",
+        "Rückweg: „Zurücksetzen“ beginnt beim aktuellen Ausgangstext mit einem Textzustand und Modellzeit 0.00. Der zuvor heruntergeladene Export bleibt deine separate Kopie."
+      ],
+      "failure": "Falls eine Aktion nicht gelingt: Fehlermeldung lesen, Eingabe prüfen und bei Varianten einen tatsächlich anderen Text verwenden. Bei fehlender Grafik bleiben Textzustände und Export bedienbar. Ohne JavaScript kannst du diesen Leitfaden lesen, die Anwendung benötigt JavaScript.",
+      "boundary": "Browserablauf und heruntergeladene Datei am 11.11.2026 geprüft; Anleitung und aktueller Quellstand sind getrennt von älteren Katalogbelegen. Keine Messung mit unabhängigen Testpersonen.",
+      "source": "Code dieses Prüfstands",
+      "tests": "Kernfunktionstests",
+      "feedback": "Fehler mit Beispiel melden",
+      "contribute": "Für eine Fehlermeldung: URL, Sprache, Eingaben, erwartetes und beobachtetes Ergebnis nennen. Vor dem Anhängen eines Exports private Texte entfernen.",
+      "return": "Zur Projektliste"
+    },
+    "en": {
+      "jump": "Start with an example",
+      "title": "Change an idea and preserve its origin",
+      "summary": "Example path: your text → variant → checkable JSON file",
+      "conditions": "For curious visitors and prototype builders · functional prototype · modern browser with JavaScript · no account or installation · computation on your device.",
+      "experience": "Experience",
+      "understand": "Understand",
+      "check": "Verify",
+      "build": "Build on it",
+      "open": "Open the state space for this example",
+      "steps": [
+        "In the application, click “Pause”. Enter “Meine erste Idee.” in “What should begin in this space?”. Keep the model seed at 555 and click “Plant your own seed”.",
+        "Enter “Meine erste Idee bekommt eine Fortsetzung.” in “Content of your next variant” and click “Create variant”. Expect two text states; the original text remains.",
+        "Click “+ 1 s”. Model time increases from 0.00 to 1.00. “Inspect the current text state” shows your continuation.",
+        "Click “Take JSON with you”. Save zustaende-zeit.json before resetting. It contains the text ledger and the separate cell simulation."
+      ],
+      "explanation": "A seed is your starting text. A variant gets a new state ID and refers to its parent state. Light forms depict a rule-based cell simulation; they are not biological measurements or a hosted AI agent.",
+      "checks": [
+        "Open the JSON file in a text editor: contentLedger.projection.states must contain both texts with different IDs. In the second state, parents[0].id must refer to the first state’s ID.",
+        "ecology.modelMs must be 1000 after the paused one-second step. “Check replay” checks the text ledger, not the biological or physical truth of the light forms.",
+        "Countercheck: click “Create variant” again without changing the variant text. Expect a readable error; the count stays at two text states.",
+        "Return: “Reset” starts from the current seed text with one text state and model time 0.00. The downloaded export remains your separate copy."
+      ],
+      "failure": "If an action fails, read the error and check the input. A variant needs different text. If graphics are unavailable, text states and export remain usable. This guide works without JavaScript; the application requires it.",
+      "boundary": "Browser flow and downloaded file checked on 11 November 2026. This guide and its source revision are separate from older catalog evidence. No study with independent test users.",
+      "source": "Source for this check",
+      "tests": "Core function tests",
+      "feedback": "Report a reproducible issue",
+      "contribute": "Include the URL, language, inputs, expected result and observed result. Remove private text before attaching an export.",
+      "return": "Back to the project list"
+    },
+    "ru": {
+      "jump": "Начать с примера",
+      "title": "Изменить идею и сохранить её источник",
+      "summary": "Пример: ваш текст → вариант → проверяемый JSON-файл",
+      "conditions": "Для любопытных посетителей и авторов прототипов · работающий прототип · современный браузер с JavaScript · без аккаунта и установки · вычисления на вашем устройстве.",
+      "experience": "Попробовать",
+      "understand": "Понять",
+      "check": "Проверить",
+      "build": "Развивать",
+      "open": "Открыть пространство состояний для примера",
+      "steps": [
+        "В приложении нажмите «Пауза». В поле «Что должно начаться в этом пространстве?» введите «Meine erste Idee.». Оставьте сид модели 555 и нажмите «Посадить своё зерно».",
+        "В поле «Содержание следующего варианта» введите «Meine erste Idee bekommt eine Fortsetzung.» и нажмите «Создать вариант». Ожидаются два текстовых состояния; исходный текст сохраняется.",
+        "Нажмите «+ 1 с». Время модели изменится с 0.00 на 1.00. «Посмотреть текущее текстовое состояние» показывает продолжение.",
+        "Нажмите «Скачать JSON». Сохраните zustaende-zeit.json перед сбросом. Файл содержит текстовый журнал и отдельную клеточную симуляцию."
+      ],
+      "explanation": "Зерно — это ваш исходный текст. Вариант получает новый ID состояния и ссылку на родительское состояние. Световые формы показывают клеточную симуляцию по заданным правилам, а не биологические измерения или облачного ИИ-агента.",
+      "checks": [
+        "Откройте JSON в текстовом редакторе: contentLedger.projection.states должен содержать оба текста с разными ID. В поле parents[0].id второго состояния должен быть ID первого.",
+        "После секундного шага на паузе ecology.modelMs должно равняться 1000. «Проверить повтор» проверяет текстовый журнал, а не биологическую или физическую истинность световых форм.",
+        "Контрпроверка: снова нажмите «Создать вариант», не меняя текст. Должна появиться понятная ошибка; текстовых состояний остаётся два.",
+        "Возврат: «Сброс» начинает запуск с текущим исходным текстом, одним текстовым состоянием и временем 0.00. Скачанный экспорт остаётся отдельной копией."
+      ],
+      "failure": "При ошибке прочитайте сообщение и проверьте ввод. Для варианта нужен изменённый текст. Без графики текстовые состояния и экспорт остаются доступны. Этот пример можно читать без JavaScript; приложению JavaScript необходим.",
+      "boundary": "Браузерный путь и скачанный файл проверены 11 ноября 2026 года. Этот пример и версия кода отделены от прежних материалов каталога. Исследование с независимыми пользователями не проводилось.",
+      "source": "Код проверенной версии",
+      "tests": "Тесты основных функций",
+      "feedback": "Сообщить об ошибке с примером",
+      "contribute": "Укажите URL, язык, ввод, ожидаемый и наблюдаемый результат. Удалите личные тексты перед приложением экспорта.",
+      "return": "К списку проектов"
+    }
+  }
+}

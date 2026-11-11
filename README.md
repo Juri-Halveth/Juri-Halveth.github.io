@@ -10,6 +10,13 @@ führt zu Anwendung oder Anleitung und daneben zum Quellcode. Zwei
 und Gegenprobe. **Person: Juri. Projekt: HALVETH.**
 [Namenszuordnung](IDENTITY.md).
 
+**Mit einem Beispiel starten:** Der [geführte Variantenlauf](https://juri-halveth.github.io/arbeiten/#beispiel-scarlet)
+führt vom eigenen Text über eine neue Variante zu einer heruntergeladenen JSON-Datei.
+Er enthält erwartete Werte, Gegenprobe und Reset; Deutsch, Englisch und Russisch
+führen zur jeweiligen Sprache der bestehenden Anwendung. Der native aufklappbare
+Leitfaden funktioniert ohne JavaScript; der Modellraum benötigt JavaScript.
+[Prüfumfang und Herkunft](docs/review/2026-11-11/VISITOR-CORRIDOR.md).
+
 Der öffentliche Quellenkatalog bindet **18 Repository-Einträge**: **16
 Projektrepositories**, die Website und das GitHub-Profil. Auf der
 Projektübersicht stehen **13 aktuelle Projektkarten**. Drei früher

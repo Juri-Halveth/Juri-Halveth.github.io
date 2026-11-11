@@ -1,0 +1,12 @@
+/* Native disclosure keeps the project list short and works without scripts. */
+.visitor-corridor{margin:1.2rem 0;padding:1rem;border:1px solid #657561;border-left:4px solid #324e30;border-radius:.5rem;background:#f7f8ef;color:#202c20;scroll-margin-top:1rem}
+.visitor-corridor summary{font-weight:700;cursor:pointer;line-height:1.5}
+.visitor-corridor h4{font-size:1.3rem;margin:1.2rem 0 .6rem}
+.visitor-corridor h5{font-size:1.05rem;margin:1.3rem 0 .7rem}
+.visitor-corridor p,.visitor-corridor li{font-size:1rem;line-height:1.65;overflow-wrap:anywhere}
+.visitor-corridor ol{padding-left:1.4rem}
+.visitor-corridor li+li{margin-top:.7rem}
+.visitor-corridor a{color:#274e2a;text-decoration:underline;text-underline-offset:.2em}
+.visitor-corridor a.button{color:#fff;background:#274e2a;border-color:#274e2a}
+.visitor-corridor :focus-visible{outline:3px solid #224d2e;outline-offset:4px}
+.visitor-corridor .service-card-actions{display:flex;flex-wrap:wrap;gap:1rem}
