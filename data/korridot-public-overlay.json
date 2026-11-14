@@ -1,0 +1,18 @@
+{
+  "index.html": {
+    "anchor": "<section class=\"scene-offer\" id=\"contact\"",
+    "fragment": "<section class=\"shell section\" id=\"korridot-neu\"><p class=\"eyebrow\">AKTUELLE DEMO · KORRIDOT</p><h2>Software-Versuche als 3D-Zeitkorridor erkunden</h2><p>Eine interaktive, offline arbeitende Beispielansicht mit echten Bedienfunktionen und ausdrücklich als Demo gekennzeichneten Beispieldaten.</p><a class=\"button\" href=\"https://juri-halveth.github.io/console-only/\">KORRIDOT-Demo öffnen ↗</a> <a class=\"text-link\" href=\"./arbeiten/#korridot-projekt\">Quellstand und Einordnung ↗</a></section>"
+  },
+  "arbeiten/index.html": {
+    "anchor": "<section class=\"shell directory-meta\"",
+    "fragment": "<section class=\"shell section\" id=\"korridot-projekt\" aria-labelledby=\"korridot-projekt-title\"><p class=\"eyebrow\">NEU · 3D-FORSCHUNGSPROTOTYP</p><h2 id=\"korridot-projekt-title\">KORRIDOT: Software-Versuche begehbar machen</h2><p>Steuere durch einen räumlichen Zeitkorridor und öffne Ereignisse mit Herkunft, Zeit und Ergebnis. Die öffentliche Demo nutzt erfundene Beispieldaten; echte lokale Belege bleiben auf dem eigenen Rechner.</p><div class=\"directory-actions\"><a class=\"button\" href=\"https://juri-halveth.github.io/console-only/\">Interaktive Demo öffnen ↗</a><a class=\"text-link\" href=\"https://github.com/Juri-Halveth/console-only\">Quellcode und Tests ↗</a><a class=\"text-link\" href=\"../belege/\">Belege und Vorgehen ↗</a></div><p class=\"source-caption\">HALVETH / KORRIDOT 0.8 · Console Only · eigenständiger Prototyp, außerhalb der 13 katalogisierten Projekte</p></section>"
+  },
+  "belege/index.html": {
+    "anchor": "<section class=\"scene-offer\" id=\"contact\"",
+    "fragment": "<section class=\"shell section\" id=\"korridot-technik\"><p class=\"eyebrow\">WEITERER PROTOTYP · OFFLINE-DEMO</p><h2>KORRIDOT: Quellcode und sichtbare Ereigniszeit</h2><p>Die öffentliche 3D-Demo zeigt synthetische Daten. Für echte Ausführungsbelege startet das lokale Console-Only-System einen lesenden Browserdienst.</p><a class=\"button\" href=\"https://juri-halveth.github.io/console-only/\">Demo ansehen ↗</a> <a class=\"text-link\" href=\"https://github.com/Juri-Halveth/console-only\">Reproduzierbaren Quellcode prüfen ↗</a></section>"
+  },
+  "sitemap.xml": {
+    "anchor": "</urlset>",
+    "fragment": "<url><loc>https://juri-halveth.github.io/console-only/</loc></url>"
+  }
+}
