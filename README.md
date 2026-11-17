@@ -240,7 +240,7 @@ npm test
 ```
 
 Der Pages-Workflow prüft zuerst den committeten Stand auf reproduzierbare
-Generierung. Bei manuellem Start und alle sechs Stunden erneuert er danach
+Generierung. Bei jeder Veröffentlichung, bei manuellem Start und alle sechs Stunden erneuert er danach
 die anonyme öffentliche Inventur, baut die Ansichten und prüft den
 resultierenden Stand vor Veröffentlichung. Er erzeugt keine automatischen
 Git-Commits und übernimmt keine alten Testergebnisse auf neue HEADs. Bei

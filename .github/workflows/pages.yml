@@ -30,7 +30,7 @@ jobs:
       - run: npm run build
       - run: git diff --exit-code
       - name: Refresh anonymous public inventory
-        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        if: github.event_name != 'pull_request'
         run: |
           node tools/refresh-network-inventory.cjs
           npm run build
