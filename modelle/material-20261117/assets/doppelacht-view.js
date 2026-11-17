@@ -194,8 +194,10 @@
     }
     function meter(d){
       if(!handlers.distance)return;
-      range.parentElement.hidden=!validDistance(d);
-      if(!validDistance(d))return;
+      const available=validDistance(d);
+      range.parentElement.hidden=!available;
+      range.disabled=host.hidden||!available;
+      if(!available)return;
       range.value=String(Math.round(1000*Math.log((1+farDistance)/(1+d))/span));
       number.value=d>=100?d.toFixed(0):d.toFixed(2);range.setAttribute('aria-valuetext',number.value);
     }
@@ -205,7 +207,7 @@
     camera.onchange=()=>handlers.camera(camera.value);
     function focus(){if(index.value!==''&&index.validity.valid)handlers.follow(follow.checked?'M'+index.valueAsNumber.toString().padStart(5,'0'):null);}
     index.onchange=focus;follow.onchange=focus;
-    return {sync(active,c=1,id=null,count=960,view=null){index.max=String(count-1);if(view)camera.value=Object.keys(presets).find(k=>Math.abs(presets[k].yaw-view.yaw)<1e-10&&Math.abs(presets[k].pitch-view.pitch)<1e-10)??'';layout.value=view?.layout??(validDistance(view?.distance)?'shell':'classic');meter(view?.distance);host.hidden=!active;for(const element of [coupling,camera,index,follow])element.disabled=!active;coupling.value=String(c);
+    return {sync(active,c=1,id=null,count=960,view=null){index.max=String(count-1);if(view)camera.value=Object.keys(presets).find(k=>Math.abs(presets[k].yaw-view.yaw)<1e-10&&Math.abs(presets[k].pitch-view.pitch)<1e-10)??'';layout.value=view?.layout??(validDistance(view?.distance)?'shell':'classic');host.hidden=!active;meter(view?.distance);for(const element of [coupling,camera,index,follow,layout])element.disabled=!active;coupling.value=String(c);
       follow.checked=!!id;if(id)index.value=String(Number(id.slice(1)));},translate,meter,
       pick(id){index.value=String(Number(id.slice(1)));follow.checked=true;focus();},manual(){camera.value='';}};
   }
