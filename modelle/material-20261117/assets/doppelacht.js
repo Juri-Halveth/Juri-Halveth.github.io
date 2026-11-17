@@ -13,9 +13,9 @@
 
   function configuration(raw) {
     if (!raw || typeof raw !== 'object' || Array.isArray(raw) ||
-        Object.keys(raw).some(k => !Object.hasOwn(defaults, k))) throw Error('Invalid 3D configuration');
+        Object.keys(raw).some(k => k !== 'layout' && !Object.hasOwn(defaults, k))) throw Error('Invalid 3D configuration');
     const c = {...defaults, ...raw};
-    if (!Number.isInteger(c.seed) || c.seed < 0 || c.seed > 0xffffffff ||
+    if ((Object.hasOwn(c,'layout') && c.layout !== 'shell') || !Number.isInteger(c.seed) || c.seed < 0 || c.seed > 0xffffffff ||
         !Number.isInteger(c.count) || c.count < 16 || c.count > 960 || c.count % 8 ||
         !finite(c.coupling) || c.coupling < 0 || c.coupling > 1 ||
         !finite(c.damping) || c.damping < 0 || c.damping > 1 ||
@@ -27,6 +27,7 @@
 
   // The only curve evaluation in the solver occurs during initialization.
   function seedMaterial(c) {
+    if (c.layout === 'shell') return seedShell(c);
     const a = 4.2, b = 1.8, perLane = c.count/8;
     let seed = c.seed >>> 0;
     const random = () => { seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0; return seed/4294967296; };
@@ -49,6 +50,44 @@
       }
       assign(r,u,t,zeta); assign(v,speed*du,speed*dv,0.03*Math.sin(phi));
       assign(n,...axis); assign(w,0.12*Math.cos(phi),0.12*Math.sin(phi),0.24*(random()-0.5));
+    }
+    return {r,v,n,w};
+  }
+
+  // Twelve equally distant neighbourhoods. These frames are consulted only when seeding.
+  const shellRadius = 3.8;
+  const shellDirections = [];
+  const phi = (1 + Math.sqrt(5))/2, inv = 1/Math.hypot(1,phi);
+  for (const a of [-1,1]) for (const b of [-phi,phi]) {
+    for (const xyz of [[0,a,b],[b,0,a],[a,b,0]])
+      shellDirections.push(Object.freeze(xyz.map(x=>x*inv)));
+  }
+  Object.freeze(shellDirections);
+  function seedShell(c) {
+    const r=new Float64Array(3*c.count), v=r.slice(), n=r.slice(), w=r.slice();
+    const half=c.count/2, sites=Math.min(shellDirections.length,Math.floor(half/4));
+    const phase=(c.seed/4294967296)*2*Math.PI;
+    for(let i=0;i<c.count;i++){
+      const family=i>=half, within=i%half, site=within%sites;
+      const member=Math.floor(within/sites), members=Math.ceil((half-site)/sites);
+      const radial=shellDirections[site], [x,y,z]=radial, d=Math.hypot(x,z);
+      const tangent=[z/d,0,-x/d], up=[-x*y/d,d,-z*y/d];
+      // The two crossing local planes share the up axis. Twist the local basis
+      // about the radial direction so that the world has no privileged "up".
+      const twist=site*2.399963229728653+phase, ct=Math.cos(twist),st=Math.sin(twist);
+      const a=tangent.map((value,k)=>value*ct+up[k]*st);
+      const axis=family?radial:tangent.map((value,k)=>up[k]*ct-value*st);
+      const s=2*Math.PI*(member+(family?.67:.17))/members+phase;
+      const u=1.27*Math.sin(s), t=.57*Math.sin(2*s);
+      const du=1.27*Math.cos(s), dt=1.14*Math.cos(2*s), norm=Math.hypot(du,dt);
+      const sign=family?-1:1;
+      for(let k=0;k<3;k++){
+        const j=3*i+k;
+        r[j]=shellRadius*radial[k]+u*a[k]+t*axis[k];
+        n[j]=(du*a[k]+dt*axis[k])/norm;
+        v[j]=sign*.083*(du*a[k]+dt*axis[k]);
+        w[j]=.024*Math.cos(s)*a[k]+sign*.052*axis[k];
+      }
     }
     return {r,v,n,w};
   }
@@ -176,7 +215,7 @@
       });
     }
     function frame(){
-      return {model,time:tick*c.h,tick,status:'RUNNING',materialCells:cells()};
+      return {model,time:tick*c.h,tick,status:'RUNNING',...(c.layout?{layout:c.layout}:{}),materialCells:cells()};
     }
     function snapshot(options={}) {
       if (options.exact===false || options.field===false) return frame();
@@ -225,7 +264,13 @@
       if(!equal(candidate.snapshot(),packet))throw Error('3D replay differs from recorded material state');
       return loadCheckpoint(packet);
     }
-    function restore(packet){return packet?.tick>120000?loadCheckpoint(packet):replay(packet);}
+    function restore(packet){
+      // The original two-plane equations and seed are byte-for-byte the same.
+      // Accept that one historical source only for its original configuration.
+      if(packet?.source==='f11a52b996a7fc9e9c84890c63fd09c4bd47406550477d1e45aad257b21b6b9d' && packet.configuration && !Object.hasOwn(packet.configuration,'layout'))
+        packet={...packet,source:root.HALVETH_D8_SOURCE};
+      return packet?.tick>120000?loadCheckpoint(packet):replay(packet);
+    }
     reset();
     function point(i){
       if(!Number.isInteger(i)||i<0||i>=c.count)return null;
@@ -240,7 +285,8 @@
     }
     return null;
   }
-  const api=Object.freeze({schema,model,defaults,create,packetFrom,
+  const api=Object.freeze({schema,model,defaults,create,packetFrom,shellRadius,shellDirections,
+    entryConfiguration:()=>new URLSearchParams(root.location?.search||'').get('start')==='klassisch'?{coupling:1}:{coupling:1,layout:'shell'},
     requested:()=>new URLSearchParams(root.location?.search||'').get('modell')==='doppelacht',
     dynamics,seedMaterial,configuration});
   root.HALVETHDoubleEight=api;

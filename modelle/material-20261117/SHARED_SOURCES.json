@@ -35,18 +35,18 @@
     },
     {
       "path": "assets/doppelacht.js",
-      "bytes": 12729,
-      "sha256": "f11a52b996a7fc9e9c84890c63fd09c4bd47406550477d1e45aad257b21b6b9d"
+      "bytes": 15306,
+      "sha256": "b67b0a71998812de55bdb2b068275b5835959f9fff4f597ca601471a1ff44e85"
     },
     {
       "path": "assets/doppelacht-view.js",
-      "bytes": 6913,
-      "sha256": "61f84135a3ac7c4a72ee7d785e596afac36223238e442eeda52efe4b94d1586e"
+      "bytes": 13063,
+      "sha256": "dc1b56a6c6e3c87ef194b470fe58fad4bb792b81abb60006ea337e4c84729e27"
     },
     {
       "path": "assets/doppelacht-source.js",
       "bytes": 99,
-      "sha256": "c43fefcede392039dad4fb3444cadbe8504e45df4c68eb22a5186c57c7d06734"
+      "sha256": "c09521869914d1707c54787075a5bad9a104b8e276a8290ace02b2f7f9295b41"
     }
   ]
 }

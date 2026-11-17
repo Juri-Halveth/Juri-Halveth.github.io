@@ -83,3 +83,5 @@ PIRL 2.0 ist source-available und keine OSI-anerkannte Open-Source-Lizenz.
 ## Doppelacht in drei Dimensionen
 
 [Versuch öffnen](forschung.html?modell=doppelacht). Blau und Gold kennzeichnen je 480 frei bewegliche Materialzellen. Ziehen dreht die Kamera. Unter **Mehr** lassen sich Front-, Seiten- und Draufsicht, Familienkopplung und Zellverfolgung wählen. JSON speichert Ort, Geschwindigkeit, Orientierung, Drehung, Dichte und Modellzeit. Der Flugraum kann denselben Materialzustand laden. [Modell und vorab festgelegte Toleranzen](DOPPELACHT.md).
+
+[Aus dem Lichtpunkt in den Rundumblick](forschung.html?modell=doppelacht) · [Ursprüngliche Doppelacht in zwei Ebenen](forschung.html?modell=doppelacht&start=klassisch). Mausrad oder zwei Finger regeln den Abstand. Die Einzelzellen bleiben beim Wechsel der Perspektive identifizierbar.

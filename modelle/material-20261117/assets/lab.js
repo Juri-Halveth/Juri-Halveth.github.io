@@ -13,18 +13,21 @@ for(const canvas of canvases){
  function syncMotion(){const b=button('pause');if(!b)return;const limit=particleModel?.diagnostics().status==='MODEL_LIMIT';b.disabled=!!limit;const label=motionLabel(running?'pause':hasStarted?'continue':'start');if(b.textContent!==label)b.textContent=label;}
  let params={},pendingInputs=[],inputHistory=[];
  const spatial=globalThis.HALVETHDoubleEight, spatialView=globalThis.HALVETHDoubleEightView;
- let spatialConfig={coupling:1}, spatialTimeOffset=0, lastPositions=[];
+ const approach=spatialView?.approach();
+ let spatialConfig=spatial?.entryConfiguration()??{coupling:1}, spatialTimeOffset=0, lastPositions=[];
  let selectedModel=mode==='pair'&&spatial?.requested()?'doppelacht':'material',view={style:'rods',palette:'rgb',annotations:false,symbolScale:1,yaw:.35,pitch:.55,zoom:1},seekTarget=0,initialParameters=null,activeModelConfig={};
  function createModel(name,config){return name==='doppelacht'?spatial.create(config):HALVETHModels.create(name,config);}
  function isMaterial(name){return name==='material'||name==='doppelacht';}
  function known(name){return name==='doppelacht'&&!!spatial||HALVETHModels.modes.includes(name);}
- function setupSpatialView(){Object.assign(view,spatialView.presets.oblique,{palette:'bluegold',style:'rods',followId:null});}
+ function setupSpatialView(){approach.begin(view,spatialConfig);Object.assign(view,spatialView.presets.oblique,{palette:'bluegold',style:'rods',followId:null});}
  if(selectedModel==='doppelacht'){setupSpatialView();activeModelConfig={...spatialConfig};}
  let particleModel=mode==='pair'?createModel(selectedModel,selectedModel==='doppelacht'?spatialConfig:{seed:20261117}):null;
  const spatialTools=spatialView?.controls(panel?.querySelector('[data-d8-controls]'),{
+   layout:name=>{const {layout,...rest}=spatialConfig;spatialConfig=name==='shell'?{...rest,layout:'shell'}:rest;useModel('doppelacht');},
+   distance:setDistance,
    coupling:value=>{spatialConfig={...spatialConfig,coupling:value};useModel('doppelacht');},
-   camera:name=>{Object.assign(view,spatialView.presets[name]);draw();},
-   follow:id=>{view.followId=id;draw();}
+   camera:name=>{approach.stop();Object.assign(view,spatialView.presets[name]);draw();},
+   follow:id=>{approach.stop();view.followId=id;if(id&&view.distance>spatialView.overviewDistance)setDistance(spatialView.overviewDistance);else draw();}
  });
  function syncSpatial(){
    spatialTools?.sync(selectedModel==='doppelacht',spatialConfig.coupling,view.followId,spatialConfig.count??960,view);
@@ -45,7 +48,8 @@ for(const canvas of canvases){
  readParameters();
  const r=seedrand(20261117);
  stars=Array.from({length:380},()=>({x:r(),y:r(),b:.2+r()*.8,size:.7+r()*1.7}));
- function reset(){spatialTimeOffset=0;if(particleModel)particleModel.reset();clock.reset();last=null;pendingInputs=[];inputHistory=[];readParameters();initialParameters={...params};seekTarget=0;modelTime=0;phase=0;theta=0;wave=Array.from({length:88},(_,i)=>Math.exp(-Math.pow((i-21)/4,2))*.65);wvel=Array.from({length:88},()=>0);draw();}
+ function reset(){if(selectedModel==='doppelacht'){setupSpatialView();syncSpatial();}else delete view.distance;
+   spatialTimeOffset=0;if(particleModel)particleModel.reset();clock.reset();last=null;pendingInputs=[];inputHistory=[];readParameters();initialParameters={...params};seekTarget=0;modelTime=0;phase=0;theta=0;wave=Array.from({length:88},(_,i)=>Math.exp(-Math.pow((i-21)/4,2))*.65);wvel=Array.from({length:88},()=>0);draw();}
  function resize(){const z=canvas.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2.25,Math.sqrt(5500000/(z.width*z.height||1)));canvas.width=Math.max(1,Math.floor(z.width*d));canvas.height=Math.max(1,Math.floor(z.height*d));draw();}
  function bg(w,h){let grad=c.createLinearGradient(0,0,w,h);grad.addColorStop(0,'#07182b');grad.addColorStop(.6,'#050d19');grad.addColorStop(1,'#0c1424');c.fillStyle=grad;c.fillRect(0,0,w,h);for(const s of stars){c.fillStyle=`rgba(210,226,243,${s.b*.30})`;c.fillRect(s.x*w,s.y*h,Math.max(.5,s.size*w/1500),Math.max(.5,s.size*w/1500));}}
  function text(s,x,y,size,color='#d7e0ea',align='left'){c.fillStyle=color;c.font=`${Math.round(size)}px ui-monospace, monospace`;c.textAlign=align;c.fillText(s,x,y);}
@@ -83,7 +87,10 @@ for(const canvas of canvases){
  }
  function showStatus(){syncMotion();if(status){const state=clock.snapshot();status.textContent=`${mode} · t=${modelTime.toFixed(3)} · ${state.steps} Schritte · ${document.hidden?'Hintergrundpause':running?'läuft':'pausiert'}${particleModel?' · '+selectedModel+' · '+(particleModel.diagnostics().status==='MODEL_LIMIT'?motionLabel('limit'):particleModel.diagnostics().status)+(selectedModel==='doppelacht'?' · 3D · '+(spatialConfig.count??spatial.defaults.count):(' · '+particleModel.diagnostics().orbitalTurns.toFixed(3)+' Umläufe')):''}${state.overloaded?' · Rechenrückstand '+state.backlogSeconds.toFixed(3)+' Modellsekunden':''} · Simulation · Modell, keine Naturmessung`;}}
  function frame(time){const dt=last===null?0:Math.max(0,(time-last)/1000);last=time;
-  if(running&&!document.hidden&&params.speed>0)clock.advance(dt*(params.speed/75));
+  if(running&&!document.hidden&&params.speed>0){
+    if(selectedModel==='doppelacht'&&approach.update(view,dt))spatialTools?.meter(view.distance);
+    clock.advance(dt*(params.speed/75));
+  }
   if(!document.hidden)draw();showStatus();requestAnimationFrame(frame);
  }
  Object.keys(schema).forEach(name=>ctrl(name)?.addEventListener('input',e=>{setParameter(name,Number(e.target.value),clock.snapshot().steps);draw();showStatus();}));
@@ -91,11 +98,20 @@ for(const canvas of canvases){
  document.addEventListener('visibilitychange',()=>{last=null;showStatus();});
  button('json')?.addEventListener('click',()=>{const state=sceneSnapshot(),blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='HALVETH_'+mode+'_state.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),5000);});
  button('png')?.addEventListener('click',()=>{const w=canvas.width,h=canvas.height;canvas.width=3840;canvas.height=2160;draw();canvas.toBlob(blob=>{if(blob){const u=URL.createObjectURL(blob),a=document.createElement('a');a.download='HALVETH_'+mode+'_4K.png';a.href=u;a.click();setTimeout(()=>URL.revokeObjectURL(u),5000);}canvas.width=w;canvas.height=h;draw();},'image/png');});
- canvas.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY,startX:e.clientX,startY:e.clientY,id:e.pointerId};canvas.setPointerCapture(e.pointerId);});canvas.addEventListener('pointermove',e=>{if(!drag)return;if(particleModel&&(view.style==='space'||selectedModel==='doppelacht')){if(selectedModel==='doppelacht')spatialTools?.manual();view.yaw+=(e.clientX-drag.x)*.008;view.pitch=Math.max(-1.5,Math.min(1.5,view.pitch+(e.clientY-drag.y)*.008));draw();}else theta+=(e.clientX-drag.x)*.008;drag.x=e.clientX;drag.y=e.clientY;});canvas.addEventListener('wheel',e=>{if(particleModel&&(isMaterial(selectedModel)||view.style==='space')){e.preventDefault();view.zoom=Math.max(.25,Math.min(8,(view.zoom||1)*Math.exp(-e.deltaY*.001)));const z=panel.querySelector('[data-display-zoom]');if(z)z.value=String(view.zoom);draw();}},{passive:false});canvas.addEventListener('pointerup',e=>{
-   if(selectedModel!=='doppelacht'||!drag||Math.hypot(e.clientX-drag.startX,e.clientY-drag.startY)>4)return;
+ function setDistance(d){approach.stop();view.distance=d;spatialTools?.meter(d);draw();}
+ function pickCell(e){
    const rect=canvas.getBoundingClientRect(),x=(e.clientX-rect.left)*canvas.width/rect.width,y=(e.clientY-rect.top)*canvas.height/rect.height;
    const nearest=lastPositions.reduce((best,p)=>Math.hypot(p.x-x,p.y-y)<best.distance?{id:p.id,distance:Math.hypot(p.x-x,p.y-y)}:best,{distance:12});
    if(nearest.id)spatialTools?.pick(nearest.id);
+ }
+ spatialView?.distanceControls(canvas,{active:()=>selectedModel==='doppelacht'&&spatialConfig.layout==='shell',
+   read:()=>view.distance,set:setDistance,
+   rotate:(dx,dy)=>{approach.stop();view.yaw+=dx*.008;view.pitch=clamp(view.pitch+dy*.008,-Math.PI/2,Math.PI/2);spatialTools?.manual();draw();},
+   tap:e=>{if(view.distance>4*spatialView.overviewDistance)setDistance(spatialView.overviewDistance);else pickCell(e);}
+ });
+ canvas.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY,startX:e.clientX,startY:e.clientY,id:e.pointerId};canvas.setPointerCapture(e.pointerId);});canvas.addEventListener('pointermove',e=>{if(!drag)return;if(particleModel&&(view.style==='space'||selectedModel==='doppelacht')){if(selectedModel==='doppelacht')spatialTools?.manual();view.yaw+=(e.clientX-drag.x)*.008;view.pitch=Math.max(-1.5,Math.min(1.5,view.pitch+(e.clientY-drag.y)*.008));draw();}else theta+=(e.clientX-drag.x)*.008;drag.x=e.clientX;drag.y=e.clientY;});canvas.addEventListener('wheel',e=>{if(particleModel&&(isMaterial(selectedModel)||view.style==='space')){e.preventDefault();view.zoom=Math.max(.25,Math.min(8,(view.zoom||1)*Math.exp(-e.deltaY*.001)));const z=panel.querySelector('[data-display-zoom]');if(z)z.value=String(view.zoom);draw();}},{passive:false});canvas.addEventListener('pointerup',e=>{
+   if(selectedModel!=='doppelacht'||!drag||Math.hypot(e.clientX-drag.startX,e.clientY-drag.startY)>4)return;
+   pickCell(e);
  });
  for(const ev of ['pointerup','pointercancel','lostpointercapture'])canvas.addEventListener(ev,()=>drag=null);
 
@@ -103,17 +119,21 @@ for(const canvas of canvases){
  function useModel(name){if(!known(name))throw new RangeError('Unknown model');selectedModel=name;const selector=panel.querySelector('[data-model-select]');if(selector)selector.value=name;const config={seed:20261117,r0:Number(panel.querySelector('[data-initial-separation]')?.value||2.4),eccentricity:Number(panel.querySelector('[data-eccentricity]')?.value||0)};particleModel=createModel(name,name==='doppelacht'?spatialConfig:name==='material'?{seed:20261117}:config);activeModelConfig=name==='doppelacht'?{...spatialConfig}:name==='material'?{}:{r0:config.r0,eccentricity:config.eccentricity};if(name==='doppelacht')setupSpatialView();if(isMaterial(name))view.style='rods';else if(['rods','orientation','field'].includes(view.style))view.style='sharp';const style=panel.querySelector('[data-style-select]');if(style)style.value=view.style;syncSpatial();reset();for(const key of ['merge','damping','frequency','sourceMinus','sourcePlus'])if(ctrl(key))ctrl(key).disabled=name!=='experimental';if(ctrl('referenceRate'))ctrl('referenceRate').disabled=['experimental','material','doppelacht'].includes(name);if(panel.querySelector('[data-reference-seek]'))panel.querySelector('[data-reference-seek]').disabled=['experimental','material','doppelacht'].includes(name);if(panel.querySelector('[data-initial-separation]'))panel.querySelector('[data-initial-separation]').disabled=['experimental','material','doppelacht'].includes(name);if(panel.querySelector('[data-eccentricity]'))panel.querySelector('[data-eccentricity]').disabled=name!=='newton';showStatus();}
  function seek(percent){if(!particleModel||['experimental','material','doppelacht'].includes(selectedModel))throw new RangeError('Seek is reference-only');if(!Number.isFinite(percent)||percent<0||percent>100)throw new RangeError('Invalid seek');reset();seekTarget=percent;const end=selectedModel==='inspiral'?HalvethInspiral.inspiralDuration(particleModel.snapshot({field:false}).parameters):100;particleModel.step(Math.max(Number.EPSILON,end*percent/100),{});modelTime=particleModel.snapshot({field:false}).time;running=false;last=null;draw();showStatus();}
  const previousSources={"lab.js":"0edfe6c0d2d00ef6dda6abb0016ac3eb8dd9d67d17cf0f497328e27ab112cf9c","studio.js":"2106283cb5353f0b541b89233cc957309aa490c8927514e6ed6992bfc9288734","fixed-clock.js":"f4c1d2cfef9b2dbe2c4b78a8f4c832304174543f3a743cbfd0adb22b2ab30e92","particle-view.js":"73de5fe492822bd6ea841c0364cc3d318994620a7a5bc355426b17076f4b25bf","particle-dynamics.js":"cbf8d00c18ffcb8fc4d2d0416562b9bbedc7fdba07a998b14bf93bd9e76ab701","reference-physics.js":"ae587d572d23818fb3974f7644abe150ca246e492a71f4e46d19352d935e06c9","models.js":"8f4c0d9174a53681bab50bb74549fd28c4cd44c7c9569d4c3f4086c5fdb61383","movement-ui.js":"fc6a01927cb10a2f545bb5ba04ebd369cdce2e54e379259a00a562b37e4275bd","material-engine.js":"7f6225646e7296259e4a4ffb66497d23f061801b349db05d8d7fc7f42575e19f","material-model.js":"4f8669e83a0ab22c038f2f05f38e347c488c4ae7d949a051df8e81197ede3bf2","material-view.js":"940304fef5da33b7a90f39c7215d09c60ae10a4fa19b96d90b1be56823446203"};
+ const previousD8Sources={"lab.js":"86d78c6702f73a02ca48d4bd6655b57c004238c1f6a1d4c8271415131e688df7","studio.js":"ce7af8ca82ef65f7149cb1d1a347173b02e4a7412374ee2bccc2a06a1de6e029","fixed-clock.js":"f4c1d2cfef9b2dbe2c4b78a8f4c832304174543f3a743cbfd0adb22b2ab30e92","particle-view.js":"73de5fe492822bd6ea841c0364cc3d318994620a7a5bc355426b17076f4b25bf","particle-dynamics.js":"cbf8d00c18ffcb8fc4d2d0416562b9bbedc7fdba07a998b14bf93bd9e76ab701","reference-physics.js":"ae587d572d23818fb3974f7644abe150ca246e492a71f4e46d19352d935e06c9","models.js":"8f4c0d9174a53681bab50bb74549fd28c4cd44c7c9569d4c3f4086c5fdb61383","movement-ui.js":"fc6a01927cb10a2f545bb5ba04ebd369cdce2e54e379259a00a562b37e4275bd","material-engine.js":"7f6225646e7296259e4a4ffb66497d23f061801b349db05d8d7fc7f42575e19f","material-model.js":"072d81f3ff8020647fa84695912e7cac9cb952846a99f18c57021b8f157a3870","material-view.js":"940304fef5da33b7a90f39c7215d09c60ae10a4fa19b96d90b1be56823446203","doppelacht.js":"f11a52b996a7fc9e9c84890c63fd09c4bd47406550477d1e45aad257b21b6b9d","doppelacht-view.js":"61f84135a3ac7c4a72ee7d785e596afac36223238e442eeda52efe4b94d1586e","doppelacht-source.js":"c43fefcede392039dad4fb3444cadbe8504e45df4c68eb22a5186c57c7d06734"};
  function matchesSources(actual,expected){return !!actual&&Object.keys(actual).length===Object.keys(expected).length&&Object.entries(expected).every(([key,value])=>actual[key]===value);}
  async function replaySpatial(data,packet){
    const native=data.schema==='halveth.integrated-scene/1.0';
    if(native&&(data.modelType!=='doppelacht'||data.build?.releaseId!==globalThis.HALVETH_BUILD.releaseId||
-     !matchesSources(data.build?.sources,globalThis.HALVETH_BUILD.sources)))throw Error('Unpassende Quellen der 3D-Szene');
+     !(matchesSources(data.build?.sources,globalThis.HALVETH_BUILD.sources)||
+       (packet.source===previousD8Sources['doppelacht.js']&&!Object.hasOwn(packet.configuration,'layout')&&matchesSources(data.build?.sources,previousD8Sources)))))throw Error('Unpassende Quellen der 3D-Szene');
    const next=spatial.create(packet.configuration);
    next.restore(packet);
    const importedView=native?data.view:null;
    if(importedView&&(!Number.isFinite(importedView.yaw)||!Number.isFinite(importedView.pitch)||
        !Number.isFinite(importedView.zoom)||importedView.zoom<.25||importedView.zoom>8||
        !Number.isFinite(importedView.symbolScale)||importedView.symbolScale<.3||importedView.symbolScale>3||
+       (Object.hasOwn(importedView,'distance')&&(!spatialView.validDistance(importedView.distance)||packet.configuration.layout!=='shell'))||
+       (packet.configuration.layout==='shell'&&!Object.hasOwn(importedView,'distance'))||
        (importedView.followId!=null&&!packet.materialCells.some(c=>c.id===importedView.followId))))throw Error('Ungültige Beobachtungskamera');
    if(native){
      if(!Number.isFinite(data.modelTime)||Math.abs(data.modelTime-next.time)>1e-9||!Number.isInteger(data.clock?.steps)||
@@ -144,7 +164,8 @@ for(const canvas of canvases){
    selectedModel='doppelacht';particleModel=next;spatialConfig={...packet.configuration};activeModelConfig=native?{...data.modelConfig}:{...spatialConfig};
    clock.reset();spatialTimeOffset=offset;if(importedClock)clock.restore(importedClock);
    modelTime=next.time;running=false;hasStarted=true;last=null;seekTarget=0;inputHistory=[];pendingInputs=[];
-   setupSpatialView();if(importedView)Object.assign(view,importedView);
+   setupSpatialView();approach.stop();if(importedView)Object.assign(view,importedView);
+   else if(spatialConfig.layout==='shell')view.distance=spatialView.overviewDistance;
    if(!native)initialParameters={...params};
    if(native){params={...data.parameters};initialParameters={...data.initialParameters};inputHistory=structuredClone(data.inputHistory);pendingInputs=structuredClone(data.pendingInputs);}
    for(const key of Object.keys(schema))if(ctrl(key))ctrl(key).value=String(params[key]);
@@ -156,7 +177,7 @@ for(const canvas of canvases){
  async function replay(data){
   const packet=spatial?.packetFrom(data);if(packet)return replaySpatial(data,packet);
   if(!data||data.schema!=='halveth.integrated-scene/1.0'||!HALVETHModels.modes.includes(data.modelType)||!Number.isInteger(data.clock?.steps)||data.clock.steps<0||data.clock.steps>50000)throw new RangeError('Ungültiger oder zu großer Wiedergabeauftrag');
-  const build=globalThis.HALVETH_BUILD;if(!build||data.build?.releaseId!==build.releaseId||(!matchesSources(data.build.sources,build.sources)&&!matchesSources(data.build.sources,previousSources)))throw new RangeError('Wiedergabe gehört zu einem anderen Quellstand');
+  const build=globalThis.HALVETH_BUILD;if(!build||data.build?.releaseId!==build.releaseId||(!matchesSources(data.build.sources,build.sources)&&!matchesSources(data.build.sources,previousSources)&&!matchesSources(data.build.sources,previousD8Sources)))throw new RangeError('Wiedergabe gehört zu einem anderen Quellstand');
   if(data.modelConfig&&(typeof data.modelConfig!=='object'||Array.isArray(data.modelConfig)||Object.keys(data.modelConfig).some(name=>!['r0','eccentricity'].includes(name))))throw new RangeError('Ungültige Modellkonfiguration');
   const initial={...data.initialParameters},history=data.inputHistory,pending=data.pendingInputs||[];
   for(const [name,spec]of Object.entries(schema))if(!Object.hasOwn(initial,name)||!Number.isFinite(initial[name])||initial[name]<spec.min||initial[name]>spec.max)throw new RangeError('Ungültige Anfangsparameter');
@@ -196,7 +217,7 @@ for(const canvas of canvases){
   button('movie')?.addEventListener('click',()=>{const event=new CustomEvent('halveth-record-scene',{detail:{canvas,scene:sceneSnapshot,draw}});window.dispatchEvent(event);});
  }
  const scenes=globalThis.HALVETHScenes||(globalThis.HALVETHScenes=[]);
- scenes.push({canvas,mode,snapshot:sceneSnapshot,draw,reset,useModel,seek,replay,setView:next=>{Object.assign(view,next);draw();},setParameter:(name,value)=>{setParameter(name,value,clock.snapshot().steps);if(ctrl(name))ctrl(name).value=String(value);},advance:seconds=>{if(!Number.isFinite(seconds)||seconds<0)throw new RangeError('Invalid elapsed');clock.advance(seconds);showStatus();},pause:()=>{running=false;last=null;showStatus();},resume:()=>{if(particleModel?.diagnostics().status==='MODEL_LIMIT')return;hasStarted=true;running=true;last=null;showStatus();}});
+ scenes.push({canvas,mode,snapshot:sceneSnapshot,draw,reset,useModel,seek,replay,setView:next=>{if(Object.hasOwn(next,'distance')){if(selectedModel!=='doppelacht'||spatialConfig.layout!=='shell'||!spatialView.validDistance(next.distance))throw RangeError('Invalid viewing distance');approach.stop();}Object.assign(view,next);syncSpatial();draw();},setParameter:(name,value)=>{setParameter(name,value,clock.snapshot().steps);if(ctrl(name))ctrl(name).value=String(value);},advance:seconds=>{if(!Number.isFinite(seconds)||seconds<0)throw new RangeError('Invalid elapsed');clock.advance(seconds);showStatus();},pause:()=>{running=false;last=null;showStatus();},resume:()=>{if(particleModel?.diagnostics().status==='MODEL_LIMIT')return;hasStarted=true;running=true;last=null;showStatus();}});
  let lastLanguage=document.documentElement.lang;document.addEventListener('halveth-language',()=>{if(document.documentElement.lang!==lastLanguage){lastLanguage=document.documentElement.lang;showStatus();}});
  new ResizeObserver(resize).observe(canvas);reset();syncSpatial();showStatus();if(particleModel){for(const selector of ['[data-initial-separation]','[data-eccentricity]','[data-reference-seek]','[data-control=referenceRate]']){const element=panel.querySelector(selector);if(element)element.disabled=true;}}requestAnimationFrame(frame);
  }

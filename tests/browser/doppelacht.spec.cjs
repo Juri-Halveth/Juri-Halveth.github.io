@@ -13,7 +13,9 @@ test('camera changes, material replay and a rejected import preserve the paused 
   await page.emulateMedia({reducedMotion:'reduce'});await page.goto(route);
   await page.waitForFunction(()=>globalThis.HALVETHScenes?.length);
   const result=await page.evaluate(async()=>{
-    const s=HALVETHScenes[0];s.advance(.5);
+    const s=HALVETHScenes[0];
+    if(s.snapshot().view.distance!==HALVETHDoubleEightView.farDistance)throw Error('The point must start optically unresolved');
+    s.setView({distance:HALVETHDoubleEightView.overviewDistance});s.advance(.5);
     const before=s.snapshot(),camera=document.querySelector('[data-d8-camera]');
     const hashes=[];
     for(const name of ['front','side','top','oblique']){

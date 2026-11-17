@@ -5,19 +5,27 @@ const $=id=>document.getElementById(id),clamp=(n,a,b)=>Math.max(a,Math.min(b,n))
 let seed=20261117,n=32,clock=0,events=[],seen=new Set(),mode='pair',playing=!matchMedia('(prefers-reduced-motion:reduce)').matches,prev=null,coupling=.25,keys=new Set(),drag=null;
 let hasStarted=playing;const motionLabel=key=>globalThis.HALVETHMotionUI?.label(key)||({pause:'Pause',continue:'Weiter',start:'Bewegung starten',limit:'Modellgrenze erreicht'}[key]||key);
 const spatial=globalThis.HALVETHDoubleEight, spatialView=globalThis.HALVETHDoubleEightView;
-let spatialConfig={coupling:1};
+const approach=spatialView?.approach();
+let spatialConfig=spatial?.entryConfiguration()??{coupling:1};
 let selectedModel=spatial?.requested()?'doppelacht':'material',view={style:'rods',palette:'rgb',annotations:false,symbolScale:1,zoom:1,yaw:.35,pitch:.55},particleModel=selectedModel==='doppelacht'?spatial.create(spatialConfig):HALVETHModels.create(selectedModel,{seed:20261117});
-function spatialStyle(){Object.assign(view,spatialView.presets.oblique,{style:'rods',palette:'bluegold',followId:null});}
+function spatialStyle(){approach.begin(view,spatialConfig);Object.assign(view,spatialView.presets.oblique,{style:'rods',palette:'bluegold',followId:null});}
 if(selectedModel==='doppelacht')spatialStyle();
 const spatialTools=spatialView?.controls(document.querySelector('[data-d8-controls]'),{
+  layout:name=>{const {layout,...rest}=spatialConfig;spatialConfig=name==='shell'?{...rest,layout:'shell'}:rest;useModel('doppelacht');},
+  distance:setDistance,
   coupling:value=>{spatialConfig={...spatialConfig,coupling:value};useModel('doppelacht');},
-  camera:key=>{Object.assign(view,spatialView.presets[key]);if(mode==='flight')orbitFlight();draw();},
+  camera:key=>{approach.stop();Object.assign(view,spatialView.presets[key]);if(mode==='flight')orbitFlight();draw();},
   follow:id=>{view.followId=id;if(mode==='flight')orbitFlight();draw();}
+});
+function setDistance(d){approach.stop();view.distance=d;spatialTools?.meter(d);if(mode==='flight')orbitFlight();draw();}
+spatialView?.distanceControls(cv,{active:()=>selectedModel==='doppelacht'&&spatialConfig.layout==='shell'&&mode==='pair',
+  read:()=>view.distance,set:setDistance,rotate:(dx,dy)=>{approach.stop();view.yaw+=dx*.008;view.pitch=clamp(view.pitch+dy*.008,-Math.PI/2,Math.PI/2);spatialTools.manual();draw();},
+  tap:()=>{if(view.distance>4*spatialView.overviewDistance)setDistance(spatialView.overviewDistance);}
 });
 function syncSpatial(){spatialTools?.sync(selectedModel==='doppelacht',spatialConfig.coupling,view.followId,spatialConfig.count??960,view);
   if($('studio-model'))$('studio-model').value=selectedModel;if($('studio-material-palette'))$('studio-material-palette').value=view.palette;}
 function orbitFlight(){const p=particleModel.frame().materialCells.find(c=>c.id===view.followId);
-  const center={x:p?2*p.x:0,y:p?2*p.y:0,z:70+(p?2*p.z:0)},d=23,cp=Math.cos(view.pitch);
+  const center={x:p?2*p.x:0,y:p?2*p.y:0,z:70+(p?2*p.z:0)},d=Number.isFinite(view.distance)?2*view.distance:23,cp=Math.cos(view.pitch);
   camera={x:center.x-d*Math.sin(view.yaw)*cp,y:center.y-d*Math.sin(view.pitch),z:center.z-d*Math.cos(view.yaw)*cp,yaw:view.yaw,pitch:view.pitch};}
 
 let archivedRuns=[],runSerial=0,modelRunId='';
@@ -26,7 +34,7 @@ function rand(s){return()=>{s=(s+0x6D2B79F5)>>>0;let x=s;x=Math.imul(x^(x>>>15),
 function build(){let r=rand(seed);stars=Array.from({length:1800},()=>({x:(r()-.5)*200,y:(r()-.5)*110,z:(r()-.1)*1300,sz:.5+2*r()}));sources=Array.from({length:n},(_,i)=>({id:`SOURCE_${String(i).padStart(3,'0')}`,x:i===0?0:Math.sin(i*.37)*10,y:i===0?0:Math.cos(i*.51)*6,z:i*10,bit:r()<.5?0:1}));}
 function projection(obj,w,h){const dx=obj.x-camera.x,dy=obj.y-camera.y,dz=obj.z-camera.z,a=Math.cos(camera.yaw),b=Math.sin(camera.yaw),f=Math.cos(camera.pitch),g=Math.sin(camera.pitch);
  const x=a*dx-b*dz,z=b*dx+a*dz,y=f*dy-g*z,zz=g*dy+f*z;
- if(zz<.15||zz>1500)return null;const focal=h*1.02;return{x:w/2+x*focal/zz,y:h/2-y*focal/zz,d:zz};}
+ if(zz<.15||zz>(selectedModel==='doppelacht'&&spatialConfig.layout==='shell'?20000:1500))return null;const focal=h*1.02;return{x:w/2+x*focal/zz,y:h/2-y*focal/zz,d:zz};}
 function label(txt,x,y,sz,col){ctx.font=`600 ${sz}px system-ui`;ctx.fillStyle=col;ctx.textAlign='center';ctx.fillText(txt,x,y);}
 function glow(x,y,r,col){const g=ctx.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,'#ffffff');g.addColorStop(.09,col);g.addColorStop(.30,col+'89');g.addColorStop(1,col+'00');ctx.fillStyle=g;ctx.fillRect(x-r,y-r,r*2,r*2);}
 function bg(w,h){let g=ctx.createRadialGradient(w*.54,h*.45,30,w*.54,h*.45,w*.8);g.addColorStop(0,'#10283e');g.addColorStop(.55,'#081422');g.addColorStop(1,'#030812');ctx.fillStyle=g;ctx.fillRect(0,0,w,h);}
@@ -56,7 +64,9 @@ function updateEvents(){if(mode==='pair'){}
 const timing=HALVETHFixedClock.create({stepSeconds:1/120,maxStepsPerFrame:240,onStep:(dt,t)=>{motion(dt);if(selectedModel==='doppelacht'||particleModel.diagnostics().status==='RUNNING')particleModel.step(dt,selectedModel==='experimental'?{attraction:coupling*100/36,damping:.12,frequency:5}:selectedModel==='material'?{drive:coupling*1.6}:{});clock=selectedModel==='doppelacht'?particleModel.time:particleModel.snapshot({field:false}).time;if(particleModel.diagnostics().status==='MODEL_LIMIT'){playing=false;prev=null;}updateEvents();}});
 function showMotionStatus(){const limit=particleModel.diagnostics().status==='MODEL_LIMIT',b=$('studio-pause');b.disabled=limit;const text=motionLabel(playing?'pause':hasStarted?'continue':'start');if(b.textContent!==text)b.textContent=text;const label=document.querySelector('[data-motion-status]');if(label)label.textContent=`Simulation · ${selectedModel} · t=${clock.toFixed(2)} s · ${limit?motionLabel('limit'):playing?'läuft':'pausiert'} · ${events.length} Ereignisse`; }
 function setPlaying(value){if(value&&particleModel.diagnostics().status==='MODEL_LIMIT')return;playing=value;if(value)hasStarted=true;prev=null;showMotionStatus();}
-function frame(now){if(playing&&!document.hidden){if(prev!==null)timing.advance(Math.max(0,(now-prev)/1000));prev=now;}else prev=null;
+function frame(now){if(playing&&!document.hidden){if(prev!==null){const elapsed=Math.max(0,(now-prev)/1000);
+ if(selectedModel==='doppelacht'&&mode==='pair'&&approach.update(view,elapsed))spatialTools?.meter(view.distance);
+ timing.advance(elapsed);}prev=now;}else prev=null;
  clock=selectedModel==='doppelacht'?particleModel.time:particleModel.snapshot({field:false}).time;draw();const debt=timing.snapshot().backlogSeconds;
  $('studio-readout').textContent=`t=${clock.toFixed(2)} s · ${seen.size} Ereignisse · ${n} Quellen · Seed ${seed}`+(debt>=1/120?` · Rückstand ${debt.toFixed(2)} s`:'');showMotionStatus();requestAnimationFrame(frame);}
 function closeFlightRun(reason){
@@ -69,11 +79,11 @@ function useModel(name){
  view.style=name==='material'?'rods':'sharp';if(name==='doppelacht'){spatialStyle();if(mode==='flight')orbitFlight();}syncSpatial();if($('studio-style'))$('studio-style').value=view.style;if($('studio-model'))$('studio-model').value=name;
  timing.reset();clock=0;prev=null;draw();showMotionStatus();
 }
-function reset(){closeFlightRun('restart');particleModel.reset();timing.reset();clock=0;events=[];seen=new Set();coupling=+($('studio-coupling').value||25)/100;camera={x:0,y:0,z:-9,yaw:0,pitch:0};keys.clear();prev=null;if(selectedModel==='doppelacht'&&mode==='flight')orbitFlight();syncSpatial();build();draw();}
+function reset(){if(selectedModel==='doppelacht')spatialStyle();else delete view.distance;closeFlightRun('restart');particleModel.reset();timing.reset();clock=0;events=[];seen=new Set();coupling=+($('studio-coupling').value||25)/100;camera={x:0,y:0,z:-9,yaw:0,pitch:0};keys.clear();prev=null;if(selectedModel==='doppelacht'&&mode==='flight')orbitFlight();syncSpatial();build();draw();}
 function resize(){const b=cv.getBoundingClientRect();const d=Math.min(1.8,devicePixelRatio||1,Math.sqrt(2100000/(b.width*b.height||1)));cv.width=Math.max(1,Math.floor(b.width*d));cv.height=Math.max(1,Math.floor(b.height*d));draw();}
 function download(blob,name){if(!blob)return;const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),2000);}
 $('studio-coupling').addEventListener('input',e=>{coupling=+e.target.value/100;draw();});$('studio-count').addEventListener('change',e=>{n=+e.target.value;reset();});
-for(const b of document.querySelectorAll('[data-studio]'))b.addEventListener('click',()=>{mode=b.dataset.studio;if(mode==='flight'&&selectedModel==='doppelacht')orbitFlight();document.querySelectorAll('[data-studio]').forEach(k=>k.classList.toggle('active',k===b));$('studio-mode-label').textContent=mode==='pair'?'MODELLANSICHT':'FREIER FLUG';draw();});
+for(const b of document.querySelectorAll('[data-studio]'))b.addEventListener('click',()=>{mode=b.dataset.studio;if(mode==='flight'&&spatialConfig.layout==='shell'&&selectedModel==='doppelacht'){approach.stop();view.distance=spatialView.overviewDistance;spatialTools.meter(view.distance);}if(mode==='flight'&&selectedModel==='doppelacht')orbitFlight();document.querySelectorAll('[data-studio]').forEach(k=>k.classList.toggle('active',k===b));$('studio-mode-label').textContent=mode==='pair'?'MODELLANSICHT':'FREIER FLUG';draw();});
 $('studio-pause').addEventListener('click',()=>{setPlaying(!playing);});$('studio-reset').addEventListener('click',()=>{reset();setPlaying(hasStarted);});
 $('studio-png').addEventListener('click',()=>{const w=cv.width,h=cv.height;cv.width=3840;cv.height=2160;draw();cv.toBlob(b=>{download(b,'HALVETH_FIRST_DIFFERENCE_4K.png');cv.width=w;cv.height=h;draw();},'image/png');});
 $('studio-json').addEventListener('click',()=>download(new Blob([JSON.stringify({schema:'halveth.study/2.0',build:globalThis.HALVETH_BUILD,model:'illustration; no natural event measurements',seed,clock,mode,coupling,camera,sources,events,modelType:selectedModel,modelRunId,archivedRuns:structuredClone(archivedRuns),view:{...view},particles:particleModel.snapshot(),timing:timing.snapshot()},null,2)],{type:'application/json'}),'HALVETH_MODEL_EVENTS.json'));
@@ -97,7 +107,11 @@ document.querySelector('[data-d8-import]')?.addEventListener('change',async even
    const doc=JSON.parse(await file.text()),packet=spatial.packetFrom(doc);if(!packet)throw Error('Doppelacht-Zustand erwartet');
    const next=spatial.create(packet.configuration);next.restore(packet);
    closeFlightRun('material-import');playing=false;prev=null;selectedModel='doppelacht';particleModel=next;
-   spatialConfig={...packet.configuration};clock=next.time;timing.reset();spatialStyle();syncSpatial();
+   spatialConfig={...packet.configuration};clock=next.time;timing.reset();spatialStyle();approach.stop();
+   if(spatialConfig.layout==='shell')view.distance=spatialView.overviewDistance;
+   if(doc.schema==='halveth.study/2.0'&&doc.view&&spatialConfig.layout==='shell'&&spatialView.validDistance(doc.view.distance)){
+     view.distance=doc.view.distance;if(Number.isFinite(doc.view.yaw)&&Number.isFinite(doc.view.pitch)){view.yaw=doc.view.yaw;view.pitch=doc.view.pitch;}
+   }syncSpatial();
    if(mode==='flight')orbitFlight();draw();showMotionStatus();input.setCustomValidity('');
  }catch(e){input.setCustomValidity(e.message);input.reportValidity();}finally{input.value='';}
 });

@@ -24,3 +24,11 @@ Der Integrator verwendet zwei halbe Impulse um einen freien Orts- und Rotationss
 | Replay, Kamera und Auswahl | Alle Zellen, IDs und Vektoren müssen nach JSON-Rundlauf und weiterer Rechnung exakt übereinstimmen. Beobachtung beim pausierten Modell erhält den gesamten Zustand. |
 
 Die historischen 2D-Körper-, Druck-, Speicher- und Materialgleichungen bleiben im Vergleichsmodus verfügbar. Das räumliche Paarpotential definiert einen zusätzlichen freien Materialversuch. Eine Aussage über dauerhafte Stabilität, einen topologischen Knoten oder eine physische Kalibrierung erfordert andere Belege. Die mathematische Referenz beschreibt drei gleich schwere Punktmassen auf einer ebenen Achterbahn. [Chenciner und Montgomery, 2000](https://annals.math.princeton.edu/articles/12364)
+
+## Lichtpunkt und Rundumblick
+
+Der Einstieg zeigt zwölf anfangs gleich weit entfernte Musterpaare. Ihre Mittelpunkte liegen an den Ecken eines Ikosaeders auf einem Radius von 3,8 Modelleinheiten. Jede Nachbarschaft enthält zu Beginn 40 blaue und 40 goldene Zellen. Die Form bestimmt den Anfangszustand. Ab dem ersten Schritt wirken die freien Translationen und Drehungen des Materialsolvers.
+
+Die Kamera beginnt bei 6.400 Modelleinheiten. Die projizierten Zellpositionen ergeben einen gemeinsamen Lichtfleck, solange ihre Ausdehnung unter der Bildauflösung liegt. Beim Heranfahren geht der Fleck kontinuierlich in die einzeln projizierten Zellen über. Während der ersten sechs Sekunden fährt die Kamera bis zum Übersichtsabstand von 19,2. Ein Klick oder Tippen auf den fernen Punkt öffnet die Übersicht direkt. Mausrad und Zwei-Finger-Zoom regeln den Abstand. Ziehen dreht den Blick. Unter **Mehr** sind Abstand, Einzelzellverfolgung und die ursprüngliche Doppelacht in zwei Ebenen erreichbar. Reduzierte Bewegung startet pausiert.
+
+Abstand und Kamerawinkel gehören zur Beobachtung. Die zwölf Richtungen liefern eine endliche räumliche Anordnung. Die Darstellung ist ein dimensionsloser Modellversuch. Historische 3D-Replays verwenden ihre ursprünglichen Startbedingungen.
