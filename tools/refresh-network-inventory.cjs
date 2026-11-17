@@ -1,5 +1,5 @@
 'use strict';
-// Anonymous, read-only inventory refresh. Existing editorial snapshots are never edited.
+// Public, read-only inventory refresh. Existing editorial snapshots are never edited.
 const fs = require('node:fs');
 const path = require('node:path');
 const {createHash} = require('node:crypto');
@@ -66,12 +66,16 @@ async function mapLimited(values, limit, callback) {
   }));
   return result;
 }
-async function collectInventory({fetchImpl = globalThis.fetch, now = () => new Date().toISOString(), concurrency = 3} = {}) {
+async function collectInventory({fetchImpl = globalThis.fetch, now = () => new Date().toISOString(), concurrency = 3, apiToken = ''} = {}) {
   assert(Number.isSafeInteger(concurrency) && concurrency >= 1 && concurrency <= 4, 'Concurrency must be 1–4');
+  assert(typeof apiToken === 'string' && !/[\s]/.test(apiToken), 'API token format invalid');
   async function get(url) {
-    assert(new URL(url).origin === 'https://api.github.com', 'Only public GitHub API GETs are allowed');
-    const response = await fetchImpl(url, {method: 'GET', headers: {Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28', 'User-Agent': 'halveth-public-network-inventory'}, signal: AbortSignal.timeout(15000), redirect: 'error'});
-    assert(response.ok, `Public inventory GET failed (${response.status}): ${url}`);
+    const parsed = new URL(url);
+    assert(parsed.origin === 'https://api.github.com' && !parsed.username && !parsed.password, 'Only public GitHub API GETs are allowed');
+    const headers = {Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28', 'User-Agent': 'halveth-public-network-inventory'};
+    if (apiToken) headers.Authorization = `Bearer ${apiToken}`;
+    const response = await fetchImpl(url, {method: 'GET', headers, signal: AbortSignal.timeout(15000), redirect: 'error'});
+    assert(response.ok, `Public inventory GET failed (${response.status}; rate-limit remaining=${response.headers?.get('x-ratelimit-remaining') ?? 'unknown'}): ${url}`);
     return response;
   }
   let url = SOURCE; const listed = [], visited = new Set();
@@ -84,7 +88,9 @@ async function collectInventory({fetchImpl = globalThis.fetch, now = () => new D
     const link = response.headers?.get('link') || '';
     url = /<([^>]+)>;\s*rel="next"/.exec(link)?.[1] || null;
   }
-  assert(listed.length > 0 && listed.every(repo => repo.private === false && repo.visibility === 'public' && repo.full_name === `${OWNER}/${repo.name}`), 'Anonymous public-owner allowlist incomplete or inconsistent');
+  // /users/{owner}/repos lists public repositories even with authentication.
+  // Never use /user/repos, which also includes accessible private repositories.
+  assert(listed.length > 0 && listed.every(repo => repo.private === false && repo.visibility === 'public' && repo.full_name === `${OWNER}/${repo.name}`), 'Public-owner allowlist incomplete or inconsistent');
   const allowlist = listed.map(repo => repo.name);
   const repositories = await mapLimited(listed, concurrency, async repo => {
     const base = `https://api.github.com/repos/${OWNER}/${encodeURIComponent(repo.name)}`;
@@ -95,6 +101,14 @@ async function collectInventory({fetchImpl = globalThis.fetch, now = () => new D
     assert(readme.type === 'file' && readme.encoding === 'base64' && typeof readme.content === 'string', `Missing public README: ${repo.name}`);
     const bytes = Buffer.from(readme.content.replace(/\s/g, ''), 'base64');
     assert(bytes.length > 0 && bytes.length <= 1048576 && bytes.length === readme.size, `Incomplete README bytes: ${repo.name}`);
+    if (apiToken) {
+      assert(typeof readme.path === 'string' && !readme.path.split('/').some(part => !part || part === '..' || part === '.') && !/[\\?#\x00-\x1f]/.test(readme.path), 'Public README path required');
+      const rawURL = `https://raw.githubusercontent.com/${OWNER}/${encodeURIComponent(repo.name)}/${commit.sha}/${readme.path.split('/').map(encodeURIComponent).join('/')}`;
+      const publicResponse = await fetchImpl(rawURL, {method: 'GET', headers: {'User-Agent': 'halveth-public-network-inventory'}, signal: AbortSignal.timeout(15000), redirect: 'error'});
+      assert(publicResponse.ok, `Anonymous README verification failed (${publicResponse.status}): ${repo.name}`);
+      const publicBytes = Buffer.from(await publicResponse.arrayBuffer());
+      assert(publicBytes.length <= 1048576 && publicBytes.equals(bytes), `Anonymous README bytes differ: ${repo.name}`);
+    }
     const text = new TextDecoder('utf-8', {fatal: true}).decode(bytes);
     return {repositoryId: repositoryId(repo.name), githubRepositoryId: repo.id, name: repo.name, fullName: repo.full_name,
       url: repo.html_url, defaultBranch: repo.default_branch, visibility: 'public', fork: repo.fork, archived: repo.archived,
@@ -106,7 +120,7 @@ async function collectInventory({fetchImpl = globalThis.fetch, now = () => new D
   });
   repositories.sort((a, b) => a.name.localeCompare(b.name, 'en'));
   return validateInventory({schema: 'halveth.public-network-inventory.v1', owner: OWNER, observedAt: now(), sourceUrl: SOURCE,
-    complete: true, access: 'ANONYMOUS_PUBLIC_GET_ONLY', claimCeiling: 'PUBLIC_METADATA_AND_README_BYTES_NOT_RUNTIME_OR_IMPACT_VERIFICATION',
+    complete: true, access: apiToken ? 'PUBLIC_USER_LIST_WITH_ANONYMOUS_README_VERIFICATION' : 'ANONYMOUS_PUBLIC_GET_ONLY', claimCeiling: 'PUBLIC_METADATA_AND_README_BYTES_NOT_RUNTIME_OR_IMPACT_VERIFICATION',
     counts: {repositories: repositories.length, forks: repositories.filter(repo => repo.fork).length, pagesConfigured: repositories.filter(repo => repo.hasPages).length}, repositories});
 }
 function writeInventory(file, inventory) {
@@ -119,7 +133,7 @@ function writeInventory(file, inventory) {
 async function main() {
   const file = path.resolve(__dirname, '../data/network-inventory.json');
   if (process.argv.includes('--check')) { validateInventory(JSON.parse(fs.readFileSync(file, 'utf8'))); console.log('Public network inventory is structurally valid; no remote refresh performed.'); return; }
-  const inventory = await collectInventory();
+  const inventory = await collectInventory({apiToken: process.env.NETWORK_PUBLIC_READ_TOKEN || ''});
   writeInventory(file, inventory);
   console.log(`Observed ${inventory.counts.repositories} public repositories (${inventory.counts.forks} forks); README bytes bound to each observed HEAD. Editorial snapshots unchanged.`);
 }

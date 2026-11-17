@@ -1,10 +1,10 @@
 {
   "schema": "halveth.network-search.v1",
-  "revision": "948a1973a381a414456a66132f366ce64343e1f944a92aed92d07eaed7138335",
+  "revision": "4c3d670603c26a88ad45b21d626295a2c21509531030affaef865540986da015",
   "observedAt": "2026-11-17T22:18:46.486202+00:00",
   "coverage": {
     "mode": "PUBLIC_METADATA_AND_REVIEWED_ENTRY_DESCRIPTIONS",
-    "repositoryScope": "Complete anonymous public owner inventory at observedAt, including forks and metadata repositories.",
+    "repositoryScope": "Complete public owner inventory at observedAt, including forks and metadata repositories; README bytes are anonymously accessible.",
     "searchable": [
       "Public repository descriptions",
       "Reviewed README descriptions or bounded automatic excerpts at an observed HEAD",

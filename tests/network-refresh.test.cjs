@@ -6,13 +6,15 @@ const os = require('node:os');
 const path = require('node:path');
 const {collectInventory, writeInventory, summarizeReadme, SOURCE} = require('../tools/refresh-network-inventory.cjs');
 const date = '2026-11-17T23:00:00Z';
-function fakeApi({missingReadme = false, foreignNext = false} = {}) {
+function fakeApi({missingReadme = false, foreignNext = false, privateRepository = false, missingRaw = false, changedRaw = false} = {}) {
   const calls = [];
   const repo = (name, id) => ({name, id, full_name: `Juri-Halveth/${name}`, html_url: `https://github.com/Juri-Halveth/${name}`, default_branch: 'main', private: false, visibility: 'public', fork: false, archived: false, has_pages: false, description: 'Public source description', homepage: '', created_at: date, updated_at: date, pushed_at: date});
   const records = [repo('fixture-one', 1), repo('fixture-two', 2)];
+  if (privateRepository) { records[1].private = true; records[1].visibility = 'private'; }
   const bytes = Buffer.from('# Example\n\nA public browser model with explicit source descriptions and local scope.\n\nGG24 and Gitcoin are example keywords.\n');
   const fetchImpl = async (url, options) => {
     calls.push({url, options});
+    if (url.startsWith('https://raw.githubusercontent.com/')) return {ok: !missingRaw, status: missingRaw ? 404 : 200, arrayBuffer: async () => changedRaw ? Buffer.from('changed bytes') : bytes};
     let body, next = null, status = 200;
     if (url === SOURCE) { body = [records[0]]; next = foreignNext ? 'https://example.com/private' : SOURCE + '&page=2'; }
     else if (url === SOURCE + '&page=2') body = [records[1]];
@@ -30,6 +32,29 @@ test('anonymous census follows pagination and binds each public README to the ob
   assert.deepEqual(inventory.repositories.map(repo => repo.name), ['fixture-one', 'fixture-two']);
   for (const repo of inventory.repositories) { assert.equal(repo.readme.revision, repo.head.revision); assert.match(repo.readme.sha256, /^[a-f0-9]{64}$/); }
   for (const call of api.calls) { assert.equal(call.options.method, 'GET'); assert.equal(call.options.headers.Authorization, undefined); assert.equal(call.options.redirect, 'error'); }
+});
+test('workflow token stays on the public API and every README is also verified anonymously', async () => {
+  const api = fakeApi();
+  const inventory = await collectInventory({fetchImpl: api.fetchImpl, now: () => date, apiToken: 'synthetic-read-token'});
+  assert.equal(inventory.access, 'PUBLIC_USER_LIST_WITH_ANONYMOUS_README_VERIFICATION');
+  const rawCalls = api.calls.filter(call => new URL(call.url).hostname === 'raw.githubusercontent.com');
+  assert.equal(rawCalls.length, 2);
+  for (const call of api.calls) {
+    assert.equal(call.options.method, 'GET'); assert.equal(call.options.redirect, 'error');
+    assert.equal(call.options.headers.Authorization, rawCalls.includes(call) ? undefined : 'Bearer synthetic-read-token');
+    assert.ok(!call.url.includes('/user/repos'));
+  }
+  assert.ok(!JSON.stringify(inventory).includes('synthetic-read-token'));
+});
+test('a token cannot admit private records or README bytes unavailable without authentication', async () => {
+  const privateApi = fakeApi({privateRepository: true});
+  await assert.rejects(collectInventory({fetchImpl: privateApi.fetchImpl, apiToken: 'synthetic-read-token'}), /public-owner allowlist/i);
+  assert.equal(privateApi.calls.length, 2);
+  await assert.rejects(collectInventory({fetchImpl: fakeApi({missingRaw: true}).fetchImpl, apiToken: 'synthetic-read-token'}), /Anonymous README verification failed/);
+  await assert.rejects(collectInventory({fetchImpl: fakeApi({changedRaw: true}).fetchImpl, apiToken: 'synthetic-read-token'}), /Anonymous README bytes differ/);
+  const foreign = fakeApi({foreignNext: true});
+  await assert.rejects(collectInventory({fetchImpl: foreign.fetchImpl, apiToken: 'synthetic-read-token'}), /pagination URL/);
+  assert.equal(foreign.calls.length, 1);
 });
 test('missing README or foreign pagination fails closed and leaves the last snapshot unchanged', async t => {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'halveth-refresh-'));

@@ -43,7 +43,7 @@ function makeNetworkIndex(root) {
     const bytes = fs.readFileSync(path.join(root, file)); const value = JSON.parse(bytes);
     sources.push({path: file, sha256: hash(bytes), role}); return value;
   }
-  const inventory = validateInventory(read('data/network-inventory.json', 'CURRENT_ANONYMOUS_PUBLIC_INVENTORY'));
+  const inventory = validateInventory(read('data/network-inventory.json', 'CURRENT_PUBLIC_INVENTORY'));
   const catalog = read('data/site-catalog.json', 'DATED_EDITORIAL_SELECTION');
   const briefs = read('data/project-briefs.json', 'DATED_REVIEWED_SOURCE_DESCRIPTIONS');
   const descriptions = read('data/network-readme-descriptions.json', 'REVIEWED_PUBLIC_README_DESCRIPTIONS');
@@ -134,7 +134,7 @@ function makeNetworkIndex(root) {
     withdrawnRepositoryEntries: inventory.repositories.filter(repo => withdrawn.has(repo.name)).length,
     uncataloguedPublicRepositories: inventory.repositories.filter(repo => !catalog.projects.some(project => project.id === repo.name)).length,
     modules: documents.filter(doc => doc.kind === 'module').length, independentSites: documents.filter(doc => doc.kind === 'site').length, relations: relations.length};
-  const coverage = {mode: 'PUBLIC_METADATA_AND_REVIEWED_ENTRY_DESCRIPTIONS', repositoryScope: 'Complete anonymous public owner inventory at observedAt, including forks and metadata repositories.',
+  const coverage = {mode: 'PUBLIC_METADATA_AND_REVIEWED_ENTRY_DESCRIPTIONS', repositoryScope: 'Complete public owner inventory at observedAt, including forks and metadata repositories; README bytes are anonymously accessible.',
     searchable: ['Public repository descriptions', 'Reviewed README descriptions or bounded automatic excerpts at an observed HEAD', 'Reviewed public entry points and independent sites', 'Dated catalog, research and technical sample descriptions when archive is enabled'],
     notIndexed: ['Full repository file contents', 'All Git branches or commit history', 'Private repositories, local journals and conversations', 'Unlisted external websites or their full text'],
     archiveDefault: false, inventoryObservedAt: inventory.observedAt, selectedProjectSnapshot: {date: selected.sourceDate, records: selected.projects.length},
