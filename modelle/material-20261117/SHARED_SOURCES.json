@@ -10,8 +10,8 @@
     },
     {
       "path": "assets/material-model.js",
-      "bytes": 13019,
-      "sha256": "4f8669e83a0ab22c038f2f05f38e347c488c4ae7d949a051df8e81197ede3bf2"
+      "bytes": 13003,
+      "sha256": "072d81f3ff8020647fa84695912e7cac9cb952846a99f18c57021b8f157a3870"
     },
     {
       "path": "assets/material-view.js",
@@ -32,6 +32,21 @@
       "path": "assets/reference-physics.js",
       "bytes": 6427,
       "sha256": "ae587d572d23818fb3974f7644abe150ca246e492a71f4e46d19352d935e06c9"
+    },
+    {
+      "path": "assets/doppelacht.js",
+      "bytes": 12729,
+      "sha256": "f11a52b996a7fc9e9c84890c63fd09c4bd47406550477d1e45aad257b21b6b9d"
+    },
+    {
+      "path": "assets/doppelacht-view.js",
+      "bytes": 6913,
+      "sha256": "61f84135a3ac7c4a72ee7d785e596afac36223238e442eeda52efe4b94d1586e"
+    },
+    {
+      "path": "assets/doppelacht-source.js",
+      "bytes": 99,
+      "sha256": "c43fefcede392039dad4fb3444cadbe8504e45df4c68eb22a5186c57c7d06734"
     }
   ]
 }

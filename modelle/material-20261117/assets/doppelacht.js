@@ -1,0 +1,248 @@
+/* MIT. Three-dimensional soft nematic material in free space. */
+(function (root) {
+  'use strict';
+  const model = 'DOPPELACHT_3D_EXPERIMENT';
+  const schema = 'halveth.doppelacht/1';
+  const R = 0.46, R2 = R * R, A = 0.030, B = 0.026, J = 0.012, I = 0.08;
+  const skin = 0.24;
+  const defaults = Object.freeze({seed: 20261117, count: 960, coupling: 1,
+    damping: 0, h: 1 / 120, binWidth: R + skin});
+  const fieldMeaning = 'Compact scalar density sampled at the material centres in 3D';
+  const finite = Number.isFinite;
+  const cellId = i => 'M' + String(i).padStart(5, '0');
+
+  function configuration(raw) {
+    if (!raw || typeof raw !== 'object' || Array.isArray(raw) ||
+        Object.keys(raw).some(k => !Object.hasOwn(defaults, k))) throw Error('Invalid 3D configuration');
+    const c = {...defaults, ...raw};
+    if (!Number.isInteger(c.seed) || c.seed < 0 || c.seed > 0xffffffff ||
+        !Number.isInteger(c.count) || c.count < 16 || c.count > 960 || c.count % 8 ||
+        !finite(c.coupling) || c.coupling < 0 || c.coupling > 1 ||
+        !finite(c.damping) || c.damping < 0 || c.damping > 1 ||
+        ![1/120, 1/240, 1/480].includes(c.h) ||
+        !finite(c.binWidth) || c.binWidth < (R + skin)/2 || c.binWidth > 2*(R + skin))
+      throw RangeError('3D configuration outside supported range');
+    return Object.freeze(c);
+  }
+
+  // The only curve evaluation in the solver occurs during initialization.
+  function seedMaterial(c) {
+    const a = 4.2, b = 1.8, perLane = c.count/8;
+    let seed = c.seed >>> 0;
+    const random = () => { seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0; return seed/4294967296; };
+    const r = new Float64Array(3*c.count), v = r.slice(), n = r.slice(), w = r.slice();
+    for (let i = 0; i < c.count; i++) {
+      const family = i >= c.count/2, lane = Math.floor(i/perLane) % 4;
+      const s = 2*Math.PI*((i % perLane) + (lane + 0.5)/4 + 0.12*(random()-0.5))/perLane;
+      const du = a*Math.cos(s), dv = 2*b*Math.cos(2*s), norm = Math.hypot(du, dv);
+      const phi = lane*Math.PI/2 + 2*s + 0.20*(random()-0.5);
+      const radius = 0.12*(0.85 + 0.30*random());
+      const u = a*Math.sin(s) - radius*dv/norm*Math.cos(phi);
+      const zeta = radius*Math.sin(phi);
+      const t = b*Math.sin(2*s) + radius*du/norm*Math.cos(phi);
+      const twist = 0.18*Math.sin(phi) + 0.08*(random()-0.5), d = Math.hypot(1,twist);
+      const axis = [du/(norm*d), dv/(norm*d), twist/d];
+      const speed = family ? -0.24 : 0.24;
+      const offset = 3*i;
+      function assign(arr, x, y, z) {
+        arr[offset] = family ? z : x; arr[offset+1] = family ? x : y; arr[offset+2] = family ? y : z;
+      }
+      assign(r,u,t,zeta); assign(v,speed*du,speed*dv,0.03*Math.sin(phi));
+      assign(n,...axis); assign(w,0.12*Math.cos(phi),0.12*Math.sin(phi),0.24*(random()-0.5));
+    }
+    return {r,v,n,w};
+  }
+
+  // Candidate lists are rebuilt before a pair can cross the skin unseen.
+  // Numerical summation always uses the same (i,j) order, regardless of bin width.
+  function neighborList(r, c) {
+    const bins = new Map(), keys = [], reach = R+skin, cell = c.binWidth;
+    const span = Math.ceil(reach/cell), key = (x,y,z) => x+','+y+','+z;
+    for (let i=0; i<c.count; i++) {
+      const k=3*i, x=Math.floor(r[k]/cell), y=Math.floor(r[k+1]/cell), z=Math.floor(r[k+2]/cell);
+      for (let dz=-span; dz<=span; dz++) for (let dy=-span; dy<=span; dy++) for (let dx=-span; dx<=span; dx++) {
+        const bucket=bins.get(key(x+dx,y+dy,z+dz));
+        if (!bucket) continue;
+        for (const j of bucket) {
+          const l=3*j, a=r[k]-r[l], b=r[k+1]-r[l+1], e=r[k+2]-r[l+2];
+          if (a*a+b*b+e*e<=reach*reach) keys.push(j*c.count+i);
+        }
+      }
+      const current=key(x,y,z);
+      if (!bins.has(current)) bins.set(current, []);
+      bins.get(current).push(i);
+    }
+    return Uint32Array.from(keys.sort((x,y)=>x-y));
+  }
+
+  function dynamics(c) {
+    const force=new Float64Array(3*c.count), torque=force.slice(), density=new Float64Array(c.count);
+    const densityNorm=315/(64*Math.PI*R**3);
+    let anchor=null, pairs=null;
+    return function evaluate({r,n}) {
+      let rebuild=!anchor;
+      if (anchor) for (let k=0;k<r.length;k+=3) {
+        const x=r[k]-anchor[k],y=r[k+1]-anchor[k+1],z=r[k+2]-anchor[k+2];
+        if (x*x+y*y+z*z >= skin*skin/4) { rebuild=true; break; }
+      }
+      if (rebuild) { pairs=neighborList(r,c); anchor=r.slice(); }
+      force.fill(0); torque.fill(0); density.fill(densityNorm);
+      let energy=0, crossPairs=0;
+      for (const key of pairs) {
+        const i=Math.floor(key/c.count), j=key % c.count, k=3*i, l=3*j;
+        const x=r[k]-r[l],y=r[k+1]-r[l+1],z=r[k+2]-r[l+2],q=1-(x*x+y*y+z*z)/R2;
+        if (q<=0) continue;
+        const q2=q*q, rho=densityNorm*q2*q; density[i]+=rho; density[j]+=rho;
+        const cross=i<c.count/2 && j>=c.count/2, s=cross?c.coupling:1;
+        if (cross) crossPairs++;
+        const ax=n[k],ay=n[k+1],az=n[k+2],bx=n[l],by=n[l+1],bz=n[l+2];
+        const dot=ax*bx+ay*by+az*bz, coefficient=J*(1-dot*dot)-B;
+        energy+=s*q2*(A*q+coefficient);
+        const f=s*(2/R2)*(3*A*q2+2*q*coefficient), t=2*s*J*q2*dot;
+        const fx=f*x,fy=f*y,fz=f*z,tx=t*(ay*bz-az*by),ty=t*(az*bx-ax*bz),tz=t*(ax*by-ay*bx);
+        force[k]+=fx; force[k+1]+=fy; force[k+2]+=fz; force[l]-=fx; force[l+1]-=fy; force[l+2]-=fz;
+        torque[k]+=tx; torque[k+1]+=ty; torque[k+2]+=tz; torque[l]-=tx; torque[l+1]-=ty; torque[l+2]-=tz;
+      }
+      return {force,torque,density,energy,crossPairs};
+    };
+  }
+
+  function kinetic({v,w}) {
+    let total=0;
+    for (let k=0;k<v.length;k++) total+=v[k]*v[k]+I*w[k]*w[k];
+    return total/2;
+  }
+  function rotate(n,w,k,h) {
+    const wx=w[k],wy=w[k+1],wz=w[k+2],speed=Math.hypot(wx,wy,wz);
+    if (!speed) return;
+    const a=wx/speed,b=wy/speed,c=wz/speed,x=n[k],y=n[k+1],z=n[k+2],angle=h*speed;
+    const sin=Math.sin(angle),cos=Math.cos(angle),d=2*Math.sin(angle/2)**2*(a*x+b*y+c*z);
+    n[k]=cos*x+sin*(b*z-c*y)+d*a; n[k+1]=cos*y+sin*(c*x-a*z)+d*b; n[k+2]=cos*z+sin*(a*y-b*x)+d*c;
+  }
+  function create(options={}) {
+    const c=configuration(options);
+    let evaluate=dynamics(c);
+    let state,interaction,tick,credit,heat,startEnergy;
+    const halfDamping=Math.exp(-c.damping*c.h/2);
+    function reset() {
+      state=seedMaterial(c); interaction=evaluate(state); tick=0; credit=0; heat=0;
+      startEnergy=kinetic(state)+interaction.energy;
+    }
+    function damp() {
+      if (halfDamping===1) return;
+      heat+=kinetic(state)*(1-halfDamping*halfDamping);
+      for(let k=0;k<state.v.length;k++){ state.v[k]*=halfDamping; state.w[k]*=halfDamping; }
+    }
+    function kick() {
+      for(let k=0;k<state.v.length;k++) {
+        state.v[k]+=0.5*c.h*interaction.force[k];
+        state.w[k]+=0.5*c.h*interaction.torque[k]/I;
+      }
+    }
+    function tickOnce() {
+      damp(); kick();
+      for(let k=0;k<state.r.length;k++) state.r[k]+=c.h*state.v[k];
+      for(let k=0;k<state.n.length;k+=3) rotate(state.n,state.w,k,c.h);
+      interaction=evaluate(state); kick(); damp(); tick++;
+    }
+    function step(dt,inputs={}) {
+      if (!finite(dt)||dt<0||dt>60||!inputs||Object.keys(inputs).length) throw RangeError('Invalid 3D step');
+      credit+=dt;
+      const count=Math.floor((credit+1e-12)/c.h);
+      for(let i=0;i<count;i++) tickOnce();
+      credit-=count*c.h;
+      if(Math.abs(credit)<1e-12) credit=0;
+      return {status:'RUNNING',time:tick*c.h,tick};
+    }
+    function diagnostics(material=state,forces=interaction,at=tick,thermal=heat) {
+      const kineticEnergy=kinetic(material), energy=kineticEnergy+forces.energy;
+      const linearMomentum=[0,0,0],angularMomentum=[0,0,0],{r,v,w}=material;
+      for(let k=0;k<r.length;k+=3){
+        for(let a=0;a<3;a++){
+          const b=(a+1)%3,d=(a+2)%3;
+          linearMomentum[a]+=v[k+a];
+          angularMomentum[a]+=r[k+b]*v[k+d]-r[k+d]*v[k+b]+I*w[k+a];
+        }
+      }
+      return {status:'RUNNING',time:at*c.h,tick:at,totalMass:c.count,kineticEnergy,energy,heat:thermal,
+        residual:energy+thermal-startEnergy,linearMomentum,angularMomentum,crossPairs:forces.crossPairs};
+    }
+    function cells(material=state,forces=interaction) {
+      const {r,v,n,w}=material;
+      return Array.from({length:c.count},(_,i)=>{
+        const k=3*i;
+        return {id:cellId(i),family:i<c.count/2?0:1,x:r[k],y:r[k+1],z:r[k+2],vx:v[k],vy:v[k+1],vz:v[k+2],
+          nx:n[k],ny:n[k+1],nz:n[k+2],wx:w[k],wy:w[k+1],wz:w[k+2],density:forces.density[i]};
+      });
+    }
+    function frame(){
+      return {model,time:tick*c.h,tick,status:'RUNNING',materialCells:cells()};
+    }
+    function snapshot(options={}) {
+      if (options.exact===false || options.field===false) return frame();
+      return {...frame(),schema,source:root.HALVETH_D8_SOURCE,configuration:{...c},credit,heat,
+        field:{kind:'sampled-density-3d',location:'materialCells[].density',meaning:fieldMeaning,reach:R},
+        diagnostics:diagnostics()};
+    }
+    function equal(a,b){
+      if(a===b)return true;
+      if(a===null||b===null||typeof a!=='object'||typeof b!=='object'||Array.isArray(a)!==Array.isArray(b))return false;
+      const keys=Object.keys(a);
+      return keys.length===Object.keys(b).length&&keys.every(k=>Object.hasOwn(b,k)&&equal(a[k],b[k]));
+    }
+    function validateHeader(packet){
+      if(packet?.schema!==schema || packet.model!==model || !root.HALVETH_D8_SOURCE || packet.source!==root.HALVETH_D8_SOURCE ||
+          !Number.isSafeInteger(packet.tick) || packet.tick<0 || !finite(packet.credit) || packet.credit<0 || packet.credit>=c.h ||
+          !finite(packet.heat)||packet.heat<0||!equal(configuration(packet.configuration),c))
+        throw Error('3D source, clock or configuration mismatch');
+    }
+    // A checkpoint is verified against its own fields and invariants. Cost depends on particle count.
+    function loadCheckpoint(packet){
+      validateHeader(packet);
+      if(!Array.isArray(packet.materialCells)||packet.materialCells.length!==c.count)throw Error('Invalid cell count');
+      const vectors=seedMaterial(c);
+      for(let i=0;i<c.count;i++){
+        const p=packet.materialCells[i],k=3*i;
+        if(!p||p.id!==cellId(i)||p.family!==Number(i>=c.count/2)||
+            !['x','y','z','vx','vy','vz','nx','ny','nz','wx','wy','wz'].every(key=>finite(p[key]))||
+            Math.abs(Math.hypot(p.nx,p.ny,p.nz)-1)>1e-7)throw Error('Invalid cell at '+i);
+        vectors.r.set([p.x,p.y,p.z],k);vectors.v.set([p.vx,p.vy,p.vz],k);
+        vectors.n.set([p.nx,p.ny,p.nz],k);vectors.w.set([p.wx,p.wy,p.wz],k);
+      }
+      const freshEvaluate=dynamics(c),forces=freshEvaluate(vectors);
+      const calculated={...snapshot(),tick:packet.tick,time:packet.tick*c.h,credit:packet.credit,heat:packet.heat,
+        materialCells:cells(vectors,forces),diagnostics:diagnostics(vectors,forces,packet.tick,packet.heat)};
+      if(!equal(calculated,packet))throw Error('3D checkpoint disagrees with calculated fields or diagnostics');
+      state=vectors;evaluate=freshEvaluate;interaction=forces;tick=packet.tick;credit=packet.credit;heat=packet.heat;
+      return snapshot();
+    }
+    // Explicit seed replay is separately bounded. Longer runs can still be restored and advanced.
+    function replay(packet){
+      validateHeader(packet);if(packet.tick>120000)throw RangeError('Seed replay limited to 120000 steps');
+      const candidate=create(c);
+      for(let remain=packet.tick;remain>0;remain-=120)candidate.step(Math.min(120,remain)*c.h);
+      if(packet.credit)candidate.step(packet.credit);
+      if(!equal(candidate.snapshot(),packet))throw Error('3D replay differs from recorded material state');
+      return loadCheckpoint(packet);
+    }
+    function restore(packet){return packet?.tick>120000?loadCheckpoint(packet):replay(packet);}
+    reset();
+    function point(i){
+      if(!Number.isInteger(i)||i<0||i>=c.count)return null;
+      const k=3*i;return{id:cellId(i),x:state.r[k],y:state.r[k+1],z:state.r[k+2]};
+    }
+    return {step,reset,snapshot,frame,point,diagnostics,replay,restore,get time(){return tick*c.h;}};
+  }
+  // Both hosts accept the same material packet while keeping independent observation clocks and cameras.
+  function packetFrom(document) {
+    for(const packet of [document,document?.particles,document?.model]){
+      if(packet?.schema===schema && packet.model===model) return packet;
+    }
+    return null;
+  }
+  const api=Object.freeze({schema,model,defaults,create,packetFrom,
+    requested:()=>new URLSearchParams(root.location?.search||'').get('modell')==='doppelacht',
+    dynamics,seedMaterial,configuration});
+  root.HALVETHDoubleEight=api;
+  if(typeof module!=='undefined'&&module.exports)module.exports=api;
+})(globalThis);

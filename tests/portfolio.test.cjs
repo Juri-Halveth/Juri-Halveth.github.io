@@ -47,12 +47,14 @@ test('additive material preview links preserve the existing portfolio and bound 
  for(const lang of ['','en/','ru/']){
   const raw=read(lang+'modelle/index.html'),doc=new JSDOM(raw).window.document,link=doc.querySelector('[data-material-preview] a.button');
   assert.ok(link,'preview link in every models language');
-  const target=path.resolve(root,lang,'modelle',link.getAttribute('href'));
+  const entry=new URL(link.getAttribute('href'),'https://preview.invalid/'+lang+'modelle/');
+  assert.equal(entry.searchParams.get('modell'),'doppelacht');
+  const target=path.join(root,entry.pathname);
   assert.equal(target,path.join(preview,'forschung.html'));
   assert.match(raw,/scene-stage\.mjs/,'existing interactive work sample preserved');
  }
  const binding=JSON.parse(read('modelle/material-20261117/SHARED_SOURCES.json'));
- assert.equal(binding.files.length,6);
+ assert.equal(binding.files.length,9);
  for(const file of binding.files){
   const bytes=fs.readFileSync(path.join(preview,file.path));
   assert.equal(bytes.length,file.bytes);

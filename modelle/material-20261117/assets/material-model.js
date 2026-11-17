@@ -15,7 +15,7 @@ function exactPack(value){const numbers=[];function walk(x){if(typeof x==='numbe
 function exactUnpack(packet){if(!plain(packet)||!Array.isArray(packet.float64)||packet.float64.length>100000)throw Error('Invalid exact packet');let at=0;function walk(x){if(typeof x==='number'){const n=unhex(packet.float64[at++]);if(n!==x)throw Error('Float64/JSON mismatch');return n;}if(x===null||typeof x==='string'||typeof x==='boolean')return x;if(Array.isArray(x))return x.map(walk);if(plain(x)){const out={};for(const k of Object.keys(x)){if(['__proto__','prototype','constructor'].includes(k))throw Error('Forbidden object key');out[k]=walk(x[k]);}return out;}throw Error('Invalid JSON leaf');}const value=walk(packet.value);if(at!==packet.float64.length)throw Error('Unused Float64 values');return value;}
 function checkArray(x,n,name,predicate=Number.isFinite){if(!Array.isArray(x)||x.length!==n||!x.every(predicate))throw Error('Invalid '+name);}
 function engineFrom(raw){
- if(!plain(raw)||!plain(raw.config)||!plain(raw.params)||raw.step!==E.H||!Number.isInteger(raw.tick)||raw.tick<0||raw.tick>MAX_TICKS)throw Error('Invalid raw engine contract');
+ if(!plain(raw)||!plain(raw.config)||!plain(raw.params)||raw.step!==E.H||!Number.isSafeInteger(raw.tick)||raw.tick<0)throw Error('Invalid raw engine contract');
  const e=new E.Engine(raw.config),sample=e.snapshot();
  if(JSON.stringify(Object.keys(raw.config).sort())!==JSON.stringify(Object.keys(sample.config).sort())||Object.keys(sample.config).some(k=>typeof raw.config[k]!==typeof sample.config[k]||raw.config[k]!==sample.config[k]))throw Error('Config normalization forbidden');
  if(raw.schema!==sample.schema||raw.engine!==sample.engine)throw Error('Engine schema mismatch');
