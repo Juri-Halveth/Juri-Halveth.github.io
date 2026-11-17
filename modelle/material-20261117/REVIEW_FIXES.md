@@ -23,3 +23,26 @@ in assets/build-info.js. Die numerischen Solver und die Materialgleichungen
 bleiben unverändert. Ein Flugereignisarchiv ist ausdrücklich kein vollständiger
 Solver-Replaybeleg. Die vorhandene Rootseite und der öffentliche Faden bleiben
 unverändert.
+
+## Unterbrechbarer 3D-Import
+
+Forschungsseite und Studio prüfen 3D-Speicherstände in begrenzten Rechenblöcken
+mit Pausen für die Ereignisschleife. Der bisherige Versuch bleibt bestehen,
+bis die vollständige Prüfung erfolgreich ist. Neustart, Modellwechsel oder
+ein neuer Import brechen einen noch laufenden Import ab. Das gilt auf der
+Forschungsseite auch dann, wenn die Dateilesung noch nicht abgeschlossen ist.
+Der Prüfstatus bleibt während der Berechnung sichtbar.
+
+Die Materialgleichungen bleiben unverändert. Exakte Exporte des vorherigen
+Lichtpunkt-Quellstands werden über dessen vollständige bekannte Quellbindung
+angenommen; veränderte oder unbekannte Bindungen werden weiterhin abgelehnt.
+Die aktuelle Materialdatei und ihr Quellhash stimmen mit der korrigierten
+Datei im getrennten `console-only`-Repository überein.
+
+`tests/material-import.test.cjs` prüft fünf Fälle mit dem echten Modell und
+DOM-Ereignissen: unterbrochene Prüfung, unveränderten Zustand bis zur Freigabe,
+Abbruch durch einen neuen Auftrag, verzögerte Dateilesung und die konkrete
+Quellmigration. Diese lokale Prüfung zeichnet kein Browserbild auf.
+Zwei zusätzliche Chromium-Fälle in `tests/browser/doppelacht.spec.cjs` prüfen
+die Ereignisschleife und den Modellwechsel über die laufende Website; der
+bestehende Pages-Workflow führt sie mit den bisherigen Browserfällen aus.

@@ -264,19 +264,58 @@
       if(!equal(candidate.snapshot(),packet))throw Error('3D replay differs from recorded material state');
       return loadCheckpoint(packet);
     }
-    function restore(packet){
+    function compatiblePacket(packet){
       // The original two-plane equations and seed are byte-for-byte the same.
       // Accept that one historical source only for its original configuration.
       if(packet?.source==='f11a52b996a7fc9e9c84890c63fd09c4bd47406550477d1e45aad257b21b6b9d' && packet.configuration && !Object.hasOwn(packet.configuration,'layout'))
         packet={...packet,source:root.HALVETH_D8_SOURCE};
+      // This predecessor differs only in checkpoint verification scheduling.
+      if(packet?.source==='b67b0a71998812de55bdb2b068275b5835959f9fff4f597ca601471a1ff44e85')
+        packet={...packet,source:root.HALVETH_D8_SOURCE};
+      return packet;
+    }
+    function restore(packet){
+      packet=compatiblePacket(packet);
       return packet?.tick>120000?loadCheckpoint(packet):replay(packet);
+    }
+    async function restoreAsync(packet,{signal,onProgress}={}){
+      const checkAbort=()=>{
+        if(signal?.aborted){const error=Error('3D import cancelled');error.name='AbortError';throw error;}
+      };
+      const yieldTask=()=>new Promise(resolve=>setTimeout(resolve,0));
+      checkAbort();
+      // Later yields must not allow the caller to change the packet being checked.
+      const saved=structuredClone(compatiblePacket(packet));
+      validateHeader(saved);
+      onProgress?.({tick:0,total:saved.tick});
+      await yieldTask();checkAbort();
+      if(saved.tick<=120000){
+        const candidate=create(c);
+        const now=()=>root.performance?.now?.()??Date.now();
+        let replayed=0;
+        while(replayed<saved.tick){
+          const started=now(),first=replayed;
+          do{
+            const count=Math.min(12,saved.tick-replayed);
+            candidate.step(count*c.h);replayed+=count;
+          }while(replayed<saved.tick&&replayed-first<120&&now()-started<8);
+          onProgress?.({tick:replayed,total:saved.tick});
+          checkAbort();
+          if(replayed<saved.tick){await yieldTask();checkAbort();}
+        }
+        if(saved.credit)candidate.step(saved.credit);
+        if(!equal(candidate.snapshot(),saved))throw Error('3D replay differs from recorded material state');
+      }
+      // No live state is replaced until verification has completed without cancellation.
+      checkAbort();
+      return loadCheckpoint(saved);
     }
     reset();
     function point(i){
       if(!Number.isInteger(i)||i<0||i>=c.count)return null;
       const k=3*i;return{id:cellId(i),x:state.r[k],y:state.r[k+1],z:state.r[k+2]};
     }
-    return {step,reset,snapshot,frame,point,diagnostics,replay,restore,get time(){return tick*c.h;}};
+    return {step,reset,snapshot,frame,point,diagnostics,replay,restore,restoreAsync,get time(){return tick*c.h;}};
   }
   // Both hosts accept the same material packet while keeping independent observation clocks and cameras.
   function packetFrom(document) {

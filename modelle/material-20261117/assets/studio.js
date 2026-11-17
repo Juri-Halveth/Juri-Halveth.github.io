@@ -3,6 +3,8 @@
 const cv=document.getElementById('studio-field');if(!cv)return;const ctx=cv.getContext('2d',{alpha:false}),TAU=2*Math.PI;
 const $=id=>document.getElementById(id),clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 let seed=20261117,n=32,clock=0,events=[],seen=new Set(),mode='pair',playing=!matchMedia('(prefers-reduced-motion:reduce)').matches,prev=null,coupling=.25,keys=new Set(),drag=null;
+let importController=null,importStatus="";
+function cancelImport(){if(importController)importController.abort();importController=null;importStatus="";}
 let hasStarted=playing;const motionLabel=key=>globalThis.HALVETHMotionUI?.label(key)||({pause:'Pause',continue:'Weiter',start:'Bewegung starten',limit:'Modellgrenze erreicht'}[key]||key);
 const spatial=globalThis.HALVETHDoubleEight, spatialView=globalThis.HALVETHDoubleEightView;
 const approach=spatialView?.approach();
@@ -62,7 +64,7 @@ function motion(dt){if(mode!=='flight')return;if(selectedModel==='doppelacht'&&v
 function updateEvents(){if(mode==='pair'){}
  else for(const s of sources)if(Math.hypot(camera.x-s.x,camera.y-s.y,camera.z-s.z)<.8)record(s,'camera proximity');}
 const timing=HALVETHFixedClock.create({stepSeconds:1/120,maxStepsPerFrame:240,onStep:(dt,t)=>{motion(dt);if(selectedModel==='doppelacht'||particleModel.diagnostics().status==='RUNNING')particleModel.step(dt,selectedModel==='experimental'?{attraction:coupling*100/36,damping:.12,frequency:5}:selectedModel==='material'?{drive:coupling*1.6}:{});clock=selectedModel==='doppelacht'?particleModel.time:particleModel.snapshot({field:false}).time;if(particleModel.diagnostics().status==='MODEL_LIMIT'){playing=false;prev=null;}updateEvents();}});
-function showMotionStatus(){const limit=particleModel.diagnostics().status==='MODEL_LIMIT',b=$('studio-pause');b.disabled=limit;const text=motionLabel(playing?'pause':hasStarted?'continue':'start');if(b.textContent!==text)b.textContent=text;const label=document.querySelector('[data-motion-status]');if(label)label.textContent=`Simulation · ${selectedModel} · t=${clock.toFixed(2)} s · ${limit?motionLabel('limit'):playing?'läuft':'pausiert'} · ${events.length} Ereignisse`; }
+function showMotionStatus(){const limit=particleModel.diagnostics().status==='MODEL_LIMIT',b=$('studio-pause');b.disabled=limit;const text=motionLabel(playing?'pause':hasStarted?'continue':'start');if(b.textContent!==text)b.textContent=text;const label=document.querySelector('[data-motion-status]');if(label)label.textContent=`${importStatus?importStatus+" · ":""}Simulation · ${selectedModel} · t=${clock.toFixed(2)} s · ${limit?motionLabel('limit'):playing?'läuft':'pausiert'} · ${events.length} Ereignisse`; }
 function setPlaying(value){if(value&&particleModel.diagnostics().status==='MODEL_LIMIT')return;playing=value;if(value)hasStarted=true;prev=null;showMotionStatus();}
 function frame(now){if(playing&&!document.hidden){if(prev!==null){const elapsed=Math.max(0,(now-prev)/1000);
  if(selectedModel==='doppelacht'&&mode==='pair'&&approach.update(view,elapsed))spatialTools?.meter(view.distance);
@@ -74,12 +76,13 @@ function closeFlightRun(reason){
  modelRunId='STUDIO_RUN_'+String(++runSerial).padStart(6,'0');events=[];seen=new Set();
 }
 function useModel(name){
+ cancelImport();
  if(name!=='doppelacht'&&!HALVETHModels.modes.includes(name))throw new RangeError('Unknown model');
  const next=name==='doppelacht'?spatial.create(spatialConfig):HALVETHModels.create(name,{seed:20261117});closeFlightRun('model-change');selectedModel=name;particleModel=next;
  view.style=name==='material'?'rods':'sharp';if(name==='doppelacht'){spatialStyle();if(mode==='flight')orbitFlight();}syncSpatial();if($('studio-style'))$('studio-style').value=view.style;if($('studio-model'))$('studio-model').value=name;
  timing.reset();clock=0;prev=null;draw();showMotionStatus();
 }
-function reset(){if(selectedModel==='doppelacht')spatialStyle();else delete view.distance;closeFlightRun('restart');particleModel.reset();timing.reset();clock=0;events=[];seen=new Set();coupling=+($('studio-coupling').value||25)/100;camera={x:0,y:0,z:-9,yaw:0,pitch:0};keys.clear();prev=null;if(selectedModel==='doppelacht'&&mode==='flight')orbitFlight();syncSpatial();build();draw();}
+function reset(){cancelImport();if(selectedModel==='doppelacht')spatialStyle();else delete view.distance;closeFlightRun('restart');particleModel.reset();timing.reset();clock=0;events=[];seen=new Set();coupling=+($('studio-coupling').value||25)/100;camera={x:0,y:0,z:-9,yaw:0,pitch:0};keys.clear();prev=null;if(selectedModel==='doppelacht'&&mode==='flight')orbitFlight();syncSpatial();build();draw();}
 function resize(){const b=cv.getBoundingClientRect();const d=Math.min(1.8,devicePixelRatio||1,Math.sqrt(2100000/(b.width*b.height||1)));cv.width=Math.max(1,Math.floor(b.width*d));cv.height=Math.max(1,Math.floor(b.height*d));draw();}
 function download(blob,name){if(!blob)return;const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),2000);}
 $('studio-coupling').addEventListener('input',e=>{coupling=+e.target.value/100;draw();});$('studio-count').addEventListener('change',e=>{n=+e.target.value;reset();});
@@ -102,18 +105,24 @@ $('studio-movie')?.addEventListener('click',()=>window.dispatchEvent(new CustomE
 (globalThis.HALVETHScenes||(globalThis.HALVETHScenes=[])).push({canvas:cv,mode:'studio',snapshot:()=>({clock,mode,camera:{...camera},events:structuredClone(events),modelRunId,archivedRuns:structuredClone(archivedRuns),particles:particleModel.snapshot()}),draw,reset,useModel,setView:x=>{Object.assign(view,x);draw();},advance:seconds=>timing.advance(seconds),pause:()=>setPlaying(false),resume:()=>setPlaying(true)});
 let lastLanguage=document.documentElement.lang;document.addEventListener('halveth-language',()=>{if(document.documentElement.lang!==lastLanguage){lastLanguage=document.documentElement.lang;showMotionStatus();}});
 document.querySelector('[data-d8-import]')?.addEventListener('change',async event=>{
- const input=event.target;try{
+ const input=event.target;cancelImport();const request=new AbortController();importController=request;
+ try{
    const file=input.files[0];if(!file)return;if(file.size>5e6)throw Error('Datei zu groß');
-   const doc=JSON.parse(await file.text()),packet=spatial.packetFrom(doc);if(!packet)throw Error('Doppelacht-Zustand erwartet');
-   const next=spatial.create(packet.configuration);next.restore(packet);
+   const doc=JSON.parse(await file.text());request.signal.throwIfAborted();const packet=spatial.packetFrom(doc);if(!packet)throw Error('Doppelacht-Zustand erwartet');
+   const next=spatial.create(packet.configuration);
+   await next.restoreAsync(packet,{signal:request.signal,onProgress:({tick,total})=>{
+     importStatus="Import wird geprüft: "+(total?Math.floor(100*tick/total):100)+" %";showMotionStatus();
+   }});
+   request.signal.throwIfAborted();
    closeFlightRun('material-import');playing=false;prev=null;selectedModel='doppelacht';particleModel=next;
    spatialConfig={...packet.configuration};clock=next.time;timing.reset();spatialStyle();approach.stop();
    if(spatialConfig.layout==='shell')view.distance=spatialView.overviewDistance;
    if(doc.schema==='halveth.study/2.0'&&doc.view&&spatialConfig.layout==='shell'&&spatialView.validDistance(doc.view.distance)){
      view.distance=doc.view.distance;if(Number.isFinite(doc.view.yaw)&&Number.isFinite(doc.view.pitch)){view.yaw=doc.view.yaw;view.pitch=doc.view.pitch;}
    }syncSpatial();
-   if(mode==='flight')orbitFlight();draw();showMotionStatus();input.setCustomValidity('');
- }catch(e){input.setCustomValidity(e.message);input.reportValidity();}finally{input.value='';}
+   if(mode==='flight')orbitFlight();importStatus='';draw();showMotionStatus();input.setCustomValidity('');
+ }catch(e){if(importController===request&&e.name!=='AbortError'){importStatus='Import abgelehnt: '+e.message;input.setCustomValidity(e.message);input.reportValidity();showMotionStatus();}}
+ finally{if(importController===request){importController=null;input.value='';}}
 });
 new ResizeObserver(resize).observe(cv);reset();showMotionStatus();requestAnimationFrame(frame);
 })();

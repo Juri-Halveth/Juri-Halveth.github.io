@@ -12,6 +12,8 @@ for(const canvas of canvases){
  const motionLabel=key=>globalThis.HALVETHMotionUI?.label(key)||({pause:'Pause',continue:'Weiter',start:'Bewegung starten',limit:'Modellgrenze erreicht'}[key]||key);
  function syncMotion(){const b=button('pause');if(!b)return;const limit=particleModel?.diagnostics().status==='MODEL_LIMIT';b.disabled=!!limit;const label=motionLabel(running?'pause':hasStarted?'continue':'start');if(b.textContent!==label)b.textContent=label;}
  let params={},pendingInputs=[],inputHistory=[];
+ let replayController=null,replayStatus="";
+ function cancelReplay(){if(replayController)replayController.abort();replayController=null;replayStatus="";}
  const spatial=globalThis.HALVETHDoubleEight, spatialView=globalThis.HALVETHDoubleEightView;
  const approach=spatialView?.approach();
  let spatialConfig=spatial?.entryConfiguration()??{coupling:1}, spatialTimeOffset=0, lastPositions=[];
@@ -48,7 +50,7 @@ for(const canvas of canvases){
  readParameters();
  const r=seedrand(20261117);
  stars=Array.from({length:380},()=>({x:r(),y:r(),b:.2+r()*.8,size:.7+r()*1.7}));
- function reset(){if(selectedModel==='doppelacht'){setupSpatialView();syncSpatial();}else delete view.distance;
+ function reset(){cancelReplay();if(selectedModel==='doppelacht'){setupSpatialView();syncSpatial();}else delete view.distance;
    spatialTimeOffset=0;if(particleModel)particleModel.reset();clock.reset();last=null;pendingInputs=[];inputHistory=[];readParameters();initialParameters={...params};seekTarget=0;modelTime=0;phase=0;theta=0;wave=Array.from({length:88},(_,i)=>Math.exp(-Math.pow((i-21)/4,2))*.65);wvel=Array.from({length:88},()=>0);draw();}
  function resize(){const z=canvas.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2.25,Math.sqrt(5500000/(z.width*z.height||1)));canvas.width=Math.max(1,Math.floor(z.width*d));canvas.height=Math.max(1,Math.floor(z.height*d));draw();}
  function bg(w,h){let grad=c.createLinearGradient(0,0,w,h);grad.addColorStop(0,'#07182b');grad.addColorStop(.6,'#050d19');grad.addColorStop(1,'#0c1424');c.fillStyle=grad;c.fillRect(0,0,w,h);for(const s of stars){c.fillStyle=`rgba(210,226,243,${s.b*.30})`;c.fillRect(s.x*w,s.y*h,Math.max(.5,s.size*w/1500),Math.max(.5,s.size*w/1500));}}
@@ -85,7 +87,7 @@ for(const canvas of canvases){
  function draw(){const w=canvas.width,h=canvas.height;if(w<1||h<1)return;bg(w,h);
  switch(mode){case 'pair':waveform(w,h);break;case 'wave':wavemodel(w,h);break;case 'layers':layers(w,h);break;case 'dimensions':dimensions(w,h);break;case 'vortex2':vortex(w,h,false);break;case 'vortex3':vortex(w,h,true);break;case 'timeline':timeline(w,h);break;case 'sgr':sgr(w,h);break;case 'wirbel':wirbel(w,h);break;}
  }
- function showStatus(){syncMotion();if(status){const state=clock.snapshot();status.textContent=`${mode} · t=${modelTime.toFixed(3)} · ${state.steps} Schritte · ${document.hidden?'Hintergrundpause':running?'läuft':'pausiert'}${particleModel?' · '+selectedModel+' · '+(particleModel.diagnostics().status==='MODEL_LIMIT'?motionLabel('limit'):particleModel.diagnostics().status)+(selectedModel==='doppelacht'?' · 3D · '+(spatialConfig.count??spatial.defaults.count):(' · '+particleModel.diagnostics().orbitalTurns.toFixed(3)+' Umläufe')):''}${state.overloaded?' · Rechenrückstand '+state.backlogSeconds.toFixed(3)+' Modellsekunden':''} · Simulation · Modell, keine Naturmessung`;}}
+ function showStatus(){syncMotion();if(status){const state=clock.snapshot();status.textContent=`${replayStatus?replayStatus+" · ":""}${mode} · t=${modelTime.toFixed(3)} · ${state.steps} Schritte · ${document.hidden?'Hintergrundpause':running?'läuft':'pausiert'}${particleModel?' · '+selectedModel+' · '+(particleModel.diagnostics().status==='MODEL_LIMIT'?motionLabel('limit'):particleModel.diagnostics().status)+(selectedModel==='doppelacht'?' · 3D · '+(spatialConfig.count??spatial.defaults.count):(' · '+particleModel.diagnostics().orbitalTurns.toFixed(3)+' Umläufe')):''}${state.overloaded?' · Rechenrückstand '+state.backlogSeconds.toFixed(3)+' Modellsekunden':''} · Simulation · Modell, keine Naturmessung`;}}
  function frame(time){const dt=last===null?0:Math.max(0,(time-last)/1000);last=time;
   if(running&&!document.hidden&&params.speed>0){
     if(selectedModel==='doppelacht'&&approach.update(view,dt))spatialTools?.meter(view.distance);
@@ -121,14 +123,19 @@ for(const canvas of canvases){
  function seek(percent){if(!particleModel||['experimental','material','doppelacht'].includes(selectedModel))throw new RangeError('Seek is reference-only');if(!Number.isFinite(percent)||percent<0||percent>100)throw new RangeError('Invalid seek');reset();seekTarget=percent;const end=selectedModel==='inspiral'?HalvethInspiral.inspiralDuration(particleModel.snapshot({field:false}).parameters):100;particleModel.step(Math.max(Number.EPSILON,end*percent/100),{});modelTime=particleModel.snapshot({field:false}).time;running=false;last=null;draw();showStatus();}
  const previousSources={"lab.js":"0edfe6c0d2d00ef6dda6abb0016ac3eb8dd9d67d17cf0f497328e27ab112cf9c","studio.js":"2106283cb5353f0b541b89233cc957309aa490c8927514e6ed6992bfc9288734","fixed-clock.js":"f4c1d2cfef9b2dbe2c4b78a8f4c832304174543f3a743cbfd0adb22b2ab30e92","particle-view.js":"73de5fe492822bd6ea841c0364cc3d318994620a7a5bc355426b17076f4b25bf","particle-dynamics.js":"cbf8d00c18ffcb8fc4d2d0416562b9bbedc7fdba07a998b14bf93bd9e76ab701","reference-physics.js":"ae587d572d23818fb3974f7644abe150ca246e492a71f4e46d19352d935e06c9","models.js":"8f4c0d9174a53681bab50bb74549fd28c4cd44c7c9569d4c3f4086c5fdb61383","movement-ui.js":"fc6a01927cb10a2f545bb5ba04ebd369cdce2e54e379259a00a562b37e4275bd","material-engine.js":"7f6225646e7296259e4a4ffb66497d23f061801b349db05d8d7fc7f42575e19f","material-model.js":"4f8669e83a0ab22c038f2f05f38e347c488c4ae7d949a051df8e81197ede3bf2","material-view.js":"940304fef5da33b7a90f39c7215d09c60ae10a4fa19b96d90b1be56823446203"};
  const previousD8Sources={"lab.js":"86d78c6702f73a02ca48d4bd6655b57c004238c1f6a1d4c8271415131e688df7","studio.js":"ce7af8ca82ef65f7149cb1d1a347173b02e4a7412374ee2bccc2a06a1de6e029","fixed-clock.js":"f4c1d2cfef9b2dbe2c4b78a8f4c832304174543f3a743cbfd0adb22b2ab30e92","particle-view.js":"73de5fe492822bd6ea841c0364cc3d318994620a7a5bc355426b17076f4b25bf","particle-dynamics.js":"cbf8d00c18ffcb8fc4d2d0416562b9bbedc7fdba07a998b14bf93bd9e76ab701","reference-physics.js":"ae587d572d23818fb3974f7644abe150ca246e492a71f4e46d19352d935e06c9","models.js":"8f4c0d9174a53681bab50bb74549fd28c4cd44c7c9569d4c3f4086c5fdb61383","movement-ui.js":"fc6a01927cb10a2f545bb5ba04ebd369cdce2e54e379259a00a562b37e4275bd","material-engine.js":"7f6225646e7296259e4a4ffb66497d23f061801b349db05d8d7fc7f42575e19f","material-model.js":"072d81f3ff8020647fa84695912e7cac9cb952846a99f18c57021b8f157a3870","material-view.js":"940304fef5da33b7a90f39c7215d09c60ae10a4fa19b96d90b1be56823446203","doppelacht.js":"f11a52b996a7fc9e9c84890c63fd09c4bd47406550477d1e45aad257b21b6b9d","doppelacht-view.js":"61f84135a3ac7c4a72ee7d785e596afac36223238e442eeda52efe4b94d1586e","doppelacht-source.js":"c43fefcede392039dad4fb3444cadbe8504e45df4c68eb22a5186c57c7d06734"};
+ const previousShellSources={"lab.js":"3a76921aadc898fa3318105f3b0263ce7836f42c6c57d93f0ff9933cd40a7b28","studio.js":"00928366e747ea212fb0bac4512ac37f242214994a2a6dbe336a256ce9a996e3","fixed-clock.js":"f4c1d2cfef9b2dbe2c4b78a8f4c832304174543f3a743cbfd0adb22b2ab30e92","particle-view.js":"73de5fe492822bd6ea841c0364cc3d318994620a7a5bc355426b17076f4b25bf","particle-dynamics.js":"cbf8d00c18ffcb8fc4d2d0416562b9bbedc7fdba07a998b14bf93bd9e76ab701","reference-physics.js":"ae587d572d23818fb3974f7644abe150ca246e492a71f4e46d19352d935e06c9","models.js":"8f4c0d9174a53681bab50bb74549fd28c4cd44c7c9569d4c3f4086c5fdb61383","movement-ui.js":"fc6a01927cb10a2f545bb5ba04ebd369cdce2e54e379259a00a562b37e4275bd","material-engine.js":"7f6225646e7296259e4a4ffb66497d23f061801b349db05d8d7fc7f42575e19f","material-model.js":"072d81f3ff8020647fa84695912e7cac9cb952846a99f18c57021b8f157a3870","material-view.js":"940304fef5da33b7a90f39c7215d09c60ae10a4fa19b96d90b1be56823446203","doppelacht.js":"b67b0a71998812de55bdb2b068275b5835959f9fff4f597ca601471a1ff44e85","doppelacht-view.js":"57cdf163318a039ebd0f397f423836071fe3f3231e9179d15a13579ffa9821eb","doppelacht-source.js":"c09521869914d1707c54787075a5bad9a104b8e276a8290ace02b2f7f9295b41"};
  function matchesSources(actual,expected){return !!actual&&Object.keys(actual).length===Object.keys(expected).length&&Object.entries(expected).every(([key,value])=>actual[key]===value);}
- async function replaySpatial(data,packet){
+ async function replaySpatial(data,packet,signal){
    const native=data.schema==='halveth.integrated-scene/1.0';
    if(native&&(data.modelType!=='doppelacht'||data.build?.releaseId!==globalThis.HALVETH_BUILD.releaseId||
      !(matchesSources(data.build?.sources,globalThis.HALVETH_BUILD.sources)||
+       (packet.source===previousShellSources['doppelacht.js']&&matchesSources(data.build?.sources,previousShellSources))||
        (packet.source===previousD8Sources['doppelacht.js']&&!Object.hasOwn(packet.configuration,'layout')&&matchesSources(data.build?.sources,previousD8Sources)))))throw Error('Unpassende Quellen der 3D-Szene');
    const next=spatial.create(packet.configuration);
-   next.restore(packet);
+   await next.restoreAsync(packet,{signal,onProgress:({tick,total})=>{
+     replayStatus="Import wird geprüft: "+(total?Math.floor(100*tick/total):100)+" %";showStatus();
+   }});
+   signal.throwIfAborted();
    const importedView=native?data.view:null;
    if(importedView&&(!Number.isFinite(importedView.yaw)||!Number.isFinite(importedView.pitch)||
        !Number.isFinite(importedView.zoom)||importedView.zoom<.25||importedView.zoom>8||
@@ -162,6 +169,7 @@ for(const canvas of canvases){
    // A foreign host contributes the material instant, while this host starts its own UI clock.
    const importedClock=native?data.clock:null;
    const offset=native?(data.integration?.sourceTimeOffset??0):next.time+packet.credit;
+   signal.throwIfAborted();
    selectedModel='doppelacht';particleModel=next;spatialConfig={...packet.configuration};activeModelConfig=native?{...data.modelConfig}:{...spatialConfig};
    clock.reset();spatialTimeOffset=offset;if(importedClock)clock.restore(importedClock);
    modelTime=next.time;running=false;hasStarted=true;last=null;seekTarget=0;inputHistory=[];pendingInputs=[];
@@ -175,10 +183,18 @@ for(const canvas of canvases){
    for(const [selector,key]of [['[data-style-select]','style'],['[data-display-zoom]','zoom'],['[data-symbol-scale]','symbolScale']]){const el=panel.querySelector(selector);if(el)el.value=String(view[key]);}
    syncSpatial();draw();showStatus();return sceneSnapshot();
  }
- async function replay(data){
-  const packet=spatial?.packetFrom(data);if(packet)return replaySpatial(data,packet);
+ function beginReplay(){cancelReplay();const request=new AbortController();replayController=request;replayStatus="Import wird geprüft";showStatus();return request;}
+ async function replay(data,request=beginReplay()){
+  request.signal.throwIfAborted();
+  try{const result=await replayData(structuredClone(data),request.signal);if(replayController===request)replayStatus="";return result;}
+  catch(error){if(replayController===request)replayStatus=error.name==="AbortError"?"":"Wiedergabe abgelehnt: "+error.message;throw error;}
+  finally{if(replayController===request){replayController=null;showStatus();}}
+ }
+ async function replayData(data,signal){
+  signal.throwIfAborted();
+  const packet=spatial?.packetFrom(data);if(packet)return replaySpatial(data,packet,signal);
   if(!data||data.schema!=='halveth.integrated-scene/1.0'||!HALVETHModels.modes.includes(data.modelType)||!Number.isInteger(data.clock?.steps)||data.clock.steps<0||data.clock.steps>50000)throw new RangeError('Ungültiger oder zu großer Wiedergabeauftrag');
-  const build=globalThis.HALVETH_BUILD;if(!build||data.build?.releaseId!==build.releaseId||(!matchesSources(data.build.sources,build.sources)&&!matchesSources(data.build.sources,previousSources)&&!matchesSources(data.build.sources,previousD8Sources)))throw new RangeError('Wiedergabe gehört zu einem anderen Quellstand');
+  const build=globalThis.HALVETH_BUILD;if(!build||data.build?.releaseId!==build.releaseId||(!matchesSources(data.build.sources,build.sources)&&!matchesSources(data.build.sources,previousSources)&&!matchesSources(data.build.sources,previousD8Sources)&&!matchesSources(data.build.sources,previousShellSources)))throw new RangeError('Wiedergabe gehört zu einem anderen Quellstand');
   if(data.modelConfig&&(typeof data.modelConfig!=='object'||Array.isArray(data.modelConfig)||Object.keys(data.modelConfig).some(name=>!['r0','eccentricity'].includes(name))))throw new RangeError('Ungültige Modellkonfiguration');
   const initial={...data.initialParameters},history=data.inputHistory,pending=data.pendingInputs||[];
   for(const [name,spec]of Object.entries(schema))if(!Object.hasOwn(initial,name)||!Number.isFinite(initial[name])||initial[name]<spec.min||initial[name]>spec.max)throw new RangeError('Ungültige Anfangsparameter');
@@ -190,10 +206,11 @@ for(const canvas of canvases){
   for(let step=0;step<data.clock.steps;step++){
    while(cursor<history.length&&history[cursor].step<=step){const entry=history[cursor++];parameters[entry.name]=entry.value;}
    if(next.diagnostics().status==='RUNNING')next.step((1/90)*(['experimental','material','doppelacht'].includes(data.modelType)?1:parameters.referenceRate),data.modelType==='experimental'?{attraction:parameters.merge/36,damping:parameters.damping,frequency:parameters.frequency,sourceMinus:parameters.sourceMinus,sourcePlus:parameters.sourcePlus,fieldFeedback:.03}:{});
-   if(step&&step%512===0)await new Promise(resolve=>setTimeout(resolve,0));
+   if(step&&step%512===0){await new Promise(resolve=>setTimeout(resolve,0));signal.throwIfAborted();}
   }
   while(cursor<history.length&&history[cursor].step<=data.clock.steps){const entry=history[cursor++];parameters[entry.name]=entry.value;}
   if(data.modelType==='material'&&JSON.stringify(next.snapshot())!==JSON.stringify(data.particles))throw new RangeError('Material-Wiedergabe weicht vom gespeicherten Rechenzustand ab');
+  signal.throwIfAborted();
   particleModel=next;selectedModel=data.modelType;activeModelConfig=data.modelType==='material'?{}:{r0:['newton','inspiral'].includes(data.modelType)?next.snapshot({field:false}).parameters.r0:data.modelConfig?.r0??2.4,eccentricity:data.modelConfig?.eccentricity??0};params=parameters;initialParameters=initial;inputHistory=structuredClone(history);pendingInputs=structuredClone(pending);seekTarget=data.seekTarget||0;clock.restore(data.clock);modelTime=next.snapshot({field:false}).time;running=false;last=null;
   if(data.view){for(const name of ['yaw','pitch','zoom','symbolScale'])if(data.view[name]!==undefined&&Number.isFinite(data.view[name]))view[name]=data.view[name];if(['rods','orientation','field','sharp','flow','raster','cells','space'].includes(data.view.style))view.style=data.view.style;if(['rgb','bluegold'].includes(data.view.palette))view.palette=data.view.palette;if(typeof data.view.annotations==='boolean')view.annotations=data.view.annotations;}
   for(const name of Object.keys(schema))if(ctrl(name))ctrl(name).value=String(params[name]);const selector=panel.querySelector('[data-model-select]');if(selector)selector.value=selectedModel;
@@ -213,7 +230,12 @@ for(const canvas of canvases){
   for(const [selector,key,convert]of [['[data-display-zoom]','zoom',Number],['[data-symbol-scale]','symbolScale',Number],['[data-material-palette]','palette',String]])panel.querySelector(selector)?.addEventListener('input',e=>{view[key]=convert(e.target.value);draw();});
   panel.querySelector('[data-core-annotations]')?.addEventListener('change',e=>{view.annotations=e.target.checked;draw();});
   button('import')?.addEventListener('click',()=>panel.querySelector('[data-replay-file]')?.click());
-  panel.querySelector('[data-replay-file]')?.addEventListener('change',async e=>{const file=e.target.files[0];try{if(!file||file.size>4*1024*1024)throw new RangeError('Datei zu groß');await replay(JSON.parse(await file.text()));}catch(error){if(status)status.textContent='Wiedergabe abgelehnt: '+error.message;}finally{e.target.value='';}});
+  panel.querySelector('[data-replay-file]')?.addEventListener('change',async e=>{
+   const file=e.target.files[0],request=beginReplay();
+   try{if(!file||file.size>4*1024*1024)throw new RangeError('Datei zu groß');await replay(JSON.parse(await file.text()),request);}
+   catch(error){if(replayController===request&&error.name!=="AbortError"){replayStatus='Wiedergabe abgelehnt: '+error.message;showStatus();}}
+   finally{if(replayController===request)replayController=null;if(!replayController)e.target.value='';}
+  });
   button('fullscreen')?.addEventListener('click',()=>{if(document.fullscreenElement)document.exitFullscreen();else panel.requestFullscreen?.();});
   button('movie')?.addEventListener('click',()=>{const event=new CustomEvent('halveth-record-scene',{detail:{canvas,scene:sceneSnapshot,draw}});window.dispatchEvent(event);});
  }

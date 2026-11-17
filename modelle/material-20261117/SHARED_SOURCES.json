@@ -35,8 +35,8 @@
     },
     {
       "path": "assets/doppelacht.js",
-      "bytes": 15306,
-      "sha256": "b67b0a71998812de55bdb2b068275b5835959f9fff4f597ca601471a1ff44e85"
+      "bytes": 17130,
+      "sha256": "4627f85f955c913e588b323569dbd45081bcb55464878909eb9645574d4e102f"
     },
     {
       "path": "assets/doppelacht-view.js",
@@ -46,7 +46,7 @@
     {
       "path": "assets/doppelacht-source.js",
       "bytes": 99,
-      "sha256": "c09521869914d1707c54787075a5bad9a104b8e276a8290ace02b2f7f9295b41"
+      "sha256": "e9028130dd3398f9ce7012a0904b683901a93eaa41a617c0296671c649dfb43b"
     }
   ]
 }

@@ -32,3 +32,31 @@ test('camera changes, material replay and a rejected import preserve the paused 
   });
   expect(result).toEqual({valid:true,rejected:true,preservedAfterRejection:true,sameParticles:true,images:4});
 });
+
+test('checkpoint verification yields to interaction and commits only the verified material',async({page})=>{
+  await page.emulateMedia({reducedMotion:'reduce'});await page.goto(route);
+  await page.waitForFunction(()=>globalThis.HALVETHScenes?.length);
+  const result=await page.evaluate(async()=>{
+    const scene=HALVETHScenes[0],model=HALVETHDoubleEight.create({layout:'shell'});
+    for(let i=0;i<6;i++)model.step(1);
+    const packet=model.snapshot(),before=JSON.stringify(scene.snapshot().particles);
+    const pending=scene.replay(packet),retained=before===JSON.stringify(scene.snapshot().particles);
+    let yielded=false;setTimeout(()=>{yielded=true;},0);
+    await pending;
+    return{yielded,retained,same:JSON.stringify(scene.snapshot().particles.materialCells)===JSON.stringify(packet.materialCells)};
+  });
+  expect(result).toEqual({yielded:true,retained:true,same:true});
+});
+
+test('a model change during checkpoint verification cancels the stale import',async({page})=>{
+  await page.emulateMedia({reducedMotion:'reduce'});await page.goto(route);
+  await page.waitForFunction(()=>globalThis.HALVETHScenes?.length);
+  const result=await page.evaluate(async()=>{
+    const scene=HALVETHScenes[0],model=HALVETHDoubleEight.create({layout:'shell'});model.step(1);
+    const pending=scene.replay(model.snapshot()).then(()=>null,error=>error.name);
+    setTimeout(()=>scene.useModel('newton'),0);
+    const error=await pending;
+    return{error,model:scene.snapshot().modelType,tick:scene.snapshot().clock.steps};
+  });
+  expect(result).toEqual({error:'AbortError',model:'newton',tick:0});
+});
