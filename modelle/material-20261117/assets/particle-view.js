@@ -29,7 +29,10 @@ function paintSharp(ctx,field,cx,cy,scale,flow=false){
  const {nx,ny,xmin,xmax,ymin,ymax,values}=field;
  const spanX=xmax-xmin,spanY=ymax-ymin;
  const x0=Math.round(cx+xmin*scale),y0=Math.round(cy-ymax*scale);
- const width=Math.max(2,Math.round(spanX*scale)),height=Math.max(2,Math.round(spanY*scale));
+ const fullWidth=Math.max(2,Math.round(spanX*scale)),fullHeight=Math.max(2,Math.round(spanY*scale));
+ const left=Math.max(0,x0),top=Math.max(0,y0),offsetX=left-x0,offsetY=top-y0;
+ const width=Math.max(0,Math.min(ctx.canvas.width,x0+fullWidth)-left),height=Math.max(0,Math.min(ctx.canvas.height,y0+fullHeight)-top);
+ if(!width||!height)return;
  let buf=buffers.get(ctx);
  if(!buf||buf.width!==width||buf.height!==height){buf={width,height,image:ctx.createImageData(width,height)};buffers.set(ctx,buf);}
  const data=buf.image.data;
@@ -37,11 +40,11 @@ function paintSharp(ctx,field,cx,cy,scale,flow=false){
  // 96×64 screenshot, gaussian blur, imageSmoothing or invented sinusoidal layer.
  const xs=new Int32Array(width),xf=new Float64Array(width);
  for(let x=0;x<width;x++){
-  const v=(x+.5)*(nx-1)/width;
+  const v=(x+offsetX+.5)*(nx-1)/fullWidth;
   xs[x]=Math.min(nx-2,Math.floor(v));xf[x]=v-xs[x];
  }
  for(let y=0;y<height;y++){
-  const gy=(height-y-.5)*(ny-1)/height;
+  const gy=(fullHeight-y-offsetY-.5)*(ny-1)/fullHeight;
   const j=Math.max(0,Math.min(ny-2,Math.floor(gy))),b=Math.max(0,Math.min(1,gy-j));
   const row0=j*nx,row1=(j+1)*nx,offset=y*width*4;
   for(let x=0;x<width;x++){
@@ -56,12 +59,12 @@ function paintSharp(ctx,field,cx,cy,scale,flow=false){
   }
  }
  // putImageData retains true device-pixel edges, independent of canvas interpolation.
- ctx.putImageData(buf.image,x0,y0);
+ ctx.putImageData(buf.image,left,top);
 }
 function draw(ctx,state,w,h,view={}){
  const style=view.style||'sharp';if(style==='space'){drawSpace(ctx,state,w,h,view);return;}
  const field=state.field,spanX=field.xmax-field.xmin,spanY=field.ymax-field.ymin;
- const scale=Math.min(w/spanX,h/spanY)*.93,cx=w/2,cy=h*.48;
+ const scale=Math.min(w/spanX,h/spanY)*.93*(view.zoom??1),cx=w/2,cy=h*.48;
  const point=(x,y)=>({x:cx+x*scale,y:cy-y*scale});
  ctx.fillStyle='#050a11';ctx.fillRect(0,0,w,h);
  if(style==='raster'||style==='cells')paintCells(ctx,field,cx,cy,scale,style);else paintSharp(ctx,field,cx,cy,scale,style==='flow');

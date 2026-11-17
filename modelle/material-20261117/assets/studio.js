@@ -5,6 +5,7 @@ const $=id=>document.getElementById(id),clamp=(n,a,b)=>Math.max(a,Math.min(b,n))
 let seed=20261117,n=32,clock=0,events=[],seen=new Set(),mode='pair',playing=!matchMedia('(prefers-reduced-motion:reduce)').matches,prev=null,coupling=.25,keys=new Set(),drag=null;
 let hasStarted=playing;const motionLabel=key=>globalThis.HALVETHMotionUI?.label(key)||({pause:'Pause',continue:'Weiter',start:'Bewegung starten',limit:'Modellgrenze erreicht'}[key]||key);
 let selectedModel='material',view={style:'rods',palette:'rgb',annotations:false,symbolScale:1,zoom:1,yaw:.35,pitch:.55},particleModel=HALVETHModels.create(selectedModel,{seed:20261117});
+let archivedRuns=[],runSerial=0,modelRunId='';
 let camera={x:0,y:0,z:-9,yaw:0,pitch:0},stars=[],sources=[];
 function rand(s){return()=>{s=(s+0x6D2B79F5)>>>0;let x=s;x=Math.imul(x^(x>>>15),x|1);x^=x+Math.imul(x^(x>>>7),x|61);return ((x^(x>>>14))>>>0)/4294967296;};}
 function build(){let r=rand(seed);stars=Array.from({length:1800},()=>({x:(r()-.5)*200,y:(r()-.5)*110,z:(r()-.1)*1300,sz:.5+2*r()}));sources=Array.from({length:n},(_,i)=>({id:`SOURCE_${String(i).padStart(3,'0')}`,x:i===0?0:Math.sin(i*.37)*10,y:i===0?0:Math.cos(i*.51)*6,z:i*10,bit:r()<.5?0:1}));}
@@ -28,7 +29,7 @@ function flight(w,h){for(const s of stars){const p=projection(s,w,h);if(!p||p.x<
  state.bodies.forEach((b,i)=>{const p=projection({x:b.x*2,y:b.y*2,z:0},w,h);if(p){glow(p.x,p.y,clamp(180/p.d,5,30),i?'#f0c77e':'#81d1f0');label((i?'+':'−')+' · Modell',p.x,p.y+24,14,i?'#ffe4ab':'#c5eeff');}});
  }
  ctx.strokeStyle='#a7c9d4a6';ctx.beginPath();ctx.moveTo(w/2-9,h/2);ctx.lineTo(w/2+9,h/2);ctx.moveTo(w/2,h/2-9);ctx.lineTo(w/2,h/2+9);ctx.stroke();}
-function record(s,why){if(!s||seen.has(s.id))return;seen.add(s.id);events.push({ordinal:events.length+1,source:s.id,value:s.bit,model_time_s:+clock.toFixed(5),reason:why,camera:{...camera}});}
+function record(s,why){if(!s||seen.has(s.id))return;seen.add(s.id);events.push({modelRunId,modelType:selectedModel,ordinal:events.length+1,source:s.id,value:s.bit,model_time_s:+clock.toFixed(5),reason:why,camera:{...camera}});}
 function draw(){const w=cv.width,h=cv.height;bg(w,h);if(mode==='pair')pair(w,h);else flight(w,h);}
 function motion(dt){if(mode!=='flight')return;let f=(keys.has('w')?1:0)-(keys.has('s')?1:0),side=(keys.has('d')?1:0)-(keys.has('a')?1:0),up=(keys.has('e')?1:0)-(keys.has('q')?1:0);const speed=keys.has('Shift')?24:8,a=camera.yaw,p=camera.pitch;
  camera.x+=speed*dt*(Math.sin(a)*Math.cos(p)*f+Math.cos(a)*side);camera.y+=speed*dt*(Math.sin(p)*f+up);camera.z+=speed*dt*(Math.cos(a)*Math.cos(p)*f-Math.sin(a)*side);}
@@ -41,24 +42,34 @@ function setPlaying(value){if(value&&particleModel.diagnostics().status==='MODEL
 function frame(now){if(playing&&!document.hidden){if(prev!==null)timing.advance(Math.max(0,(now-prev)/1000));prev=now;}else prev=null;
  clock=particleModel.snapshot({field:false}).time;draw();const debt=timing.snapshot().backlogSeconds;
  $('studio-readout').textContent=`t=${clock.toFixed(2)} s · ${seen.size} Ereignisse · ${n} Quellen · Seed ${seed}`+(debt>=1/120?` · Rückstand ${debt.toFixed(2)} s`:'');showMotionStatus();requestAnimationFrame(frame);}
-function reset(){particleModel.reset();timing.reset();clock=0;events=[];seen=new Set();coupling=+($('studio-coupling').value||25)/100;camera={x:0,y:0,z:-9,yaw:0,pitch:0};keys.clear();prev=null;build();draw();}
+function closeFlightRun(reason){
+ if(events.length)archivedRuns.push({kind:'FLIGHT_EVENT_ARCHIVE_NOT_SOLVER_REPLAY',modelRunId,modelType:selectedModel,reason,modelTime:clock,seed,sourceCount:sources.length,camera:{...camera},events:structuredClone(events),seen:[...seen]});
+ modelRunId='STUDIO_RUN_'+String(++runSerial).padStart(6,'0');events=[];seen=new Set();
+}
+function useModel(name){
+ if(!HALVETHModels.modes.includes(name))throw new RangeError('Unknown model');
+ const next=HALVETHModels.create(name,{seed:20261117});closeFlightRun('model-change');selectedModel=name;particleModel=next;
+ view.style=name==='material'?'rods':'sharp';if($('studio-style'))$('studio-style').value=view.style;if($('studio-model'))$('studio-model').value=name;
+ timing.reset();clock=0;prev=null;draw();showMotionStatus();
+}
+function reset(){closeFlightRun('restart');particleModel.reset();timing.reset();clock=0;events=[];seen=new Set();coupling=+($('studio-coupling').value||25)/100;camera={x:0,y:0,z:-9,yaw:0,pitch:0};keys.clear();prev=null;build();draw();}
 function resize(){const b=cv.getBoundingClientRect();const d=Math.min(1.8,devicePixelRatio||1,Math.sqrt(2100000/(b.width*b.height||1)));cv.width=Math.max(1,Math.floor(b.width*d));cv.height=Math.max(1,Math.floor(b.height*d));draw();}
 function download(blob,name){if(!blob)return;const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),2000);}
 $('studio-coupling').addEventListener('input',e=>{coupling=+e.target.value/100;updateEvents();draw();});$('studio-count').addEventListener('change',e=>{n=+e.target.value;reset();});
 for(const b of document.querySelectorAll('[data-studio]'))b.addEventListener('click',()=>{mode=b.dataset.studio;document.querySelectorAll('[data-studio]').forEach(k=>k.classList.toggle('active',k===b));$('studio-mode-label').textContent=mode==='pair'?'MODELLANSICHT':'FREIER FLUG';draw();});
 $('studio-pause').addEventListener('click',()=>{setPlaying(!playing);});$('studio-reset').addEventListener('click',()=>{reset();setPlaying(hasStarted);});
 $('studio-png').addEventListener('click',()=>{const w=cv.width,h=cv.height;cv.width=3840;cv.height=2160;draw();cv.toBlob(b=>{download(b,'HALVETH_FIRST_DIFFERENCE_4K.png');cv.width=w;cv.height=h;draw();},'image/png');});
-$('studio-json').addEventListener('click',()=>download(new Blob([JSON.stringify({schema:'halveth.study/2.0',build:globalThis.HALVETH_BUILD,model:'illustration; no natural event measurements',seed,clock,mode,coupling,camera,sources,events,modelType:selectedModel,view:{...view},particles:particleModel.snapshot(),timing:timing.snapshot()},null,2)],{type:'application/json'}),'HALVETH_MODEL_EVENTS.json'));
+$('studio-json').addEventListener('click',()=>download(new Blob([JSON.stringify({schema:'halveth.study/2.0',build:globalThis.HALVETH_BUILD,model:'illustration; no natural event measurements',seed,clock,mode,coupling,camera,sources,events,modelType:selectedModel,modelRunId,archivedRuns:structuredClone(archivedRuns),view:{...view},particles:particleModel.snapshot(),timing:timing.snapshot()},null,2)],{type:'application/json'}),'HALVETH_MODEL_EVENTS.json'));
 cv.addEventListener('pointerdown',e=>{if(mode!=='flight')return;drag={x:e.clientX,y:e.clientY,id:e.pointerId};cv.setPointerCapture(e.pointerId);cv.focus();});
 cv.addEventListener('pointermove',e=>{if(!drag||drag.id!==e.pointerId)return;camera.yaw-=(e.clientX-drag.x)*.004;camera.pitch=clamp(camera.pitch+(e.clientY-drag.y)*.004,-1.45,1.45);drag.x=e.clientX;drag.y=e.clientY;});for(const k of ['pointerup','pointercancel','lostpointercapture'])cv.addEventListener(k,()=>drag=null);
 window.addEventListener('keydown',e=>{if(['INPUT','TEXTAREA','BUTTON','SELECT'].includes(e.target.tagName))return;const key=e.key.length===1?e.key.toLowerCase():e.key;if('wsadqe'.includes(key)||key==='Shift'){keys.add(key);e.preventDefault();}if(key==='p'&&!e.repeat){setPlaying(!playing);}if(key==='x')keys.clear();});window.addEventListener('keyup',e=>keys.delete(e.key.length===1?e.key.toLowerCase():e.key));window.addEventListener('blur',()=>keys.clear());document.addEventListener('visibilitychange',()=>{keys.clear();prev=null;});
-$('studio-model')?.addEventListener('change',e=>{selectedModel=e.target.value;view.style=selectedModel==='material'?'rods':'sharp';if($('studio-style'))$('studio-style').value=view.style;particleModel=HALVETHModels.create(selectedModel,{seed:20261117});timing.reset();clock=0;prev=null;draw();});
+$('studio-model')?.addEventListener('change',e=>useModel(e.target.value));
 $('studio-style')?.addEventListener('change',e=>{view.style=e.target.value;draw();});
 for(const [id,key,convert]of [['studio-zoom','zoom',Number],['studio-symbol-size','symbolScale',Number],['studio-material-palette','palette',String]])$(id)?.addEventListener('input',e=>{view[key]=convert(e.target.value);draw();});
 $('studio-annotations')?.addEventListener('change',e=>{view.annotations=e.target.checked;draw();});
 $('studio-fullscreen')?.addEventListener('click',()=>cv.parentElement.requestFullscreen?.());
 $('studio-movie')?.addEventListener('click',()=>window.dispatchEvent(new CustomEvent('halveth-record-scene',{detail:{canvas:cv,scene:()=>({clock,mode,camera:{...camera},particles:particleModel.snapshot()}),draw}})));
-(globalThis.HALVETHScenes||(globalThis.HALVETHScenes=[])).push({canvas:cv,mode:'studio',snapshot:()=>({clock,mode,camera:{...camera},events:structuredClone(events),particles:particleModel.snapshot()}),draw,reset,useModel:name=>{if(!HALVETHModels.modes.includes(name))throw new RangeError('Unknown model');selectedModel=name;particleModel=HALVETHModels.create(name,{seed:20261117});reset();},setView:x=>{Object.assign(view,x);draw();},advance:seconds=>timing.advance(seconds),pause:()=>setPlaying(false),resume:()=>setPlaying(true)});
+(globalThis.HALVETHScenes||(globalThis.HALVETHScenes=[])).push({canvas:cv,mode:'studio',snapshot:()=>({clock,mode,camera:{...camera},events:structuredClone(events),modelRunId,archivedRuns:structuredClone(archivedRuns),particles:particleModel.snapshot()}),draw,reset,useModel,setView:x=>{Object.assign(view,x);draw();},advance:seconds=>timing.advance(seconds),pause:()=>setPlaying(false),resume:()=>setPlaying(true)});
 let lastLanguage=document.documentElement.lang;document.addEventListener('halveth-language',()=>{if(document.documentElement.lang!==lastLanguage){lastLanguage=document.documentElement.lang;showMotionStatus();}});
 new ResizeObserver(resize).observe(cv);reset();showMotionStatus();requestAnimationFrame(frame);
 })();

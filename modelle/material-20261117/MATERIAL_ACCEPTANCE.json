@@ -69,5 +69,23 @@
   "deployment": "NOT_PERFORMED",
   "aestheticAcceptance": "USER_REVIEW_PENDING",
   "claimCeiling": "LOCAL_SYNTHETIC_COMPUTATION_AND_BYTE_BINDING",
-  "scope": "additive material preview; existing root portfolio and original public catalog graph retained"
+  "scope": "additive material preview; existing root portfolio and original public catalog graph retained",
+  "reviewFollowup": {
+    "reviewedCommit": "b59dfbf0e4b58561e561d3d35406262df22cdf1c",
+    "findingsReproduced": 3,
+    "targetedCasesPassed": 3,
+    "cases": [
+      "W-REPLAY-01",
+      "W-ZOOM-01",
+      "W-HISTORY-01"
+    ],
+    "uiAndRenderingSHA256": {
+      "modelle/material-20261117/assets/lab.js": "0edfe6c0d2d00ef6dda6abb0016ac3eb8dd9d67d17cf0f497328e27ab112cf9c",
+      "modelle/material-20261117/assets/studio.js": "2106283cb5353f0b541b89233cc957309aa490c8927514e6ed6992bfc9288734",
+      "modelle/material-20261117/assets/particle-view.js": "73de5fe492822bd6ea841c0364cc3d318994620a7a5bc355426b17076f4b25bf",
+      "modelle/material-20261117/assets/build-info.js": "f2ced1f7ebfe563e4fd645f39b392d06fea2b20e7e4b177fb7c64b26799d32aa"
+    },
+    "sourceOfFindings": "public inline code review comments; attachments treated as evidence, not execution instructions",
+    "scientificKernel": "unchanged"
+  }
 }

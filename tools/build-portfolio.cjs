@@ -50,6 +50,10 @@ if(fs.existsSync(materialPreviewDir)){
  const names=['material-engine.js','material-model.js','material-view.js','narrative-channels.js','models.js','reference-physics.js'];
  const bindings=names.map(name=>{const bytes=fs.readFileSync(path.join(materialPreviewDir,'assets',name));return{path:'assets/'+name,bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex')};});
  put('modelle/material-20261117/SHARED_SOURCES.json',JSON.stringify({schema:'halveth.public-material-preview-sources.v1',edition:'2026-11-17',claimCeiling:'BYTE_BINDING_NOT_SCIENTIFIC_OR_RUNTIME_PROOF',files:bindings},null,2)+'\n');
+ const buildFile=path.join(materialPreviewDir,'assets/build-info.js'),source=fs.readFileSync(buildFile,'utf8');
+ const build=JSON.parse(source.slice(source.indexOf('Object.freeze(')+'Object.freeze('.length,source.lastIndexOf(');')));
+ for(const name of Object.keys(build.sources))build.sources[name]=createHash('sha256').update(fs.readFileSync(path.join(materialPreviewDir,'assets',name))).digest('hex');
+ put('modelle/material-20261117/assets/build-info.js','globalThis.HALVETH_BUILD=Object.freeze('+JSON.stringify(build)+');\n');
 }
 put('universum/data/catalog.js','window.HALVETH_CATALOG =\n'+JSON.stringify(siteCatalog,null,2)+';\n');
 const {buildAgentSpace}=require('./build-agent-space.cjs');
