@@ -1,0 +1,182 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-3So8qi5wvbagkMX2BEjKlvNNsqEJtp8EsTkkUbU75Ts=' 'sha256-kagloIaMeBfS+B1vY52AijPohx06JqdXehh68nTrM2I='; style-src 'unsafe-inline'; img-src data: blob:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"><title>HALVETH · Wirbel & Wärme 0.3</title><style>
+:root{color-scheme:dark;--bg:#070b14;--panel:#101826;--ink:#e6eef7;--dim:#9caec4;--line:#25354b;--accent:#8ce3cf}*{box-sizing:border-box}body{margin:0;font:15px/1.5 system-ui,sans-serif;background:var(--bg);color:var(--ink)}header{padding:20px 26px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;align-items:center}.kicker{color:var(--accent);letter-spacing:.16em;font-size:11px;font-weight:750}h1{margin:3px 0;font-size:28px;letter-spacing:-.03em}header p{margin:3px 0 0;color:var(--dim);font-size:13px}.version{font-size:12px;color:var(--dim);text-align:right}.layout{display:grid;grid-template-columns:minmax(0,1fr) 322px;min-height:640px}.viewport{position:relative;min-height:640px;overflow:hidden;border-right:1px solid var(--line);background:#030812}#space{display:block;width:100%;height:100%;position:absolute;touch-action:none;outline-offset:-3px}.overlay{position:absolute;left:22px;top:16px;right:22px;pointer-events:none;display:flex;gap:9px;align-items:center;flex-wrap:wrap}.pill{font-size:11px;background:#101a2ccf;border:1px solid #2b4562;border-radius:20px;padding:5px 10px}.caption{position:absolute;left:20px;bottom:16px;right:20px;pointer-events:none;color:#91a8c3;font-size:12px;text-shadow:0 1px 3px black}aside{padding:20px;background:var(--panel);display:flex;flex-direction:column;gap:14px}button,select,input{font:inherit;color:inherit}button,select{border:1px solid #3c506b;background:#152338;border-radius:7px;padding:9px 10px;cursor:pointer}button:hover{border-color:var(--accent)}button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}button.primary{background:#b3efdb;color:#10241d;font-weight:750;border-color:#b3efdb}.buttons{display:flex;gap:7px;flex-wrap:wrap}.buttons button{flex:1;font-size:13px}label{display:block;font-size:12px;color:#b6c6da}label span{float:right;color:var(--ink);font-variant-numeric:tabular-nums}input[type=range]{width:100%;accent-color:var(--accent);margin:8px 0 0}input[type=number],select{width:100%}input[type=number]{padding:8px;border-radius:6px;background:#0b1322;border:1px solid var(--line)}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:12px}.small{font-size:11px;color:var(--dim)}#pending{color:#ffc887;min-height:17px;margin:0;font-size:11px}.separator{height:1px;background:var(--line);margin:2px 0}.telemetry{padding:18px 26px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);gap:16px}.metric{padding:0 14px;border-left:1px solid var(--line)}.metric:first-child{border-left:0;padding-left:0}.metric small{display:block;color:var(--dim);font-size:11px}.metric strong{font:600 22px/1.6 ui-monospace,monospace}.metric em{display:block;font-size:11px;color:#92a9c2;font-style:normal}.bottom{padding:0 26px 24px;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,370px);gap:22px}.chartbox,.note{border:1px solid var(--line);border-radius:9px;padding:14px 18px;background:#0c1421}.chartbox h2,.note h2{font-size:14px;margin:0 0 10px}.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:var(--dim)}.legend span:before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c);margin-right:5px}#chart{width:100%;height:120px;display:block}.note p{font-size:12px;margin:5px 0 10px;color:#b7c7db}.note code{color:var(--accent);font-size:11px;word-break:break-word}.foot{padding:16px 26px;border-top:1px solid var(--line);font-size:12px;color:var(--dim)}a{color:var(--accent)}#error{color:#ffb59f}details{font-size:12px}summary{cursor:pointer;color:var(--accent)}#records{font-size:11px;color:var(--dim)}@media(max-width:900px){header{padding:16px;display:block}.version{text-align:left;margin-top:10px}.layout{grid-template-columns:1fr}.viewport{height:60vh;min-height:400px;border-right:0}.telemetry{grid-template-columns:repeat(2,1fr);padding:18px}.bottom{grid-template-columns:1fr;padding:0 18px 18px}aside{display:grid;grid-template-columns:1fr 1fr}aside .full{grid-column:1/-1}.overlay{left:12px;right:12px}h1{font-size:25px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style></head><body>
+<header><div><div class="kicker">HALVETH / EXPERIMENT 03</div><h1>Wirbel & Wärme</h1><p>Was wird aus Bewegung, wenn Körper Energie austauschen?</p></div><div class="version">3D-Mehrkörper-Modell · 0.3<br>Offline · feste Schritte · wiederholbarer Seed</div></header>
+<main><div class="layout"><section class="viewport" aria-label="Dreidimensionale Modellansicht"><canvas id="space" tabindex="0" role="img" aria-label="Umlaufende Modellkörper und masselose Testspuren. Ziehen dreht die Kamera, Mausrad zoomt."></canvas><div class="overlay"><span id="state" class="pill">PAUSE</span><span id="time" class="pill">t = 0.000</span><span class="pill">Körperpakete, keine Horizonte</span></div><div class="caption"><span id="sceneCaption">300 masselose Testspuren · keine Teilchenmessung</span><br>Ziehen: Blick drehen · Rad: Zoom · Leertaste: Start/Pause · R: Neustart</div></section>
+<aside><div class="full"><label for="preset">Versuch</label><select id="preset"><option value="heat">Dämpfung → Wärme → Leuchten</option><option value="free">Freier Umlauf · ohne Wärmequelle</option><option value="drive">Wirbel mit äußerem Antrieb</option><option value="encounter">Vier Körper · enge Begegnungen</option></select></div><div class="twocol full"><label>Körperzahl<select id="n"><option>3</option><option>4</option><option>6</option><option>8</option></select></label><label>Zufallsstartwert<input id="seed" type="number" min="0" max="4294967295" step="1" value="3491"></label></div>
+<label>Anfangsdrehung <span id="spinV"></span><input id="spin" type="range" min="0" max="1.5" step=".01"></label><label>Dämpfung <span id="dampingV"></span><input id="damping" type="range" min="0" max="3" step=".05"></label><label>Wärmeabgabe <span id="coolingV"></span><input id="cooling" type="range" min="0" max="1.5" step=".05"></label><label>Äußerer Antrieb <span id="driveV"></span><input id="drive" type="range" min="0" max=".2" step=".005"></label>
+<div class="full"><p id="pending"></p><div class="buttons"><button id="apply">Werte übernehmen & neu</button></div></div><div class="buttons full"><button id="play" class="primary">▶ Start</button><button id="reset">↺ Gleicher Seed</button></div><div class="separator full"></div>
+<label>Zeittempo <span id="rateV">1×</span><input id="rate" type="range" min="0" max="4" step=".25" value="1"></label><label>Belichtung <span id="exposureV">1.0×</span><input id="exposure" type="range" min=".2" max="4" step=".1" value="1"></label><div class="small full">Zeittempo und Belichtung ändern keine Kräfte. Mehr Anfangsdrehung kann Körper auch auseinandertragen.</div><div class="buttons full"><button id="home">Ansicht zurück</button><button id="fullscreen">Vollbild</button></div><div class="buttons full"><button id="export">Versuch als JSON</button></div><div id="records" class="full"></div><div id="error" class="small full" role="alert"></div></aside></div>
+<section class="telemetry" aria-label="Energiebilanz"><div class="metric"><small>BEWEGUNGSENERGIE</small><strong id="kinetic">0</strong><em>Modell-Einheiten</em></div><div class="metric"><small>WÄRME IM SYSTEM</small><strong id="heat">0</strong><em>keine Kelvin-Kalibration</em></div><div class="metric"><small>ABGEGEBENE ENERGIE</small><strong id="radiated">0</strong><em>über den bisherigen Lauf</em></div><div class="metric"><small>ARBEIT DES ANTRIEBS</small><strong id="work">0</strong><em>explizite externe Energie</em></div><div class="metric"><small>BILANZABWEICHUNG</small><strong id="residual">0</strong><em id="quality">Numerische Kontrolle</em></div></section>
+<div class="bottom"><section class="chartbox"><h2>Der Energiefluss im laufenden Versuch</h2><canvas id="chart" aria-label="Zeitverlauf von Bewegungsenergie, Reservoirenergie, abgegebener Energie und Antriebsarbeit"></canvas><div class="legend"><span style="--c:#84d8f4">Bewegung</span><span style="--c:#ffb069">Wärme</span><span style="--c:#d8b5ff">Abgegeben</span><span style="--c:#b6e7ac">Antrieb</span></div><p class="small">Bilanz: Bewegung + Potential + Wärme + abgegebene Energie − Antriebsarbeit bleibt näherungsweise konstant.</p></section><section class="note"><h2>Was hier leuchtet</h2><p>Die helle Hülle folgt der Wärmeabgabe im Modell. Kernpunkte und Linien sind Orientierungshilfen. Farben sind eine Anzeigeskala, kein gemessenes Spektrum.</p><details><summary>Modellgrenzen und Begegnungen</summary><p>Geglättete Newton-Gravitation + radiale Dämpfung + einfaches Wärmereservoir. Keine Elektronen-/Protonenrechnung, Magnetfelder, Ionisation, Verschmelzung oder Ereignishorizonte. Testspuren haben keine Masse und zählen nicht zur Energiebilanz.</p><p id="encounter">Noch keine enge Begegnung.</p></details><code id="seedInfo"></code></section></div></main><footer class="foot">Das erhaltene Sgr-A*-Optiklabor ist direkt erreichbar: <a href="../sgra/VORSCHAU.html">Optikvergleich öffnen</a>. Getrennte Modellrechnung; keine Änderung realer Garden-Daten. <span id="renderStatus"></span></footer>
+<script>/* HALVETH Wirbel & Waerme 0.3. Classical coarse-grained model, NOT black holes.
+   G=1. Softened gravity; central pairwise damping; explicit heat/radiation ledger.
+   No network, no eval, no disk writes. Identical inputs use a fixed timestep. */
+(function(root){
+'use strict';
+const VERSION='0.3.0';
+const DEFAULTS=Object.freeze({n:3,seed:3491,spin:.35,damping:1.2,cooling:.35,drive:0,eps:.18,G:1,dt:1/480});
+const PRESETS=Object.freeze({
+ free:{...DEFAULTS,spin:.45,damping:0,cooling:0},
+ heat:{...DEFAULTS},
+ drive:{...DEFAULTS,spin:.27,damping:1.8,cooling:.5,drive:.025},
+ encounter:{...DEFAULTS,n:4,spin:.27,damping:.7,cooling:.4}
+});
+function finite(x,name){if(!Number.isFinite(x))throw Error(name+': endliche Zahl erwartet');return x;}
+function config(input={}){
+ for(const k of Object.keys(input))if(!(k in DEFAULTS))throw Error('Unbekannter Parameter: '+k);
+ const c={...DEFAULTS,...input};
+ for(const k of Object.keys(c))finite(c[k],k);
+ if(!Number.isInteger(c.n)||c.n<2||c.n>8)throw Error('n muss 2..8 sein');
+ if(!Number.isInteger(c.seed)||c.seed<0||c.seed>4294967295)throw Error('seed muss uint32 sein');
+ for(const [k,lo,hi] of [['spin',0,2],['damping',0,5],['cooling',0,3],['drive',0,.5],['eps',.08,1],['G',0,4],['dt',1/10000,1/120]])
+  if(c[k]<lo||c[k]>hi)throw Error('Parameter ausserhalb Bereich: '+k);
+ return Object.freeze(c);
+}
+function rng(seed){let s=seed>>>0;return()=>{s=(s+0x6D2B79F5)>>>0;let t=Math.imul(s^(s>>>15),1|s);t^=t+Math.imul(t^(t>>>7),61|t);return((t^(t>>>14))>>>0)/4294967296;};}
+const vkeys=['x','y','z'];
+function kinetic(bs){return bs.reduce((s,b)=>s+.5*b.m*(b.vx*b.vx+b.vy*b.vy+b.vz*b.vz),0);}
+function potential(bs,c){let u=0;for(let i=0;i<bs.length;i++)for(let j=i+1;j<bs.length;j++){
+ const a=bs[i],b=bs[j];u-=c.G*a.m*b.m/Math.hypot(a.x-b.x,a.y-b.y,a.z-b.z,c.eps);}return u;}
+function momenta(bs){let px=0,py=0,pz=0,lx=0,ly=0,lz=0;for(const b of bs){
+ px+=b.m*b.vx;py+=b.m*b.vy;pz+=b.m*b.vz;
+ lx+=b.m*(b.y*b.vz-b.z*b.vy);ly+=b.m*(b.z*b.vx-b.x*b.vz);lz+=b.m*(b.x*b.vy-b.y*b.vx);}
+ return{linear:[px,py,pz],angular:[lx,ly,lz]};}
+function center(bs){const s={x:0,y:0,z:0,vx:0,vy:0,vz:0,m:0};for(const b of bs){s.m+=b.m;for(const k of ['x','y','z','vx','vy','vz'])s[k]+=b.m*b[k];}for(const k of ['x','y','z','vx','vy','vz'])s[k]/=s.m;return s;}
+function accelerations(bs,c){const a=bs.map(()=>[0,0,0]);for(let i=0;i<bs.length;i++)for(let j=i+1;j<bs.length;j++){
+ const d=vkeys.map(k=>bs[j][k]-bs[i][k]),r2=d[0]*d[0]+d[1]*d[1]+d[2]*d[2]+c.eps*c.eps,f=c.G/Math.pow(r2,1.5);
+ for(let k=0;k<3;k++){a[i][k]+=f*bs[j].m*d[k];a[j][k]-=f*bs[i].m*d[k];}}
+ return a;
+}
+function create(input={}){
+ const c=config(input),random=rng(c.seed),bs=[];
+ for(let i=0;i<c.n;i++){
+  const theta=2*Math.PI*i/c.n+.12*(random()-.5),r=1.8+.45*random(),mass=(3/c.n)*(.8+.4*random());
+  const speed=c.spin*Math.sqrt(3/r),radial=.18*(random()-.5);
+  bs.push({id:'K'+(i+1),m:mass,x:r*Math.cos(theta),y:r*Math.sin(theta),z:.22*(random()-.5),
+   vx:-speed*Math.sin(theta)+radial*Math.cos(theta),vy:speed*Math.cos(theta)+radial*Math.sin(theta),vz:.04*(random()-.5),u:0});
+ }
+ const cm=center(bs);for(const b of bs)for(const k of ['x','y','z','vx','vy','vz'])b[k]-=cm[k];
+ const state={config:c,bodies:bs,step:0,t:0,heatGenerated:0,radiated:0,work:0,power:0,events:[],closePairs:{}};
+ state.initialEnergy=kinetic(bs)+potential(bs,c);state.energyScale=Math.max(kinetic(bs),Math.abs(potential(bs,c)),1e-12);
+ return state;
+}
+// An exact radial damping update for one pair. Equal/opposite impulses preserve
+// total linear/angular momentum. Lost radial kinetic energy enters heat, not a void.
+function dampPair(a,b,gamma,dt){
+ if(gamma<=0||dt<=0)return 0;
+ const dx=a.x-b.x,dy=a.y-b.y,dz=a.z-b.z,r=Math.hypot(dx,dy,dz);if(r<1e-14)return 0;
+ const nx=dx/r,ny=dy/r,nz=dz/r,vr=(a.vx-b.vx)*nx+(a.vy-b.vy)*ny+(a.vz-b.vz)*nz;
+ const w=Math.exp(-r*r/(1.6*1.6)),s=Math.exp(-gamma*w*dt),dv=(s-1)*vr,M=a.m+b.m,mu=a.m*b.m/M;
+ const q=.5*mu*vr*vr*(-Math.expm1(-2*gamma*w*dt));
+ for(const [k,n] of [['vx',nx],['vy',ny],['vz',nz]]){a[k]+=b.m/M*dv*n;b[k]-=a.m/M*dv*n;}
+ a.u+=q*a.m/M;b.u+=q*b.m/M;return q;
+}
+function damping(state,dt,reverse=false){const bs=state.bodies,p=[];for(let i=0;i<bs.length;i++)for(let j=i+1;j<bs.length;j++)p.push([i,j]);if(reverse)p.reverse();for(const [i,j] of p)state.heatGenerated+=dampPair(bs[i],bs[j],state.config.damping,dt);}
+function drive(state,dt){if(!state.config.drive)return;const bs=state.bodies,cm=center(bs),before=kinetic(bs),a=bs.map(b=>{
+ const dx=b.x-cm.x,dy=b.y-cm.y,r=Math.hypot(dx,dy);return r<1e-14?[0,0]:[-state.config.drive*dy/r,state.config.drive*dx/r];});
+ const mean=[0,0];for(let i=0;i<bs.length;i++){mean[0]+=bs[i].m*a[i][0]/cm.m;mean[1]+=bs[i].m*a[i][1]/cm.m;}
+ for(let i=0;i<bs.length;i++){bs[i].vx+=(a[i][0]-mean[0])*dt;bs[i].vy+=(a[i][1]-mean[1])*dt;}state.work+=kinetic(bs)-before;
+}
+function cool(state,dt){let q=0;const f=-Math.expm1(-state.config.cooling*dt);for(const b of state.bodies){const d=b.u*f;b.u-=d;q+=d;}state.radiated+=q;state.power=q/dt;}
+function step(state){
+ const c=state.config,dt=c.dt,bs=state.bodies;
+ drive(state,dt/2);damping(state,dt/2);
+ const a=accelerations(bs,c);
+ for(let i=0;i<bs.length;i++)for(let k=0;k<3;k++){const key=vkeys[k],vk='v'+key;bs[i][vk]+=.5*dt*a[i][k];bs[i][key]+=dt*bs[i][vk];}
+ const a2=accelerations(bs,c);for(let i=0;i<bs.length;i++)for(let k=0;k<3;k++)bs[i]['v'+vkeys[k]]+=.5*dt*a2[i][k];
+ damping(state,dt/2,true);drive(state,dt/2);cool(state,dt);
+ state.step++;state.t=state.step*dt;
+ for(let i=0;i<bs.length;i++)for(let j=i+1;j<bs.length;j++){
+  const key=bs[i].id+' / '+bs[j].id,r=Math.hypot(bs[i].x-bs[j].x,bs[i].y-bs[j].y,bs[i].z-bs[j].z);
+  if(r<.4&&!state.closePairs[key]){state.closePairs[key]=true;state.events.push({type:'close-approach',step:state.step,pair:key,distance:r});if(state.events.length>100)state.events.shift();}
+  else if(r>.5)state.closePairs[key]=false;
+ }
+ for(const b of bs)for(const k of ['x','y','z','vx','vy','vz','u'])if(!Number.isFinite(b[k]))throw Error('Numerik nicht endlich: '+b.id+'.'+k);
+ return state;
+}
+function metrics(state){const K=kinetic(state.bodies),U=potential(state.bodies,state.config),H=state.bodies.reduce((s,b)=>s+b.u,0);
+ const balance=K+U+H+state.radiated-state.work-state.initialEnergy;
+ return{time:state.t,step:state.step,kinetic:K,potential:U,heat:H,heatGenerated:state.heatGenerated,radiated:state.radiated,work:state.work,power:state.power,balance,relativeError:Math.abs(balance)/state.energyScale,momenta:momenta(state.bodies)};
+}
+function advance(state,n){if(!Number.isInteger(n)||n<0||n>2000000)throw Error('Ungueltige Schrittzahl');for(let i=0;i<n;i++)step(state);return state;}
+function record(state){return{schema:'HALVETH_WIRBEL_REPLAY_V1',engineVersion:VERSION,model:'softened-newtonian-coarse-packets',config:{...state.config},steps:state.step,metrics:metrics(state),bodies:state.bodies.map(b=>({...b})),notes:'Dimensionslos. Keine Horizonte, Atomphysik, Ionisation, Magnetfelder oder Sgr-A*-Messdaten.'};}
+function replay(data){if(data.schema!=='HALVETH_WIRBEL_REPLAY_V1'||data.engineVersion!==VERSION)throw Error('Replay-Version unbekannt');return advance(create(data.config),data.steps);}
+function tracers(input,count=300){if(!Number.isInteger(count)||count<0||count>1500)throw Error('Tracerzahl ungueltig');const c=config(input),r=rng((c.seed^0xABC789)>>>0),a=[];for(let i=0;i<count;i++){
+ const theta=r()*Math.PI*2,rad=.65+5.4*Math.sqrt(r()),speed=Math.sqrt(3/rad)*(.65+.4*r());
+ a.push({id:'T'+i,x:rad*Math.cos(theta),y:rad*Math.sin(theta),z:(r()-.5)*.45,vx:-speed*Math.sin(theta),vy:speed*Math.cos(theta),vz:(r()-.5)*.04});}return a;}
+function tracerAccel(t,bs,c){const a=[0,0,0];for(const b of bs){const d=[b.x-t.x,b.y-t.y,b.z-t.z],den=Math.pow(d[0]*d[0]+d[1]*d[1]+d[2]*d[2]+c.eps*c.eps,1.5);for(let k=0;k<3;k++)a[k]+=c.G*b.m*d[k]/den;}return a;}
+// The massless tracers sample the time-dependent field without backreaction.
+// The packet energy budget explicitly excludes them.
+function tracerStep(ts,before,after,c,dt){for(const t of ts){const a=tracerAccel(t,before,c);for(let k=0;k<3;k++){const key=vkeys[k];t['v'+key]+=.5*dt*a[k];t[key]+=dt*t['v'+key];}const b=tracerAccel(t,after,c);for(let k=0;k<3;k++)t['v'+vkeys[k]]+=.5*dt*b[k];}}
+const api={VERSION,DEFAULTS,PRESETS,config,rng,create,step,advance,metrics,record,replay,accelerations,kinetic,potential,momenta,center,dampPair,damping,drive,cool,tracers,tracerStep};
+if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.Wirbel=Object.freeze(api);
+})(typeof globalThis!=='undefined'?globalThis:this);
+</script><script>'use strict';
+(()=>{
+const E=window.Wirbel,$=id=>document.getElementById(id),canvas=$('space'),ctx=canvas.getContext('2d'),chart=$('chart'),gc=chart.getContext('2d');
+if(!ctx||!gc){$('error').textContent='Canvas 2D nicht verfügbar';return;}
+let state,ts,history=[],trails=[],bodyTrails=[],running=false,accum=0,last=null,rate=1,exposure=1;
+let width=800,height=640,dpr=1,yaw=.15,pitch=.5,zoom=1.25,drag=null,dirty=true,frames=0;
+const colors=['#8be6d1','#aabaff','#ffc88c','#f1a8d1','#d3ed9b','#a4d8ff','#ddc3fd','#ffad9e'];
+const random=E.rng(907);const stars=Array.from({length:240},()=>({x:random(),y:random(),r:.3+random()*1.1,a:.1+.4*random()}));
+function form(c){for(const k of ['n','seed','spin','damping','cooling','drive'])$(k).value=c[k];labels();$('pending').textContent='';}
+function labels(){for(const k of ['spin','damping','cooling','drive'])$(k+'V').textContent=Number($(k).value).toFixed(k==='drive'?3:2);}
+function reset(c){state=E.create(c);ts=E.tracers(state.config,300);trails=ts.map(()=>[]);bodyTrails=state.bodies.map(()=>[]);history=[];accum=0;last=null;running=false;dirty=true;update();$('error').textContent='';$('pending').textContent='';$('seedInfo').textContent='Seed '+state.config.seed+' · Δt = 1/480 · '+E.VERSION;capture();}
+function getConfig(){return{...E.PRESETS[$('preset').value],...Object.fromEntries(['n','seed','spin','damping','cooling','drive'].map(k=>[k,Number($(k).value)]))};}
+function update(){const m=E.metrics(state);$('play').textContent=running?'Ⅱ Pause':'▶ Start';$('state').textContent=running?'LÄUFT':'PAUSE';$('time').textContent='t = '+state.t.toFixed(3)+' · Schritt '+state.step;
+ for(const k of ['kinetic','heat','radiated','work'])$(k).textContent=m[k].toFixed(4);
+ $('residual').textContent=(100*m.relativeError).toFixed(4)+' %';$('quality').textContent=m.relativeError>.005?'WARNUNG: grobe Numerik':'Numerische Kontrolle';if(accum>=state.config.dt)$('quality').textContent+=' · Rückstand '+accum.toFixed(3)+' Modellsekunden';
+ $('records').textContent='Replay enthält '+state.step+' feste Schritte und den Ausgangs-Seed.';
+ const a=state.events.at(-1);$('encounter').textContent=a?`${state.events.length} protokollierte Begegnungen (max. 100). Zuletzt ${a.pair}, Abstand ${a.distance.toFixed(3)}. Keine Verschmelzung simuliert.`:'Noch keine enge Begegnung.';
+}
+function capture(){for(let i=0;i<ts.length;i++){trails[i].push([ts[i].x,ts[i].y,ts[i].z]);if(trails[i].length>65)trails[i].shift();}
+ for(let i=0;i<state.bodies.length;i++){const b=state.bodies[i];bodyTrails[i].push([b.x,b.y,b.z]);if(bodyTrails[i].length>220)bodyTrails[i].shift();}
+ history.push(E.metrics(state));if(history.length>600)history.shift();
+}
+function ticks(n){for(let k=0;k<n;k++){const before=state.bodies.map(b=>({...b}));E.step(state);E.tracerStep(ts,before,state.bodies,state.config,state.config.dt);
+ if(state.step%8===0)capture();}dirty=true;}
+function resize(){const r=canvas.parentElement.getBoundingClientRect();width=r.width;height=r.height;dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);const q=chart.getBoundingClientRect();chart.width=Math.round(q.width*dpr);chart.height=Math.round(q.height*dpr);gc.setTransform(dpr,0,0,dpr,0,0);dirty=true;}
+function project(x,y,z){const cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);const a=cy*x-sy*y,b=sy*x+cy*y,v=cp*b-sp*z,depth=sp*b+cp*z,dist=17-depth;
+ if(dist<.3)return null;const s=Math.min(width,height)*1.25*zoom/dist;return{x:width*.5+a*s,y:height*.5-v*s,scale:s,depth};}
+function line(points,color,alpha,lw){ctx.strokeStyle=color;ctx.globalAlpha=alpha;ctx.lineWidth=lw;ctx.beginPath();let pen=false;for(const v of points){const p=project(...v);if(!p){pen=false;continue;}if(!pen){ctx.moveTo(p.x,p.y);pen=true;}else ctx.lineTo(p.x,p.y);}ctx.stroke();}
+function draw(){ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';ctx.fillStyle='#030812';ctx.fillRect(0,0,width,height);
+ for(const s of stars){ctx.globalAlpha=s.a;ctx.fillStyle='#bfd5ea';ctx.beginPath();ctx.arc(s.x*width,s.y*height,s.r,0,Math.PI*2);ctx.fill();}
+ ctx.globalAlpha=1;for(const r of [2,4,6]){const ps=[];for(let i=0;i<=100;i++){const a=2*Math.PI*i/100;ps.push([r*Math.cos(a),r*Math.sin(a),0]);}line(ps,'#355273',.23,.7);}
+ line([[-7,0,0],[7,0,0]],'#365678',.2,.6);line([[0,-7,0],[0,7,0]],'#365678',.2,.6);
+ ctx.globalCompositeOperation='lighter';
+ for(let i=0;i<ts.length;i++){line(trails[i],colors[i%state.bodies.length],.25*exposure,.85);const p=project(ts[i].x,ts[i].y,ts[i].z);if(p){ctx.globalAlpha=.4;ctx.fillStyle=colors[i%state.bodies.length];ctx.fillRect(p.x,p.y,1.1,1.1);}}
+ for(let i=0;i<bodyTrails.length;i++)line(bodyTrails[i],colors[i],.5,1.35);
+ const bs=state.bodies.map((b,i)=>({b,i,p:project(b.x,b.y,b.z)})).filter(a=>a.p).sort((a,b)=>a.p.depth-b.p.depth);
+ for(const {b,i,p} of bs){const power=state.config.cooling*b.u,temp=b.u/b.m,hot=1-Math.exp(-12*temp),lum=1-Math.exp(-120*power*exposure),r=Math.max(4,Math.min(18,p.scale*.09));
+  if(lum>1e-7){const radius=r*(4+12*Math.sqrt(lum)),grad=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,radius);grad.addColorStop(0,`rgba(255,245,218,${lum})`);grad.addColorStop(.15,`rgba(255,${Math.round(100+120*hot)},70,${lum*.65})`);grad.addColorStop(.52,`rgba(238,90,45,${lum*.12})`);grad.addColorStop(1,'rgba(0,0,0,0)');ctx.globalAlpha=1;ctx.fillStyle=grad;ctx.beginPath();ctx.arc(p.x,p.y,radius,0,Math.PI*2);ctx.fill();}
+  ctx.globalCompositeOperation='source-over';ctx.globalAlpha=1;ctx.fillStyle=lum>.01?`rgba(255,${Math.round(135+110*lum)},${Math.round(75+150*lum)},${.25+.75*lum})`:'#05101b';ctx.beginPath();ctx.arc(p.x,p.y,r,0,Math.PI*2);ctx.fill();ctx.strokeStyle=colors[i];ctx.lineWidth=1.4;ctx.stroke();ctx.fillStyle=colors[i];ctx.beginPath();ctx.arc(p.x,p.y,1.6,0,Math.PI*2);ctx.fill();
+  ctx.font='12px ui-monospace, monospace';ctx.fillStyle=colors[i];ctx.fillText(b.id,p.x+r+7,p.y-4);ctx.font='10px ui-monospace, monospace';ctx.fillStyle='#a9bdcf';ctx.fillText('Q/m '+temp.toFixed(3),p.x+r+7,p.y+11);ctx.globalCompositeOperation='lighter';}
+ ctx.globalCompositeOperation='source-over';ctx.globalAlpha=1;
+ drawChart();frames++;$('renderStatus').textContent=`Ansicht ${canvas.width}×${canvas.height} · scharfe Vektor-/Punktzeichnung`;
+}
+function drawChart(){const w=chart.width/dpr,h=chart.height/dpr;gc.clearRect(0,0,w,h);if(history.length<2)return;let max=.05,min=0;for(const m of history){max=Math.max(max,m.kinetic,m.heat,m.radiated,m.work);min=Math.min(min,m.work);}
+ gc.strokeStyle='#243448';gc.lineWidth=.6;for(let i=1;i<=3;i++){gc.beginPath();gc.moveTo(0,i*h/4);gc.lineTo(w,i*h/4);gc.stroke();}
+ for(const [key,c] of [['kinetic','#84d8f4'],['heat','#ffb069'],['radiated','#d8b5ff'],['work','#b6e7ac']]){gc.strokeStyle=c;gc.lineWidth=1.4;gc.beginPath();history.forEach((m,i)=>{const x=i*w/(history.length-1),y=h-8-(m[key]-min)/(max-min)*(h-18);if(i===0)gc.moveTo(x,y);else gc.lineTo(x,y);});gc.stroke();}}
+function frame(now){try{const elapsed=last===null?0:Math.max(0,(now-last)/1000);last=now;if(running&&!document.hidden&&rate>0){accum+=elapsed*rate;const count=Math.min(100,Math.floor((accum+state.config.dt*1e-9)/state.config.dt));ticks(count);accum-=count*state.config.dt;if(accum<0&&accum>-state.config.dt*1e-9)accum=0;}
+ if(dirty||running){draw();dirty=false;}if(frames%6===0||!running)update();}catch(e){running=false;accum=0;$('error').textContent='STOP: '+e.message;update();}requestAnimationFrame(frame);}
+for(const k of ['n','seed','spin','damping','cooling','drive'])$(k).addEventListener('input',()=>{labels();$('pending').textContent='Geänderte Startwerte: mit „Werte übernehmen“ neu beginnen.';});
+$('preset').addEventListener('change',()=>{form(E.PRESETS[$('preset').value]);reset(getConfig());});
+$('apply').onclick=()=>{try{reset(getConfig());}catch(e){$('error').textContent=e.message;}};
+$('play').onclick=()=>{running=!running;last=null;update();};$('reset').onclick=()=>reset(state.config);
+$('rate').oninput=()=>{rate=Number($('rate').value);$('rateV').textContent=rate+'×';};
+$('exposure').oninput=()=>{exposure=Number($('exposure').value);$('exposureV').textContent=exposure.toFixed(1)+'×';dirty=true;};
+$('home').onclick=()=>{yaw=.15;pitch=.5;zoom=1.25;dirty=true;};
+$('fullscreen').onclick=async()=>{try{if(!document.fullscreenElement)await document.documentElement.requestFullscreen();else await document.exitFullscreen();}catch(e){$('error').textContent='Vollbild: '+e.message;}};
+$('export').onclick=()=>{const data=E.record(state);data.engineSha256='dd2a3caa2e70bdb6a090c5f60448ca96f34db2a109b69f04b1392451b53be53b';data.display={yaw,pitch,zoom,exposure,rate};const u=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=u;a.download='HALVETH_WIRBEL_seed'+state.config.seed+'_step'+state.step+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);};
+canvas.addEventListener('pointerdown',e=>{if(e.button!==0)return;drag={x:e.clientX,y:e.clientY};canvas.setPointerCapture(e.pointerId);});
+canvas.addEventListener('pointermove',e=>{if(!drag)return;yaw+=(e.clientX-drag.x)*.006;pitch=Math.max(-1.4,Math.min(1.4,pitch+(e.clientY-drag.y)*.006));drag={x:e.clientX,y:e.clientY};dirty=true;});
+for(const name of ['pointerup','pointercancel','lostpointercapture'])canvas.addEventListener(name,()=>drag=null);
+canvas.addEventListener('wheel',e=>{e.preventDefault();zoom=Math.max(.15,Math.min(4,zoom*Math.exp(-e.deltaY*.001)));dirty=true;},{passive:false});
+canvas.addEventListener('keydown',e=>{if(e.code==='Space'){e.preventDefault();$('play').click();}if(e.key.toLowerCase()==='r')$('reset').click();});
+document.addEventListener('visibilitychange',()=>{if(document.hidden){running=false;last=null;drag=null;update();}});
+window.addEventListener('resize',resize);
+form(E.PRESETS.heat);reset(getConfig());resize();requestAnimationFrame(frame);
+window.HALVETH_WIRBEL=Object.freeze({snapshot:()=>E.record(state),advanceForTest:n=>{running=false;ticks(n);draw();update();return E.record(state);},camera:()=>({yaw,pitch,zoom}),isRunning:()=>running});
+})();
+</script></body></html>

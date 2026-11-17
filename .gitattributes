@@ -6,3 +6,5 @@
 # These retained upstream files are byte-bound, including their line endings.
 assets/endeck-model.mjs -text
 assets/endeck-LICENSE.txt -text
+# Material preview includes exact, source-bound runtime bytes.
+modelle/material-20261117/** -text

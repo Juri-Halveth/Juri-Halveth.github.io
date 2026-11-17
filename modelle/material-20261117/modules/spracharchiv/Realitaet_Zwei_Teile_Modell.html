@@ -1,0 +1,445 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Die zwei Teile &middot; das Absolute und der Abfall</title>
+<meta name="description" content="Die zwei Teile, das Absolute und der Abfall. Warum 0,999… die 1 in keinem endlichen Schritt berührt. Ein Bild, kein Beweis.">
+<link rel="canonical" href="https://halveth.de/Realitaet_Zwei_Teile_Modell.html">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#04050c;--ink:#eaf0ff;--muted:#8a93b8;--dim:#5a628a;
+    --anker:#43d6b0;--bild:#e6b54a;--cyan:#34e6ff;--edge:rgba(150,170,230,.16);--edge2:rgba(150,170,230,.32);
+    --panel:rgba(11,15,26,.74);--mono:ui-monospace,Menlo,Consolas,monospace;--serif:Georgia,serif;--sans:system-ui,-apple-system,"Segoe UI",sans-serif;}
+  html,body{height:100%}
+  body{background:radial-gradient(1200px 800px at 26% 40%,#0a1226,#04050c 66%);color:var(--ink);font-family:var(--sans);overflow:hidden}
+  #stage{position:fixed;inset:0;width:100%;height:100%;display:block;cursor:default}
+  .banner{position:fixed;top:0;left:0;right:0;z-index:30;text-align:center;font-size:12px;color:#d7deef;
+    background:rgba(6,9,18,.82);border-bottom:1px solid var(--edge);padding:8px 14px;letter-spacing:.01em}
+  .banner b{color:var(--bild)}
+  .brand{position:fixed;top:44px;left:18px;z-index:20;pointer-events:none}
+  .brand .ey{font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .brand h1{font-family:var(--serif);font-size:clamp(1rem,2.4vw,1.6rem);color:#fff;line-height:1.06;margin-top:.12rem;text-shadow:0 2px 18px rgba(0,0,0,.7)}
+  .side{position:fixed;top:96px;right:16px;z-index:20;width:min(300px,42vw);background:var(--panel);border:1px solid var(--edge);
+    border-radius:14px;padding:13px 15px;backdrop-filter:blur(12px);box-shadow:0 16px 50px rgba(0,0,0,.55)}
+  .side h2{font-family:var(--serif);font-size:.98rem;color:#fff;margin-bottom:.1rem}
+  .side .part{font-size:.72rem;color:var(--muted);margin:.5rem 0 .15rem;font-weight:600}
+  .barrow{margin:.5rem 0}
+  .barrow .bl{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.62rem;color:var(--dim);margin-bottom:3px}
+  .barrow .bl b{color:#cfd8f2;font-weight:400}
+  .bar{height:8px;border-radius:99px;background:rgba(120,140,200,.16);overflow:hidden}
+  .bar>i{display:block;height:100%;border-radius:99px;transition:width .5s ease}
+  .bar.di>i{background:linear-gradient(90deg,var(--cyan),var(--anker))}
+  .bar.risk>i{background:var(--bild);width:8%}
+  .note{font-size:.66rem;color:var(--dim);line-height:1.4;margin-top:.3rem}
+  .eps{margin-top:.7rem;border-top:1px solid var(--edge);padding-top:.6rem}
+  .eps svg{width:100%;height:56px;display:block}
+  .legend{display:flex;gap:12px;font-family:var(--mono);font-size:.6rem;margin-top:.55rem;color:var(--dim)}
+  .legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+  .legend .a i{background:var(--anker)} .legend .b i{background:var(--bild)}
+  .ctrls{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:12px clamp(14px,4vw,40px) 14px;
+    background:linear-gradient(0deg,rgba(4,6,12,.92),transparent);display:flex;flex-direction:column;align-items:center;gap:8px}
+  .btnrow{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .btn{appearance:none;border:1px solid var(--edge2);background:rgba(16,20,34,.74);color:var(--ink);border-radius:99px;
+    padding:.55rem 1rem;font-size:.76rem;cursor:pointer;transition:.15s;backdrop-filter:blur(6px)}
+  .btn:hover{border-color:var(--bild);color:var(--bild)}
+  .btn.prim{border-color:var(--anker);color:var(--anker)}
+  .status{font-size:.68rem;color:var(--muted);min-height:1.2em;text-align:center;max-width:70ch;padding:0 10px}
+  .status .ank{color:var(--anker)} .status .bi{color:var(--bild)}
+  /* dazwischen modal */
+  .back{position:fixed;inset:0;z-index:40;background:rgba(3,4,9,.6);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:.3s}
+  .back.on{opacity:1;pointer-events:auto}
+  .modal{position:fixed;z-index:41;left:50%;top:50%;transform:translate(-50%,-46%) scale(.98);opacity:0;pointer-events:none;transition:.3s;
+    width:min(560px,92vw);background:linear-gradient(180deg,#0a0e1a,#070a13);border:1px solid var(--edge2);border-radius:16px;padding:20px 22px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .modal.on{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
+  .modal .x{position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:50%;border:1px solid var(--edge2);background:rgba(20,26,44,.6);color:var(--ink);cursor:pointer}
+  .modal h3{font-family:var(--serif);font-size:1.2rem;color:#fff;margin-bottom:.2rem}
+  .modal .dsub{font-size:.74rem;color:var(--muted);margin-bottom:.8rem}
+  .zoom{position:relative;height:60px;border:1px solid var(--edge);border-radius:10px;background:rgba(52,120,180,.06);margin:.4rem 0 .3rem;overflow:hidden}
+  .zoom .end{position:absolute;top:0;bottom:0;width:2px;background:var(--cyan)}
+  .zoom .end.l{left:8px} .zoom .end.r{right:8px}
+  .zoom .lab{position:absolute;top:4px;font-family:var(--mono);font-size:.62rem;color:var(--cyan)}
+  .zoom .lab.l{left:12px} .zoom .lab.r{right:12px}
+  .zoom .pt{position:absolute;top:50%;width:4px;height:4px;border-radius:50%;background:#dfe8ff;transform:translate(-50%,-50%)}
+  .dzbtn{font-size:.72rem}
+  .obox{border:1px solid var(--edge);border-radius:10px;padding:10px 12px;margin-top:.6rem;font-size:.82rem;line-height:1.5}
+  .obox.ank{border-left:3px solid var(--anker)} .obox.bi{border-left:3px solid var(--bild)}
+  .obox .t{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.25rem}
+  .obox.ank .t{color:var(--anker)} .obox.bi .t{color:var(--bild)}
+  @media(max-width:720px){
+    .brand{display:none}
+    .banner{min-height:42px;padding:7px 118px 7px 10px;text-align:left;font-size:10px;line-height:1.35}
+    .side{top:50px;left:8px;right:8px;width:auto;padding:8px 10px;display:grid;grid-template-columns:1fr 1fr;gap:8px;max-height:none;overflow:visible}
+    .side h2,.side .part,.side .note,.side .eps,.side .legend{display:none}
+    .barrow{margin:0;min-width:0}.barrow .bl{font-size:.55rem}.bar{height:6px}
+    .ctrls{padding:9px 10px max(10px,env(safe-area-inset-bottom));gap:7px}.status{font-size:.62rem;line-height:1.35}.btnrow{gap:7px}.btn{min-height:40px;padding:.48rem .75rem;font-size:.68rem}
+    .modal{width:calc(100vw - 16px);max-height:88dvh;overflow-y:auto;padding:17px 15px}.modal h3{padding-right:34px}.obox{font-size:.74rem}
+    #raz-langbar{top:8px!important;right:8px!important;bottom:auto!important;left:auto!important}html.raz-embedded #raz-langbar{display:none!important}
+  }
+</style>
+<link rel="stylesheet" href="assets/restauration.css?v=20261116-r2">
+<script src="assets/model-clock.js?v=20261116-r2"></script>
+</head>
+<body data-hv-page="Realitaet_Zwei_Teile_Modell" class="hv-model-shell">
+<a data-raz-skip href="forschung.html" style="position:fixed;left:max(12px,env(safe-area-inset-left));bottom:max(12px,env(safe-area-inset-bottom));z-index:9999;display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;background:rgba(10,10,11,.86);border:1px solid rgba(150,150,180,.32);color:#f4f3ee;font:600 12.5px/1 system-ui,-apple-system,Segoe UI,sans-serif;text-decoration:none;backdrop-filter:blur(8px)" title="Zur&uuml;ck zur Forschung auf halveth.de"><span style="color:#ffd60a">&#11041;</span> halveth.de</a><script>if(window.self!==window.top){var r=document.currentScript.previousElementSibling;if(r&&r.tagName==="A")r.remove();}</script>
+<script>if(self!==top)document.documentElement.classList.add("raz-embedded");</script>
+  <div class="banner">Metaphysische <b>Hypothese</b>, kein Beweis, kein Gottesbeweis &#183; grün = echter <b style="color:var(--anker)">Anker</b>, gold = <b>Bild / Metaphysik</b></div>
+  <canvas id="stage"></canvas>
+  <div class="brand">
+    <div class="ey">Realität als Zustand &#183; die zwei Teile</div>
+    <h1>Das Absolute und der Abfall</h1>
+  </div>
+
+  <div class="side">
+    <div class="part" style="color:var(--anker)">Teil B &#183; die letzte Realisierung</div>
+    <div class="barrow">
+      <div class="bl"><span>&#916;I = &#8722;log&#8322; p</span><b id="diVal">0 Bit</b></div>
+      <div class="bar di"><i id="diBar" style="width:2%"></i></div>
+      <div class="note" id="diNote">Nur bei Eine &#8594; Zwei &#8594; Vier ist p bekannt (0/1/2 Bit). Danach steigt &#916;I, weil die Verzweigungen B wachsen, aber ohne exakten Wert (&#956;&#8320; ist Platzhalter).</div>
+    </div>
+    <div class="barrow">
+      <div class="bl"><span>Risiko wilder Sprung</span><b>&#8776; e^&#8722;&#916;S</b></div>
+      <div class="bar risk"><i style="width:8%"></i></div>
+      <div class="note">Bleibt <b>konstant</b> winzig, sinkt NICHT über die Zeit. Was wächst, ist Entropie, nicht die Sprung-Sicherheit.</div>
+    </div>
+    <div class="eps">
+      <div class="bl" style="display:flex;justify-content:space-between;font-family:var(--mono);font-size:.62rem;color:var(--dim)"><span>Verlässlichkeit</span><span>1 &#8722; &#949;</span></div>
+      <svg viewBox="0 0 260 56" preserveAspectRatio="none" aria-hidden="true">
+        <line x1="0" y1="8" x2="260" y2="8" stroke="rgba(230,181,74,.5)" stroke-width="1" stroke-dasharray="4 4"/>
+        <path d="M2 52 C 90 52, 120 14, 258 9" fill="none" stroke="#34e6ff" stroke-width="2"/>
+        <text x="256" y="20" text-anchor="end" font-family="ui-monospace,monospace" font-size="8" fill="#8a93b8">berührt 1 nie</text>
+      </svg>
+    </div>
+    <div class="legend"><span class="a"><i></i>echter Anker</span><span class="b"><i></i>Bild / Metaphysik</span></div>
+  </div>
+
+  <div class="ctrls">
+    <div class="status" id="status">Klicke <b style="color:var(--anker)">„setze den ersten Unterschied"</b>, um aus dem Absoluten die erste Realisierung zu ziehen.</div>
+    <div class="btnrow">
+      <button class="btn prim" id="adv">&#9654; setze den nächsten Unterschied</button>
+      <button class="btn" id="reset">&#8635; zurück zum Absoluten</button>
+    </div>
+  </div>
+
+  <div class="back" id="back"></div>
+  <div class="modal" id="modal">
+    <button class="x" id="mx">&#10005;</button>
+    <h3>Das unendliche Dazwischen</h3>
+    <div class="dsub" id="dsub">Zwischen zwei Zuständen &#183; zoome tiefer</div>
+    <div class="zoom" id="zoom"><div class="end l"></div><div class="end r"></div><div class="lab l" id="labL">x</div><div class="lab r" id="labR">y</div></div>
+    <button class="btn dzbtn" id="deeper">&#128269; tiefer zoomen (subdividieren)</button>
+    <div class="obox ank"><div class="t">Anker &#183; reine Mathematik, etabliert</div>Zwischen zwei Zahlen liegen unendlich viele, es gibt keine „nächste" (Dichte des Kontinuums). Die Übertragung auf reale Zustände ist <b>Analogie</b>, offen, ob der Zustandsraum kontinuierlich oder quanten-diskret ist.</div>
+    <div class="obox bi"><div class="t">Zwei getrennte Aussagen, nie in einem Satz</div>Die <b>Näherungsfolge</b> 0,9 &#183; 0,99 &#183; 0,999 … berührt die 1 in keinem endlichen Schritt. Die <b>vollendete Zahl</b> 0,999… ist exakt gleich 1. Beides stimmt, aber es sind zwei verschiedene Dinge.</div>
+  </div>
+
+<script>
+(function(){
+  "use strict";
+  var reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+  var TWO=Math.PI*2;
+  var S=[
+    {name:"Ω · Das Absolute", sub:"ΔI = 0 · richtungslos", bit:null, typ:"absolute",
+     ank:"Anker: hochsymmetrischer Zustand vor der Symmetriebrechung. „alle Logik zugleich und zugleich nicht“ ist Bild, kein Satz der Logik.", ankKind:"mix"},
+    {name:"S₀ · Die Eine", sub:"0 Bit · log₂ 1 = 0", bit:0, typ:"eins",
+     ank:"Anker: der erste realisierte Zustand. Allein noch kein Unterschied.", ankKind:"ank"},
+    {name:"Die Zwei", sub:"1 Bit · der erste Unterschied", bit:1, typ:"zwei",
+     ank:"Anker: das erste Bit (log₂ 2 = 1). Hier ist p bekannt.", ankKind:"ank"},
+    {name:"Die Vier", sub:"2 Bit · Verdopplung", bit:2, typ:"vier",
+     ank:"Anker: 2 Bit (log₂ 4 = 2). Letzter Schritt mit bekanntem p.", ankKind:"ank"},
+    {name:"Felder · Teilchen", sub:"ΔI steigt · B wächst", bit:null, typ:"layer",
+     ank:"Anker: Symmetriebrechung, Abkühlung. Kein exakter Bit-Wert (μ₀ = Platzhalter).", ankKind:"ank"},
+    {name:"Atome · Moleküle", sub:"ΔI steigt · B wächst", bit:null, typ:"layer",
+     ank:"Anker: Quantisierung, Kombinatorik, Emergenz.", ankKind:"ank"},
+    {name:"Leben · Zellen", sub:"ΔI steigt · B wächst", bit:null, typ:"layer",
+     ank:"Anker: Membran, Selbst-Erhaltung, Informationsverarbeitung.", ankKind:"ank"},
+    {name:"Bewusstsein", sub:"ΔI steigt · B wächst", bit:null, typ:"layer",
+     ank:"Anker: Selbstmodell (strange loop). Das Hard Problem bleibt offen.", ankKind:"ank"},
+    {name:"Sprache · Logik", sub:"ΔI steigt · B wächst", bit:null, typ:"layer",
+     ank:"Anker: Kompositionalität, unendlicher Gebrauch endlicher Mittel.", ankKind:"ank"}
+  ];
+  var N=S.length, n=0; // realized up to index n (0 = only the Absolute)
+
+  var cv=document.getElementById("stage"); if(!cv||!cv.getContext){return;}
+  var ctx=cv.getContext("2d"), W=0,H=0,DPR=1;
+  function resize(){ DPR=Math.min(window.devicePixelRatio||1,2);
+    W=cv.width=Math.floor(innerWidth*DPR); H=cv.height=Math.floor(innerHeight*DPR);
+    cv.style.width=innerWidth+"px"; cv.style.height=innerHeight+"px"; }
+  addEventListener("resize",resize,{passive:true}); resize();
+
+  // layout: Absolute core at left, chain flowing to the right
+  function layout(){ var mob=innerWidth<=720;
+    var x0=mob?W*0.08:Math.max(W*0.14,150*DPR), x1=mob?W*0.92:Math.min(W*0.9,W-336*DPR), y=mob?H*0.62:H*0.53; var pos=[];
+    for(var i=0;i<N;i++){ pos.push({x:x0+(x1-x0)*(i/(N-1)), y:y}); } return {pos:pos,y:y,x0:x0}; }
+  function frac(x){return x-Math.floor(x);}
+  function hsh(i,s){return frac(Math.sin((i+1)*12.9898+(s+1)*78.233)*43758.5453);}
+
+  var t=0,lastT=performance.now(), hover=-1, proj=[], gaps=[];
+  function draw(now){ if(!W||!H){ resize(); if(!W||!H){ requestAnimationFrame(draw); return; } }
+    var dt=Math.min((now-lastT)/1000,1/30); lastT=now; if(!reduce)t+=dt;
+    ctx.clearRect(0,0,W,H); ctx.fillStyle="rgba(4,5,12,0.5)"; ctx.fillRect(0,0,W,H);
+    var L=layout(), P=L.pos; proj=P;
+    var absAlpha=Math.max(0.16,1-n*0.11); // we recede from the Absolute
+    // Teil A: the Absolute isotropic shimmer around P[0]
+    ctx.globalCompositeOperation="lighter";
+    var ax=P[0].x, ay=P[0].y, R=Math.min(W,H)*0.17;
+    for(var i=0;i<150;i++){ var a=hsh(i,1)*TWO, rr=R*(0.2+0.8*hsh(i,2))*(0.85+0.15*Math.sin(t*1.3+i));
+      var px=ax+Math.cos(a)*rr, py=ay+Math.sin(a)*rr*0.9;
+      ctx.globalAlpha=absAlpha*(0.05+0.14*hsh(i,3)); ctx.fillStyle="#eaf1ff";
+      ctx.beginPath();ctx.arc(px,py,(0.7+1.4*hsh(i,4))*DPR,0,TWO);ctx.fill(); }
+    ctx.globalAlpha=absAlpha*0.9; ctx.fillStyle="#ffffff";
+    ctx.beginPath();ctx.arc(ax,ay,3.4*DPR,0,TWO);ctx.fill();
+    ctx.globalCompositeOperation="source-over";
+    // chain line up to future edge
+    var futureEdge=Math.min(n+1,N-1);
+    ctx.strokeStyle="rgba(150,170,230,.22)"; ctx.lineWidth=2*DPR; ctx.beginPath();
+    ctx.moveTo(P[0].x,P[0].y); for(var j=1;j<=futureEdge;j++)ctx.lineTo(P[j].x,P[j].y); ctx.stroke();
+    // gaps (clickable Dazwischen) between realized states
+    gaps=[]; for(var g=0;g<n;g++){ var mx=(P[g].x+P[g+1].x)/2, my=P[g].y; gaps.push({i:g,x:mx,y:my});
+      ctx.globalAlpha=0.5+0.3*Math.sin(t*2+g); ctx.fillStyle="#e6b54a";
+      ctx.beginPath();ctx.arc(mx,my-16*DPR,2.4*DPR,0,TWO);ctx.fill(); ctx.globalAlpha=1;
+      ctx.fillStyle="rgba(230,181,74,.55)"; ctx.font=(8.5*DPR)+"px "+"ui-monospace,monospace"; ctx.textAlign="center";
+      ctx.fillText("∞", mx, my-24*DPR); }
+    // nodes
+    for(var k=0;k<N;k++){ var p=P[k], realized=(k<=n), isEdge=(k===futureEdge && k>n), isH=(k===hover);
+      var col = S[k].typ==="absolute"?"#eaf1ff": (k>=1&&k<=3)?"#ffdca8":"#7fd4ff";
+      if(k>n && !isEdge){ ctx.globalAlpha=0.16; ctx.fillStyle="#8a93b8"; ctx.beginPath();ctx.arc(p.x,p.y,4*DPR,0,TWO);ctx.fill(); ctx.globalAlpha=1; continue; }
+      var r=(S[k].typ==="absolute"?9:6)*DPR*(isH?1.3:1);
+      if(isEdge){ var pl=(Math.sin(t*3)+1)/2; ctx.globalAlpha=0.5+0.4*pl; ctx.strokeStyle="#34e6ff"; ctx.lineWidth=1.6*DPR;
+        ctx.beginPath();ctx.arc(p.x,p.y,r+6*DPR+3*pl*DPR,0,TWO);ctx.stroke();
+        ctx.globalAlpha=0.7;ctx.fillStyle="#34e6ff";ctx.beginPath();ctx.arc(p.x,p.y,r*0.7,0,TWO);ctx.fill(); ctx.globalAlpha=1;
+        ctx.fillStyle="rgba(52,230,255,.85)";ctx.font=(9*DPR)+"px "+"system-ui,sans-serif";ctx.textAlign="center";
+        ctx.fillText("offen (Zukunft)", p.x, p.y+r+16*DPR); continue; }
+      // realized node
+      ctx.globalCompositeOperation="lighter"; ctx.globalAlpha=isH?0.85:0.6; ctx.fillStyle=col; ctx.shadowColor=col; ctx.shadowBlur=(isH?18:9)*DPR;
+      ctx.beginPath();ctx.arc(p.x,p.y,r,0,TWO);ctx.fill(); ctx.shadowBlur=0; ctx.globalCompositeOperation="source-over";
+      ctx.globalAlpha=0.95;ctx.fillStyle="#fff";ctx.beginPath();ctx.arc(p.x,p.y,Math.max(1,r*0.4),0,TWO);ctx.fill();ctx.globalAlpha=1;
+      // hash stamp for realized (except the Absolute)
+      if(k>=1){ ctx.fillStyle="rgba(160,175,215,.6)"; ctx.font=(8*DPR)+"px "+"ui-monospace,monospace"; ctx.textAlign="center";
+        ctx.fillText("# h(S"+sub(k)+")", p.x, p.y-r-8*DPR); }
+      // label (nur Schlüssel-Knoten, sonst Gedränge)
+      if(k===0 || k===n || k===hover){ ctx.fillStyle=isH?"#fff":"rgba(214,222,245,.9)"; ctx.font=(isH?11.5:10)*DPR+"px "+"system-ui,sans-serif"; ctx.textAlign="center";
+        ctx.fillText(S[k].name, p.x, p.y+r+15*DPR); }
+      if(S[k].bit!==null){ ctx.fillStyle="rgba(255,220,168,.85)"; ctx.font=(9*DPR)+"px "+"ui-monospace,monospace";
+        ctx.fillText(S[k].bit+" Bit", p.x, p.y+r+28*DPR); }
+    }
+    // Teil A / Teil B labels
+    ctx.fillStyle="rgba(160,175,215,.5)"; ctx.font=(10*DPR)+"px "+"system-ui,sans-serif"; ctx.textAlign="center";
+    ctx.fillText("Teil A · das Absolute (ΔI = 0)", P[0].x, P[0].y - R - 8*DPR);
+    if(n>=1){ ctx.fillText("Teil B · abfallende Manifestation · nur nach vorne offen", (P[1].x+P[N-1].x)/2, L.y + 50*DPR); }
+    requestAnimationFrame(draw);
+  }
+  function sub(k){var m=["₀","₁","₂","₃","₄","₅","₆","₇","₈","₉"];return String(k).split("").map(function(c){return m[+c]||c;}).join("");}
+  requestAnimationFrame(function(nn){lastT=nn;draw(nn);});
+
+  // interaction
+  var status=document.getElementById("status");
+  function updBars(){ var di=document.getElementById("diBar"), dv=document.getElementById("diVal"), dn=document.getElementById("diNote");
+    if(n===0){ di.style.width="2%"; dv.textContent="—"; dn.textContent="Noch im Absoluten. ΔI = 0, es gibt noch keinen Unterschied."; return; }
+    var last=S[n];
+    if(last.bit!==null){ di.style.width=(8+last.bit*30)+"%"; dv.textContent=last.bit+" Bit";
+      dn.textContent="Hier ist p bekannt (Eine/Zwei/Vier), darum ein exakter Wert."; }
+    else { di.style.width=Math.min(90,45+n*6)+"%"; dv.textContent="steigt";
+      dn.textContent="ΔI steigt, weil die Verzweigungen B wachsen, aber ohne exakten Wert (μ₀ ist Platzhalter). Keine erfundene Bit-Zahl."; }
+  }
+  function setStatus(i){ if(i<0){ status.innerHTML="Fahre über einen Punkt, oder klicke einen goldenen ∞-Marker für das Dazwischen."; return; }
+    var mark = S[i].typ==="absolute" ? "<span class='bi'>Anker + Bild</span>" : "<span class='ank'>Anker</span>";
+    status.innerHTML = "<b>"+S[i].name+"</b> · "+mark+" · "+S[i].ank; }
+  document.getElementById("adv").addEventListener("click",function(){ if(n<N-1){ n++; updBars(); setStatus(n);
+    if(n===1)status.innerHTML="Der erste Schnitt: aus dem Absoluten die <b class='ank'>Eine</b> (0 Bit). Die Symmetrie ist gebrochen."; } });
+  document.getElementById("reset").addEventListener("click",function(){ n=0; updBars(); setStatus(-1); });
+
+  function hit(mx,my){ var best=1e9,bi=-1; for(var i=0;i<=Math.min(n+1,N-1);i++){ var p=proj[i]; if(!p)continue;
+    var d=Math.hypot(p.x-mx,p.y-my); if(d<26*DPR && d<best){best=d;bi=i;} } return bi; }
+  function hitGap(mx,my){ for(var g=0;g<gaps.length;g++){ if(Math.hypot(gaps[g].x-mx,gaps[g].y-my)<26*DPR)return gaps[g].i; } return -1; }
+  cv.addEventListener("mousemove",function(e){ var mx=e.clientX*DPR,my=e.clientY*DPR; hover=hit(mx,my);
+    cv.style.cursor=(hover>=0||hitGap(mx,my)>=0)?"pointer":"default"; if(hover>=0)setStatus(hover); });
+  cv.addEventListener("click",function(e){ var mx=e.clientX*DPR,my=e.clientY*DPR; var g=hitGap(mx,my);
+    if(g>=0){ openDazwischen(g); return; } var h=hit(mx,my); if(h>=0)setStatus(h); });
+
+  // dazwischen modal
+  var back=document.getElementById("back"), modal=document.getElementById("modal"), zoom=document.getElementById("zoom"),
+      labL=document.getElementById("labL"), labR=document.getElementById("labR"), dsub=document.getElementById("dsub");
+  var depth=0;
+  function renderZoom(){ // clear points
+    var old=zoom.querySelectorAll(".pt"); for(var i=0;i<old.length;i++)old[i].remove();
+    var count=Math.pow(2,depth)-1; var w=zoom.clientWidth||480;
+    for(var k=1;k<=count;k++){ var d=document.createElement("div"); d.className="pt";
+      d.style.left=(10+(w-20)*(k/(count+1)))+"px"; d.style.opacity=(0.35+0.5*(k%2)); zoom.appendChild(d); }
+    dsub.textContent="Tiefe "+depth+" · immer neue Punkte dazwischen, nie eine „nächste“.";
+  }
+  function openDazwischen(g){ labL.textContent=S[g].name.split(" · ")[0]; labR.textContent=S[g+1].name.split(" · ")[0];
+    depth=1; renderZoom(); back.classList.add("on"); modal.classList.add("on"); }
+  function closeM(){ back.classList.remove("on"); modal.classList.remove("on"); }
+  document.getElementById("mx").addEventListener("click",closeM); back.addEventListener("click",closeM);
+  document.getElementById("deeper").addEventListener("click",function(){ if(depth<7)depth++; renderZoom(); });
+  addEventListener("keydown",function(e){ if(e.key==="Escape")closeM(); });
+
+  updBars(); setStatus(-1);
+  window.__ZWEI={S:S,N:N,getN:function(){return n;},advance:function(){if(n<N-1)n++;updBars();},reset:function(){n=0;updBars();}};
+})();
+</script>
+
+<!-- RAZ model i18n (append-only; original content untouched) -->
+<script>window.RAZ_CFG={"pos": "top-right"};</script>
+<script>window.RAZ_MODEL={"strings": [{"de": "Metaphysische <b>Hypothese</b>, kein Beweis, kein Gottesbeweis · grün = echter <b style=\"color:var(--anker)\">Anker</b>, gold = <b>Bild / Metaphysik</b>", "ru": "Метафизическая <b>гипотеза</b>, не доказательство, не доказательство бытия Бога · зелёный = настоящий <b style=\"color:var(--anker)\">якорь</b>, золотой = <b>образ / метафизика</b>", "en": "A metaphysical <b>hypothesis</b>, not a proof, not a proof of God · green = a real <b style=\"color:var(--anker)\">anchor</b>, gold = <b>picture / metaphysics</b>"}, {"de": "Realität als Zustand · die zwei Teile", "ru": "Реальность как состояние · две части", "en": "Reality as a State · the two parts"}, {"de": "Das Absolute und der Abfall", "ru": "Абсолют и нисхождение", "en": "The Absolute and the Descent"}, {"de": "Teil B · die letzte Realisierung", "ru": "Часть B · последняя реализация", "en": "Part B · the final realization"}, {"de": "<span>ΔI = −log₂ p</span><b id=\"diVal\">0 Bit</b>", "ru": "<span>ΔI = −log₂ p</span><b id=\"diVal\">0 бит</b>", "en": "<span>ΔI = −log₂ p</span><b id=\"diVal\">0 bits</b>"}, {"de": "Nur bei Eine → Zwei → Vier ist p bekannt (0/1/2 Bit). Danach steigt ΔI, weil die Verzweigungen B wachsen, aber ohne exakten Wert (μ₀ ist Platzhalter).", "ru": "Только при Одно → Два → Четыре величина p известна (0/1/2 бит). Затем ΔI растёт, поскольку ветвления B увеличиваются, но без точного значения (μ₀ — заполнитель).", "en": "Only for One → Two → Four is p known (0/1/2 bit). After that ΔI rises, because the branches B grow, but without an exact value (μ₀ is a placeholder)."}, {"de": "<span>Risiko wilder Sprung</span><b>≈ e^−ΔS</b>", "ru": "<span>Риск дикого скачка</span><b>≈ e^−ΔS</b>", "en": "<span>Risk of a wild jump</span><b>≈ e^−ΔS</b>"}, {"de": "Bleibt <b>konstant</b> winzig, sinkt NICHT über die Zeit. Was wächst, ist Entropie, nicht die Sprung-Sicherheit.", "ru": "Остаётся <b>постоянно</b> ничтожно малым, НЕ убывает со временем. Растёт энтропия, а не надёжность скачка.", "en": "Stays <b>constantly</b> tiny, does NOT decrease over time. What grows is entropy, not the certainty of the jump."}, {"de": "<span>Verlässlichkeit</span><span>1 − ε</span>", "ru": "<span>Надёжность</span><span>1 − ε</span>", "en": "<span>Reliability</span><span>1 − ε</span>"}, {"de": "berührt 1 nie", "ru": "никогда не касается 1", "en": "never touches 1"}, {"de": "<span class=\"a\"><i></i>echter Anker</span><span class=\"b\"><i></i>Bild / Metaphysik</span>", "ru": "<span class=\"a\"><i></i>настоящий якорь</span><span class=\"b\"><i></i>образ / метафизика</span>", "en": "<span class=\"a\"><i></i>a real anchor</span><span class=\"b\"><i></i>picture / metaphysics</span>"}, {"de": "Klicke <b style=\"color:var(--anker)\">„setze den ersten Unterschied\"</b>, um aus dem Absoluten die erste Realisierung zu ziehen.", "ru": "Нажми <b style=\"color:var(--anker)\">«установи первое различие»</b>, чтобы извлечь из Абсолюта первую реализацию.", "en": "Click <b style=\"color:var(--anker)\">“set the first difference”</b> to draw the first realization out of the Absolute."}, {"de": "Das unendliche Dazwischen", "ru": "Бесконечный промежуток", "en": "The infinite in-between"}, {"de": "Zwischen zwei Zuständen · zoome tiefer", "ru": "Между двумя состояниями · приближай глубже", "en": "Between two states · zoom deeper"}, {"de": "x", "ru": "x", "en": "x"}, {"de": "y", "ru": "y", "en": "y"}, {"de": "Anker · reine Mathematik, etabliert", "ru": "Якорь · чистая математика, устоявшаяся", "en": "Anchor · pure mathematics, established"}, {"de": "Analogie", "ru": "Аналогия", "en": "Analogy"}, {"de": "Zwei getrennte Aussagen, nie in einem Satz", "ru": "Два раздельных утверждения, никогда в одном предложении", "en": "Two separate statements, never in one sentence"}, {"de": "Näherungsfolge", "ru": "Последовательность приближений", "en": "Approximation sequence"}, {"de": "vollendete Zahl", "ru": "завершённое число", "en": "completed number"}, {"de": "Anker: hochsymmetrischer Zustand vor der Symmetriebrechung. „alle Logik zugleich und zugleich nicht“ ist Bild, kein Satz der Logik.", "ru": "Якорь: высокосимметричное состояние перед нарушением симметрии. «вся логика одновременно и одновременно нет» — это образ, а не положение логики.", "en": "Anchor: a highly symmetric state before symmetry breaking. “all logic at once and at once not” is a picture, not a proposition of logic."}, {"de": "0 Bit · log₂ 1 = 0", "ru": "0 бит · log₂ 1 = 0", "en": "0 bits · log₂ 1 = 0"}, {"de": "Anker: der erste realisierte Zustand. Allein noch kein Unterschied.", "ru": "Якорь: первое реализованное состояние. Само по себе — ещё не различие.", "en": "Anchor: the first realized state. On its own, still no difference."}, {"de": "1 Bit · der erste Unterschied", "ru": "1 бит · первое различие", "en": "1 bit · the first difference"}, {"de": "zwei", "ru": "два", "en": "two"}, {"de": "Anker: das erste Bit (log₂ 2 = 1). Hier ist p bekannt.", "ru": "Якорь: первый бит (log₂ 2 = 1). Здесь p известно.", "en": "Anchor: the first bit (log₂ 2 = 1). Here p is known."}, {"de": "2 Bit · Verdopplung", "ru": "2 бит · удвоение", "en": "2 bits · doubling"}, {"de": "Anker: 2 Bit (log₂ 4 = 2). Letzter Schritt mit bekanntem p.", "ru": "Якорь: 2 бит (log₂ 4 = 2). Последний шаг с известным p.", "en": "Anchor: 2 bits (log₂ 4 = 2). Last step with known p."}, {"de": "Felder · Teilchen", "ru": "Поля · частицы", "en": "Fields · particles"}, {"de": "ΔI steigt · B wächst", "ru": "ΔI растёт · B увеличивается", "en": "ΔI rises · B grows"}, {"de": "Anker: Symmetriebrechung, Abkühlung. Kein exakter Bit-Wert (μ₀ = Platzhalter).", "ru": "Якорь: нарушение симметрии, охлаждение. Нет точного значения в битах (μ₀ = заполнитель).", "en": "Anchor: symmetry breaking, cooling. No exact bit value (μ₀ = placeholder)."}, {"de": "Atome · Moleküle", "ru": "Атомы · молекулы", "en": "Atoms · molecules"}, {"de": "Anker: Quantisierung, Kombinatorik, Emergenz.", "ru": "Якорь: квантование, комбинаторика, эмерджентность.", "en": "Anchor: quantization, combinatorics, emergence."}, {"de": "Anker: Membran, Selbst-Erhaltung, Informationsverarbeitung.", "ru": "Якорь: мембрана, самосохранение, обработка информации.", "en": "Anchor: membrane, self-preservation, information processing."}, {"de": "Anker: Selbstmodell (strange loop). Das Hard Problem bleibt offen.", "ru": "Якорь: самомодель (strange loop). Трудная проблема остаётся открытой.", "en": "Anchor: self-model (strange loop). The Hard Problem remains open."}, {"de": "Anker: Kompositionalität, unendlicher Gebrauch endlicher Mittel.", "ru": "Якорь: композициональность, бесконечное использование конечных средств.", "en": "Anchor: compositionality, infinite use of finite means."}, {"de": " Bit", "ru": " бит", "en": " bit"}, {"de": "Teil A · das Absolute (ΔI = 0)", "ru": "Часть A · Абсолют (ΔI = 0)", "en": "Part A · the Absolute (ΔI = 0)"}, {"de": "Teil B · abfallende Manifestation · nur nach vorne offen", "ru": "Часть B · нисходящее проявление · открыто только вперёд", "en": "Part B · descending manifestation · open only forwards"}, {"de": "Noch im Absoluten. ΔI = 0, es gibt noch keinen Unterschied.", "ru": "Ещё в Абсолюте. ΔI = 0, различия ещё нет.", "en": "Still in the Absolute. ΔI = 0, there is no difference yet."}, {"de": "Hier ist p bekannt (Eine/Zwei/Vier), darum ein exakter Wert.", "ru": "Здесь p известно (Одно/Два/Четыре), поэтому точное значение.", "en": "Here p is known (One/Two/Four), hence an exact value."}, {"de": "ΔI steigt, weil die Verzweigungen B wachsen, aber ohne exakten Wert (μ₀ ist Platzhalter). Keine erfundene Bit-Zahl.", "ru": "ΔI растёт, поскольку ветвления B увеличиваются — но без точного значения (μ₀ — заполнитель). Никаких выдуманных значений в битах.", "en": "ΔI rises because the branches B grow — but without an exact value (μ₀ is a placeholder). No made-up bit number."}, {"de": "Fahre über einen Punkt, oder klicke einen goldenen ∞-Marker für das Dazwischen.", "ru": "Наведи на точку или нажми золотой ∞-маркер для промежутка.", "en": "Hover over a point, or click a golden ∞ marker for the in-between."}, {"de": "<span class='bi'>Anker + Bild</span>", "ru": "<span class='bi'>якорь + образ</span>", "en": "<span class='bi'>Anchor + picture</span>"}, {"de": "<span class='ank'>Anker</span>", "ru": "<span class='ank'>якорь</span>", "en": "<span class='ank'>Anchor</span>"}, {"de": "Der erste Schnitt: aus dem Absoluten die <b class='ank'>Eine</b> (0 Bit). Die Symmetrie ist gebrochen.", "ru": "Первый разрез: из Абсолюта — <b class='ank'>Одно</b> (0 бит). Симметрия нарушена.", "en": "The first cut: out of the Absolute the <b class='ank'>One</b> (0 bits). The symmetry is broken."}, {"de": " · immer neue Punkte dazwischen, nie eine „nächste“.", "ru": " · всё новые точки между ними, никогда «следующей».", "en": " · always new points in between, never a “next one”."}, {"de": "Ω · Das Absolute", "ru": "Ω · Абсолют", "en": "Ω · The Absolute"}, {"de": "ΔI = 0 · richtungslos", "ru": "ΔI = 0 · без направления", "en": "ΔI = 0 · directionless"}, {"de": "S₀ · Die Eine", "ru": "S₀ · Единое", "en": "S₀ · The One"}, {"de": "Die Zwei", "ru": "Двоица", "en": "The Two"}, {"de": "Die Vier", "ru": "Четверица", "en": "The Four"}, {"de": "Leben · Zellen", "ru": "Жизнь · Клетки", "en": "Life · Cells"}, {"de": "Bewusstsein", "ru": "Сознание", "en": "Consciousness"}, {"de": "Sprache · Logik", "ru": "Язык · Логика", "en": "Language · Logic"}, {"de": "offen (Zukunft)", "ru": "открыто (будущее)", "en": "open (future)"}, {"de": "Tiefe ", "ru": "Глубина ", "en": "Depth "}, {"de": "Escape", "ru": "Escape", "en": "Escape"}, {"de": "<div class=\"t\">Anker · reine Mathematik, etabliert</div>Zwischen zwei Zahlen liegen unendlich viele, es gibt keine „nächste\" (Dichte des Kontinuums). Die Übertragung auf reale Zustände ist <b>Analogie</b>, offen, ob der Zustandsraum kontinuierlich oder quanten-diskret ist.", "ru": "<div class=\"t\">Якорь · чистая математика, устоявшаяся</div>Между двумя числами лежит бесконечно много других, «следующего» не существует (плотность континуума). Перенос на реальные состояния есть <b>аналогия</b> — остаётся открытым, непрерывно ли пространство состояний или квантово-дискретно.", "en": "<div class=\"t\">Anchor · pure mathematics, established</div>Between any two numbers there lie infinitely many; there is no “next” one (density of the continuum). The transfer to real states is an <b>analogy</b>, open whether the state space is continuous or quantum-discrete."}, {"de": "<div class=\"t\">Zwei getrennte Aussagen, nie in einem Satz</div>Die <b>Näherungsfolge</b> 0,9 · 0,99 · 0,999 … berührt die 1 in keinem endlichen Schritt. Die <b>vollendete Zahl</b> 0,999… ist exakt gleich 1. Beides stimmt, aber es sind zwei verschiedene Dinge.", "ru": "<div class=\"t\">Два отдельных утверждения, никогда в одном предложении</div><b>Приближающая последовательность</b> 0,9 · 0,99 · 0,999 … не касается 1 ни на одном конечном шаге. — <b>Завершённое число</b> 0,999… точно равно 1. И то и другое верно, но это две разные вещи.", "en": "<div class=\"t\">Two separate statements, never in one sentence</div>The <b>approximation sequence</b> 0,9 · 0,99 · 0,999 … touches the 1 at no finite step. The <b>completed number</b> 0,999… is exactly equal to 1. Both are true, but they are two different things."}, {"de": "▶ setze den nächsten Unterschied", "ru": "▶ задать следующее различие", "en": "▶ set the next difference"}, {"de": "↻ zurück zum Absoluten", "ru": "↻ назад к Абсолюту", "en": "↻ back to the Absolute"}, {"de": "🔍 tiefer zoomen (subdividieren)", "ru": "🔍 приблизить глубже (подразделить)", "en": "🔍 zoom deeper (subdivide)"}]};</script>
+<script>
+/* ==========================================================================
+   Realität als Zustand — MODEL i18n runtime (append-only)
+   For the interactive canvas/JS models, whose text is produced by JavaScript
+   (canvas fillText, innerHTML/textContent). String-keyed, so it survives any
+   DOM rebuild. We intercept the text sinks and substitute translations.
+
+   Injected: RAZ_CFG (switcher placement) and
+             RAZ_MODEL = { strings:[{de,ru,en}, ...] }  (longest handled first)
+   The dict mixes whole messages / whole static blocks (long keys, matched
+   wholesale) and atomic data values (short keys). Nothing existing is edited;
+   this only appends a switcher + a translation layer.
+   ========================================================================== */
+(function () {
+  "use strict";
+  var CFG   = (typeof RAZ_CFG   !== "undefined") ? RAZ_CFG   : { pos:"top-right" };
+  var MODEL = (typeof RAZ_MODEL !== "undefined") ? RAZ_MODEL : { strings:[] };
+  var LS_KEY = "raz_lang";
+  var curLang = "de";
+  var APPLYING = false;
+
+  /* ---------- translation core (substring replace, boundary-aware) -------- */
+  var STR = (MODEL.strings || []).filter(function(e){return e&&e.de;}).slice()
+              .sort(function (a, b) { return b.de.length - a.de.length; });
+  function isL(ch){ return ch >= "0" && ch <= "9" || ch >= "A" && ch <= "Z" || ch >= "a" && ch <= "z" || (ch >= "À" && ch <= "ɏ"); }
+  STR.forEach(function (e){ e._bl = isL(e.de.charAt(0)); e._br = isL(e.de.charAt(e.de.length-1)); });
+  var memo = { ru:Object.create(null), en:Object.create(null) };
+  function translateStr(s, lang){
+    if (lang === "de" || !s || typeof s !== "string") return s;
+    var mm = memo[lang]; var hit = mm[s]; if (hit !== undefined) return hit;
+    var out = s;
+    for (var i=0;i<STR.length;i++){
+      var e = STR[i], tr = e[lang]; if (tr == null || tr === "") continue;
+      if (out.indexOf(e.de) < 0) continue;
+      var res="", from=0, k;
+      while ((k = out.indexOf(e.de, from)) >= 0){
+        var okL = !e._bl || k===0 || !isL(out.charAt(k-1));
+        var aft = k + e.de.length;
+        var okR = !e._br || aft>=out.length || !isL(out.charAt(aft));
+        if (okL && okR){ res += out.slice(from,k) + tr; from = aft; }
+        else { res += out.slice(from, k+1); from = k+1; }
+      }
+      out = res + out.slice(from);
+    }
+    mm[s] = out; return out;
+  }
+
+  /* ---------- registries for re-translation on language switch ------------ */
+  var htmlEls = [], textEls = [];
+  function TAGof(el){ return (el && el.tagName ? el.tagName : "").toUpperCase(); }
+  function skip(el){ if(!el||el.nodeType!==1) return false; var t=TAGof(el); if(t==="SCRIPT"||t==="STYLE") return true;
+    var p=el; while(p){ if(p.id==="raz-langbar"||p.__razSkip) return true; p=p.parentNode; } return false; }
+
+  /* ---------- patch innerHTML / textContent setters ----------------------- */
+  function patchProp(proto, prop, reg){
+    var d = Object.getOwnPropertyDescriptor(proto, prop);
+    if (!d || !d.set || d.set.__razP) return;
+    var oget = d.get, oset = d.set;
+    Object.defineProperty(proto, prop, {
+      configurable:true, enumerable:d.enumerable, get:oget,
+      set: function(v){
+        if (APPLYING){ oset.call(this, v); return; }
+        if (skip(this)){ oset.call(this, v); return; }
+        var de = String(v);
+        this[reg.key] = de;
+        if (!this[reg.flag]){ this[reg.flag] = true; reg.list.push(this); }
+        oset.call(this, curLang==="de" ? v : translateStr(de, curLang));
+      }
+    });
+    d.set.__razP = true;
+  }
+  var elProto = window.Element.prototype;
+  var htmlDesc = Object.getOwnPropertyDescriptor(elProto,"innerHTML") ? elProto : window.HTMLElement.prototype;
+  patchProp(htmlDesc, "innerHTML", { key:"__razHtmlDe", flag:"__razHtmlR", list:htmlEls });
+  patchProp(window.Node.prototype, "textContent", { key:"__razTextDe", flag:"__razTextR", list:textEls });
+
+  /* ---------- patch canvas text ------------------------------------------ */
+  (function(){
+    if (!window.CanvasRenderingContext2D) return;
+    var P = CanvasRenderingContext2D.prototype;
+    ["fillText","strokeText"].forEach(function(fn){
+      var o=P[fn]; if(!o||o.__razP) return;
+      var w=function(text,x,y,mw){ var t=(curLang!=="de")?translateStr(String(text),curLang):text;
+        return (mw===undefined)?o.call(this,t,x,y):o.call(this,t,x,y,mw); };
+      w.__razP=true; P[fn]=w;
+    });
+    var m=P.measureText; if(m&&!m.__razP){ var w2=function(t){ return m.call(this,(curLang!=="de")?translateStr(String(t),curLang):t); }; w2.__razP=true; P.measureText=w2; }
+  })();
+
+  /* ---------- initial pass over static markup ----------------------------- */
+  var INLINE={A:1,ABBR:1,B:1,BDI:1,BDO:1,BR:1,CITE:1,CODE:1,DATA:1,DFN:1,EM:1,I:1,KBD:1,MARK:1,Q:1,RP:1,RT:1,RUBY:1,S:1,SAMP:1,SMALL:1,SPAN:1,STRONG:1,SUB:1,SUP:1,TIME:1,U:1,VAR:1,WBR:1,DEL:1,INS:1};
+  var OPAQUE={SCRIPT:1,STYLE:1,CANVAS:1,IFRAME:1,NOSCRIPT:1,TEMPLATE:1,IMG:1,VIDEO:1,AUDIO:1,INPUT:1,TEXTAREA:1,OBJECT:1,TITLE:1,HEAD:1,META:1,LINK:1,BASE:1,DESC:1,DEFS:1,SYMBOL:1};
+  function hasText(el){ var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null),n; while((n=w.nextNode())){ if(n.nodeValue&&/\S/.test(n.nodeValue))return true; } return false; }
+  function hasDirectText(el){ for(var n=el.firstChild;n;n=n.nextSibling){ if(n.nodeType===3 && /\S/.test(n.nodeValue||"")) return true; } return false; }
+  function hasBlockDesc(el){ var k=el.getElementsByTagName("*"); for(var i=0;i<k.length;i++){ if(INLINE[(k[i].tagName||"").toUpperCase()]!==1) return true; } return false; }
+  function collectStaticBlocks(){
+    var out=[];
+    // A block is any element that owns text directly, OR is a leaf text block.
+    // Capturing whole innerHTML keeps loose text + inline/label children together.
+    (function walk(el){ for(var c=el.firstElementChild;c;c=c.nextElementSibling){
+      var t=(c.tagName||"").toUpperCase();
+      if(OPAQUE[t]===1) continue; if(c.id==="raz-langbar"||c.__razSkip) continue;
+      if(hasDirectText(c) || (hasText(c)&&!hasBlockDesc(c))) out.push(c); /* don't descend */
+      else walk(c);
+    }})(document.body);
+    return out;
+  }
+  function primeStatic(){
+    var blocks=collectStaticBlocks();
+    for (var i=0;i<blocks.length;i++){ var el=blocks[i];
+      if (el.__razHtmlR) continue;              // already tracked via a JS assignment
+      el.__razHtmlDe = el.innerHTML; el.__razHtmlR = true; htmlEls.push(el);
+    }
+  }
+
+  /* ---------- apply a language ------------------------------------------- */
+  function reHtml(el){ if(el.isConnected===false) return; var de=el.__razHtmlDe;
+    APPLYING=true; try{ el.innerHTML = (curLang==="de")?de:translateStr(de,curLang); }catch(e){} APPLYING=false; }
+  function reText(el){ if(el.isConnected===false) return; var de=el.__razTextDe;
+    APPLYING=true; try{ el.textContent = (curLang==="de")?de:translateStr(de,curLang); }catch(e){} APPLYING=false; }
+  function apply(lang){
+    curLang = lang;
+    for (var i=0;i<htmlEls.length;i++) reHtml(htmlEls[i]);
+    for (var j=0;j<textEls.length;j++) reText(textEls[j]);
+    document.documentElement.setAttribute("lang", lang);
+    try{ localStorage.setItem(LS_KEY, lang); }catch(e){}
+    var btns=document.querySelectorAll("#raz-langbar [data-lang]");
+    for (var k=0;k<btns.length;k++){ var on=btns[k].getAttribute("data-lang")===lang; btns[k].setAttribute("aria-pressed",on?"true":"false"); btns[k].className=on?"raz-lb-btn raz-on":"raz-lb-btn"; }
+    /* canvas repaints itself via the model's own animation loop */
+  }
+
+  /* ---------- switcher UI ------------------------------------------------- */
+  function buildBar(){
+    var style=document.createElement("style"); style.id="raz-lang-style"; style.__razSkip=true;
+    style.textContent="#raz-langbar{position:fixed;z-index:2147483000;display:inline-flex;gap:2px;padding:3px;border-radius:999px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-size:12px;font-weight:700;letter-spacing:.02em;line-height:1;background:rgba(20,21,29,.72);border:1px solid rgba(150,150,180,.28);box-shadow:0 6px 22px rgba(0,0,0,.4);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);}#raz-langbar .raz-lb-btn{appearance:none;border:0;background:transparent;cursor:pointer;color:#c9cee0;border-radius:999px;padding:.4em .62em;font:inherit;transition:background .15s,color .15s;}#raz-langbar .raz-lb-btn:hover{color:#fff;}#raz-langbar .raz-lb-btn.raz-on{background:rgba(230,181,74,.94);color:#141019;}";
+    document.head.appendChild(style);
+    var bar=document.createElement("div"); bar.id="raz-langbar"; bar.__razSkip=true; bar.setAttribute("role","group"); bar.setAttribute("aria-label","Sprache / Language / Язык");
+    [["de","DE"],["ru","RU"],["en","EN"]].forEach(function(p){
+      var b=document.createElement("button"); b.type="button"; b.className="raz-lb-btn"; b.setAttribute("data-lang",p[0]); b.setAttribute("aria-pressed","false");
+      b.title={de:"Deutsch (Original)",ru:"Русский",en:"English"}[p[0]];
+      APPLYING=true; b.textContent=p[1]; APPLYING=false;
+      b.addEventListener("click",function(){ var code=this.getAttribute("data-lang"); apply(code); });
+      bar.appendChild(b);
+    });
+    var pos=CFG.pos||"top-right";
+    if (pos.indexOf("bottom")===0) bar.style.bottom=CFG.edge||"14px"; else bar.style.top=CFG.edge||"12px";
+    if (pos.indexOf("left")>=0) bar.style.left=CFG.side||"14px"; else bar.style.right=CFG.side||"14px";
+    APPLYING=true; document.body.appendChild(bar); APPLYING=false;
+  }
+  function getInitial(){ try{ var s=localStorage.getItem(LS_KEY); if(s==="ru"||s==="en"||s==="de")return s; }catch(e){} return "de"; }
+
+  /* ---------- init ------------------------------------------------------- */
+  var inIframe = false; try { inIframe = window.top !== window.self; } catch (e) { inIframe = true; }
+  primeStatic();
+  if (!inIframe) buildBar();  /* embedded in the hub: the hub's switcher drives us via postMessage */
+  window.addEventListener("message",function(e){ if(e&&e.data&&(e.data.razLang==="de"||e.data.razLang==="ru"||e.data.razLang==="en")) apply(e.data.razLang); });
+  window.RAZ_onLang=function(l){ apply(l); };
+  apply(getInitial());
+})();
+
+</script>
+
+<script src="assets/restauration.js?v=20261116-r2" defer></script>
+<aside data-historical-banner style="padding:10px 18px;background:#172637;color:#e7d3a1;font:14px system-ui">ARCHIV · ARCHIVE · АРХИВ — 16.11.2026 · <a href="../../forschung.html">HALVETH — 17.11.2026</a></aside></body></html>

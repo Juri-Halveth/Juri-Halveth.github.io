@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HALVETH &middot; Der Baum der Systeme</title>
+<meta name="description" content="Ein interaktiver Baum: wo HALVETH zuhause ist, wo es nur noch Detektor ist, und wo es gar nicht hingehört. Für Windows, eigene Software und Cloud.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='6' y='6' width='88' height='88' rx='22' fill='%230a0a0b' stroke='%23ffd60a' stroke-width='6'/><circle cx='50' cy='50' r='21' fill='none' stroke='%23ffd60a' stroke-width='6'/><circle cx='50' cy='50' r='6' fill='%234fd6d0'/></svg>">
+<link rel="stylesheet" href="halveth.css?v=20261116-r2">
+<style>
+  :root{
+    --bg:#0a0a0b; --panel:#141518; --panel2:#1b1c21; --ink:#f4f3ee; --mut:#9a9ba3; --dim:#6b6c76;
+    --line:#262730; --gold:#ffd60a; --mint:#4fd6d0; --green:#3ec98a; --amber:#ffb84d; --grey:#6b6c76; --red:#f0806f;
+    --sans:"Segoe UI Variable Display","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    --mono:"Cascadia Code","Consolas","SF Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans); line-height:1.55; font-size:16px;
+    background-image:radial-gradient(circle at 50% -8%, rgba(255,214,10,.10), transparent 42%),
+      radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px);
+    background-size:auto, 22px 22px; background-attachment:fixed; padding:26px clamp(14px,4vw,40px) 60px;}
+  .mono{font-family:var(--mono)}
+  .wrap{max-width:1200px; margin:0 auto}
+
+  header h1{font-size:clamp(26px,4vw,40px); font-weight:800; letter-spacing:-1px; margin:0 0 10px}
+  header h1 .mark{color:var(--gold)}
+  header .intro{color:var(--mut); max-width:78ch; margin:0 0 8px; font-size:15.5px}
+  header .honest{color:var(--gold); max-width:78ch; font-size:14.5px; border-left:2px solid var(--gold); padding-left:14px; margin:14px 0 0}
+
+  /* tabs */
+  .tabs{display:flex; gap:10px; flex-wrap:wrap; margin:26px 0 20px}
+  .tab{font:inherit; font-size:14.5px; font-weight:650; cursor:pointer; color:var(--mut); background:var(--panel);
+    border:1px solid var(--line); border-radius:12px; padding:11px 18px; transition:.15s; display:flex; align-items:center; gap:9px}
+  .tab .ic{font-size:17px}
+  .tab:hover{color:var(--ink); border-color:#33343c}
+  .tab.on{color:var(--bg); background:var(--gold); border-color:var(--gold)}
+
+  /* legend */
+  .legend{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:8px}
+  @media(max-width:800px){ .legend{grid-template-columns:1fr} }
+  .lz{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:14px 16px; border-top:3px solid}
+  .lz.kern{border-top-color:var(--gold)} .lz.rand{border-top-color:var(--amber)} .lz.aussen{border-top-color:var(--grey)}
+  .lz .lt{font-family:var(--mono); font-size:12px; letter-spacing:.08em; font-weight:700}
+  .lz.kern .lt{color:var(--gold)} .lz.rand .lt{color:var(--amber)} .lz.aussen .lt{color:var(--grey)}
+  .lz .lh{font-size:14.5px; font-weight:650; margin:3px 0 5px}
+  .lz .ld{font-size:12.5px; color:var(--mut)}
+
+  /* main layout */
+  .main{display:grid; grid-template-columns:1fr 320px; gap:20px; margin-top:22px; align-items:start}
+  @media(max-width:940px){ .main{grid-template-columns:1fr} }
+
+  /* tree */
+  .tree{position:relative; background:linear-gradient(180deg,#0e0f12,#0a0a0b); border:1px solid var(--line);
+    border-radius:18px; padding:22px 18px 26px; overflow:hidden}
+  .wires{position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0}
+  .band{position:relative; z-index:1; margin-bottom:34px}
+  .band:last-child{margin-bottom:0}
+  .band .btag{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; margin:0 0 12px; text-align:center}
+  .band.stamm .btag{color:var(--mint)} .band.kern .btag{color:var(--gold)}
+  .band.rand .btag{color:var(--amber)} .band.aussen .btag{color:var(--grey)}
+  .row{display:flex; flex-wrap:wrap; gap:12px; justify-content:center}
+  .node{font:inherit; cursor:pointer; background:var(--panel); border:1px solid var(--line); border-radius:13px;
+    padding:12px 15px; display:flex; align-items:center; gap:10px; transition:.16s; color:var(--ink); max-width:270px; text-align:left}
+  .node:hover,.node.sel{transform:translateY(-3px)}
+  .node .dot{width:10px; height:10px; border-radius:50%; flex:none}
+  .node .nl{font-size:14px; font-weight:600; line-height:1.25}
+  .node .ns{display:block; font-size:11.5px; color:var(--mut); font-weight:400; margin-top:2px}
+  /* trunk */
+  .node.trunk{background:linear-gradient(180deg,#1d1a0b,#141310); border-color:#4a421c; padding:15px 20px}
+  .node.trunk .nl{font-size:15.5px}
+  .z-stamm .dot{background:var(--mint); box-shadow:0 0 10px rgba(79,214,208,.6)}
+  .z-kern{border-color:rgba(255,214,10,.35)} .z-kern .dot{background:var(--gold); box-shadow:0 0 10px rgba(255,214,10,.55)}
+  .z-kern:hover,.z-kern.sel{border-color:var(--gold); box-shadow:0 0 22px rgba(255,214,10,.18)}
+  .z-rand .dot{background:var(--amber); box-shadow:0 0 10px rgba(255,184,77,.5)}
+  .z-rand:hover,.z-rand.sel{border-color:var(--amber)}
+  .z-aussen{opacity:.82} .z-aussen .dot{background:var(--grey)}
+  .z-aussen:hover,.z-aussen.sel{border-color:var(--grey); opacity:1}
+
+  /* detail */
+  .detail{position:sticky; top:16px; background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:22px}
+  .detail .dz{font-family:var(--mono); font-size:12px; letter-spacing:.08em; font-weight:700; margin:0 0 4px}
+  .detail.kern .dz{color:var(--gold)} .detail.rand .dz{color:var(--amber)}
+  .detail.aussen .dz{color:var(--grey)} .detail.stamm .dz{color:var(--mint)}
+  .detail h3{margin:0 0 4px; font-size:20px; letter-spacing:-.3px}
+  .detail .dp{color:var(--mut); font-size:14.5px; margin:0 0 16px}
+  .detail .dh{border-top:1px solid var(--line); padding-top:14px}
+  .detail .dh .k{font-family:var(--mono); font-size:11.5px; letter-spacing:.08em; color:var(--dim); margin:0 0 6px}
+  .detail .dh .v{font-size:14.5px; color:var(--ink)}
+  .detail .hint{color:var(--dim); font-size:14px}
+  .strength{display:flex; gap:5px; margin-top:14px}
+  .strength .s{height:6px; flex:1; border-radius:3px; background:var(--line)}
+  .strength.k3 .s:nth-child(-n+3){background:var(--gold)}
+  .strength.k2 .s:nth-child(-n+2){background:var(--amber)}
+  .strength.k1 .s:nth-child(-n+1){background:var(--grey)}
+  .strength-l{font-size:11.5px; color:var(--dim); margin-top:6px; font-family:var(--mono)}
+
+  footer{margin-top:28px; border-top:1px solid var(--line); padding-top:18px; color:var(--dim); font-size:13px; max-width:90ch}
+  footer b{color:var(--mut)}
+</style>
+
+<link rel="canonical" href="https://halveth.de/baum.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="HALVETH">
+<meta property="og:title" content="HALVETH &middot; Der Baum der Systeme">
+<meta property="og:description" content="Ein interaktiver Baum: wo HALVETH zuhause ist, wo es nur noch Detektor ist, und wo es gar nicht hingehört. Für Windows, eigene Software und Cloud.">
+<meta property="og:url" content="https://halveth.de/baum.html">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebSite","name":"HALVETH","url":"https://halveth.de/","inLanguage":["de","en","ru"],"description":"Öffentliche Forschung zu überprüfbarem Vertrauen in Systemen. Kein Produkt.","author":{"@type":"Person","name":"Juri Janovski"}},{"@context":"https://schema.org","@type":"Person","name":"Juri Janovski","url":"https://juri.halveth.de/","email":"mailto:info@halveth.de","jobTitle":"Entwickler und unabhängiger Forscher","description":"Baut Software und Systeme rund um Vertrauen, Sicherheit und künstliche Intelligenz. Arbeitet allein, ohne Firma dahinter.","knowsAbout":["Prozessoptimierung","Cyber Security","IT-Sicherheit","Webseiten","Webentwicklung","Programmierung","Softwareentwicklung","Marketing","Künstliche Intelligenz","Automatisierung","Datenschutz"],"knowsLanguage":["Deutsch","Englisch","Russisch"],"address":{"@type":"PostalAddress","addressLocality":"Brühl","addressRegion":"Nordrhein-Westfalen","postalCode":"50321","addressCountry":"DE"},"workLocation":{"@type":"Place","name":"Brühl bei Köln, Rhein-Erft-Kreis"},"sameAs":["https://github.com/Juri-Halveth","https://www.linkedin.com/in/juri-j-638862395/","https://www.instagram.com/anov.ju/"]}]</script>
+
+<link rel="stylesheet" href="assets/restauration.css?v=20261116-r2">
+</head>
+<body data-hv-page="baum" class="hv-main-shell">
+<nav>
+  <div class="nav-in">
+    <a class="logo" href="index.html"><span class="mark">&#11041;</span> HALVETH</a>
+    <div class="nav-links">
+      <a href="index.html">Start</a>
+      <a href="prinzip.html">Prinzip</a>
+      <a href="baum.html">Wo es sitzt</a>
+      <a href="ergebnisse.html">Ergebnisse</a>
+      <a href="grenzen.html">Grenzen</a>
+      <a href="vision.html">Vision</a>
+      <a href="labor.html">Labor</a>
+      <a href="audits.html">Audits</a>
+      <a href="forschung.html">Forschung</a>
+    </div>
+    <a class="portfolio-entry" href="https://juri.halveth.de/" data-raz-skip>Juri<span class="pe-rest"> &amp; Projekte</span></a>
+    <div class="nav-cta">
+      <span class="status-pill"><span class="dot"></span>in Forschung</span>
+    </div>
+  </div>
+</nav>
+<main id="inhalt"><aside class="hv-history-note" data-raz-skip><span data-hv-i18n="history">Inhaltliche Projektangaben behalten ihren jeweils genannten Quellenstand. Die Web-Edition vom 16.11.2026 aktualisiert Darstellung, Bedienung und Verknüpfungen; sie ist keine neue Abnahme alter Experimente.</span></aside>
+<div class="wrap">
+
+  <header>
+    <h1><span class="mark">&#11041;</span> Der Baum der Systeme &middot; wo HALVETH sitzt</h1>
+    <p class="intro">Jedes System hat einen unsichtbaren Ursprung, einen <b style="color:var(--ink)">Stamm</b>, aus dem alles abzweigt. Je n&auml;her an diesem Ursprung, desto mehr ist HALVETH zuhause. Weiter drau&szlig;en wird es nur noch Detektor, und ganz au&szlig;en geh&ouml;rt es gar nicht hin. W&auml;hle ein System und fahr &uuml;ber die Knoten.</p>
+    <p class="honest">Ehrlich vorweg: HALVETH bietet <b>nirgends</b> absoluten Schutz. An den wenigen eingetragenen Ankern h&auml;lt es einen Schreibvorgang inzwischen wirklich auf, bis eine getrennte Instanz zugestimmt hat. Weiter drau&szlig;en erkennt und beweist es nur, nach der Wirkung. Ein Insider mit dem echten Schl&uuml;ssel gewinnt &uuml;berall.</p>
+  </header>
+
+  <div class="tabs" id="tabs">
+    <button class="tab on" data-sys="windows"><span class="ic">&#128421;</span> <span class="tl">Windows</span></button>
+    <button class="tab" data-sys="software"><span class="ic">&#128230;</span> <span class="tl">Eigene Software</span></button>
+    <button class="tab" data-sys="cloud"><span class="ic">&#9729;</span> <span class="tl">Cloud &amp; Infrastruktur</span></button>
+  </div>
+
+  <div class="legend">
+    <div class="lz kern"><div class="lt">KERNZONE</div><div class="lh">Hier geh&ouml;rt HALVETH hin</div><div class="ld">Wenige benannte Anker am Ursprung. Getrennte Pr&uuml;fdom&auml;ne, Finalit&auml;t und R&uuml;ckf&uuml;hr-Vorschlag. Hier liegt der dokumentierte Schwerpunkt.</div></div>
+    <div class="lz rand"><div class="lt">RANDZONE</div><div class="lh">Nur noch als Detektor</div><div class="ld">Beobachtbar, aber ohne saubere Freigabe. HALVETH kann Abweichung melden, bellt aber auch bei erlaubten &Auml;nderungen. Reibung.</div></div>
+    <div class="lz aussen"><div class="lt">AUSSERHALB</div><div class="lh">Nicht sein Revier</div><div class="ld">Fl&uuml;chtig, massenhaft, oder ganz andere Fragen: Datenabfluss, Angriffsweg, Gesch&auml;ftslogik. Andere Werkzeuge, ehrlich abgegeben.</div></div>
+  </div>
+
+  <div class="main">
+    <div class="tree" id="tree" data-raz-skip>
+      <svg class="wires" id="wires" preserveAspectRatio="none"></svg>
+      <div class="band stamm"><div class="btag">Der Stamm &middot; unsichtbarer Ursprung</div><div class="row" id="row-stamm"></div></div>
+      <div class="band kern"><div class="btag">Kernzone &middot; HALVETH zuhause</div><div class="row" id="row-kern"></div></div>
+      <div class="band rand"><div class="btag">Randzone &middot; nur Detektor</div><div class="row" id="row-rand"></div></div>
+      <div class="band aussen"><div class="btag">Au&szlig;erhalb &middot; nicht sein Revier</div><div class="row" id="row-aussen"></div></div>
+    </div>
+
+    <div class="detail stamm" id="detail" data-raz-skip>
+      <div class="dz" id="d-zone">ANLEITUNG</div>
+      <h3 id="d-label">Fahr &uuml;ber einen Knoten</h3>
+      <p class="dp" id="d-plain">Jeder Punkt im Baum sagt dir in Alltagssprache, was er ist, und ehrlich, was HALVETH dort tut oder eben nicht tut.</p>
+      <div class="dh"><div class="k" id="d-hier">HALVETH HIER</div><div class="v hint" id="d-role">Gold = zuhause. Orange = nur Detektor. Grau = nicht sein Revier.</div></div>
+      <div class="strength k3" id="d-strength"><span class="s"></span><span class="s"></span><span class="s"></span></div>
+      <div class="strength-l" id="d-strength-l">Passung: w&auml;hle einen Knoten</div>
+    </div>
+  </div>
+
+  </main>
+<footer>
+    <p class="foot-fields"><b>Felder, in denen ich baue</b> <span>Prozessoptimierung</span> <span>Cyber Security</span> <span>Webseiten</span> <span>Programmierung</span> <span>Marketing</span></p>
+    <p class="foot-geo">Br&uuml;hl bei K&ouml;ln &middot; Rhein-Erft-Kreis &middot; Nordrhein-Westfalen &middot; Deutschland &middot; Arbeit auch aus der Ferne</p>
+    <p style="margin:0"><b>Ehrlich gerahmt:</b> Dieses Bild ist eine Landkarte, kein Versprechen. HALVETH ist Forschung im Labor. Es bewacht nur die wenigen Anker, die man eintr&auml;gt. Innerhalb dieser Grenze h&auml;lt es einen Schreibvorgang inzwischen wirklich auf, bis eine getrennte Instanz zugestimmt hat. Alles dar&uuml;ber hinaus ist Beobachtung nach der Wirkung. Am Ursprung ist es stark, drau&szlig;en gibt es ehrlich ab. &#129293;</p>
+    <p data-raz-skip="true" style="margin:14px 0 0"><a href="impressum.html" style="color:var(--mut)">Impressum</a> &middot; <a href="datenschutz.html" style="color:var(--mut)">Datenschutz</a></p>
+  </footer>
+
+</div>
+
+<script>
+const SYS = {
+  windows: {
+    stamm: [{l:"Vertrauens-Wurzel (TPM, Secure Boot)", s:"der unsichtbare Ursprung, auf dem alles aufbaut", r:"HALVETH lebt so nah wie möglich an diesem Punkt. Die echte Hardware-Verankerung hier ist die ferne Endstufe (Fork A), noch ungebaut.", k:3}],
+    kern: [
+      {l:"Signaturschlüssel", s:"der Stempel, mit dem Software als echt gilt", r:"Heimspiel. Versiegelt und bezeugt jede Aenderung, schlaegt Rückführung vor.", k:3},
+      {l:"Zertifikat-Wurzeln", s:"die Liste, wem der Rechner blind vertraut", r:"Fingerabdruck der Wurzeln versiegelt. Fremde Wurzel wird blind erkannt, live an echtem System getestet.", k:3},
+      {l:"Boot-Messwert", s:"der Fingerabdruck vom sauberen Start", r:"Bezeugt jede Abweichung vom akzeptierten Startzustand.", k:3},
+      {l:"Integritaets-Baseline", s:"die Pruefsumme eines benannten Referenzstands", r:"Vergleicht den versiegelten Referenzstand mit einer neuen Messung innerhalb der registrierten Abdeckung.", k:3}
+    ],
+    rand: [
+      {l:"Systemdateien und Treiber", s:"die vielen Kern-Dateien von Windows", r:"Kann Drift erkennen, aber sehr viele legitime Updates. Ohne Freigabe-Signatur bellt es auch bei erlaubten Aenderungen.", k:2},
+      {l:"Kritische Registry-Schlüssel", s:"zentrale Einstellungen im System", r:"Als Detektor möglich, wenn eng auf wenige Schlüssel begrenzt.", k:2},
+      {l:"Zwischen-Zertifikate", s:"die Ebene unter den Wurzeln", r:"Detektor auf Aenderungen, mit derselben Reibung wie oben.", k:2}
+    ],
+    aussen: [
+      {l:"Laufende Prozesse und RAM", s:"was gerade lebt, staendig anders", r:"Nicht sein Revier. Zu fluechtig, keine wenigen festen Anker.", k:1},
+      {l:"Netzwerk-Verbindungen", s:"wer mit wem spricht", r:"Aufgabe von Firewall und IDS, nicht HALVETH.", k:1},
+      {l:"Deine Dateien und Browser", s:"Dokumente, Tabs, Nutzung", r:"Datenschutz und Datenverlust sind ein anderes Feld.", k:1},
+      {l:"Angriffsweg (Phishing, Exploit)", s:"WIE jemand reinkommt", r:"Den Weg sieht HALVETH nie. Es sagt nur, DASS ein Anker sich unerlaubt aenderte.", k:1}
+    ]
+  },
+  software: {
+    stamm: [{l:"Vertrauens-Ursprung deiner Software", s:"Signier-Schlüssel plus die Build-Pipeline", r:"Der Punkt, an dem entschieden wird, was als dein echtes Werk gilt. HALVETHs Kern-Heimat.", k:3}],
+    kern: [
+      {l:"Code-Signing-Schlüssel", s:"womit dein Release als echt unterschrieben wird", r:"Heimspiel. Genau die SolarWinds-Klasse, unerlaubte Aenderung wird nicht endgueltig.", k:3},
+      {l:"Freigegebenes Release-Artefakt", s:"der eine gebaute Stand, der gilt", r:"Ausgeführt ist nicht gueltig. Versiegelt den echten Build, alles andere wird gehalten.", k:3},
+      {l:"Build-Integritaet", s:"die Baseline der Pipeline", r:"Bezeugt Manipulation am Bauprozess.", k:3}
+    ],
+    rand: [
+      {l:"Abhaengigkeiten und Bibliotheken", s:"die fremden Pakete, die du nutzt (xz-Klasse)", r:"Detektor auf die wenigen kritischen, aber viele legitime Updates erzeugen Reibung.", k:2},
+      {l:"Konfigurationsdateien", s:"die Einstellungen deiner App", r:"Als Detektor auf wenige, wichtige Dateien sinnvoll.", k:2}
+    ],
+    aussen: [
+      {l:"Laufzeit-Verhalten und Bugs", s:"wie sich die App im Betrieb verhaelt", r:"Das ist Testing und Monitoring, nicht Integritaet weniger Anker.", k:1},
+      {l:"Nutzer-Eingaben und Geschaeftslogik", s:"was Nutzer tun, welche Regeln gelten", r:"Nicht sein Revier, ehrlich abgegeben.", k:1},
+      {l:"Logs und Telemetrie", s:"die Datenspur des Betriebs", r:"Andere Werkzeuge, nicht HALVETH.", k:1}
+    ]
+  },
+  cloud: {
+    stamm: [{l:"Der Wurzel-Zugang", s:"Root-Account, IAM-Wurzel, Schlüssel-Verwaltung", r:"Der Generalschlüssel der ganzen Umgebung. Näher am Ursprung geht es kaum.", k:3}],
+    kern: [
+      {l:"IAM-Wurzel und Root-Zugang", s:"wer im Konto alles darf", r:"Heimspiel. Eine unerlaubte Aenderung an der Wurzel wird bezeugt.", k:3},
+      {l:"KMS und Verschlüsselungs-Schlüssel", s:"womit alles ver- und entschlüsselt wird", r:"Kronjuwel. Versiegelt und bezeugt.", k:3},
+      {l:"IaC-Kern-Konfiguration", s:"der deklarierte Referenzstand der Infrastruktur", r:"Dokumentiert den gewollten Kern-Stand als benannte Referenz.", k:3}
+    ],
+    rand: [
+      {l:"Ressourcen-Config (Bucket oeffentlich?)", s:"die vielen Einstellungen der Dienste", r:"Detektor auf Drift, aber viele legitime Aenderungen. Reibung.", k:2},
+      {l:"Zertifikate und Deploy-Zustaende", s:"was gerade wo ausgerollt ist", r:"Als Detektor auf wenige kritische Punkte möglich.", k:2}
+    ],
+    aussen: [
+      {l:"Daten im Bucket und Datenabfluss", s:"die Inhalte selbst", r:"Datenverlust ist ein anderes Feld, nicht Integritaet weniger Anker.", k:1},
+      {l:"Traffic, DDoS, Ausfall", s:"Last und Verfuegbarkeit", r:"Nicht sein Revier.", k:1},
+      {l:"Nutzer-Sessions und Geschaeftslogik", s:"wer eingeloggt ist, welche Regeln greifen", r:"Ehrlich abgegeben an andere Werkzeuge.", k:1}
+    ]
+  }
+};
+
+const ZONE = {
+  stamm:{n:"DER STAMM"}, kern:{n:"KERNZONE"}, rand:{n:"RANDZONE"}, aussen:{n:"AUSSERHALB"}
+};
+const SLABEL = {3:"stark, hier zuhause", 2:"teilweise, nur Detektor", 1:"nicht sein Revier"};
+
+let current = "windows";
+const $ = s => document.querySelector(s);
+
+// -- Sprach-Schicht: der Baum-Inhalt (Knoten, Zonen, Beschriftungen) wird in der
+//    gewählten Sprache neu gerendert. window.BAUM_TR liefert EN/RU, DE ist die Quelle. --
+let LANG = "de";
+function T(){ return (LANG!=="de" && window.BAUM_TR && window.BAUM_TR[LANG]) ? window.BAUM_TR[LANG] : null; }
+function trNode(sys, zone, i){
+  const src = SYS[sys][zone][i], t = T();
+  if(!t || !t.sys || !t.sys[sys] || !t.sys[sys][zone] || !t.sys[sys][zone][i]) return src;
+  const x = t.sys[sys][zone][i];
+  return { l: x.l || src.l, s: x.s || src.s, r: x.r || src.r, k: src.k };
+}
+function trZone(zone){ const t=T(); return (t && t.zone && t.zone[zone]) || ZONE[zone].n; }
+function trSlabel(k){ const t=T(); return (t && t.slabel && t.slabel[k]) || SLABEL[k]; }
+function trPassung(){ const t=T(); return (t && t.passung) || "Passung: "; }
+
+function nodeEl(sys, zone, i){
+  const n = trNode(sys, zone, i);
+  const b = document.createElement("button");
+  b.className = "node z-"+zone + (zone==="stamm" ? " trunk" : "");
+  b.innerHTML = '<span class="dot"></span><span class="nl">'+n.l+'<span class="ns">'+n.s+'</span></span>';
+  const show = () => showDetail(n, zone, b);
+  b.addEventListener("mouseenter", show);
+  b.addEventListener("focus", show);
+  b.addEventListener("click", show);
+  return b;
+}
+
+function showDetail(n, zone, el){
+  document.querySelectorAll(".node.sel").forEach(x=>x.classList.remove("sel"));
+  if(el) el.classList.add("sel");
+  const d = $("#detail");
+  d.className = "detail " + zone;
+  $("#d-zone").textContent = trZone(zone);
+  $("#d-label").textContent = n.l;
+  $("#d-plain").textContent = n.s;
+  const role = $("#d-role"); role.textContent = n.r; role.className = "v";
+  const st = $("#d-strength"); st.className = "strength k"+n.k;
+  $("#d-strength-l").textContent = trPassung() + trSlabel(n.k);
+}
+
+function applyStaticLang(){
+  const t = T();
+  const dflt = {stamm:"Der Stamm · unsichtbarer Ursprung", kern:"Kernzone · HALVETH zuhause", rand:"Randzone · nur Detektor", aussen:"Außerhalb · nicht sein Revier"};
+  const bt = (t && t.bandtags) || dflt;
+  ["stamm","kern","rand","aussen"].forEach(cls=>{
+    const band = document.querySelector(".band."+cls);
+    if(band){ const tag = band.querySelector(".btag"); if(tag) tag.textContent = bt[cls]; }
+  });
+  const hier = $("#d-hier"); if(hier) hier.textContent = (t && t.hier) || "HALVETH HIER";
+}
+
+function render(sys){
+  current = sys;
+  for(const zone of ["stamm","kern","rand","aussen"]){
+    const row = $("#row-"+zone); row.innerHTML = "";
+    SYS[sys][zone].forEach((n, i) => row.appendChild(nodeEl(sys, zone, i)));
+  }
+  document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("on", t.dataset.sys===sys));
+  showDetail(trNode(sys, "stamm", 0), "stamm", null);
+  requestAnimationFrame(drawWires);
+}
+
+window.RAZ_onLang = function(lang){
+  LANG = (lang==="en"||lang==="ru") ? lang : "de";
+  applyStaticLang();
+  render(current);
+};
+
+function bandCenterBottom(sel){
+  const b = $(sel).getBoundingClientRect(); const t = $("#tree").getBoundingClientRect();
+  return { x: b.left - t.left + b.width/2, y: b.bottom - t.top };
+}
+function nodesTop(sel){
+  const t = $("#tree").getBoundingClientRect();
+  return [...$(sel).querySelectorAll(".node")].map(n=>{
+    const r = n.getBoundingClientRect();
+    return { x: r.left - t.left + r.width/2, y: r.top - t.top };
+  });
+}
+
+function mkpath(d, col){
+  const p = document.createElementNS("http://www.w3.org/2000/svg","path");
+  p.setAttribute("d", d); p.setAttribute("stroke", col);
+  p.setAttribute("stroke-width","2"); p.setAttribute("fill","none");
+  return p;
+}
+function drawWires(){
+  const tree = $("#tree"); const svg = $("#wires");
+  const w = tree.clientWidth, h = tree.clientHeight;
+  svg.setAttribute("viewBox", "0 0 "+w+" "+h);
+  while(svg.firstChild) svg.removeChild(svg.firstChild);
+  const pairs = [["#row-stamm","#row-kern","rgba(255,214,10,.5)"],
+                 ["#row-kern","#row-rand","rgba(255,184,77,.4)"],
+                 ["#row-rand","#row-aussen","rgba(120,124,140,.35)"]];
+  for(const [src,tgt,col] of pairs){
+    const s = bandCenterBottom(src);
+    const targets = nodesTop(tgt);
+    if(!targets.length) continue;
+    const busY = s.y + (Math.min(...targets.map(t=>t.y)) - s.y) * 0.5;
+    const minX = Math.min(...targets.map(t=>t.x)), maxX = Math.max(...targets.map(t=>t.x));
+    svg.appendChild(mkpath('M '+s.x+' '+s.y+' L '+s.x+' '+busY, col));
+    svg.appendChild(mkpath('M '+minX+' '+busY+' L '+maxX+' '+busY, col));
+    for(const t of targets) svg.appendChild(mkpath('M '+t.x+' '+busY+' L '+t.x+' '+t.y, col));
+  }
+}
+
+document.querySelectorAll(".tab").forEach(t=>t.addEventListener("click", ()=>render(t.dataset.sys)));
+window.addEventListener("resize", ()=>requestAnimationFrame(drawWires));
+window.addEventListener("load", ()=>requestAnimationFrame(drawWires));
+// Robust: sobald der Baum seine echte Groesse bekommt (auch von 0 auf voll), Linien neu zeichnen.
+if('ResizeObserver' in window){ new ResizeObserver(()=>drawWires()).observe(document.getElementById("tree")); }
+render("windows");
+// Sicherheitsnetz gegen Timing: ein paar verzoegerte Nachzeichnungen.
+setTimeout(drawWires, 150); setTimeout(drawWires, 500);
+</script>
+
+
+<!-- HALVETH i18n (append-only, RAZ-Technik, gemeinsame Laufzeit) -->
+<script>window.RAZ_CFG={"place": "nav", "navSelector": ".nav-in"};</script>
+<script>window.BAUM_TR={"en": {"sys": {"windows": {"stamm": [{"l": "Root of trust (TPM, Secure Boot)", "s": "the invisible origin everything is built on", "r": "HALVETH lives as close to this point as possible. The real hardware anchoring here is the distant final stage (Fork A), not yet built."}], "kern": [{"l": "Signing key", "s": "the stamp that marks software as genuine", "r": "Home turf. Seals and witnesses every change, proposes rollback."}, {"l": "Certificate roots", "s": "the list of who the machine blindly trusts", "r": "Fingerprint of the roots sealed. A foreign root is detected blind, tested live on a real system."}, {"l": "Boot measurement", "s": "the fingerprint of a clean start", "r": "Witnesses every deviation from the accepted startup state."}, {"l": "Integrity baseline", "s": "the checksum of a named reference state", "r": "Compares the sealed reference state with a new measurement inside the registered coverage."}], "rand": [{"l": "System files and drivers", "s": "the many core files of Windows", "r": "Can detect drift, but very many legitimate updates. Without an approval signature it barks even at permitted changes."}, {"l": "Critical registry keys", "s": "central settings in the system", "r": "Possible as a detector, if kept narrowly to a few keys."}, {"l": "Intermediate certificates", "s": "the level below the roots", "r": "Detector on changes, with the same friction as above."}], "aussen": [{"l": "Running processes and RAM", "s": "what is alive right now, constantly changing", "r": "Not its territory. Too ephemeral, no few fixed anchors."}, {"l": "Network connections", "s": "who talks to whom", "r": "A job for firewall and IDS, not HALVETH."}, {"l": "Your files and browser", "s": "documents, tabs, usage", "r": "Privacy and data loss are a different field."}, {"l": "Attack path (phishing, exploit)", "s": "HOW someone gets in", "r": "HALVETH never sees the path. It only says THAT an anchor changed without permission."}]}, "software": {"stamm": [{"l": "Trust origin of your software", "s": "signing key plus the build pipeline", "r": "The point where it is decided what counts as your genuine work. HALVETH's core home."}], "kern": [{"l": "Code signing key", "s": "what signs your release as genuine", "r": "Home turf. Exactly the SolarWinds class, an unauthorized change does not become final."}, {"l": "Approved release artifact", "s": "the one built state that counts", "r": "Executed is not valid. Seals the genuine build, everything else is held."}, {"l": "Build integrity", "s": "the baseline of the pipeline", "r": "Witnesses tampering with the build process."}], "rand": [{"l": "Dependencies and libraries", "s": "the third-party packages you use (xz class)", "r": "Detector on the few critical ones, but many legitimate updates create friction."}, {"l": "Configuration files", "s": "the settings of your app", "r": "Useful as a detector on a few important files."}], "aussen": [{"l": "Runtime behavior and bugs", "s": "how the app behaves in operation", "r": "That is testing and monitoring, not the integrity of a few anchors."}, {"l": "User inputs and business logic", "s": "what users do, which rules apply", "r": "Not its territory, honestly handed off."}, {"l": "Logs and telemetry", "s": "the data trail of operation", "r": "Other tools, not HALVETH."}]}, "cloud": {"stamm": [{"l": "The root access", "s": "root account, IAM root, key management", "r": "The master key of the whole environment. It hardly gets closer to the origin."}], "kern": [{"l": "IAM root and root access", "s": "who is allowed to do everything in the account", "r": "Home turf. An unauthorized change to the root is witnessed."}, {"l": "KMS and encryption keys", "s": "what encrypts and decrypts everything", "r": "Crown jewel. Sealed and witnessed."}, {"l": "IaC core configuration", "s": "the declared reference state of the infrastructure", "r": "Records the intended core state as a named reference."}], "rand": [{"l": "Resource config (bucket public?)", "s": "the many settings of the services", "r": "Detector on drift, but many legitimate changes. Friction."}, {"l": "Certificates and deploy states", "s": "what is deployed where right now", "r": "Possible as a detector on a few critical points."}], "aussen": [{"l": "Data in the bucket and data exfiltration", "s": "the contents themselves", "r": "Data loss is a different field, not the integrity of a few anchors."}, {"l": "Traffic, DDoS, outage", "s": "load and availability", "r": "Not its territory."}, {"l": "User sessions and business logic", "s": "who is logged in, which rules apply", "r": "Honestly handed off to other tools."}]}}, "zone": {"stamm": "THE TRUNK", "kern": "CORE ZONE", "rand": "EDGE ZONE", "aussen": "OUTSIDE"}, "slabel": {"1": "not its territory", "2": "partial, only a detector", "3": "strong, at home here"}, "bandtags": {"stamm": "The trunk · invisible origin", "kern": "Core zone · HALVETH at home", "rand": "Edge zone · only a detector", "aussen": "Outside · not its territory"}, "passung": "Fit: ", "hier": "HALVETH HERE"}, "ru": {"sys": {"windows": {"stamm": [{"l": "Корень доверия (TPM, Secure Boot)", "s": "невидимый исток, на котором всё держится", "r": "HALVETH живёт настолько близко к этой точке, насколько возможно. Настоящая аппаратная привязка здесь это далёкая финальная ступень (Fork A), пока не построена."}], "kern": [{"l": "Ключ подписи", "s": "печать, которой ПО признаётся подлинным", "r": "Домашнее поле. Запечатывает и свидетельствует каждое изменение, предлагает откат."}, {"l": "Корневые сертификаты", "s": "список того, кому машина слепо доверяет", "r": "Отпечаток корней запечатан. Чужой корень обнаруживается вслепую, протестировано вживую на реальной системе."}, {"l": "Измерение загрузки", "s": "отпечаток чистого старта", "r": "Свидетельствует любое отклонение от принятого состояния запуска."}, {"l": "Базовая линия целостности", "s": "контрольная сумма названного эталонного состояния", "r": "Сравнивает запечатанное эталонное состояние с новым измерением в пределах зарегистрированного охвата."}], "rand": [{"l": "Системные файлы и драйверы", "s": "многочисленные ключевые файлы Windows", "r": "Может обнаруживать дрейф, но очень много легитимных обновлений. Без подписи разрешения оно лает даже на допустимые изменения."}, {"l": "Критические ключи реестра", "s": "центральные настройки в системе", "r": "Возможно как детектор, если строго ограничено немногими ключами."}, {"l": "Промежуточные сертификаты", "s": "уровень под корнями", "r": "Детектор на изменения, с тем же трением, что и выше."}], "aussen": [{"l": "Запущенные процессы и RAM", "s": "то, что живёт прямо сейчас, постоянно иное", "r": "Не его территория. Слишком мимолётно, нет немногих устойчивых якорей."}, {"l": "Сетевые соединения", "s": "кто с кем говорит", "r": "Задача файрвола и IDS, а не HALVETH."}, {"l": "Ваши файлы и браузер", "s": "документы, вкладки, использование", "r": "Приватность и потеря данных это другое поле."}, {"l": "Путь атаки (фишинг, эксплойт)", "s": "КАК кто-то проникает", "r": "Путь HALVETH никогда не видит. Оно говорит лишь, ЧТО якорь изменился без разрешения."}]}, "software": {"stamm": [{"l": "Исток доверия вашего ПО", "s": "ключ подписи плюс конвейер сборки", "r": "Точка, где решается, что считается вашим подлинным творением. Основной дом HALVETH."}], "kern": [{"l": "Ключ подписи кода", "s": "чем ваш релиз подписывается как подлинный", "r": "Домашнее поле. Точно класс SolarWinds, несанкционированное изменение не становится окончательным."}, {"l": "Утверждённый артефакт релиза", "s": "одно собранное состояние, которое считается действительным", "r": "Запущенное не значит действительное. Запечатывает настоящую сборку, всё остальное удерживается."}, {"l": "Целостность сборки", "s": "базовая линия конвейера", "r": "Свидетельствует вмешательство в процесс сборки."}], "rand": [{"l": "Зависимости и библиотеки", "s": "чужие пакеты, которые вы используете (класс xz)", "r": "Детектор на немногие критические, но множество легитимных обновлений создают трение."}, {"l": "Файлы конфигурации", "s": "настройки вашего приложения", "r": "Имеет смысл как детектор на немногих важных файлах."}], "aussen": [{"l": "Поведение во время выполнения и баги", "s": "как приложение ведёт себя в работе", "r": "Это тестирование и мониторинг, а не целостность немногих якорей."}, {"l": "Пользовательский ввод и бизнес-логика", "s": "что делают пользователи, какие правила действуют", "r": "Не его территория, честно передано."}, {"l": "Логи и телеметрия", "s": "след данных от работы", "r": "Другие инструменты, а не HALVETH."}]}, "cloud": {"stamm": [{"l": "Корневой доступ", "s": "root-аккаунт, корень IAM, управление ключами", "r": "Генеральный ключ всей среды. Ближе к истоку почти некуда."}], "kern": [{"l": "Корень IAM и root-доступ", "s": "кто в аккаунте может всё", "r": "Домашнее поле. Несанкционированное изменение корня будет засвидетельствовано."}, {"l": "KMS и ключи шифрования", "s": "чем всё шифруется и расшифровывается", "r": "Ключевой актив. Запечатано и засвидетельствовано."}, {"l": "Основная конфигурация IaC", "s": "заявленное эталонное состояние инфраструктуры", "r": "Документирует требуемое основное состояние как названный эталон."}], "rand": [{"l": "Конфигурация ресурсов (bucket публичный?)", "s": "многочисленные настройки сервисов", "r": "Детектор на дрейф, но много легитимных изменений. Трение."}, {"l": "Сертификаты и состояния развёртывания", "s": "что где сейчас развёрнуто", "r": "Возможно как детектор на немногих критических точках."}], "aussen": [{"l": "Данные в bucket и утечка данных", "s": "само содержимое", "r": "Потеря данных это другое поле, не целостность немногих якорей."}, {"l": "Трафик, DDoS, сбой", "s": "нагрузка и доступность", "r": "Не его территория."}, {"l": "Пользовательские сессии и бизнес-логика", "s": "кто вошёл в систему, какие правила действуют", "r": "Честно передано другим инструментам."}]}}, "zone": {"stamm": "СТВОЛ", "kern": "ЦЕНТРАЛЬНАЯ ЗОНА", "rand": "КРАЕВАЯ ЗОНА", "aussen": "ЗА ПРЕДЕЛАМИ"}, "slabel": {"1": "не его территория", "2": "частично, только детектор", "3": "сильно, здесь дома"}, "bandtags": {"stamm": "Ствол · невидимый источник", "kern": "Центральная зона · HALVETH у себя дома", "rand": "Краевая зона · только детектор", "aussen": "За пределами · не его территория"}, "passung": "Соответствие: ", "hier": "HALVETH ЗДЕСЬ"}};</script>
+<script>window.RAZ_I18N={"title": {"en": "HALVETH · The tree of systems", "ru": "HALVETH · Дерево систем"}, "units": [{"en": "<span class=\"mark\">⬡</span> HALVETH", "ru": "<span class=\"mark\">⬡</span> HALVETH"}, {"en": "\n      <a href=\"index.html\">Home</a>\n      <a href=\"prinzip.html\">Principle</a>\n      <a href=\"baum.html\">Where it sits</a>\n      <a href=\"ergebnisse.html\">Results</a>\n      <a href=\"grenzen.html\">Limits</a>\n      <a href=\"vision.html\">Vision</a>\n      <a href=\"labor.html\">Lab</a>\n      <a href=\"audits.html\">Audits</a>\n      <a href=\"forschung.html\">Research</a>\n    ", "ru": "\n      <a href=\"index.html\">Главная</a>\n      <a href=\"prinzip.html\">Принцип</a>\n      <a href=\"baum.html\">Где оно находится</a>\n      <a href=\"ergebnisse.html\">Результаты</a>\n      <a href=\"grenzen.html\">Границы</a>\n      <a href=\"vision.html\">Видение</a>\n      <a href=\"labor.html\">Лаборатория</a>\n      <a href=\"audits.html\">Аудиты</a>\n      <a href=\"forschung.html\">Исследование</a>\n    "}, {"en": "\n      <span class=\"status-pill\"><span class=\"dot\"></span>in research</span>\n    ", "ru": "\n      <span class=\"status-pill\"><span class=\"dot\"></span>на стадии исследования</span>\n    "}, {"en": "<span class=\"mark\">⬡</span> The tree of systems · where HALVETH sits", "ru": "<span class=\"mark\">⬡</span> Дерево систем · где находится HALVETH"}, {"en": "Every system has an invisible origin, a <b style=\"color:var(--ink)\">trunk</b> from which everything branches off. The closer to this origin, the more HALVETH is at home. Further out it becomes only a detector, and at the very edge it does not belong at all. Pick a system and hover over the nodes.", "ru": "У каждой системы есть невидимый исток, <b style=\"color:var(--ink)\">ствол</b>, из которого всё разветвляется. Чем ближе к этому истоку, тем больше HALVETH у себя дома. Дальше наружу оно становится лишь детектором, а на самом краю ему вообще не место. Выберите систему и наведите на узлы."}, {"en": "Honest up front: HALVETH offers absolute protection <b>nowhere</b>. At the few registered anchors it now really does hold a write back until a separate authority has agreed. Further out it only detects and proves, after the effect. An insider with the real key wins everywhere.", "ru": "Честно сразу: HALVETH <b>нигде</b> не даёт абсолютной защиты. У нескольких внесённых якорей он теперь действительно задерживает запись, пока отдельная инстанция не согласится. Дальше снаружи он только обнаруживает и доказывает, после воздействия. Инсайдер с настоящим ключом побеждает везде."}, {"en": "<span class=\"ic\">🖥</span> <span class=\"tl\">Windows</span>", "ru": "<span class=\"ic\">🖥</span> <span class=\"tl\">Windows</span>"}, {"en": "<span class=\"ic\">📦</span> <span class=\"tl\">Own software</span>", "ru": "<span class=\"ic\">📦</span> <span class=\"tl\">Собственное ПО</span>"}, {"en": "<span class=\"ic\">☁</span> <span class=\"tl\">Cloud &amp; infrastructure</span>", "ru": "<span class=\"ic\">☁</span> <span class=\"tl\">Cloud &amp; инфраструктура</span>"}, {"en": "CORE ZONE", "ru": "ЗОНА ЯДРА"}, {"en": "This is where HALVETH belongs", "ru": "Здесь место HALVETH"}, {"en": "A few named anchors at the origin. Separate appraisal domain, finality and a rollback proposal. This is where the documented focus lies.", "ru": "Несколько названных опорных точек у истока. Отдельная доменная область проверки, финальность и предложение возврата. Здесь находится задокументированный фокус."}, {"en": "EDGE ZONE", "ru": "КРАЕВАЯ ЗОНА"}, {"en": "Only as a detector", "ru": "Только как детектор"}, {"en": "Observable, but without clean approval. HALVETH can report a deviation, but also barks at permitted changes. Friction.", "ru": "Наблюдаемо, но без чистого разрешения. HALVETH может сообщать об отклонении, но лает и на разрешённые изменения. Трение."}, {"en": "OUTSIDE", "ru": "СНАРУЖИ"}, {"en": "Not its territory", "ru": "Не его территория"}, {"en": "Ephemeral, high-volume, or entirely different questions: data exfiltration, attack path, business logic. Other tools, honestly handed off.", "ru": "Мимолётное, массовое или совсем другие вопросы: утечка данных, путь атаки, бизнес-логика. Другие инструменты, честно переданные."}, {"en": "<b>Fields I build in</b> <span>process optimisation</span> <span>cyber security</span> <span>websites</span> <span>programming</span> <span>marketing</span>", "ru": "<b>Поля, в которых я строю</b> <span>оптимизация процессов</span> <span>кибербезопасность</span> <span>сайты</span> <span>программирование</span> <span>маркетинг</span>"}, {"en": "Br&uuml;hl near Cologne &middot; Rhein-Erft district &middot; North Rhine-Westphalia &middot; Germany &middot; remote work as well", "ru": "Брюль под Кёльном &middot; район Райн-Эрфт &middot; Северный Рейн-Вестфалия &middot; Германия &middot; и удалённо"}, {"en": "<b>Honestly framed:</b> This picture is a map, not a promise. HALVETH is research in the lab. It guards only the few anchors you register. Inside that boundary it now really does hold a write back until a separate authority has agreed. Everything beyond that is observation after the effect. At the origin it is strong, outside it honestly hands off. &#129293;", "ru": "<b>Честно оформлено:</b> Эта картина это карта, а не обещание. HALVETH это исследование в лаборатории. Оно охраняет только те немногие якоря, которые в него внесены. Внутри этой границы оно теперь действительно задерживает запись, пока не согласится отдельная инстанция. Всё, что за пределами этого, это наблюдение после воздействия. У истока оно сильно, снаружи честно передаёт другим. &#129293;"}]};</script>
+<script src="halveth-i18n.js?v=20261116-r2"></script>
+<div class="hv-release hv-edition" data-raz-skip><span>HALVETH · Web-Edition 2026.11</span><div><a href="werkstatt.html"><span data-hv-i18n="work">Werkstatt</span></a> · <a href="systemstand.html"><span data-hv-i18n="state">Systemstand</span></a> · <a href="edition.html"><span data-hv-i18n="changes">Änderungen & Quellenstand</span></a></div></div>
+<script src="assets/restauration.js?v=20261116-r2" defer></script>
+<aside data-historical-banner style="padding:10px 18px;background:#172637;color:#e7d3a1;font:14px system-ui">ARCHIV · ARCHIVE · АРХИВ — 16.11.2026 · <a href="../../forschung.html">HALVETH — 17.11.2026</a></aside></body>
+</html>

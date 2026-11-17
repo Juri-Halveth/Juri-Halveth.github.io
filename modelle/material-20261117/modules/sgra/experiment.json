@@ -1,0 +1,11 @@
+{
+  "status": "ASSUMED_PARAMETERS_NOT_FITTED",
+  "flux": 1.0,
+  "radius_uas": 26.0,
+  "width_uas": 6.0,
+  "center_width_uas": 20.0,
+  "center_fraction": 0.2,
+  "rotation_deg": 15.0,
+  "weights": [0.4, 0.35, 0.25],
+  "notes": "Geometric sky-brightness candidates only. Radius is near the published ring size but is not estimated by this software. Knot count is a user hypothesis, not an observed component count. No fusion, handshake dynamics, material composition or extra universe inferred."
+}

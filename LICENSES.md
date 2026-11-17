@@ -5,6 +5,8 @@ Copyright (c) 2026 Juri Janovski, project HALVETH.
 | Material | Applicable terms |
 | --- | --- |
 | Original portal prose, arrangement, HTML, CSS, JavaScript, SVG and rights metadata from the first public commit of this repository | [HALVETH Public-Interest Research License 2.0](LICENSE-HALVETH-PIRL-2.0.md), only to the extent of rights actually held |
+| Additive preview `modelle/material-20261117/`: original portal presentation and new `assets/narrative-channels.js` / `labore/beziehungsfaden.html` | [HALVETH PIRL 2.0](LICENSE-HALVETH-PIRL-2.0.md), only to the extent of rights actually held; preserved MIT modules and prior effective grants are excluded. See [preview map](modelle/material-20261117/README.md). |
+| Preview material engine, adapter and renderer: `modelle/material-20261117/assets/material-engine.js`, `modelle/material-20261117/assets/material-model.js`, `modelle/material-20261117/assets/material-view.js` | [MIT](modelle/material-20261117/materials-LICENSE-MIT.txt), matching the existing `console-only` source repository notice. The original engine MIT header is retained; no portal-wide relicensing. |
 | References, facts, project names, external pages and third-party material | Their respective rights and terms; excluded from this portal's license |
 | License text | Its stated copying permission |
 | New motion renderer: `motion-core.js`, `motion-player.js`, `landing-motion.js`, `tests/landing-motion.test.cjs`, `tools/render-motion.cjs`, `tests/motion*.test.cjs`, `motion/README.md`, and generated `motion/poster.jpg` and `motion/HALVETH_MOTION_20s_1080p.mp4` | [MIT](motion/LICENSE-MIT.txt); earlier portal materials retain their terms |

@@ -1,0 +1,341 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Die erste absolute Regel &middot; Minus und Plus</title>
+<meta name="description" content="Die erste absolute Regel, Minus und Plus: warum aus dem Nichts kein Ding von allein entsteht. Interaktives Modell. Ein Bild, kein Beweis.">
+<link rel="canonical" href="https://halveth.de/Realitaet_Erste_Regel_Plus_Minus.html">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#04050c;--ink:#eaf0ff;--muted:#8a93b8;--dim:#5a628a;
+    --anker:#43d6b0;--bild:#e6b54a;--minus:#4a8cff;--plus:#ffcf6a;--edge:rgba(150,170,230,.16);--edge2:rgba(150,170,230,.32);
+    --panel:rgba(11,15,26,.74);--mono:ui-monospace,Menlo,Consolas,monospace;--serif:Georgia,serif;--sans:system-ui,-apple-system,"Segoe UI",sans-serif;}
+  html,body{height:100%}
+  body{background:radial-gradient(1200px 800px at 50% 42%,#0a1226,#04050c 66%);color:var(--ink);font-family:var(--sans);overflow:hidden}
+  #stage{position:fixed;inset:0;width:100%;height:100%;display:block}
+  .banner{position:fixed;top:0;left:0;right:0;z-index:30;text-align:center;font-size:12px;color:#d7deef;background:rgba(6,9,18,.82);border-bottom:1px solid var(--edge);padding:8px 14px}
+  .banner b{color:var(--bild)}
+  .brand{position:fixed;top:44px;left:18px;z-index:20;pointer-events:none;max-width:60ch}
+  .brand .ey{font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .brand h1{font-family:var(--serif);font-size:clamp(1rem,2.4vw,1.6rem);color:#fff;line-height:1.06;margin-top:.12rem;text-shadow:0 2px 18px rgba(0,0,0,.7)}
+  .brand .sub{font-size:.78rem;color:var(--muted);margin-top:.25rem;max-width:44ch}
+  .side{position:fixed;top:104px;right:16px;z-index:20;width:min(290px,44vw);background:var(--panel);border:1px solid var(--edge);border-radius:14px;padding:12px 14px;backdrop-filter:blur(12px);box-shadow:0 16px 50px rgba(0,0,0,.55)}
+  .obox{border:1px solid var(--edge);border-radius:9px;padding:8px 10px;margin-bottom:8px;font-size:.76rem;line-height:1.45;color:#cfd8f2}
+  .obox:last-child{margin-bottom:0}
+  .obox.ank{border-left:3px solid var(--anker)} .obox.bi{border-left:3px solid var(--bild)}
+  .obox .t{font-family:var(--mono);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.2rem}
+  .obox.ank .t{color:var(--anker)} .obox.bi .t{color:var(--bild)}
+  .ctrls{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:12px clamp(14px,4vw,40px) 16px;background:linear-gradient(0deg,rgba(4,6,12,.94),transparent);display:flex;flex-direction:column;align-items:center;gap:9px}
+  .status{font-size:.72rem;color:var(--muted);text-align:center;max-width:74ch;min-height:1.2em}
+  .status b.pl{color:var(--plus)} .status b.mi{color:var(--minus)} .status b.hit{color:#fff}
+  .row{display:flex;align-items:center;gap:13px;width:min(680px,92vw)}
+  .row .lab{font-family:var(--mono);font-size:.66rem;color:var(--dim);white-space:nowrap}
+  input#coup{-webkit-appearance:none;appearance:none;flex:1;height:6px;border-radius:99px;outline:none;
+    background:linear-gradient(90deg,var(--minus),#6a5db0,var(--plus));cursor:pointer}
+  input#coup::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#fff,#cbd6f2 70%);border:2px solid #fff;box-shadow:0 0 14px 2px rgba(255,255,255,.5)}
+  input#coup::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;border:2px solid #fff}
+  .btn{appearance:none;border:1px solid var(--edge2);background:rgba(16,20,34,.74);color:var(--ink);border-radius:99px;padding:.5rem .9rem;font-size:.74rem;cursor:pointer;flex:none}
+  .btn:hover{border-color:var(--bild);color:var(--bild)}
+  .hint{font-size:.64rem;color:var(--dim)}
+  .mobinfo{display:none}
+  @media(max-width:720px){
+    .banner{min-height:42px;padding:7px 118px 7px 10px;text-align:left;font-size:10px;line-height:1.35}
+    .brand{display:block;top:52px;left:12px;right:12px;max-width:none;padding-right:78px}
+    .brand .ey{font-size:.5rem}.brand h1{font-size:1rem}.brand .sub{font-size:.68rem;max-width:30ch}
+    .side{display:none}
+    body.info-open .side{display:block;position:fixed;inset:48px 8px 102px;width:auto;margin:0;overflow-y:auto;padding:48px 12px 14px;border-radius:14px;z-index:32;background:rgba(7,10,19,.98);overscroll-behavior:contain}
+    .mobinfo{display:inline-flex;position:fixed;top:52px;right:10px;z-index:34;min-height:40px;align-items:center;justify-content:center;padding:.45rem .75rem;border:1px solid var(--edge2);border-radius:999px;background:rgba(10,14,25,.92);color:#fff;font:700 .68rem var(--sans);letter-spacing:.02em}
+    .mobinfo .close{display:none}body.info-open .mobinfo .open{display:none}body.info-open .mobinfo .close{display:inline}
+    .ctrls{padding:10px 10px max(12px,env(safe-area-inset-bottom));gap:7px}
+    .status{font-size:.66rem;line-height:1.35}.row{gap:8px;width:100%}.row .lab{font-size:.56rem}
+    .btn{min-height:40px;padding:.45rem .7rem}.hint{display:none}
+    #raz-langbar{top:8px!important;right:8px!important;bottom:auto!important;left:auto!important}
+    html.raz-embedded #raz-langbar{display:none!important}
+    html.raz-embedded .brand{display:none}
+    html.raz-embedded .mobinfo{top:48px}
+  }
+</style>
+<link rel="stylesheet" href="assets/restauration.css?v=20261116-r2">
+<script src="assets/model-clock.js?v=20261116-r2"></script>
+</head>
+<script>if(self!==top)document.documentElement.classList.add("raz-embedded");</script>
+<body data-hv-page="Realitaet_Erste_Regel_Plus_Minus" class="hv-model-shell">
+<a data-raz-skip href="forschung.html" style="position:fixed;left:max(12px,env(safe-area-inset-left));bottom:max(12px,env(safe-area-inset-bottom));z-index:9999;display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;background:rgba(10,10,11,.86);border:1px solid rgba(150,150,180,.32);color:#f4f3ee;font:600 12.5px/1 system-ui,-apple-system,Segoe UI,sans-serif;text-decoration:none;backdrop-filter:blur(8px)" title="Zur&uuml;ck zur Forschung auf halveth.de"><span style="color:#ffd60a">&#11041;</span> halveth.de</a><script>if(window.self!==window.top){var r=document.currentScript.previousElementSibling;if(r&&r.tagName==="A")r.remove();}</script>
+  <div class="banner">Metaphysische <b>Hypothese</b>, ein Bild, kein Beweis &#183; grün = echter <b style="color:var(--anker)">Anker</b>, gold = <b>Bild</b></div>
+  <canvas id="stage"></canvas>
+  <div class="brand">
+    <div class="ey">Realität als Zustand &#183; die erste Regel</div>
+    <h1>Die erste absolute Regel: Minus und Plus</h1>
+    <div class="sub">Zwei komplementäre Zustände im Delta. Aus ihrer Interferenz entsteht das erste Teilchen = das erste Bit.</div>
+  </div>
+
+  <button class="mobinfo" type="button" aria-expanded="false" onclick="var o=document.body.classList.toggle('info-open');this.setAttribute('aria-expanded',o?'true':'false')"><span class="open">&#9432; Info</span><span class="close">&#10005; Schlie&szlig;en</span></button>
+
+  <div class="side">
+    <div class="obox ank"><div class="t">Anker &#183; Paarerzeugung</div>Man kann kein einzelnes geladenes Teilchen aus Energie machen. Teilchen und Antiteilchen entstehen <b>immer zusammen</b> (+ und &#8722;). Ladungserhaltung.</div>
+    <div class="obox ank"><div class="t">Anker &#183; Feld-Schwingung</div>Ein Teilchen ist eine <b>Anregung (Schwingung)</b> eines Feldes (Quantenfeldtheorie). Interferenz und Vibration, genau dein Bild.</div>
+    <div class="obox ank"><div class="t">Anker &#183; It from Bit</div>Physik aus Ja/Nein-Unterscheidungen (Wheeler); Information ist physikalisch (Landauer). Bit und Teilchen sind verwandt.</div>
+    <div class="obox bi"><div class="t">Bild &#183; die Grenze</div>Dass die „erste absolute Regel" +/&#8722; <i>ist</i>, ist Juris metaphysisches Bild, kein bewiesener Weltanfang.</div>
+  </div>
+
+  <div class="ctrls">
+    <div class="status" id="status">Zwei komplementäre Zustände im Delta: <b class="mi">&#8722;</b> und <b class="pl">+</b>. Noch keine Teilchen.</div>
+    <div class="row">
+      <span class="lab" style="color:var(--minus)">&#8722; Minus</span>
+      <input id="coup" type="range" min="0" max="1" step="0.001" value="0">
+      <span class="lab" style="color:var(--plus)">Plus +</span>
+      <button class="btn" id="reset">&#8635; zurück</button>
+    </div>
+    <div class="hint">Schiebe <b>+</b> und <b>&#8722;</b> zusammen, bis aus der Interferenz das erste Paar entsteht.</div>
+  </div>
+
+<script>
+(function(){
+  "use strict";
+  var reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+  var TWO=Math.PI*2;
+  var cv=document.getElementById("stage"); if(!cv||!cv.getContext){return;}
+  var ctx=cv.getContext("2d"), W=0,H=0,DPR=1;
+  function resize(){ DPR=Math.min(window.devicePixelRatio||1,2);
+    W=cv.width=Math.floor(innerWidth*DPR); H=cv.height=Math.floor(innerHeight*DPR);
+    cv.style.width=innerWidth+"px"; cv.style.height=innerHeight+"px"; }
+  addEventListener("resize",resize,{passive:true}); resize();
+
+  var c=0, realized=false, realizeT=0, t=0, lastT=performance.now(), flash=0;
+  var coup=document.getElementById("coup"), status=document.getElementById("status");
+  function clamp255(v){v=v|0;return v<0?0:v>255?255:v;}
+  function lerp(a,b,x){return a+(b-a)*x;}
+
+  function setC(v){ c=v<0?0:v>1?1:v; var wasR=realized; realized=(c>=0.92);
+    if(realized && !wasR){ flash=1; realizeT=0; status.innerHTML="<b class='hit'>Boom.</b> Ein Paar entsteht: Teilchen + Antiteilchen = <b class='hit'>das erste Bit</b> (die erste Unterscheidung)."; }
+    if(!realized){ status.innerHTML = c<0.35
+      ? "Zwei komplementäre Zustände im Delta: <b class='mi'>&#8722;</b> und <b class='pl'>+</b>. Noch keine Teilchen."
+      : "Sie nähern sich. Die Interferenz wird stärker, die Vibration wächst. Noch kein Teilchen."; }
+  }
+  coup.addEventListener("input",function(){ setC(parseFloat(coup.value)); });
+  document.getElementById("reset").addEventListener("click",function(){ c=0; coup.value=0; realized=false; realizeT=0; setC(0); });
+
+  function pole(x,y,col,sym){ ctx.globalCompositeOperation="lighter";
+    ctx.globalAlpha=0.5; ctx.fillStyle=col; ctx.shadowColor=col; ctx.shadowBlur=26*DPR;
+    ctx.beginPath();ctx.arc(x,y,13*DPR,0,TWO);ctx.fill(); ctx.shadowBlur=0;
+    ctx.globalCompositeOperation="source-over"; ctx.globalAlpha=1;
+    ctx.fillStyle="#fff"; ctx.font="700 "+(16*DPR)+"px "+"system-ui,sans-serif"; ctx.textAlign="center"; ctx.textBaseline="middle";
+    ctx.fillText(sym,x,y-1*DPR); ctx.textBaseline="alphabetic"; }
+
+  function draw(now){ if(!W||!H){ resize(); if(!W||!H){ requestAnimationFrame(draw); return; } }
+    var dt=Math.min((now-lastT)/1000,1/30); lastT=now; if(!reduce)t+=dt;
+    ctx.clearRect(0,0,W,H); ctx.fillStyle="rgba(4,5,12,0.55)"; ctx.fillRect(0,0,W,H);
+    var mob=innerWidth<=720;
+    var reserve=mob?0:(Math.min(290,innerWidth*0.44)+30)*DPR;   // Platz fuer das rechte Erklaerungs-Panel freihalten
+    var uL=W*0.05, uR=W-reserve-8*DPR;
+    var cy=H*0.5, cx=(uL+uR)/2, usableW=uR-uL;                   // Mitte in den sichtbaren Bereich ruecken
+    var sep=lerp(usableW*0.30, usableW*0.10, c);
+    var mnx=cx-sep, plx=cx+sep;
+    // interference band between the poles
+    var band=Math.min(H*0.34, 210*DPR), step=Math.max(3*DPR,Math.sqrt(W*H/24000)), amp=0.15+0.85*c, k=0.03/DPR;
+    ctx.globalCompositeOperation="lighter";
+    for(var y=cy-band;y<=cy+band;y+=step){ for(var x=uL;x<=uR;x+=step){
+      var d1=Math.hypot(x-mnx,y-cy), d2=Math.hypot(x-plx,y-cy);
+      var val=(Math.sin(d1*k - t*2.4)+Math.sin(d2*k - t*2.4))*0.5;
+      var b=val*val*amp; if(b<0.03)continue;
+      var mix=d1/(d1+d2+1);
+      var r=clamp255(74+(255-74)*mix+180*b), g=clamp255(140+(207-140)*mix+160*b), bl=clamp255(255+(106-255)*mix+120*b);
+      ctx.globalAlpha=b>0.8?0.8:b; ctx.fillStyle="rgb("+r+","+g+","+bl+")";
+      ctx.fillRect(x,y,step*0.9,step*0.9);
+    }}
+    ctx.globalCompositeOperation="source-over"; ctx.globalAlpha=1;
+    // poles
+    pole(mnx,cy,"#4a8cff","−"); pole(plx,cy,"#ffcf6a","+");
+    // realization: flash + pair
+    if(flash>0.01){ ctx.globalCompositeOperation="lighter"; ctx.globalAlpha=flash*0.5; ctx.fillStyle="#ffffff";
+      ctx.beginPath();ctx.arc(cx,cy,Math.min(W,H)*0.2*flash,0,TWO);ctx.fill(); ctx.globalAlpha=1; ctx.globalCompositeOperation="source-over"; if(!reduce)flash*=0.92; }
+    if(realized){ if(!reduce)realizeT+=dt; var off=Math.min(1,realizeT*1.4)*46*DPR;
+      ctx.globalCompositeOperation="lighter";
+      // Teilchen (matter) + Antiteilchen
+      var pl=(Math.sin(t*4)+1)/2;
+      ctx.globalAlpha=0.9;ctx.fillStyle="#8fd0ff";ctx.shadowColor="#4a8cff";ctx.shadowBlur=18*DPR;
+      ctx.beginPath();ctx.arc(cx-off,cy,6*DPR+pl*2*DPR,0,TWO);ctx.fill();
+      ctx.fillStyle="#ffe6a8";ctx.shadowColor="#ffcf6a";
+      ctx.beginPath();ctx.arc(cx+off,cy,6*DPR+pl*2*DPR,0,TWO);ctx.fill(); ctx.shadowBlur=0;
+      ctx.globalCompositeOperation="source-over"; ctx.globalAlpha=1;
+      ctx.fillStyle="rgba(255,255,255,.95)"; ctx.font="700 "+(15*DPR)+"px "+"ui-monospace,monospace"; ctx.textAlign="center";
+      ctx.fillText("1 Bit", cx, cy-off-18*DPR);
+      ctx.fillStyle="rgba(200,214,245,.8)"; ctx.font=(10.5*DPR)+"px "+"system-ui,sans-serif";
+      ctx.fillText("das erste Teilchen · Paar: Teilchen + Antiteilchen", cx, cy+band+26*DPR);
+    }
+    // captions
+    ctx.fillStyle="rgba(160,175,215,.5)"; ctx.font=(10*DPR)+"px "+"system-ui,sans-serif"; ctx.textAlign="center";
+    ctx.fillText("das Delta · noch keine Teilchen, nur Zustände", cx, cy-band-14*DPR);
+    requestAnimationFrame(draw);
+  }
+  setC(0);
+  requestAnimationFrame(function(nn){lastT=nn;draw(nn);});
+  window.__REGEL={getC:function(){return c;},isRealized:function(){return realized;},setC:setC};
+})();
+</script>
+
+<!-- RAZ model i18n (append-only; original content untouched) -->
+<script>window.RAZ_CFG={"pos": "top-right"};</script>
+<script>window.RAZ_MODEL={"strings": [{"de": "Metaphysische <b>Hypothese</b>, ein Bild, kein Beweis · grün = echter <b style=\"color:var(--anker)\">Anker</b>, gold = <b>Bild</b>", "ru": "Метафизическая <b>гипотеза</b>, образ, а не доказательство · зелёный = настоящий <b style=\"color:var(--anker)\">якорь</b>, золотой = <b>образ</b>", "en": "Metaphysical <b>hypothesis</b>, an image, not a proof · green = a real <b style=\"color:var(--anker)\">anchor</b>, gold = <b>image</b>"}, {"de": "Realität als Zustand · die erste Regel", "ru": "Реальность как состояние · первое правило", "en": "Reality as a State · the first rule"}, {"de": "Die erste absolute Regel: Minus und Plus", "ru": "Первое абсолютное правило: минус и плюс", "en": "The first absolute rule: Minus and Plus"}, {"de": "Zwei komplementäre Zustände im Delta. Aus ihrer Interferenz entsteht das erste Teilchen = das erste Bit.", "ru": "Два комплементарных состояния в дельте. Из их интерференции возникает первая частица = первый бит.", "en": "Two complementary states in the delta. From their interference the first particle arises = the first bit."}, {"de": "Anker · Paarerzeugung", "ru": "Якорь · рождение пар", "en": "Anchor · pair production"}, {"de": "immer zusammen", "ru": "всегда вместе", "en": "always together"}, {"de": "Anker · Feld-Schwingung", "ru": "Якорь · возбуждение поля", "en": "Anchor · field excitation"}, {"de": "Anregung (Schwingung)", "ru": "возбуждение (колебание)", "en": "excitation (oscillation)"}, {"de": "Anker · It from Bit", "ru": "Якорь · It from Bit", "en": "Anchor · It from Bit"}, {"de": "Bild · die Grenze", "ru": "Образ · граница", "en": "Image · the limit"}, {"de": "ist", "ru": "есть", "en": "is"}, {"de": "Zwei komplementäre Zustände im Delta: <b class=\"mi\">−</b> und <b class=\"pl\">+</b>. Noch keine Teilchen.", "ru": "Два комплементарных состояния в дельте: <b class=\"mi\">−</b> и <b class=\"pl\">+</b>. Пока нет частиц.", "en": "Two complementary states in the delta: <b class=\"mi\">−</b> and <b class=\"pl\">+</b>. No particles yet."}, {"de": "− Minus", "ru": "− минус", "en": "− Minus"}, {"de": "Plus +", "ru": "плюс +", "en": "Plus +"}, {"de": "Schiebe <b>+</b> und <b>−</b> zusammen, bis aus der Interferenz das erste Paar entsteht.", "ru": "Сдвигай <b>+</b> и <b>−</b> вместе, пока из интерференции не возникнет первая пара.", "en": "Slide <b>+</b> and <b>−</b> together until the first pair arises from the interference."}, {"de": "<b class='hit'>Boom.</b> Ein Paar entsteht: Teilchen + Antiteilchen = <b class='hit'>das erste Bit</b> (die erste Unterscheidung).", "ru": "<b class='hit'>Бум.</b> Возникает пара: частица + античастица = <b class='hit'>первый бит</b> (первое различение).", "en": "<b class='hit'>Boom.</b> A pair arises: particle + antiparticle = <b class='hit'>the first bit</b> (the first distinction)."}, {"de": "Zwei komplementäre Zustände im Delta: <b class='mi'>&#8722;</b> und <b class='pl'>+</b>. Noch keine Teilchen.", "ru": "Два комплементарных состояния в дельте: <b class='mi'>&#8722;</b> и <b class='pl'>+</b>. Пока нет частиц.", "en": "Two complementary states in the delta: <b class='mi'>&#8722;</b> and <b class='pl'>+</b>. No particles yet."}, {"de": "Sie nähern sich. Die Interferenz wird stärker, die Vibration wächst. Noch kein Teilchen.", "ru": "Они сближаются. Интерференция усиливается, вибрация нарастает. Частицы пока нет.", "en": "They approach each other. The interference grows stronger, the vibration grows. No particle yet."}, {"de": "1 Bit", "ru": "1 бит", "en": "1 bit"}, {"de": "das erste Teilchen · Paar: Teilchen + Antiteilchen", "ru": "первая частица · пара: частица + античастица", "en": "the first particle · pair: particle + antiparticle"}, {"de": "das Delta · noch keine Teilchen, nur Zustände", "ru": "дельта · пока нет частиц, только состояния", "en": "the delta · no particles yet, only states"}, {"de": "<div class=\"t\">Anker · Paarerzeugung</div>Man kann kein einzelnes geladenes Teilchen aus Energie machen. Teilchen und Antiteilchen entstehen <b>immer zusammen</b> (+ und −). Ladungserhaltung.", "ru": "<div class=\"t\">Якорь · рождение пар</div>Нельзя создать одну заряженную частицу из энергии. Частица и античастица возникают <b>всегда вместе</b> (+ и −). Сохранение заряда.", "en": "<div class=\"t\">Anchor · Pair production</div>You cannot make a single charged particle out of energy. Particles and antiparticles arise <b>always together</b> (+ and −). Conservation of charge."}, {"de": "<div class=\"t\">Anker · Feld-Schwingung</div>Ein Teilchen ist eine <b>Anregung (Schwingung)</b> eines Feldes (Quantenfeldtheorie). Interferenz und Vibration, genau dein Bild.", "ru": "<div class=\"t\">Якорь · возбуждение поля</div>Частица — это <b>возбуждение (колебание)</b> поля (квантовая теория поля). Интерференция и вибрация — именно твой образ.", "en": "<div class=\"t\">Anchor · Field oscillation</div>A particle is an <b>excitation (oscillation)</b> of a field (quantum field theory). Interference and vibration, exactly your image."}, {"de": "<div class=\"t\">Anker · It from Bit</div>Physik aus Ja/Nein-Unterscheidungen (Wheeler); Information ist physikalisch (Landauer). Bit und Teilchen sind verwandt.", "ru": "<div class=\"t\">Якорь · It from Bit</div>Физика из различений да/нет (Уилер); информация физична (Ландауэр). Бит и частица родственны.", "en": "<div class=\"t\">Anchor · It from Bit</div>Physics out of yes/no distinctions (Wheeler); information is physical (Landauer). Bit and particle are related."}, {"de": "<div class=\"t\">Bild · die Grenze</div>Dass die „erste absolute Regel\" +/− <i>ist</i>, ist Juris metaphysisches Bild, kein bewiesener Weltanfang.", "ru": "<div class=\"t\">Образ · граница</div>То, что «первое абсолютное правило» и <i>есть</i> +/−, — метафизический образ Juri, а не доказанное начало мира.", "en": "<div class=\"t\">Image · the boundary</div>That the „first absolute rule\" <i>is</i> +/− is Juri's metaphysical image, not a proven beginning of the world."}, {"de": "↻ zurück", "ru": "↻ назад", "en": "↻ back"}]};</script>
+<script>
+/* ==========================================================================
+   Realität als Zustand — MODEL i18n runtime (append-only)
+   For the interactive canvas/JS models, whose text is produced by JavaScript
+   (canvas fillText, innerHTML/textContent). String-keyed, so it survives any
+   DOM rebuild. We intercept the text sinks and substitute translations.
+
+   Injected: RAZ_CFG (switcher placement) and
+             RAZ_MODEL = { strings:[{de,ru,en}, ...] }  (longest handled first)
+   The dict mixes whole messages / whole static blocks (long keys, matched
+   wholesale) and atomic data values (short keys). Nothing existing is edited;
+   this only appends a switcher + a translation layer.
+   ========================================================================== */
+(function () {
+  "use strict";
+  var CFG   = (typeof RAZ_CFG   !== "undefined") ? RAZ_CFG   : { pos:"top-right" };
+  var MODEL = (typeof RAZ_MODEL !== "undefined") ? RAZ_MODEL : { strings:[] };
+  var LS_KEY = "raz_lang";
+  var curLang = "de";
+  var APPLYING = false;
+
+  /* ---------- translation core (substring replace, boundary-aware) -------- */
+  var STR = (MODEL.strings || []).filter(function(e){return e&&e.de;}).slice()
+              .sort(function (a, b) { return b.de.length - a.de.length; });
+  function isL(ch){ return ch >= "0" && ch <= "9" || ch >= "A" && ch <= "Z" || ch >= "a" && ch <= "z" || (ch >= "À" && ch <= "ɏ"); }
+  STR.forEach(function (e){ e._bl = isL(e.de.charAt(0)); e._br = isL(e.de.charAt(e.de.length-1)); });
+  var memo = { ru:Object.create(null), en:Object.create(null) };
+  function translateStr(s, lang){
+    if (lang === "de" || !s || typeof s !== "string") return s;
+    var mm = memo[lang]; var hit = mm[s]; if (hit !== undefined) return hit;
+    var out = s;
+    for (var i=0;i<STR.length;i++){
+      var e = STR[i], tr = e[lang]; if (tr == null || tr === "") continue;
+      if (out.indexOf(e.de) < 0) continue;
+      var res="", from=0, k;
+      while ((k = out.indexOf(e.de, from)) >= 0){
+        var okL = !e._bl || k===0 || !isL(out.charAt(k-1));
+        var aft = k + e.de.length;
+        var okR = !e._br || aft>=out.length || !isL(out.charAt(aft));
+        if (okL && okR){ res += out.slice(from,k) + tr; from = aft; }
+        else { res += out.slice(from, k+1); from = k+1; }
+      }
+      out = res + out.slice(from);
+    }
+    mm[s] = out; return out;
+  }
+
+  /* ---------- registries for re-translation on language switch ------------ */
+  var htmlEls = [], textEls = [];
+  function TAGof(el){ return (el && el.tagName ? el.tagName : "").toUpperCase(); }
+  function skip(el){ if(!el||el.nodeType!==1) return false; var t=TAGof(el); if(t==="SCRIPT"||t==="STYLE") return true;
+    var p=el; while(p){ if(p.id==="raz-langbar"||p.__razSkip) return true; p=p.parentNode; } return false; }
+
+  /* ---------- patch innerHTML / textContent setters ----------------------- */
+  function patchProp(proto, prop, reg){
+    var d = Object.getOwnPropertyDescriptor(proto, prop);
+    if (!d || !d.set || d.set.__razP) return;
+    var oget = d.get, oset = d.set;
+    Object.defineProperty(proto, prop, {
+      configurable:true, enumerable:d.enumerable, get:oget,
+      set: function(v){
+        if (APPLYING){ oset.call(this, v); return; }
+        if (skip(this)){ oset.call(this, v); return; }
+        var de = String(v);
+        this[reg.key] = de;
+        if (!this[reg.flag]){ this[reg.flag] = true; reg.list.push(this); }
+        oset.call(this, curLang==="de" ? v : translateStr(de, curLang));
+      }
+    });
+    d.set.__razP = true;
+  }
+  var elProto = window.Element.prototype;
+  var htmlDesc = Object.getOwnPropertyDescriptor(elProto,"innerHTML") ? elProto : window.HTMLElement.prototype;
+  patchProp(htmlDesc, "innerHTML", { key:"__razHtmlDe", flag:"__razHtmlR", list:htmlEls });
+  patchProp(window.Node.prototype, "textContent", { key:"__razTextDe", flag:"__razTextR", list:textEls });
+
+  /* ---------- patch canvas text ------------------------------------------ */
+  (function(){
+    if (!window.CanvasRenderingContext2D) return;
+    var P = CanvasRenderingContext2D.prototype;
+    ["fillText","strokeText"].forEach(function(fn){
+      var o=P[fn]; if(!o||o.__razP) return;
+      var w=function(text,x,y,mw){ var t=(curLang!=="de")?translateStr(String(text),curLang):text;
+        return (mw===undefined)?o.call(this,t,x,y):o.call(this,t,x,y,mw); };
+      w.__razP=true; P[fn]=w;
+    });
+    var m=P.measureText; if(m&&!m.__razP){ var w2=function(t){ return m.call(this,(curLang!=="de")?translateStr(String(t),curLang):t); }; w2.__razP=true; P.measureText=w2; }
+  })();
+
+  /* ---------- initial pass over static markup ----------------------------- */
+  var INLINE={A:1,ABBR:1,B:1,BDI:1,BDO:1,BR:1,CITE:1,CODE:1,DATA:1,DFN:1,EM:1,I:1,KBD:1,MARK:1,Q:1,RP:1,RT:1,RUBY:1,S:1,SAMP:1,SMALL:1,SPAN:1,STRONG:1,SUB:1,SUP:1,TIME:1,U:1,VAR:1,WBR:1,DEL:1,INS:1};
+  var OPAQUE={SCRIPT:1,STYLE:1,CANVAS:1,IFRAME:1,NOSCRIPT:1,TEMPLATE:1,IMG:1,VIDEO:1,AUDIO:1,INPUT:1,TEXTAREA:1,OBJECT:1,TITLE:1,HEAD:1,META:1,LINK:1,BASE:1,DESC:1,DEFS:1,SYMBOL:1};
+  function hasText(el){ var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null),n; while((n=w.nextNode())){ if(n.nodeValue&&/\S/.test(n.nodeValue))return true; } return false; }
+  function hasDirectText(el){ for(var n=el.firstChild;n;n=n.nextSibling){ if(n.nodeType===3 && /\S/.test(n.nodeValue||"")) return true; } return false; }
+  function hasBlockDesc(el){ var k=el.getElementsByTagName("*"); for(var i=0;i<k.length;i++){ if(INLINE[(k[i].tagName||"").toUpperCase()]!==1) return true; } return false; }
+  function collectStaticBlocks(){
+    var out=[];
+    // A block is any element that owns text directly, OR is a leaf text block.
+    // Capturing whole innerHTML keeps loose text + inline/label children together.
+    (function walk(el){ for(var c=el.firstElementChild;c;c=c.nextElementSibling){
+      var t=(c.tagName||"").toUpperCase();
+      if(OPAQUE[t]===1) continue; if(c.id==="raz-langbar"||c.__razSkip) continue;
+      if(hasDirectText(c) || (hasText(c)&&!hasBlockDesc(c))) out.push(c); /* don't descend */
+      else walk(c);
+    }})(document.body);
+    return out;
+  }
+  function primeStatic(){
+    var blocks=collectStaticBlocks();
+    for (var i=0;i<blocks.length;i++){ var el=blocks[i];
+      if (el.__razHtmlR) continue;              // already tracked via a JS assignment
+      el.__razHtmlDe = el.innerHTML; el.__razHtmlR = true; htmlEls.push(el);
+    }
+  }
+
+  /* ---------- apply a language ------------------------------------------- */
+  function reHtml(el){ if(el.isConnected===false) return; var de=el.__razHtmlDe;
+    APPLYING=true; try{ el.innerHTML = (curLang==="de")?de:translateStr(de,curLang); }catch(e){} APPLYING=false; }
+  function reText(el){ if(el.isConnected===false) return; var de=el.__razTextDe;
+    APPLYING=true; try{ el.textContent = (curLang==="de")?de:translateStr(de,curLang); }catch(e){} APPLYING=false; }
+  function apply(lang){
+    curLang = lang;
+    for (var i=0;i<htmlEls.length;i++) reHtml(htmlEls[i]);
+    for (var j=0;j<textEls.length;j++) reText(textEls[j]);
+    document.documentElement.setAttribute("lang", lang);
+    try{ localStorage.setItem(LS_KEY, lang); }catch(e){}
+    var btns=document.querySelectorAll("#raz-langbar [data-lang]");
+    for (var k=0;k<btns.length;k++){ var on=btns[k].getAttribute("data-lang")===lang; btns[k].setAttribute("aria-pressed",on?"true":"false"); btns[k].className=on?"raz-lb-btn raz-on":"raz-lb-btn"; }
+    /* canvas repaints itself via the model's own animation loop */
+  }
+
+  /* ---------- switcher UI ------------------------------------------------- */
+  function buildBar(){
+    var style=document.createElement("style"); style.id="raz-lang-style"; style.__razSkip=true;
+    style.textContent="#raz-langbar{position:fixed;z-index:2147483000;display:inline-flex;gap:2px;padding:3px;border-radius:999px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-size:12px;font-weight:700;letter-spacing:.02em;line-height:1;background:rgba(20,21,29,.72);border:1px solid rgba(150,150,180,.28);box-shadow:0 6px 22px rgba(0,0,0,.4);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);}#raz-langbar .raz-lb-btn{appearance:none;border:0;background:transparent;cursor:pointer;color:#c9cee0;border-radius:999px;padding:.4em .62em;font:inherit;transition:background .15s,color .15s;}#raz-langbar .raz-lb-btn:hover{color:#fff;}#raz-langbar .raz-lb-btn.raz-on{background:rgba(230,181,74,.94);color:#141019;}";
+    document.head.appendChild(style);
+    var bar=document.createElement("div"); bar.id="raz-langbar"; bar.__razSkip=true; bar.setAttribute("role","group"); bar.setAttribute("aria-label","Sprache / Language / Язык");
+    [["de","DE"],["ru","RU"],["en","EN"]].forEach(function(p){
+      var b=document.createElement("button"); b.type="button"; b.className="raz-lb-btn"; b.setAttribute("data-lang",p[0]); b.setAttribute("aria-pressed","false");
+      b.title={de:"Deutsch (Original)",ru:"Русский",en:"English"}[p[0]];
+      APPLYING=true; b.textContent=p[1]; APPLYING=false;
+      b.addEventListener("click",function(){ var code=this.getAttribute("data-lang"); apply(code); });
+      bar.appendChild(b);
+    });
+    var pos=CFG.pos||"top-right";
+    if (pos.indexOf("bottom")===0) bar.style.bottom=CFG.edge||"14px"; else bar.style.top=CFG.edge||"12px";
+    if (pos.indexOf("left")>=0) bar.style.left=CFG.side||"14px"; else bar.style.right=CFG.side||"14px";
+    APPLYING=true; document.body.appendChild(bar); APPLYING=false;
+  }
+  function getInitial(){ try{ var s=localStorage.getItem(LS_KEY); if(s==="ru"||s==="en"||s==="de")return s; }catch(e){} return "de"; }
+
+  /* ---------- init ------------------------------------------------------- */
+  var inIframe = false; try { inIframe = window.top !== window.self; } catch (e) { inIframe = true; }
+  primeStatic();
+  if (!inIframe) buildBar();  /* embedded in the hub: the hub's switcher drives us via postMessage */
+  window.addEventListener("message",function(e){ if(e&&e.data&&(e.data.razLang==="de"||e.data.razLang==="ru"||e.data.razLang==="en")) apply(e.data.razLang); });
+  window.RAZ_onLang=function(l){ apply(l); };
+  apply(getInitial());
+})();
+
+</script>
+
+<script src="assets/restauration.js?v=20261116-r2" defer></script>
+<aside data-historical-banner style="padding:10px 18px;background:#172637;color:#e7d3a1;font:14px system-ui">ARCHIV · ARCHIVE · АРХИВ — 16.11.2026 · <a href="../../forschung.html">HALVETH — 17.11.2026</a></aside></body></html>

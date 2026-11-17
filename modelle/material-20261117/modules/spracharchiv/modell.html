@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>HALVETH verstehen, Juri Janovski</title>
+<meta name="description" content="Was HALVETH ist, wie es wirkt, was es geschafft hat und wo es ehrlich scheitert. Ausführung ist nicht Finalität. Konzept, kein Produkt.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128274;</text></svg>">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --ground:#f1efe8;--panel:#faf8f2;--ink:#20222b;--ink2:#3f4250;--muted:#767a88;
+    --gold:#9a6a10;--teal:#0f7a82;--edge:#dcd8cc;--hair:rgba(32,34,43,.11);
+    --red:#b23b2e;--amber:#b9791a;--green:#2f7d4f;
+    --shadow:0 1px 2px rgba(40,36,24,.05),0 12px 34px rgba(40,36,24,.09);
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --ground:#0c0d13;--panel:#14151d;--ink:#ece9f0;--ink2:#c3c2d2;--muted:#8b8fa4;
+    --gold:#e6b54a;--teal:#4fd6d0;--edge:#262838;--hair:rgba(180,180,220,.13);
+    --red:#f0806f;--amber:#e6b54a;--green:#63cf90;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 16px 46px rgba(0,0,0,.5);
+  }}
+  :root[data-theme="light"]{--ground:#f1efe8;--panel:#faf8f2;--ink:#20222b;--ink2:#3f4250;--muted:#767a88;--gold:#9a6a10;--teal:#0f7a82;--edge:#dcd8cc;--hair:rgba(32,34,43,.11);--red:#b23b2e;--amber:#b9791a;--green:#2f7d4f;}
+  :root[data-theme="dark"]{--ground:#0c0d13;--panel:#14151d;--ink:#ece9f0;--ink2:#c3c2d2;--muted:#8b8fa4;--gold:#e6b54a;--teal:#4fd6d0;--edge:#262838;--hair:rgba(180,180,220,.13);--red:#f0806f;--amber:#e6b54a;--green:#63cf90;}
+
+  html{scroll-behavior:smooth}
+  body{background:var(--ground);color:var(--ink);font-family:Georgia,"Iowan Old Style","Times New Roman",serif;line-height:1.68;font-size:18px;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(1100px 460px at 50% -8%, color-mix(in oklab,var(--gold) 12%,transparent), transparent 62%);background-attachment:fixed}
+  .sans{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+  a{color:var(--gold);text-decoration:none} a:hover{text-decoration:underline}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 clamp(18px,5vw,40px)}
+
+  .topnav{position:sticky;top:0;z-index:40;backdrop-filter:blur(10px);background:color-mix(in oklab,var(--ground) 82%,transparent);border-bottom:1px solid var(--hair)}
+  .nav-in{display:flex;align-items:center;gap:16px;height:62px}
+  .brand{display:flex;align-items:baseline;gap:8px;font-weight:700;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+  .brand span{color:var(--gold)}
+  .nav-links{display:flex;gap:17px;margin-left:auto;font-family:system-ui,sans-serif;font-size:13.5px;font-weight:600;color:var(--muted);min-width:0;overflow-x:auto;scrollbar-width:none}
+  .nav-links a{color:inherit;white-space:nowrap;flex:0 0 auto}.nav-links a:hover{color:var(--ink);text-decoration:none}
+  .tglbtn{font-family:system-ui,sans-serif;font-size:13px;font-weight:600;color:var(--ink2);background:var(--panel);border:1px solid var(--edge);border-radius:999px;padding:.34rem .8rem;cursor:pointer;white-space:nowrap;flex:0 0 auto}
+  .tglbtn:hover{border-color:var(--gold);color:var(--ink)}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  .hero{padding:clamp(44px,9vh,88px) 0 28px}
+  .eyebrow{font-family:system-ui,sans-serif;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .hero h1{font-weight:700;font-size:clamp(2.1rem,6vw,3.7rem);line-height:1.05;letter-spacing:-.02em;margin:.5rem 0 .1rem;text-wrap:balance;
+    background:linear-gradient(176deg,var(--ink),color-mix(in oklab,var(--ink) 55%,var(--gold)));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{font-style:italic;font-size:clamp(1.1rem,2.5vw,1.45rem);color:var(--ink2);max-width:50ch;margin:.55rem 0 1.2rem;text-wrap:pretty}
+  .badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:1.4rem;font-family:system-ui,sans-serif}
+  .badge{font-size:12px;font-weight:600;color:var(--ink2);background:var(--panel);border:1px solid var(--edge);border-radius:999px;padding:.42rem .82rem}
+  .badge.honest{color:var(--gold);border-color:color-mix(in oklab,var(--gold) 45%,var(--edge))}
+  .lead{font-size:1.12rem;color:var(--ink2);max-width:64ch}.lead b{color:var(--ink)}
+
+  section.block{padding:clamp(36px,7vh,64px) 0;border-top:1px solid var(--hair)}
+  .sec-eyebrow{font-family:system-ui,sans-serif;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:.5rem}
+  .sec-h{font-weight:700;font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.12;letter-spacing:-.015em;margin:0 0 .5rem;text-wrap:balance}
+  .sec-sub{color:var(--muted);font-size:1.02rem;max-width:64ch;margin:0 0 1.7rem}
+  .prose p{font-size:1.08rem;color:var(--ink2);max-width:66ch;margin:.7rem 0}.prose p b{color:var(--ink)}
+
+  /* 0-1 bar */
+  .zbar{position:relative;height:64px;border-radius:14px;border:1px solid var(--edge);background:linear-gradient(90deg,color-mix(in oklab,var(--red) 18%,var(--panel)),color-mix(in oklab,var(--green) 20%,var(--panel)));margin:18px 0 8px;overflow:hidden}
+  .zbar .lbl{position:absolute;top:50%;transform:translateY(-50%);font-family:system-ui,sans-serif;font-weight:700;font-size:13px;color:var(--ink2)}
+  .zbar .z0{left:14px}.zbar .z1{right:14px}
+  .zgate{position:absolute;left:50%;top:-1px;bottom:-1px;width:3px;background:var(--gold);transform:translateX(-50%)}
+  .zgate::after{content:"HALVETH";position:absolute;top:-22px;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--gold)}
+  .zcap{font-family:system-ui,sans-serif;font-size:.92rem;color:var(--muted);margin-top:26px}
+
+  .model{background:var(--panel);border:1px solid var(--edge);border-radius:18px;padding:24px 24px 22px;box-shadow:var(--shadow);margin-bottom:22px}
+  .mnum{font-family:system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem}
+  .model h3{font-weight:700;font-size:1.4rem;line-height:1.15;margin-bottom:.5rem}
+  .model p{font-size:1rem;color:var(--ink2);max-width:66ch;margin:.5rem 0}.model p b{color:var(--ink)}
+  .stage{background:color-mix(in oklab,var(--ground) 60%,var(--panel));border:1px solid var(--edge);border-radius:14px;padding:20px;margin:16px 0}
+  .ctrls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-family:system-ui,sans-serif;font-size:14px;margin-top:12px}
+  .btn{font-family:system-ui,sans-serif;font-weight:600;font-size:14px;background:var(--gold);color:#fff;border:1px solid transparent;border-radius:999px;padding:.55rem 1.05rem;cursor:pointer}
+  :root[data-theme="dark"] .btn{color:#14151d}
+  @media(prefers-color-scheme:dark){:root:not([data-theme]) .btn{color:#14151d}}
+  .btn:hover{filter:brightness(1.06)}
+  .btn.alt{background:transparent;color:var(--ink);border-color:var(--edge)}.btn.alt:hover{border-color:var(--gold);filter:none}
+  .toggle{display:inline-flex;border:1px solid var(--edge);border-radius:999px;overflow:hidden;background:var(--panel)}
+  .toggle button{font-family:system-ui,sans-serif;font-weight:600;font-size:13.5px;background:transparent;border:0;color:var(--muted);padding:.5rem 1rem;cursor:pointer}
+  .toggle button.on{background:var(--gold);color:#fff}
+  :root[data-theme="dark"] .toggle button.on{color:#14151d}
+  label.chk{display:inline-flex;align-items:center;gap:.5rem;color:var(--ink2);font-weight:600;cursor:pointer}
+  label.chk input{width:17px;height:17px;accent-color:var(--gold)}
+  .verdict{font-family:system-ui,sans-serif;font-weight:700;font-size:1.02rem;padding:.7rem 1rem;border-radius:12px;margin-top:14px;border:1px solid var(--edge)}
+  .v-final{color:var(--green);border-color:color-mix(in oklab,var(--green) 45%,var(--edge));background:color-mix(in oklab,var(--green) 10%,var(--panel))}
+  .v-held{color:var(--amber);border-color:color-mix(in oklab,var(--amber) 45%,var(--edge));background:color-mix(in oklab,var(--amber) 10%,var(--panel))}
+  .v-open{color:var(--red);border-color:color-mix(in oklab,var(--red) 45%,var(--edge));background:color-mix(in oklab,var(--red) 10%,var(--panel))}
+  .flow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-family:system-ui,sans-serif;font-size:14px;font-weight:600}
+  .node{border:1px solid var(--edge);border-radius:12px;padding:.55rem .85rem;background:var(--panel);color:var(--ink2);text-align:center}
+  .node.hot{border-color:var(--gold);color:var(--ink)}
+  .arrow{color:var(--muted)}
+
+  /* attack */
+  .amoves{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
+  @media(max-width:680px){.amoves{grid-template-columns:1fr}}
+  .amove{font-family:system-ui,sans-serif;text-align:left;border:1px solid var(--edge);border-radius:12px;padding:.8rem .9rem;background:var(--panel);color:var(--ink);cursor:pointer;font-weight:600;font-size:14px;transition:border-color .15s}
+  .amove:hover{border-color:var(--gold)} .amove.sel{border-color:var(--gold);box-shadow:0 0 0 2px color-mix(in oklab,var(--gold) 30%,transparent)}
+  .amove small{display:block;font-weight:400;color:var(--muted);margin-top:.25rem}
+
+  /* cost ladder */
+  input[type=range]{width:100%;accent-color:var(--gold);margin:10px 0}
+  .ladder{margin-top:4px}
+  .rungrow{display:flex;align-items:baseline;gap:12px;padding:.5rem 0;border-top:1px solid var(--hair);font-family:system-ui,sans-serif}
+  .rungrow:first-child{border-top:0}.rungrow .rn{font-weight:700;color:var(--muted);width:1.4rem;flex:none}
+  .rungrow.act .rt{color:var(--ink)}.rungrow .rt{font-weight:600;color:var(--ink2)}
+  .rungrow .rd{color:var(--muted);font-size:.9rem;margin-left:auto;text-align:right;max-width:44ch}
+  .costverdict{font-family:system-ui,sans-serif;font-weight:700;margin-top:8px}
+
+  /* scorecard */
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+  .tile{background:var(--panel);border:1px solid var(--edge);border-radius:16px;padding:18px 18px 16px;box-shadow:var(--shadow)}
+  .tile .n{font-weight:700;font-size:1.9rem;line-height:1;color:var(--gold);letter-spacing:-.02em}
+  .tile .t{font-family:system-ui,sans-serif;font-size:.86rem;color:var(--ink2);font-weight:600;margin-top:.4rem}
+  .tile .s{font-family:system-ui,sans-serif;font-size:.78rem;color:var(--muted);margin-top:.2rem}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:680px){.twocol{grid-template-columns:1fr}}
+  .cell{border:1px solid var(--edge);border-radius:14px;padding:18px;background:var(--panel)}
+  .cell h5{font-family:system-ui,sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.5rem}
+  .cell.can h5{color:var(--green)} .cell.cant h5{color:var(--red)}
+  .cell ul{margin-left:1.05rem} .cell li{font-size:.96rem;color:var(--ink2);margin:.35rem 0}
+
+  .failcard{background:var(--panel);border:1px solid var(--edge);border-left:3px solid var(--red);border-radius:14px;padding:18px 20px;margin-bottom:14px}
+  .failcard h4{font-family:system-ui,sans-serif;font-weight:700;font-size:1rem;color:var(--ink);margin-bottom:.35rem}
+  .failcard p{font-size:.98rem;color:var(--ink2);margin:.3rem 0;max-width:70ch}
+  .failcard .lesson{color:var(--gold);font-weight:600;font-family:system-ui,sans-serif;font-size:.92rem}
+
+  .map{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:stretch;font-family:system-ui,sans-serif;margin-top:8px}
+  .mapcol{border:1px solid var(--edge);border-radius:14px;padding:16px;background:var(--panel)}
+  .mapcol h5{font-weight:700;color:var(--ink);font-size:1rem;margin-bottom:.3rem}.mapcol p{font-size:.9rem;color:var(--muted);margin:.2rem 0}
+  .mapmid{display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:22px}
+  .mapcol.core{border-color:var(--gold);background:color-mix(in oklab,var(--gold) 8%,var(--panel))}
+  @media(max-width:680px){.map{grid-template-columns:1fr}.mapmid{transform:rotate(90deg)}}
+
+  .honestbox{background:var(--panel);border:1px solid var(--edge);border-left:3px solid var(--gold);border-radius:16px;padding:24px 26px;box-shadow:var(--shadow);margin-top:6px}
+  .hb-badge{display:inline-block;font-family:system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid color-mix(in oklab,var(--gold) 40%,var(--edge));border-radius:999px;padding:.26rem .64rem;margin-bottom:.9rem}
+  .honestbox p{font-size:1.06rem;color:var(--ink);margin:.5rem 0;max-width:68ch}.honestbox p.small{font-size:.96rem;color:var(--ink2)}.honestbox b{color:var(--ink)}
+
+  .origin{background:var(--panel);border:1px dashed color-mix(in oklab,var(--gold) 45%,var(--edge));border-radius:16px;padding:22px 24px}
+  .origin .tag{font-family:system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem}
+  .origin p{color:var(--ink2);max-width:68ch;margin:.5rem 0}.origin b{color:var(--ink)}
+  .origin .go{font-family:system-ui,sans-serif;font-weight:600;font-size:.94rem;color:var(--gold);display:inline-flex;gap:.4rem;margin-top:.6rem}
+
+  footer{border-top:1px solid var(--hair);padding:32px 0 46px;color:var(--muted);font-family:system-ui,sans-serif;font-size:13.5px}
+  footer b{color:var(--ink2)}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+  ::selection{background:color-mix(in oklab,var(--gold) 30%,transparent)}
+</style>
+
+<link rel="canonical" href="https://halveth.de/modell.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="HALVETH">
+<meta property="og:title" content="HALVETH verstehen, Juri Janovski">
+<meta property="og:description" content="Was HALVETH ist, wie es wirkt, was es geschafft hat und wo es ehrlich scheitert. Ausführung ist nicht Finalität. Konzept, kein Produkt.">
+<meta property="og:url" content="https://halveth.de/modell.html">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary">
+
+<link rel="stylesheet" href="assets/restauration.css?v=20261116-r2">
+</head>
+<body id="top" data-hv-page="modell" class="hv-main-shell">
+
+  <header class="topnav">
+    <div class="wrap nav-in">
+      <a class="brand" href="#top">HAL<span>VETH</span></a>
+      <nav class="nav-links">
+        <a href="#idee">Idee</a>
+        <a href="#modelle">Modelle</a>
+        <a href="#angriff">Der Angriff</a>
+        <a href="#ergebnisse">Ergebnisse</a>
+        <a href="#gescheitert">Ehrlich gescheitert</a>
+        <a href="#vision">Vision</a>
+        <a href="#herkunft">Herkunft</a>
+      </nav>
+      <button class="tglbtn sans" id="tgl" type="button" data-raz-skip>&#9681; Ansicht</button>
+    </div>
+  </header>
+
+  <main class="wrap"><aside class="hv-history-note" data-raz-skip><span data-hv-i18n="history">Inhaltliche Projektangaben behalten ihren jeweils genannten Quellenstand. Die Web-Edition vom 16.11.2026 aktualisiert Darstellung, Bedienung und Verknüpfungen; sie ist keine neue Abnahme alter Experimente.</span></aside>
+
+    <section class="hero" id="idee">
+      <p class="eyebrow">Sicherheits-Forschung &middot; Juri Janovski</p>
+      <h1>Ausf&uuml;hrung ist nicht Finalit&auml;t.</h1>
+      <p class="sub">Was HALVETH ist, wie es wirkt, was es geschafft hat, und wo es ehrlich scheitert.</p>
+      <div class="badges">
+        <span class="badge honest">Konzept, kein fertiges Produkt</span>
+        <span class="badge">im Labor gepr&uuml;ft</span>
+        <span class="badge">&bdquo;assume breach&ldquo;</span>
+        <span class="badge">ehrlich gerahmt</span>
+      </div>
+      <p class="lead">Die meisten Werkzeuge versuchen, den Angreifer <b>drau&szlig;en</b> zu halten oder seinen <b>Weg</b> zu erkennen. HALVETH untersucht stattdessen einen ausgew&auml;hlten Pfad am <b>Ziel</b>: Vor der Akzeptanz einer folgenschweren &Auml;nderung muss dort ein Beleg vorliegen, der an <b>Operation, Regel, Zeitpunkt und Pr&uuml;fbereich</b> gebunden ist.</p>
+    </section>
+
+    <!-- WAS + 0/1 -->
+    <section class="block">
+      <p class="sec-eyebrow">Der Kern</p>
+      <h2 class="sec-h">Warum es zwischen 0 und 1 lebt</h2>
+      <div class="prose">
+        <p>Das Modell trennt zwei Zust&auml;nde: <b>0</b>, eine ausgew&auml;hlte Operation wurde ausgef&uuml;hrt, aber im definierten Verfahren noch nicht akzeptiert. Und <b>1</b>, f&uuml;r sie liegt die benannte Freigabe samt Beleg vor. Wo Ausf&uuml;hrung und Akzeptanz zusammenfallen, bleibt diese Pr&uuml;fkante unsichtbar.</p>
+        <p>HALVETH f&uuml;gt f&uuml;r den dokumentierten Pfad ein <b>Dazwischen</b> ein. Ohne ein passendes Permit erreicht die Operation dort nicht den Status <b>akzeptiert</b>. Das ist eine Verfahrensaussage innerhalb der Abdeckung.</p>
+      </div>
+      <div class="zbar"><span class="lbl z0">0 &middot; ausgef&uuml;hrt</span><span class="zgate"></span><span class="lbl z1">1 &middot; im Verfahren akzeptiert</span></div>
+      <p class="zcap">Im Modell liegen zwischen Ausf&uuml;hrung und Akzeptanz eine benannte Bewertung und Freigabe.</p>
+    </section>
+
+    <!-- MODELLE -->
+    <section class="block" id="modelle">
+      <p class="sec-eyebrow">Wie es wirkt</p>
+      <h2 class="sec-h">Modelle zum Anfassen</h2>
+      <p class="sec-sub">Derselbe Gedanke aus mehreren Winkeln. Die interaktiven kannst du bedienen.</p>
+
+      <div class="model">
+        <p class="mnum">Modell 1 &middot; interaktiv</p>
+        <h3>Die zwei Momente</h3>
+        <p>Passiert hei&szlig;t noch nicht wahr. Nur ein echtes Siegel macht endg&uuml;ltig.</p>
+        <div class="stage">
+          <div class="ctrls">
+            <span class="sans" style="color:var(--muted);font-weight:600">Modus:</span>
+            <div class="toggle" id="m1mode" data-raz-skip><button data-m="off" class="on">Ohne HALVETH</button><button data-m="on">Mit HALVETH</button></div>
+            <label class="chk sans" id="m1seallbl"><input type="checkbox" id="m1seal"> echtes Siegel vorhanden</label>
+          </div>
+          <div class="flow" style="margin-top:16px">
+            <span class="node hot">&Auml;nderung passiert</span><span class="arrow">&rarr;</span>
+            <span class="node" id="m1gate">Tor</span><span class="arrow">&rarr;</span><span class="node" id="m1end">?</span>
+          </div>
+          <div class="verdict" id="m1verdict" data-raz-skip>&nbsp;</div>
+        </div>
+      </div>
+
+      <div class="model">
+        <p class="mnum">Modell 2 &middot; interaktiv</p>
+        <h3>Perimeter, Weg, Ziel</h3>
+        <p>Fast alle Werkzeuge bewachen die ersten beiden Stationen. HALVETH bewacht die letzte.</p>
+        <div class="stage">
+          <div class="flow" style="justify-content:space-between">
+            <span class="node" data-stn="0">Drau&szlig;en</span><span class="arrow">&rarr;</span>
+            <span class="node" data-stn="1">Perimeter<br><small style="color:var(--muted);font-weight:400">Firewall</small></span><span class="arrow">&rarr;</span>
+            <span class="node" data-stn="2">Weg<br><small style="color:var(--muted);font-weight:400">Monitoring</small></span><span class="arrow">&rarr;</span>
+            <span class="node" data-stn="3">Ziel<br><small style="color:var(--muted);font-weight:400">Kronjuwel</small></span>
+          </div>
+          <div class="ctrls" data-raz-skip><button class="btn" id="m2step">Angreifer r&uuml;ckt vor</button><button class="btn alt" id="m2reset">zur&uuml;ck</button></div>
+          <div class="verdict" id="m2verdict" data-raz-skip>&nbsp;</div>
+        </div>
+      </div>
+
+      <div class="model">
+        <p class="mnum">Modell 3</p>
+        <h3>Der Notar</h3>
+        <p>Jeder darf ein Dokument <b>schreiben</b>. Rechtskr&auml;ftig wird es erst mit dem <b>Siegel des Notars</b>, das man nicht f&auml;lschen kann. HALVETH ist der Notar deiner kritischen Zust&auml;nde: Schreiben ist frei, <b>Siegeln</b> ist bewacht.</p>
+      </div>
+
+      <div class="model">
+        <p class="mnum">Modell 4 &middot; interaktiv</p>
+        <h3>Die Kosten-Leiter</h3>
+        <p>Es gibt <b>keine unknackbare Mauer</b>. Sicherheit ist <b>Kosten</b>: wie viele <b>unabh&auml;ngige</b> Dinge muss ein Angreifer brechen?</p>
+        <div class="stage">
+          <input type="range" min="0" max="3" value="0" id="cost">
+          <div class="ladder" id="ladder">
+            <div class="rungrow" data-r="0"><span class="rn">0</span><span class="rt">Kein Tor</span><span class="rd">Der Angreifer muss gar nichts.</span></div>
+            <div class="rungrow" data-r="1"><span class="rn">1</span><span class="rt">Ein Software-Schl&uuml;ssel</span><span class="rd">Einen Schl&uuml;ssel stehlen oder selbst berechtigt werden. SolarWinds, xz zeigen: machbar.</span></div>
+            <div class="rungrow" data-r="2"><span class="rn">2</span><span class="rt">Schl&uuml;ssel in Hardware</span><span class="rd">Software kann ihn nicht mehr auslesen. Hardware oder Mensch angreifen. Teurer.</span></div>
+            <div class="rungrow" data-r="3"><span class="rn">3</span><span class="rt">Mehrere Parteien + Hardware</span><span class="rd">Mehrere getrennte Parteien UND Hardware gleichzeitig. Sehr teuer, nie unm&ouml;glich.</span></div>
+          </div>
+          <div class="costverdict" id="costverdict" data-raz-skip>&nbsp;</div>
+        </div>
+        <p class="sans" style="font-size:.9rem;color:var(--muted)">HALVETH steht heute auf <b>Stufe 1</b>. Sein Weg ist nach oben.</p>
+      </div>
+    </section>
+
+    <!-- ANGRIFF -->
+    <section class="block" id="angriff">
+      <p class="sec-eyebrow">Der Angriff, Schritt f&uuml;r Schritt</p>
+      <h2 class="sec-h">Wer kommt rein, und was dann?</h2>
+      <p class="sec-sub">Nimm an, der Angreifer ist schon am Ziel. Ab hier hat er drei Wege. W&auml;hle einen und sieh, wie HALVETH reagiert, ehrlich, mit allen drei Ausg&auml;ngen.</p>
+      <div class="model">
+        <div class="flow" style="margin-bottom:14px">
+          <span class="node hot">Angreifer drin</span><span class="arrow">&rarr;</span>
+          <span class="node hot">am gesch&uuml;tzten Punkt</span><span class="arrow">&rarr;</span>
+          <span class="node" id="axout">er versucht &hellip;</span>
+        </div>
+        <div class="amoves" data-raz-skip>
+          <button class="amove" data-a="forge">F&auml;lschen ohne Schl&uuml;ssel<small>er schreibt die &Auml;nderung selbst, ohne echten Beleg</small></button>
+          <button class="amove" data-a="steal">Schl&uuml;ssel stehlen oder werden<small>er wird selbst der Berechtigte (wie xz)</small></button>
+          <button class="amove" data-a="around">Drumherum gehen<small>er zielt auf einen ungewachten Punkt daneben</small></button>
+        </div>
+        <div class="verdict" id="axverdict" style="margin-top:16px">W&auml;hle oben einen Weg.</div>
+      </div>
+      <p class="sans" style="font-size:.92rem;color:var(--muted);max-width:66ch">Kurz: <b>F&auml;lschen ist hart</b> (die Mathematik h&auml;lt). <b>Schl&uuml;ssel werden ist die ehrliche Grenze</b> (dann ist er berechtigt). <b>Drumherum ist heute die L&uuml;cke</b>, und genau die treibt die Vision unten.</p>
+    </section>
+
+    <!-- ERGEBNISSE -->
+    <section class="block" id="ergebnisse">
+      <p class="sec-eyebrow">Was wirklich gepr&uuml;ft wurde</p>
+      <h2 class="sec-h">Ergebnisse, ehrlich gemessen</h2>
+      <p class="sec-sub">Alles im Labor, auf konstruierten F&auml;llen, nichts in der echten Welt. Aber echt gemessen und unabh&auml;ngig gegengepr&uuml;ft, nicht behauptet.</p>
+      <div class="tiles metrics">
+        <div class="tile"><div class="n">27/27</div><div class="t">Kern-Tests gr&uuml;n</div><div class="s">Zeichen f&uuml;r Zeichen unver&auml;ndert</div></div>
+        <div class="tile"><div class="n">87/87</div><div class="t">Kontroll-Schicht gr&uuml;n</div><div class="s">Pfad-Fix f&uuml;r Reproduktion n&ouml;tig</div></div>
+        <div class="tile"><div class="n">3</div><div class="t">blinde Angriffsrunden</div><div class="s">unabh&auml;ngige Angreifer + Richter</div></div>
+        <div class="tile"><div class="n">8</div><div class="t">Gegenproben auf zwei Maschinen</div><div class="s">HALVETH 0.5, alle abgewiesen</div></div>
+        <div class="tile"><div class="n">0</div><div class="t">Krypto-Br&uuml;che</div><div class="s">ohne den echten Schl&uuml;ssel nicht f&auml;lschbar</div></div>
+        <div class="tile"><div class="n">&#10003;</div><div class="t">&bdquo;Fix Holds&ldquo;</div><div class="s">Urteil des letzten Richters</div></div>
+      </div>
+      <div class="honestbox" style="margin-top:18px">
+        <span class="hb-badge">Was das hei&szlig;t</span>
+        <p>Das <b>kryptografische Herz</b> ist &uuml;ber drei blinde Angriffswellen best&auml;tigt: ohne den echten Schl&uuml;ssel wird nichts endg&uuml;ltig, auch nicht, wenn der Angreifer das ganze Regelbuch umschreibt. Wo der Schutz drumherum L&uuml;cken hatte (bestimmte Pfad-Tricks), wurden sie <b>blind gefunden und geschlossen</b> und mit Tests festgenagelt.</p>
+        <p class="small">Ehrlich dazu: das sind Labor-Zahlen. Sie beweisen den Mechanismus, keine reale Einsatz-Rate.</p>
+      </div>
+    </section>
+
+    <!-- GESCHEITERT -->
+    <section class="block" id="gescheitert">
+      <p class="sec-eyebrow">Ehrlich gescheitert</p>
+      <h2 class="sec-h">Was nicht geklappt hat</h2>
+      <p class="sec-sub">Das steht bewusst hier drin. Ein System, das seine Fehlversuche offen zeigt, ist glaubw&uuml;rdiger als eines, das Perfektion behauptet.</p>
+      <div class="failcard">
+        <h4>Der Zirkel-Fehler</h4>
+        <p>Ein Versuch, HALVETH an echten historischen Zertifikat-Angriffen (DigiNotar und Co.) zu &bdquo;beweisen&ldquo;, war <b>im Kreis gebaut</b>: die eigentliche Entscheidung traf eine getippte Liste, nicht HALVETH. Ein unabh&auml;ngiger Pr&uuml;fer hat das entlarvt. Nichts davon kam auf diese Seite.</p>
+        <p class="lesson">Lektion: HALVETH ist ein Zeuge, kein Sp&uuml;rhund. Es erkennt keine Angriffe, es h&auml;lt unerlaubte &Auml;nderungen.</p>
+      </div>
+      <div class="failcard">
+        <h4>Zu fr&uuml;h &bdquo;fertig&ldquo; gesagt</h4>
+        <p>Ergebnisse wurden zweimal als abgeschlossen gemeldet, bevor sie es ganz waren (ein Website-Eintrag, ein Fix). Beide Male <b>selbst gefangen</b> und korrigiert, per Nachmessen statt Vertrauen.</p>
+        <p class="lesson">Lektion: erst messen, dann melden. Belege statt Behauptungen.</p>
+      </div>
+      <div class="failcard">
+        <h4>Der &bdquo;drumherum&ldquo;-Einwand</h4>
+        <p>Die ehrlichste Kritik: echte Angriffe laufen oft &uuml;ber <b>Umwege</b>, und wenn der Angreifer einen Punkt trifft, den man nicht bewacht, tut HALVETH nichts. Das stimmt f&uuml;r die heutige Form.</p>
+        <p class="lesson">Antwort: nicht wegreden. Seit Ende Juli gibt es eine geschriebene Regel dazu: kein in Ordnung &uuml;ber den erkl&auml;rten Blick hinaus. Aufgehalten wird der Umweg damit nicht, aber er darf nicht mehr verschwiegen werden.</p>
+      </div>
+    </section>
+
+    <!-- GRENZEN -->
+    <section class="block">
+      <p class="sec-eyebrow">Ehrlicher Status</p>
+      <h2 class="sec-h">Was es kann, was nicht</h2>
+      <div class="twocol">
+        <div class="cell can">
+          <h5>Was HALVETH bezeugt</h5>
+          <ul>
+            <li>Die <b>Unversehrtheit</b> kritischer Zust&auml;nde: Signaturschl&uuml;ssel, Zertifikat-Speicher, Boot/Firmware, Integrit&auml;ts-Baselines.</li>
+            <li>F&uuml;r die eingetragenen Anker kann HALVETH beobachtete Vorher- und Nachher-Zust&auml;nde samt Signatur- und Hashkette dokumentieren und eine R&uuml;ckf&uuml;hrung vorschlagen. Der rohe Inhalt bleibt f&uuml;r eine Nachpr&uuml;fung erhalten. Aussagekraft und Vollst&auml;ndigkeit enden am benannten Beobachtungszeitraum, an den erfassten Objekten und am verwendeten Pr&uuml;fpfad.</li>
+            <li>Kern-Versprechen: unerlaubte &Auml;nderung wird nicht endg&uuml;ltig, auch bei umgeschriebenem Regelbuch.</li>
+          </ul>
+        </div>
+        <div class="cell cant">
+          <h5>Was HALVETH nicht ist</h5>
+          <ul>
+            <li>Kein Detektor des <b>Angriffswegs</b> (Phishing, Exploit, seitliche Bewegung).</li>
+            <li>Kein Schutz gegen <b>Datendiebstahl</b> oder <b>Ausfall</b>. Nur Integrit&auml;t.</li>
+            <li>Ein <b>Insider mit dem echten Schl&uuml;ssel</b> gewinnt per Definition.</li>
+            <li>Seit 0.5 auf zwei getrennten Maschinen gelaufen, mit einem Schl&uuml;ssel in Hardware. Weiterhin Labor, weiterhin nicht produktionsreif.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISION -->
+    <section class="block" id="vision">
+      <p class="sec-eyebrow">Die Vision</p>
+      <h2 class="sec-h">Vom Einzelpfad zur ausgewiesenen Coverage</h2>
+      <div class="prose">
+        <p>Die Vision erweitert registrierte Operationen und Schichten schrittweise. Jede Erweiterung braucht eine eigene <b>Pr&uuml;fregel</b>, Beobachtungsquelle, Zeitbasis und Ausfallbehandlung. Fehlende oder veraltete Quellen bleiben sichtbar <code>UNKNOWN</code>.</p>
+        <p>Fachliche Verwandte sind Reference-Monitor-Modelle, Remote Attestation, <b>Invarianten-Pr&uuml;fung</b> und selbstwiederherstellende Systeme. Jede dieser Familien l&ouml;st nur ihren gebundenen Teil.</p>
+      </div>
+      <div class="honestbox" style="margin-top:6px">
+        <span class="hb-badge">Der ehrliche Haken</span>
+        <p>Mehr Coverage verschiebt die Beweisgrenze, hebt sie aber nicht auf. Definition, Sensorik, Routing, Zeitfenster und Verluste k&ouml;nnen jeweils L&uuml;cken tragen. Bereits abgeflossene Daten lassen sich durch Integrit&auml;tspr&uuml;fung nicht zur&uuml;ckholen. Deshalb bleibt die systemweite Fassung <b>eine offene Forschungsstufe</b>.</p>
+      </div>
+    </section>
+
+    <!-- NACHBARN -->
+    <section class="block">
+      <p class="sec-eyebrow">Wohin HALVETH geh&ouml;rt</p>
+      <h2 class="sec-h">Keine Erfindung aus dem Nichts</h2>
+      <p class="sec-sub">Die <b>Idee</b> lebt zwischen zwei echten, eingesetzten Technologien. Das beantwortet auch &bdquo;Hardware oder Blockchain?&ldquo;. Wichtig: das ist der <b>Zielpunkt</b>, nicht der heutige Stand.</p>
+      <div class="map">
+        <div class="mapcol"><h5>Hardware-Vertrauensanker</h5><p>TPM, HSM, Secure Element.</p><p>Ein Schl&uuml;ssel, den Software nicht auslesen kann. Steckt schon in fast jedem PC.</p><p style="color:var(--ink2)">Zu &bdquo;Chip?&ldquo;: <b>nutzen</b>, nicht bauen.</p></div>
+        <div class="mapmid">&harr;</div>
+        <div class="mapcol"><h5>Transparenz-Logs</h5><p>Certificate Transparency, Sigstore.</p><p>Ein append-only Register &uuml;ber viele Parteien: keine kann allein f&auml;lschen.</p><p style="color:var(--ink2)">Zu &bdquo;Blockchain?&ldquo;: der <b>ehrliche Kern</b>, ohne Hype.</p></div>
+      </div>
+      <div class="mapcol core" style="margin-top:14px"><h5>HALVETH dazwischen, der Zielpunkt</h5><p style="color:var(--ink2)">Ein <b>allgemeines Finalit&auml;ts-Tor</b> &uuml;ber beliebige kritische Zust&auml;nde <b>geh&ouml;rt</b> in Hardware verankert und von einem Transparenz-Log (mehrere Parteien) gedeckt, das selbst ein Insider nicht umgeht. So ist es <b>gemeint</b>. <b>Heute ist der Schl&uuml;ssel in Hardware verankert, und eine zweite, getrennte Maschine muss zustimmen</b>. Was fehlt, ist das Register &uuml;ber mehrere unabh&auml;ngige Parteien. Das ist der Weg, nicht der Stand.</p></div>
+    </section>
+
+    <!-- HERKUNFT -->
+    <section class="block" id="herkunft">
+      <p class="sec-eyebrow">Herkunft</p>
+      <h2 class="sec-h">Woher der Gedanke kam</h2>
+      <p class="sec-sub">Ehrlich getrennt: das Folgende ist <b>pers&ouml;nliche Inspiration</b>, nicht Teil der Sicherheits-Behauptung oben. Es erkl&auml;rt nur, warum die Form so aussieht.</p>
+      <div class="origin">
+        <p class="tag">Pers&ouml;nliche Inspiration, kein Beweis</p>
+        <p>Die Grundform von HALVETH, ein <b>Layer zwischen Zust&auml;nden</b>, kommt aus einem &auml;lteren Gedanken von mir &uuml;ber <b>Realit&auml;t als Zustand</b>: dass das Entscheidende nicht in den Dingen selbst liegt, sondern im <b>Dazwischen</b>, im &Uuml;bergang von einem Zustand in den n&auml;chsten. Aus diesem Bild wuchs die Sicherheits-Frage: was, wenn man genau diesen &Uuml;bergang bewachen k&ouml;nnte?</p>
+        <p>Diese Verbindung ist f&uuml;r mich sinnstiftend, aber sie ist <b>keine technische Begr&uuml;ndung</b>. HALVETH steht oben auf Sicherheits-Logik allein. Die Philosophie lebt in ihrem eigenen Zuhause.</p>
+        <a class="go" href="forschung.html">Zur Forschung &bdquo;Realit&auml;t als Zustand&ldquo; &rarr;</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p><b>HALVETH</b> &middot; ein Forschungs-Modell von Juri Janovski. &bdquo;Ausf&uuml;hrung ist nicht Finalit&auml;t.&ldquo; Diese Seite erkl&auml;rt die Idee allgemein und enth&auml;lt keine Bauanleitungen. Konzept, kein Produkt, im Labor gepr&uuml;ft, ehrlich gerahmt. &#128274;</p>
+    <p data-raz-skip="true" style="margin-top:10px"><a href="index.html">HALVETH-Website</a> &middot; <a href="impressum.html">Impressum</a> &middot; <a href="datenschutz.html">Datenschutz</a> &middot; Stand 14. Juli 2026</p>
+  </footer>
+
+<script>
+(function(){
+  var root=document.documentElement, t=document.getElementById('tgl');
+  t&&t.addEventListener('click',function(){var c=root.getAttribute('data-theme');if(!c){c=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}root.setAttribute('data-theme',c==='dark'?'light':'dark');});
+
+  // Modell 1
+  var m1mode='off', seal=document.getElementById('m1seal');
+  var gate=document.getElementById('m1gate'),end=document.getElementById('m1end'),verd=document.getElementById('m1verdict'),lbl=document.getElementById('m1seallbl');
+  function m1(){
+    if(m1mode==='off'){gate.textContent='(kein Tor)';gate.classList.remove('hot');end.textContent='GILT ALS ECHT';end.classList.add('hot');
+      verd.className='verdict v-open';verd.textContent='Endgültig. Auch die Fälschung zählt sofort.';lbl.style.opacity=.35;}
+    else{lbl.style.opacity=1;gate.textContent='HALVETH-Tor';gate.classList.add('hot');
+      if(seal.checked){end.textContent='ENDGÜLTIG';end.classList.add('hot');verd.className='verdict v-final';verd.textContent='final · echtes Siegel deckt die Änderung. Erlaubt.';}
+      else{end.textContent='GEHALTEN';end.classList.remove('hot');verd.className='verdict v-held';verd.textContent='quarantine · kein echtes Siegel. Angehalten, ein Mensch prüft.';}}
+  }
+  document.querySelectorAll('#m1mode button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('#m1mode button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');m1mode=b.dataset.m;m1();});});
+  seal.addEventListener('change',m1);m1();
+
+  // Modell 2
+  var stn=0,nodes=document.querySelectorAll('[data-stn]'),m2v=document.getElementById('m2verdict');
+  var texts=['Der Angreifer ist draußen.','Perimeter überwunden (Phishing, Exploit). Die meisten Angriffe schaffen das.','Im System unterwegs, oft monatelang unbemerkt.','Am Ziel. Hier, und nur hier, steht HALVETH.'];
+  function m2(){nodes.forEach(function(n){n.classList.toggle('hot',+n.dataset.stn===stn);});m2v.textContent=texts[stn];m2v.className='verdict '+(stn===3?'v-held':(stn===0?'':'v-open'));if(stn===0)m2v.className='verdict';}
+  document.getElementById('m2step').addEventListener('click',function(){if(stn<3){stn++;m2();}});
+  document.getElementById('m2reset').addEventListener('click',function(){stn=0;m2();});m2();
+
+  // Angriff
+  var ax={
+    forge:['v-held','HALVETH HÄLT. Ohne den echten Schlüssel kann er keinen gültigen Beleg erzeugen. Die Änderung bleibt bei 0. SEHR SCHWER für den Angreifer.'],
+    steal:['v-open','HALVETH lässt durch. Wer den echten Schlüssel hat oder selbst berechtigt wird (wie xz), ist per Definition erlaubt. Das ist die ehrliche Grenze. Dagegen hilft nur: mehrere unabhängige Schlüssel, in Hardware.'],
+    around:['v-open','Heute übersehen. Zielt er auf einen Punkt, den niemand als Kronjuwel eingetragen hat, greift HALVETH nicht. SCHWIERIG-MÄSSIG, aber real. Genau das treibt die Vision: alles bewachen, nicht nur einige Punkte.']
+  };
+  var axout=document.getElementById('axout'),axv=document.getElementById('axverdict');
+  var axlabel={forge:'fälschen',steal:'Schlüssel holen',around:'drumherum'};
+  document.querySelectorAll('.amove').forEach(function(b){b.addEventListener('click',function(){
+    document.querySelectorAll('.amove').forEach(function(x){x.classList.remove('sel');});b.classList.add('sel');
+    var a=b.dataset.a;axout.textContent=axlabel[a];axout.classList.add('hot');
+    axv.className='verdict '+ax[a][0];axv.textContent=ax[a][1];
+  });});
+
+  // Kosten
+  var cost=document.getElementById('cost'),cv=document.getElementById('costverdict'),rows=document.querySelectorAll('#ladder .rungrow');
+  var cverd=(window.MODELL_TR&&window.MODELL_TR.__c)||['Kosten für den Angreifer: null.','Ein Punkt reicht. So war es vor 0.5.','Spürbar teurer. Software allein reicht nicht mehr. Hier steht HALVETH heute.','Mehrere unabhängige Brüche nötig. Halb erreicht: eine zweite Seite muss zustimmen, ihre Schlüssel liegen aber als Dateien auf einer Karte.'];
+  function m4(){var v=+cost.value;var c=(window.MODELL_TR&&window.MODELL_TR.__c)||cverd;rows.forEach(function(r){r.classList.toggle('act',+r.dataset.r<=v);});cv.textContent=c[v];cv.style.color=(v<=1?'var(--red)':(v===2?'var(--amber)':'var(--green)'));}
+  cost.addEventListener('input',m4);m4();
+})();
+</script>
+
+<script>
+/* Der erzeugte Text der drei Kaesten steht nicht im Dokument, also fasst die
+   Uebersetzung ihn nicht an. Ohne diese Weiche bliebe er in Englisch und
+   Russisch deutsch. Gleiches Muster wie in baum.html und prinzip.html. */
+window.MODELL_TR={
+ de:{c:['Kosten für den Angreifer: null.',
+        'Ein Punkt reicht. So war es vor 0.5.',
+        'Spürbar teurer. Software allein reicht nicht mehr. Hier steht HALVETH heute.',
+        'Mehrere unabhängige Brüche nötig. Halb erreicht: eine zweite Seite muss zustimmen, ihre Schlüssel liegen aber als Dateien auf einer Karte.']},
+ en:{c:['Cost for the attacker: none.',
+        'One point is enough. That is how it was before 0.5.',
+        'Noticeably more expensive. Software alone is no longer enough. This is where HALVETH stands today.',
+        'Several independent breaks needed. Half reached: a second side has to agree, but its keys sit as files on a card.']},
+ ru:{c:['Цена для атакующего: никакая.',
+        'Достаточно одной точки. Так было до 0.5.',
+        'Заметно дороже. Одной программы уже недостаточно. Здесь HALVETH стоит сегодня.',
+        'Нужно несколько независимых взломов. Достигнуто наполовину: должна согласиться вторая сторона, но её ключи лежат файлами на карте.']}
+};
+window.RAZ_onLang=function(lang){
+  var s=window.MODELL_TR[lang]||window.MODELL_TR.de;
+  window.MODELL_TR.__c=s.c;
+  var cost=document.getElementById('cost');
+  if(cost) cost.dispatchEvent(new Event('input'));
+};
+</script>
+<!-- HALVETH i18n (append-only, RAZ-Technik, gemeinsame Laufzeit) -->
+<script>window.RAZ_CFG={"place": "nav", "navSelector": ".nav-in"};</script>
+<script>window.RAZ_I18N={"title": {"en": "Understanding HALVETH, Juri Janovski", "ru": "Понять HALVETH, Juri Janovski"}, "units": [{"en": "HAL<span>VETH</span>", "ru": "HAL<span>VETH</span>"}, {"en": "\n        <a href=\"#idee\">Idea</a>\n        <a href=\"#modelle\">Models</a>\n        <a href=\"#angriff\">The Attack</a>\n        <a href=\"#ergebnisse\">Results</a>\n        <a href=\"#gescheitert\">Honestly Failed</a>\n        <a href=\"#vision\">Vision</a>\n        <a href=\"#herkunft\">Origin</a>\n      ", "ru": "\n        <a href=\"#idee\">Идея</a>\n        <a href=\"#modelle\">Модели</a>\n        <a href=\"#angriff\">Атака</a>\n        <a href=\"#ergebnisse\">Результаты</a>\n        <a href=\"#gescheitert\">Честные неудачи</a>\n        <a href=\"#vision\">Видение</a>\n        <a href=\"#herkunft\">Истоки</a>\n      "}, {"en": "Security research &middot; Juri Janovski", "ru": "Исследование в области безопасности &middot; Juri Janovski"}, {"en": "Execution is not finality.", "ru": "Исполнение не есть окончательность."}, {"en": "What HALVETH is, how it works, what it has achieved, and where it honestly fails.", "ru": "Что такое HALVETH, как он работает, чего он достиг и где он честно терпит неудачу."}, {"en": "\n        <span class=\"badge honest\">Concept, not a finished product</span>\n        <span class=\"badge\">tested in the lab</span>\n        <span class=\"badge\">&bdquo;assume breach&ldquo;</span>\n        <span class=\"badge\">honestly framed</span>\n      ", "ru": "\n        <span class=\"badge honest\">Концепция, а не готовый продукт</span>\n        <span class=\"badge\">проверено в лаборатории</span>\n        <span class=\"badge\">&bdquo;assume breach&ldquo;</span>\n        <span class=\"badge\">честно оформлено</span>\n      "}, {"en": "Most tools try to keep the attacker <b>outside</b> or to detect their <b>path</b>. HALVETH instead studies a selected path at the <b>target</b>: before accepting a consequential change there, evidence must exist that is bound to the <b>operation, rule, time and appraisal scope</b>.", "ru": "Большинство инструментов пытаются удержать атакующего <b>снаружи</b> или обнаружить его <b>путь</b>. HALVETH вместо этого исследует выбранный путь у <b>цели</b>: до принятия значимого изменения там должно существовать доказательство, связанное с <b>операцией, правилом, временем и областью проверки</b>."}, {"en": "The core", "ru": "Ядро"}, {"en": "Why it lives between 0 and 1", "ru": "Почему он живёт между 0 и 1"}, {"en": "The model separates two states: <b>0</b>, a selected operation was executed but has not yet been accepted within the defined procedure. And <b>1</b>, the named authorization and evidence exist for it. Where execution and acceptance coincide, this appraisal edge remains invisible.", "ru": "Модель разделяет два состояния: <b>0</b>, выбранная операция выполнена, но ещё не принята в рамках определённой процедуры. И <b>1</b>, для неё существуют названная авторизация и доказательство. Там, где выполнение и принятие совпадают, эта граница проверки остаётся невидимой."}, {"en": "HALVETH inserts an <b>in-between</b> for the documented path. Without a matching permit, the operation does not reach the status <b>accepted</b> there. This is a procedural claim within the coverage.", "ru": "HALVETH добавляет <b>промежуточное состояние</b> для задокументированного пути. Без подходящего разрешения операция там не достигает статуса <b>принято</b>. Это утверждение о процедуре в пределах охвата."}, {"en": "<span class=\"lbl z0\">0 &middot; executed</span><span class=\"zgate\"></span><span class=\"lbl z1\">1 &middot; accepted in the procedure</span>", "ru": "<span class=\"lbl z0\">0 &middot; выполнено</span><span class=\"zgate\"></span><span class=\"lbl z1\">1 &middot; принято в процедуре</span>"}, {"en": "In the model, a named appraisal and authorization lie between execution and acceptance.", "ru": "В модели между выполнением и принятием находятся названная проверка и авторизация."}, {"en": "How it works", "ru": "Как он работает"}, {"en": "Hands-on models", "ru": "Наглядные модели"}, {"en": "The same idea from several angles. You can operate the interactive ones.", "ru": "Одна и та же мысль под разными углами. Интерактивными можно управлять."}, {"en": "Model 1 &middot; interactive", "ru": "Модель 1 &middot; интерактивная"}, {"en": "The two moments", "ru": "Два момента"}, {"en": "Happened does not mean true yet. Only a real seal makes it final.", "ru": "Произошло ещё не значит истинно. Только настоящая печать делает окончательным."}, {"en": "Mode:", "ru": "Режим:"}, {"en": "\n            <span class=\"node hot\">Change happens</span><span class=\"arrow\">&rarr;</span>\n            <span class=\"node\" id=\"m1gate\">Gate</span><span class=\"arrow\">&rarr;</span><span class=\"node\" id=\"m1end\">?</span>\n          ", "ru": "\n            <span class=\"node hot\">Изменение происходит</span><span class=\"arrow\">&rarr;</span>\n            <span class=\"node\" id=\"m1gate\">Ворота</span><span class=\"arrow\">&rarr;</span><span class=\"node\" id=\"m1end\">?</span>\n          "}, {"en": "Model 2 &middot; interactive", "ru": "Модель 2 &middot; интерактивная"}, {"en": "Perimeter, path, target", "ru": "Периметр, путь, цель"}, {"en": "Almost all tools guard the first two stations. HALVETH guards the last.", "ru": "Почти все инструменты охраняют первые две станции. HALVETH охраняет последнюю."}, {"en": "\n            <span class=\"node\" data-stn=\"0\">Outside</span><span class=\"arrow\">&rarr;</span>\n            <span class=\"node\" data-stn=\"1\">Perimeter<br><small style=\"color:var(--muted);font-weight:400\">Firewall</small></span><span class=\"arrow\">&rarr;</span>\n            <span class=\"node\" data-stn=\"2\">Path<br><small style=\"color:var(--muted);font-weight:400\">Monitoring</small></span><span class=\"arrow\">&rarr;</span>\n            <span class=\"node\" data-stn=\"3\">Target<br><small style=\"color:var(--muted);font-weight:400\">Crown jewel</small></span>\n          ", "ru": "\n            <span class=\"node\" data-stn=\"0\">Снаружи</span><span class=\"arrow\">&rarr;</span>\n            <span class=\"node\" data-stn=\"1\">Периметр<br><small style=\"color:var(--muted);font-weight:400\">Firewall</small></span><span class=\"arrow\">&rarr;</span>\n            <span class=\"node\" data-stn=\"2\">Путь<br><small style=\"color:var(--muted);font-weight:400\">Monitoring</small></span><span class=\"arrow\">&rarr;</span>\n            <span class=\"node\" data-stn=\"3\">Цель<br><small style=\"color:var(--muted);font-weight:400\">Ключевой актив</small></span>\n          "}, {"en": "Model 3", "ru": "Модель 3"}, {"en": "The notary", "ru": "Нотариус"}, {"en": "Anyone may <b>write</b> a document. It only becomes legally valid with the <b>notary&#39;s seal</b>, which cannot be forged. HALVETH is the notary of your critical states: writing is free, <b>sealing</b> is guarded.", "ru": "Любой может <b>написать</b> документ. Юридическую силу он приобретает лишь с <b>печатью нотариуса</b>, которую нельзя подделать. HALVETH это нотариус ваших критических состояний: писать свободно, <b>запечатывать</b> под охраной."}, {"en": "Model 4 &middot; interactive", "ru": "Модель 4 &middot; интерактивная"}, {"en": "The cost ladder", "ru": "Лестница затрат"}, {"en": "There is <b>no unbreakable wall</b>. Security is <b>cost</b>: how many <b>independent</b> things does an attacker have to break?", "ru": "<b>Непробиваемой стены не существует</b>. Безопасность это <b>затраты</b>: сколько <b>независимых</b> вещей должен взломать атакующий?"}, {"en": "<span class=\"rn\">0</span><span class=\"rt\">No gate</span><span class=\"rd\">The attacker has to do nothing at all.</span>", "ru": "<span class=\"rn\">0</span><span class=\"rt\">Нет ворот</span><span class=\"rd\">Атакующему не нужно делать ничего.</span>"}, {"en": "<span class=\"rn\">1</span><span class=\"rt\">One software key</span><span class=\"rd\">Steal a key or become authorized yourself. SolarWinds, xz show: doable.</span>", "ru": "<span class=\"rn\">1</span><span class=\"rt\">Один программный ключ</span><span class=\"rd\">Украсть ключ или самому получить полномочия. SolarWinds, xz показывают: выполнимо.</span>"}, {"en": "<span class=\"rn\">2</span><span class=\"rt\">Key in hardware</span><span class=\"rd\">Software can no longer read it out. Attack the hardware or a person. More expensive.</span>", "ru": "<span class=\"rn\">2</span><span class=\"rt\">Ключ в железе</span><span class=\"rd\">Программно его больше не считать. Атаковать железо или человека. Дороже.</span>"}, {"en": "<span class=\"rn\">3</span><span class=\"rt\">Multiple parties + hardware</span><span class=\"rd\">Several separate parties AND hardware at the same time. Very expensive, never impossible.</span>", "ru": "<span class=\"rn\">3</span><span class=\"rt\">Несколько сторон + железо</span><span class=\"rd\">Несколько независимых сторон И железо одновременно. Очень дорого, но никогда не невозможно.</span>"}, {"en": "HALVETH stands today at <b>level 1</b>. Its path leads upward.", "ru": "Сегодня HALVETH находится на <b>уровне 1</b>. Его путь ведёт вверх."}, {"en": "The attack, step by step", "ru": "Атака, шаг за шагом"}, {"en": "Who gets in, and what then?", "ru": "Кто проникает внутрь, и что дальше?"}, {"en": "Assume the attacker is already at the target. From here they have three ways. Pick one and see how HALVETH reacts, honestly, with all three outcomes.", "ru": "Предположим, атакующий уже у цели. Отсюда у него три пути. Выберите один и посмотрите, как реагирует HALVETH, честно, со всеми тремя исходами."}, {"en": "\n          <span class=\"node hot\">Attacker inside</span><span class=\"arrow\">&rarr;</span>\n          <span class=\"node hot\">at the protected point</span><span class=\"arrow\">&rarr;</span>\n          <span class=\"node\" id=\"axout\">they try &hellip;</span>\n        ", "ru": "\n          <span class=\"node hot\">Атакующий внутри</span><span class=\"arrow\">&rarr;</span>\n          <span class=\"node hot\">у защищённой точки</span><span class=\"arrow\">&rarr;</span>\n          <span class=\"node\" id=\"axout\">он пытается &hellip;</span>\n        "}, {"en": "Pick a way above.", "ru": "Выберите путь выше."}, {"en": "In short: <b>forging is hard</b> (the math holds). <b>Becoming the key is the honest limit</b> (then they are authorized). <b>Everything around it is today&#39;s gap</b>, and that is exactly what drives the vision below.", "ru": "Коротко: <b>подделать трудно</b> (математика держит). <b>Стать ключом это честная граница</b> (тогда он имеет полномочия). <b>Всё вокруг это сегодняшний пробел</b>, и именно он движет видением ниже."}, {"en": "What was actually tested", "ru": "Что действительно проверено"}, {"en": "Results, honestly measured", "ru": "Результаты, честно измеренные"}, {"en": "All in the lab, on constructed cases, nothing in the real world. But really measured and independently cross-checked, not just claimed.", "ru": "Всё в лаборатории, на сконструированных случаях, ничего в реальном мире. Но действительно измерено и независимо перепроверено, а не заявлено."}, {"en": "27/27", "ru": "27/27"}, {"en": "Core tests green", "ru": "Тесты ядра зелёные"}, {"en": "Character for character unchanged", "ru": "Символ за символом без изменений"}, {"en": "87/87", "ru": "87/87"}, {"en": "Control layer green", "ru": "Контрольный слой зелёный"}, {"en": "path fix needed to reproduce", "ru": "для воспроизведения нужен фикс пути"}, {"en": "3", "ru": "3"}, {"en": "blind attack rounds", "ru": "слепые раунды атак"}, {"en": "independent attackers + judge", "ru": "независимые атакующие + судья"}, {"en": "8", "ru": "8"}, {"en": "counter-checks on two machines", "ru": "контрпроверок на двух машинах"}, {"en": "HALVETH 0.5, all refused", "ru": "HALVETH 0.5, все отклонены"}, {"en": "0", "ru": "0"}, {"en": "crypto breaks", "ru": "криптовзломы"}, {"en": "not forgeable without the real key", "ru": "без настоящего ключа подделать невозможно"}, {"en": "&#10003;", "ru": "&#10003;"}, {"en": "&bdquo;Fix Holds&ldquo;", "ru": "&bdquo;Fix Holds&ldquo;"}, {"en": "verdict of the last judge", "ru": "вердикт последнего судьи"}, {"en": "What that means", "ru": "Что это значит"}, {"en": "The <b>cryptographic heart</b> is confirmed across three blind attack waves: without the real key nothing becomes final, not even when the attacker rewrites the entire rulebook. Where the protection around it had gaps (certain path tricks), they were <b>found and closed blind</b> and nailed down with tests.", "ru": "<b>Криптографическое сердце</b> подтверждено в трёх слепых волнах атак: без настоящего ключа ничто не становится окончательным, даже если атакующий перепишет всю книгу правил. Там, где у защиты вокруг были пробелы (определённые трюки с путями), они были <b>найдены и закрыты вслепую</b> и закреплены тестами."}, {"en": "Honestly: these are lab numbers. They prove the mechanism, not a real-world deployment rate.", "ru": "Честно: это лабораторные цифры. Они доказывают механизм, а не реальный показатель в эксплуатации."}, {"en": "Honestly failed", "ru": "Честные неудачи"}, {"en": "What did not work", "ru": "Что не сработало"}, {"en": "This is here on purpose. A system that openly shows its failed attempts is more credible than one that claims perfection.", "ru": "Это здесь намеренно. Система, которая открыто показывает свои неудачные попытки, заслуживает больше доверия, чем та, что заявляет о совершенстве."}, {"en": "The circular error", "ru": "Ошибка замкнутого круга"}, {"en": "An attempt to &bdquo;prove&ldquo; HALVETH on real historical certificate attacks (DigiNotar and co.) was <b>built in a circle</b>: the actual decision was made by a typed list, not by HALVETH. An independent reviewer exposed this. None of it made it onto this page.", "ru": "Попытка &bdquo;доказать&ldquo; HALVETH на реальных исторических атаках на сертификаты (DigiNotar и другие) была <b>построена по замкнутому кругу</b>: фактическое решение принимал вручную набранный список, а не HALVETH. Независимый проверяющий это разоблачил. Ничего из этого не попало на эту страницу."}, {"en": "Lesson: HALVETH is a witness, not a sniffer dog. It does not detect attacks, it holds unauthorized changes.", "ru": "Урок: HALVETH это свидетель, а не ищейка. Он не распознаёт атаки, он удерживает недозволенные изменения."}, {"en": "Said &bdquo;done&ldquo; too early", "ru": "Слишком рано сказано &bdquo;готово&ldquo;"}, {"en": "Results were reported as complete twice before they fully were (a website entry, a fix). Both times <b>caught by ourselves</b> and corrected, by re-measuring instead of trusting.", "ru": "Результаты дважды были заявлены как завершённые прежде, чем они таковыми стали (запись на сайте, один фикс). Оба раза <b>пойманы самими</b> и исправлены, через перепроверку, а не доверие."}, {"en": "Lesson: measure first, then report. Evidence instead of claims.", "ru": "Урок: сначала измерить, потом сообщать. Доказательства вместо заявлений."}, {"en": "The &bdquo;everything around it&ldquo; objection", "ru": "Возражение &bdquo;всё вокруг&ldquo;"}, {"en": "The most honest criticism: real attacks often go through <b>detours</b>, and if the attacker hits a point that is not guarded, HALVETH does nothing. That is true for the current form.", "ru": "Самая честная критика: настоящие атаки часто идут <b>обходными путями</b>, и если атакующий попадает в точку, которую не охраняют, HALVETH ничего не делает. Для нынешней формы это верно."}, {"en": "Answer: not to talk it away. Since the end of July there is a written rule for it: no in order beyond the declared view. That does not stop the detour, but it may no longer be kept quiet.", "ru": "Ответ: не отговариваться. С конца июля для этого есть записанное правило: никакого в порядке за пределами объявленного обзора. Обход этим не останавливается, но о нём больше нельзя молчать."}, {"en": "Honest status", "ru": "Честный статус"}, {"en": "What it can do, what it cannot", "ru": "Что он может, а что нет"}, {"en": "What HALVETH witnesses", "ru": "Что HALVETH засвидетельствует"}, {"en": "The <b>integrity</b> of critical states: signing keys, certificate stores, boot/firmware, integrity baselines.", "ru": "<b>Целостность</b> критических состояний: ключи подписи, хранилища сертификатов, boot/firmware, базовые линии целостности."}, {"en": "For the registered anchors, HALVETH can document observed before and after states with a signature and hash chain, and propose a rollback. The raw content remains available for rechecking. Its meaning and completeness end at the named observation period, captured objects and appraisal path.", "ru": "Для зарегистрированных опорных точек HALVETH может документировать наблюдённые состояния до и после вместе с цепочкой подписей и хешей и предлагать возврат. Исходное содержимое сохраняется для повторной проверки. Значение и полнота заканчиваются на указанном периоде наблюдения, захваченных объектах и пути проверки."}, {"en": "Core promise: an unauthorized change does not become final, even with the rulebook rewritten.", "ru": "Ключевое обещание: недозволенное изменение не становится окончательным, даже при переписанной книге правил."}, {"en": "What HALVETH is not", "ru": "Чем HALVETH не является"}, {"en": "Not a detector of the <b>attack path</b> (phishing, exploit, lateral movement).", "ru": "Не детектор <b>пути атаки</b> (фишинг, эксплойт, боковое перемещение)."}, {"en": "No protection against <b>data theft</b> or <b>outage</b>. Only integrity.", "ru": "Не защита от <b>кражи данных</b> или <b>сбоя</b>. Только целостность."}, {"en": "An <b>insider with the real key</b> wins by definition.", "ru": "<b>Инсайдер с настоящим ключом</b> выигрывает по определению."}, {"en": "Since 0.5 it has run on two separate machines, with a key in hardware. Still the lab, still not production ready.", "ru": "С 0.5 отработало на двух отдельных машинах, с ключом в железе. По-прежнему лаборатория, по-прежнему не готово к продакшену."}, {"en": "The vision", "ru": "Видение"}, {"en": "From one path to declared coverage", "ru": "От одного пути к заявленному охвату"}, {"en": "The vision expands registered operations and layers step by step. Every extension needs its own <b>appraisal rule</b>, observation source, time basis and failure handling. Missing or stale sources remain visibly <code>UNKNOWN</code>.", "ru": "Видение поэтапно расширяет зарегистрированные операции и слои. Каждому расширению нужны собственные <b>правило проверки</b>, источник наблюдения, временная основа и обработка сбоев. Отсутствующие или устаревшие источники остаются явно <code>UNKNOWN</code>."}, {"en": "Related technical families include reference-monitor models, remote attestation, <b>invariant checking</b> and self-recovering systems. Each family addresses only its bound part.", "ru": "К родственным техническим семействам относятся модели монитора обращений, удалённая аттестация, <b>проверка инвариантов</b> и самовосстанавливающиеся системы. Каждое семейство решает только свою связанную часть."}, {"en": "The honest catch", "ru": "Честная загвоздка"}, {"en": "More coverage moves the evidence boundary but does not remove it. Definitions, sensors, routing, time windows and losses can each contain gaps. Integrity checking cannot retrieve data that has already left. The system-wide form therefore remains <b>an open research stage</b>.", "ru": "Больший охват сдвигает границу доказательства, но не устраняет её. Определения, датчики, маршрутизация, временные окна и потери могут содержать пробелы. Проверка целостности не может вернуть уже утёкшие данные. Поэтому общесистемная форма остаётся <b>открытой исследовательской стадией</b>."}, {"en": "Where HALVETH belongs", "ru": "Где место HALVETH"}, {"en": "Not an invention out of nowhere", "ru": "Не изобретение из ниоткуда"}, {"en": "The <b>idea</b> lives between two real, deployed technologies. That also answers &bdquo;hardware or blockchain?&ldquo;. Important: this is the <b>target point</b>, not the current state.", "ru": "<b>Идея</b> живёт между двумя реальными, применяемыми технологиями. Это отвечает и на вопрос &bdquo;железо или блокчейн?&ldquo;. Важно: это <b>целевая точка</b>, а не сегодняшнее состояние."}, {"en": "Hardware trust anchor", "ru": "Аппаратный якорь доверия"}, {"en": "TPM, HSM, Secure Element.", "ru": "TPM, HSM, Secure Element."}, {"en": "A key that software cannot read out. Already sits in almost every PC.", "ru": "Ключ, который программно не считать. Уже стоит почти в каждом PC."}, {"en": "On &bdquo;chip?&ldquo;: <b>use</b> it, don&#39;t build it.", "ru": "К вопросу &bdquo;чип?&ldquo;: <b>использовать</b>, не строить."}, {"en": "&harr;", "ru": "&harr;"}, {"en": "Transparency logs", "ru": "Логи прозрачности"}, {"en": "Certificate Transparency, Sigstore.", "ru": "Certificate Transparency, Sigstore."}, {"en": "An append-only register across many parties: none can forge alone.", "ru": "Реестр append-only, распределённый по многим сторонам: ни одна не может подделать в одиночку."}, {"en": "On &bdquo;blockchain?&ldquo;: the <b>honest core</b>, without hype.", "ru": "К вопросу &bdquo;блокчейн?&ldquo;: <b>честное ядро</b>, без хайпа."}, {"en": "HALVETH in between, the target point", "ru": "HALVETH посередине, целевая точка"}, {"en": "A <b>general finality gate</b> over arbitrary critical states <b>belongs</b> anchored in hardware and backed by a transparency log (multiple parties) that not even an insider bypasses. That is how it is <b>meant</b>. <b>Today the key is anchored in hardware, and a second, separate machine has to agree</b>. What is missing is the register across several independent parties. That is the path, not the state.", "ru": "<b>Универсальные врата окончательности</b> над произвольными критическими состояниями <b>должны</b> быть закреплены в железе и обеспечены логом прозрачности (несколько сторон), который не обойдёт даже инсайдер. Так это <b>задумано</b>. <b>Сегодня ключ закреплён в железе, и согласиться должна вторая, отдельная машина</b>. Чего не хватает, так это реестра по нескольким независимым сторонам. Это путь, а не состояние."}, {"en": "Origin", "ru": "Истоки"}, {"en": "Where the idea came from", "ru": "Откуда пришла мысль"}, {"en": "Honestly separated: the following is <b>personal inspiration</b>, not part of the security claim above. It only explains why the form looks the way it does.", "ru": "Честно разделено: следующее это <b>личное вдохновение</b>, а не часть заявления о безопасности выше. Оно лишь объясняет, почему форма выглядит именно так."}, {"en": "Personal inspiration, not a proof", "ru": "Личное вдохновение, не доказательство"}, {"en": "The basic form of HALVETH, a <b>layer between states</b>, comes from an older thought of mine about <b>reality as a state</b>: that what matters is not in the things themselves, but in the <b>in-between</b>, in the transition from one state to the next. From this image grew the security question: what if you could guard exactly this transition?", "ru": "Основная форма HALVETH, <b>слой между состояниями</b>, происходит из моей более ранней мысли о <b>реальности как состоянии</b>: что решающее лежит не в самих вещах, а в <b>промежутке</b>, в переходе из одного состояния в следующее. Из этого образа вырос вопрос безопасности: что, если бы можно было охранять именно этот переход?"}, {"en": "This connection is meaningful to me, but it is <b>not a technical justification</b>. HALVETH above stands on security logic alone. The philosophy lives in its own home.", "ru": "Эта связь для меня осмысленна, но она <b>не техническое обоснование</b>. HALVETH выше держится на одной лишь логике безопасности. Философия живёт в своём собственном доме."}, {"en": "To the research &bdquo;Reality as a state&ldquo; &rarr;", "ru": "К исследованию &bdquo;Реальность как состояние&ldquo; &rarr;"}, {"en": "<b>HALVETH</b> &middot; a research model by Juri Janovski. &bdquo;Execution is not finality.&ldquo; This page explains the idea in general terms and contains no build instructions. Concept, not a product, tested in the lab, honestly framed. &#128274;", "ru": "<b>HALVETH</b> &middot; исследовательская модель Juri Janovski. &bdquo;Исполнение не есть окончательность.&ldquo; Эта страница объясняет идею в общих чертах и не содержит инструкций по сборке. Концепция, а не продукт, проверено в лаборатории, честно оформлено. &#128274;"}]};</script>
+<script src="halveth-i18n.js?v=20261116-r2"></script>
+<div class="hv-release hv-edition" data-raz-skip><span>HALVETH · Web-Edition 2026.11</span><div><a href="werkstatt.html"><span data-hv-i18n="work">Werkstatt</span></a> · <a href="systemstand.html"><span data-hv-i18n="state">Systemstand</span></a> · <a href="edition.html"><span data-hv-i18n="changes">Änderungen & Quellenstand</span></a></div></div>
+<script src="assets/restauration.js?v=20261116-r2" defer></script>
+<aside data-historical-banner style="padding:10px 18px;background:#172637;color:#e7d3a1;font:14px system-ui">ARCHIV · ARCHIVE · АРХИВ — 16.11.2026 · <a href="../../forschung.html">HALVETH — 17.11.2026</a></aside></body>
+</html>

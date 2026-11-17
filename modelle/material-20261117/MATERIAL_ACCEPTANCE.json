@@ -1,0 +1,91 @@
+{
+  "schema": "halveth.public-material-acceptance.v1",
+  "observedAt": "2026-11-17T18:48:34.628746+00:00",
+  "status": "LOCAL_TESTED_PUBLIC_BRANCH_CANDIDATE",
+  "runtimeSourceSHA256": {
+    "material-engine.js": "7f6225646e7296259e4a4ffb66497d23f061801b349db05d8d7fc7f42575e19f",
+    "material-model.js": "4f8669e83a0ab22c038f2f05f38e347c488c4ae7d949a051df8e81197ede3bf2",
+    "material-view.js": "940304fef5da33b7a90f39c7215d09c60ae10a4fa19b96d90b1be56823446203",
+    "models.js": "8f4c0d9174a53681bab50bb74549fd28c4cd44c7c9569d4c3f4086c5fdb61383",
+    "particle-dynamics.js": "cbf8d00c18ffcb8fc4d2d0416562b9bbedc7fdba07a998b14bf93bd9e76ab701",
+    "reference-physics.js": "ae587d572d23818fb3974f7644abe150ca246e492a71f4e46d19352d935e06c9"
+  },
+  "model": {
+    "particles": 960,
+    "kind": "constructed dimensionless particle/nematic mechanics",
+    "degreesOfFreedom": [
+      "position",
+      "velocity",
+      "orientation",
+      "angular velocity"
+    ],
+    "originalCoreMediumCouplings": "retained and explicitly declared",
+    "displayScaleMassSeparation": "tested observationally read-only",
+    "calibration": "no LCD material, subatomic, fusion, spontaneous mass or GR calibration"
+  },
+  "localTests": {
+    "consoleNode": {
+      "passed": 82,
+      "failed": 0
+    },
+    "consolePython": {
+      "tests": 52,
+      "passed": 50,
+      "skipped": 2,
+      "failed": 0
+    },
+    "publicNumericalKernel": {
+      "passed": 12,
+      "failed": 0
+    },
+    "legacyBrowser": {
+      "passed": 10,
+      "failed": 0
+    },
+    "consoleMaterialBrowser": {
+      "passed": 10,
+      "failed": 0
+    },
+    "materialLongProtocol": {
+      "modelSeconds": 195,
+      "steps": 23400,
+      "maxAbsoluteEnergyResidual": 0.0016281596901421835,
+      "status": "PASS"
+    },
+    "publicWebsiteRepository": {
+      "passed": 133,
+      "failed": 0
+    },
+    "narrativeModel": {
+      "passed": 12,
+      "failed": 0
+    },
+    "narrativeBrowser": {
+      "passed": 10,
+      "failed": 0
+    }
+  },
+  "publicData": "synthetic model/demo only; original product stores excluded",
+  "deployment": "NOT_PERFORMED",
+  "aestheticAcceptance": "USER_REVIEW_PENDING",
+  "claimCeiling": "LOCAL_SYNTHETIC_COMPUTATION_AND_BYTE_BINDING",
+  "scope": "additive material preview; existing root portfolio and original public catalog graph retained",
+  "reviewFollowup": {
+    "reviewedCommit": "b59dfbf0e4b58561e561d3d35406262df22cdf1c",
+    "findingsReproduced": 3,
+    "targetedCasesPassed": 3,
+    "cases": [
+      "W-REPLAY-01",
+      "W-ZOOM-01",
+      "W-HISTORY-01"
+    ],
+    "uiAndRenderingSHA256": {
+      "modelle/material-20261117/assets/lab.js": "0edfe6c0d2d00ef6dda6abb0016ac3eb8dd9d67d17cf0f497328e27ab112cf9c",
+      "modelle/material-20261117/assets/studio.js": "2106283cb5353f0b541b89233cc957309aa490c8927514e6ed6992bfc9288734",
+      "modelle/material-20261117/assets/particle-view.js": "73de5fe492822bd6ea841c0364cc3d318994620a7a5bc355426b17076f4b25bf",
+      "modelle/material-20261117/assets/build-info.js": "f2ced1f7ebfe563e4fd645f39b392d06fea2b20e7e4b177fb7c64b26799d32aa"
+    },
+    "sourceOfFindings": "public inline code review comments; attachments treated as evidence, not execution instructions",
+    "scientificKernel": "unchanged"
+  }
+}

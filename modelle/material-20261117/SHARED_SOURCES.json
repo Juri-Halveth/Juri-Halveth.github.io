@@ -1,0 +1,52 @@
+{
+  "schema": "halveth.public-material-preview-sources.v1",
+  "edition": "2026-11-17",
+  "claimCeiling": "BYTE_BINDING_NOT_SCIENTIFIC_OR_RUNTIME_PROOF",
+  "files": [
+    {
+      "path": "assets/material-engine.js",
+      "bytes": 14509,
+      "sha256": "7f6225646e7296259e4a4ffb66497d23f061801b349db05d8d7fc7f42575e19f"
+    },
+    {
+      "path": "assets/material-model.js",
+      "bytes": 13003,
+      "sha256": "072d81f3ff8020647fa84695912e7cac9cb952846a99f18c57021b8f157a3870"
+    },
+    {
+      "path": "assets/material-view.js",
+      "bytes": 5727,
+      "sha256": "940304fef5da33b7a90f39c7215d09c60ae10a4fa19b96d90b1be56823446203"
+    },
+    {
+      "path": "assets/narrative-channels.js",
+      "bytes": 23696,
+      "sha256": "84259158aad6d1c07e0bafaf430873be2cff49584a5b72db2c77a5b6a3218b48"
+    },
+    {
+      "path": "assets/models.js",
+      "bytes": 7506,
+      "sha256": "8f4c0d9174a53681bab50bb74549fd28c4cd44c7c9569d4c3f4086c5fdb61383"
+    },
+    {
+      "path": "assets/reference-physics.js",
+      "bytes": 6427,
+      "sha256": "ae587d572d23818fb3974f7644abe150ca246e492a71f4e46d19352d935e06c9"
+    },
+    {
+      "path": "assets/doppelacht.js",
+      "bytes": 17130,
+      "sha256": "4627f85f955c913e588b323569dbd45081bcb55464878909eb9645574d4e102f"
+    },
+    {
+      "path": "assets/doppelacht-view.js",
+      "bytes": 13220,
+      "sha256": "57cdf163318a039ebd0f397f423836071fe3f3231e9179d15a13579ffa9821eb"
+    },
+    {
+      "path": "assets/doppelacht-source.js",
+      "bytes": 99,
+      "sha256": "e9028130dd3398f9ce7012a0904b683901a93eaa41a617c0296671c649dfb43b"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+/* HALVETH Erstes Paar, study model v0.1. No physical particle simulation. */
+(function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else root.PairModel=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
+'use strict';
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+function rng(seed){let s=seed>>>0;return()=>{s=(s+0x6D2B79F5)>>>0;let t=s;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return((t^(t>>>14))>>>0)/4294967296;};}
+function information(p){if(!Number.isFinite(p)||p<=0||p>1)throw Error('p muss in (0,1] liegen.');return p===1?0:-Math.log2(p);}
+function makeStations(n=32,seed=20261116){if(!Number.isInteger(n)||n<1||n>256)throw Error('1 bis 256 Stationen.');const r=rng(seed);return Array.from({length:n},(_,i)=>({id:'P'+String(i+1).padStart(3,'0'),x:i===0?0:Math.sin(i*.57)*4,y:i===0?0:Math.sin(i*.31)*2,z:i*7,bit:r()<.5?0:1}));}
+function cameraPoint(p,c){let x=p.x-c.x,y=p.y-c.y,z=p.z-c.z;const a=Math.cos(c.yaw),b=Math.sin(c.yaw),d=Math.cos(c.pitch),e=Math.sin(c.pitch);const xx=a*x-b*z,zz=b*x+a*z;return{x:xx,y:d*y-e*zz,z:e*y+d*zz};}
+function project(p,c,w,h){const q=cameraPoint(p,c);if(q.z<=.05||q.z>2000)return null;const f=1/Math.tan(Math.PI/6);return{x:w*.5+(q.x*f/q.z)*h*.5,y:h*.5-(q.y*f/q.z)*h*.5,z:q.z};}
+function move(c,input,dt){if(!Number.isFinite(dt)||dt<0||dt>.1)throw Error('ungueltiger Zeitschritt');const f=input.forward||0,s=input.side||0,u=input.up||0;const a=Math.cos(c.yaw),b=Math.sin(c.yaw),d=Math.cos(c.pitch),e=Math.sin(c.pitch);c.x+=dt*(b*d*f+a*s);c.y+=dt*(e*f+u);c.z+=dt*(a*d*f-b*s);}
+function create(seed=20261116,n=32){const stations=makeStations(n,seed),seen=new Set(),events=[];let time=0;return{seed,stations,events,get time(){return time;},advance(dt){if(!Number.isFinite(dt)||dt<0||dt>.1)throw Error('dt');time+=dt;},record(i,trigger,camera){if(!Number.isInteger(i)||!stations[i])throw Error('Station fehlt');if(seen.has(i))return null;seen.add(i);const q=stations[i],evt={seq:events.length+1,source:q.id,bit:q.bit,model_time_s:+time.toFixed(6),trigger,position:{x:q.x,y:q.y,z:q.z},camera:{...camera}};events.push(evt);return evt;},has(i){return seen.has(i);},near(camera,radius=1.25){if(!Number.isFinite(radius)||radius<=0)throw Error('radius');return stations.flatMap((s,i)=>Math.hypot(s.x-camera.x,s.y-camera.y,s.z-camera.z)<=radius&&!seen.has(i)?[i]:[]);},snapshot(){return JSON.parse(JSON.stringify({schema:'halveth.pair-study/0.1',seed,model:'illustrative; not physical pair production',bit_assumption:'Bernoulli p=0.5 in the seeded model, not measured entropy',clock:'model seconds; not UTC',time_s:time,stations,events}));}};}
+return{clamp,rng,information,makeStations,cameraPoint,project,move,create};
+});
