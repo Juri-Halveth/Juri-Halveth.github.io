@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; media-src blob:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<title>HALVETH · Knotenlabor | Bewegung mit Gedächtnis</title>
+<meta name="description" content="Ein eigenständiges, offline nutzbares Modelllabor: kleine reaktive Quadrate, bewegliche Wirbelzentren und Kopplung mit Gedächtnis.">
+<style>
+:root{color-scheme:dark;--bg:#080c15;--surface:#101827;--line:#273249;--text:#ecf0f6;--muted:#a1b1c7;--gold:#f7d095;--blue:#9bd6fa;--green:#8de2b4}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}button,input,select{font:inherit}button,select{color:var(--text);background:#151f30;border:1px solid #34435d;border-radius:8px;padding:9px 12px;cursor:pointer}button:hover,select:hover{border-color:var(--gold);background:#1b2940}button:focus-visible,input:focus-visible,summary:focus-visible,a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}button.primary{background:var(--gold);color:#171b23;border-color:var(--gold);font-weight:700}button.secondary{color:var(--blue)}a{color:var(--blue)}header{max-width:1540px;margin:auto;padding:23px 28px 14px;display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font-weight:750;letter-spacing:.15em;font-size:13px}.brand small{display:block;color:var(--muted);letter-spacing:.12em;font-size:9px;font-weight:500}.badge{border:1px solid #355243;border-radius:20px;color:var(--green);font-size:11px;padding:5px 10px;letter-spacing:.08em}main{max-width:1540px;margin:auto;padding:0 28px 60px}.intro{display:flex;justify-content:space-between;align-items:end;gap:24px;padding:12px 0 23px}h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(31px,4vw,51px);line-height:1.08;letter-spacing:-.035em;margin:4px 0 12px}h1 em{color:var(--gold);font-style:normal}.intro p{margin:0;color:var(--muted);max-width:790px}.kicker{text-transform:uppercase;font-size:11px;letter-spacing:.15em;color:var(--blue)}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:17px}.visual{border:1px solid var(--line);border-radius:14px;overflow:hidden;min-width:0;background:#060a13;position:relative}canvas{display:block;width:100%;height:600px;max-height:72vh;touch-action:none;cursor:grab}canvas:active{cursor:grabbing}.sceneTop{position:absolute;top:15px;left:17px;right:17px;display:flex;justify-content:space-between;gap:10px;pointer-events:none;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#b2c7dc}.sceneTop span{background:#080c15b8;border:1px solid #24344b;border-radius:5px;padding:5px 8px}.toolbar{display:flex;gap:7px;flex-wrap:wrap;padding:11px 13px;border-top:1px solid var(--line);background:#101724}.toolbar button{font-size:12px;padding:7px 10px}.metrics{display:flex;gap:15px;flex-wrap:wrap;padding:10px 16px;background:#0b1220;color:var(--muted);font-size:12px}.metrics b{color:var(--text);font-weight:500}.panel{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:20px}.panel h2{font-size:14px;margin:0 0 12px}.bit{font:64px/1 Georgia,serif;color:#9caec8}.bit.on{color:var(--gold)}.readout{display:flex;gap:17px;align-items:center;padding-bottom:19px;border-bottom:1px solid var(--line)}.readout small{display:block;color:var(--muted);font-size:11px}.readout strong{font-size:13px}.groupRead{font:11px/1.6 ui-monospace,monospace;color:var(--blue);min-height:17px;padding-top:6px}.drive{padding:17px 0}.driveLabel{display:flex;justify-content:space-between;font-size:12px}.driveLabel output{font-family:ui-monospace,monospace;color:var(--gold)}input[type=range]{width:100%;margin:13px 0 4px;accent-color:var(--gold)}.rangeLegend{display:flex;justify-content:space-between;color:var(--muted);font-size:10px}.presets{display:grid;grid-template-columns:1fr;gap:7px}.presets button{text-align:left;font-size:12px;display:flex;justify-content:space-between;align-items:center}.presets button span{font-family:ui-monospace,monospace;font-size:11px;opacity:.8}.hint{font-size:11px;color:var(--muted);margin:13px 0}.bar{height:4px;background:#253049;border-radius:4px;margin:10px 0}.bar i{display:block;height:100%;background:var(--gold);max-width:100%}.numbers{font-size:11px;color:var(--muted);display:grid;grid-template-columns:1fr auto;gap:4px 12px}.numbers b{font-weight:500;font-family:ui-monospace,monospace;color:var(--text)}.status{min-height:48px;font-size:12px;margin:16px 0;color:var(--blue);padding:10px 14px;background:#0e1826;border-left:2px solid #587a9b}.status.error{color:#ffb6b6;border-color:#e58e8e}.detailsGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}details{border:1px solid var(--line);border-radius:10px;background:#0e1522;padding:0 17px;margin:0 0 12px}summary{cursor:pointer;padding:14px 0;font-weight:600;font-size:13px}details .body{padding:0 0 16px;color:var(--muted);font-size:13px}details p{margin:8px 0 13px}code,pre{font-family:ui-monospace,"Cascadia Code",monospace}pre{white-space:pre-wrap;word-break:break-word;font-size:11px;background:#090e18;border:1px solid var(--line);padding:13px;border-radius:7px;overflow:auto;color:#c5d5e6}.choices{display:grid;grid-template-columns:1fr 1fr;gap:12px}.choices label{display:flex;flex-direction:column;gap:4px;font-size:11px}select{width:100%;font-size:12px}.checks{display:flex;flex-wrap:wrap;gap:12px;margin:15px 0;font-size:12px}.checks label{display:flex;gap:6px;align-items:center}input[type=checkbox]{accent-color:var(--gold)}.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:11px;color:var(--muted)}.legend i{width:7px;height:7px;display:inline-block;margin-right:6px;background:var(--blue)}.legend i.gold{background:var(--gold)}.formula{font:16px Georgia,serif;color:var(--text);border-left:2px solid var(--gold);padding:8px 12px;margin:12px 0;overflow:auto}.fineprint{color:#8e9eb5;font-size:11px;margin-top:20px}footer{border-top:1px solid var(--line);padding:17px 0;color:var(--muted);font-size:11px;margin-top:25px}.cinema header,.cinema .intro,.cinema .panel,.cinema .detailsGrid,.cinema .status,.cinema .fineprint,.cinema footer,.cinema .legend,.cinema .metrics{display:none}.cinema main{padding:0;max-width:none}.cinema .workspace{display:block}.cinema canvas{height:100vh;max-height:100vh}.cinema .visual{border:0;border-radius:0}.cinema .toolbar{position:fixed;bottom:10px;left:10px;background:#080c15b8;border:0;opacity:.15;transition:opacity .2s}.cinema .toolbar:hover,.cinema .toolbar:focus-within{opacity:1}.cinema .sceneTop{display:none}
+@media(min-width:1450px){canvas{height:680px}}@media(max-width:1000px){.workspace{grid-template-columns:minmax(0,1fr) 268px}.panel{padding:15px}canvas{height:540px}.intro{display:block}}@media(max-width:760px){header{padding:18px 15px 10px}main{padding:0 15px 35px}.workspace{grid-template-columns:1fr}.panel{padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:0 14px}.readout{grid-column:1/-1;padding-bottom:10px}.drive{grid-column:1/-1}.presets{grid-column:1/-1;grid-template-columns:1fr 1fr}.hint,.bar,.numbers,.groupRead{grid-column:1/-1}.bit{font-size:44px}.detailsGrid{grid-template-columns:1fr}canvas{height:420px}.intro p{font-size:13px}.metrics{font-size:11px;gap:9px}.toolbar button{font-size:11px}h1{margin-bottom:10px}.sceneTop{font-size:8px;left:10px;right:10px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+[hidden]{display:none!important}.moreclosed .workspace{display:block}.materialControls{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.materialControls input[type=file]{display:none}.toolbar button{min-width:74px}.legend{font-size:11px}
+</style></head><body class="moreclosed">
+<header><div class="brand">HALVETH<small>LOKALES MODELLLABOR / 0.1</small></div><span class="badge">OFFLINE · OHNE LOGIN</span></header>
+<main><section class="intro"><div><div class="kicker">Kopplung · Umläufe · Gedächtnis</div><h1>Nicht nur drehen.<br><em>Eine Verbindung behalten.</em></h1><p>Du gibst den Antrieb. Das Feld antwortet. 960 frei bewegliche Materialzellen besitzen eigene Orientierung und Drehgeschwindigkeit. Ihre Wechselwirkung bewegt und dreht das Material; die Farbkanäle sind eine Ansicht. Unter „Mehr“ bleiben alle bisherigen Gegenproben und Exporte erreichbar.</p></div></section>
+<div class="workspace"><section class="visual" aria-label="Interaktive Modellansicht"><div class="sceneTop"><span>Reaktive Materialzellen</span><span>Ziehen: Ansicht · Rad: Zoom</span></div><canvas id="scene" aria-label="Zweidimensionales bewegliches Material mit eigenen Positionen und Orientierungen"></canvas>
+<div class="metrics"><span>Material <b id="materialCount">960</b></span><span>Masse <b id="materialMass">57.60</b></span><span>Nemat. Ordnung <b id="nematicOrder">0</b></span><span>Modellzeit <b id="time">0.0</b></span><span>Umläufe <b id="turns">0</b></span><span>Taktordnung <b id="coherence">0 %</b></span></div>
+<div class="toolbar"><button id="pause">Pause</button><button id="reset">Neu</button><button id="record">Aufnahme</button><button id="more" aria-expanded="false">Mehr</button></div></section>
+<aside class="panel" data-more hidden><div class="readout"><span id="bit" class="bit">0</span><div><strong id="bitCaption">Kopplungszustand 0</strong><small>Gruppe G0 · Auslesung mit Haltezeit</small></div></div><div class="groupRead" id="groupsRead"></div>
+<div class="drive"><label class="driveLabel" for="drive"><span>Äußerer Antrieb</span><output id="driveVal">+0.00</output></label><input id="drive" type="range" min="-1.6" max="1.6" step=".01" value="0"><div class="rangeLegend"><span>Entknoten −</span><span>Neutral</span><span>Aufwickeln +</span></div></div>
+<div class="presets"><button class="primary" data-drive=".95" data-note="Aufwickeln mit +0,95. Der Regler setzt weder Position noch Bitwert.">Aufwickeln <span>+0,95</span></button><button data-drive="0" data-note="Antrieb aus. Ein erreichter Kopplungszustand kann bestehen bleiben; Bewegung kann abklingen.">Loslassen <span>0,00</span></button><button data-drive="-.7" data-note="Gegenprobe: schwacher Gegenantrieb. Ob er löst, entscheidet die Dynamik.">Sanft lösen <span>−0,70</span></button><button class="secondary" data-drive="-1.5" data-note="Stärkerer Gegenantrieb: Die Kopplung wird durchlaufen, nicht per Schalter gelöscht.">Entknoten <span>−1,50</span></button></div>
+<p class="hint">Erst aufwickeln, dann loslassen. Danach schwach und stark gegensteuern. Die Vorgeschichte bleibt im Zustand.</p>
+<div class="bar"><i id="qbar"></i></div><div class="numbers"><span>Kopplungskoordinate q</span><b id="qval">0</b><span>Kernabstand</span><b id="separation">0</b><span>Zugeführte Arbeit</span><b id="work">0</b><span>Dissipation</span><b id="heat">0</b><span>Energiebilanzrest</span><b id="residual">0</b></div><p class="hint">Alle Werte in Modelleinheiten. „0“ ist ein Speicherzustand, nicht Nichts.</p></aside></div>
+<div class="legend"><span><i></i>Kanal A</span><span><i class="gold"></i>Kanal B</span><span>Farben: Anzeigeklassen, keine Proton-/Neutron-/Elektron-Zuordnung. Masse und Zellzahl ändern sich beim Zoomen nicht.</span></div>
+<div id="notice" class="status" role="status" aria-live="polite"></div>
+<div class="materialControls" data-more hidden><button id="home">Ansicht zurück</button><button id="displayMode">Raster → Einzelzellen</button><button id="cinema">Filmansicht</button><button id="png">4K-PNG</button><button id="json">Lauf-JSON</button><button id="rodMode">Materialstäbchen</button><label>Farbansicht <select id="palette"><option value="bluegold">Blau / Gold</option><option value="rgb">RGB · A/B/C</option></select></label><label><input id="annotations" type="checkbox">Kernpositionen als kleine Anmerkungen</label><button id="loadrun">JSON prüfen &amp; nachspielen</button><input id="runfile" type="file" accept="application/json,.json"></div><div class="detailsGrid" data-more hidden><div><details open><summary>Versuch einstellen &amp; Gegenproben</summary><div class="body"><div class="choices"><label>Speichergruppen<select id="groups"><option value="1">1 Gruppe</option><option value="3">3 Gruppen</option></select></label><label>Kerne pro Gruppe<select id="cores"><option value="2">2 Kerne</option><option value="3">3 Kerne</option></select></label><label>Materialzellen<select id="particles"><option value="480">480 · leichter</option><option value="960" selected>960 · Standard</option><option value="1600">1600 · dichter</option><option value="0">0 · Kontrollfall</option></select></label><label>Wiedergabetempo<select id="speed"><option value="0">0× · angehalten</option><option value=".25">0,25×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select></label></div><div class="checks"><label><input type="checkbox" id="medium" checked>Medium gekoppelt</label><label><input type="checkbox" id="pressure" checked>Zelldruck</label><label><input type="checkbox" id="phase" checked>Taktkopplung</label><label><input type="checkbox" id="nematic" checked>Orientierbares Material</label></div><button id="apply">Einstellungen übernehmen &amp; neu</button><button id="demo">Gegenprobe abspielen</button><p>Die Gegenprobe steuert +0,95 → 0 → −0,70 → −1,50 → 0 über feste Modellzeitpunkte. Sie spielt keine gespeicherten Bilder ab. Neue Startparameter setzen den Versuch zurück. Tempo ändert den Zeitplan, nicht Kräfte.</p><small id="backlog">Fester Schritt: 1/120</small></div></details>
+<details><summary>Was tatsächlich gerechnet wird</summary><div class="body"><p><strong>Raster und Material sind getrennt:</strong> Die Dichteansicht tastet die berechnete Dichte und Geschwindigkeit der Materialzellen mit einem angegebenen Glättungskern ab. Es ist kein vorgezeichnetes Interferenzmuster. In „Einzelzellen“ siehst du die tatsächlichen beweglichen Positionen. Höhere Dichte verkleinert die Zeichensymbole; dies ist eine offengelegte Darstellungsvorschrift, keine zusätzliche Kompression im Solver.</p><p>Eine endliche Menge frei beweglicher Zellen mit kurzem Abstoßungskern und radialer Viskosität. Bewegliche Kerne ziehen die Zellen an, stoßen sie im Nahbereich ab und übertragen über Reibung Impuls und Drehimpuls. Jede Kopplungskraft wirkt mit umgekehrtem Vorzeichen zurück. Es gibt keine Randwand, kein automatisches Recycling und keine feste Umlaufbahn.</p><p><strong>Orientierbares Material:</strong> Jede Zelle führt eine stabile ID, Position, Geschwindigkeit, θ und ω. Das Paarpotential U = J[1−(r/R)²]²[1−cos(2Δθ)] für r &lt; R erzeugt sowohl die Ortskräfte als auch die Drehmomente. θ und θ+π beschreiben dieselbe nematische Orientierung. Rotationsdämpfung wird als Dissipation bilanziert. Die bisherigen Kern-/Medium- und q-Kopplungen bleiben explizit erhalten. Bei ausgeschalteter Orientierung gilt der bisherige Solver.</p><p>Ein bistabiler Zustand q verändert die Ruheabstände und Phasenkopplung. Die zugehörige Potentialableitung wirkt zugleich auf q zurück. Das Medium kann dadurch indirekt die Speicherentwicklung verändern.</p><div class="formula">V(q) = 4q²(1−q)² − 0,35(3q²−2q³)</div><div class="formula">ζ(q, Richtung) · dq/dt = F<sub>Antrieb</sub> − ∂U<sub>gesamt</sub>/∂q</div><p>Der zweite Speicherbereich ist absichtlich tiefer gewählt. Zusätzlich liegt die Dämpfung der Speicherkoordinate vorwärts bei ζ = 24 und rückwärts bei ζ = 24[1+2S(q)], mit S(q) = [1+tanh(3(q−0,5))]/2. Die stärkere Rückwärtsdämpfung ist eine explizite Modellannahme, kein aus Messdaten gefundener Effekt. Diese Modellannahme erklärt den schwierigeren Rückweg; sie ist keine entdeckte Naturkonstante. Das Vorbild der vorherigen Minimalprobe wurde erweitert, nicht unverändert als reale Physik ausgegeben.</p><p>Feste Schritte von 1/120, explizites Mittelpunktverfahren. Der Bilanzrest zeigt numerischen Fehler; eine kleine Zahl beweist nicht die Richtigkeit der Modellannahmen. Zusätzliche Zellzahl ändert das diskrete System, nicht nur die Bildschärfe.</p></div></details>
+<details><summary>Quellen &amp; Grenzen</summary><div class="body"><p>Dieser Prototyp setzt den gelieferten <em>HALVETH-Knoten-Audit vom 17.11.2026</em> um. Die darin geforderte Rückkopplung, getrennte Darstellung und Geschichte sind die Arbeitsgrundlage. Die Dynamik hier ist eine eigens konstruierte, dimensionslose Modellfamilie.</p><p>Fachliche Anknüpfung für gekoppelte Position und Phase: O’Keeffe, Hong, Strogatz, <a href="https://www.nature.com/articles/s41467-017-01190-3" target="_blank" rel="noopener noreferrer">Oscillators that sync and swarm (2017)</a>. Unsere Gleichungen sind <strong>keine unveränderte Implementierung</strong> dieser Arbeit.</p><p>Dimensionsloses Forschungsmodell; kein kalibriertes Flüssigkristall-/LCD-Modell, keine aus Farbe bestimmte Teilchensorte, kein Navier-Stokes-Solver, kein Maxwell-Feld, keine Gravitation, keine Teilchenerzeugung und kein Nachweis mehrerer Singularitäten in Sagittarius A*. Kein topologischer Knoten mit mathematisch nachgewiesener Knotenzahl. „Knoten“ benennt hier das entworfene Kopplungsverhalten.</p><p>Mehrere Quadrate sind nicht mehrere unabhängige Bits. Je Gruppe existiert eine kontinuierliche Koordinate mit zwei Auslesebereichen. Gruppen können durch das Medium korreliert sein. Fehlerraten, Störfestigkeit und lange Speicherzeiten sind nicht allgemein bewiesen.</p></div></details></div>
+<div><details open><summary>Ereignisse: nur aus der Rechnung</summary><div class="body"><pre id="events"></pre><p>0 wird erst bei q &lt; 0,25, 1 erst bei q &gt; 0,75 und Taktordnung R &gt; 0,88 stabil gelesen, jeweils nach 0,75 Modellzeiteinheiten. Dazwischen zeigt die Anzeige „…“. Das Ereignis wird beim Zeitschritt erfasst. Export, Zoom und Zeichnen schreiben keine Ereignisse.</p></div></details>
+<details><summary>Film, 4K und reproduzierbare Läufe</summary><div class="body"><p><strong>4K-PNG:</strong> Der aktuelle Zustand wird auf 3840 × 2160 neu gezeichnet. Keine Hochskalierung und keine zusätzliche Modellzeit.</p><p><strong>WebM:</strong> Browseraufnahme mit 1920 × 1080 und angefragten 30 Bildern pro Sekunde. Kein Mikrofon, keine Kamera, keine Rechteabfrage. Tatsächliche Bildrate hängt von Rechner und Browser ab. Bei verborgenem Tab wird die Aufnahme beendet.</p><p><strong>JSON:</strong> Enthält Seed, Parameter, alle IDs, Positionen, θ und ω, fortgeschriebene Winkel, Umläufe, Modellschritte, Eingaben und Ereignisse. Der zusätzliche material-Block bindet den Quellhash und exakte IEEE-754-Zahlen einschließlich −0, Anfangszustand und Zeitguthaben. „JSON prüfen &amp; nachspielen“ rekonstruiert den vollständigen numerischen Verlauf bis maximal 100.000 Schritte, vergleicht Zustand und Geschichte und übernimmt erst danach pausiert. Es wird nichts automatisch hochgeladen oder in Garden geschrieben.</p><p><strong>Filmansicht:</strong> Verbirgt Bedienfelder; Escape bringt sie zurück. Das Raster bleibt eine Abtastung des berechneten Mediums; in der Einzelzellen-Ansicht zeigt jedes Quadrat eine Materialzelle. Die Kamera verändert nicht die Physik.</p></div></details>
+<details><summary>Wieder eingebundenes Knotenlabor</summary><div class="body"><p>Dieses bestehende Modell ist als eigener Modus in die lokale Forschungsseite eingebunden. Medium, Speicherkoordinate und Rasteransichten bleiben erhalten. Die gravitativen Referenzen, das Optiklabor und die übrigen Modelle sind getrennte Rechenmodule. Die Einbindung veröffentlicht nichts und schreibt keine Garden-Daten.</p></div></details></div></div>
+<p class="fineprint">Die Kennzeichnung „wie Wasser“ beschreibt die Bildwirkung. Der Solver ist ein kompressibles Partikelmedium mit Rückkopplung, keine kalibrierte Flüssigkeit. Langsame kritische Übergänge sind endlich gerechnet, nicht durch Infinity-Werte simuliert.</p>
+<footer>HALVETH KNOTENLABOR 0.1 · Modell und Darstellung getrennt · Keine externen Bibliotheken · Keine Netzwerkanfragen</footer></main>
+<script>/* HALVETH Knotenlabor 0.1.0. Dimensionless exploratory model.
+ * No astrophysical parameter fit, no Navier-Stokes claim.
+ * State changes occur only in Engine.step(). Rendering must remain read-only.
+ * MIT License. */
+(function(root){
+'use strict';
+const VERSION='0.1.0', NEMATIC_VERSION='0.1.0+nematic.v1', H=1/120, TAU=2*Math.PI;
+const dot=(a,b)=>a[0]*b[0]+a[1]*b[1];
+const V=q=>4*q*q*(1-q)*(1-q)-.35*(3*q*q-2*q*q*q);
+const dV=q=>8*q*(1-q)*(1-2*q)-2.1*q*(1-q);
+const S=q=>.5+.5*Math.tanh(3*(q-.5));
+const dS=q=>1.5/(Math.cosh(3*(q-.5))**2);
+function rng(seed){let a=seed>>>0;return()=>{a+=0x6D2B79F5;let t=a;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296;};}
+class Engine {
+ constructor(opt={}){
+  const groups=opt.groups??1, cores=opt.cores??2, particles=opt.particles??960;
+  if(![1,3].includes(groups)||![2,3].includes(cores)||!Number.isInteger(particles)||particles<0||particles>1800)throw Error('Ungueltige Modellgroesse.');
+  this.config={groups,cores,particles,seed:(opt.seed??170117)>>>0,medium:opt.medium??true,pressure:opt.pressure??true,phaseCoupling:opt.phaseCoupling??true,nematic:opt.nematic??false};
+  this.params={massCore:3,massCell:.06,coreInertia:1,cellRadius:.255,cellStiffness:3.0,cellViscosity:.018,drag:.038,zeta:24,reverseDrag:2,rodInertia:.0008,rodDrag:.00045,rodCoupling:.0015,rodReach:.52};
+  this.drive=0;this.tick=0;this.work=0;this.heat=0;this.events=[];this.commands=[];
+  this.coreCount=groups*cores;this.n=this.coreCount+particles;
+  this.rodCount=this.config.nematic?particles:0;this.rodBase=this.n*4+this.coreCount*2+groups;
+  this.y=new Float64Array(this.rodBase+this.rodCount*2);
+  this.mid=new Float64Array(this.y.length);this.k1=new Float64Array(this.y.length);this.k2=new Float64Array(this.y.length);
+  this.phaseBase=this.n*4;this.qBase=this.phaseBase+this.coreCount*2;
+  this.materialIds=this.config.nematic?Array.from({length:particles},(_,p)=>'M'+String(p).padStart(5,'0')):[];
+  this.labels=new Uint8Array(this.n);this.turns=new Float64Array(groups);this.prevAngles=new Float64Array(groups);
+  this.readout=Array(groups).fill(0);this.dwell=Array(groups).fill(0);this.pending=Array(groups).fill(0);
+  const r=rng(this.config.seed), centers=groups===1?[[0,0]]:[[-3.1,-.1],[3.1,-.1],[0,3.8]];
+  for(let g=0;g<groups;g++){
+   const center=centers[g],radius=cores===2?.98:1.1;
+   for(let j=0;j<cores;j++){
+    const i=g*cores+j,a=j*TAU/cores+.12,dx=radius*Math.cos(a),dy=radius*Math.sin(a),b=i*4;
+    this.y[b]=center[0]+dx;this.y[b+1]=center[1]+dy;this.y[b+2]= -.30*dy;this.y[b+3]= .30*dx;
+    this.y[this.phaseBase+i*2]=j*.75;this.y[this.phaseBase+i*2+1]=.7+j*.025;
+    this.labels[i]=j%2;
+   }
+  }
+  // A finite patch of material cells, not a boundary or prescribed orbital path.
+  // No particle is recycled, teleported, removed or constrained to a screen edge.
+  const width=groups===1?8.8:14.2, height=groups===1?6.6:10.2;
+  const nx=Math.max(1,Math.round(Math.sqrt(particles*width/height))),ny=Math.max(1,Math.ceil(particles/nx));
+  for(let p=0;p<particles;p++){
+   const i=this.coreCount+p,b=i*4,ix=p%nx,iy=Math.floor(p/nx);
+   this.y[b]=(ix-(nx-1)/2)*width/nx+(r()-.5)*.018;
+   this.y[b+1]=(iy-(ny-1)/2)*height/ny+(groups===3?1:0)+(r()-.5)*.018;
+   this.labels[i]=ix<nx/2?0:1;
+  }
+  if(this.config.nematic){for(let p=0;p<particles;p++){const k=this.rodBase+2*p;this.y[k]=r()*Math.PI;this.y[k+1]=0;}}
+  for(let g=0;g<groups;g++)this.prevAngles[g]=this.orbitAngle(g);
+  this.initialEnergy=this.measureEnergy();
+ }
+ get time(){return this.tick*H;}
+ setDrive(value){if(!Number.isFinite(value)||Math.abs(value)>1.6)throw Error('Antrieb ausserhalb [-1.6,1.6].');if(value!==this.drive){this.drive=value;this.commands.push({tick:this.tick,type:'drive',value});}}
+ setFlag(name,value){if(!['medium','pressure','phaseCoupling'].includes(name))throw Error('Unbekannter Parameter');if(this.tick!==0)throw Error('Kontrollparameter nur beim Neustart aendern.');this.config[name]=!!value;this.initialEnergy=this.measureEnergy();}
+
+ setParameter(name,value){
+  if(name!=='rodCoupling'||!Number.isFinite(value)||value<0||value>.02)throw Error('rodCoupling muss in [0,0.02] liegen.');
+  if(value===this.params[name])return;
+  const previous=this.params[name],before=this.measureEnergy();
+  this.params[name]=value;let delta;
+  try{delta=this.measureEnergy()-before;if(!Number.isFinite(delta))throw Error('Nicht-endliche Parameterarbeit');}
+  catch(error){this.params[name]=previous;throw error;}
+  this.work+=delta;
+  this.commands.push({tick:this.tick,type:'parameter',name,value});
+ }
+ center(y,g){let x=0,z=0,vx=0,vz=0;for(let j=0;j<this.config.cores;j++){const b=(g*this.config.cores+j)*4;x+=y[b];z+=y[b+1];vx+=y[b+2];vz+=y[b+3];}const n=this.config.cores;return[x/n,z/n,vx/n,vz/n];}
+ orbitAngle(g){const c=this.center(this.y,g),b=g*this.config.cores*4;return Math.atan2(this.y[b+1]-c[1],this.y[b]-c[0]);}
+ coherence(g){let x=0,y=0;for(let j=0;j<this.config.cores;j++){const t=this.y[this.phaseBase+2*(g*this.config.cores+j)];x+=Math.cos(t);y+=Math.sin(t);}return Math.hypot(x,y)/this.config.cores;}
+ evaluate(y,out,energyOnly=false){
+  out.fill(0);let potential=0,kinetic=0,work=0,heat=0;
+  const P=this.params,nc=this.coreCount,n=this.n,pb=this.phaseBase,qb=this.qBase;
+  // Force accumulators temporarily share the velocity derivative entries.
+  const force=(i,fx,fy)=>{out[4*i+2]+=fx;out[4*i+3]+=fy;};
+  for(let g=0;g<this.config.groups;g++){
+   const q=y[qb+g],s=S(q),ds=dS(q),r0=1.95-.85*s,k=.70+.9*s,dk=.9*ds,dr=-.85*ds;
+   let grad=dV(q);potential+=V(q);
+   for(let a=0;a<this.config.cores;a++)for(let b=a+1;b<this.config.cores;b++){
+    const i=g*this.config.cores+a,j=g*this.config.cores+b,ii=4*i,jj=4*j;
+    const dx=y[jj]-y[ii],dy=y[jj+1]-y[ii+1],d=Math.sqrt(dx*dx+dy*dy+.04*.04),diff=d-r0;
+    // A compressible bond plus explicit smooth core resistance; not an invisible wall.
+    const rep=.012,inv=1/d,base=.5*k*diff*diff+rep*inv**4;
+    let radial=k*diff-4*rep*inv**5;
+    grad+=.5*dk*diff*diff-k*diff*dr;
+    potential+=base;
+    if(this.config.phaseCoupling){
+     const delta=y[pb+2*j]-y[pb+2*i],L=Math.exp(-d*d/9),J=.015+.20*s,dJ=.20*ds,c=1-Math.cos(delta);
+     potential+=J*L*c;radial+=J*c*L*(-2*d/9);grad+=dJ*L*c;
+     const torque=J*L*Math.sin(delta);
+     out[pb+2*i+1]+=torque;out[pb+2*j+1]-=torque;
+    }
+    const fx=radial*dx/d,fy=radial*dy/d;
+    force(i,fx,fy);force(j,-fx,-fy);
+   }
+   // Explicit external control of the memory coordinate, not direct assignment.
+   const net=this.drive-grad,zeta=P.zeta*(net<0?1+P.reverseDrag*s:1);
+   // Deliberately stronger reverse friction in the coupled basin, not a hidden wait timer.
+   const dq=net/zeta;out[qb+g]=dq;
+   work+=this.drive*dq;heat+=zeta*dq*dq;
+   const c=this.center(y,g);
+   for(let j=0;j<this.config.cores;j++){
+    const i=g*this.config.cores+j,b=4*i,dx=y[b]-c[0],dy=y[b+1]-c[1];
+    const torque=.32*this.drive,r=Math.sqrt(dx*dx+dy*dy+.04),fx=-.45*this.drive*dx/r-.045*this.drive*dy,fy=-.45*this.drive*dy/r+.045*this.drive*dx;
+    force(i,fx,fy);out[pb+2*i+1]+=torque;
+    work+=fx*y[b+2]+fy*y[b+3]+torque*y[pb+2*i+1];
+   }
+  }
+  // Compact-support pressure and viscous cell-cell interaction (compressible particle model).
+  // Spatial hashing reduces pair work; no hidden frame-rate-dependent solver step.
+  if(this.config.medium && n>nc){
+   const h=this.config.nematic?Math.max(P.cellRadius,P.rodReach):P.cellRadius,grid=new Map();
+   for(let i=nc;i<n;i++){
+    const x=y[4*i],z=y[4*i+1],gx=Math.floor(x/h),gy=Math.floor(z/h);
+    for(let ox=-1;ox<=1;ox++)for(let oy=-1;oy<=1;oy++){
+     const ids=grid.get((gx+ox)+','+(gy+oy));if(!ids)continue;
+     for(const j of ids){
+      const dx=x-y[4*j],dy=z-y[4*j+1],d=Math.sqrt(dx*dx+dy*dy+1e-8);if(d>=h)continue;
+      let fx=0,fy=0;
+      if(d<P.cellRadius){
+       const overlap=P.cellRadius-d,w=overlap/P.cellRadius;
+       if(this.config.pressure){const f=P.cellStiffness*overlap/d;fx+=f*dx;fy+=f*dy;potential+=.5*P.cellStiffness*overlap*overlap;}
+       const dvx=y[4*i+2]-y[4*j+2],dvy=y[4*i+3]-y[4*j+3],gamma=P.cellViscosity*w;
+       const vr=(dvx*dx+dvy*dy)/d;fx-=gamma*vr*dx/d;fy-=gamma*vr*dy/d;heat+=gamma*vr*vr;
+      }
+      if(this.config.nematic&&d<P.rodReach){
+       // Explicit, dimensionless head-tail symmetric rod pair potential:
+       // U = J * (1 - (r/R)^2)^2 * (1 - cos(2*(theta_i-theta_j))).
+       // Its radial derivative changes translation; its angular derivative
+       // gives equal and opposite torques. No rendered glyph drives the solver.
+       const ai=this.rodBase+2*(i-nc),aj=this.rodBase+2*(j-nc),
+         rr=(d/P.rodReach)**2,one=1-rr,weight=one*one,
+         delta=y[ai]-y[aj],misalign=1-Math.cos(2*delta),sine=Math.sin(2*delta);
+       const K=P.rodCoupling;
+       potential+=K*weight*misalign;
+       const forceWeight=4*K*one*misalign/(P.rodReach*P.rodReach);
+       fx+=forceWeight*dx;fy+=forceWeight*dy;
+       const tau=-2*K*weight*sine;
+       out[ai+1]+=tau;out[aj+1]-=tau;
+      }
+      force(i,fx,fy);force(j,-fx,-fy);
+     }
+    }
+    const key=gx+','+gy;if(grid.has(key))grid.get(key).push(i);else grid.set(key,[i]);
+   }
+   for(let i=0;i<nc;i++)for(let j=nc;j<n;j++){
+    const ci=4*i,pj=4*j,dx=y[pj]-y[ci],dy=y[pj+1]-y[ci+1],d2=dx*dx+dy*dy;
+    
+    const close=Math.exp(-d2/.11),wide=Math.exp(-d2/1.5);
+    potential+=.055*close-.012*wide;
+    const k=2*.055/.11*close-2*.012/1.5*wide;
+    let fx=k*dx,fy=k*dy;
+    const omega=y[pb+2*i+1],weight=Math.exp(-d2/1.4),gamma=P.drag*weight;
+    const slipx=y[ci+2]-omega*dy-y[pj+2],slipy=y[ci+3]+omega*dx-y[pj+3];
+    const fdx=gamma*slipx,fdy=gamma*slipy;
+    fx+=fdx;fy+=fdy;
+    force(j,fx,fy);force(i,-fx,-fy);
+    out[pb+2*i+1]-=dx*fdy-dy*fdx;
+    heat+=gamma*(slipx*slipx+slipy*slipy);
+   }
+  }
+  for(let i=0;i<n;i++){
+   const b=4*i,m=i<nc?P.massCore:P.massCell,vx=y[b+2],vy=y[b+3];
+   out[b]=vx;out[b+1]=vy;out[b+2]/=m;out[b+3]/=m;
+   kinetic+=.5*m*(vx*vx+vy*vy);
+   // Weak explicit bath drag. Accounted as dissipation; does not pin positions.
+   const damping=i<nc?.018:.003;
+   out[b+2]-=damping*vx;out[b+3]-=damping*vy;heat+=damping*m*(vx*vx+vy*vy);
+  }
+  for(let i=0;i<nc;i++){
+   const b=pb+2*i,w=y[b+1];out[b]=w;
+   out[b+1]=(out[b+1]-.025*w)/P.coreInertia;
+   kinetic+=.5*P.coreInertia*w*w;heat+=.025*w*w;
+  }
+  if(this.config.nematic){for(let p=0;p<this.rodCount;p++){
+   const b=this.rodBase+2*p,omega=y[b+1];out[b]=omega;
+   out[b+1]=(out[b+1]-P.rodDrag*omega)/P.rodInertia;
+   kinetic+=.5*P.rodInertia*omega*omega;
+   heat+=P.rodDrag*omega*omega;
+  }}
+  return {potential,kinetic,energy:potential+kinetic,work,heat};
+ }
+ step(count=1){
+  if(!Number.isInteger(count)||count<0||count>200000)throw Error('Ungueltige Schrittzahl');
+  for(let t=0;t<count;t++){
+   this.evaluate(this.y,this.k1);
+   for(let k=0;k<this.y.length;k++)this.mid[k]=this.y[k]+.5*H*this.k1[k];
+   const power=this.evaluate(this.mid,this.k2);
+   for(let k=0;k<this.y.length;k++){
+    this.mid[k]=this.y[k]+H*this.k2[k];if(!Number.isFinite(this.mid[k]))throw Error('Nicht-endlicher Zustand; letzter gueltiger Zustand erhalten.');
+   }
+   const nextWork=this.work+H*power.work,nextHeat=this.heat+H*power.heat;
+   if(!Number.isFinite(nextWork)||!Number.isFinite(nextHeat))throw Error('Nicht-endliche Bilanz; letzter gueltiger Zustand erhalten.');
+   this.y.set(this.mid);this.work=nextWork;this.heat=nextHeat;this.tick++;
+   for(let g=0;g<this.config.groups;g++){
+    const a=this.orbitAngle(g),delta=Math.atan2(Math.sin(a-this.prevAngles[g]),Math.cos(a-this.prevAngles[g]));
+    this.turns[g]+=delta/TAU;this.prevAngles[g]=a;
+    const q=this.y[this.qBase+g],co=this.coherence(g);
+    const candidate=q<.25?0:q>.75&&co>.88?1:null;
+    if(candidate===null){this.pending[g]=null;this.dwell[g]=0;}
+    else if(candidate!==this.pending[g]){this.pending[g]=candidate;this.dwell[g]=H;}
+    else this.dwell[g]+=H;
+    if(candidate!==null&&this.dwell[g]>=.75&&this.readout[g]!==candidate){
+     this.readout[g]=candidate;this.events.push({id:'G'+g,bit:candidate,tick:this.tick,time:this.time,q,coherence:co,turns:this.turns[g]});
+    }
+   }
+  }
+ }
+ measureEnergy(){return this.evaluate(this.y,new Float64Array(this.y.length),true).energy;}
+ metrics(){
+  const e=this.evaluate(this.y,new Float64Array(this.y.length),true);
+  const groups=[];
+  for(let g=0;g<this.config.groups;g++){
+   let sep=0,pairs=0;for(let i=0;i<this.config.cores;i++)for(let j=i+1;j<this.config.cores;j++){
+    const a=4*(g*this.config.cores+i),b=4*(g*this.config.cores+j);sep+=Math.hypot(this.y[a]-this.y[b],this.y[a+1]-this.y[b+1]);pairs++;
+   }
+   groups.push({id:'G'+g,q:this.y[this.qBase+g],coherence:this.coherence(g),turns:this.turns[g],bit:this.readout[g],reading:this.dwell[g]>=.75?this.pending[g]:null,separation:sep/pairs});
+  }
+  const nematicOrder=this.config.nematic&&this.rodCount>0?(()=>{let x=0,z=0;for(let p=0;p<this.rodCount;p++){const a=2*this.y[this.rodBase+2*p];x+=Math.cos(a);z+=Math.sin(a);}return Math.hypot(x,z)/this.rodCount;})():null;
+  return {time:this.time,tick:this.tick,drive:this.drive,groups,energy:e.energy,work:this.work,heat:this.heat,residual:e.energy-this.initialEnergy-this.work+this.heat,nematicOrder};
+ }
+ snapshot(){return {schema:this.config.nematic?'halveth-knoten-run-v2-nematic':'halveth-knoten-run-v1',engine:this.config.nematic?NEMATIC_VERSION:VERSION,step:H,config:{...this.config},params:{...this.params},drive:this.drive,tick:this.tick,work:this.work,heat:this.heat,initialEnergy:this.initialEnergy,positionsAndState:Array.from(this.y),turns:Array.from(this.turns),previousAngles:Array.from(this.prevAngles),labels:Array.from(this.labels),materialIds:[...this.materialIds],readout:[...this.readout],pending:[...this.pending],dwell:[...this.dwell],commands:this.commands.map(x=>({...x})),events:this.events.map(x=>({...x}))};}
+}
+class Clock{
+ constructor(engine){this.engine=engine;this.credit=0;this.paused=false;this.speed=1;this.totalSteps=0;}
+ advance(seconds,budget=Infinity){if(!Number.isFinite(seconds)||seconds<0)throw Error('Ungueltige Zeit');if(!Number.isFinite(this.speed)||this.speed<0)throw Error('Ungueltiges Tempo');if(this.paused||this.speed===0)return 0;this.credit+=seconds*this.speed;
+  const n=Math.min(Math.floor((this.credit+1e-10)/H),budget);if(n>0){this.engine.step(n);this.credit-=n*H;this.totalSteps+=n;}return n;}
+}
+const api={Engine,Clock,H,VERSION,NEMATIC_VERSION,V,dV,S,dS};if(typeof module!=='undefined'&&module.exports)module.exports=api;root.HalvethMaterialEngine=api;root.HalvethKnoten=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+</script><script>/* HALVETH material adapter. Dimensionless exploratory mechanics, not a particle-physics claim.
+ * The identical source is shared by the research page, standalone and Console Only. */
+(function(root){'use strict';
+const E=root.HalvethMaterialEngine||(typeof require==='function'?require('./material-engine.js'):null);
+if(!E)throw Error('material-engine.js must load before material-model.js');
+const SOURCE_HASH='7f6225646e7296259e4a4ffb66497d23f061801b349db05d8d7fc7f42575e19f';
+const SCHEMA='halveth-material-state-v1',MAX_TICKS=1000000;
+const plain=x=>x!==null&&typeof x==='object'&&!Array.isArray(x)&&Object.getPrototypeOf(x)===Object.prototype;
+function finite(x,name){if(typeof x!=='number'||!Number.isFinite(x))throw Error('Invalid finite number: '+name);return x;}
+function clone(x){return JSON.parse(JSON.stringify(x));}
+// Every numeric leaf is also encoded as IEEE754 hex. JSON alone would erase -0.
+function hex(x){const b=new ArrayBuffer(8),v=new DataView(b);v.setFloat64(0,finite(x,'exact'),false);let s='';for(let i=0;i<8;i++)s+=v.getUint8(i).toString(16).padStart(2,'0');return s;}
+function unhex(s){if(typeof s!=='string'||!/^[0-9a-f]{16}$/.test(s))throw Error('Invalid Float64 encoding');const v=new DataView(new ArrayBuffer(8));for(let i=0;i<8;i++)v.setUint8(i,parseInt(s.slice(i*2,i*2+2),16));return finite(v.getFloat64(0,false),'decoded Float64');}
+function exactPack(value){const numbers=[];function walk(x){if(typeof x==='number'){numbers.push(hex(x));return x;}if(x===null||typeof x==='string'||typeof x==='boolean')return x;if(Array.isArray(x))return x.map(walk);if(plain(x)){const out={};for(const k of Object.keys(x)){if(['__proto__','prototype','constructor'].includes(k))throw Error('Forbidden object key');out[k]=walk(x[k]);}return out;}throw Error('Only finite plain JSON values are serializable');}return{value:walk(value),float64:numbers};}
+function exactUnpack(packet){if(!plain(packet)||!Array.isArray(packet.float64)||packet.float64.length>100000)throw Error('Invalid exact packet');let at=0;function walk(x){if(typeof x==='number'){const n=unhex(packet.float64[at++]);if(n!==x)throw Error('Float64/JSON mismatch');return n;}if(x===null||typeof x==='string'||typeof x==='boolean')return x;if(Array.isArray(x))return x.map(walk);if(plain(x)){const out={};for(const k of Object.keys(x)){if(['__proto__','prototype','constructor'].includes(k))throw Error('Forbidden object key');out[k]=walk(x[k]);}return out;}throw Error('Invalid JSON leaf');}const value=walk(packet.value);if(at!==packet.float64.length)throw Error('Unused Float64 values');return value;}
+function checkArray(x,n,name,predicate=Number.isFinite){if(!Array.isArray(x)||x.length!==n||!x.every(predicate))throw Error('Invalid '+name);}
+function engineFrom(raw){
+ if(!plain(raw)||!plain(raw.config)||!plain(raw.params)||raw.step!==E.H||!Number.isInteger(raw.tick)||raw.tick<0||raw.tick>MAX_TICKS)throw Error('Invalid raw engine contract');
+ const e=new E.Engine(raw.config),sample=e.snapshot();
+ if(JSON.stringify(Object.keys(raw.config).sort())!==JSON.stringify(Object.keys(sample.config).sort())||Object.keys(sample.config).some(k=>typeof raw.config[k]!==typeof sample.config[k]||raw.config[k]!==sample.config[k]))throw Error('Config normalization forbidden');
+ if(raw.schema!==sample.schema||raw.engine!==sample.engine)throw Error('Engine schema mismatch');
+ if(JSON.stringify(Object.keys(raw.params).sort())!==JSON.stringify(Object.keys(e.params).sort()))throw Error('Parameter keys mismatch');
+ for(const [k,v]of Object.entries(raw.params)){finite(v,k);if(v<0||v>1000||(['massCore','massCell','coreInertia','rodInertia','cellRadius','rodReach','zeta'].includes(k)&&v===0))throw Error('Parameter outside supported finite range');}
+ if(raw.params.rodCoupling>.02)throw Error('Unsupported rodCoupling');
+ checkArray(raw.positionsAndState,e.y.length,'state');checkArray(raw.turns,e.config.groups,'turns');checkArray(raw.previousAngles,e.config.groups,'angles');checkArray(raw.labels,e.n,'labels',x=>x===0||x===1);
+ for(const k of ['readout','pending'])checkArray(raw[k],e.config.groups,k,x=>x===null||x===0||x===1);
+ checkArray(raw.dwell,e.config.groups,'dwell',x=>Number.isFinite(x)&&x>=0);
+ if(JSON.stringify(raw.materialIds)!==JSON.stringify(e.materialIds))throw Error('Material identity mismatch');
+ if(!Array.isArray(raw.commands)||raw.commands.length>100000||!Array.isArray(raw.events)||raw.events.length>100000)throw Error('History size invalid');
+ let tick=0;for(const c of raw.commands){if(!plain(c)||!Number.isInteger(c.tick)||c.tick<tick||c.tick>raw.tick||!['drive','parameter'].includes(c.type))throw Error('Invalid command');finite(c.value,'command');if(c.type==='drive'&&Math.abs(c.value)>1.6)throw Error('Drive command range');if(c.type==='parameter'&&(c.name!=='rodCoupling'||c.value<0||c.value>.02))throw Error('Parameter command range');tick=c.tick;}
+ let lastEvent=0;for(const v of raw.events){if(!plain(v)||!Number.isInteger(v.tick)||v.tick<lastEvent||v.tick>raw.tick||!/^G[0-2]$/.test(v.id)||![0,1].includes(v.bit))throw Error('Invalid event');for(const k of ['time','q','coherence','turns'])finite(v[k],'event');lastEvent=v.tick;}
+ for(const k of ['drive','work','heat','initialEnergy'])finite(raw[k],k);
+ if(Math.abs(raw.drive)>1.6||raw.heat<0)throw Error('Invalid raw controls');
+ e.params={...raw.params};e.y.set(raw.positionsAndState);e.tick=raw.tick;e.drive=raw.drive;e.work=raw.work;e.heat=raw.heat;e.initialEnergy=raw.initialEnergy;e.turns.set(raw.turns);e.prevAngles.set(raw.previousAngles);e.labels.set(raw.labels);e.readout=[...raw.readout];e.pending=[...raw.pending];e.dwell=[...raw.dwell];e.commands=raw.commands.map(c=>({...c}));e.events=raw.events.map(v=>({...v}));
+ if(!Number.isFinite(e.measureEnergy()))throw Error('Restored energy is not finite');return e;
+}
+function diagnosticsFor(e,status='RUNNING',error=null){const m=e.metrics();return {...m,orbitalTurns:m.groups[0]?.turns||0,particleCount:e.config.particles,totalCellMass:e.config.particles*e.params.massCell,totalCoreMass:e.coreCount*e.params.massCore,units:'dimensionless model units',validity:'constructed compressible particle/nematic model; not calibrated LCD or subatomic physics',thermalBounds:'NOT_CALIBRATED',density:'compact-support interpolation of actual material cells',rodPotential:'J(1-(r/R)^2)^2(1-cos(2(theta_i-theta_j))) for r<R',palette:'observer-only A/B/C classes; no proton/neutron/electron identification',coreMechanism:'original explicit reciprocal core-cell and q-memory couplings retained',parameterWork:e.commands.filter(c=>c.type==='parameter').length,status,error,time:e.time};}
+function fromEngine(e,clock={},status='RUNNING'){
+ const raw=e.snapshot(),m=e.metrics(),cells=[];
+ for(let p=0;p<e.config.particles;p++){const i=e.coreCount+p,b=4*i;cells.push({id:e.materialIds[p]||'M'+String(p).padStart(5,'0'),x:e.y[b],y:e.y[b+1],z:0,vx:e.y[b+2],vy:e.y[b+3],vz:0,theta:e.config.nematic?e.y[e.rodBase+2*p]:0,omega:e.config.nematic?e.y[e.rodBase+2*p+1]:0,mass:e.params.massCell,inertia:e.config.nematic?e.params.rodInertia:0,channel:p%3,displayClass:['A','B','C'][p%3],sourceLabel:e.labels[i]});}
+ const cores=[];for(let i=0;i<e.coreCount;i++){const b=4*i;cores.push({id:'C'+String(i).padStart(3,'0'),x:e.y[b],y:e.y[b+1],z:0,vx:e.y[b+2],vy:e.y[b+3],mass:e.params.massCore,angle:e.y[e.phaseBase+2*i],spin:e.y[e.phaseBase+2*i+1],active:true,radius:.04,annotationOnly:true,sourceLabel:e.labels[i]});}
+ const diagnostics=diagnosticsFor(e,status);
+ return{schema:SCHEMA,model:'material',sourceHash:SOURCE_HASH,sourceSha256:SOURCE_HASH,featureRevision:'material-v1',time:e.time,tick:e.tick,steps:e.tick,status,materialCells:cells,coreAnnotations:cores,bodies:cores,groups:m.groups,events:raw.events,burst:null,trails:[],field:{kind:'material-density',bounds:e.config.groups===3?[-8.9,8.9,-5.5,7]:[-5.9,5.9,-4.1,4.1],values:[],computed:true},parameters:{sourceMinus:0,sourcePlus:0,...e.params},diagnostics,rawEngine:raw,clock:{credit:clock.credit??0,totalSteps:clock.totalSteps??e.tick,paused:!!clock.paused,speed:clock.speed??1}};
+}
+function create(config={}){
+ if(!plain(config))throw Error('Material config must be a plain object');
+ const allowed=['groups','cores','particles','seed','medium','pressure','phaseCoupling','nematic','drive','rodCoupling'];for(const k of Object.keys(config))if(!allowed.includes(k))throw Error('Unknown material config: '+k);
+ for(const k of ['medium','pressure','phaseCoupling','nematic'])if(k in config&&typeof config[k]!=='boolean')throw Error('Boolean config required: '+k);
+ if('seed'in config&&(!Number.isInteger(config.seed)||config.seed<0||config.seed>4294967295))throw Error('Invalid seed');
+ const start={...config,nematic:config.nematic??true};let engine,initial,credit=0,totalSteps=0,status='RUNNING',error=null;
+ function reset(){engine=new E.Engine(start);credit=0;totalSteps=0;status='RUNNING';error=null;initial=engine.snapshot();if('rodCoupling'in start)engine.setParameter('rodCoupling',start.rodCoupling);engine.setDrive(start.drive??.95);return snapshot();}
+ function snapshot(options={}){const s=fromEngine(engine,{credit,totalSteps},status);s.error=error;s.diagnostics.error=error;if(options.exact!==false&&options.field!==false)s.exact=exactPack({rawEngine:s.rawEngine,clock:s.clock,initialEngine:initial});return s;}
+ function step(dt,inputs={}){
+  finite(dt,'dt');if(dt<0||dt>60)throw Error('dt outside [0,60]');if(!plain(inputs))throw Error('Invalid inputs');for(const k of Object.keys(inputs))if(!['drive','rodCoupling'].includes(k))throw Error('Unknown material input '+k);
+  if('drive'in inputs&&(typeof inputs.drive!=='number'||!Number.isFinite(inputs.drive)||Math.abs(inputs.drive)>1.6))throw Error('Invalid drive');
+  if('rodCoupling'in inputs&&(typeof inputs.rodCoupling!=='number'||!Number.isFinite(inputs.rodCoupling)||inputs.rodCoupling<0||inputs.rodCoupling>.02))throw Error('Invalid rodCoupling');
+  if(status!=='RUNNING')return{status,error,time:engine.time,tick:engine.tick};
+  if('drive'in inputs)engine.setDrive(inputs.drive);if('rodCoupling'in inputs)engine.setParameter('rodCoupling',inputs.rodCoupling);
+  credit+=dt;const n=Math.min(120,Math.floor((credit+1e-10)/E.H));for(let i=0;i<n;i++){try{engine.step();credit-=E.H;totalSteps++;}catch(e){status='MODEL_ERROR';error=String(e.message||e);break;}}
+  if(Math.abs(credit)<1e-10)credit=0;return{status,error,time:engine.time,tick:engine.tick};
+ }
+ function restore(doc){
+  if(!plain(doc)||doc.schema!==SCHEMA||doc.model!=='material'||doc.sourceHash!==SOURCE_HASH||!['RUNNING','MODEL_ERROR'].includes(doc.status))throw Error('Snapshot/source contract mismatch');
+  const decoded=exactUnpack(doc.exact);if(JSON.stringify(decoded.rawEngine)!==JSON.stringify(doc.rawEngine)||JSON.stringify(decoded.clock)!==JSON.stringify(doc.clock))throw Error('Exact payload does not match visible state');
+  if(doc.error!==null&&typeof doc.error!=='string')throw Error('Invalid error status');
+  const next=engineFrom(decoded.rawEngine),initialNext=engineFrom(decoded.initialEngine);if(initialNext.tick!==0)throw Error('Initial state must have tick0');
+  const c=decoded.clock;finite(c.credit,'credit');if(c.credit< -1e-10||c.credit>3600||!Number.isInteger(c.totalSteps)||c.totalSteps!==next.tick||c.speed!==1||c.paused!==false)throw Error('Invalid material clock');
+  engine=next;initial=initialNext.snapshot();credit=c.credit;totalSteps=c.totalSteps;status=doc.status;error=doc.error===null?null:String(doc.error);return snapshot();
+ }
+ function replay(doc,options={}){
+  const decoded=exactUnpack(doc.exact);if(doc.sourceHash!==SOURCE_HASH)throw Error('Replay source mismatch');const target=engineFrom(decoded.rawEngine),base=engineFrom(decoded.initialEngine),limit=options.maxTicks??100000;
+  if(!Number.isInteger(limit)||limit<0||limit>MAX_TICKS||target.tick>limit)throw Error('Replay tick limit');if(base.tick!==0)throw Error('Replay initial tick');
+  let at=0;for(let tick=0;tick<=target.tick;tick++){while(at<target.commands.length&&target.commands[at].tick===tick){const c=target.commands[at++];if(c.type==='drive')base.setDrive(c.value);else base.setParameter(c.name,c.value);}if(tick<target.tick)base.step();}
+  const expected=exactPack(target.snapshot()),actual=exactPack(base.snapshot());if(JSON.stringify(expected)!==JSON.stringify(actual))throw Error('Replay diverged from full numerical state/history');return restore(doc);
+ }
+ reset();return{step,reset,snapshot,diagnostics:()=>({...diagnosticsFor(engine,status,error),credit}),restore,replay,get engine(){return engine;}};
+}
+function capture(engine,clock={},initialEngine){const s=fromEngine(engine,{credit:clock.credit??0,totalSteps:engine.tick});s.error=null;s.exact=exactPack({rawEngine:s.rawEngine,clock:s.clock,initialEngine:initialEngine||(new E.Engine(engine.config)).snapshot()});return s;}
+const api={create,fromEngine,capture,exactPack,exactUnpack,SOURCE_HASH,SCHEMA,H:E.H};root.HALVETHMaterial=api;if(typeof module!=='undefined'&&module.exports)module.exports=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+</script><script>/* Read-only observation of the material state. Color, glyph scale and camera never enter the solver. */
+(function(root){'use strict';
+const paletteRGB=['#ff7373','#78e1a5','#79b8ff'],palettePair=['#85d3ff','#f0c991'];
+function density(snapshot){
+ const cells=snapshot.materialCells||Array.from({length:snapshot.config.particles},(_,p)=>{const i=snapshot.coreCount+p,b=4*i;return{id:snapshot.materialIds[p]||'M'+String(p).padStart(5,'0'),x:snapshot.y[b],y:snapshot.y[b+1],mass:snapshot.params.massCell};}),h=.48,C=10/(Math.PI*h*h),grid=new Map(),out=[];
+ for(const p of cells){const k=Math.floor(p.x/h)+','+Math.floor(p.y/h);if(!grid.has(k))grid.set(k,[]);grid.get(k).push(p);}
+ for(const p of cells){const gx=Math.floor(p.x/h),gy=Math.floor(p.y/h);let value=0;for(let dx=-1;dx<=1;dx++)for(let dy=-1;dy<=1;dy++)for(const q of grid.get((gx+dx)+','+(gy+dy))||[]){const r=Math.hypot(p.x-q.x,p.y-q.y);if(r<h)value+=q.mass*C*(1-r/h)**3;}out.push({id:p.id,value});}return out;
+}
+function draw(ctx,snapshot,view={},w=ctx.canvas.width,h=ctx.canvas.height){
+ if(typeof view==='number'){const width=view,height=w,options=h;view=options||{};w=width;h=height;}
+ if(!snapshot||!Array.isArray(snapshot.materialCells))throw Error('Material snapshot required');
+ const mode=view.mode||view.style||'rods',zoom=view.zoom??1,symbolScale=view.symbolScale??1;
+ if(!Number.isFinite(zoom)||zoom<=0||!Number.isFinite(symbolScale)||symbolScale<=0)throw Error('Invalid observation scale');
+ const span=snapshot.rawEngine?.config.groups===3?17.8:11.8,scale=Math.min(w/span,h/(span*.68))*zoom,cx=w/2-(view.x||0)*scale,cy=h/2+(view.y||0)*scale;
+ const defaultProject=point=>{const yaw=view.yaw||0,pitch=view.pitch||0,x=point.x*Math.cos(yaw),z=-point.x*Math.sin(yaw),y=point.y*Math.cos(pitch)-z*Math.sin(pitch),depth=point.y*Math.sin(pitch)+z*Math.cos(pitch);return{x:cx+x*scale,y:cy-y*scale,depth,branch:'primary'};};
+ const project=(point,id)=>{let p=view.project?(view.projectCoordinates?view.project(point.x,point.y,point.z||0):view.project(point,id)):defaultProject(point);if(!Array.isArray(p))p=p?[p]:[];return p.filter(q=>q&&Number.isFinite(q.x)&&Number.isFinite(q.y)&&q.visible!==false).map(q=>({...q,depth:q.depth??q.d??0,branch:q.branch??'primary'}));};
+ const color=p=>(view.colorMode||view.palette)==='rgb'?paletteRGB[p.channel]:palettePair[p.sourceLabel];
+ const observations=[],rho=(['cells','densitycells','density','field','flow','sharp'].includes(mode))?density(snapshot):null,rhoMap=rho?new Map(rho.map(q=>[q.id,q.value])):null;
+ ctx.save();try{
+  ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';
+  if(view.background!==false){ctx.fillStyle='#05080f';ctx.fillRect(0,0,w,h);const bg=ctx.createRadialGradient(w*.5,h*.5,0,w*.5,h*.5,Math.max(w,h)*.6);bg.addColorStop(0,'#0c1927');bg.addColorStop(1,'#03050a');ctx.fillStyle=bg;ctx.fillRect(0,0,w,h);}
+  ctx.lineCap='round';
+  for(const p of snapshot.materialCells){
+   const center=project(p,p.id),half=.08*symbolScale,ux=Math.cos(p.theta)*half,uy=Math.sin(p.theta)*half;
+   const endsA=project({x:p.x-ux,y:p.y-uy,z:p.z||0},p.id),endsB=project({x:p.x+ux,y:p.y+uy,z:p.z||0},p.id);
+   for(const q of center){
+    if(q.x<-50||q.x>w+50||q.y<-50||q.y>h+50)continue;
+    const a=endsA.find(e=>e.branch===q.branch),b=endsB.find(e=>e.branch===q.branch);if(!a||!b)continue;
+    const len=Math.hypot(b.x-a.x,b.y-a.y),densityValue=rhoMap?.get(p.id)||0;
+    const obs={id:p.id,x:q.x,y:q.y,depth:q.depth??0,branch:q.branch,observationId:q.observationId??p.id+'@'+q.branch,theta:p.theta,renderLength:len};observations.push(obs);
+    ctx.strokeStyle=color(p);ctx.fillStyle=color(p);
+    if(mode==='field'||mode==='flow'||mode==='sharp'){
+     // Compact-support density is computed from actual cells. Each visible sample is centered on its cell.
+     const radius=Math.max(1,len*(2.5+.1*Math.min(4,densityValue))),gradient=ctx.createRadialGradient(q.x,q.y,0,q.x,q.y,radius);gradient.addColorStop(0,color(p));gradient.addColorStop(1,'transparent');ctx.fillStyle=gradient;ctx.globalAlpha=Math.min(.34,.04+.11*densityValue);ctx.beginPath();ctx.arc(q.x,q.y,radius,0,2*Math.PI);ctx.fill();
+     ctx.globalAlpha=.7;ctx.lineWidth=Math.max(.65,Math.min(2.5,len*.1));ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
+    }else if(mode==='cells'||mode==='densitycells'||mode==='density'){
+     const r=Math.max(.6,Math.min(len*.65,len*2.5*Math.sqrt(p.mass/Math.max(densityValue,1e-9))));ctx.globalAlpha=.75;ctx.beginPath();ctx.arc(q.x,q.y,r,0,2*Math.PI);ctx.fill();
+    }else{
+     ctx.globalAlpha=.85;ctx.lineWidth=Math.max(.7,Math.min(3,len*.12));ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
+    }
+   }
+  }
+  if(view.annotations===true){for(const p of snapshot.coreAnnotations||[]){for(const q of project(p,p.id)){ctx.globalAlpha=.6;ctx.strokeStyle='#c3cbd7';ctx.lineWidth=1;ctx.beginPath();ctx.arc(q.x,q.y,3,0,Math.PI*2);ctx.stroke();if(view.labels!==false){ctx.font='11px system-ui';ctx.fillStyle='#aab9cc';ctx.fillText(p.id,q.x+6,q.y-5);}}}}
+  if(view.labels!==false&&view.background!==false&&!view.cinema){ctx.globalAlpha=1;ctx.font='11px system-ui';ctx.fillStyle='#94a7bc';ctx.fillText('HALVETH MATERIAL · t '+snapshot.time.toFixed(2)+' · '+snapshot.materialCells.length+' bewegliche Zellen · '+((view.colorMode||view.palette)==='rgb'?'A/B/C Anzeigekanäle':'A/B Herkunftsfarben'),18,h-20);}
+ }finally{ctx.restore();}
+ return{scale,cx,cy,observations,density:rho,mode,palette:(view.colorMode||view.palette)==='rgb'?'observer RGB classes':'observer blue/gold origin labels'};
+}
+const api={draw,density};root.HALVETHMaterialView=api;if(typeof module!=='undefined'&&module.exports)module.exports=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+</script><script>(function(root){root.HalvethRender={density:HALVETHMaterialView.density,draw:(ctx,e,view,w,h)=>HALVETHMaterialView.draw(ctx,HALVETHMaterial.fromEngine(e),view,w,h)};})(globalThis);</script><script>window.ENGINE_SHA='7f6225646e7296259e4a4ffb66497d23f061801b349db05d8d7fc7f42575e19f';(function(){'use strict';
+const $=s=>document.querySelector(s),{Engine,Clock,H}=HalvethKnoten;
+let engine,clock,initialEngine,raf=0,last=0,metricTime=0,recorder=null,recordCanvas=null,recordCtx=null,recordStream=null,recordChunks=[],recordFrames=0,protocol=null;
+const canvas=$('#scene'),ctx=canvas.getContext('2d',{alpha:false}),view={zoom:1,x:0,y:0,labels:true,cinema:false,mode:'rods',colorMode:'bluegold',annotations:false,symbolScale:1};
+function notice(text,error=false){$('#notice').textContent=text;$('#notice').classList.toggle('error',error);}
+function setting(){return{groups:Number($('#groups').value),cores:Number($('#cores').value),particles:Number($('#particles').value),seed:170117,medium:$('#medium').checked,phaseCoupling:$('#phase').checked,pressure:$('#pressure').checked,nematic:$('#nematic').checked};}
+function updateDrive(value,fromProtocol=false){if(!fromProtocol)protocol=null;engine.setDrive(value);$('#drive').value=String(value);$('#driveVal').textContent=(value>=0?'+':'')+value.toFixed(2);}
+function reset(){if(recorder&&recorder.state==='recording')stopRecord();engine=new Engine(setting());initialEngine=engine.snapshot();clock=new Clock(engine);view.mode=engine.config.nematic?'rods':'field';clock.speed=Number($('#speed').value);protocol=null;updateDrive(.95);last=0;view.x=0;view.y=0;view.zoom=1;notice('Bereit. Bewegliches Material mit eigener Orientierung; +0,95 wirkt als äußerer Antrieb.');update();draw();}
+function draw(){HalvethRender.draw(ctx,engine,view);if(recordCtx){HalvethRender.draw(recordCtx,engine,{...view,cinema:true,labels:false});recordFrames++;}}
+function update(){
+ const m=engine.metrics(),g=m.groups[0];$('#materialCount').textContent=String(engine.config.particles);$('#materialMass').textContent=(engine.config.particles*engine.params.massCell).toFixed(2);$('#nematicOrder').textContent=m.nematicOrder===null?'aus':m.nematicOrder.toFixed(3);$('#drive').value=String(m.drive);$('#driveVal').textContent=(m.drive>=0?'+':'')+m.drive.toFixed(2);
+ $('#time').textContent=m.time.toFixed(1);$('#turns').textContent=g.turns.toFixed(2);$('#coherence').textContent=Math.round(g.coherence*100)+' %';
+ $('#qval').textContent=g.q.toFixed(3);$('#separation').textContent=g.separation.toFixed(3);$('#qbar').style.width=(Math.max(0,Math.min(1,g.q))*100)+'%';
+ $('#bit').textContent=g.reading===null?'…':String(g.reading);$('#bit').className=g.reading===1?'bit on':'bit';
+ $('#bitCaption').textContent=g.reading===null?'Übergang / nicht stabil ausgelesen':g.reading===1?'Kopplungszustand 1':'Kopplungszustand 0';
+ $('#groupsRead').textContent=m.groups.map(g=>g.id+': '+(g.reading===null?'…':g.reading)).join('   ');
+ $('#work').textContent=m.work.toFixed(4);$('#heat').textContent=m.heat.toFixed(4);$('#residual').textContent=m.residual.toExponential(2);
+ $('#pause').textContent=clock.paused?'Weiter':'Pause';$('#backlog').textContent=clock.credit>.12?'Rechenrückstand: '+clock.credit.toFixed(2)+' Modellsekunden':'Fester Schritt: 1/120 • keine Schritte verworfen';
+ $('#events').textContent=engine.events.length?engine.events.slice(-6).map(x=>`t ${x.time.toFixed(2)} · ${x.id} → ${x.bit} · q ${x.q.toFixed(3)} · R ${x.coherence.toFixed(3)}`).join('\n'):'Noch kein Zustandswechsel. Er entsteht im Solver, nicht beim Zeichnen.';
+ if(recorder&&recorder.state==='recording')$('#record').textContent='■ Aufnahme stoppen';
+}
+function resize(){const r=canvas.getBoundingClientRect(),d=Math.min(window.devicePixelRatio||1,2);canvas.width=Math.max(1,Math.round(r.width*d));canvas.height=Math.max(1,Math.round(r.height*d));draw();}
+function oneStep(){
+ if(protocol){while(protocol.length&&engine.tick>=protocol[0].tick){const next=protocol.shift();updateDrive(next.value,true);if(next.text)notice(next.text);}if(!protocol.length)protocol=null;}
+ engine.step();
+}
+function frame(now){try{
+ if(last===0)last=now;const elapsed=(now-last)/1000;last=now;
+ if(!clock.paused&&!document.hidden&&clock.speed>0){clock.credit+=elapsed*clock.speed;const count=Math.min(12,Math.floor((clock.credit+1e-10)/H));for(let i=0;i<count;i++){oneStep();clock.totalSteps++;}clock.credit-=count*H;}
+ draw();if(now-metricTime>250){update();metricTime=now;}
+}catch(error){clock.paused=true;notice('Gestoppt: '+error.message,true);update();}raf=requestAnimationFrame(frame);}
+function save(blob,name){const a=document.createElement('a'),url=URL.createObjectURL(blob);a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),10000);}
+async function export4k(){
+ const before=JSON.stringify(engine.snapshot()),out=document.createElement('canvas');out.width=3840;out.height=2160;HalvethRender.draw(out.getContext('2d',{alpha:false}),engine,{...view,labels:false,cinema:true});
+ if(before!==JSON.stringify(engine.snapshot()))throw Error('Export veraenderte den Zustand.');
+ out.toBlob(blob=>{if(blob){save(blob,'HALVETH_KNOTEN_4K_T'+engine.tick+'.png');notice('4K-Bild neu gezeichnet. Kein Modellschritt beim Export.');}else notice('PNG-Export fehlgeschlagen.',true);},'image/png');
+}
+async function startRecord(){
+ if(recorder&&recorder.state==='recording'){stopRecord();return;}
+ if(typeof MediaRecorder==='undefined'||!HTMLCanvasElement.prototype.captureStream){notice('WebM-Aufnahme in diesem Browser nicht verfügbar. 4K-PNG und JSON bleiben nutzbar.',true);return;}
+ const type=['video/webm;codecs=vp9','video/webm;codecs=vp8','video/webm'].find(t=>MediaRecorder.isTypeSupported(t));if(!type){notice('Kein unterstützter WebM-Encoder.',true);return;}
+ try{recordCanvas=document.createElement('canvas');recordCanvas.width=1920;recordCanvas.height=1080;recordCtx=recordCanvas.getContext('2d',{alpha:false});recordFrames=0;recordChunks=[];
+  HalvethRender.draw(recordCtx,engine,{...view,cinema:true,labels:false});recordStream=recordCanvas.captureStream(30);
+  recorder=new MediaRecorder(recordStream,{mimeType:type,videoBitsPerSecond:10000000});recorder.ondataavailable=e=>{if(e.data.size)recordChunks.push(e.data);};
+  recorder.onerror=()=>notice('Videokodierung fehlgeschlagen.',true);
+  recorder.onstop=()=>{save(new Blob(recordChunks,{type:'video/webm'}),'HALVETH_KNOTEN_1080p.webm');recordStream.getTracks().forEach(t=>t.stop());recordCtx=null;recordCanvas=null;$('#record').textContent='● WebM aufnehmen';notice('WebM gespeichert. Echtzeitaufnahme; Bildrate abhängig vom Rechner.');};
+  recorder.start(1000);notice('Aufnahme läuft: 1920 × 1080, angefragt 30 FPS. Stopptaste zum Speichern.');
+ }catch(e){if(recordStream)recordStream.getTracks().forEach(t=>t.stop());recordCtx=null;notice('Aufnahme nicht gestartet: '+e.message,true);}
+}
+function stopRecord(){if(recorder&&recorder.state==='recording')recorder.stop();}
+$('#drive').addEventListener('input',e=>{updateDrive(Number(e.target.value));update();});
+document.querySelectorAll('[data-drive]').forEach(b=>b.addEventListener('click',()=>{updateDrive(Number(b.dataset.drive));clock.paused=false;notice(b.dataset.note);update();}));
+$('#pause').onclick=()=>{clock.paused=!clock.paused;last=0;update();};$('#reset').onclick=reset;$('#speed').onchange=e=>{clock.speed=Number(e.target.value);last=0;};
+$('#apply').onclick=reset;
+$('#demo').onclick=()=>{reset();clock.speed=2;$('#speed').value='2';protocol=[{tick:0,value:.95,text:'Protokoll 1/4: +0,95 für 45 Modellsekunden.'},{tick:5400,value:0,text:'Protokoll 2/4: Antrieb aus. Bleibt die Kopplung bestehen?'},{tick:9000,value:-.7,text:'Protokoll 3/4: Sanfter Gegenantrieb −0,70.'},{tick:12600,value:-1.5,text:'Protokoll 4/4: Stärker entknoten mit −1,50.'},{tick:19800,value:0,text:'Protokoll beendet. Die Ereignisse und Bilanz stehen unten.'}];};
+$('#png').onclick=()=>export4k().catch(e=>notice(e.message,true));$('#record').onclick=startRecord;
+$('#json').onclick=()=>save(new Blob([JSON.stringify({model:engine.snapshot(),material:HALVETHMaterial.capture(engine,clock,initialEngine),camera:{...view},scope:'Constructed dimensionless 2D material/nematic model. RGB are display classes. Not spacetime, subatomic or LCD measurement.',sourceSha256:window.ENGINE_SHA},null,2)],{type:'application/json'}),'HALVETH_MATERIAL_LAUF.json');
+$('#cinema').onclick=()=>{document.body.classList.toggle('cinema');view.cinema=document.body.classList.contains('cinema');setTimeout(resize,0);};
+$('#displayMode').onclick=()=>{view.mode=view.mode==='cells'?'field':'cells';$('#displayMode').textContent=view.mode==='field'?'Raster → Einzelzellen':'Einzelzellen → Raster';draw();};
+
+$('#rodMode').onclick=()=>{view.mode='rods';draw();};
+$('#palette').onchange=e=>{view.colorMode=e.target.value;$('.legend').innerHTML=view.colorMode==='rgb'?'<span style="color:#ff7373">A</span><span style="color:#78e1a5">B</span><span style="color:#79b8ff">C</span><span>RGB-Anzeigeklassen nach stabiler Zell-ID · keine Proton-/Neutron-/Elektron-Zuordnung</span>':'<span><i></i>Kanal A</span><span><i class="gold"></i>Kanal B</span><span>Herkunftsfarben als Ansicht · Masse und Zellzahl bleiben beim Zoomen gleich</span>';draw();};
+$('#annotations').onchange=e=>{view.annotations=e.target.checked;draw();};
+$('#more').onclick=()=>{const open=$('#more').getAttribute('aria-expanded')!=='true';$('#more').setAttribute('aria-expanded',String(open));document.body.classList.toggle('moreclosed',!open);document.querySelectorAll('[data-more]').forEach(e=>e.hidden=!open);setTimeout(resize,0);};
+$('#loadrun').onclick=()=>$('#runfile').click();
+$('#runfile').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{if(file.size>5000000)throw Error('JSON größer als 5 MB');const doc=JSON.parse(await file.text()),s=doc.material||doc,next=HALVETHMaterial.create({particles:0});next.replay(s,{maxTicks:100000});engine=next.engine;initialEngine=HALVETHMaterial.exactUnpack(s.exact).initialEngine;clock=new Clock(engine);clock.paused=true;clock.credit=s.clock.credit;clock.totalSteps=engine.tick;clock.speed=Number($('#speed').value);last=0;protocol=null;notice('JSON vollständig numerisch nachgespielt und abgeglichen; pausiert übernommen.');update();draw();}catch(err){notice('Import unverändert abgelehnt: '+err.message,true);}finally{e.target.value='';}};
+$('#home').onclick=()=>{view.zoom=1;view.x=0;view.y=0;draw();};
+let drag=null;canvas.addEventListener('pointerdown',e=>{drag={px:e.clientX,py:e.clientY,x:view.x,y:view.y};canvas.setPointerCapture(e.pointerId);});
+canvas.addEventListener('pointermove',e=>{if(!drag)return;const r=canvas.getBoundingClientRect(),span=engine.config.groups===3?17.8:11.8,scale=Math.min(r.width/span,r.height/(span*.68))*view.zoom;view.x=drag.x-(e.clientX-drag.px)/scale;view.y=drag.y+(e.clientY-drag.py)/scale;});
+canvas.addEventListener('pointerup',()=>drag=null);canvas.addEventListener('pointercancel',()=>drag=null);
+canvas.addEventListener('wheel',e=>{e.preventDefault();view.zoom=Math.max(.2,Math.min(5,view.zoom*Math.exp(-e.deltaY*.001)));},{passive:false});
+window.addEventListener('resize',resize);document.addEventListener('visibilitychange',()=>{if(document.hidden){clock.paused=true;last=0;stopRecord();notice('Tab verborgen: Modell pausiert. Mit „Weiter“ fortsetzen.');update();}else last=0;});
+window.addEventListener('keydown',e=>{if(['INPUT','SELECT','TEXTAREA'].includes(e.target.tagName))return;if(e.code==='Space'){e.preventDefault();clock.paused=!clock.paused;last=0;update();}if(e.key==='Escape'){document.body.classList.remove('cinema');view.cinema=false;resize();}});
+reset();resize();raf=requestAnimationFrame(frame);
+// Readable test interface; no remote access, shell execution or credentials.
+window.KnotenTest={engine:()=>engine,clock:()=>clock,view,render:draw,step:n=>{engine.step(n);draw();update();},stop:()=>{cancelAnimationFrame(raf);clock.paused=true;},reset,export4k,material:()=>HALVETHMaterial.capture(engine,clock,initialEngine)};
+})();
+</script></body></html>

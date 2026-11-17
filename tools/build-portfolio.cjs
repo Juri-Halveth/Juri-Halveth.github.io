@@ -44,6 +44,13 @@ function put(name,text){
  }
  const p=path.join(root,name);fs.mkdirSync(path.dirname(p),{recursive:true});fs.writeFileSync(p,text);
 }
+// Bind the additive preview's shared runtime bytes without importing private build files.
+const materialPreviewDir=path.join(root,'modelle/material-20261117');
+if(fs.existsSync(materialPreviewDir)){
+ const names=['material-engine.js','material-model.js','material-view.js','narrative-channels.js','models.js','reference-physics.js'];
+ const bindings=names.map(name=>{const bytes=fs.readFileSync(path.join(materialPreviewDir,'assets',name));return{path:'assets/'+name,bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex')};});
+ put('modelle/material-20261117/SHARED_SOURCES.json',JSON.stringify({schema:'halveth.public-material-preview-sources.v1',edition:'2026-11-17',claimCeiling:'BYTE_BINDING_NOT_SCIENTIFIC_OR_RUNTIME_PROOF',files:bindings},null,2)+'\n');
+}
 put('universum/data/catalog.js','window.HALVETH_CATALOG =\n'+JSON.stringify(siteCatalog,null,2)+';\n');
 const {buildAgentSpace}=require('./build-agent-space.cjs');
 buildAgentSpace(root,siteCatalog);
@@ -56,6 +63,10 @@ for(const lang of Object.keys(copy)){
   if(route==='profil/')content+=renderProfile(lang);
   if(route==='arbeiten/')content+=renderDirectory(siteCatalog,lang);
   if(route==='modelle/')content+=`<section class="shell section work-intro"><p class="eyebrow">${t.proof}</p><h1>${t.labTitle}</h1><p class="lead">${t.method}</p></section>`+renderSceneShowcase(sceneCatalog,lang)+renderMapTeaser(technicalMap,lang);
+  if(route==='modelle/'){
+   const material={de:{title:'Material und Kommunikation · Vorschau',text:'Bewegliche Materialelemente, Maßstabsansichten und ein eigener Kommunikationsverlauf. Die bisherigen Laboransichten bleiben erhalten; Modell und Darstellung sind getrennt.',open:'Berechnete Szene öffnen',source:'Quellstand, Grenzen und Lizenzen'},en:{title:'Material and communication · preview',text:'Moving material elements, scale views and a separate communication history. Existing laboratory views remain available; models and rendering are kept separate.',open:'Open the calculated scene',source:'Sources, boundaries and licences'},ru:{title:'Материал и коммуникация · предпросмотр',text:'Подвижные элементы материала, масштабные виды и отдельная история коммуникации. Прежние лаборатории сохранены; модель и отображение разделены.',open:'Открыть расчётную сцену',source:'Источники, границы и лицензии'}}[lang];
+   content+=`<section class="shell section work-intro" data-material-preview><p class="eyebrow">HALVETH · 2026.11.17</p><h2>${escape(material.title)}</h2><p class="lead">${escape(material.text)}</p><div class="service-actions"><a class="button" href="/modelle/material-20261117/forschung.html">${escape(material.open)} ↗</a><a class="text-link" href="/modelle/material-20261117/README.md">${escape(material.source)}</a></div></section>`;
+  }
   if(route==='koennen/')content+=renderTechnicalMap(technicalMap,lang,mapSource);
   if(route==='belege/')content+=renderWorkSamples(workSamples,lang);
   if(route==='forschung/')content+=renderResearchOS(researchIndex,lang);

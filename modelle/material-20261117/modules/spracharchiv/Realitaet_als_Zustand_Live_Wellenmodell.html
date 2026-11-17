@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Der erste Unterschied, Live-Wellenmodell</title>
+<meta name="description" content="Der erste Unterschied als Welle: wie aus einer Störung ein Muster wird. Interaktives Modell zur Hypothese Realität als Zustand. Ein Bild, kein Beweis.">
+<link rel="canonical" href="https://halveth.de/Realitaet_als_Zustand_Live_Wellenmodell.html">
+<style>
+  html,body{margin:0;background:#04050c;}
+  body{padding:28px 16px;display:flex;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}
+  .live{position:relative;background:#070815;color:#e9edf8;border-radius:16px;padding:18px;max-width:880px;width:100%;box-sizing:border-box;}
+  .live *{box-sizing:border-box;}
+  .banner{text-align:center;font-size:12.5px;color:#c9d2ea;background:rgba(232,198,106,.08);
+    border:1px solid rgba(232,198,106,.22);border-radius:999px;padding:8px 14px;max-width:640px;margin:0 auto 14px;}
+  .cvwrap{position:relative;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.08);}
+  #cv{display:block;width:100%;height:360px;background:#05060e;}
+  .hud{position:absolute;top:10px;left:12px;right:12px;display:flex;justify-content:space-between;
+    font-size:11px;letter-spacing:.06em;color:#8b96b8;pointer-events:none;text-transform:uppercase;}
+  .hud .ph{color:#e8c66a;}
+  .txt{text-align:center;margin:14px auto 2px;max-width:640px;min-height:64px;}
+  .ttl{font-family:Georgia,serif;font-size:20px;color:#f4f1e6;}
+  .dsc{font-size:14px;color:#c9d2ea;margin-top:6px;line-height:1.55;}
+  .ctl{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:8px;}
+  .b{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);color:#e9edf8;
+    width:38px;height:38px;border-radius:50%;font-size:14px;cursor:pointer;}
+  .b:hover{background:rgba(232,198,106,.18);border-color:#e8c66a;}
+  .dots{display:flex;gap:8px;}
+  .dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.22);cursor:pointer;transition:.2s;}
+  .dot.on{background:#e8c66a;transform:scale(1.25);}
+  .foot{font-size:11.5px;color:#7c869e;text-align:center;margin-top:14px;border-top:1px solid rgba(255,255,255,.08);padding-top:10px;line-height:1.5;}
+  @media(max-width:720px){
+    html,body{min-height:100%;background:#070815}body{margin:0;padding:0;overflow-x:hidden}
+    .live{min-height:100dvh;max-width:none;border-radius:0;padding:10px 10px 12px}
+    .banner{font-size:.72rem;line-height:1.35;padding:7px 76px 7px 10px;margin-bottom:9px}
+    .cvwrap{border-radius:10px}#cv{height:clamp(260px,45dvh,380px)}
+    .txt{margin:10px auto 0;min-height:54px}.ttl{font-size:1.2rem}.dsc{font-size:.8rem;line-height:1.4}
+    .ctl{margin-top:7px;gap:11px}.b{width:42px;height:42px}.dots{gap:7px}.dot{width:8px;height:8px}
+    .foot{font-size:.65rem;line-height:1.4;padding-top:8px;margin-top:8px}
+    #raz-langbar{top:8px!important;right:8px!important;bottom:auto!important;left:auto!important}html.raz-embedded #raz-langbar{display:none!important}
+  }
+</style>
+
+<link rel="stylesheet" href="assets/restauration.css?v=20261116-r2">
+<script src="assets/model-clock.js?v=20261116-r2"></script>
+</head>
+<body data-hv-page="Realitaet_als_Zustand_Live_Wellenmodell" class="hv-model-shell">
+<a data-raz-skip href="forschung.html" style="position:fixed;left:max(12px,env(safe-area-inset-left));bottom:max(12px,env(safe-area-inset-bottom));z-index:9999;display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;background:rgba(10,10,11,.86);border:1px solid rgba(150,150,180,.32);color:#f4f3ee;font:600 12.5px/1 system-ui,-apple-system,Segoe UI,sans-serif;text-decoration:none;backdrop-filter:blur(8px)" title="Zur&uuml;ck zur Forschung auf halveth.de"><span style="color:#ffd60a">&#11041;</span> halveth.de</a><script>if(window.self!==window.top){var r=document.currentScript.previousElementSibling;if(r&&r.tagName==="A")r.remove();}</script>
+<script>if(self!==top)document.documentElement.classList.add("raz-embedded");</script>
+<h2 class="sr-only">Live-Gedankenmodell: viele Teilchen laufen mit langen Schweifen gerade, beginnen zu schwingen, immer staerker, bis der erste Kontakt alles kurz anhaelt (BOOM), woraufhin eine explosive Kettenreaktion einsetzt und am Ende zur Harmonie abkühlt.</h2>
+<div class="live" id="live">
+  <div class="banner">Information entsteht nicht aus einem Zustand, sondern aus einer Beziehung zwischen Zust&auml;nden.</div>
+  <div class="cvwrap"><canvas id="cv"></canvas>
+    <div class="hud"><span class="ph" id="phlabel"></span><span class="rc" id="reco"></span></div>
+  </div>
+  <div class="txt"><div class="ttl" id="ttl"></div><div class="dsc" id="dsc"></div></div>
+  <div class="ctl">
+    <button class="b" id="pp" aria-label="Play Pause">&#10073;&#10073;</button>
+    <div class="dots" id="dots"></div>
+    <button class="b" id="rp" aria-label="von vorn">&#8635;</button>
+  </div>
+  <div class="foot">Live-Gedankenmodell, eine Hypothese &#252;ber die Form der Dinge, kein bewiesenes Physik-Modell. Der ehrliche wissenschaftliche Abgleich wird separat gef&#252;hrt.</div>
+</div>
+<script>
+(function(){
+  var root=document.getElementById("live"); if(!root) return;
+  var C=root.querySelector("#cv"), X=C.getContext("2d");
+  var W=880,H=360,DPR=1,seed=20261116;
+  function random(){ seed=(Math.imul(1664525,seed)+1013904223)>>>0;return seed/4294967296; }
+  function fit(){var oldW=W,w=root.querySelector(".cvwrap").clientWidth||860;W=Math.max(240,Math.round(w));DPR=Math.min(devicePixelRatio||1,2);C.width=Math.round(W*DPR);C.height=Math.round(H*DPR);C.style.width="100%";C.style.height=H+"px";X.setTransform(DPR,0,0,DPR,0,0);if(ps)for(var i=0;i<ps.length;i++){ps[i].x*=W/oldW;}X.fillStyle="#05060e";X.fillRect(0,0,W,H);}
+  var phases=[
+    {t:"Gerade Bahnen",d:"Viele Bahnen ziehen gerade durch die Zeit, lange leise Schweife, keine Wechselwirkung.",hue:"#8b96b8"},
+    {t:"Erste Schwingung",d:"Aus dem Dazwischen ein erstes, leichtes Vibrieren.",hue:"#c9b06a"},
+    {t:"Die Welle waechst",d:"Jetzt deutlich staerker, die Schwingung greift um sich.",hue:"#e8c66a"},
+    {t:"Erster Kontakt",d:"Nur der erste zählt. Zwei treffen sich, erkennen sich an, und alles haelt kurz an.",hue:"#e8c66a"},
+    {t:"Kettenreaktion",d:"Eins hat das andere angestossen, bewiesen. Jetzt explodiert es, schnell, Beispiel um Beispiel.",hue:"#ff7a3c"},
+    {t:"Abkühlung zur Harmonie",d:"Wenn diese anfangen abzukühlen, ist die Menschheit laengst seit unendlich vielen Jahren nicht mehr da.",hue:"#6ad0e0"}
+  ];
+  var N=74, ps=[], mode=0, modeT=0, t=0, playing=true, frozen=false, boomT=0, boomX=0, boomY=0, flash=0, recog=0, lastRec=0, burst2=false;
+  var AMP=[0,8,24,26,0,0], FRQ=[0,1.6,3,3.4,0,0], DUR=[4,3.6,3.6,0,5,5.6];
+  function reset(){ seed=20261116; ps=[]; for(var i=0;i<N;i++){var lane=i%11; var by=34+lane*(H-68)/10; ps.push({x:random()*W,baseY:by,y:by,vx:0.4+random()*0.7,vy:0,off:random()*6.283,r:3.0});} flash=0;recog=0;burst2=false; X.fillStyle="#05060e";X.fillRect(0,0,W,H); }
+  function kick(str){ for(var i=0;i<ps.length;i++){ ps[i].vy=(random()-0.5)*str; ps[i].vx=(0.5+random()*1.4);} }
+  var dotsEl=root.querySelector("#dots");
+  for(var d=0; d<phases.length; d++){var s=document.createElement("span");s.className="dot";s.setAttribute("data-i",d);dotsEl.appendChild(s);}
+  var dots=dotsEl.querySelectorAll(".dot");
+  function label(){ root.querySelector("#ttl").textContent=phases[mode].t; root.querySelector("#dsc").textContent=phases[mode].d;
+    root.querySelector("#phlabel").textContent="Phase "+mode+" / 5"; for(var k=0;k<dots.length;k++)dots[k].classList.toggle("on",k===mode); }
+  function jump(n){ n=((n%6)+6)%6; reset(); mode=n; modeT=0; frozen=false; boomT=0; if(n>=4){kick(7);} label(); }
+  fit(); reset(); label();
+  root.querySelector("#pp").addEventListener("click",function(){playing=!playing;this.innerHTML=playing?"&#10073;&#10073;":"&#9654;";});
+  root.querySelector("#rp").addEventListener("click",function(){jump(0);});
+  for(var k=0;k<dots.length;k++){(function(kk){dots[kk].addEventListener("click",function(){jump(kk);});})(k);}
+  window.addEventListener("resize",function(){fit();});
+  function doBoom(x,y){ frozen=true; boomT=1.9; boomX=x; boomY=y; flash=1; recog=1; }
+
+  function step(dt){ if(frozen) return; var s=dt*60, kin=(mode<=3);
+    for(var i=0;i<ps.length;i++){ var p=ps[i]; p.x+=p.vx*s; if(p.x>W+8)p.x=-8; if(p.x<-8)p.x=W+8;
+      if(kin){ if(mode===3){ var target=H/2+((i%7)-3)*10; p.baseY+=(target-p.baseY)*0.02*s; } p.vy=0; p.y=p.baseY+AMP[mode]*Math.sin(t*FRQ[mode]+p.off); }
+      else { if(mode===5){p.vy*=Math.pow(0.95,s);} p.y+=p.vy*s; if(p.y<16){p.y=16;p.vy=Math.abs(p.vy);} if(p.y>H-16){p.y=H-16;p.vy=-Math.abs(p.vy);} } }
+    if(mode===3){ for(var a=0;a<ps.length && !frozen;a++){ for(var b=a+1;b<ps.length;b++){ var dx=ps[a].x-ps[b].x, dy=ps[a].y-ps[b].y; if(dx*dx+dy*dy<170){ doBoom((ps[a].x+ps[b].x)/2,(ps[a].y+ps[b].y)/2); break; } } } }
+    else if(mode>=4){ for(var a2=0;a2<ps.length;a2++){ for(var b2=a2+1;b2<ps.length;b2++){ var A=ps[a2],B=ps[b2],ex=A.x-B.x,ey=A.y-B.y; if(ex*ex+ey*ey<180){ var tv=A.vy; A.vy=B.vy*0.94-0.2; B.vy=tv*0.94+0.2; A.y+=(ey>0?1.2:-1.2); B.y-=(ey>0?1.2:-1.2);
+      flash=Math.min(1,flash+0.5); if(t-lastRec>(mode===4?0.04:0.4)){recog++;lastRec=t;} } } } }
+  }
+  function draw(){ var ph=phases[mode]; var fade=mode===0?0.05:mode<=2?0.09:mode===3?0.14:0.18;
+    X.fillStyle="rgba(5,6,14,"+fade+")"; X.fillRect(0,0,W,H);
+    if(flash>0){ X.fillStyle="rgba(255,240,210,"+flash*0.22+")"; X.fillRect(0,0,W,H); flash-=0.03; if(flash<0)flash=0; }
+    X.shadowBlur=(mode>=4?11:8); X.shadowColor=ph.hue; X.fillStyle=ph.hue;
+    for(var i=0;i<ps.length;i++){ X.beginPath(); X.arc(ps[i].x,ps[i].y,ps[i].r,0,6.283); X.fill(); }
+    X.shadowBlur=0;
+    if(frozen){ var scl=1+(1.9-boomT)*0.5; X.save(); X.textAlign="center";
+      X.fillStyle="rgba(255,220,150,"+Math.min(1,boomT*1.4)+")"; X.font="800 "+Math.round(46*scl)+"px Georgia, serif";
+      X.fillText("BOOM", boomX>W-90?W-90:(boomX<90?90:boomX), boomY<70?70:boomY);
+      X.font="600 13px sans-serif"; X.fillStyle="rgba(232,198,106,.9)"; X.fillText("der erste Kontakt zählt", W/2, H-24); X.restore(); }
+    root.querySelector("#reco").textContent="Erkennungen: "+recog;
+  }
+  var last=performance.now();
+  function loop(now){ var dt=Math.min(0.05,(now-last)/1000); last=now;
+    if(playing){ t+=dt;
+      if(frozen){ boomT-=dt; if(boomT<=0){ frozen=false; mode=4; modeT=0; kick(7); burst2=false; label(); } }
+      else { modeT+=dt;
+        if(mode<3){ if(modeT>DUR[mode]){ mode++; modeT=0; label(); } }
+        else if(mode===3){ if(modeT>5.5){ doBoom(W/2,H/2); } }
+        else if(mode===4){ if(!burst2 && modeT>2.2){ kick(8); burst2=true; } if(modeT>DUR[4]){ mode=5; modeT=0; label(); } }
+        else if(mode===5){ if(modeT>DUR[5]){ jump(0); } } } }
+    if(playing){step(dt); draw();} requestAnimationFrame(loop); }
+  window.__WELLEN={snapshot:function(){return {t:t,mode:mode,playing:playing,points:ps.map(function(p){return [p.x,p.y,p.vx,p.vy]})};}};
+  requestAnimationFrame(loop);
+})();
+</script>
+
+<!-- RAZ model i18n (append-only; original content untouched) -->
+<script>window.RAZ_CFG={"pos": "top-right"};</script>
+<script>window.RAZ_MODEL={"strings": [{"de": "Live-Gedankenmodell: viele Teilchen laufen mit langen Schweifen gerade, beginnen zu schwingen, immer staerker, bis der erste Kontakt alles kurz anhaelt (BOOM), woraufhin eine explosive Kettenreaktion einsetzt und am Ende zur Harmonie abkühlt.", "ru": "Живая мыслительная модель: множество частиц движутся прямо, с длинными хвостами, начинают колебаться, всё сильнее, пока первый контакт на мгновение не останавливает всё (BOOM), после чего запускается взрывная цепная реакция, которая в конце остывает до гармонии.", "en": "Live thought-model: many particles travel straight with long tails, begin to oscillate, ever more strongly, until the first contact briefly halts everything (BOOM), whereupon an explosive chain reaction sets in and finally cools down into harmony."}, {"de": "Information entsteht nicht aus einem Zustand, sondern aus einer Beziehung zwischen Zuständen.", "ru": "Информация возникает не из состояния, а из отношения между состояниями.", "en": "Information arises not from a state, but from a relation between states."}, {"de": "Live-Gedankenmodell, eine Hypothese über die Form der Dinge, kein bewiesenes Physik-Modell. Der ehrliche wissenschaftliche Abgleich wird separat geführt.", "ru": "Живая мыслительная модель, гипотеза о форме вещей, а не доказанная физическая модель. Честное научное сопоставление ведётся отдельно.", "en": "A live thought-model, a hypothesis about the form of things, not a proven physics model. The honest scientific reconciliation is conducted separately."}, {"de": "Viele Bahnen ziehen gerade durch die Zeit, lange leise Schweife, keine Wechselwirkung.", "ru": "Множество траекторий тянутся прямо сквозь время, длинные тихие хвосты, никакого взаимодействия.", "en": "Many trajectories move straight through time, long quiet tails, no interaction."}, {"de": "Aus dem Dazwischen ein erstes, leichtes Vibrieren.", "ru": "Из промежутка — первая, лёгкая вибрация.", "en": "Out of the in-between, a first, faint vibration."}, {"de": "Jetzt deutlich staerker, die Schwingung greift um sich.", "ru": "Теперь заметно сильнее, колебание охватывает всё вокруг.", "en": "Now markedly stronger, the oscillation spreads."}, {"de": "Nur der erste zählt. Zwei treffen sich, erkennen sich an, und alles haelt kurz an.", "ru": "Считается только первый. Двое встречаются, признают друг друга, и всё на мгновение замирает.", "en": "Only the first counts. Two meet, acknowledge each other, and everything briefly halts."}, {"de": "Eins hat das andere angestossen, bewiesen. Jetzt explodiert es, schnell, Beispiel um Beispiel.", "ru": "Одно подтолкнуло другое, доказало. Теперь это взрывается, быстро, пример за примером.", "en": "One has set off the other, proven it. Now it explodes, fast, example upon example."}, {"de": "Wenn diese anfangen abzukühlen, ist die Menschheit laengst seit unendlich vielen Jahren nicht mehr da.", "ru": "Когда они начнут остывать, человечества уже давно, бесконечно много лет, как не будет.", "en": "By the time these begin to cool down, humanity will long since have been gone for infinitely many years."}, {"de": "der erste Kontakt zählt", "ru": "считается первый контакт", "en": "the first contact counts"}, {"de": "Gerade Bahnen", "ru": "Прямые траектории", "en": "Straight Trajectories"}, {"de": "Erste Schwingung", "ru": "Первое колебание", "en": "First Oscillation"}, {"de": "Die Welle waechst", "ru": "Волна растёт", "en": "The Wave Grows"}, {"de": "Erster Kontakt", "ru": "Первый контакт", "en": "First Contact"}, {"de": "Kettenreaktion", "ru": "Цепная реакция", "en": "Chain Reaction"}, {"de": "Abkühlung zur Harmonie", "ru": "Охлаждение к гармонии", "en": "Cooling to Harmony"}, {"de": "Phase ", "ru": "Фаза ", "en": "Phase "}, {"de": "BOOM", "ru": "БУМ", "en": "BOOM"}, {"de": "Erkennungen: ", "ru": "Распознавания: ", "en": "Recognitions: "}]};</script>
+<script>
+/* ==========================================================================
+   Realität als Zustand — MODEL i18n runtime (append-only)
+   For the interactive canvas/JS models, whose text is produced by JavaScript
+   (canvas fillText, innerHTML/textContent). String-keyed, so it survives any
+   DOM rebuild. We intercept the text sinks and substitute translations.
+
+   Injected: RAZ_CFG (switcher placement) and
+             RAZ_MODEL = { strings:[{de,ru,en}, ...] }  (longest handled first)
+   The dict mixes whole messages / whole static blocks (long keys, matched
+   wholesale) and atomic data values (short keys). Nothing existing is edited;
+   this only appends a switcher + a translation layer.
+   ========================================================================== */
+(function () {
+  "use strict";
+  var CFG   = (typeof RAZ_CFG   !== "undefined") ? RAZ_CFG   : { pos:"top-right" };
+  var MODEL = (typeof RAZ_MODEL !== "undefined") ? RAZ_MODEL : { strings:[] };
+  var LS_KEY = "raz_lang";
+  var curLang = "de";
+  var APPLYING = false;
+
+  /* ---------- translation core (substring replace, boundary-aware) -------- */
+  var STR = (MODEL.strings || []).filter(function(e){return e&&e.de;}).slice()
+              .sort(function (a, b) { return b.de.length - a.de.length; });
+  function isL(ch){ return ch >= "0" && ch <= "9" || ch >= "A" && ch <= "Z" || ch >= "a" && ch <= "z" || (ch >= "À" && ch <= "ɏ"); }
+  STR.forEach(function (e){ e._bl = isL(e.de.charAt(0)); e._br = isL(e.de.charAt(e.de.length-1)); });
+  var memo = { ru:Object.create(null), en:Object.create(null) };
+  function translateStr(s, lang){
+    if (lang === "de" || !s || typeof s !== "string") return s;
+    var mm = memo[lang]; var hit = mm[s]; if (hit !== undefined) return hit;
+    var out = s;
+    for (var i=0;i<STR.length;i++){
+      var e = STR[i], tr = e[lang]; if (tr == null || tr === "") continue;
+      if (out.indexOf(e.de) < 0) continue;
+      var res="", from=0, k;
+      while ((k = out.indexOf(e.de, from)) >= 0){
+        var okL = !e._bl || k===0 || !isL(out.charAt(k-1));
+        var aft = k + e.de.length;
+        var okR = !e._br || aft>=out.length || !isL(out.charAt(aft));
+        if (okL && okR){ res += out.slice(from,k) + tr; from = aft; }
+        else { res += out.slice(from, k+1); from = k+1; }
+      }
+      out = res + out.slice(from);
+    }
+    mm[s] = out; return out;
+  }
+
+  /* ---------- registries for re-translation on language switch ------------ */
+  var htmlEls = [], textEls = [];
+  function TAGof(el){ return (el && el.tagName ? el.tagName : "").toUpperCase(); }
+  function skip(el){ if(!el||el.nodeType!==1) return false; var t=TAGof(el); if(t==="SCRIPT"||t==="STYLE") return true;
+    var p=el; while(p){ if(p.id==="raz-langbar"||p.__razSkip) return true; p=p.parentNode; } return false; }
+
+  /* ---------- patch innerHTML / textContent setters ----------------------- */
+  function patchProp(proto, prop, reg){
+    var d = Object.getOwnPropertyDescriptor(proto, prop);
+    if (!d || !d.set || d.set.__razP) return;
+    var oget = d.get, oset = d.set;
+    Object.defineProperty(proto, prop, {
+      configurable:true, enumerable:d.enumerable, get:oget,
+      set: function(v){
+        if (APPLYING){ oset.call(this, v); return; }
+        if (skip(this)){ oset.call(this, v); return; }
+        var de = String(v);
+        this[reg.key] = de;
+        if (!this[reg.flag]){ this[reg.flag] = true; reg.list.push(this); }
+        oset.call(this, curLang==="de" ? v : translateStr(de, curLang));
+      }
+    });
+    d.set.__razP = true;
+  }
+  var elProto = window.Element.prototype;
+  var htmlDesc = Object.getOwnPropertyDescriptor(elProto,"innerHTML") ? elProto : window.HTMLElement.prototype;
+  patchProp(htmlDesc, "innerHTML", { key:"__razHtmlDe", flag:"__razHtmlR", list:htmlEls });
+  patchProp(window.Node.prototype, "textContent", { key:"__razTextDe", flag:"__razTextR", list:textEls });
+
+  /* ---------- patch canvas text ------------------------------------------ */
+  (function(){
+    if (!window.CanvasRenderingContext2D) return;
+    var P = CanvasRenderingContext2D.prototype;
+    ["fillText","strokeText"].forEach(function(fn){
+      var o=P[fn]; if(!o||o.__razP) return;
+      var w=function(text,x,y,mw){ var t=(curLang!=="de")?translateStr(String(text),curLang):text;
+        return (mw===undefined)?o.call(this,t,x,y):o.call(this,t,x,y,mw); };
+      w.__razP=true; P[fn]=w;
+    });
+    var m=P.measureText; if(m&&!m.__razP){ var w2=function(t){ return m.call(this,(curLang!=="de")?translateStr(String(t),curLang):t); }; w2.__razP=true; P.measureText=w2; }
+  })();
+
+  /* ---------- initial pass over static markup ----------------------------- */
+  var INLINE={A:1,ABBR:1,B:1,BDI:1,BDO:1,BR:1,CITE:1,CODE:1,DATA:1,DFN:1,EM:1,I:1,KBD:1,MARK:1,Q:1,RP:1,RT:1,RUBY:1,S:1,SAMP:1,SMALL:1,SPAN:1,STRONG:1,SUB:1,SUP:1,TIME:1,U:1,VAR:1,WBR:1,DEL:1,INS:1};
+  var OPAQUE={SCRIPT:1,STYLE:1,CANVAS:1,IFRAME:1,NOSCRIPT:1,TEMPLATE:1,IMG:1,VIDEO:1,AUDIO:1,INPUT:1,TEXTAREA:1,OBJECT:1,TITLE:1,HEAD:1,META:1,LINK:1,BASE:1,DESC:1,DEFS:1,SYMBOL:1};
+  function hasText(el){ var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null),n; while((n=w.nextNode())){ if(n.nodeValue&&/\S/.test(n.nodeValue))return true; } return false; }
+  function hasDirectText(el){ for(var n=el.firstChild;n;n=n.nextSibling){ if(n.nodeType===3 && /\S/.test(n.nodeValue||"")) return true; } return false; }
+  function hasBlockDesc(el){ var k=el.getElementsByTagName("*"); for(var i=0;i<k.length;i++){ if(INLINE[(k[i].tagName||"").toUpperCase()]!==1) return true; } return false; }
+  function collectStaticBlocks(){
+    var out=[];
+    // A block is any element that owns text directly, OR is a leaf text block.
+    // Capturing whole innerHTML keeps loose text + inline/label children together.
+    (function walk(el){ for(var c=el.firstElementChild;c;c=c.nextElementSibling){
+      var t=(c.tagName||"").toUpperCase();
+      if(OPAQUE[t]===1) continue; if(c.id==="raz-langbar"||c.__razSkip) continue;
+      if(hasDirectText(c) || (hasText(c)&&!hasBlockDesc(c))) out.push(c); /* don't descend */
+      else walk(c);
+    }})(document.body);
+    return out;
+  }
+  function primeStatic(){
+    var blocks=collectStaticBlocks();
+    for (var i=0;i<blocks.length;i++){ var el=blocks[i];
+      if (el.__razHtmlR) continue;              // already tracked via a JS assignment
+      el.__razHtmlDe = el.innerHTML; el.__razHtmlR = true; htmlEls.push(el);
+    }
+  }
+
+  /* ---------- apply a language ------------------------------------------- */
+  function reHtml(el){ if(el.isConnected===false) return; var de=el.__razHtmlDe;
+    APPLYING=true; try{ el.innerHTML = (curLang==="de")?de:translateStr(de,curLang); }catch(e){} APPLYING=false; }
+  function reText(el){ if(el.isConnected===false) return; var de=el.__razTextDe;
+    APPLYING=true; try{ el.textContent = (curLang==="de")?de:translateStr(de,curLang); }catch(e){} APPLYING=false; }
+  function apply(lang){
+    curLang = lang;
+    for (var i=0;i<htmlEls.length;i++) reHtml(htmlEls[i]);
+    for (var j=0;j<textEls.length;j++) reText(textEls[j]);
+    document.documentElement.setAttribute("lang", lang);
+    try{ localStorage.setItem(LS_KEY, lang); }catch(e){}
+    var btns=document.querySelectorAll("#raz-langbar [data-lang]");
+    for (var k=0;k<btns.length;k++){ var on=btns[k].getAttribute("data-lang")===lang; btns[k].setAttribute("aria-pressed",on?"true":"false"); btns[k].className=on?"raz-lb-btn raz-on":"raz-lb-btn"; }
+    /* canvas repaints itself via the model's own animation loop */
+  }
+
+  /* ---------- switcher UI ------------------------------------------------- */
+  function buildBar(){
+    var style=document.createElement("style"); style.id="raz-lang-style"; style.__razSkip=true;
+    style.textContent="#raz-langbar{position:fixed;z-index:2147483000;display:inline-flex;gap:2px;padding:3px;border-radius:999px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-size:12px;font-weight:700;letter-spacing:.02em;line-height:1;background:rgba(20,21,29,.72);border:1px solid rgba(150,150,180,.28);box-shadow:0 6px 22px rgba(0,0,0,.4);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);}#raz-langbar .raz-lb-btn{appearance:none;border:0;background:transparent;cursor:pointer;color:#c9cee0;border-radius:999px;padding:.4em .62em;font:inherit;transition:background .15s,color .15s;}#raz-langbar .raz-lb-btn:hover{color:#fff;}#raz-langbar .raz-lb-btn.raz-on{background:rgba(230,181,74,.94);color:#141019;}";
+    document.head.appendChild(style);
+    var bar=document.createElement("div"); bar.id="raz-langbar"; bar.__razSkip=true; bar.setAttribute("role","group"); bar.setAttribute("aria-label","Sprache / Language / Язык");
+    [["de","DE"],["ru","RU"],["en","EN"]].forEach(function(p){
+      var b=document.createElement("button"); b.type="button"; b.className="raz-lb-btn"; b.setAttribute("data-lang",p[0]); b.setAttribute("aria-pressed","false");
+      b.title={de:"Deutsch (Original)",ru:"Русский",en:"English"}[p[0]];
+      APPLYING=true; b.textContent=p[1]; APPLYING=false;
+      b.addEventListener("click",function(){ var code=this.getAttribute("data-lang"); apply(code); });
+      bar.appendChild(b);
+    });
+    var pos=CFG.pos||"top-right";
+    if (pos.indexOf("bottom")===0) bar.style.bottom=CFG.edge||"14px"; else bar.style.top=CFG.edge||"12px";
+    if (pos.indexOf("left")>=0) bar.style.left=CFG.side||"14px"; else bar.style.right=CFG.side||"14px";
+    APPLYING=true; document.body.appendChild(bar); APPLYING=false;
+  }
+  function getInitial(){ try{ var s=localStorage.getItem(LS_KEY); if(s==="ru"||s==="en"||s==="de")return s; }catch(e){} return "de"; }
+
+  /* ---------- init ------------------------------------------------------- */
+  var inIframe = false; try { inIframe = window.top !== window.self; } catch (e) { inIframe = true; }
+  primeStatic();
+  if (!inIframe) buildBar();  /* embedded in the hub: the hub's switcher drives us via postMessage */
+  window.addEventListener("message",function(e){ if(e&&e.data&&(e.data.razLang==="de"||e.data.razLang==="ru"||e.data.razLang==="en")) apply(e.data.razLang); });
+  window.RAZ_onLang=function(l){ apply(l); };
+  apply(getInitial());
+})();
+
+</script>
+
+<script src="assets/restauration.js?v=20261116-r2" defer></script>
+<aside data-historical-banner style="padding:10px 18px;background:#172637;color:#e7d3a1;font:14px system-ui">ARCHIV · ARCHIVE · АРХИВ — 16.11.2026 · <a href="../../forschung.html">HALVETH — 17.11.2026</a></aside></body>
+</html>

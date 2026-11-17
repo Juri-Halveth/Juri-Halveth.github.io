@@ -1,0 +1,1 @@
+(function(root){root.HalvethRender={density:HALVETHMaterialView.density,draw:(ctx,e,view,w,h)=>HALVETHMaterialView.draw(ctx,HALVETHMaterial.fromEngine(e),view,w,h)};})(globalThis);

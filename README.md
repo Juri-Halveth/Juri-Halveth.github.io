@@ -185,3 +185,26 @@ haben eigene Bedingungen; frühere wirksame Grants bleiben bestehen. Eine
 kommerzielle Anfrage nennt das konkrete Werk, die Revision und den Einsatz.
 
 Zusammenarbeit: **juri@halveth.de** · [Sicherheitsmeldungen](SECURITY.md): **security@halveth.de**
+
+## Additive Material- und Kommunikationsvorschau · 17.11.2026
+
+Die [integrierte Vorschau](modelle/material-20261117/forschung.html) liegt vollständig
+unter `modelle/material-20261117/`. Sie ergänzt die Modellübersicht, ohne die
+Portfolio-Startseite, den bestehenden Starship-Raum oder das öffentliche
+[Fadennetz](universum/faden/) zu ersetzen. Die bisherige Forschungsausgabe mit
+Sgr-A*-, Wirbel- und Knotenlabor, Sprachen, Referenzmodellen und Studio bleibt
+innerhalb der Vorschau erreichbar.
+
+Der neue Materialmodus besitzt bewegliche Material-IDs, Positionen und
+nematische Orientierungen; seine Längen sind dimensionslose Modellwerte.
+Eine gesonderte Kommunikationsschicht verwendet einen ausgewiesenen Ausschnitt
+des vorhandenen öffentlichen Katalogs und eigene synthetische Ereignisse.
+Sie führt keine Rechtsentscheidung aus.
+
+[Umfang, reproduzierbarer Einstieg und Herkunft](modelle/material-20261117/README.md)
+benennen die Trennung von Bildschirmgröße, Modellausdehnung und Masse, die
+Teilübersetzungen und die gemischten Lizenzen. Materialrechenkern/-adapter/-ansicht
+behalten MIT samt vollständigem Hinweis; Portal- und neue Narrativelemente
+unterliegen der bestehenden pfadgebundenen PIRL-Zuordnung. Übernommene Module
+und externe Quellen behalten ihre eigenen Rechte. Private Ausgangsdokumente,
+Originalgespräche und lokale Journale sind nicht Teil dieser Webvorschau.

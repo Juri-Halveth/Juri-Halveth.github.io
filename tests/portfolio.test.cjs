@@ -40,3 +40,49 @@ test('the selected project list contains learning, tools and models with no with
  assert.ok(data.projects.some(x=>x.id==='halveth-forschungslabor'));
  assert.ok(data.projects.some(x=>x.id==='halveth-tresor'));
 });
+
+
+test('additive material preview links preserve the existing portfolio and bound shared runtime',()=>{
+ const preview=path.join(root,'modelle/material-20261117');
+ for(const lang of ['','en/','ru/']){
+  const raw=read(lang+'modelle/index.html'),doc=new JSDOM(raw).window.document,link=doc.querySelector('[data-material-preview] a.button');
+  assert.ok(link,'preview link in every models language');
+  const target=path.resolve(root,lang,'modelle',link.getAttribute('href'));
+  assert.equal(target,path.join(preview,'forschung.html'));
+  assert.match(raw,/scene-stage\.mjs/,'existing interactive work sample preserved');
+ }
+ const binding=JSON.parse(read('modelle/material-20261117/SHARED_SOURCES.json'));
+ assert.equal(binding.files.length,6);
+ for(const file of binding.files){
+  const bytes=fs.readFileSync(path.join(preview,file.path));
+  assert.equal(bytes.length,file.bytes);
+  assert.equal(require('node:crypto').createHash('sha256').update(bytes).digest('hex'),file.sha256);
+ }
+ assert.match(read('modelle/material-20261117/assets/material-engine.js'),/MIT License/);
+ assert.match(read('modelle/material-20261117/materials-LICENSE-MIT.txt'),/Permission is hereby granted/);
+ assert.match(read('LICENSES.md'),/assets\/narrative-channels\.js/);
+ assert.match(read('universum/faden/app.js'),/HALVETH_RELATION_MODEL\.fromSpace/,'existing public graph retained');
+ const material=require('../modelle/material-20261117/assets/material-model.js').create();
+ assert.equal(material.snapshot().materialCells.length,960);
+ const narrative=require('../modelle/material-20261117/assets/narrative-channels.js').create();
+ assert.equal(narrative.snapshot().catalog.coverage.originalProjectCount,18);
+});
+
+test('additive preview keeps local assets and legacy laboratories within its own web path',()=>{
+ const preview=path.join(root,'modelle/material-20261117');
+ for(const name of ['forschung.html','Realitaet_Erste_Regel_Plus_Minus.html','studio/index.html','labore/beziehungsfaden.html','modules/knoten/KNOTEN.html','modules/sgra/VORSCHAU.html','modules/wirbel/WIRBEL.html'])assert.ok(fs.existsSync(path.join(preview,name)),name);
+ function files(dir){return fs.readdirSync(dir,{withFileTypes:true}).flatMap(x=>x.isDirectory()?files(path.join(dir,x.name)):[path.join(dir,x.name)]);}
+ for(const file of files(preview)){
+  assert.doesNotMatch(file,/Rechtswege_FULL|Rechtswege_verbinden|Eingefügter Text|\.pdf$/i,'private source document excluded');
+  if(!file.endsWith('.html'))continue;
+  const raw=fs.readFileSync(file,'utf8');assert.doesNotMatch(raw,/(?:C|E):[\\/](?:Users|HALVETH_WORKSPACE)/,'no local machine path');
+  const doc=new JSDOM(raw).window.document;
+  for(const el of doc.querySelectorAll('script[src],link[rel=stylesheet][href],iframe[data-module-src]')){
+   const href=el.getAttribute('src')||el.getAttribute('href')||el.getAttribute('data-module-src');
+   if(/^[a-z][a-z0-9+.-]*:/i.test(href))continue;
+   const target=path.resolve(path.dirname(file),href.split(/[?#]/)[0]);
+   assert(target.startsWith(preview+path.sep),'preview asset must not escape its public folder: '+href);
+   assert(fs.existsSync(target),path.relative(preview,file)+': '+href);
+  }
+ }
+});

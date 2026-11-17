@@ -1,0 +1,20 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' blob: data:; connect-src 'none'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>HALVETH · Der erste Unterschied · 4K-Studie</title><link rel="stylesheet" href="style.css"></head>
+<body><canvas id="gl" aria-hidden="true"></canvas><canvas id="labels" tabindex="0" aria-label="Interaktiver Modellraum. W und S bewegen, A und D seitwärts, Q und E vertikal. Ziehen dreht die Ansicht."></canvas>
+<header><a href="../forschung.html" class="eyebrow">HALVETH / FORSCHUNG / STUDIO</a><h1>Der erste <em>Unterschied.</em></h1><p>Minus, Plus, Beziehung. Die ursprüngliche Idee, neu gezeichnet.</p></header>
+<div id="badge">Illustration · kein Naturbeweis</div>
+<aside id="panel"><div class="eyebrow">DAS STUDIENPULT</div>
+<label>Ansicht<select id="mode"><option value="pair">Das erste Paar</option><option value="flight">Offener Flugraum</option></select></label>
+<label>Annäherung <output id="couplingLabel">0 %</output><input id="coupling" type="range" min="0" max="1" step=".001" value="0"></label>
+<label>Stationen im Flugraum<select id="count"><option>8</option><option selected>32</option><option>96</option><option>256</option></select></label>
+<label>Bildauflösung<select id="quality"><option value="native" selected>Bildschirm / HiDPI</option><option value="1080">1920 × 1080</option><option value="4k">3840 × 2160 · 4K</option></select></label>
+<div class="buttons"><button id="pause">Pause</button><button id="home">Startpunkt</button><button id="reset">Neuer Lauf</button><button id="wide">Pult ausblenden</button></div>
+<div class="buttons"><button id="png">4K-PNG</button><button id="json">Lauf als JSON</button></div>
+<label class="check"><input id="auto" type="checkbox"> Reiseflug, 2 Modelleinh./s</label>
+<details><summary>Was passiert hier wirklich?</summary><p>In der Paaransicht bleibt der ursprüngliche Auslösewert erhalten: Annäherung ≥ 0,92. Im Flugraum wird eine Station bei einem Abstand ≤ 1,25 Modelleinh. erfasst. Das sind offengelegte Interaktionsregeln, keine entdeckten Naturkonstanten.</p><p>Jede Station besitzt einen wiederholbaren 0/1-Modellwert. Ein vorhandenes Paar ist nicht automatisch ein physikalisches Bit. Für eine als gleichwahrscheinlich angenommene binäre Entscheidung gilt I = −log₂(½) = 1 Bit.</p><p>Die gezeichneten Wellenkonturen illustrieren überlagerte Sinusschwingungen. Sie sind eine neue Vektordarstellung, keine identische Intensitätskarte der Originalkacheln. Der Flugraum enthält räumliche Marker und Quellzeichen, keine Rohrwand und keine Plasmasimulation. Ein erneutes Vorbeifliegen erzeugt keine zweite Quellidentität.</p><p>Originalformulierung und Originaldateien sind separat erhalten. Dieses Studio ist eine neue technische Bearbeitung, keine historische Originalfassung.</p></details>
+</aside>
+<button id="show" hidden>Pult einblenden</button>
+<footer><div id="status" role="status">Bereit. Schiebe die zwei Zustände zusammen.</div><div id="telemetry"></div><p>Flug: W/S · A/D · Q/E · Ziehen zum Drehen · X stoppt Reiseflug · P pausiert · H setzt die Kamera zurück</p></footer>
+<noscript>Diese interaktive Studienfassung benötigt JavaScript. Die Anleitung und die historischen Texte bleiben separat lesbar.</noscript>
+<script src="model.js"></script><script src="app.js"></script><aside data-historical-banner style="padding:10px 18px;background:#172637;color:#e7d3a1;font:14px system-ui">ARCHIV · ARCHIVE · АРХИВ — 16.11.2026 · <a href="../../../forschung.html">HALVETH — 17.11.2026</a></aside></body></html>

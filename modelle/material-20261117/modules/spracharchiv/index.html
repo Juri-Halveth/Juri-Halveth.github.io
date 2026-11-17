@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HALVETH</title>
+<meta name="description" content="HALVETH erforscht getrennte Freigaben für ausgewählte Zustandsänderungen und Statusmeldungen mit ausdrücklich benanntem Prüfbereich. Forschungsstand 0.5.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='6' y='6' width='88' height='88' rx='22' fill='%230a0a0b' stroke='%23ffd60a' stroke-width='6'/><circle cx='50' cy='50' r='21' fill='none' stroke='%23ffd60a' stroke-width='6'/><circle cx='50' cy='50' r='6' fill='%234fd6d0'/></svg>">
+<link rel="stylesheet" href="halveth.css?v=20261116-r2">
+
+<link rel="canonical" href="https://halveth.de/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HALVETH">
+<meta property="og:title" content="HALVETH">
+<meta property="og:description" content="HALVETH erforscht getrennte Freigaben für ausgewählte Zustandsänderungen und Statusmeldungen mit ausdrücklich benanntem Prüfbereich. Forschungsstand 0.5.">
+<meta property="og:url" content="https://halveth.de/">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary">
+<noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebSite","name":"HALVETH","url":"https://halveth.de/","inLanguage":["de","en","ru"],"description":"Öffentliche Forschung zu getrennten Freigaben, überprüfbaren Zustandsänderungen und ausdrücklich benannten Prüfbereichen.","author":{"@type":"Person","name":"Juri Janovski"}},{"@context":"https://schema.org","@type":"Person","name":"Juri Janovski","url":"https://juri.halveth.de/","email":"mailto:info@halveth.de","jobTitle":"Entwickler und unabhängiger Forscher","description":"Baut Software und Systeme rund um Vertrauen, Sicherheit und künstliche Intelligenz. Arbeitet allein, ohne Firma dahinter.","knowsAbout":["Prozessoptimierung","Cyber Security","IT-Sicherheit","Webseiten","Webentwicklung","Programmierung","Softwareentwicklung","Marketing","Künstliche Intelligenz","Automatisierung","Datenschutz"],"knowsLanguage":["Deutsch","Englisch","Russisch"],"address":{"@type":"PostalAddress","addressLocality":"Brühl","addressRegion":"Nordrhein-Westfalen","postalCode":"50321","addressCountry":"DE"},"workLocation":{"@type":"Place","name":"Brühl bei Köln, Rhein-Erft-Kreis"},"sameAs":["https://github.com/Juri-Halveth","https://www.linkedin.com/in/juri-j-638862395/","https://www.instagram.com/anov.ju/"]}]</script>
+
+<link rel="stylesheet" href="assets/restauration.css?v=20261116-r2">
+</head>
+<body data-hv-page="index" class="hv-main-shell">
+<a class="skip-link" href="#inhalt" data-raz-skip>Zum Inhalt</a>
+<nav>
+  <div class="nav-in">
+    <a class="logo" href="index.html"><span class="mark">&#11041;</span> HALVETH</a>
+    <div class="nav-links">
+      <a href="index.html">Start</a>
+      <a href="prinzip.html">Prinzip</a>
+      <a href="baum.html">Wo es sitzt</a>
+      <a href="ergebnisse.html">Ergebnisse</a>
+      <a href="grenzen.html">Grenzen</a>
+      <a href="vision.html">Vision</a>
+      <a href="labor.html">Labor</a>
+      <a href="audits.html">Audits</a>
+      <a href="forschung.html">Forschung</a>
+    </div>
+    <a class="portfolio-entry" href="https://juri.halveth.de/" data-raz-skip>Juri<span class="pe-rest"> &amp; Projekte</span></a>
+    <div class="nav-cta">
+      <span class="status-pill"><span class="dot"></span>in Forschung</span>
+    </div>
+  </div>
+</nav>
+
+<main id="inhalt">
+
+<div class="wrap">
+  <section class="hero" id="hero">
+    <p class="eyebrow reveal">// HALVETH 0.5 &middot; DOKUMENTIERTER FORSCHUNGSSTAND</p>
+    <h1 class="reveal">Eine &Auml;nderung braucht<br>einen benannten Pr&uuml;frahmen.</h1>
+    <p class="hook reveal">Ein Rechner schl&auml;gt eine ausgew&auml;hlte &Auml;nderung vor. Ein getrenntes Ger&auml;t pr&uuml;ft den Antrag nach einer festgelegten Regel, bevor dieser Pfad fortgesetzt wird.</p>
+    <p class="lead reveal">
+      HALVETH untersucht einen kleinen, klar begrenzten Freigabepfad. Ein separater Pr&uuml;frechner bewertet einen signierten Antrag nach einer versionierten Regel und erteilt oder verweigert daf&uuml;r ein kurzlebiges Permit. <strong>Das bindet eine Entscheidung an einen benannten Vorgang. Es ist keine Aussage &uuml;ber das ganze System.</strong>
+    </p>
+    <p class="lead reveal">
+      Vorschlag, Bewertung, Freigabe, Ausf&uuml;hrung und Beleg bleiben getrennte Zust&auml;nde. <strong>Ausgef&uuml;hrt beschreibt ein Ereignis. G&uuml;ltig ist eine Bewertung innerhalb einer benannten Regel und Abdeckung.</strong>
+    </p>
+    <div class="cta-row reveal">
+      <a class="btn y" href="#erkenntnis">Der Pr&uuml;fpfad &darr;</a>
+      <a class="btn ghost" href="#offen">Offene Abdeckung</a>
+    </div>
+  </section><section class="hv-restoration hv-edition" data-raz-skip id="werkstatt"><div class="hv-feature"><div><p class="hv-kicker"><span data-hv-i18n="edition">WEB-EDITION 2026.11 · WIEDERENTDECKUNG</span></p><h2><span data-hv-i18n="hero">Eine Idee. Viele Blickwinkel.</span></h2><p class="hv-sub"><span data-hv-i18n="lead">Die ursprünglichen Modelle bleiben erkundbar. Daneben wächst eine Werkstatt für präzisere Bilder, freie Bewegung und nachvollziehbare Gegenproben.</span></p><div class="hv-actions"><a class="hv-button primary" href="studio/index.html"><span data-hv-i18n="openstudio">Plus / Minus in 4K öffnen</span></a><a class="hv-button" href="werkstatt.html"><span data-hv-i18n="openwork">Alle Studios entdecken</span></a></div></div><div class="hv-preview" aria-hidden="true"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="hv-glow"><stop stop-color="#72c8ff" stop-opacity=".3"/><stop offset="1" stop-color="#06101c" stop-opacity="0"/></radialGradient><linearGradient id="hv-wave"><stop stop-color="#77c5ff"/><stop offset="1" stop-color="#edca85"/></linearGradient></defs><circle cx="200" cy="120" r="115" fill="url(#hv-glow)"/><g stroke="url(#hv-wave)" fill="none" opacity=".65"><path d="M18 72 C100 5 135 219 200 106 S300 20 382 70"/><path d="M18 79 C100 14 135 213 200 108 S300 34 382 78"/><path d="M18 86 C100 23 135 207 200 110 S300 48 382 86"/><path d="M18 93 C100 32 135 201 200 112 S300 62 382 94"/><path d="M18 100 C100 41 135 195 200 114 S300 76 382 102"/><path d="M18 107 C100 50 135 189 200 116 S300 90 382 110"/><path d="M18 114 C100 59 135 183 200 118 S300 104 382 118"/><path d="M18 121 C100 68 135 177 200 120 S300 118 382 126"/><path d="M18 128 C100 77 135 171 200 122 S300 132 382 134"/><path d="M18 135 C100 86 135 165 200 124 S300 146 382 142"/><path d="M18 142 C100 95 135 159 200 126 S300 160 382 150"/><path d="M18 149 C100 104 135 153 200 128 S300 174 382 158"/><path d="M18 156 C100 113 135 147 200 130 S300 188 382 166"/><path d="M18 163 C100 122 135 141 200 132 S300 202 382 174"/></g><circle cx="97" cy="120" r="7" fill="#83c9ff"/><circle cx="303" cy="120" r="7" fill="#f3d294"/><text x="97" y="99" text-anchor="middle" fill="#a1d6ff" font-size="26">−</text><text x="303" y="99" text-anchor="middle" fill="#f3d294" font-size="26">+</text><text x="200" y="218" text-anchor="middle" fill="#8ba3b8" font-family="monospace" font-size="10" letter-spacing="3">ZUSTAND · BEZIEHUNG · ÜBERGANG</text></svg></div></div></section>
+</div>
+
+<section id="warum">
+  <div class="wrap">
+    <p class="eyebrow reveal">// Die Trennung</p>
+    <h2 class="sec reveal">Ein Status braucht Quelle, Regel und Reichweite.</h2>
+    <p class="sec-sub reveal">Ein OK ist nur so weit belastbar wie der ausgewiesene Pr&uuml;fbereich.</p>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <p class="k">01</p>
+        <h3>Der Vorschlag</h3>
+        <p>Benannt werden das betroffene Objekt, die beabsichtigte Operation, der bekannte Ausgangszustand und die Regel, nach der gepr&uuml;ft werden soll. Erst dadurch wird die Anfrage abgrenzbar.</p>
+      </div>
+      <div class="pillar reveal">
+        <p class="k">02</p>
+        <h3>Die Freigabe</h3>
+        <p>Ein getrenntes Ger&auml;t bewertet die eingereichten Belege innerhalb seiner Policy. Seine Antwort gilt f&uuml;r genau diesen Antrag und diesen Zeitraum. Sie belegt keinen Zustand au&szlig;erhalb davon.</p>
+      </div>
+      <div class="pillar reveal">
+        <p class="k">03</p>
+        <h3>Der Status</h3>
+        <p>Eine Meldung nennt Objekt, Quelle oder Sensor, Zeitfenster und bekannte L&uuml;cken. Fehlt eine Quelle, ist sie veraltet oder wurde ihr Bereich nicht gemessen, bleibt dieser Teil unbekannt.</p>
+      </div>
+    </div>
+    <p class="caveat reveal">Diese Seite benennt den getesteten Pfad und sein Ende. Aus dem Ergebnis wird keine Aussage &uuml;ber ungemessene Pfade, andere Ger&auml;te oder einen sp&auml;teren Zeitpunkt abgeleitet.</p>
+  </div>
+</section>
+
+<section id="erkenntnis">
+  <div class="wrap">
+    <p class="eyebrow reveal">// Beobachtung und Freigabe</p>
+    <h2 class="sec reveal">Vorher pr&uuml;fen, nachher belegen.</h2>
+    <div class="paper reveal">
+      <div>
+        <p class="quote">Ein System meldet, was es gepr&uuml;ft hat. Au&szlig;erhalb dieses Bereichs bleibt der Zustand unbekannt.</p>
+      </div>
+      <div>
+        <p>HALVETH begann mit Beobachtung nach einer Handlung: Zust&auml;nde vergleichen, Abweichungen festhalten und Belege schreiben. Das bleibt n&uuml;tzlich. Es beantwortet jedoch eine andere Frage als eine Freigabe vor der Handlung.</p>
+        <p>Der n&auml;chste Schritt lautet deshalb nicht, Abweichungen unm&ouml;glich zu machen. Untersucht wird, ob <strong>ein ausgew&auml;hlter und vollst&auml;ndig gerouteter Schreibpfad vor seiner Fortsetzung eine getrennte Bewertung verlangen kann.</strong></p>
+        <p>Am 25. Juli 2026 lief ein solcher begrenzter Pfad auf zwei physisch getrennten Rechnern. Ein Raspberry Pi bewertete zwei festgelegte, signierte &Auml;nderungstypen und erteilte daf&uuml;r kurzlebige Permits. Acht konstruierte Gegenproben wurden abgewiesen. Das belegt diesen Versuch, nicht s&auml;mtliche Eingaben oder Schreibwege.</p>
+        <p>Parallel entstand im Juli eine zweite Forschungsregel: <strong>Jede Statusaussage bindet Objekt, Beobachtungsquelle, Zeitfenster und bekannte L&uuml;cken.</strong> Fehlt ein Sensor, ist eine Quelle veraltet oder liegt ein Bereich au&szlig;erhalb der Messung, bleibt der zugeh&ouml;rige Zustand <code>UNKNOWN</code>. Ein allgemeines OK folgt daraus nicht.</p>
+        <p>Eine getrennte Freigabe bewertet nur den benannten Antrag. Sie schafft f&uuml;r eine ausgew&auml;hlte Operation eine nachvollziehbare Entscheidungsgrenze. Der Coverage-Vertrag beschreibt zugleich, wie weit eine sp&auml;tere Aussage reichen darf; eine vollst&auml;ndige Umsetzung &uuml;ber das ganze System ist damit nicht belegt.</p>
+      </div>
+    </div>
+    <div class="nots">
+      <span class="not">Forschungsstand 0.5</span>
+      <span class="not">zwei Rechner im eigenen Labor</span>
+      <span class="not">begrenzter Freigabepfad</span>
+      <span class="not">Abdeckung wird ausgewiesen</span>
+    </div>
+  </div>
+</section>
+
+<section id="projekte">
+  <div class="wrap">
+    <p class="eyebrow reveal">// Die Projektwelten</p>
+    <h2 class="sec reveal">Sieben Fragen, an denen ich baue.</h2>
+    <p class="sec-sub reveal">Jede beginnt bei einer menschlichen Situation und nicht bei einer Technologie. Der Stand steht ehrlich dabei.</p>
+    <div class="tiles">
+      <div class="tile reveal">
+        <p class="k">Post</p>
+        <h3>Seal</h3>
+        <p>Unsere E-Mail ist &auml;lter als viele Menschen, die sie t&auml;glich benutzen. Was w&auml;re, wenn wir ihr endlich das Vertrauen geben k&ouml;nnten, das wir ihr l&auml;ngst entgegenbringen?</p>
+        <p class="k">Bauplan, kein Programm</p>
+      </div>
+      <div class="tile reveal">
+        <p class="k">Erinnern</p>
+        <h3>Atlas</h3>
+        <p>Wissen verschwindet nicht, weil es gel&ouml;scht wurde. Es verschwindet, weil niemand mehr wei&szlig;, wo es liegt.</p>
+        <p class="k">Kern gebaut, Suche fehlt</p>
+      </div>
+      <div class="tile reveal">
+        <p class="k">Integrit&auml;t</p>
+        <h3>Defender</h3>
+        <p>Ein Virenscanner ordnet bekannte Muster ein. Defender untersucht stattdessen, wie eine ausgew&auml;hlte Zustands&auml;nderung freigegeben, belegt und bei Bedarf zur&uuml;ckgef&uuml;hrt werden kann.</p>
+        <p class="k">Bauverfassung in Forschung</p>
+      </div>
+      <div class="tile reveal">
+        <p class="k">Entfernung</p>
+        <h3>Remote</h3>
+        <p>Von &uuml;berall arbeiten klingt nach Freiheit. Meistens hei&szlig;t es, dass Bildschirm und Zug&auml;nge durch Systeme laufen, die dir nicht geh&ouml;ren.</p>
+        <p class="k">Identit&auml;t gepr&uuml;ft, keine Verbindung</p>
+      </div>
+      <div class="tile reveal">
+        <p class="k">Sprechen</p>
+        <h3>Root Bridge</h3>
+        <p>Mit einem Computer zu sprechen ist leicht. Vor einer Handlung braucht ein ausgew&auml;hlter Vorgang eine eigene, sichtbare Freigabe mit klar gebundenem Umfang.</p>
+        <p class="k">Bauplan</p>
+      </div>
+      <div class="tile reveal">
+        <p class="k">Zusammen g&uuml;ltig</p>
+        <h3>Big Bang</h3>
+        <p>Wie lassen sich mehrere getrennt begr&uuml;ndete Bewertungen zusammenf&uuml;hren, ohne eine einzelne davon still zur alleinigen Bewertungsinstanz zu machen?</p>
+        <p class="k">Forschung, lokal gezeigt</p>
+      </div>
+      <div class="tile reveal">
+        <p class="k">Der Beweis</p>
+        <h3>Finality</h3>
+        <p>Kann eine ausgew&auml;hlte &Auml;nderung erst dann als akzeptiert gelten, wenn die benannte Regel, Freigabe und Belegkette f&uuml;r genau diesen Vorgang vorliegen?</p>
+        <p class="k">Laborstand, dokumentiert</p>
+      </div>
+    </div>
+    <div class="cta-row reveal">
+      <a class="btn ghost" href="https://juri.halveth.de/">Alle Projekte im Detail &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section id="labor">
+  <div class="wrap">
+    <p class="eyebrow reveal">// Das Pr&uuml;flabor</p>
+    <h2 class="sec reveal">Ein Ort, an dem Annahmen sichtbar scheitern d&uuml;rfen.</h2>
+    <p class="sec-sub reveal">Kontrollf&auml;lle und Gegenproben treffen den Aufbau, bevor daraus ein Betriebsanspruch entsteht.</p>
+    <div class="cando">
+      <div class="pillar reveal">
+        <h3>Der Versuchsaufbau</h3>
+        <p>In einer eigenen, isolierten Umgebung werden Eingabe, Regel, erwartetes Ergebnis und Abbruchbedingung vor dem Lauf festgelegt. Kontrollf&auml;lle und Gegenbeispiele pr&uuml;fen danach genau diese Behauptung.</p>
+      </div>
+      <div class="pillar reveal">
+        <h3>Der Beleg</h3>
+        <p>Ein Ergebnis bindet Version, Zeitpunkt, Objekt, Methode, Beobachter und Abdeckung. Positive und negative Resultate bleiben getrennt erhalten; ein neuer Lauf ersetzt den fr&uuml;heren Beleg nicht.</p>
+      </div>
+    </div>
+    <p class="caveat reveal">Ver&ouml;ffentlicht werden Ergebnis, Methode, Pr&uuml;fbereich und offene L&uuml;cken. Betriebsdetails bleiben an ihren gesch&uuml;tzten Quellorten.</p>
+  </div>
+</section>
+
+<section id="eingefroren">
+  <div class="wrap">
+    <p class="eyebrow reveal">// Ein Teil davon steht still</p>
+    <h2 class="sec reveal">Manchmal ist Stillstand kein R&uuml;ckschritt.</h2>
+    <div class="fazit reveal">
+      <p class="quote">Ein Teil dieser Forschung wurde bewusst eingefroren.</p>
+      <p>Nicht weil er gescheitert ist. Sondern weil manche Systeme erst weitergebaut werden d&uuml;rfen, wenn ihr bisheriger Zustand wirklich verstanden ist.</p>
+      <p>Es war eine unbequeme Entscheidung. Weiterbauen f&uuml;hlt sich immer nach Fortschritt an, und Anhalten f&uuml;hlt sich nach Versagen an. Aber wenn ich einen Zustand ver&auml;ndere, bevor ich ihn belegen kann, dann habe ich hinterher nur noch meine Erinnerung. Und Erinnerung ist kein Beweis.</p>
+      <p>Deshalb steht dieser Teil, festgehalten, unver&auml;ndert, nachpr&uuml;fbar. Es ist der Moment, in dem aus einer Behauptung ein Ausgangspunkt wird.</p>
+    </div>
+  </div>
+</section>
+
+<section id="stand">
+  <div class="wrap">
+    <p class="eyebrow reveal">// Der Pr&uuml;fstand</p>
+    <h2 class="sec reveal">Was der Versuch zeigt und wo seine Abdeckung endet.</h2>
+    <p class="sec-sub reveal">Resultat und offene Bereiche verwenden dieselben Angaben zu Objekt, Version, Methode, Zeit und Reichweite.</p>
+    <div class="cando">
+      <div class="pillar reveal">
+        <h3>Im Labor belegt</h3>
+        <p>Am 25. Juli 2026 liefen zwei ausgew&auml;hlte, signierte &Auml;nderungsantr&auml;ge &uuml;ber einen physisch getrennten Raspberry Pi. Er erteilte kurzlebige Permits f&uuml;r diese Antr&auml;ge. Acht konstruierte Gegenproben wurden abgewiesen; sieben Ger&auml;tebucheintr&auml;ge lie&szlig;en sich anschlie&szlig;end mit dem &ouml;ffentlichen Schl&uuml;ssel pr&uuml;fen.</p>
+        <div class="cta-row"><a class="btn ghost" href="ergebnisse.html">Ergebnisse &rarr;</a><a class="btn ghost" href="audits.html">Audits &rarr;</a></div>
+      </div>
+      <div class="pillar reveal" id="offen">
+        <h3>Au&szlig;erhalb des Versuchs offen</h3>
+        <p>Die Abdeckung endet am dokumentierten Freigabepfad. Unabh&auml;ngiges Audit, Betrieb au&szlig;erhalb des Labors, nicht geroutete Schreibwege sowie Verhalten unter Last und St&ouml;rung tragen den Status <code>UNKNOWN</code>. Die Pi-Schl&uuml;ssel liegen derzeit dateibasiert auf einer Speicherkarte. Vor einem Betriebsanspruch bleiben ein R&uuml;ckspulz&auml;hler, absturzsicherer Permit-Verbrauch und die genannten Belastungstests erforderlich.</p>
+        <div class="cta-row"><a class="btn ghost" href="grenzen.html">Alle Grenzen &rarr;</a></div>
+      </div>
+    </div>
+    <p class="caveat reveal">Jede Aussage auf dieser Seite bindet Objekt, Version, Methode, Zeitpunkt und Abdeckung. Eine neue Umgebung oder ein anderer Pfad ben&ouml;tigt einen eigenen Beleg.</p>
+  </div>
+</section>
+
+<section id="herkunft">
+  <div class="wrap">
+    <p class="eyebrow reveal">// Woher das kommt</p>
+    <h2 class="sec reveal">Hinter HALVETH steht ein Mensch, keine Firma.</h2>
+    <p class="sec-sub reveal">Ich arbeite allein, abends und an freien Tagen. Das erkl&auml;rt das Tempo und manchmal die Reihenfolge.</p>
+    <div class="paper reveal">
+      <div>
+        <p class="quote">Manche Ideen beginnen bei Menschen, deren Namen noch niemand kennt.</p>
+      </div>
+      <div>
+        <p>Ich habe nicht als Entwickler angefangen, sondern damit, Menschen zuzuh&ouml;ren. Man lernt dabei, wie ein Ablauf sich anf&uuml;hlt, wenn er f&uuml;r den Menschen davor nicht gemacht ist. Deshalb fange ich bei Software immer bei der Situation an.</p>
+        <p>Neben HALVETH gibt es eine zweite Ebene: eine Lernplattform, ein quelloffenes Programm f&uuml;r Zug&auml;nge, und eine eigene Frage danach, ob Wirklichkeit weniger aus Dingen und mehr aus Zust&auml;nden besteht.</p>
+        <div class="cta-row">
+          <a class="btn ghost" href="https://juri.halveth.de/">Juri und die Projekte &rarr;</a>
+          <a class="btn ghost" href="https://gratis-lernen.de/">Gratis lernen &rarr;</a>
+          <a class="btn ghost" href="forschung.html">Realit&auml;t als Zustand &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap">
+    <p class="eyebrow reveal">// Adresse &amp; Nachricht</p>
+    <h2 class="sec reveal">Gegenpr&uuml;fung ist willkommen.</h2>
+    <p class="lead reveal">Wenn du eine Aussage pr&uuml;fst, nenne gern den betroffenen Abschnitt, dein Gegenbeispiel und die verwendete Methode. So l&auml;sst sich der Befund nachvollziehbar einordnen.</p>
+    <div class="cta-row reveal">
+      <a class="btn y" href="mailto:info@halveth.de">info@halveth.de</a>
+      <a class="btn ghost" href="grenzen.html">Pr&uuml;fgrenzen ansehen</a>
+    </div>
+    <p class="caveat reveal">Die Seite arbeitet statisch. Schriftliche Nachrichten f&uuml;hren &uuml;ber die E-Mail-Adresse. Ihre Ver&ouml;ffentlichung erlaubt die Zustellung zu diesem Zweck; sie erteilt keine Einwilligung in Anrufe, Werbung, Zugriff oder Vertretung. Zur Laufzeit werden ausschlie&szlig;lich lokale Seitendateien geladen.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="foot-fields"><b>Felder, in denen ich baue</b> <span>Prozessoptimierung</span> <span>Cyber Security</span> <span>Webseiten</span> <span>Programmierung</span> <span>Marketing</span></p>
+    <p class="foot-geo">Br&uuml;hl bei K&ouml;ln &middot; Rhein-Erft-Kreis &middot; Nordrhein-Westfalen &middot; Deutschland &middot; Arbeit auch aus der Ferne</p>
+    <p>HALVETH &middot; Forschung von Juri Janovski &middot; Br&uuml;hl, Deutschland</p>
+    <p><a href="impressum.html">Impressum</a> &middot; <a href="datenschutz.html">Datenschutz</a> &middot; <a href="https://juri.halveth.de/">Juri und die Projekte</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { els.forEach(function(e){ e.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+<script>RAZ_CFG={"place": "nav", "navSelector": ".nav-in"};</script>
+<script>RAZ_I18N={"title": {"en": "HALVETH", "ru": "HALVETH"}, "units": [{"en": "<span class=\"mark\">&#11041;</span> HALVETH", "ru": "<span class=\"mark\">&#11041;</span> HALVETH"}, {"en": "\n      <a href=\"index.html\">Home</a>\n      <a href=\"prinzip.html\">Principle</a>\n      <a href=\"baum.html\">Where it sits</a>\n      <a href=\"ergebnisse.html\">Results</a>\n      <a href=\"grenzen.html\">Limits</a>\n      <a href=\"vision.html\">Vision</a>\n      <a href=\"labor.html\">Lab</a>\n      <a href=\"audits.html\">Audits</a>\n      <a href=\"forschung.html\">Research</a>\n    ", "ru": "\n      <a href=\"index.html\">Начало</a>\n      <a href=\"prinzip.html\">Принцип</a>\n      <a href=\"baum.html\">Где он находится</a>\n      <a href=\"ergebnisse.html\">Результаты</a>\n      <a href=\"grenzen.html\">Границы</a>\n      <a href=\"vision.html\">Видение</a>\n      <a href=\"labor.html\">Лаборатория</a>\n      <a href=\"audits.html\">Аудиты</a>\n      <a href=\"forschung.html\">Исследование</a>\n    "}, {"en": "<span class=\"status-pill\"><span class=\"dot\"></span>in research</span>", "ru": "<span class=\"status-pill\"><span class=\"dot\"></span>в стадии исследования</span>"}, {"en": "// HALVETH 0.5 &middot; DOCUMENTED RESEARCH STATE", "ru": "// HALVETH 0.5 &middot; ДОКУМЕНТИРОВАННЫЙ СТАТУС ИССЛЕДОВАНИЯ"}, {"en": "A change needs<br>a named appraisal scope.", "ru": "Изменению нужны<br>явно названные рамки проверки."}, {"en": "One computer proposes a selected change. A separate device appraises the request under a defined rule before that path continues.", "ru": "Один компьютер предлагает выбранное изменение. Отдельное устройство оценивает запрос по заданному правилу, прежде чем этот путь продолжится."}, {"en": "HALVETH studies a small, clearly bounded authorization path. A separate appraisal computer evaluates a signed request under a versioned rule and grants or refuses a short-lived permit. <strong>This binds a decision to one named operation. It is not a statement about the whole system.</strong>", "ru": "HALVETH исследует небольшой, чётко ограниченный путь авторизации. Отдельный проверочный компьютер оценивает подписанный запрос по версионированному правилу и выдаёт либо отклоняет краткосрочное разрешение. <strong>Это связывает решение с одной названной операцией. Это не утверждение обо всей системе.</strong>"}, {"en": "Proposal, appraisal, authorization, execution and evidence remain separate states. <strong>Executed describes an event. Valid is an appraisal within a named rule and coverage.</strong>", "ru": "Предложение, оценка, авторизация, выполнение и доказательство остаются разными состояниями. <strong>Выполнено описывает событие. Действительно означает оценку в рамках названного правила и охвата.</strong>"}, {"en": "<a class=\"btn y\" href=\"#erkenntnis\">The appraisal path &darr;</a> <a class=\"btn ghost\" href=\"#offen\">Open coverage</a>", "ru": "<a class=\"btn y\" href=\"#erkenntnis\">Путь проверки &darr;</a> <a class=\"btn ghost\" href=\"#offen\">Открытая область охвата</a>"}, {"en": "// The separation", "ru": "// Разделение"}, {"en": "A status needs a source, rule and scope.", "ru": "Статусу нужны источник, правило и область действия."}, {"en": "An OK is only as reliable as the declared appraisal scope.", "ru": "Статус OK надёжен лишь в пределах заявленной области проверки."}, {"en": "01", "ru": "01"}, {"en": "The proposal", "ru": "Предложение"}, {"en": "The affected object, intended operation, known initial state and appraisal rule are named. Only then is the request bounded.", "ru": "Называются затронутый объект, предполагаемая операция, известное исходное состояние и правило проверки. Только тогда запрос получает чёткие границы."}, {"en": "02", "ru": "02"}, {"en": "The authorization", "ru": "Авторизация"}, {"en": "A separate device appraises the submitted evidence within its policy. Its response applies to this request and this period only. It proves no state beyond them.", "ru": "Отдельное устройство оценивает представленные доказательства в рамках своей политики. Его ответ относится только к этому запросу и этому периоду. Он не доказывает состояние за их пределами."}, {"en": "03", "ru": "03"}, {"en": "The status", "ru": "Статус"}, {"en": "A report names the object, source or sensor, time window and known gaps. If a source is missing, stale or its area was not measured, that part remains unknown.", "ru": "Сообщение называет объект, источник или датчик, временное окно и известные пробелы. Если источник отсутствует, устарел или его область не измерялась, эта часть остаётся неизвестной."}, {"en": "This page names the tested path and where it ends. The result is not extended to unmeasured paths, other devices or a later point in time.", "ru": "Эта страница называет проверенный путь и место, где он заканчивается. Результат не переносится на неизмеренные пути, другие устройства или более поздний момент времени."}, {"en": "// Observation and authorization", "ru": "// Наблюдение и авторизация"}, {"en": "Appraise before, record evidence after.", "ru": "Сначала проверить, затем зафиксировать доказательство."}, {"en": "A system reports what it appraised. Beyond that area, the state remains unknown.", "ru": "Система сообщает, что именно она проверила. За пределами этой области состояние остаётся неизвестным."}, {"en": "HALVETH began with observation after an action: comparing states, recording deviations and writing evidence. That remains useful. It answers a different question from authorization before the action.", "ru": "HALVETH начинался с наблюдения после действия: сравнения состояний, фиксации отклонений и записи доказательств. Это по-прежнему полезно. Но такая работа отвечает на другой вопрос, чем авторизация до действия."}, {"en": "The next step is therefore not to make deviations impossible. The research asks whether <strong>a selected, completely routed write path can require a separate appraisal before it continues.</strong>", "ru": "Следующий шаг состоит не в том, чтобы сделать отклонения невозможными. Исследуется, может ли <strong>выбранный и полностью маршрутизированный путь записи требовать отдельной проверки перед продолжением.</strong>"}, {"en": "On 25 July 2026, one such bounded path ran across two physically separate computers. A Raspberry Pi appraised two defined, signed change types and issued short-lived permits for them. Eight constructed counter-checks were refused. This supports that experiment, not every input or write path.", "ru": "25 июля 2026 года такой ограниченный путь работал на двух физически раздельных компьютерах. Raspberry Pi оценил два заданных подписанных типа изменений и выдал для них краткосрочные разрешения. Восемь сконструированных контрпроверок были отклонены. Это подтверждает данный опыт, а не все вводы или пути записи."}, {"en": "In parallel, a second research rule emerged in July: <strong>Every status claim binds its object, observation source, time window and known gaps.</strong> If a sensor is missing, a source is stale or an area lies outside the measurement, the associated state remains <code>UNKNOWN</code>. No general OK follows from it.", "ru": "Параллельно в июле сформировалось второе исследовательское правило: <strong>Каждое утверждение о статусе связывается с объектом, источником наблюдения, временным окном и известными пробелами.</strong> Если датчик отсутствует, источник устарел или область находится вне измерения, соответствующее состояние остаётся <code>UNKNOWN</code>. Общий статус OK из этого не следует."}, {"en": "A separate authorization appraises only the named request. It creates a traceable decision boundary for a selected operation. The coverage contract also describes how far a later claim may reach; this does not establish a complete implementation across the whole system.", "ru": "Отдельная авторизация оценивает только названный запрос. Она создаёт прослеживаемую границу решения для выбранной операции. Контракт охвата также описывает, насколько далеко может распространяться последующее утверждение; полная реализация во всей системе этим не доказана."}, {"en": "<span class=\"not\">research state 0.5</span> <span class=\"not\">two computers in the own lab</span> <span class=\"not\">bounded authorization path</span> <span class=\"not\">coverage is declared</span>", "ru": "<span class=\"not\">статус исследования 0.5</span> <span class=\"not\">два компьютера в собственной лаборатории</span> <span class=\"not\">ограниченный путь авторизации</span> <span class=\"not\">область охвата указана</span>"}, {"en": "// The project worlds", "ru": "// Проектные миры"}, {"en": "Seven questions I am building on.", "ru": "Семь вопросов, над которыми я работаю."}, {"en": "Each starts with a human situation and not with a technology. The honest state is written next to it.", "ru": "Каждый начинается с человеческой ситуации, а не с технологии. Честное состояние указано рядом."}, {"en": "Mail", "ru": "Почта"}, {"en": "Seal", "ru": "Seal"}, {"en": "Our e-mail is older than many of the people who use it every day. What if we could finally give it the trust we have long been extending to it?", "ru": "Наша электронная почта старше многих людей, которые пользуются ею каждый день. Что, если бы мы наконец смогли дать ей то доверие, которое давно ей оказываем?"}, {"en": "blueprint, no program", "ru": "чертёж, без программы"}, {"en": "Remembering", "ru": "Память"}, {"en": "Atlas", "ru": "Atlas"}, {"en": "Knowledge does not disappear because it was deleted. It disappears because nobody knows where it is any more.", "ru": "Знание исчезает не потому, что его удалили. Оно исчезает потому, что никто больше не знает, где оно лежит."}, {"en": "core built, search missing", "ru": "ядро готово, поиска нет"}, {"en": "Integrity", "ru": "Целостность"}, {"en": "Defender", "ru": "Defender"}, {"en": "A virus scanner classifies known patterns. Defender instead studies how a selected state change can be authorized, evidenced and, when needed, returned.", "ru": "Антивирус классифицирует известные шаблоны. Defender вместо этого исследует, как выбранное изменение состояния можно авторизовать, подтвердить и при необходимости вернуть."}, {"en": "design constitution in research", "ru": "архитектурные правила в исследовании"}, {"en": "Distance", "ru": "Расстояние"}, {"en": "Remote", "ru": "Remote"}, {"en": "Working from anywhere sounds like freedom. Mostly it means that screen and access travel through systems that do not belong to you.", "ru": "Работа откуда угодно звучит как свобода. Чаще всего это значит, что экран и доступы идут через системы, которые вам не принадлежат."}, {"en": "identity tested, no connection", "ru": "личность проверена, соединения нет"}, {"en": "Speaking", "ru": "Речь"}, {"en": "Root Bridge", "ru": "Root Bridge"}, {"en": "Talking to a computer is easy. Before an action, a selected operation needs its own visible authorization with a clearly bound scope.", "ru": "Говорить с компьютером легко. Перед действием выбранной операции нужна собственная видимая авторизация с чётко заданным объёмом."}, {"en": "blueprint", "ru": "чертёж"}, {"en": "Valid together", "ru": "Действительны вместе"}, {"en": "Big Bang", "ru": "Big Bang"}, {"en": "How can several separately grounded appraisals be combined without silently turning one of them into the sole appraisal authority?", "ru": "Как объединить несколько отдельно обоснованных оценок, не превращая одну из них незаметно в единственную оценивающую инстанцию?"}, {"en": "research, shown locally", "ru": "исследование, показано локально"}, {"en": "The proof", "ru": "Доказательство"}, {"en": "Finality", "ru": "Finality"}, {"en": "Can a selected change count as accepted only when the named rule, authorization and evidence chain exist for this exact operation?", "ru": "Может ли выбранное изменение считаться принятым только тогда, когда для этой конкретной операции существуют названное правило, авторизация и цепочка доказательств?"}, {"en": "lab state, documented", "ru": "лабораторное состояние, задокументировано"}, {"en": "<a class=\"btn ghost\" href=\"https://juri.halveth.de/\">All projects in detail &rarr;</a>", "ru": "<a class=\"btn ghost\" href=\"https://juri.halveth.de/\">Все проекты подробно &rarr;</a>"}, {"en": "// The appraisal lab", "ru": "// Проверочная лаборатория"}, {"en": "A place where assumptions may fail visibly.", "ru": "Место, где предположения могут явно потерпеть неудачу."}, {"en": "Control cases and counter-checks meet the design before an operational claim emerges from it.", "ru": "Контрольные случаи и контрпроверки испытывают конструкцию до того, как из неё возникнет заявление о готовности к эксплуатации."}, {"en": "The experiment setup", "ru": "Постановка опыта"}, {"en": "In a dedicated isolated environment, the input, rule, expected result and stop condition are fixed before the run. Control cases and counterexamples then test that exact claim.", "ru": "В отдельной изолированной среде до запуска фиксируются входные данные, правило, ожидаемый результат и условие остановки. Затем контрольные случаи и контрпримеры проверяют именно это утверждение."}, {"en": "The evidence", "ru": "Доказательство"}, {"en": "A result binds version, time, object, method, observer and coverage. Positive and negative results remain separate; a new run does not replace earlier evidence.", "ru": "Результат связывает версию, время, объект, метод, наблюдателя и охват. Положительные и отрицательные результаты сохраняются раздельно; новый запуск не заменяет прежнее доказательство."}, {"en": "The published record includes result, method, appraisal scope and open gaps. Operational details remain at their protected source locations.", "ru": "Публикуемая запись содержит результат, метод, область проверки и открытые пробелы. Эксплуатационные детали остаются в своих защищённых исходных местах."}, {"en": "// A part of it stands still", "ru": "// Часть этого стоит на месте"}, {"en": "Sometimes standing still is not a step back.", "ru": "Иногда остановка это не шаг назад."}, {"en": "A part of this research was deliberately frozen.", "ru": "Часть этого исследования была сознательно заморожена."}, {"en": "Not because it failed. But because some systems may only be built further once their previous state is genuinely understood.", "ru": "Не потому, что она провалилась. А потому, что некоторые системы можно строить дальше только тогда, когда их прежнее состояние действительно понято."}, {"en": "It was an uncomfortable decision. Building on always feels like progress, and stopping always feels like failure. But if I change a state before I can prove it, then afterwards I only have my memory. And memory is not proof.", "ru": "Это было неудобное решение. Продолжать строить всегда кажется прогрессом, а остановиться всегда кажется провалом. Но если я меняю состояние прежде, чем могу его доказать, то потом у меня остаётся только память. А память не доказательство."}, {"en": "So this part stands, held fast, unchanged, verifiable. It is the moment when a claim turns into a starting point.", "ru": "Поэтому эта часть стоит, зафиксированная, неизменная, проверяемая. Это момент, когда утверждение становится отправной точкой."}, {"en": "// The appraisal state", "ru": "// Статус проверки"}, {"en": "What the experiment shows and where its coverage ends.", "ru": "Что показывает опыт и где заканчивается его охват."}, {"en": "The result and open areas use the same details for object, version, method, time and scope.", "ru": "Результат и открытые области используют одинаковые сведения об объекте, версии, методе, времени и области действия."}, {"en": "Supported in the lab", "ru": "Подтверждено в лаборатории"}, {"en": "On 25 July 2026, two selected, signed change requests ran through a physically separate Raspberry Pi. It issued short-lived permits for those requests. Eight constructed counter-checks were refused; seven device-log entries could then be verified with the public key.", "ru": "25 июля 2026 года два выбранных подписанных запроса на изменение прошли через физически отдельный Raspberry Pi. Он выдал краткосрочные разрешения для этих запросов. Восемь сконструированных контрпроверок были отклонены; затем семь записей журнала устройства удалось проверить открытым ключом."}, {"en": "<a class=\"btn ghost\" href=\"ergebnisse.html\">Results &rarr;</a><a class=\"btn ghost\" href=\"audits.html\">Audits &rarr;</a>", "ru": "<a class=\"btn ghost\" href=\"ergebnisse.html\">Результаты &rarr;</a><a class=\"btn ghost\" href=\"audits.html\">Аудиты &rarr;</a>"}, {"en": "Open beyond the experiment", "ru": "Открыто за пределами опыта"}, {"en": "Coverage ends at the documented authorization path. Independent audit, operation outside the lab, write paths that were not routed through it, and behaviour under load and fault have the status <code>UNKNOWN</code>. The Pi keys are currently stored as files on a memory card. Before any operational claim, a rewind counter, crash-safe permit consumption and the stated load and fault tests remain required.", "ru": "Охват заканчивается на задокументированном пути авторизации. Независимый аудит, эксплуатация вне лаборатории, не проведённые через него пути записи и поведение под нагрузкой и при сбоях имеют статус <code>UNKNOWN</code>. Ключи Pi сейчас хранятся в виде файлов на карте памяти. До любого заявления об эксплуатации остаются необходимыми счётчик отката, устойчивое к сбою расходование разрешения и указанные испытания под нагрузкой и при сбоях."}, {"en": "<a class=\"btn ghost\" href=\"grenzen.html\">All limits &rarr;</a>", "ru": "<a class=\"btn ghost\" href=\"grenzen.html\">Все границы &rarr;</a>"}, {"en": "Every claim on this page binds its object, version, method, time and coverage. A new environment or a different path needs its own evidence.", "ru": "Каждое утверждение на этой странице связано со своим объектом, версией, методом, временем и охватом. Для новой среды или другого пути требуется собственное доказательство."}, {"en": "// Where this comes from", "ru": "// Откуда это идёт"}, {"en": "Behind HALVETH stands a person, not a company.", "ru": "За HALVETH стоит человек, а не компания."}, {"en": "I work alone, in the evenings and on days off. That explains the pace and sometimes the order.", "ru": "Я работаю один, вечерами и в свободные дни. Это объясняет темп и иногда очередность."}, {"en": "Some ideas begin with people whose names nobody knows yet.", "ru": "Некоторые идеи начинаются у людей, чьих имён пока никто не знает."}, {"en": "I did not start as a developer, but by listening to people. You learn what a procedure feels like when it was not made for the person standing in front of it. That is why with software I always start with the situation.", "ru": "Я начинал не как разработчик, а с того, что слушал людей. Так узнаёшь, каково это, когда порядок действий сделан не для человека, который перед ним стоит. Поэтому в программах я всегда начинаю с ситуации."}, {"en": "Alongside HALVETH there is a second layer: a learning platform, an open source program for your credentials, and a question of my own about whether reality consists less of things and more of states.", "ru": "Рядом с HALVETH есть второй слой: обучающая платформа, программа с открытым кодом для ваших доступов и собственный вопрос о том, состоит ли реальность меньше из вещей и больше из состояний."}, {"en": "<a class=\"btn ghost\" href=\"https://juri.halveth.de/\">Juri and the projects &rarr;</a> <a href=\"https://gratis-lernen.de/\" target=\"_blank\" rel=\"noopener noreferrer\">Learn for free</a> <a class=\"btn ghost\" href=\"forschung.html\">Reality as state &rarr;</a>", "ru": "<a class=\"btn ghost\" href=\"https://juri.halveth.de/\">Юри и проекты &rarr;</a> <a href=\"https://gratis-lernen.de/\" target=\"_blank\" rel=\"noopener noreferrer\">Учиться бесплатно</a> <a class=\"btn ghost\" href=\"forschung.html\">Реальность как состояние &rarr;</a>"}, {"en": "// Address & message", "ru": "// Адрес и сообщение"}, {"en": "Counter-checks are welcome.", "ru": "Контрпроверки приветствуются."}, {"en": "If you appraise a claim, please name the affected section, your counterexample and the method used. That makes the finding traceable and classifiable.", "ru": "Если вы проверяете утверждение, укажите затронутый раздел, свой контрпример и использованный метод. Так результат можно проследить и классифицировать."}, {"en": "<a class=\"btn y\" href=\"mailto:info@halveth.de\">info@halveth.de</a> <a class=\"btn ghost\" href=\"grenzen.html\">View the appraisal limits</a>", "ru": "<a class=\"btn y\" href=\"mailto:info@halveth.de\">info@halveth.de</a> <a class=\"btn ghost\" href=\"grenzen.html\">Посмотреть границы проверки</a>"}, {"en": "The page runs statically. Written messages use the e-mail address. Publishing it permits delivery for that purpose; it does not grant consent to calls, advertising, access or representation. At runtime the page loads local files only.", "ru": "Страница работает статически. Письменные сообщения направляются на адрес электронной почты. Публикация адреса разрешает доставку для этой цели, но не даёт согласия на звонки, рекламу, доступ или представительство. Во время работы загружаются только локальные файлы страницы."}, {"en": "<b>Fields I build in</b> <span>process optimisation</span> <span>cyber security</span> <span>websites</span> <span>programming</span> <span>marketing</span>", "ru": "<b>Поля, в которых я строю</b> <span>оптимизация процессов</span> <span>кибербезопасность</span> <span>сайты</span> <span>программирование</span> <span>маркетинг</span>"}, {"en": "Br&uuml;hl near Cologne &middot; Rhein-Erft district &middot; North Rhine-Westphalia &middot; Germany &middot; remote work as well", "ru": "Брюль под Кёльном &middot; район Райн-Эрфт &middot; Северный Рейн-Вестфалия &middot; Германия &middot; и удалённо"}, {"en": "HALVETH &middot; research by Juri Janovski &middot; Br&uuml;hl, Germany", "ru": "HALVETH &middot; исследование Юри Яновски &middot; Брюль, Германия"}, {"en": "<a href=\"impressum.html\">Imprint</a> &middot; <a href=\"datenschutz.html\">Privacy</a> &middot; <a href=\"https://juri.halveth.de/\">Juri and the projects</a>", "ru": "<a href=\"impressum.html\">Выходные данные</a> &middot; <a href=\"datenschutz.html\">Конфиденциальность</a> &middot; <a href=\"https://juri.halveth.de/\">Юри и проекты</a>"}]};</script>
+<script src="halveth-i18n.js?v=20261116-r2"></script>
+<div class="hv-release hv-edition" data-raz-skip><span>HALVETH · Web-Edition 2026.11</span><div><a href="werkstatt.html"><span data-hv-i18n="work">Werkstatt</span></a> · <a href="systemstand.html"><span data-hv-i18n="state">Systemstand</span></a> · <a href="edition.html"><span data-hv-i18n="changes">Änderungen & Quellenstand</span></a></div></div>
+<script src="assets/restauration.js?v=20261116-r2" defer></script>
+<aside data-historical-banner style="padding:10px 18px;background:#172637;color:#e7d3a1;font:14px system-ui">ARCHIV · ARCHIVE · АРХИВ — 16.11.2026 · <a href="../../forschung.html">HALVETH — 17.11.2026</a></aside></body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "repository": "eventhorizontelescope/2022-D02-01",
+  "commit": "52640fe116ac20fd67c7d1937c2e09a0ef49caa3",
+  "product": "2022-D02-01",
+  "data_doi": "10.25739/m140-ct59",
+  "kind": "Calibrated, lightcurve-normalized Stokes I visibilities; not correlator raw data; not photographs",
+  "files": [
+    {
+      "name": "day096_lo_hops.csv",
+      "path": "csv_norm/ER6_SGRA_2017_096_lo_hops_netcal-LMTcal-norm_StokesI.csv",
+      "git_blob_sha1": "3f5dcc44af1031c89032cb9923142c4e00e69b6f",
+      "bytes": 1053304,
+      "date": "2017-04-06"
+    },
+    {
+      "name": "day097_lo_hops.csv",
+      "path": "csv_norm/ER6_SGRA_2017_097_lo_hops_netcal-LMTcal-norm_StokesI.csv",
+      "git_blob_sha1": "860f0e1b9e23b91392a61c6d0f1a1603f2a3c31b",
+      "bytes": 1419016,
+      "date": "2017-04-07"
+    }
+  ],
+  "network_policy": "Only explicit fetch command, pinned public HTTPS URLs; no private repositories, cookies, tokens, uploads, or shell execution.",
+  "build_access_status": "Repository metadata, README and five genuine besttime CSV records inspected. Full numeric files were not transferred into the build environment. They must be downloaded and verified locally before compare can run."
+}

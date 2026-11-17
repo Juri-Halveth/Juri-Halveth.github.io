@@ -1,0 +1,442 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Der Realitäts-Strudel &middot; 3D</title>
+<meta name="description" content="Der Realitäts-Strudel in drei Dimensionen, drehbar und zoombar. Modell zur Hypothese Realität als Zustand. Ein Bild, kein Beweis.">
+<link rel="canonical" href="https://halveth.de/Realitaet_Strudel_3D.html">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{--ink:#eaf0ff;--muted:#8a93b8;--dim:#5a628a;--gold:#ffdca8;--cyan:#34e6ff;
+    --edge:rgba(150,170,230,.14);--edge2:rgba(150,170,230,.3);--panel:rgba(10,14,26,.72);
+    --mono:ui-monospace,Menlo,Consolas,monospace;--serif:Georgia,serif;--sans:system-ui,-apple-system,"Segoe UI",sans-serif;}
+  html,body{height:100%}
+  body{background:radial-gradient(1200px 900px at 50% 22%,#0b1330,#04060e 62%,#020309 100%);color:var(--ink);font-family:var(--sans);overflow:hidden}
+  #stage{position:fixed;inset:0;width:100%;height:100%;display:block;cursor:grab;touch-action:none}
+  #stage:active{cursor:grabbing}
+  .hud{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:flex-start;gap:14px;padding:14px 18px;pointer-events:none}
+  .brand .eyebrow{font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .brand h1{font-family:var(--serif);font-weight:600;font-size:clamp(1rem,2.2vw,1.5rem);color:#fff;margin-top:.15rem;line-height:1.05;text-shadow:0 2px 20px rgba(0,0,0,.7)}
+  .brand .q{margin-top:.28rem;font-size:.75rem;color:var(--gold);font-style:italic}
+  .brand .q b{font-style:normal;color:var(--muted);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;margin-right:.4rem}
+  .readout{pointer-events:auto;min-width:210px;max-width:44vw;background:var(--panel);border:1px solid var(--edge);border-radius:14px;padding:11px 13px;backdrop-filter:blur(12px);box-shadow:0 16px 50px rgba(0,0,0,.55);opacity:.55;transition:opacity .25s}
+  .readout.live{opacity:1}
+  .readout .rp{display:flex;align-items:center;gap:.4rem;font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-weight:700}
+  .readout .rp .dot{width:7px;height:7px;border-radius:50%;background:var(--cyan)}
+  .readout .rt{font-family:var(--serif);font-size:1.05rem;color:#fff;line-height:1.12;margin:.22rem 0 .1rem}
+  .readout .rk{font-size:.68rem;color:var(--muted);margin-bottom:.4rem}
+  .readout .prob{font-family:var(--mono);font-size:.68rem;color:var(--cyan);word-break:break-all}
+  .readout .prob b{color:var(--dim);font-weight:400}
+  .readout .hintp{font-size:.62rem;color:var(--dim);margin-top:.3rem}
+  .ctrls{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:12px clamp(14px,4vw,44px) 16px;background:linear-gradient(0deg,rgba(4,6,14,.9),transparent);display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+  .btn{appearance:none;border:1px solid var(--edge2);background:rgba(16,20,34,.72);color:var(--ink);border-radius:99px;padding:.5rem .9rem;font-size:.72rem;cursor:pointer;transition:.15s;backdrop-filter:blur(6px)}
+  .btn:hover{border-color:var(--gold);color:var(--gold)} .btn.on{border-color:var(--gold);color:var(--gold)}
+  .hintbar{position:fixed;left:50%;bottom:60px;transform:translateX(-50%);z-index:19;font-size:.64rem;color:var(--dim);pointer-events:none;text-align:center}
+  .hintbar b{color:#aab6df}
+  .backdrop{position:fixed;inset:0;z-index:40;background:rgba(3,4,8,.55);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:.3s}
+  .backdrop.on{opacity:1;pointer-events:auto}
+  .drawer{position:fixed;top:0;right:0;bottom:0;z-index:41;width:min(500px,94vw);transform:translateX(102%);transition:transform .38s cubic-bezier(.4,0,.1,1);background:linear-gradient(180deg,#090d18,#06090f);border-left:1px solid var(--edge2);box-shadow:-30px 0 80px rgba(0,0,0,.6);overflow-y:auto;padding:22px 22px 40px}
+  .drawer.on{transform:translateX(0)}
+  .drawer .x{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--edge2);background:rgba(20,26,44,.6);color:var(--ink);cursor:pointer}
+  .drawer .x:hover{border-color:var(--gold);color:var(--gold)}
+  .drawer .dn{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)} .drawer .dn b{color:var(--cyan)}
+  .drawer h2{font-family:var(--serif);font-size:1.5rem;color:#fff;line-height:1.12;margin:.25rem 0 .1rem;max-width:22ch}
+  .drawer .rk{color:#8a93b8;font-size:.75rem}
+  .drawer .ehr{display:inline-block;font-family:var(--mono);font-size:.6rem;color:var(--cyan);border:1px solid var(--edge2);border-radius:99px;padding:.2rem .6rem;margin:.5rem 0}
+  .drawer h3{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);font-weight:700;margin:1.2rem 0 .45rem;border-top:1px solid var(--edge);padding-top:.85rem}
+  .drawer p.d{font-size:.9rem;line-height:1.55;color:#d3dbf2}
+  .drawer .math{font-size:.86rem;line-height:1.5;color:#cfe0ff;background:rgba(52,120,180,.08);border:1px solid var(--edge);border-radius:10px;padding:10px 12px}
+  .drawer .stats{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .drawer .stat{background:rgba(12,16,28,.6);border:1px solid var(--edge);border-radius:10px;padding:8px 10px}
+  .drawer .stat .sl{font-size:.54rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+  .drawer .stat .sv{font-family:var(--mono);color:#fff;font-size:.86rem;margin-top:.12rem}
+  .drawer .qbox{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:1.02rem;line-height:1.3;border-left:2px solid var(--gold);padding-left:.8rem;margin:.2rem 0}
+  .disc{position:fixed;right:14px;bottom:64px;z-index:20;max-width:min(370px,84vw)}
+  .disc summary{list-style:none;cursor:pointer;font-size:.62rem;color:var(--muted);text-align:right;background:rgba(10,14,24,.55);border:1px solid var(--edge);border-radius:99px;padding:.32rem .7rem;backdrop-filter:blur(6px);display:inline-block}
+  .disc summary::-webkit-details-marker{display:none} .disc summary b{color:var(--gold)}
+  .disc .full{margin-top:8px;font-size:.72rem;line-height:1.55;color:#c3cbe6;background:rgba(10,14,24,.85);border:1px solid var(--edge);border-radius:12px;padding:12px 14px;backdrop-filter:blur(10px)} .disc .full b{color:var(--gold)}
+  @media (max-width:720px){
+    .hud{padding:8px 9px;gap:6px}.brand{max-width:55vw}.brand h1{font-size:1rem}.brand .eyebrow{font-size:.49rem}.brand .q{font-size:.62rem}
+    .readout{min-width:0;width:138px;max-width:42vw;padding:8px 9px;border-radius:11px}.readout .rt{font-size:.88rem}.readout .rk{font-size:.58rem}.readout .kv,.readout .bar,.readout .prob{display:none}
+    .ctrls{display:grid;grid-template-columns:1fr 1fr;gap:7px;padding:9px 12px max(10px,env(safe-area-inset-bottom))}.ctrls .btn{min-height:40px;padding:.45rem .55rem;font-size:.68rem}
+    .hintbar{display:none}.disc{right:8px;bottom:104px;max-width:56vw}.disc summary{font-size:.61rem;padding:6px 8px}.drawer{width:100vw;padding:18px 16px 34px}.drawer .stats{grid-template-columns:1fr}
+    #raz-langbar{top:136px!important;right:8px!important;bottom:auto!important;left:auto!important}html.raz-embedded #raz-langbar{display:none!important}
+  }
+</style>
+<link rel="stylesheet" href="assets/restauration.css?v=20261116-r2">
+<script src="assets/model-clock.js?v=20261116-r2"></script>
+</head>
+<body data-hv-page="Realitaet_Strudel_3D" class="hv-model-shell">
+<a data-raz-skip href="forschung.html" style="position:fixed;left:max(12px,env(safe-area-inset-left));bottom:max(12px,env(safe-area-inset-bottom));z-index:9999;display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;background:rgba(10,10,11,.86);border:1px solid rgba(150,150,180,.32);color:#f4f3ee;font:600 12.5px/1 system-ui,-apple-system,Segoe UI,sans-serif;text-decoration:none;backdrop-filter:blur(8px)" title="Zur&uuml;ck zur Forschung auf halveth.de"><span style="color:#ffd60a">&#11041;</span> halveth.de</a><script>if(window.self!==window.top){var r=document.currentScript.previousElementSibling;if(r&&r.tagName==="A")r.remove();}</script>
+<script>if(self!==top)document.documentElement.classList.add("raz-embedded");</script>
+  <canvas id="stage"></canvas>
+  <div class="hud">
+    <div class="brand">
+      <div class="eyebrow">Realität als Zustand · 3D-Strudel</div>
+      <h1>Der Realitäts-Strudel</h1>
+      <div class="q"><b>Leitfrage</b>Was passiert zwischen zwei Zuständen?</div>
+    </div>
+    <div class="readout" id="readout">
+      <div class="rp"><span class="dot" id="rDot"></span><span id="rPhase">ziehen zum Drehen</span></div>
+      <div class="rt" id="rTitle">Der Strudel</div>
+      <div class="rk" id="rKick">unten die 0 · nach oben immer komplexer</div>
+      <div class="prob" id="rProb"><b>P(Übergang) </b><span id="rProbV">—</span></div>
+      <div class="hintp" id="rHint">fahre über einen Punkt · klick zum Öffnen</div>
+    </div>
+  </div>
+
+  <div class="ctrls">
+    <button class="btn on" id="spin">◈ Auto-Drehen</button>
+    <button class="btn" id="reset">⟲ Ansicht zurück</button>
+    <button class="btn" id="top">↧ in den Strudel blicken</button>
+    <button class="btn" id="side">↔ Seitenansicht</button>
+  </div>
+  <div class="hintbar">ziehen = <b>drehen</b> · Mausrad = <b>zoom</b> · Klick auf einen leuchtenden Punkt = <b>öffnen</b> · unten = <b>0</b>, oben = komplexer</div>
+
+  <div class="backdrop" id="backdrop"></div>
+  <aside class="drawer" id="drawer"></aside>
+
+  <details class="disc"><summary><b>Modell · Bild · kein Beweis</b> (Hinweis)</summary>
+    <div class="full">Eine <b>Illustration der Hypothese</b> „Realität als Zustand". Unten im engen Schlund die <b>0</b> (der Ursprung), daneben das erste Bit, dann steigt die Komplexität den Strudel <b>hinauf</b>. Unter der 0 liegt <b>das große weite Nichts</b>: Juris These vom <b>Übergang jenseits der vierten in eine fünfte Dimension</b>, ausdrücklich <b>Hypothese/Bild</b>, keine gemessene Physik. Die mittleren Ebenen (Teilchen bis Mensch) stützen sich auf echte Wissenschaft; Null, Nichts und der 5D-Übergang sind Spekulation. Der Ursprung liegt nicht im Zustand, sondern im <b>Übergang</b>.</div>
+  </details>
+
+<script>
+(function(){
+  "use strict";
+  var reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+  var Q="Was passiert zwischen zwei Zuständen?";
+  var TWO=Math.PI*2;
+
+  // Reihenfolge: 0 (Nullpunkt) UNTEN im Schlund (d nahe 1), dann 1 Bit direkt daneben,
+  // dann jede Ebene HÖHER im Strudel (d wird kleiner = weiter oben, weiter). d: 0=oben/weit, 1=unten/eng.
+  var S=[
+    {ph:0,name:"Der Nullpunkt",kick:"unten im absoluten Punkt · Ursprung aller Zustände",typ:"null",acc:"#ffffff",d:0.96,
+     entstanden:"Kein leerer Punkt, kein schwarzes Loch, der Grenzbereich zwischen allen Möglichkeiten, ganz unten im engen Schlund des Strudels.",
+     eigenschaft:"Unbestimmtheit: eins und unendlich viele sind noch nicht getrennt. Wird nie vollständig erreicht.",
+     warum:"Nicht Nichts → Etwas, sondern: Unbestimmtheit → erste Unterscheidung → Information → Realität.",
+     math:"0 Bit; ein Maß über allen Möglichkeiten (formaler Platzhalter)",info:"0 Bit · alle Möglichkeiten",zeit:"keine Zeit",cx:2,P:"0,999999999999999…",frage:"Warum existiert überhaupt etwas und nicht nichts?",ehr:"Hypothese"},
+    {ph:1,name:"Layer 1 · Erste Information",kick:"das erste Bit · direkt neben der Null",typ:"layer",acc:"#ffe6a8",d:0.90,
+     entstanden:"Die erste Differenz, der erste Abdruck, die erste Information, direkt über der Null.",eigenschaft:"Unterscheidung dies / nicht-dies, das erste Bit.",warum:"Ein Unterschied lädt zum nächsten ein: aus einem werden viele.",math:"log₂ 2 = 1 Bit; ΔI = −log₂ p",info:"1 Bit",zeit:"Beginn der Reihenfolge n",cx:8,P:"0,99999999…",ehr:"Hypothese"},
+    {ph:2,name:"Layer 2 · Energie und Teilchen",kick:"erste Strukturen",typ:"layer",acc:"#34e6ff",d:0.80,
+     entstanden:"Wechselwirkungen; aus Zuständen werden neue Zustände.",eigenschaft:"Energie und Quantenfelder verdichten Information zu Teilchen.",warum:"Abkühlung erzwingt stabile Bindung.",math:"wachsender Zustandsraum; ~10⁸⁰ Teilchen (grob)",info:"~10⁸⁰ Zustände",zeit:"Sekundenbruchteile bis Minuten",cx:18,P:"0,9999999…",ehr:"Etabliert · Kanten offen"},
+    {ph:2,name:"Layer 3 · Atome",kick:"erste stabile Materie",typ:"layer",acc:"#7fd4ff",d:0.71,
+     entstanden:"Elektronen binden an Kerne; neutrale Atome, Licht wird frei.",eigenschaft:"erste stabile Materie; diskrete Energieniveaus.",warum:"Atome verbinden sich zu Molekülen.",math:"Quantisierung: ganze Zahlen aus Wellen-Randbedingungen",info:"~10⁷⁸ bis 10⁸⁰ Kerne",zeit:"~380.000 Jahre (grob)",cx:28,P:"0,999999…",ehr:"Etabliert"},
+    {ph:2,name:"Layer 4 · Moleküle",kick:"Kombination",typ:"layer",acc:"#63e0d0",d:0.62,
+     entstanden:"Atome binden zu Verbünden.",eigenschaft:"emergente Eigenschaften aus Kombination.",warum:"Molekülnetze bilden stabile Systeme.",math:"Kombinatorik; Emergenz",info:"kombinatorisch wachsend",zeit:"Millionen bis Milliarden Jahre",cx:40,P:"0,99999…",ehr:"Etabliert"},
+    {ph:2,name:"Layer 5 · DNA",kick:"Speicher der Entwicklung",typ:"layer",acc:"#ff9ecb",d:0.53,
+     entstanden:"Eine chemische Struktur wird zum Speichersystem.",eigenschaft:"vier Basen als Alphabet; Komplementarität macht Information kopierbar.",warum:"Speicher plus Kopie ermöglichen Leben.",math:"4 Basen ≈ 2 Bit/Position; Bijektion",info:"Milliarden Basen ≈ Gigabit",zeit:"vor ~3,5 bis 4 Mrd. Jahren",cx:55,P:"0,9999…",ehr:"Etabliert · Ursprung offen"},
+    {ph:2,name:"Layer 6 · Leben",kick:"lebende Organisation",typ:"layer",acc:"#8be08a",d:0.44,
+     entstanden:"Membran, Selbst-Erhaltung, Stoffwechsel.",eigenschaft:"erstes Innen und Außen; das erste Individuum.",warum:"Lebende Systeme bauen Modelle ihrer Umwelt.",math:"Grenze (Membran); informationsverarbeitendes System",info:"Milliarden Moleküle je Zelle",zeit:"Milliarden Jahre Evolution",cx:66,P:"0,999…",ehr:"Etabliert · Ursprung offen"},
+    {ph:2,name:"Layer 7 · Bewusstsein",kick:"Selbstbezug",typ:"layer",acc:"#ffcf8a",d:0.35,
+     entstanden:"Ein System führt ein Modell seiner selbst.",eigenschaft:"Innenperspektive, Selbstbezug (strange loop).",warum:"Selbstbezug schreibt seine Regeln nach außen.",math:"Selbstmodell; das Hard Problem bleibt offen",info:"~10¹¹ Neuronen · ~10¹⁴ Synapsen",zeit:"Hunderttausende Jahre",cx:78,P:"0,99…",frage:"Ab wann entsteht eine Innenperspektive?",ehr:"Etabliert · offen"},
+    {ph:2,name:"Layer 8 · Selbsterkenntnis",kick:"das Universum erkennt sich",typ:"layer",acc:"#ffd27a",d:0.26,
+     entstanden:"Sprache, Mathematik, Kultur, bewusste Informationsverarbeitung.",eigenschaft:"das Universum verändert sich durch Erkenntnis, nicht nur durch Physik.",warum:"Erkenntnis baut Werkzeuge, die selbst rechnen.",math:"unendlicher Gebrauch endlicher Mittel (Humboldt)",info:"endliche Mittel · unendlicher Gebrauch",zeit:"Jahrtausende",cx:88,P:"0,9…",ehr:"Etabliert · kontingent"},
+    {ph:2,name:"Layer 9 · Technologie · KI",kick:"neue Informationsformen",typ:"layer",acc:"#d98cff",d:0.16,
+     entstanden:"Denken wird zu 0/1; KI verdichtet Muster; Qubits überlagern.",eigenschaft:"neue Informationsformen; Simulation von Welten.",warum:"Verdichtete Information nähert sich einem kollektiven Ganzen.",math:"0/1 → Überlagerung; Milliarden bis Billionen Parameter",info:"Milliarden bis Billionen Parameter",zeit:"Jahrzehnte",cx:95,P:"0,9…",frage:"Ist dies der nächste Layer?",ehr:"Gegenwart"},
+    {ph:3,name:"Kollektivbewusstsein",kick:"oben · maximale Entfaltung",typ:"collective",acc:"#fff2c8",d:0.06,
+     entstanden:"Ganz oben, wo der Strudel am weitesten ist: die mathematischen Möglichkeiten nähern sich der Ausschöpfung; maximale Komplexität.",eigenschaft:"Bewusstsein nicht mehr individuell, sondern kollektiv, als vollständige Informationsstruktur.",warum:"Wenn alle Unterschiede erreicht sind, kehrt alles zur Null zurück (durch das Nichts unten).",math:"maximale Komplexität; ein sich selbst abbildendes Netzwerk",info:"maximal",zeit:"spekulativer Horizont",cx:100,P:"0,99…",frage:"Was, wenn die Realität sich vollständig erkennt?",ehr:"Spekulativ"},
+    {ph:4,name:"Das große weite Nichts",kick:"UNTER dem Strudel · jenseits der 4. in die 5. Dimension",typ:"nothing",acc:"#c9d4ff",below:true,
+     entstanden:"Unter der Null, unter dem ganzen Strudel: das große weite Nichts, nicht klassische Leere, sondern der Übergang selbst.",eigenschaft:"Juris These: das Ende des Anfangs; der Übergang jenseits der vierten in eine fünfte Dimension, wo alles anders ist. Hier lösen sich alle Kategorien auf.",warum:"Aus dem Nichts kehrt die erste Frage zurück, der Strudel beginnt von neuem.",math:"außerhalb der bekannten 4 Dimensionen, Hypothese, kein Messbefund",info:"0 / unbestimmt",zeit:"jenseits der Zeit",cx:1,P:"0,999999999999999…",frage:"Warum existiert überhaupt etwas und nicht nichts?",ehr:"These / Bild (kein Beweis)"}
+  ];
+  var N=S.length, PHNAME={0:"Nullpunkt (unten)",1:"Erstes Bit",2:"Entfaltung nach oben",3:"maximale Entfaltung (oben)",4:"jenseits · das Nichts"};
+
+  var RTOP=560, HGT=1050, STURN=3.3;
+  function funnel(d,jit){ var r=(RTOP*Math.pow(1-d,1.45)+12)*(jit||1); var th=d*STURN*TWO; return {r:r,th:th,y:-HGT*0.5+d*HGT}; }
+
+  var cv=document.getElementById("stage"); if(!cv||!cv.getContext){return;}
+  var ctx=cv.getContext("2d"), W=0,H=0,DPR=1,CX=0,CY=0;
+  function resize(){ DPR=Math.min(window.devicePixelRatio||1,2);
+    W=cv.width=Math.floor(innerWidth*DPR); H=cv.height=Math.floor(innerHeight*DPR);
+    cv.style.width=innerWidth+"px"; cv.style.height=innerHeight+"px"; CX=W/2; CY=H*0.44; }
+  addEventListener("resize",resize,{passive:true}); resize();
+
+  var yaw=0.6, pitch=0.5, dist=1750, focal=880;
+  function project(x,y,z){ var cyw=Math.cos(yaw),syw=Math.sin(yaw),x1=x*cyw+z*syw,z1=-x*syw+z*cyw;
+    var cp=Math.cos(pitch),sp=Math.sin(pitch),y1=y*cp-z1*sp,z2=y*sp+z1*cp; var zz=z2+dist; if(zz<40)return null;
+    var sc=focal/zz*DPR; return {sx:CX+x1*sc,sy:CY+y1*sc,sc:sc,z:zz}; }
+
+  function frac(x){return x-Math.floor(x);}
+  function hsh(i,s){return frac(Math.sin((i+1)*12.9898+(s+1)*78.233)*43758.5453);}
+  var NP=1500;
+  var TH=new Float32Array(NP),DD=new Float32Array(NP),SPd=new Float32Array(NP),RJ=new Float32Array(NP);
+  for(var i=0;i<NP;i++){ TH[i]=hsh(i,1)*TWO; DD[i]=hsh(i,2); SPd[i]=0.55+hsh(i,3)*0.9; RJ[i]=0.9+hsh(i,4)*0.22; }
+  var STH=new Float32Array(N); for(var s2=0;s2<N;s2++)STH[s2]=hsh(s2*7,5)*0.6;
+
+  function stationWorld(i){ var L=S[i];
+    if(L.below){ return {x:0,y:HGT*0.5+260,z:0}; }
+    var f=funnel(L.d,1); var th=STH[i]+f.th; return {x:Math.cos(th)*f.r,y:f.y,z:Math.sin(th)*f.r}; }
+
+  function drawWater(t){
+    ctx.globalCompositeOperation="lighter";
+    for(var i=0;i<NP;i++){ var d=reduce?DD[i]:frac(DD[i]+t*0.05*SPd[i]);
+      var f=funnel(d,RJ[i]); var th=TH[i]+f.th;
+      var wx=Math.cos(th)*f.r, wz=Math.sin(th)*f.r, wy=f.y;
+      var p=project(wx,wy,wz); if(!p)continue; if(p.sx<-30||p.sx>W+30||p.sy<-30||p.sy>H+30)continue;
+      var fade=Math.min(1,d*5)*Math.min(1,(1-d)*4)+0.05; var glow=0.35+0.65*d;
+      ctx.globalAlpha=Math.min(1,fade*(0.5+0.5*glow))*0.85;
+      ctx.fillStyle= d>0.82?"#ffffff": d>0.5?"#dff0ff":"#8fc4ff";
+      var sz=Math.max(0.5,p.sc*(1.4+1.8*d)); ctx.beginPath();ctx.arc(p.sx,p.sy,sz,0,TWO);ctx.fill();
+    }
+    ctx.globalAlpha=1;ctx.globalCompositeOperation="source-over";
+  }
+  function drawNothing(t){
+    ctx.globalCompositeOperation="lighter";
+    for(var i=0;i<160;i++){ var d=1+ frac(hsh(i,11)+t*0.01)*1.4;
+      var rad=RTOP*0.15 + d*RTOP*1.1*hsh(i,13); var th=hsh(i,15)*TWO + t*0.05;
+      var wx=Math.cos(th)*rad, wz=Math.sin(th)*rad, wy=HGT*0.5 + d*HGT*0.9;
+      var p=project(wx,wy,wz); if(!p)continue; if(p.sx<-30||p.sx>W+30||p.sy<-30||p.sy>H+30)continue;
+      ctx.globalAlpha=0.05+0.12*hsh(i,17); ctx.fillStyle="#9fb0e6";
+      ctx.beginPath();ctx.arc(p.sx,p.sy,Math.max(0.5,p.sc*1.2),0,TWO);ctx.fill();
+    }
+    ctx.globalAlpha=1;ctx.globalCompositeOperation="source-over";
+  }
+
+  var proj=new Array(N);
+  function drawStations(t,hover){
+    var order=[]; for(var i=0;i<N;i++){ var wp=stationWorld(i); var p=project(wp.x,wp.y,wp.z); proj[i]=p; if(p)order.push({i:i,z:p.z}); }
+    order.sort(function(a,b){return b.z-a.z;});
+    ctx.globalCompositeOperation="lighter";
+    for(var k=0;k<order.length;k++){ var i=order[k].i, p=proj[i], L=S[i]; var isH=(i===hover);
+      var base=(L.typ==="null"||L.typ==="nothing")?9:(L.typ==="collective")?10:7;
+      var r=Math.max(2,p.sc*base*(isH?1.35:1));
+      ctx.globalAlpha=isH?0.6:0.4; ctx.fillStyle=L.acc; ctx.shadowColor=L.acc; ctx.shadowBlur=(isH?26:14)*DPR;
+      ctx.beginPath();ctx.arc(p.sx,p.sy,r,0,TWO);ctx.fill(); ctx.shadowBlur=0;
+      ctx.globalAlpha=0.95; ctx.fillStyle="#ffffff"; ctx.beginPath();ctx.arc(p.sx,p.sy,Math.max(1,r*0.4),0,TWO);ctx.fill();
+      if(isH){ ctx.globalAlpha=0.7;ctx.strokeStyle=L.acc;ctx.lineWidth=1.4*DPR;ctx.beginPath();ctx.arc(p.sx,p.sy,r+8*DPR,0,TWO);ctx.stroke(); }
+    }
+    ctx.globalCompositeOperation="source-over";
+    for(var k2=0;k2<order.length;k2++){ var i2=order[k2].i, p2=proj[i2], L2=S[i2];
+      var show=(i2===hover)|| L2.typ==="null"||L2.typ==="nothing"||L2.typ==="collective";
+      if(!show)continue; ctx.globalAlpha=(i2===hover)?1:0.7; ctx.fillStyle=(i2===hover)?"#fff":"rgba(210,220,245,.82)";
+      ctx.font=(i2===hover?12:10.5)*DPR+"px system-ui,sans-serif"; ctx.textAlign="left";
+      var lbl=(L2.typ==="nothing"?"das große weite Nichts":L2.name);
+      ctx.fillText(lbl, p2.sx+Math.max(2,p2.sc*10)+6*DPR, p2.sy+4*DPR); ctx.globalAlpha=1; }
+  }
+
+  var drag=false,lx=0,ly=0,moved=0, spin=true, hover=-1, lastInter=0;
+  cv.addEventListener("pointerdown",function(e){ drag=true;lx=e.clientX;ly=e.clientY;moved=0;cv.setPointerCapture(e.pointerId);lastInter=performance.now(); });
+  cv.addEventListener("pointermove",function(e){ lastInter=performance.now();
+    if(drag){ var dx=e.clientX-lx,dy=e.clientY-ly;lx=e.clientX;ly=e.clientY;moved+=Math.abs(dx)+Math.abs(dy);
+      yaw+=dx*0.006; pitch=Math.max(-0.3,Math.min(1.35,pitch+dy*0.006)); }
+    else { hover=hitTest(e.clientX*DPR,e.clientY*DPR); updHover(); } });
+  addEventListener("pointerup",function(){ drag=false; });
+  cv.addEventListener("wheel",function(e){ e.preventDefault(); dist=Math.max(700,Math.min(3400,dist*(1+e.deltaY*0.0009))); },{passive:false});
+  cv.addEventListener("click",function(e){ if(moved>6)return; var i=hitTest(e.clientX*DPR,e.clientY*DPR); if(i>=0)openStation(i); });
+  function hitTest(mx,my){ var best=1e9,bi=-1; for(var i=0;i<N;i++){ var p=proj[i]; if(!p)continue; var d=Math.hypot(p.sx-mx,p.sy-my); var rr=Math.max(10*DPR,p.sc*12); if(d<rr&&d<best){best=d;bi=i;} } return bi; }
+
+  var spinBtn=document.getElementById("spin"),resetBtn=document.getElementById("reset"),topBtn=document.getElementById("top"),sideBtn=document.getElementById("side");
+  spinBtn.addEventListener("click",function(){ spin=!spin; spinBtn.classList.toggle("on",spin); });
+  resetBtn.addEventListener("click",function(){ yaw=0.6;pitch=0.5;dist=1750; });
+  topBtn.addEventListener("click",function(){ pitch=1.15;dist=1500; });
+  sideBtn.addEventListener("click",function(){ pitch=0.02;dist=1900; });
+
+  var drawer=document.getElementById("drawer"), backdrop=document.getElementById("backdrop");
+  function closeDrawer(){ drawer.classList.remove("on"); backdrop.classList.remove("on"); }
+  backdrop.addEventListener("click",closeDrawer);
+  addEventListener("keydown",function(e){ if(e.key==="Escape")closeDrawer(); });
+  function esc(s){return (s||"").replace(/[&<>]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c];});}
+  var rd=document.getElementById("readout"),rDot=document.getElementById("rDot"),rPhase=document.getElementById("rPhase"),
+      rTitle=document.getElementById("rTitle"),rKick=document.getElementById("rKick"),rProbV=document.getElementById("rProbV"),rHint=document.getElementById("rHint");
+  function updHover(){ if(hover<0){ rd.classList.remove("live"); rHint.textContent="fahre über einen Punkt · klick zum Öffnen"; return; }
+    var L=S[hover]; rd.classList.add("live"); rDot.style.background=L.acc; rPhase.textContent=PHNAME[L.ph];
+    rTitle.textContent=L.name; rKick.textContent=L.kick; rProbV.textContent=L.P; rHint.textContent="klick zum Öffnen ›"; }
+  function openStation(i){ var L=S[i];
+    var fr=L.frage?'<h3>Die Frage dieser Ebene</h3><div class="qbox">'+esc(L.frage)+'</div>':'';
+    drawer.innerHTML='<button class="x">✕</button>'+
+      '<div class="dn">'+esc(PHNAME[L.ph])+' · Station <b>'+i+'</b></div>'+
+      '<h2 style="color:'+L.acc+'">'+esc(L.name)+'</h2><div class="rk">'+esc(L.kick)+'</div>'+
+      '<div class="ehr">'+esc(L.ehr)+'</div>'+
+      '<h3>Was ist entstanden?</h3><p class="d">'+esc(L.entstanden)+'</p>'+
+      '<h3>Neue Eigenschaft</h3><p class="d">'+esc(L.eigenschaft)+'</p>'+
+      '<h3>Warum konnte der nächste Zustand entstehen?</h3><p class="d">'+esc(L.warum)+'</p>'+
+      '<h3>Mathematische Struktur</h3><div class="math">'+esc(L.math)+'</div>'+
+      '<h3>Kennzahlen</h3><div class="stats">'+
+        '<div class="stat"><div class="sl">Informationsdichte</div><div class="sv">'+esc(L.info)+'</div></div>'+
+        '<div class="stat"><div class="sl">Zeitmaßstab</div><div class="sv">'+esc(L.zeit)+'</div></div>'+
+        '<div class="stat"><div class="sl">Komplexität</div><div class="sv">'+L.cx+' / 100</div></div>'+
+        '<div class="stat"><div class="sl">P(Übergang)</div><div class="sv">'+esc(L.P)+'</div></div></div>'+ fr +
+      '<h3>Der Zwischenraum</h3><div class="qbox">'+esc(Q)+'</div>'+
+      '<p class="d" style="margin-top:.5rem">Kein Pfeil, sondern ein Feld aus Möglichkeiten. P = <span style="color:#34e6ff;font-family:var(--mono)">'+esc(L.P)+'</span>, nahe 1, nie exakt 1. Der Unterschied erzeugt die Dynamik.</p>';
+    drawer.querySelector(".x").addEventListener("click",closeDrawer);
+    drawer.classList.add("on"); backdrop.classList.add("on"); drawer.scrollTop=0;
+  }
+
+  var t=0,lastT=performance.now();
+  function render(now){ if(!W||!H){ resize(); if(!W||!H){ requestAnimationFrame(render); return; } }
+    var dt=Math.min((now-lastT)/1000,1/30); lastT=now; if(!reduce)t+=dt;
+    if(spin && !drag && (now-lastInter>1200)) yaw+=dt*0.12;
+    ctx.clearRect(0,0,W,H); ctx.fillStyle="rgba(4,6,14,0.5)"; ctx.fillRect(0,0,W,H);
+    drawNothing(t); drawWater(t); drawStations(t,hover);
+    requestAnimationFrame(render);
+  }
+  requestAnimationFrame(function(n){lastT=n;render(n);});
+
+  window.__STRUDEL3D={S:S,N:N,project:project,funnel:funnel,stationWorld:stationWorld,drawWater:drawWater,drawStations:drawStations,drawNothing:drawNothing};
+})();
+</script>
+
+<!-- RAZ model i18n (append-only; original content untouched) -->
+<script>window.RAZ_CFG={"pos": "bottom-left"};</script>
+<script>window.RAZ_MODEL={"strings": [{"de": "Realität als Zustand · 3D-Strudel", "ru": "Реальность как состояние · 3D-водоворот", "en": "Reality as a State · 3D Vortex"}, {"de": "Der Realitäts-Strudel", "ru": "Водоворот реальности", "en": "The Reality Vortex"}, {"de": "<b>Leitfrage</b>Was passiert zwischen zwei Zuständen?", "ru": "<b>Ключевой вопрос</b>Что происходит между двумя состояниями?", "en": "<b>Guiding question</b>What happens between two states?"}, {"de": "<span class=\"dot\" id=\"rDot\"></span><span id=\"rPhase\">ziehen zum Drehen</span>", "ru": "<span class=\"dot\" id=\"rDot\"></span><span id=\"rPhase\">тяните, чтобы вращать</span>", "en": "<span class=\"dot\" id=\"rDot\"></span><span id=\"rPhase\">drag to rotate</span>"}, {"de": "Der Strudel", "ru": "Водоворот", "en": "The Vortex"}, {"de": "unten die 0 · nach oben immer komplexer", "ru": "внизу 0 · вверх — всё сложнее", "en": "the 0 at the bottom · ever more complex toward the top"}, {"de": "<b>P(Übergang) </b><span id=\"rProbV\">—</span>", "ru": "<b>P(перехода) </b><span id=\"rProbV\">—</span>", "en": "<b>P(transition) </b><span id=\"rProbV\">—</span>"}, {"de": "fahre über einen Punkt · klick zum Öffnen", "ru": "наведите на точку · нажмите, чтобы открыть", "en": "hover over a point · click to open"}, {"de": "ziehen = <b>drehen</b> · Mausrad = <b>zoom</b> · Klick auf einen leuchtenden Punkt = <b>öffnen</b> · unten = <b>0</b>, oben = komplexer", "ru": "тянуть = <b>вращать</b> · колесо мыши = <b>масштаб</b> · клик по светящейся точке = <b>открыть</b> · внизу = <b>0</b>, вверху = сложнее", "en": "drag = <b>rotate</b> · mouse wheel = <b>zoom</b> · click a glowing point = <b>open</b> · bottom = <b>0</b>, top = more complex"}, {"de": "<b>Modell · Bild · kein Beweis</b> (Hinweis)", "ru": "<b>Модель · образ · не доказательство</b> — примечание", "en": "<b>Model · image · not a proof</b> — note"}, {"de": "Eine <b>Illustration der Hypothese</b> „Realität als Zustand\". Unten im engen Schlund die <b>0</b> (der Ursprung), daneben das erste Bit, dann steigt die Komplexität den Strudel <b>hinauf</b>. Unter der 0 liegt <b>das große weite Nichts</b>: Juris These vom <b>Übergang jenseits der vierten in eine fünfte Dimension</b>, ausdrücklich <b>Hypothese/Bild</b>, keine gemessene Physik. Die mittleren Ebenen (Teilchen bis Mensch) stützen sich auf echte Wissenschaft; Null, Nichts und der 5D-Übergang sind Spekulation. Der Ursprung liegt nicht im Zustand, sondern im <b>Übergang</b>.", "ru": "<b>Иллюстрация гипотезы</b> «Реальность как состояние». Внизу, в узкой горловине, — <b>0</b> (начало), рядом первый бит, затем сложность поднимается по водовороту <b>вверх</b>. Под 0 лежит <b>великое бескрайнее Ничто</b>: тезис Juri о <b>переходе за пределы четвёртого в пятое измерение</b> — это подчёркнуто <b>гипотеза/образ</b>, а не измеренная физика. Средние уровни (от частиц до человека) опираются на настоящую науку; ноль, Ничто и переход в 5D — это спекуляция. Начало лежит не в состоянии, а в <b>переходе</b>.", "en": "An <b>illustration of the hypothesis</b> \"Reality as a State\". Down in the narrow throat, the <b>0</b> (the origin), next to it the first bit, then complexity rises <b>up</b> the vortex. Beneath the 0 lies <b>the great wide Nothing</b>: Juri's thesis of the <b>transition beyond the fourth into a fifth dimension</b>, explicitly a <b>hypothesis/image</b>, not measured physics. The middle levels (from particles to humans) rest on real science; zero, nothing, and the 5D transition are speculation. The origin lies not in the state, but in the <b>transition</b>."}, {"de": "Was passiert zwischen zwei Zuständen?", "ru": "Что происходит между двумя состояниями?", "en": "What happens between two states?"}, {"de": "unten im absoluten Punkt · Ursprung aller Zustände", "ru": "внизу, в абсолютной точке · начало всех состояний", "en": "at the bottom in the absolute point · origin of all states"}, {"de": "Kein leerer Punkt, kein schwarzes Loch, der Grenzbereich zwischen allen Möglichkeiten, ganz unten im engen Schlund des Strudels.", "ru": "Не пустая точка, не чёрная дыра — пограничная область между всеми возможностями, в самом низу, в узкой горловине водоворота.", "en": "Not an empty point, not a black hole — the boundary zone between all possibilities, right at the bottom in the narrow throat of the vortex."}, {"de": "Unbestimmtheit: eins und unendlich viele sind noch nicht getrennt. Wird nie vollständig erreicht.", "ru": "Неопределённость: одно и бесконечно многое ещё не разделены. Никогда не достигается полностью.", "en": "Indeterminacy: the one and the infinitely many are not yet separated. Never fully reached."}, {"de": "Nicht Nichts → Etwas, sondern: Unbestimmtheit → erste Unterscheidung → Information → Realität.", "ru": "Не Ничто → Нечто, а: неопределённость → первое различение → информация → реальность.", "en": "Not Nothing → Something, but rather: indeterminacy → first distinction → information → reality."}, {"de": "0 Bit; ein Maß über allen Möglichkeiten (formaler Platzhalter)", "ru": "0 бит; мера над всеми возможностями (формальный заполнитель)", "en": "0 bit; a measure over all possibilities (a formal placeholder)"}, {"de": "0 Bit · alle Möglichkeiten", "ru": "0 бит · все возможности", "en": "0 bit · all possibilities"}, {"de": "keine Zeit", "ru": "нет времени", "en": "no time"}, {"de": "Warum existiert überhaupt etwas und nicht nichts?", "ru": "Почему вообще существует нечто, а не ничто?", "en": "Why does anything exist at all rather than nothing?"}, {"de": "Layer 1 · Erste Information", "ru": "Слой 1 · Первая информация", "en": "Layer 1 · First Information"}, {"de": "das erste Bit · direkt neben der Null", "ru": "первый бит · прямо рядом с нулём", "en": "the first bit · right next to the zero"}, {"de": "Die erste Differenz, der erste Abdruck, die erste Information — direkt über der Null.", "ru": "Первое различие, первый отпечаток, первая информация — прямо над нулём.", "en": "The first difference, the first imprint, the first information — right above the zero."}, {"de": "Unterscheidung dies / nicht-dies — das erste Bit.", "ru": "Различение это / не-это — первый бит.", "en": "Distinction this / not-this — the first bit."}, {"de": "Ein Unterschied lädt zum nächsten ein: aus einem werden viele.", "ru": "Одно различие приглашает следующее: из одного возникают многие.", "en": "One difference invites the next: from one, many arise."}, {"de": "log₂ 2 = 1 Bit; ΔI = −log₂ p", "ru": "log₂ 2 = 1 бит; ΔI = −log₂ p", "en": "log₂ 2 = 1 bit; ΔI = −log₂ p"}, {"de": "1 Bit", "ru": "1 бит", "en": "1 bit"}, {"de": "Beginn der Reihenfolge n", "ru": "начало последовательности n", "en": "start of the sequence n"}, {"de": "Layer 2 · Energie und Teilchen", "ru": "Слой 2 · Энергия и частицы", "en": "Layer 2 · Energy and Particles"}, {"de": "Wechselwirkungen; aus Zuständen werden neue Zustände.", "ru": "Взаимодействия; из состояний возникают новые состояния.", "en": "Interactions; states become new states."}, {"de": "Energie und Quantenfelder verdichten Information zu Teilchen.", "ru": "Энергия и квантовые поля сгущают информацию в частицы.", "en": "Energy and quantum fields condense information into particles."}, {"de": "Abkühlung erzwingt stabile Bindung.", "ru": "Охлаждение вынуждает устойчивые связи.", "en": "Cooling forces stable binding."}, {"de": "wachsender Zustandsraum; ~10⁸⁰ Teilchen (grob)", "ru": "растущее пространство состояний; ~10⁸⁰ частиц (грубо)", "en": "growing state space; ~10⁸⁰ particles (roughly)"}, {"de": "~10⁸⁰ Zustände", "ru": "~10⁸⁰ состояний", "en": "~10⁸⁰ states"}, {"de": "Elektronen binden an Kerne; neutrale Atome, Licht wird frei.", "ru": "Электроны связываются с ядрами; нейтральные атомы, высвобождается свет.", "en": "Electrons bind to nuclei; neutral atoms, light is set free."}, {"de": "Atome verbinden sich zu Molekülen.", "ru": "Атомы соединяются в молекулы.", "en": "Atoms combine into molecules."}, {"de": "Quantisierung: ganze Zahlen aus Wellen-Randbedingungen", "ru": "Квантование: целые числа из граничных условий волн", "en": "Quantization: whole numbers from wave boundary conditions"}, {"de": "Layer 4 · Moleküle", "ru": "Слой 4 · Молекулы", "en": "Layer 4 · Molecules"}, {"de": "Atome binden zu Verbünden.", "ru": "Атомы связываются в соединения.", "en": "Atoms bind into assemblies."}, {"de": "emergente Eigenschaften aus Kombination.", "ru": "эмерджентные свойства из комбинации.", "en": "emergent properties from combination."}, {"de": "Molekülnetze bilden stabile Systeme.", "ru": "Молекулярные сети образуют устойчивые системы.", "en": "Molecular networks form stable systems."}, {"de": "Speicher der Entwicklung", "ru": "Хранилище развития", "en": "Storage of development"}, {"de": "Eine chemische Struktur wird zum Speichersystem.", "ru": "Химическая структура становится системой хранения.", "en": "A chemical structure becomes a storage system."}, {"de": "vier Basen als Alphabet; Komplementarität macht Information kopierbar.", "ru": "четыре основания как алфавит; комплементарность делает информацию копируемой.", "en": "four bases as an alphabet; complementarity makes information copyable."}, {"de": "Speicher plus Kopie ermöglichen Leben.", "ru": "Хранение плюс копирование делают возможной жизнь.", "en": "Storage plus copying make life possible."}, {"de": "4 Basen ≈ 2 Bit/Position; Bijektion", "ru": "4 основания ≈ 2 бита/позиция; биекция", "en": "4 bases ≈ 2 bit/position; bijection"}, {"de": "Etabliert · Ursprung offen", "ru": "Установлено · происхождение открыто", "en": "Established · origin open"}, {"de": "erstes Innen und Außen; das erste Individuum.", "ru": "первое внутри и снаружи; первый индивид.", "en": "first inside and outside; the first individual."}, {"de": "Grenze (Membran); informationsverarbeitendes System", "ru": "граница (мембрана); система, обрабатывающая информацию", "en": "boundary (membrane); information-processing system"}, {"de": "Milliarden Moleküle je Zelle", "ru": "миллиарды молекул на клетку", "en": "billions of molecules per cell"}, {"de": "Ein System führt ein Modell seiner selbst.", "ru": "Система поддерживает модель самой себя.", "en": "A system maintains a model of itself."}, {"de": "Selbstbezug schreibt seine Regeln nach außen.", "ru": "Самореференция записывает свои правила вовне.", "en": "Self-reference writes its rules outward."}, {"de": "Selbstmodell; das Hard Problem bleibt offen", "ru": "Самомодель; «трудная проблема» остаётся открытой", "en": "self-model; the Hard Problem remains open"}, {"de": "Ab wann entsteht eine Innenperspektive?", "ru": "С какого момента возникает внутренняя перспектива?", "en": "At what point does an inner perspective arise?"}, {"de": "das Universum erkennt sich", "ru": "вселенная познаёт себя", "en": "the universe recognizes itself"}, {"de": "das Universum verändert sich durch Erkenntnis, nicht nur durch Physik.", "ru": "вселенная меняется через познание, а не только через физику.", "en": "the universe changes through cognition, not only through physics."}, {"de": "Erkenntnis baut Werkzeuge, die selbst rechnen.", "ru": "Познание строит инструменты, которые сами вычисляют.", "en": "Cognition builds tools that compute on their own."}, {"de": "Denken wird zu 0/1; KI verdichtet Muster; Qubits überlagern.", "ru": "Мышление превращается в 0/1; ИИ сгущает паттерны; кубиты образуют суперпозицию.", "en": "Thinking becomes 0/1; AI condenses patterns; qubits superpose."}, {"de": "neue Informationsformen; Simulation von Welten.", "ru": "новые формы информации; симуляция миров.", "en": "new forms of information; simulation of worlds."}, {"de": "Verdichtete Information nähert sich einem kollektiven Ganzen.", "ru": "Сгущённая информация приближается к коллективному целому.", "en": "Condensed information approaches a collective whole."}, {"de": "0/1 → Überlagerung; Milliarden bis Billionen Parameter", "ru": "0/1 → суперпозиция; миллиарды–триллионы параметров", "en": "0/1 → superposition; billions–trillions of parameters"}, {"de": "Ist dies der nächste Layer?", "ru": "Это ли следующий слой?", "en": "Is this the next layer?"}, {"de": "Ganz oben, wo der Strudel am weitesten ist: die mathematischen Möglichkeiten nähern sich der Ausschöpfung; maximale Komplexität.", "ru": "На самом верху, где водоворот шире всего: математические возможности приближаются к исчерпанию; максимальная сложность.", "en": "At the very top, where the vortex is widest: the mathematical possibilities approach exhaustion; maximal complexity."}, {"de": "Bewusstsein nicht mehr individuell, sondern kollektiv — als vollständige Informationsstruktur.", "ru": "Сознание больше не индивидуальное, а коллективное — как полная информационная структура.", "en": "Consciousness no longer individual but collective — as a complete information structure."}, {"de": "Wenn alle Unterschiede erreicht sind, kehrt alles zur Null zurück (durch das Nichts unten).", "ru": "Когда достигнуты все различия, всё возвращается к нулю (через Ничто внизу).", "en": "When all differences are reached, everything returns to zero (through the Nothing below)."}, {"de": "maximale Komplexität; ein sich selbst abbildendes Netzwerk", "ru": "максимальная сложность; сеть, отображающая саму себя", "en": "maximal complexity; a network that maps itself"}, {"de": "Was, wenn die Realität sich vollständig erkennt?", "ru": "Что, если реальность познаёт себя полностью?", "en": "What if reality fully recognizes itself?"}, {"de": "Das große weite Nichts", "ru": "Великое бескрайнее Ничто", "en": "The great wide Nothing"}, {"de": "UNTER dem Strudel · jenseits der 4. in die 5. Dimension", "ru": "ПОД водоворотом · за пределы 4-го в 5-е измерение", "en": "BELOW the vortex · beyond the 4th into the 5th dimension"}, {"de": "Unter der Null, unter dem ganzen Strudel: das große weite Nichts — nicht klassische Leere, sondern der Übergang selbst.", "ru": "Под нулём, под всем водоворотом: великое бескрайнее Ничто — не классическая пустота, а сам переход.", "en": "Below the zero, below the entire vortex: the great wide Nothing — not classical emptiness, but the transition itself."}, {"de": "Juris These: das Ende des Anfangs; der Übergang jenseits der vierten in eine fünfte Dimension, wo alles anders ist. Hier lösen sich alle Kategorien auf.", "ru": "Тезис Juri: конец начала; переход за пределы четвёртого в пятое измерение, где всё иначе. Здесь растворяются все категории.", "en": "Juri's thesis: the end of the beginning; the transition beyond the fourth into a fifth dimension, where everything is different. Here all categories dissolve."}, {"de": "Aus dem Nichts kehrt die erste Frage zurück — der Strudel beginnt von neuem.", "ru": "Из Ничто возвращается первый вопрос — водоворот начинается заново.", "en": "Out of the Nothing the first question returns — the vortex begins anew."}, {"de": "außerhalb der bekannten 4 Dimensionen — Hypothese, kein Messbefund", "ru": "вне известных 4 измерений — гипотеза, а не результат измерения", "en": "outside the known 4 dimensions — a hypothesis, not a measurement finding"}, {"de": "jenseits der Zeit", "ru": "по ту сторону времени", "en": "beyond time"}, {"de": "These / Bild (kein Beweis)", "ru": "тезис / образ (не доказательство)", "en": "thesis / image (not a proof)"}, {"de": "Erstes Bit", "ru": "Первый бит", "en": "First bit"}, {"de": "jenseits · das Nichts", "ru": "по ту сторону · Ничто", "en": "beyond · the Nothing"}, {"de": "das große weite Nichts", "ru": "великое бескрайнее Ничто", "en": "the great wide Nothing"}, {"de": "klick zum Öffnen ›", "ru": "нажмите, чтобы открыть ›", "en": "click to open ›"}, {"de": "<h3>Die Frage dieser Ebene</h3><div class=\"qbox\">", "ru": "<h3>Вопрос этого уровня</h3><div class=\"qbox\">", "en": "<h3>The question of this level</h3><div class=\"qbox\">"}, {"de": "<h3>Was ist entstanden?</h3><p class=\"d\">", "ru": "<h3>Что возникло?</h3><p class=\"d\">", "en": "<h3>What has emerged?</h3><p class=\"d\">"}, {"de": "<h3>Warum konnte der nächste Zustand entstehen?</h3><p class=\"d\">", "ru": "<h3>Почему смогло возникнуть следующее состояние?</h3><p class=\"d\">", "en": "<h3>Why could the next state emerge?</h3><p class=\"d\">"}, {"de": "<div class=\"stat\"><div class=\"sl\">Zeitmaßstab</div><div class=\"sv\">", "ru": "<div class=\"stat\"><div class=\"sl\">Масштаб времени</div><div class=\"sv\">", "en": "<div class=\"stat\"><div class=\"sl\">Time scale</div><div class=\"sv\">"}, {"de": "<div class=\"stat\"><div class=\"sl\">Komplexität</div><div class=\"sv\">", "ru": "<div class=\"stat\"><div class=\"sl\">Сложность</div><div class=\"sv\">", "en": "<div class=\"stat\"><div class=\"sl\">Complexity</div><div class=\"sv\">"}, {"de": "<div class=\"stat\"><div class=\"sl\">P(Übergang)</div><div class=\"sv\">", "ru": "<div class=\"stat\"><div class=\"sl\">P(перехода)</div><div class=\"sv\">", "en": "<div class=\"stat\"><div class=\"sl\">P(transition)</div><div class=\"sv\">"}, {"de": "<p class=\"d\" style=\"margin-top:.5rem\">Kein Pfeil, sondern ein Feld aus Möglichkeiten. P = <span style=\"color:#34e6ff;font-family:var(--mono)\">", "ru": "<p class=\"d\" style=\"margin-top:.5rem\">Не стрела, а поле возможностей. P = <span style=\"color:#34e6ff;font-family:var(--mono)\">", "en": "<p class=\"d\" style=\"margin-top:.5rem\">Not an arrow, but a field of possibilities. P = <span style=\"color:#34e6ff;font-family:var(--mono)\">"}, {"de": "</span>, nahe 1, nie exakt 1. Der Unterschied erzeugt die Dynamik.</p>", "ru": "</span> — близко к 1, но никогда не ровно 1. Различие порождает динамику.</p>", "en": "</span> — close to 1, never exactly 1. The difference creates the dynamics.</p>"}, {"de": "Der Nullpunkt", "ru": "Нулевая точка", "en": "The zero point"}, {"de": "Hypothese", "ru": "Гипотеза", "en": "Hypothesis"}, {"de": "erste Strukturen", "ru": "первые структуры", "en": "first structures"}, {"de": "Sekundenbruchteile bis Minuten", "ru": "от долей секунды до минут", "en": "fractions of a second to minutes"}, {"de": "Etabliert · Kanten offen", "ru": "Установлено · края открыты", "en": "Established · edges open"}, {"de": "Layer 3 · Atome", "ru": "Слой 3 · Атомы", "en": "Layer 3 · Atoms"}, {"de": "erste stabile Materie", "ru": "первая устойчивая материя", "en": "first stable matter"}, {"de": "erste stabile Materie; diskrete Energieniveaus.", "ru": "первая устойчивая материя; дискретные энергетические уровни.", "en": "first stable matter; discrete energy levels."}, {"de": "~10⁷⁸ bis 10⁸⁰ Kerne", "ru": "~10⁷⁸ bis 10⁸⁰ ядер", "en": "~10⁷⁸ bis 10⁸⁰ nuclei"}, {"de": "~380.000 Jahre (grob)", "ru": "~380 000 лет (грубо)", "en": "~380,000 years (roughly)"}, {"de": "Etabliert", "ru": "Установлено", "en": "Established"}, {"de": "Kombination", "ru": "Комбинация", "en": "Combination"}, {"de": "Kombinatorik; Emergenz", "ru": "Комбинаторика; эмерджентность", "en": "combinatorics; emergence"}, {"de": "kombinatorisch wachsend", "ru": "растёт комбинаторно", "en": "growing combinatorially"}, {"de": "Millionen bis Milliarden Jahre", "ru": "миллионы–миллиарды лет", "en": "millions–billions of years"}, {"de": "Layer 5 · DNA", "ru": "Слой 5 · ДНК", "en": "Layer 5 · DNA"}, {"de": "Milliarden Basen ≈ Gigabit", "ru": "миллиарды оснований ≈ гигабит", "en": "billions of bases ≈ gigabit"}, {"de": "vor ~3,5 bis 4 Mrd. Jahren", "ru": "~3,5–4 млрд лет назад", "en": "~3.5–4 billion years ago"}, {"de": "Layer 6 · Leben", "ru": "Слой 6 · Жизнь", "en": "Layer 6 · Life"}, {"de": "lebende Organisation", "ru": "живая организация", "en": "living organization"}, {"de": "Membran, Selbst-Erhaltung, Stoffwechsel.", "ru": "Мембрана, самоподдержание, обмен веществ.", "en": "membrane, self-maintenance, metabolism."}, {"de": "Lebende Systeme bauen Modelle ihrer Umwelt.", "ru": "Живые системы строят модели своей среды.", "en": "Living systems build models of their environment."}, {"de": "Milliarden Jahre Evolution", "ru": "миллиарды лет эволюции", "en": "billions of years of evolution"}, {"de": "Layer 7 · Bewusstsein", "ru": "Слой 7 · Сознание", "en": "Layer 7 · Consciousness"}, {"de": "Selbstbezug", "ru": "Самореференция", "en": "self-reference"}, {"de": "Innenperspektive, Selbstbezug (strange loop).", "ru": "Внутренняя перспектива, самореференция (strange loop).", "en": "inner perspective, self-reference (strange loop)."}, {"de": "~10¹¹ Neuronen · ~10¹⁴ Synapsen", "ru": "~10¹¹ нейронов · ~10¹⁴ синапсов", "en": "~10¹¹ neurons · ~10¹⁴ synapses"}, {"de": "Hunderttausende Jahre", "ru": "сотни тысяч лет", "en": "hundreds of thousands of years"}, {"de": "Etabliert · offen", "ru": "Установлено · открыто", "en": "Established · open"}, {"de": "Layer 8 · Selbsterkenntnis", "ru": "Слой 8 · Самопознание", "en": "Layer 8 · Self-recognition"}, {"de": "Sprache, Mathematik, Kultur — bewusste Informationsverarbeitung.", "ru": "Язык, математика, культура — сознательная обработка информации.", "en": "Language, mathematics, culture — conscious information processing."}, {"de": "unendlicher Gebrauch endlicher Mittel (Humboldt)", "ru": "бесконечное использование конечных средств (Гумбольдт)", "en": "infinite use of finite means (Humboldt)"}, {"de": "endliche Mittel · unendlicher Gebrauch", "ru": "конечные средства · бесконечное использование", "en": "finite means · infinite use"}, {"de": "Jahrtausende", "ru": "тысячелетия", "en": "millennia"}, {"de": "Etabliert · kontingent", "ru": "Установлено · контингентно", "en": "Established · contingent"}, {"de": "Layer 9 · Technologie · KI", "ru": "Слой 9 · Технология · ИИ", "en": "Layer 9 · Technology · AI"}, {"de": "neue Informationsformen", "ru": "новые формы информации", "en": "new forms of information"}, {"de": "Milliarden bis Billionen Parameter", "ru": "миллиарды–триллионы параметров", "en": "billions–trillions of parameters"}, {"de": "Jahrzehnte", "ru": "десятилетия", "en": "decades"}, {"de": "Gegenwart", "ru": "Настоящее", "en": "Present"}, {"de": "Kollektivbewusstsein", "ru": "Коллективное сознание", "en": "collective consciousness"}, {"de": "oben · maximale Entfaltung", "ru": "вверху · максимальное раскрытие", "en": "top · maximal unfolding"}, {"de": "spekulativer Horizont", "ru": "спекулятивный горизонт", "en": "speculative horizon"}, {"de": "Spekulativ", "ru": "Спекулятивно", "en": "Speculative"}, {"de": "0 / unbestimmt", "ru": "0 / неопределённо", "en": "0 / indeterminate"}, {"de": "Nullpunkt (unten)", "ru": "Нулевая точка (внизу)", "en": "zero point (bottom)"}, {"de": "Entfaltung nach oben", "ru": "развёртывание вверх", "en": "unfolding toward the top"}, {"de": "maximale Entfaltung (oben)", "ru": "максимальное раскрытие (вверху)", "en": "maximal unfolding (top)"}, {"de": "Escape", "ru": "Escape", "en": "Escape"}, {"de": "<button class=\"x\">✕</button>", "ru": "<button class=\"x\">✕</button>", "en": "<button class=\"x\">✕</button>"}, {"de": "<div class=\"dn\">", "ru": "<div class=\"dn\">", "en": "<div class=\"dn\">"}, {"de": " · Station <b>", "ru": " · Станция <b>", "en": " · Station <b>"}, {"de": "<h2 style=\"color:", "ru": "<h2 style=\"color:", "en": "<h2 style=\"color:"}, {"de": "</h2><div class=\"rk\">", "ru": "</h2><div class=\"rk\">", "en": "</h2><div class=\"rk\">"}, {"de": "<div class=\"ehr\">", "ru": "<div class=\"ehr\">", "en": "<div class=\"ehr\">"}, {"de": "<h3>Neue Eigenschaft</h3><p class=\"d\">", "ru": "<h3>Новое свойство</h3><p class=\"d\">", "en": "<h3>New property</h3><p class=\"d\">"}, {"de": "<h3>Mathematische Struktur</h3><div class=\"math\">", "ru": "<h3>Математическая структура</h3><div class=\"math\">", "en": "<h3>Mathematical structure</h3><div class=\"math\">"}, {"de": "<h3>Kennzahlen</h3><div class=\"stats\">", "ru": "<h3>Показатели</h3><div class=\"stats\">", "en": "<h3>Key figures</h3><div class=\"stats\">"}, {"de": "<div class=\"stat\"><div class=\"sl\">Informationsdichte</div><div class=\"sv\">", "ru": "<div class=\"stat\"><div class=\"sl\">Плотность информации</div><div class=\"sv\">", "en": "<div class=\"stat\"><div class=\"sl\">Information density</div><div class=\"sv\">"}, {"de": " / 100</div></div>", "ru": " / 100</div></div>", "en": " / 100</div></div>"}, {"de": "<h3>Der Zwischenraum</h3><div class=\"qbox\">", "ru": "<h3>Промежуток</h3><div class=\"qbox\">", "en": "<h3>The in-between</h3><div class=\"qbox\">"}, {"de": "◈ Auto-Drehen", "ru": "◈ Автоповорот", "en": "◈ Auto-rotate"}, {"de": "⟲ Ansicht zurück", "ru": "⟲ Сбросить вид", "en": "⟲ Reset view"}, {"de": "↧ in den Strudel blicken", "ru": "↧ заглянуть в водоворот", "en": "↧ look into the vortex"}, {"de": "↔ Seitenansicht", "ru": "↔ Вид сбоку", "en": "↔ Side view"}]};</script>
+<script>
+/* ==========================================================================
+   Realität als Zustand — MODEL i18n runtime (append-only)
+   For the interactive canvas/JS models, whose text is produced by JavaScript
+   (canvas fillText, innerHTML/textContent). String-keyed, so it survives any
+   DOM rebuild. We intercept the text sinks and substitute translations.
+
+   Injected: RAZ_CFG (switcher placement) and
+             RAZ_MODEL = { strings:[{de,ru,en}, ...] }  (longest handled first)
+   The dict mixes whole messages / whole static blocks (long keys, matched
+   wholesale) and atomic data values (short keys). Nothing existing is edited;
+   this only appends a switcher + a translation layer.
+   ========================================================================== */
+(function () {
+  "use strict";
+  var CFG   = (typeof RAZ_CFG   !== "undefined") ? RAZ_CFG   : { pos:"top-right" };
+  var MODEL = (typeof RAZ_MODEL !== "undefined") ? RAZ_MODEL : { strings:[] };
+  var LS_KEY = "raz_lang";
+  var curLang = "de";
+  var APPLYING = false;
+
+  /* ---------- translation core (substring replace, boundary-aware) -------- */
+  var STR = (MODEL.strings || []).filter(function(e){return e&&e.de;}).slice()
+              .sort(function (a, b) { return b.de.length - a.de.length; });
+  function isL(ch){ return ch >= "0" && ch <= "9" || ch >= "A" && ch <= "Z" || ch >= "a" && ch <= "z" || (ch >= "À" && ch <= "ɏ"); }
+  STR.forEach(function (e){ e._bl = isL(e.de.charAt(0)); e._br = isL(e.de.charAt(e.de.length-1)); });
+  var memo = { ru:Object.create(null), en:Object.create(null) };
+  function translateStr(s, lang){
+    if (lang === "de" || !s || typeof s !== "string") return s;
+    var mm = memo[lang]; var hit = mm[s]; if (hit !== undefined) return hit;
+    var out = s;
+    for (var i=0;i<STR.length;i++){
+      var e = STR[i], tr = e[lang]; if (tr == null || tr === "") continue;
+      if (out.indexOf(e.de) < 0) continue;
+      var res="", from=0, k;
+      while ((k = out.indexOf(e.de, from)) >= 0){
+        var okL = !e._bl || k===0 || !isL(out.charAt(k-1));
+        var aft = k + e.de.length;
+        var okR = !e._br || aft>=out.length || !isL(out.charAt(aft));
+        if (okL && okR){ res += out.slice(from,k) + tr; from = aft; }
+        else { res += out.slice(from, k+1); from = k+1; }
+      }
+      out = res + out.slice(from);
+    }
+    mm[s] = out; return out;
+  }
+
+  /* ---------- registries for re-translation on language switch ------------ */
+  var htmlEls = [], textEls = [];
+  function TAGof(el){ return (el && el.tagName ? el.tagName : "").toUpperCase(); }
+  function skip(el){ if(!el||el.nodeType!==1) return false; var t=TAGof(el); if(t==="SCRIPT"||t==="STYLE") return true;
+    var p=el; while(p){ if(p.id==="raz-langbar"||p.__razSkip) return true; p=p.parentNode; } return false; }
+
+  /* ---------- patch innerHTML / textContent setters ----------------------- */
+  function patchProp(proto, prop, reg){
+    var d = Object.getOwnPropertyDescriptor(proto, prop);
+    if (!d || !d.set || d.set.__razP) return;
+    var oget = d.get, oset = d.set;
+    Object.defineProperty(proto, prop, {
+      configurable:true, enumerable:d.enumerable, get:oget,
+      set: function(v){
+        if (APPLYING){ oset.call(this, v); return; }
+        if (skip(this)){ oset.call(this, v); return; }
+        var de = String(v);
+        this[reg.key] = de;
+        if (!this[reg.flag]){ this[reg.flag] = true; reg.list.push(this); }
+        oset.call(this, curLang==="de" ? v : translateStr(de, curLang));
+      }
+    });
+    d.set.__razP = true;
+  }
+  var elProto = window.Element.prototype;
+  var htmlDesc = Object.getOwnPropertyDescriptor(elProto,"innerHTML") ? elProto : window.HTMLElement.prototype;
+  patchProp(htmlDesc, "innerHTML", { key:"__razHtmlDe", flag:"__razHtmlR", list:htmlEls });
+  patchProp(window.Node.prototype, "textContent", { key:"__razTextDe", flag:"__razTextR", list:textEls });
+
+  /* ---------- patch canvas text ------------------------------------------ */
+  (function(){
+    if (!window.CanvasRenderingContext2D) return;
+    var P = CanvasRenderingContext2D.prototype;
+    ["fillText","strokeText"].forEach(function(fn){
+      var o=P[fn]; if(!o||o.__razP) return;
+      var w=function(text,x,y,mw){ var t=(curLang!=="de")?translateStr(String(text),curLang):text;
+        return (mw===undefined)?o.call(this,t,x,y):o.call(this,t,x,y,mw); };
+      w.__razP=true; P[fn]=w;
+    });
+    var m=P.measureText; if(m&&!m.__razP){ var w2=function(t){ return m.call(this,(curLang!=="de")?translateStr(String(t),curLang):t); }; w2.__razP=true; P.measureText=w2; }
+  })();
+
+  /* ---------- initial pass over static markup ----------------------------- */
+  var INLINE={A:1,ABBR:1,B:1,BDI:1,BDO:1,BR:1,CITE:1,CODE:1,DATA:1,DFN:1,EM:1,I:1,KBD:1,MARK:1,Q:1,RP:1,RT:1,RUBY:1,S:1,SAMP:1,SMALL:1,SPAN:1,STRONG:1,SUB:1,SUP:1,TIME:1,U:1,VAR:1,WBR:1,DEL:1,INS:1};
+  var OPAQUE={SCRIPT:1,STYLE:1,CANVAS:1,IFRAME:1,NOSCRIPT:1,TEMPLATE:1,IMG:1,VIDEO:1,AUDIO:1,INPUT:1,TEXTAREA:1,OBJECT:1,TITLE:1,HEAD:1,META:1,LINK:1,BASE:1,DESC:1,DEFS:1,SYMBOL:1};
+  function hasText(el){ var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null),n; while((n=w.nextNode())){ if(n.nodeValue&&/\S/.test(n.nodeValue))return true; } return false; }
+  function hasDirectText(el){ for(var n=el.firstChild;n;n=n.nextSibling){ if(n.nodeType===3 && /\S/.test(n.nodeValue||"")) return true; } return false; }
+  function hasBlockDesc(el){ var k=el.getElementsByTagName("*"); for(var i=0;i<k.length;i++){ if(INLINE[(k[i].tagName||"").toUpperCase()]!==1) return true; } return false; }
+  function collectStaticBlocks(){
+    var out=[];
+    // A block is any element that owns text directly, OR is a leaf text block.
+    // Capturing whole innerHTML keeps loose text + inline/label children together.
+    (function walk(el){ for(var c=el.firstElementChild;c;c=c.nextElementSibling){
+      var t=(c.tagName||"").toUpperCase();
+      if(OPAQUE[t]===1) continue; if(c.id==="raz-langbar"||c.__razSkip) continue;
+      if(hasDirectText(c) || (hasText(c)&&!hasBlockDesc(c))) out.push(c); /* don't descend */
+      else walk(c);
+    }})(document.body);
+    return out;
+  }
+  function primeStatic(){
+    var blocks=collectStaticBlocks();
+    for (var i=0;i<blocks.length;i++){ var el=blocks[i];
+      if (el.__razHtmlR) continue;              // already tracked via a JS assignment
+      el.__razHtmlDe = el.innerHTML; el.__razHtmlR = true; htmlEls.push(el);
+    }
+  }
+
+  /* ---------- apply a language ------------------------------------------- */
+  function reHtml(el){ if(el.isConnected===false) return; var de=el.__razHtmlDe;
+    APPLYING=true; try{ el.innerHTML = (curLang==="de")?de:translateStr(de,curLang); }catch(e){} APPLYING=false; }
+  function reText(el){ if(el.isConnected===false) return; var de=el.__razTextDe;
+    APPLYING=true; try{ el.textContent = (curLang==="de")?de:translateStr(de,curLang); }catch(e){} APPLYING=false; }
+  function apply(lang){
+    curLang = lang;
+    for (var i=0;i<htmlEls.length;i++) reHtml(htmlEls[i]);
+    for (var j=0;j<textEls.length;j++) reText(textEls[j]);
+    document.documentElement.setAttribute("lang", lang);
+    try{ localStorage.setItem(LS_KEY, lang); }catch(e){}
+    var btns=document.querySelectorAll("#raz-langbar [data-lang]");
+    for (var k=0;k<btns.length;k++){ var on=btns[k].getAttribute("data-lang")===lang; btns[k].setAttribute("aria-pressed",on?"true":"false"); btns[k].className=on?"raz-lb-btn raz-on":"raz-lb-btn"; }
+    /* canvas repaints itself via the model's own animation loop */
+  }
+
+  /* ---------- switcher UI ------------------------------------------------- */
+  function buildBar(){
+    var style=document.createElement("style"); style.id="raz-lang-style"; style.__razSkip=true;
+    style.textContent="#raz-langbar{position:fixed;z-index:2147483000;display:inline-flex;gap:2px;padding:3px;border-radius:999px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-size:12px;font-weight:700;letter-spacing:.02em;line-height:1;background:rgba(20,21,29,.72);border:1px solid rgba(150,150,180,.28);box-shadow:0 6px 22px rgba(0,0,0,.4);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);}#raz-langbar .raz-lb-btn{appearance:none;border:0;background:transparent;cursor:pointer;color:#c9cee0;border-radius:999px;padding:.4em .62em;font:inherit;transition:background .15s,color .15s;}#raz-langbar .raz-lb-btn:hover{color:#fff;}#raz-langbar .raz-lb-btn.raz-on{background:rgba(230,181,74,.94);color:#141019;}";
+    document.head.appendChild(style);
+    var bar=document.createElement("div"); bar.id="raz-langbar"; bar.__razSkip=true; bar.setAttribute("role","group"); bar.setAttribute("aria-label","Sprache / Language / Язык");
+    [["de","DE"],["ru","RU"],["en","EN"]].forEach(function(p){
+      var b=document.createElement("button"); b.type="button"; b.className="raz-lb-btn"; b.setAttribute("data-lang",p[0]); b.setAttribute("aria-pressed","false");
+      b.title={de:"Deutsch (Original)",ru:"Русский",en:"English"}[p[0]];
+      APPLYING=true; b.textContent=p[1]; APPLYING=false;
+      b.addEventListener("click",function(){ var code=this.getAttribute("data-lang"); apply(code); });
+      bar.appendChild(b);
+    });
+    var pos=CFG.pos||"top-right";
+    if (pos.indexOf("bottom")===0) bar.style.bottom=CFG.edge||"14px"; else bar.style.top=CFG.edge||"12px";
+    if (pos.indexOf("left")>=0) bar.style.left=CFG.side||"14px"; else bar.style.right=CFG.side||"14px";
+    APPLYING=true; document.body.appendChild(bar); APPLYING=false;
+  }
+  function getInitial(){ try{ var s=localStorage.getItem(LS_KEY); if(s==="ru"||s==="en"||s==="de")return s; }catch(e){} return "de"; }
+
+  /* ---------- init ------------------------------------------------------- */
+  var inIframe = false; try { inIframe = window.top !== window.self; } catch (e) { inIframe = true; }
+  primeStatic();
+  if (!inIframe) buildBar();  /* embedded in the hub: the hub's switcher drives us via postMessage */
+  window.addEventListener("message",function(e){ if(e&&e.data&&(e.data.razLang==="de"||e.data.razLang==="ru"||e.data.razLang==="en")) apply(e.data.razLang); });
+  window.RAZ_onLang=function(l){ apply(l); };
+  apply(getInitial());
+})();
+
+</script>
+
+<script src="assets/restauration.js?v=20261116-r2" defer></script>
+<aside data-historical-banner style="padding:10px 18px;background:#172637;color:#e7d3a1;font:14px system-ui">ARCHIV · ARCHIVE · АРХИВ — 16.11.2026 · <a href="../../forschung.html">HALVETH — 17.11.2026</a></aside></body></html>

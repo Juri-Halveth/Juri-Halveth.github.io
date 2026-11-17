@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HALVETH &middot; Wie es funktioniert</title>
+<meta name="description" content="Wie HALVETH funktioniert: das Prinzip der Finalität, der Abstand zwischen 0 und 1, und der Angriff Schritt für Schritt zum Durchspielen.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='6' y='6' width='88' height='88' rx='22' fill='%230a0a0b' stroke='%23ffd60a' stroke-width='6'/><circle cx='50' cy='50' r='21' fill='none' stroke='%23ffd60a' stroke-width='6'/><circle cx='50' cy='50' r='6' fill='%234fd6d0'/></svg>">
+<link rel="stylesheet" href="halveth.css?v=20261116-r2">
+
+<link rel="canonical" href="https://halveth.de/prinzip.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="HALVETH">
+<meta property="og:title" content="HALVETH &middot; Wie es funktioniert">
+<meta property="og:description" content="Wie HALVETH funktioniert: das Prinzip der Finalität, der Abstand zwischen 0 und 1, und der Angriff Schritt für Schritt zum Durchspielen.">
+<meta property="og:url" content="https://halveth.de/prinzip.html">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary">
+<noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebSite","name":"HALVETH","url":"https://halveth.de/","inLanguage":["de","en","ru"],"description":"Öffentliche Forschung zu überprüfbarem Vertrauen in Systemen. Kein Produkt.","author":{"@type":"Person","name":"Juri Janovski"}},{"@context":"https://schema.org","@type":"Person","name":"Juri Janovski","url":"https://juri.halveth.de/","email":"mailto:info@halveth.de","jobTitle":"Entwickler und unabhängiger Forscher","description":"Baut Software und Systeme rund um Vertrauen, Sicherheit und künstliche Intelligenz. Arbeitet allein, ohne Firma dahinter.","knowsAbout":["Prozessoptimierung","Cyber Security","IT-Sicherheit","Webseiten","Webentwicklung","Programmierung","Softwareentwicklung","Marketing","Künstliche Intelligenz","Automatisierung","Datenschutz"],"knowsLanguage":["Deutsch","Englisch","Russisch"],"address":{"@type":"PostalAddress","addressLocality":"Brühl","addressRegion":"Nordrhein-Westfalen","postalCode":"50321","addressCountry":"DE"},"workLocation":{"@type":"Place","name":"Brühl bei Köln, Rhein-Erft-Kreis"},"sameAs":["https://github.com/Juri-Halveth","https://www.linkedin.com/in/juri-j-638862395/","https://www.instagram.com/anov.ju/"]}]</script>
+
+<link rel="stylesheet" href="assets/restauration.css?v=20261116-r2">
+</head>
+<body data-hv-page="prinzip" class="hv-main-shell">
+<nav>
+  <div class="nav-in">
+    <a class="logo" href="index.html"><span class="mark">&#11041;</span> HALVETH</a>
+    <div class="nav-links">
+      <a href="index.html">Start</a>
+      <a href="prinzip.html">Prinzip</a>
+      <a href="baum.html">Wo es sitzt</a>
+      <a href="ergebnisse.html">Ergebnisse</a>
+      <a href="grenzen.html">Grenzen</a>
+      <a href="vision.html">Vision</a>
+      <a href="labor.html">Labor</a>
+      <a href="audits.html">Audits</a>
+      <a href="forschung.html">Forschung</a>
+    </div>
+    <a class="portfolio-entry" href="https://juri.halveth.de/" data-raz-skip>Juri<span class="pe-rest"> &amp; Projekte</span></a>
+    <div class="nav-cta">
+      <span class="status-pill"><span class="dot"></span>in Forschung</span>
+    </div>
+  </div>
+</nav>
+<main id="inhalt"><aside class="hv-history-note" data-raz-skip><span data-hv-i18n="history">Inhaltliche Projektangaben behalten ihren jeweils genannten Quellenstand. Die Web-Edition vom 16.11.2026 aktualisiert Darstellung, Bedienung und Verknüpfungen; sie ist keine neue Abnahme alter Experimente.</span></aside>
+<div class="wrap">
+  <section class="hero">
+    <p class="eyebrow reveal">// WIE ES FUNKTIONIERT</p>
+    <h1 class="reveal">Zwischen passiert<br>und g&uuml;ltig.</h1>
+    <p class="hook reveal">In fast allen Systemen liegt dazwischen kein Abstand. Genau diese Null-Distanz nutzt ein Angreifer.</p>
+  </section>
+</div>
+
+<div class="wrap">
+  <section id="dazwischen">
+    <p class="eyebrow reveal">// DAS DAZWISCHEN</p>
+    <h2 class="sec reveal">Warum es zwischen 0 und 1 lebt</h2>
+    <p class="sec-sub reveal">Eine &Auml;nderung ist erst <b style="color:var(--ink)">0</b>, sie ist passiert, aber noch nicht wahr. Und dann <b style="color:var(--ink)">1</b>, versiegelt und g&uuml;ltig. In fast allen Systemen ist kein Abstand dazwischen. Genau diese Null-Distanz nutzt der Angreifer. HALVETH &ouml;ffnet den Spalt und wohnt darin.</p>
+    <p data-raz-skip="true" style="margin:-10px 0 20px"><a href="modell.html" style="color:var(--accent)">Ausf&uuml;hrlichere, interaktive Fassung dieser Seite &rarr;</a></p>
+    <div class="between reveal">
+      <svg data-raz-skip viewBox="0 0 680 132" role="img" aria-label="Offenes Band von fast 0 bis fast 1, in dem HALVETH urteilt">
+        <text x="340" y="24" text-anchor="middle" font-size="15" font-weight="700" fill="#f4f3ee">HALVETH lebt hier</text>
+        <text x="340" y="46" text-anchor="middle" font-size="13" fill="#4fd6d0" style="font-family:'Cascadia Code',monospace">0,000&hellip;1&#160;&#160;bis&#160;&#160;0,999&hellip;9</text>
+        <line x1="70" y1="78" x2="610" y2="78" stroke="#262730" stroke-width="2"/>
+        <rect x="92" y="70" width="496" height="16" rx="8" fill="rgba(79,214,208,.16)" stroke="#4fd6d0" stroke-opacity=".55"/>
+        <circle cx="70" cy="78" r="9" fill="#0a0a0b" stroke="#9a9ba3" stroke-width="3"/>
+        <circle cx="610" cy="78" r="9" fill="#0a0a0b" stroke="#ffd60a" stroke-width="3"/>
+        <text x="70" y="107" text-anchor="middle" font-size="15" font-weight="700" fill="#9a9ba3" style="font-family:'Cascadia Code',monospace">0</text>
+        <text x="70" y="125" text-anchor="middle" font-size="11.5" fill="#6b6c76">passiert</text>
+        <text x="610" y="107" text-anchor="middle" font-size="15" font-weight="700" fill="#ffd60a" style="font-family:'Cascadia Code',monospace">1</text>
+        <text x="610" y="125" text-anchor="middle" font-size="11.5" fill="#6b6c76">versiegelt, wahr</text>
+        <text x="556" y="62" text-anchor="middle" font-size="11.5" fill="#9a9ba3" style="font-family:'Cascadia Code',monospace">nie ganz</text>
+      </svg>
+    </div>
+    <p class="prose reveal" style="color:var(--muted); margin-top:30px">
+      HALVETH wohnt nie an den R&auml;ndern. Nicht bei <b style="color:var(--ink)">0</b>, dem noch nicht Wahren, und nicht bei <b style="color:var(--ink)">1</b>, dem absolut Sicheren. Es lebt im offenen Band dazwischen und entscheidet, ob aus einer 0 je eine 1 werden darf. Ein System, das behauptet, es k&ouml;nne nie falsch liegen, die harte 1, w&uuml;rde eine &Uuml;bernahme gar nicht bemerken. Die 1 ist das Ziel. Wir gehen auf sie zu, wir behaupten sie nie.
+    </p>
+  </section>
+  <section id="angriff">
+    <p class="eyebrow reveal">// DER ANGRIFF, SCHRITT F&Uuml;R SCHRITT</p>
+    <h2 class="sec reveal">Wer kommt rein, und was dann?</h2>
+    <p class="sec-sub reveal">Nimm an, der Angreifer ist schon am Ziel. Ab hier hat er drei Wege. W&auml;hle einen und sieh, wie HALVETH reagiert, ehrlich, mit allen drei Ausg&auml;ngen.</p>
+    <div class="card reveal" style="padding:28px">
+      <div class="aflow">
+        <span class="anode hot">Angreifer drin</span><span class="aarrow">&rarr;</span>
+        <span class="anode hot">am gesch&uuml;tzten Punkt</span><span class="aarrow">&rarr;</span>
+        <span class="anode" id="axout">er versucht &hellip;</span>
+      </div>
+      <div class="amoves" data-raz-skip>
+        <button class="amove" data-a="forge"><span data-t="forge-t">F&auml;lschen ohne Schl&uuml;ssel</span><small data-t="forge-s">er schreibt die &Auml;nderung selbst, ohne echten Beleg</small></button>
+        <button class="amove" data-a="steal"><span data-t="steal-t">Schl&uuml;ssel stehlen oder werden</span><small data-t="steal-s">er wird selbst der Berechtigte, wie bei xz 2024</small></button>
+        <button class="amove" data-a="around"><span data-t="around-t">Drumherum gehen</span><small data-t="around-s">er zielt auf eine Stelle daneben, die nicht eingetragen ist</small></button>
+      </div>
+      <div class="averdict" id="axverdict">W&auml;hle oben einen Weg.</div>
+    </div>
+    <p class="caveat reveal" style="margin-top:24px">
+      Kurz: <b>F&auml;lschen ist hart</b>, die Mathematik h&auml;lt. <b>Die entscheidende Seite zu werden ist die ehrliche Grenze</b>, dann ist er berechtigt. <b>Drumherum wird nicht aufgehalten, aber auch nicht mehr verschwiegen</b>, und genau das treibt die Vision weiter unten.
+    </p>
+  </section>
+  <section id="prinzip">
+    <p class="eyebrow reveal">// DAS PRINZIP</p>
+    <h2 class="sec reveal">Vier Ideen, kein Mechanismus</h2>
+    <p class="sec-sub reveal">Das Konzept l&auml;sst sich erkl&auml;ren, ohne den Bauplan offenzulegen. Zu einer Hypothese halten wir mindestens zwei Alternativmodelle, eine unterscheidende Beobachtung und vorher festgelegte Mindestevidenz fest. Danach fragen wir: Was w&uuml;rde unsere Einsch&auml;tzung &auml;ndern? Ergebnis und offener Rest bleiben nebeneinander sichtbar.</p>
+    <div class="grid g2">
+      <div class="card reveal"><p class="ce">// 01</p><h3>Ausgef&uuml;hrt ist nicht g&uuml;ltig</h3><p>Ein Vorgang, der lief, ist noch kein Vorgang, der z&auml;hlt. Erst die Versiegelung mit echtem Beleg macht ihn final.</p></div>
+      <div class="card reveal"><p class="ce">// 02</p><h3>Ein schmaler Vertrauensanker</h3><p>HALVETH konzentriert den dokumentierten Versuch auf wenige benannte Punkte. F&uuml;r sie werden Regel, Freigabe, Beleg und Abdeckung getrennt gef&uuml;hrt.</p></div>
+      <div class="card reveal"><p class="ce">// 03</p><h3>Ein Pr&uuml;fer mit eigener Regel</h3><p>Das getrennte Ger&auml;t bewertet den signierten Antrag gegen sein eigenes Register. Sein Ergebnis gilt f&uuml;r diesen Antrag und ersetzt keine Aussage &uuml;ber andere Pfade.</p></div>
+      <div class="card reveal"><p class="ce">// 04</p><h3>Unbekannt bleibt unbekannt</h3><p>Fehlt eine verwertbare Antwort, lautet der Status <code>UNKNOWN</code>. Im gemessenen Freigabepfad entsteht daraus kein Permit; andere Pfade bleiben au&szlig;erhalb der Aussage.</p></div>
+    </div>
+  </section>
+  <section id="keil">
+    <p class="eyebrow reveal">// DER KEIL</p>
+    <h2 class="sec reveal">Erkennen, beweisen, zur&uuml;ckf&uuml;hren</h2>
+    <p class="sec-sub reveal">Nicht das Versprechen, alles zu verhindern. Ein ehrlicher, engerer und daf&uuml;r haltbarer Anspruch.</p>
+    <div class="pillars">
+      <div class="pillar reveal"><p class="k">01 &middot; erkennen</p><h3>Am &Uuml;bergang</h3><p>Ob ein Zustand sauber an die Vergangenheit anschlie&szlig;t, wird schnell entschieden, nicht erst Tage sp&auml;ter im Rauschen.</p></div>
+      <div class="pillar reveal"><p class="k">02 &middot; beweisen</p><h3>Belegbar</h3><p>Jede Entscheidung tr&auml;gt ihren Nachweis. Nicht ein Bauchgef&uuml;hl, sondern etwas, das man nachvollziehen kann.</p></div>
+      <div class="pillar reveal"><p class="k">03 &middot; zur&uuml;ckf&uuml;hren</p><h3>Ein Klick zur&uuml;ck</h3><p>Ein Vorschlag zur&uuml;ck zum letzten g&uuml;ltigen Zustand. HALVETH schl&auml;gt vor, der Mensch entscheidet.</p></div>
+    </div>
+    <div class="card reveal" style="margin-top:26px; border-color:rgba(255,214,10,.3)">
+      <h3 style="color:#ffd60a">Roh und 1:1, f&uuml;r die Pr&uuml;fung</h3>
+      <p>Der Beleg ist nicht nur ein H&auml;kchen. HALVETH h&auml;lt den ver&auml;nderten Inhalt <b>roh und 1:1</b> fest, nur gelesen, nie ausgef&uuml;hrt, nie ver&auml;ndert. So bekommt eine Beh&ouml;rde, eine Forensik oder eine interne Pr&uuml;fung genau das Material, das sie braucht, unverf&auml;lscht und nachpr&uuml;fbar. Und das gilt f&uuml;r <b>jede</b> &Auml;nderung an den Ankern, nicht nur f&uuml;r einen Angriff. Auch ein spontaner Fehler oder Bug l&ouml;st etwas aus, und auch der wird gleich sauber festgehalten.</p>
+    </div>
+    <p class="caveat reveal"><b>Ehrlich dazu:</b> Das Tor, das etwas festh&auml;lt, <b>bevor</b> es gilt, ist inzwischen gebaut, und die Verankerung in Hardware auch. Beides gilt nur innerhalb der wenigen eingetragenen Anker, und dort muss eine getrennte Instanz zustimmen, bevor geschrieben wird. Alles dahinter bleibt Erkennung nach der Wirkung. Den letzten sauberen Stand selbst zur&uuml;ckzuschreiben w&auml;re m&ouml;glich, ist aber <b>bewusst noch nicht eingebaut</b>: ein System, das von allein an den Kronjuwelen schreibt, lie&szlig;e sich ausnutzen. Darum entscheidet der Mensch.</p>
+  </section>
+</div>
+
+</main>
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div class="brand">HALVETH<span>Forschung von Juri Janovski &middot; info@halveth.de</span></div>
+      <div class="flinks">
+        <a href="forschung.html">Forschung</a>
+        <a href="audits.html">Audits</a>
+        <a href="https://juri.halveth.de/">Juri und die Projekte</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+    <p class="foot-fields"><b>Felder, in denen ich baue</b> <span>Prozessoptimierung</span> <span>Cyber Security</span> <span>Webseiten</span> <span>Programmierung</span> <span>Marketing</span></p>
+    <p class="foot-geo">Br&uuml;hl bei K&ouml;ln &middot; Rhein-Erft-Kreis &middot; Nordrhein-Westfalen &middot; Deutschland &middot; Arbeit auch aus der Ferne</p>
+    <p class="disc">HALVETH ist Forschung, kein Produkt. Es gibt keine Garantie au&szlig;er der in der Mathematik. Alle Angaben beschreiben einen laufenden Forschungsstand, gemessen auf konstruierten F&auml;llen, ohne bekannte real-world-Rate. &#129293;</p>
+    <p class="updated">Stand &middot; HALVETH 0.5</p>
+  </div>
+</footer>
+
+<script>
+/* Sprachtabelle des Angriffssimulators. Sie muss VOR dem Simulator stehen und
+   traegt auch die Beschriftungen der Knoepfe, denn .amoves steht auf
+   data-raz-skip und wird von der Uebersetzung nicht angefasst. */
+window.PRINZIP_TR={
+ __lang:'de',
+ de:{label:{forge:'f&auml;lschen',steal:'die Seite werden',around:'drumherum'},
+     ax:{forge:['held','<b>HALVETH H&Auml;LT.</b> Ohne den echten Schl&uuml;ssel kann er keinen g&uuml;ltigen Beleg erzeugen. Die &Auml;nderung bleibt bei 0.'],
+         steal:['half','<b>Seit 0.5 reicht das nicht mehr allein.</b> Ein Schl&uuml;ssel auf dem Rechner bringt ihn nicht durch, weil eine getrennte Maschine zustimmen muss und die Rollen dort eigene Schl&uuml;ssel haben. Wer die entscheidende Seite selbst nimmt, gewinnt weiterhin. Das bleibt die ehrliche Grenze.'],
+         around:['half','<b>Aufgehalten wird er nicht. Verschwiegen auch nicht mehr.</b> Zielt er auf eine Stelle, die niemand eingetragen hat, greift HALVETH dort nicht. Neu ist die Pflicht dahinter: HALVETH muss erkl&auml;ren, wie weit sein Blick reicht, und darf oberhalb dieser Grenze kein in Ordnung ausgeben. Aus einem blinden Fleck wird ein gemeldeter blinder Fleck. Dass diese Meldung heute noch behauptet und nicht gemessen ist, steht bei den <a class="text-link" href="grenzen.html#tore">Grenzen</a>.']},
+     t:{'forge-t':'F&auml;lschen ohne Schl&uuml;ssel','forge-s':'er schreibt die &Auml;nderung selbst, ohne echten Beleg',
+        'steal-t':'Schl&uuml;ssel stehlen oder werden','steal-s':'er wird selbst der Berechtigte, wie bei xz 2024',
+        'around-t':'Drumherum gehen','around-s':'er zielt auf eine Stelle daneben, die nicht eingetragen ist'}},
+ en:{label:{forge:'forging',steal:'becoming the side',around:'going around'},
+     ax:{forge:['held','<b>HALVETH HOLDS.</b> Without the real key he cannot produce valid evidence. The change stays at 0.'],
+         steal:['half','<b>Since 0.5 that alone is no longer enough.</b> A key on the machine does not get him through, because a separate machine has to agree and the roles there have their own keys. Whoever takes the deciding side himself still wins. That remains the honest limit.'],
+         around:['half','<b>He is not stopped. He is not kept quiet about either.</b> If he aims at a place nobody registered, HALVETH does not act there. What is new is the duty behind it: HALVETH has to declare how far its view reaches, and may not report in order beyond that boundary. A blind spot becomes a reported blind spot. That this report is today still claimed and not measured is with the <a class="text-link" href="grenzen.html#tore">limits</a>.']},
+     t:{'forge-t':'Forging without a key','forge-s':'he writes the change himself, without real evidence',
+        'steal-t':'Stealing a key or becoming one','steal-s':'he becomes the authorised one himself, as in xz 2024',
+        'around-t':'Going around','around-s':'he aims at a place next to it that is not registered'}},
+ ru:{label:{forge:'подделка',steal:'стать стороной',around:'в обход'},
+     ax:{forge:['held','<b>HALVETH ДЕРЖИТ.</b> Без настоящего ключа он не может создать действительное доказательство. Изменение остаётся на 0.'],
+         steal:['half','<b>С 0.5 этого одного уже недостаточно.</b> Ключ на машине его не проведёт, потому что согласиться должна отдельная машина, а у роли там свои ключи. Тот, кто сам возьмёт решающую сторону, по-прежнему победит. Это остаётся честной границей.'],
+         around:['half','<b>Его не останавливают. И о нём больше не молчат.</b> Если он нацелится на место, которое никто не внёс, HALVETH там не действует. Новое это обязанность за этим: HALVETH должен объявить, как далеко простирается его обзор, и не имеет права выдавать в порядке за пределами этой границы. Слепое пятно становится сообщённым слепым пятном. О том, что это сообщение сегодня ещё заявлено, а не измерено, написано в <a class="text-link" href="grenzen.html#tore">границах</a>.']},
+     t:{'forge-t':'Подделка без ключа','forge-s':'он сам записывает изменение, без настоящего доказательства',
+        'steal-t':'Украсть ключ или стать им','steal-s':'он сам становится уполномоченным, как в xz 2024',
+        'around-t':'Идти в обход','around-s':'он целится в место рядом, которое не внесено'}}
+};
+window.RAZ_onLang=function(lang){
+  var T=window.PRINZIP_TR;
+  T.__lang = T[lang] ? lang : 'de';
+  var s=T[T.__lang];
+  Object.keys(s.t).forEach(function(k){
+    var e=document.querySelector('[data-t="'+k+'"]'); if(e) e.innerHTML=s.t[k];
+  });
+  var gewaehlt=document.querySelector('.amove.sel');
+  if(gewaehlt) gewaehlt.click();
+};
+</script>
+<script>
+  (function(){
+    var els=document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+      els.forEach(function(e){io.observe(e);});
+    } else { els.forEach(function(e){e.classList.add('in');}); }
+
+    // Angriffs-Pfad.
+    // Die Urteile stehen in window.PRINZIP_TR, weil sie sonst in Englisch und
+    // Russisch deutsch blieben: sie sind kein Text im Dokument, sondern werden
+    // aus JavaScript gesetzt, und die Buttons stehen auf data-raz-skip.
+    // Wichtig: die Sprache wird bei JEDEM Klick nachgesehen, nicht einmal beim
+    // Laden. Ein einmal gebundenes Objekt bleibt sonst fuer immer deutsch.
+    var axout=document.getElementById('axout'),axv=document.getElementById('axverdict');
+    function tabelle(){
+      var t=window.PRINZIP_TR||{};
+      return t[t.__lang||'de'] || t.de || {};
+    }
+    document.querySelectorAll('.amove').forEach(function(b){b.addEventListener('click',function(){
+      document.querySelectorAll('.amove').forEach(function(x){x.classList.remove('sel');});b.classList.add('sel');
+      var a=b.dataset.a, s=tabelle();
+      axout.innerHTML=(s.label&&s.label[a])||a;axout.classList.add('hot');
+      var u=(s.ax&&s.ax[a])||['half',''];
+      axv.className='averdict '+u[0];axv.innerHTML=u[1];
+    });});
+  })();
+</script>
+
+
+<!-- HALVETH i18n (append-only, RAZ-Technik, gemeinsame Laufzeit) -->
+<script>window.RAZ_CFG={"place": "nav", "navSelector": ".nav-in"};</script>
+<script>window.RAZ_I18N={"title": {"en": "HALVETH · How it works", "ru": "HALVETH · Как это работает"}, "units": [{"en": "<span class=\"mark\">&#11041;</span> HALVETH", "ru": "<span class=\"mark\">&#11041;</span> HALVETH"}, {"en": "\n      <a href=\"index.html\">Home</a>\n      <a href=\"prinzip.html\">Principle</a>\n      <a href=\"baum.html\">Where it sits</a>\n      <a href=\"ergebnisse.html\">Results</a>\n      <a href=\"grenzen.html\">Limits</a>\n      <a href=\"vision.html\">Vision</a>\n      <a href=\"labor.html\">Lab</a>\n      <a href=\"audits.html\">Audits</a>\n      <a href=\"forschung.html\">Research</a>\n    ", "ru": "\n      <a href=\"index.html\">Главная</a>\n      <a href=\"prinzip.html\">Принцип</a>\n      <a href=\"baum.html\">Где это находится</a>\n      <a href=\"ergebnisse.html\">Результаты</a>\n      <a href=\"grenzen.html\">Границы</a>\n      <a href=\"vision.html\">Видение</a>\n      <a href=\"labor.html\">Лаборатория</a>\n      <a href=\"audits.html\">Аудиты</a>\n      <a href=\"forschung.html\">Исследование</a>\n    "}, {"en": "\n      <span class=\"status-pill\"><span class=\"dot\"></span>in research</span>\n    ", "ru": "\n      <span class=\"status-pill\"><span class=\"dot\"></span>в стадии исследования</span>\n    "}, {"en": "// HOW IT WORKS", "ru": "// КАК ЭТО РАБОТАЕТ"}, {"en": "Between happened<br>and valid.", "ru": "Между произошло<br>и действительно."}, {"en": "In almost all systems there is no gap in between. It is exactly that zero distance an attacker uses.", "ru": "Почти во всех системах между ними нет зазора. Именно это нулевое расстояние и использует атакующий."}, {"en": "// THE IN-BETWEEN", "ru": "// ПРОМЕЖУТОК"}, {"en": "Why it lives between 0 and 1", "ru": "Почему это живёт между 0 и 1"}, {"en": "A change is first <b style=\"color:var(--ink)\">0</b>, it has happened but is not yet true. And then <b style=\"color:var(--ink)\">1</b>, sealed and valid. In almost all systems there is no gap in between. This exact zero-distance is what the attacker exploits. HALVETH opens the gap and lives inside it.", "ru": "Изменение сначала <b style=\"color:var(--ink)\">0</b>, оно произошло, но ещё не истинно. А затем <b style=\"color:var(--ink)\">1</b>, запечатано и действительно. Почти во всех системах между ними нет расстояния. Именно эту нулевую дистанцию использует атакующий. HALVETH открывает зазор и живёт в нём."}, {"en": "\n      HALVETH never lives at the edges. Not at <b style=\"color:var(--ink)\">0</b>, the not-yet-true, and not at <b style=\"color:var(--ink)\">1</b>, the absolutely certain. It lives in the open band in between and decides whether a 0 may ever become a 1. A system that claims it can never be wrong, the hard 1, would not even notice a takeover. The 1 is the goal. We move toward it, we never claim it.\n    ", "ru": "\n      HALVETH никогда не живёт на краях. Не в <b style=\"color:var(--ink)\">0</b>, ещё не истинном, и не в <b style=\"color:var(--ink)\">1</b>, абсолютно надёжном. Оно живёт в открытой полосе между ними и решает, может ли из 0 когда-нибудь получиться 1. Система, которая утверждает, что никогда не может ошибиться, жёсткая 1, вообще не заметила бы захвата. 1 это цель. Мы движемся к ней, мы никогда её не утверждаем.\n    "}, {"en": "// THE ATTACK, STEP BY STEP", "ru": "// АТАКА, ШАГ ЗА ШАГОМ"}, {"en": "Who gets in, and what then?", "ru": "Кто проникает внутрь, и что дальше?"}, {"en": "Assume the attacker is already at the target. From here he has three paths. Choose one and see how HALVETH reacts, honestly, with all three outcomes.", "ru": "Предположим, что атакующий уже достиг цели. Отсюда у него три пути. Выберите один и посмотрите, как реагирует HALVETH, честно, со всеми тремя исходами."}, {"en": "\n        <span class=\"anode hot\">Attacker in</span><span class=\"aarrow\">&rarr;</span>\n        <span class=\"anode hot\">at the protected point</span><span class=\"aarrow\">&rarr;</span>\n        <span class=\"anode\" id=\"axout\">he tries &hellip;</span>\n      ", "ru": "\n        <span class=\"anode hot\">Атакующий внутри</span><span class=\"aarrow\">&rarr;</span>\n        <span class=\"anode hot\">в защищённой точке</span><span class=\"aarrow\">&rarr;</span>\n        <span class=\"anode\" id=\"axout\">он пытается &hellip;</span>\n      "}, {"en": "Choose a path above.", "ru": "Выберите путь выше."}, {"en": "In short: <b>forging is hard</b>, the mathematics holds. <b>Becoming the deciding side is the honest limit</b>, then he is authorised. <b>Going around is not stopped, but it is no longer kept quiet</b>, and that is exactly what drives the vision further down.", "ru": "Коротко: <b>подделка это трудно</b>, математика держит. <b>Стать решающей стороной это честная граница</b>, тогда он уполномочен. <b>Обход не останавливают, но о нём больше не молчат</b>, и именно это движет видением ниже."}, {"en": "// THE PRINCIPLE", "ru": "// ПРИНЦИП"}, {"en": "Four ideas, no mechanism", "ru": "Четыре идеи, без механизма"}, {"en": "The concept can be explained without disclosing its blueprint. For each hypothesis we record at least two alternative models, a distinguishing observation and the minimum evidence set in advance. Then we ask: What would change our assessment? The result and the open questions remain visible side by side.", "ru": "Концепцию можно объяснить, не раскрывая её внутреннее устройство. Для каждой гипотезы мы записываем как минимум две альтернативные модели, различающее наблюдение и минимальные доказательства, заданные заранее. Затем спрашиваем: что изменило бы нашу оценку? Результат и открытые вопросы остаются рядом."}, {"en": "// 01", "ru": "// 01"}, {"en": "Execution is not finality", "ru": "Выполнено ещё не значит окончательно"}, {"en": "A process that ran is not yet a process that counts. Only sealing with a genuine record makes it final.", "ru": "Процесс, который выполнился, ещё не процесс, который засчитан. Только запечатывание с подлинной записью делает его окончательным."}, {"en": "// 02", "ru": "// 02"}, {"en": "A narrow trust anchor", "ru": "Узкий якорь доверия"}, {"en": "HALVETH concentrates the documented experiment on a few named points. Rule, authorization, evidence and coverage are kept separate for them.", "ru": "HALVETH сосредотачивает задокументированный опыт на нескольких названных точках. Правило, авторизация, доказательство и охват ведутся для них раздельно."}, {"en": "// 03", "ru": "// 03"}, {"en": "An appraiser with its own rule", "ru": "Проверяющее устройство с собственным правилом"}, {"en": "The separate device appraises the signed request against its own register. Its result applies to that request and does not replace a claim about other paths.", "ru": "Отдельное устройство оценивает подписанный запрос по собственному реестру. Его результат относится к этому запросу и не заменяет утверждение о других путях."}, {"en": "// 04", "ru": "// 04"}, {"en": "Unknown remains unknown", "ru": "Неизвестное остаётся неизвестным"}, {"en": "If no usable response exists, the status is <code>UNKNOWN</code>. No permit follows in the measured authorization path; other paths remain outside the claim.", "ru": "Если пригодного ответа нет, статус равен <code>UNKNOWN</code>. В измеренном пути авторизации разрешение из этого не возникает; другие пути остаются за пределами утверждения."}, {"en": "// THE WEDGE", "ru": "// КЛИН"}, {"en": "Detect, prove, roll back", "ru": "Обнаружить, доказать, откатить"}, {"en": "Not the promise to prevent everything. An honest, narrower, and therefore durable claim.", "ru": "Не обещание всё предотвратить. Честное, более узкое и потому надёжное притязание."}, {"en": "01 &middot; detect", "ru": "01 &middot; обнаружить"}, {"en": "At the transition", "ru": "При переходе"}, {"en": "Whether a state connects cleanly to the past is decided quickly, not only days later in the noise.", "ru": "Чисто ли состояние примыкает к прошлому, решается быстро, а не только спустя дни в шуме."}, {"en": "02 &middot; prove", "ru": "02 &middot; доказать"}, {"en": "Provable", "ru": "Доказуемо"}, {"en": "Every decision carries its own proof. Not a gut feeling, but something that can be verified.", "ru": "Каждое решение несёт своё доказательство. Не интуиция, а то, что можно проследить."}, {"en": "03 &middot; roll back", "ru": "03 &middot; откатить"}, {"en": "One click back", "ru": "Один клик назад"}, {"en": "A proposal back to the last valid state. HALVETH proposes, the human decides.", "ru": "Предложение вернуться к последнему действительному состоянию. HALVETH предлагает, решает человек."}, {"en": "Raw and 1:1, for review", "ru": "В сыром виде и 1:1, для проверки"}, {"en": "The record is not just a checkmark. HALVETH keeps the changed content <b>raw and 1:1</b>, only read, never executed, never altered. This gives an authority, a forensic team, or an internal review exactly the material they need, unfalsified and verifiable. And this applies to <b>every</b> change to the anchors, not only to an attack. A spontaneous error or bug also triggers something, and it too is captured just as cleanly.", "ru": "Запись это не просто галочка. HALVETH сохраняет изменённое содержимое <b>в сыром виде и 1:1</b>, только прочитанное, никогда не выполненное, никогда не изменённое. Так орган власти, судебная экспертиза или внутренняя проверка получают именно тот материал, который им нужен, неискажённый и проверяемый. И это касается <b>каждого</b> изменения якорей, не только атаки. Спонтанная ошибка или баг тоже что-то вызывают, и они точно так же чисто фиксируются."}, {"en": "<b>Honestly:</b> The gate that holds something back <b>before</b> it counts is built by now, and so is the anchoring in hardware. Both hold only within the few registered anchors, and there a separate authority has to agree before anything is written. Everything behind that stays detection after the effect. Writing back the last clean state on its own would be possible but is <b>deliberately not built in</b>: a system that writes to the crown jewels by itself could be exploited. That is why the human decides.", "ru": "<b>Честно об этом:</b> Ворота, которые задерживают что-то <b>прежде</b> чем оно станет действительным, к настоящему моменту построены, и привязка к железу тоже. И то и другое действует только внутри нескольких внесённых якорей, и там отдельная инстанция должна согласиться, прежде чем что-то будет записано. Всё, что за этим, остаётся обнаружением после воздействия. Записать последнее чистое состояние обратно самому было бы возможно, но это <b>сознательно не встроено</b>: система, которая сама пишет в самое ценное, поддавалась бы использованию. Поэтому решает человек."}, {"en": "HALVETH<span>Research by Juri Janovski &middot; info@halveth.de</span>", "ru": "HALVETH<span>Исследование Juri Janovski &middot; info@halveth.de</span>"}, {"en": "<a href=\"forschung.html\">Research</a><a href=\"audits.html\">Audits</a><a href=\"https://juri.halveth.de/\">Juri and the projects</a><a href=\"impressum.html\">Imprint</a><a href=\"datenschutz.html\">Privacy</a>", "ru": "<a href=\"forschung.html\">Исследование</a><a href=\"audits.html\">Аудиты</a><a href=\"https://juri.halveth.de/\">Юри и проекты</a><a href=\"impressum.html\">Выходные данные</a><a href=\"datenschutz.html\">Конфиденциальность</a>"}, {"en": "<b>Fields I build in</b> <span>process optimisation</span> <span>cyber security</span> <span>websites</span> <span>programming</span> <span>marketing</span>", "ru": "<b>Поля, в которых я строю</b> <span>оптимизация процессов</span> <span>кибербезопасность</span> <span>сайты</span> <span>программирование</span> <span>маркетинг</span>"}, {"en": "Br&uuml;hl near Cologne &middot; Rhein-Erft district &middot; North Rhine-Westphalia &middot; Germany &middot; remote work as well", "ru": "Брюль под Кёльном &middot; район Райн-Эрфт &middot; Северный Рейн-Вестфалия &middot; Германия &middot; и удалённо"}, {"en": "HALVETH is research, not a product. There is no guarantee except the one in the mathematics. All statements describe an ongoing research status, measured on constructed cases, without a known real-world rate. &#129293;", "ru": "HALVETH это исследование, а не продукт. Нет никакой гарантии, кроме той, что в математике. Все сведения описывают текущее состояние исследования, измеренное на сконструированных случаях, без известной частоты в реальных условиях. &#129293;"}, {"en": "Status &middot; HALVETH 0.5", "ru": "Состояние &middot; HALVETH 0.5"}]};</script>
+<script src="halveth-i18n.js?v=20261116-r2"></script>
+<div class="hv-release hv-edition" data-raz-skip><span>HALVETH · Web-Edition 2026.11</span><div><a href="werkstatt.html"><span data-hv-i18n="work">Werkstatt</span></a> · <a href="systemstand.html"><span data-hv-i18n="state">Systemstand</span></a> · <a href="edition.html"><span data-hv-i18n="changes">Änderungen & Quellenstand</span></a></div></div>
+<script src="assets/restauration.js?v=20261116-r2" defer></script>
+<aside data-historical-banner style="padding:10px 18px;background:#172637;color:#e7d3a1;font:14px system-ui">ARCHIV · ARCHIVE · АРХИВ — 16.11.2026 · <a href="../../forschung.html">HALVETH — 17.11.2026</a></aside></body>
+</html>

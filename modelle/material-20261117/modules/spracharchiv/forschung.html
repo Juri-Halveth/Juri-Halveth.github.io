@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Realität als Zustand, Forschung von Juri Janovski</title>
+<meta name="description" content="Das Zuhause der Forschung Realität als Zustand: lebende Modelle und eine offene Hypothese mit Alternativen, Beobachtungen und ehrlichem Ergebnis.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127756;</text></svg>">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --ground:#f1efe8;--ground2:#e7e4da;--panel:#faf8f2;--ink:#20222b;--ink2:#3f4250;--muted:#767a88;
+    --gold:#9a6a10;--gold2:#b98a2a;--teal:#0f7a82;--edge:#dcd8cc;--hair:rgba(32,34,43,.11);
+    --shadow:0 1px 2px rgba(40,36,24,.05),0 12px 34px rgba(40,36,24,.09);
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --ground:#0c0d13;--ground2:#111219;--panel:#14151d;--ink:#ece9f0;--ink2:#c3c2d2;--muted:#8b8fa4;
+    --gold:#e6b54a;--gold2:#f2ca6e;--teal:#4fd6d0;--edge:#262838;--hair:rgba(180,180,220,.13);
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 16px 46px rgba(0,0,0,.5);
+  }}
+  :root[data-theme="light"]{--ground:#f1efe8;--ground2:#e7e4da;--panel:#faf8f2;--ink:#20222b;--ink2:#3f4250;--muted:#767a88;--gold:#9a6a10;--gold2:#b98a2a;--teal:#0f7a82;--edge:#dcd8cc;--hair:rgba(32,34,43,.11);--shadow:0 1px 2px rgba(40,36,24,.05),0 12px 34px rgba(40,36,24,.09);}
+  :root[data-theme="dark"]{--ground:#0c0d13;--ground2:#111219;--panel:#14151d;--ink:#ece9f0;--ink2:#c3c2d2;--muted:#8b8fa4;--gold:#e6b54a;--gold2:#f2ca6e;--teal:#4fd6d0;--edge:#262838;--hair:rgba(180,180,220,.13);--shadow:0 1px 2px rgba(0,0,0,.4),0 16px 46px rgba(0,0,0,.5);}
+
+  html{scroll-behavior:smooth}
+  body{background:var(--ground);color:var(--ink);
+    font-family:Georgia,"Iowan Old Style","Times New Roman",serif;line-height:1.68;font-size:18px;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(1100px 460px at 50% -8%, color-mix(in oklab,var(--gold) 12%,transparent), transparent 62%);
+    background-attachment:fixed;}
+  .sans{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+  a{color:var(--gold);text-decoration:none} a:hover{text-decoration:underline}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 clamp(18px,5vw,40px)}
+
+  /* top nav */
+  .topnav{position:sticky;top:0;z-index:40;backdrop-filter:blur(10px);
+    background:color-mix(in oklab,var(--ground) 82%,transparent);border-bottom:1px solid var(--hair);}
+  .nav-in{display:flex;align-items:center;gap:18px;height:66px}
+  .brand{display:flex;align-items:baseline;gap:9px;font-family:Georgia,serif;font-weight:700;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+  .brand:hover{text-decoration:none}
+  .brand span{color:var(--gold)}
+  .nav-links{display:flex;gap:22px;margin-left:auto;min-width:0;overflow-x:auto;scrollbar-width:none;font-family:system-ui,sans-serif;font-size:14px;font-weight:600;color:var(--muted)}
+  .nav-links a{color:inherit;white-space:nowrap;flex:0 0 auto}
+  /* nowrap ist Pflicht: ohne sie bricht der Text INNERHALB eines Links um
+     und die Begriffe stapeln sich uebereinander. */
+  .nav-links a:hover{color:var(--ink);text-decoration:none}
+  .tglbtn{font-family:system-ui,sans-serif;font-size:13px;font-weight:600;color:var(--ink2);background:var(--panel);
+    border:1px solid var(--edge);border-radius:999px;padding:.34rem .8rem;cursor:pointer;transition:border-color .15s,color .15s;white-space:nowrap;flex:0 0 auto}
+  .tglbtn:hover{border-color:var(--gold);color:var(--ink)}
+  .portfolio-link{font-family:system-ui,sans-serif;font-size:13px;font-weight:600;color:var(--ink2);white-space:nowrap}
+  @media(max-width:720px){.nav-links{display:none}}
+
+  /* hero */
+  .hero{padding:clamp(48px,9vh,96px) 0 34px}
+  .eyebrow{font-family:system-ui,sans-serif;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .hero h1{font-family:Georgia,serif;font-weight:700;font-size:clamp(2.2rem,6vw,3.9rem);line-height:1.04;letter-spacing:-.02em;margin:.5rem 0 .1rem;text-wrap:balance;
+    background:linear-gradient(176deg,var(--ink),color-mix(in oklab,var(--ink) 55%,var(--gold)));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{font-family:Georgia,serif;font-style:italic;font-size:clamp(1.1rem,2.5vw,1.5rem);color:var(--ink2);max-width:46ch;margin:.55rem 0 1.3rem;text-wrap:pretty}
+  .badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:1.5rem;font-family:system-ui,sans-serif}
+  .badge{font-size:12px;font-weight:600;color:var(--ink2);background:var(--panel);border:1px solid var(--edge);border-radius:999px;padding:.42rem .82rem}
+  .badge.honest{color:var(--gold);border-color:color-mix(in oklab,var(--gold) 45%,var(--edge))}
+  .lead{font-size:1.1rem;color:var(--ink2);max-width:60ch}
+  .lead b{color:var(--ink)}
+  .crow{display:flex;gap:12px;flex-wrap:wrap;margin-top:1.7rem}
+  .cta{display:inline-flex;align-items:center;gap:.5rem;font-family:system-ui,sans-serif;font-weight:600;font-size:14px;
+    background:var(--gold);color:#fff;border-radius:999px;padding:.74rem 1.3rem;box-shadow:var(--shadow);border:1px solid transparent;transition:filter .15s,transform .15s}
+  :root[data-theme="dark"] .cta{color:#14151d}
+  @media(prefers-color-scheme:dark){:root:not([data-theme]) .cta{color:#14151d}}
+  .cta:hover{text-decoration:none;filter:brightness(1.06);transform:translateY(-1px)}
+  .cta.ghost{background:transparent;color:var(--ink);border-color:var(--edge)}
+  .cta.ghost:hover{border-color:var(--gold)}
+
+  /* section frame */
+  section.block{padding:clamp(40px,7vh,72px) 0;border-top:1px solid var(--hair)}
+  .sec-eyebrow{font-family:system-ui,sans-serif;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:.6rem}
+  .sec-h{font-family:Georgia,serif;font-weight:700;font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.1;letter-spacing:-.015em;margin:0 0 .5rem;text-wrap:balance}
+  .sec-sub{color:var(--muted);font-size:1.02rem;max-width:60ch;margin:0 0 2rem}
+  .sec-sub .sans{font-size:.95rem}
+
+  /* model cards */
+  .model{background:var(--panel);border:1px solid var(--edge);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:26px}
+  .model-head{display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap;padding:20px 22px 16px}
+  .model-head .mt{min-width:0}
+  .model-head h3{font-family:Georgia,serif;font-weight:700;font-size:1.35rem;line-height:1.15;color:var(--ink);margin-bottom:.2rem}
+  .model-head p{font-size:.96rem;color:var(--ink2);max-width:62ch}
+  .chip{margin-left:auto;flex:none;align-self:flex-start;font-family:system-ui,sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--teal);border:1px solid color-mix(in oklab,var(--teal) 45%,var(--edge));border-radius:999px;padding:.3rem .66rem;white-space:nowrap}
+  .frame{position:relative;background:#05060a;border-top:1px solid var(--edge);border-bottom:1px solid var(--edge)}
+  .frame iframe{width:100%;height:min(74vh,700px);min-height:440px;border:0;display:block}
+  .model-foot{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:13px 22px;font-family:system-ui,sans-serif;font-size:.86rem;color:var(--muted)}
+  .model-foot .grow{flex:1}
+  .openlink{font-family:system-ui,sans-serif;font-weight:600;font-size:.9rem;color:var(--gold);display:inline-flex;align-items:center;gap:.35rem}
+
+  /* reading cards */
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+  .rcard{background:var(--panel);border:1px solid var(--edge);border-radius:16px;padding:22px 22px 18px;box-shadow:var(--shadow);
+    display:flex;flex-direction:column;transition:transform .16s,border-color .16s,box-shadow .16s}
+  .rcard:hover{transform:translateY(-4px);border-color:color-mix(in oklab,var(--gold) 40%,var(--edge));box-shadow:0 20px 46px rgba(40,36,24,.14)}
+  .rcard .ic{font-size:28px;margin-bottom:12px}
+  .rcard h4{font-family:Georgia,serif;font-weight:700;font-size:1.18rem;color:var(--ink);margin-bottom:.35rem}
+  .rcard p{font-size:.94rem;color:var(--ink2);flex:1;margin-bottom:1rem}
+  .rlinks{display:flex;gap:8px;flex-wrap:wrap;font-family:system-ui,sans-serif}
+  .rlink{font-size:13px;font-weight:600;color:var(--gold);border:1px solid color-mix(in oklab,var(--gold) 40%,var(--edge));border-radius:999px;padding:.34rem .78rem;transition:background .15s}
+  .rlink:hover{text-decoration:none;background:color-mix(in oklab,var(--gold) 12%,var(--panel))}
+  .rlink.sub{color:var(--ink2);border-color:var(--edge)}
+  .rlink[aria-disabled="true"],.openlink[aria-disabled="true"]{opacity:.55;cursor:not-allowed;text-decoration:none}
+
+  /* honest box */
+  .honestbox{background:var(--panel);border:1px solid var(--edge);border-left:3px solid var(--gold);border-radius:16px;padding:24px 26px;box-shadow:var(--shadow)}
+  .hb-badge{display:inline-block;font-family:system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);
+    border:1px solid color-mix(in oklab,var(--gold) 40%,var(--edge));border-radius:999px;padding:.26rem .64rem;margin-bottom:.9rem}
+  .honestbox p{font-size:1.06rem;color:var(--ink);line-height:1.6;margin:.5rem 0;max-width:66ch}
+  .honestbox p.small{font-size:.96rem;color:var(--ink2)}
+  .honestbox b{color:var(--ink)}
+
+  footer{border-top:1px solid var(--hair);padding:34px 0 46px;color:var(--muted);font-family:system-ui,sans-serif;font-size:13.5px}
+  .foot-in{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .foot-in .grow{flex:1}
+  footer b{color:var(--ink2)}
+
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+  ::selection{background:color-mix(in oklab,var(--gold) 30%,transparent)}
+
+  /* Mobile: ruhige Leseseite statt sieben eingequetschter Desktop-Modelle. */
+  @media(max-width:720px){
+    html{scroll-padding-top:112px}
+    body{font-size:16px;line-height:1.6;background-attachment:scroll;overflow-x:hidden}
+    .wrap{width:100%;padding-inline:16px}
+
+    .nav-in{height:auto;min-height:60px;padding-block:9px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 10px}
+    .brand{min-width:0;white-space:nowrap;font-size:15px;gap:5px;overflow:hidden;text-overflow:ellipsis}
+    .tglbtn{font-size:0;width:42px;height:38px;padding:0;justify-self:end}
+    .tglbtn::before{content:"\25D0";font-size:17px;line-height:1}
+    #raz-langbar.raz-nav{grid-column:1/-1;justify-self:stretch;display:flex!important;justify-content:center!important;width:100%;min-height:36px}
+
+    .hero{padding:42px 0 28px}
+    .hero h1{font-size:clamp(2.15rem,12vw,3rem);overflow-wrap:anywhere}
+    .hero .sub{font-size:1.08rem}
+    .lead{font-size:1rem}
+    .badges{gap:7px;margin-bottom:1.15rem}
+    .badge{font-size:11px;padding:.36rem .68rem}
+    .crow{display:grid;grid-template-columns:1fr;margin-top:1.3rem}
+    .cta{width:100%;min-height:46px;justify-content:center;text-align:center}
+
+    section.block{padding:42px 0}
+    .sec-h{font-size:clamp(1.65rem,8.5vw,2.15rem)}
+    .sec-sub{font-size:.98rem;margin-bottom:1.4rem}
+    .model{border-radius:14px;margin-bottom:20px}
+    .model-head{display:block;padding:18px 16px 14px}
+    .model-head h3{font-size:1.24rem;overflow-wrap:anywhere}
+    .model-head p{font-size:.94rem;margin-top:.45rem}
+    .chip{display:inline-flex;margin:12px 0 0}
+
+    /* Die Modelle besitzen eigene mobile Layouts und bleiben direkt bedienbar. */
+    .frame{min-height:0;display:block;padding:0;background:#05060a}
+    .frame iframe{display:block;width:100%;height:min(78svh,680px);min-height:560px}
+    .model-foot{display:block;padding:14px 16px 16px;font-size:.82rem}
+    .model-foot .grow{display:block;margin-bottom:12px;overflow-wrap:anywhere}
+    .openlink{display:flex;width:100%;min-height:44px;align-items:center;justify-content:center;border:1px solid color-mix(in oklab,var(--gold) 42%,var(--edge));border-radius:999px;padding:.55rem .9rem;text-align:center}
+
+    .cards{grid-template-columns:1fr;gap:12px}
+    .rcard{padding:18px 16px 16px;border-radius:14px}
+    .rcard:hover{transform:none}
+    .honestbox{padding:20px 16px;border-radius:14px}
+    .honestbox p{font-size:1rem}
+    .foot-in{align-items:flex-start;flex-direction:column}
+    p,h1,h2,h3,h4,a,span{overflow-wrap:anywhere}
+  }
+
+  @media(max-width:360px){
+    .wrap{padding-inline:13px}
+    .brand{font-size:14px}
+    .hero h1{font-size:2rem}
+  }
+</style>
+
+<link rel="canonical" href="https://halveth.de/forschung.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="HALVETH">
+<meta property="og:title" content="Realität als Zustand, Forschung von Juri Janovski">
+<meta property="og:description" content="Das Zuhause der Forschung Realität als Zustand: lebende Modelle und eine offene Hypothese mit Alternativen, Beobachtungen und ehrlichem Ergebnis.">
+<meta property="og:url" content="https://halveth.de/forschung.html">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary">
+
+<link rel="stylesheet" href="assets/restauration.css?v=20261116-r2">
+</head>
+<body data-hv-page="forschung" class="hv-research-shell">
+
+  <header class="topnav">
+    <div class="wrap nav-in">
+      <a class="brand" href="#top">Realität als <span>Zustand</span></a>
+      <nav class="nav-links">
+        <a href="#modelle">Modelle</a>
+        <a href="#lesen">Lesen</a>
+        <a href="#status">Ehrlicher Status</a>
+      </nav>
+      <a class="portfolio-link" href="https://juri.halveth.de/" data-raz-skip>Juri<span class="pe-rest"> &amp; Projekte</span></a>
+      <button class="tglbtn sans" id="tgl" type="button" aria-label="Hell/Dunkel umschalten">◑ Ansicht</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <div class="eyebrow">Die Forschung an einem Ort</div>
+        <h1>Realität als Zustand</h1>
+        <p class="sub">Warum die Welt mit dem ersten Unterschied beginnt.</p>
+        <div class="badges">
+          <span class="badge honest">Hypothese · kein Beweis</span>
+          <span class="badge">nahe 1, nie 1</span>
+          <span class="badge">&#10216;&#937;, S&#8320;, T, n&#10217;</span>
+          <span class="badge">an echte Wissenschaft angedockt</span>
+        </div>
+        <p class="lead">Ein Fundament: der <b>Zustand</b>. Realität als geordnete Folge gültiger Übergänge, und der Ort, an dem Information geboren wird, ist das <b>Dazwischen</b>. Hier liegt alles beisammen: die lebenden Modelle zum Anfassen und die Hypothese zum Nachlesen. Ehrlich gerahmt, eine <b>Hypothese</b>, kein Beweis. Die Verlässlichkeit nähert sich der Eins, berührt sie nie.</p>
+        <div class="crow">
+          <a class="cta" href="#modelle">Die Modelle ansehen &#8595;</a>
+          <a class="cta ghost" href="#lesen">Die Hypothese lesen</a>
+        </div>
+      </div>
+    </section><section class="hv-restoration hv-edition" data-raz-skip id="werkstatt"><div class="hv-feature"><div><p class="hv-kicker"><span data-hv-i18n="edition">WEB-EDITION 2026.11 · WIEDERENTDECKUNG</span></p><h2><span data-hv-i18n="hero">Eine Idee. Viele Blickwinkel.</span></h2><p class="hv-sub"><span data-hv-i18n="lead">Die ursprünglichen Modelle bleiben erkundbar. Daneben wächst eine Werkstatt für präzisere Bilder, freie Bewegung und nachvollziehbare Gegenproben.</span></p><div class="hv-actions"><a class="hv-button primary" href="studio/index.html"><span data-hv-i18n="openstudio">Plus / Minus in 4K öffnen</span></a><a class="hv-button" href="werkstatt.html"><span data-hv-i18n="openwork">Alle Studios entdecken</span></a></div></div><div class="hv-preview" aria-hidden="true"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="hv-glow"><stop stop-color="#72c8ff" stop-opacity=".3"/><stop offset="1" stop-color="#06101c" stop-opacity="0"/></radialGradient><linearGradient id="hv-wave"><stop stop-color="#77c5ff"/><stop offset="1" stop-color="#edca85"/></linearGradient></defs><circle cx="200" cy="120" r="115" fill="url(#hv-glow)"/><g stroke="url(#hv-wave)" fill="none" opacity=".65"><path d="M18 72 C100 5 135 219 200 106 S300 20 382 70"/><path d="M18 79 C100 14 135 213 200 108 S300 34 382 78"/><path d="M18 86 C100 23 135 207 200 110 S300 48 382 86"/><path d="M18 93 C100 32 135 201 200 112 S300 62 382 94"/><path d="M18 100 C100 41 135 195 200 114 S300 76 382 102"/><path d="M18 107 C100 50 135 189 200 116 S300 90 382 110"/><path d="M18 114 C100 59 135 183 200 118 S300 104 382 118"/><path d="M18 121 C100 68 135 177 200 120 S300 118 382 126"/><path d="M18 128 C100 77 135 171 200 122 S300 132 382 134"/><path d="M18 135 C100 86 135 165 200 124 S300 146 382 142"/><path d="M18 142 C100 95 135 159 200 126 S300 160 382 150"/><path d="M18 149 C100 104 135 153 200 128 S300 174 382 158"/><path d="M18 156 C100 113 135 147 200 130 S300 188 382 166"/><path d="M18 163 C100 122 135 141 200 132 S300 202 382 174"/></g><circle cx="97" cy="120" r="7" fill="#83c9ff"/><circle cx="303" cy="120" r="7" fill="#f3d294"/><text x="97" y="99" text-anchor="middle" fill="#a1d6ff" font-size="26">−</text><text x="303" y="99" text-anchor="middle" fill="#f3d294" font-size="26">+</text><text x="200" y="218" text-anchor="middle" fill="#8ba3b8" font-family="monospace" font-size="10" letter-spacing="3">ZUSTAND · BEZIEHUNG · ÜBERGANG</text></svg></div></div></section>
+
+    <section class="block" id="modelle">
+      <div class="wrap">
+        <div class="sec-eyebrow">Die lebenden Modelle</div>
+        <h2 class="sec-h">Zum Anfassen, entlang der These.</h2>
+        <p class="sec-sub">Dreh, zoom, wandere durch die Zeit, direkt hier auf der Seite. Jedes Modell sitzt an der Stelle der Hypothese, die es stützt. <span class="sans">Jedes Modell ist ein <b>Bild</b>, kein Beweis: es veranschaulicht den Gedanken, es belegt ihn nicht.</span></p>
+
+        <div class="honestbox" style="margin-bottom:2.4rem">
+          <span class="hb-badge">Für Forscher, die zuerst hier landen</span>
+          <p class="small">Die Modelle sind entlang des Kern-Formalismus <b>&#10216;&#937;, S&#8320;, T, n&#10217;</b> geordnet: aus dem unentschiedenen Ursprung <b>&#937;</b> der erste realisierte Zustand <b>S&#8320;</b>, dann die Kette der Übergänge <b>S(n+1) = T(S(n))</b>, in denen Information geboren wird: <b>&#916;I = &#8722;log&#8322; p</b>. Drei Kategorien führen durch die These, und jede stützt eine Formel.</p>
+          <p class="small">Lesen Sie die Modelle so: nicht der Zustand ist der Ursprung, sondern der <b>Übergang</b>. Alle Übergangswahrscheinlichkeiten stehen als <b>0,999…</b> (nahe 1, nie 1), das ist das 1&#8722;&#949;-Bild, kein gemessener Wert. Was hier trägt, trägt als <b>Illustration</b> eines konsistenten Gedankens, nicht als Naturgesetz.</p>
+        </div>
+
+        <div class="sec-eyebrow" style="color:var(--teal);margin-top:.6rem">I &#183; Der Ursprung, der erste Unterschied</div>
+        <p class="sec-sub">Stützt <b>&#937; &#8594; S&#8320;</b> und das erste Bit. Der <b>erste Impuls</b>: aus der ungeteilten Null (&#937;) kann kein Ding einfach von selbst „entstehen". Was es gibt, ist die <b>erste absolute Regel</b>, die Unterscheidung <b>+ und &#8722;</b>. Aus ihrer <b>Beziehung</b>, nicht aus einem einzelnen Zustand, wird Information geboren: <b>&#916;I = &#8722;log&#8322; p</b>.</p>
+
+        <div class="model">
+          <div class="model-head">
+            <div class="mt">
+              <h3>Die erste absolute Regel, Minus und Plus</h3>
+              <p>Der erste Impuls. Aus der Null entsteht kein Ding von selbst, sondern die erste Unterscheidung: zwei komplementäre Zustände, <b>+</b> und <b>&#8722;</b>. Schiebst du sie zusammen, wächst ein echtes Interferenzmuster, und aus ihrer Beziehung entsteht das erste Paar, Teilchen und Antiteilchen, weil man nie nur eines machen kann, und das ist das erste Bit. Angedockt an Paarerzeugung, Feld-Schwingung und Wheelers „It from Bit".</p>
+            </div>
+            <span class="chip">Bild &#183; kein Beweis</span>
+          </div>
+          <div class="frame">
+            <iframe data-model-src="Realitaet_Erste_Regel_Plus_Minus.html" title="Die erste absolute Regel, Minus und Plus" loading="lazy" allow="fullscreen" loading="lazy"></iframe>
+          </div>
+          <div class="model-foot">
+            <span class="grow">+ und &#8722; zusammenschieben, bis das erste Paar entsteht &#183; <b>illustriert:</b> der erste Impuls, aus dem &#916;I = &#8722;log&#8322; p wird</span>
+            <a class="openlink" href="Realitaet_Erste_Regel_Plus_Minus.html" target="_blank" rel="noopener">Vollbild öffnen &#8599;</a>
+          </div>
+        </div>
+
+        <div class="model">
+          <div class="model-head">
+            <div class="mt">
+              <h3>Der erste Unterschied, Live-Wellenmodell</h3>
+              <p>Viele Bahnen ziehen gerade durch die Zeit, beginnen zu schwingen, immer stärker, bis der erste Kontakt alles kurz anhält, dann eine Kettenreaktion, dann Abkühlung zur Harmonie. Information als <b>Beziehung</b> zwischen Zuständen, nicht als Eigenschaft eines einzelnen.</p>
+            </div>
+            <span class="chip">Bild &#183; kein Beweis</span>
+          </div>
+          <div class="frame">
+            <iframe data-model-src="Realitaet_als_Zustand_Live_Wellenmodell.html" title="Der erste Unterschied, Live-Wellenmodell" loading="lazy" allow="fullscreen" loading="lazy"></iframe>
+          </div>
+          <div class="model-foot">
+            <span class="grow">Play und die Phasen durchklicken &#183; <b>illustriert:</b> Information aus dem Dazwischen</span>
+            <a class="openlink" aria-disabled="true" title="Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets">Ausführliche Fassung &#8599;</a>
+          </div>
+        </div>
+
+        <div class="sec-eyebrow" style="color:var(--teal);margin-top:.4rem">II &#183; Der Aufbau, Schicht für Schicht</div>
+        <p class="sec-sub">Stützt <b>S(n+1) = T(S(n))</b>, die geordnete Folge gültiger Zustände, Ebene um Ebene, und das <b>Dazwischen</b> als Ort der Entstehung.</p>
+
+        <div class="model">
+          <div class="model-head">
+            <div class="mt">
+              <h3>Das lebende Modell der Dimensionen</h3>
+              <p>Von der ungeteilten Null bis zur digitalen Welt, 24 Ebenen (Layer), die sich Schicht für Schicht auseinanderfalten, inklusive der Sinn-Leiter zwischen Bewusstsein und Computer.</p>
+            </div>
+            <span class="chip">Bild &#183; kein Beweis</span>
+          </div>
+          <div class="frame">
+            <iframe data-model-src="Realitaet_als_Zustand_Livemodell.html" title="Realität als Zustand, Live-Modell der Dimensionen" loading="lazy" allow="fullscreen" loading="lazy"></iframe>
+          </div>
+          <div class="model-foot">
+            <span class="grow">Ziehen zum Drehen &#183; Rad zum Zoomen &#183; Regler für die Zeit &#183; <b>illustriert:</b> die Kette S(n+1) = T(S(n))</span>
+            <a class="openlink" href="Realitaet_als_Zustand_Livemodell.html" target="_blank" rel="noopener">Vollbild öffnen &#8599;</a>
+          </div>
+        </div>
+
+        <div class="model">
+          <div class="model-head">
+            <div class="mt">
+              <h3>Das Schichten-Modell, die unendliche Lasagne</h3>
+              <p>Die Realität als Stapel aus Ebenen. Vertikal scrollbar, jede Ebene ein eigenes Universum mit eigener Signatur, und zwischen je zwei Ebenen ein eigener Zwischenraum mit einem Wahrscheinlichkeitsfeld. Klick auf eine Ebene öffnet Bedeutung, Eigenschaften und die mathematische Struktur.</p>
+            </div>
+            <span class="chip">Bild &#183; kein Beweis</span>
+          </div>
+          <div class="frame">
+            <iframe data-model-src="Realitaet_Schichten_Modell.html" title="Das Schichten-Modell" loading="lazy" allow="fullscreen" loading="lazy"></iframe>
+          </div>
+          <div class="model-foot">
+            <span class="grow">Scrollen durch die Ebenen &#183; Klick öffnet die Erklärung &#183; <b>illustriert:</b> das Dazwischen, &#916;I = &#8722;log&#8322; p</span>
+            <a class="openlink" href="Realitaet_Schichten_Modell.html" target="_blank" rel="noopener">Vollbild öffnen &#8599;</a>
+          </div>
+        </div>
+
+        <div class="sec-eyebrow" style="color:var(--teal);margin-top:.4rem">III &#183; Der ganze Bogen, der Strudel</div>
+        <p class="sec-sub">Stützt den vollen Bogen aus Ursprung, Entfaltung und Rückkehr. Unten im engen Schlund die Null, nach oben immer komplexer, und der <b>Übergang</b> als eigentlicher Ort.</p>
+
+        <div class="model">
+          <div class="model-head">
+            <div class="mt">
+              <h3>Der Realitäts-Strudel, in 3D</h3>
+              <p>Ein echter dreidimensionaler Strudel: weißes Licht wie Wasser, das nach unten wirbelt, die leuchtenden Punkte sind die Zustände. Ganz unten im Schlund die Null, das erste Bit direkt daneben, dann steigt die Komplexität den Strudel hinauf, und unter allem das große weite Nichts, Juris These vom Übergang jenseits der vierten in eine fünfte Dimension.</p>
+            </div>
+            <span class="chip">Bild &#183; kein Beweis</span>
+          </div>
+          <div class="frame">
+            <iframe data-model-src="Realitaet_Strudel_3D.html" title="Der Realitäts-Strudel, 3D" loading="lazy" allow="fullscreen" loading="lazy"></iframe>
+          </div>
+          <div class="model-foot">
+            <span class="grow">Ziehen zum Drehen &#183; Rad zum Zoomen &#183; Klick auf einen Punkt öffnet ihn &#183; <b>illustriert:</b> Ursprung und Rückkehr, 0,999… am Schlund</span>
+            <a class="openlink" href="Realitaet_Strudel_3D.html" target="_blank" rel="noopener">Vollbild öffnen &#8599;</a>
+          </div>
+        </div>
+
+        <div class="model">
+          <div class="model-head">
+            <div class="mt">
+              <h3>Der Strudel als Karte, in 2D</h3>
+              <p>Dieselbe Idee als flache Übersicht: eine Spirale von der Existenz nach innen zur Null, wieder heraus durch die Ebenen bis zur maximalen Entfaltung und zurück. Ein Kamera-Flug entlang der ganzen kosmischen Bewegung, gut, um den Bogen als Ganzes zu sehen.</p>
+            </div>
+            <span class="chip">Bild &#183; kein Beweis</span>
+          </div>
+          <div class="frame">
+            <iframe data-model-src="Realitaet_Strudel_Modell.html" title="Das Strudel-Modell, 2D" loading="lazy" allow="fullscreen" loading="lazy"></iframe>
+          </div>
+          <div class="model-foot">
+            <span class="grow">Regler ist die Reise durch den Strudel &#183; Klick auf eine Station öffnet sie &#183; <b>illustriert:</b> der ganze Bogen als Karte</span>
+            <a class="openlink" href="Realitaet_Strudel_Modell.html" target="_blank" rel="noopener">Vollbild öffnen &#8599;</a>
+          </div>
+        </div>
+
+        <div class="sec-eyebrow" style="color:var(--teal);margin-top:.4rem">IV &#183; Die zwei Teile, das Absolute und der Abfall</div>
+        <p class="sec-sub">Die neueste Schärfung, geprüft von einem Wissenschaftler und einem Philosophen. Zwei Aspekte EINER Sache, in der Linie von Spinozas <i>natura naturans / naturata</i>: das unentschiedene Absolute (&#916;I = 0) und die abfallende Manifestation, die nur nach vorne offen ist.</p>
+
+        <div class="model">
+          <div class="model-head">
+            <div class="mt">
+              <h3>Das Absolute und der Abfall</h3>
+              <p>Ziehe aus dem richtungslosen Absolut-Kern den ersten Unterschied. Die Kette läuft nur nach vorne und friert gestempelt ein (# h(S&#8345;)), die Zukunft pulst offen. Zwei ehrliche Balken: &#916;I steigt (nur 0/1/2 exakt), das Risiko eines wilden Sprungs bleibt konstant. Klick auf die goldenen &#8734; öffnet das unendliche Dazwischen.</p>
+            </div>
+            <span class="chip">Bild &#183; kein Beweis</span>
+          </div>
+          <div class="frame">
+            <iframe data-model-src="Realitaet_Zwei_Teile_Modell.html" title="Die zwei Teile, das Absolute und der Abfall" loading="lazy" allow="fullscreen" loading="lazy"></iframe>
+          </div>
+          <div class="model-foot">
+            <span class="grow">Den ersten Unterschied setzen &#183; das Dazwischen öffnen &#183; <b>illustriert:</b> Teil A (&#937;, &#916;I = 0) und Teil B (nur nach vorne offen)</span>
+            <a class="openlink" href="Realitaet_Zwei_Teile_Modell.html" target="_blank" rel="noopener">Vollbild öffnen &#8599;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="lesen">
+      <div class="wrap">
+        <div class="sec-eyebrow">Die Hypothese lesen</div>
+        <h2 class="sec-h">In eigenem Tempo, so tief du willst.</h2>
+        <p class="sec-sub">Von der leichten Lesefassung bis zum akademischen Manuskript, dieselbe Idee auf verschiedenen Flughöhen.</p>
+        <div class="hv-note hv-edition" data-raz-skip><span data-hv-i18n="missing">Die vollständigen Buch-, Manuskript- und Kurz-Paper-Dateien waren im übergebenen Archiv nicht enthalten. Sie sind deshalb nicht als funktionierende Downloads ausgewiesen. Die Modelltexte bleiben zugänglich.</span></div><div class="cards">
+          <div class="rcard">
+            <div class="ic">&#128214;</div>
+            <h4>Das Buch</h4>
+            <p>Acht Kapitel: von der ältesten Frage der Welt über den Formalismus und die Übergänge bis zum ehrlichen Status. Die Lesefassung.</p>
+            <div class="rlinks">
+              <a class="rlink" aria-disabled="true" title="Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets">Öffnen &#8594;</a>
+            </div>
+          </div>
+          <div class="rcard">
+            <div class="ic">&#128196;</div>
+            <h4>Das Manuskript</h4>
+            <p>Die ausführliche, akademische Fassung für die Universität, mit voller Herleitung und Einordnung.</p>
+            <div class="rlinks">
+              <a class="rlink" aria-disabled="true" title="Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets">HTML</a>
+              <a class="rlink sub" aria-disabled="true" title="Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets">PDF</a>
+            </div>
+          </div>
+          <div class="rcard">
+            <div class="ic">&#128195;</div>
+            <h4>Das Kurz-Paper</h4>
+            <p>Die Hypothese kompakt auf wenigen Seiten, der schnelle Einstieg für alle, die es eilig haben.</p>
+            <div class="rlinks">
+              <a class="rlink" aria-disabled="true" title="Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets">HTML</a>
+              <a class="rlink sub" aria-disabled="true" title="Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets">PDF</a>
+            </div>
+          </div>
+          <div class="rcard">
+            <div class="ic">&#127916;</div>
+            <h4>Die Dimensions-Leiter</h4>
+            <p>Die Treppe des Sinns (b &#8594; Buch &#8594; „ich war da"), Material für Präsentation und Video. Wo die Leiter auf echter Wissenschaft ruht.</p>
+            <div class="rlinks">
+              <a class="rlink" aria-disabled="true" title="Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets">Lesen &#8594;</a>
+            </div>
+          </div>
+          <div class="rcard">
+            <div class="ic">&#9883;</div>
+            <h4>Die zwei Teile</h4>
+            <p>Das Absolute (&#916;I = 0) und die abfallende Manifestation, präzise und ehrlich, mit den echten Ankern: Spinoza, Plotin, Cusanus, Symmetriebrechung, Zeitpfeil. Die neueste Schärfung.</p>
+            <div class="rlinks">
+              <a class="rlink" aria-disabled="true" title="Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets">Lesen &#8594;</a>
+            </div>
+          </div>
+          <div class="rcard">
+            <div class="ic">&#128220;</div>
+            <h4>Eine ehrliche Überlegung</h4>
+            <p>Die alten Geschichten und die erste Unterscheidung. <b>Ausdrücklich Spekulation, kein Beweis</b>: greifen Ursprungs-Mythen vielleicht nach derselben Form? Respektvoll, ohne einen Glauben zu richten.</p>
+            <div class="rlinks">
+              <a class="rlink" aria-disabled="true" title="Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets">Lesen &#8594;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="status">
+      <div class="wrap">
+        <div class="sec-eyebrow">Der ehrliche Boden</div>
+        <h2 class="sec-h">Was das hier ist, und was nicht.</h2>
+        <div class="honestbox">
+          <span class="hb-badge">Hypothese · nicht gemessen</span>
+          <p>„Realität als Zustand" ist eine <b>Hypothese</b> und ein konzeptueller Rahmen, <b>kein</b> empirischer oder mathematischer Beweis. Rigoros argumentiert und an echte Wissenschaft angedockt: fraktale Dimension, Minkowski-Raumzeit, der Entropie-Zeitpfeil, die Sprach-Ebenen.</p>
+          <p class="small">Ein Modell ist hier eine <b>Illustration</b>, kein Naturgesetz. Für jede prüfbare Aussage halten wir die Hypothese, zwei Alternativmodelle, eine unterscheidende Beobachtung und die vorher festgelegte Mindestevidenz fest. Ereigniszeit, Beobachtung, Aufzeichnung und Zukunftsvorhersage bleiben getrennt. Das Ergebnis zeigt auch, was offen bleibt und welche Beobachtung unsere Einschätzung ändern würde.</p>
+          <p class="small"><b>Ehrlich zur Person:</b> Der Autor ist kein ausgebildeter Wissenschaftler. Die Formeln sind aus eigener Logik und Anschauung entstanden, ohne akademische Vorbildung in höherer Mathematik, und danach an etablierte Wissenschaft angedockt und geprüft. Was hier trägt, trägt aus der Klarheit des Gedankens, nicht aus einem Titel.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="halveth">
+      <div class="wrap">
+        <div class="sec-eyebrow">Wenn die Form etwas baut</div>
+        <h2 class="sec-h">HALVETH, die Idee als gebautes Ding.</h2>
+        <p class="sec-sub">Dieselbe Grundform in einem ganz anderen Feld, der Sicherheit: wenn Bedeutung im &Uuml;bergang liegt und ein Zustand erst als g&uuml;ltiger Anschluss z&auml;hlt, dann l&auml;sst sich genau das bauen.</p>
+        <div class="honestbox">
+          <span class="hb-badge">Anwendung &middot; kein Beweis der Hypothese</span>
+          <p>HALVETH nimmt einen einzigen Satz ernst, &bdquo;Ausf&uuml;hrung ist nicht Finalit&auml;t&ldquo;, und macht ihn zu einem konkreten Sicherheits-Mechanismus: eine &Auml;nderung gilt nicht, weil sie geschah, sondern erst, wenn sie ein g&uuml;ltiger, belegter &Uuml;bergang ist. Im Labor gegen drei blinde Angriffswellen gepr&uuml;ft.</p>
+          <p class="small"><b>Ehrlich getrennt:</b> HALVETH beweist die Hypothese nicht, eine Ingenieurs-Sache kann keine Metaphysik belegen. Es zeigt nur, dass die Form fruchtbar ist: aus ihr entstand in einem fremden Feld etwas Konkretes, das man angreifen und messen kann. Die Verbindung ist Inspiration, nicht Beweis.</p>
+        </div>
+        <div class="crow" style="margin-top:1.6rem">
+          <a class="cta" href="https://halveth.de/index.html" target="_blank" rel="noopener">HALVETH ansehen &rarr;</a>
+          <a class="cta ghost" href="https://halveth.de/modell.html" target="_blank" rel="noopener">Die Modelle dahinter</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot-in">
+      <span class="grow"><b>Realität als Zustand</b> · eine Hypothese von Juri Janovski · 2026</span>
+      <span>Hypothese / konzeptueller Rahmen, kein Beweis 🤍</span>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var root = document.documentElement;
+      var KEY = "raz_theme";
+      try {
+        var saved = localStorage.getItem(KEY);
+        if (saved === "dark" || saved === "light") root.setAttribute("data-theme", saved);
+      } catch (e) {}
+      function current(){
+        var attr = root.getAttribute("data-theme");
+        if (attr) return attr;
+        return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      var btn = document.getElementById("tgl");
+      if (btn) btn.addEventListener("click", function(){
+        var next = current() === "dark" ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        try { localStorage.setItem(KEY, next); } catch (e) {}
+      });
+    })();
+  </script>
+
+
+<!-- RAZ i18n (append-only; original content untouched) -->
+<script>window.RAZ_CFG={"place": "nav", "navSelector": ".nav-in"};</script>
+<script>window.RAZ_I18N={"title": {"ru": "«Реальность как состояние», исследование Juri Janovski", "en": "Reality as a State, research by Juri Janovski"}, "units": [{"ru": "Реальность как <span>состояние</span>", "en": "Reality as a <span>State</span>"}, {"ru": "\n        <a href=\"#modelle\">Модели</a>\n        <a href=\"#lesen\">Чтение</a>\n        <a href=\"#status\">Честный статус</a>\n      ", "en": "\n        <a href=\"#modelle\">Models</a>\n        <a href=\"#lesen\">Reading</a>\n        <a href=\"#status\">Honest Status</a>\n      "}, {"ru": "◑ Вид", "en": "◑ View"}, {"ru": "Исследование в одном месте", "en": "The research in one place"}, {"ru": "Реальность как состояние", "en": "Reality as a State"}, {"ru": "Почему мир начинается с первого различия.", "en": "Why the world begins with the first difference."}, {"ru": "\n          <span class=\"badge honest\">Гипотеза · не доказательство</span>\n          <span class=\"badge\">близко к 1, но никогда не 1</span>\n          <span class=\"badge\">⟨Ω, S₀, T, n⟩</span>\n          <span class=\"badge\">пристыковано к настоящей науке</span>\n        ", "en": "\n          <span class=\"badge honest\">A hypothesis · not a proof</span>\n          <span class=\"badge\">close to 1, never 1</span>\n          <span class=\"badge\">⟨Ω, S₀, T, n⟩</span>\n          <span class=\"badge\">docked onto real science</span>\n        "}, {"ru": "Одно основание: <b>состояние</b>. Реальность как упорядоченная последовательность допустимых переходов, а место, где рождается информация, — это <b>промежуток</b>. Здесь собрано всё: живые модели, которые можно потрогать руками, и гипотеза для чтения. С честными оговорками — <b>гипотеза</b>, а не доказательство. Надёжность приближается к единице, но никогда её не касается.", "en": "One foundation: the <b>state</b>. Reality as an ordered sequence of valid transitions, and the place where information is born is the <b>in-between</b>. Here everything sits together: the living models to explore hands-on and the hypothesis to read up on. Honestly framed, a <b>hypothesis</b>, not a proof. The reliability approaches one, yet never touches it."}, {"ru": "\n          <a class=\"cta\" href=\"#modelle\">Посмотреть модели ↓</a>\n          <a class=\"cta ghost\" href=\"#lesen\">Читать гипотезу</a>\n        ", "en": "\n          <a class=\"cta\" href=\"#modelle\">View the models ↓</a>\n          <a class=\"cta ghost\" href=\"#lesen\">Read the hypothesis</a>\n        "}, {"ru": "Живые модели", "en": "The living models"}, {"ru": "Потрогать руками, следуя тезису.", "en": "Hands-on, along the thesis."}, {"ru": "Вращайте, приближайте, путешествуйте во времени — прямо здесь, на странице. Каждая модель стоит на том месте гипотезы, которое она поддерживает. <span class=\"sans\">Каждая модель — это <b>образ</b>, а не доказательство: она иллюстрирует мысль, но не подтверждает её.</span>", "en": "Rotate, zoom, wander through time, right here on the page. Each model sits at the point in the hypothesis it supports. <span class=\"sans\">Every model is a <b>picture</b>, not a proof: it illustrates the thought, it does not prove it.</span>"}, {"ru": "Для исследователей, которые попадают сюда первыми", "en": "For researchers who land here first"}, {"ru": "Модели упорядочены вдоль основного формализма <b>⟨Ω, S₀, T, n⟩</b>: из неопределённого истока <b>Ω</b> — первое реализованное состояние <b>S₀</b>, затем цепочка переходов <b>S(n+1) = T(S(n))</b>, в которых рождается информация: <b>ΔI = −log₂ p</b>. Три категории проводят через тезис, и каждая поддерживает одну формулу.", "en": "The models are ordered along the core formalism <b>⟨Ω, S₀, T, n⟩</b>: from the undecided origin <b>Ω</b> the first realized state <b>S₀</b>, then the chain of transitions <b>S(n+1) = T(S(n))</b>, in which information is born: <b>ΔI = −log₂ p</b>. Three categories lead through the thesis, and each supports one formula."}, {"ru": "Читайте модели так: истоком является не состояние, а <b>переход</b>. Все вероятности переходов записаны как <b>0,999…</b> (близко к 1, но никогда не 1) — это образ 1−ε, а не измеренное значение. Всё, что здесь несёт нагрузку, несёт её как <b>иллюстрация</b> последовательной мысли, а не как закон природы.", "en": "Read the models this way: the origin is not the state but the <b>transition</b>. All transition probabilities are given as <b>0,999…</b> (close to 1, never 1); this is the 1−ε picture, not a measured value. What holds here holds as an <b>illustration</b> of a consistent thought, not as a law of nature."}, {"ru": "I · Исток, первое различие", "en": "I · The origin, the first difference"}, {"ru": "Поддерживает <b>Ω → S₀</b> и первый бит. <b>Первый импульс</b>: из неразделённого нуля (Ω) ни одна вещь не может просто «возникнуть» сама по себе. Что есть — это <b>первое абсолютное правило</b>, различение <b>+ и −</b>. Из их <b>отношения</b>, а не из отдельного состояния, рождается информация: <b>ΔI = −log₂ p</b>.", "en": "Supports <b>Ω → S₀</b> and the first bit. The <b>first impulse</b>: out of the undivided zero (Ω) no thing can simply \"come into being\" by itself. What there is, is the <b>first absolute rule</b>, the distinction <b>+ and −</b>. Out of their <b>relation</b>, not out of a single state, information is born: <b>ΔI = −log₂ p</b>."}, {"ru": "Первое абсолютное правило: минус и плюс", "en": "The first absolute rule, minus and plus"}, {"ru": "Первый импульс. Из нуля ни одна вещь не возникает сама по себе — возникает первое различение: два дополнительных состояния, <b>+</b> и <b>−</b>. Если сдвинуть их вместе, вырастает настоящая интерференционная картина, и из их отношения рождается первая пара — частица и античастица, ведь нельзя создать лишь одну, — и это первый бит. Пристыковано к рождению пар, возбуждению поля и «It from Bit» Уилера.", "en": "The first impulse. Out of the zero no thing arises by itself, but rather the first distinction: two complementary states, <b>+</b> and <b>−</b>. Push them together and a real interference pattern grows, and out of their relation the first pair arises, particle and antiparticle, because you can never make only one, and that is the first bit. Docked onto pair production, field excitation and Wheeler's \"It from Bit\"."}, {"ru": "Образ · не доказательство", "en": "A picture · not a proof"}, {"ru": "\n            <span class=\"grow\">Сдвигать + и − вместе, пока не возникнет первая пара · <b>иллюстрирует:</b> первый импульс, из которого получается ΔI = −log₂ p</span>\n            <a class=\"openlink\" href=\"Realitaet_Erste_Regel_Plus_Minus.html\" target=\"_blank\" rel=\"noopener\">Открыть на весь экран ↗</a>\n          ", "en": "\n            <span class=\"grow\">Push + and − together until the first pair arises · <b>illustrates:</b> the first impulse, out of which ΔI = −log₂ p emerges</span>\n            <a class=\"openlink\" href=\"Realitaet_Erste_Regel_Plus_Minus.html\" target=\"_blank\" rel=\"noopener\">Open fullscreen ↗</a>\n          "}, {"ru": "Первое различие, живая волновая модель", "en": "The first difference, live wave model"}, {"ru": "Множество траекторий идут прямо сквозь время, начинают колебаться, всё сильнее, пока первый контакт на миг не останавливает всё, затем цепная реакция, затем охлаждение к гармонии. Информация как <b>отношение</b> между состояниями, а не как свойство отдельного.", "en": "Many paths run straight through time, begin to oscillate, ever more strongly, until the first contact briefly halts everything, then a chain reaction, then a cooling into harmony. Information as a <b>relation</b> between states, not as a property of a single one."}, {"ru": "Образ · не доказательство", "en": "A picture · not a proof"}, {"ru": "\n            <span class=\"grow\">Нажать Play и прокликать фазы · <b>иллюстрирует:</b> информация из промежутка</span>\n            <a class=\"openlink\" aria-disabled=\"true\" title=\"Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets\">Подробная версия ↗</a>\n          ", "en": "\n            <span class=\"grow\">Press play and click through the phases · <b>illustrates:</b> information out of the in-between</span>\n            <a class=\"openlink\" aria-disabled=\"true\" title=\"Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets\">Detailed version ↗</a>\n          "}, {"ru": "II · Построение, слой за слоем", "en": "II · The build-up, layer by layer"}, {"ru": "Поддерживает <b>S(n+1) = T(S(n))</b> — упорядоченную последовательность допустимых состояний, уровень за уровнем, и <b>промежуток</b> как место возникновения.", "en": "Supports <b>S(n+1) = T(S(n))</b>, the ordered sequence of valid states, level upon level, and the <b>in-between</b> as the place of emergence."}, {"ru": "Живая модель измерений", "en": "The living model of dimensions"}, {"ru": "От неразделённого нуля до цифрового мира — 24 уровня (Layer), которые разворачиваются слой за слоем, включая лестницу смысла между сознанием и компьютером.", "en": "From the undivided zero to the digital world, 24 levels (layers) that unfold layer by layer, including the ladder of meaning between consciousness and computer."}, {"ru": "Образ · не доказательство", "en": "A picture · not a proof"}, {"ru": "\n            <span class=\"grow\">Тянуть — вращать · колесо — масштаб · ползунок — время · <b>иллюстрирует:</b> цепочку S(n+1) = T(S(n))</span>\n            <a class=\"openlink\" href=\"Realitaet_als_Zustand_Livemodell.html\" target=\"_blank\" rel=\"noopener\">Открыть на весь экран ↗</a>\n          ", "en": "\n            <span class=\"grow\">Drag to rotate · wheel to zoom · slider for time · <b>illustrates:</b> the chain S(n+1) = T(S(n))</span>\n            <a class=\"openlink\" href=\"Realitaet_als_Zustand_Livemodell.html\" target=\"_blank\" rel=\"noopener\">Open fullscreen ↗</a>\n          "}, {"ru": "Модель слоёв, бесконечная лазанья", "en": "The layer model, the infinite lasagne"}, {"ru": "Реальность как стопка уровней. С вертикальной прокруткой, каждый уровень — собственная вселенная со своей сигнатурой, а между каждыми двумя уровнями — свой промежуток с полем вероятностей. Клик по уровню открывает смысл, свойства и математическую структуру.", "en": "Reality as a stack of levels. Vertically scrollable, each level its own universe with its own signature, and between any two levels its own gap with a probability field. Clicking a level opens its meaning, properties and mathematical structure."}, {"ru": "Образ · не доказательство", "en": "A picture · not a proof"}, {"ru": "\n            <span class=\"grow\">Прокручивать сквозь уровни · клик открывает объяснение · <b>иллюстрирует:</b> промежуток, ΔI = −log₂ p</span>\n            <a class=\"openlink\" href=\"Realitaet_Schichten_Modell.html\" target=\"_blank\" rel=\"noopener\">Открыть на весь экран ↗</a>\n          ", "en": "\n            <span class=\"grow\">Scroll through the levels · click opens the explanation · <b>illustrates:</b> the in-between, ΔI = −log₂ p</span>\n            <a class=\"openlink\" href=\"Realitaet_Schichten_Modell.html\" target=\"_blank\" rel=\"noopener\">Open fullscreen ↗</a>\n          "}, {"ru": "III · Вся дуга, водоворот", "en": "III · The whole arc, the vortex"}, {"ru": "Поддерживает полную дугу из истока, развёртывания и возвращения. Внизу, в узкой горловине, — ноль, кверху всё сложнее, и <b>переход</b> как подлинное место.", "en": "Supports the full arc of origin, unfolding and return. Down in the narrow throat the zero, upward ever more complex, and the <b>transition</b> as the true place."}, {"ru": "Водоворот реальности, в 3D", "en": "The reality vortex, in 3D"}, {"ru": "Настоящий трёхмерный водоворот: белый свет, как вода, закручивающаяся вниз, светящиеся точки — это состояния. В самой глубине горловины — ноль, первый бит прямо рядом, затем сложность поднимается вверх по водовороту, а под всем этим — великое широкое ничто, тезис Juri о переходе за пределы четвёртого в пятое измерение.", "en": "A real three-dimensional vortex: white light like water swirling downward, the glowing points are the states. Right at the bottom in the throat the zero, the first bit right beside it, then complexity rises up the vortex, and beneath everything the great wide nothing, Juri's thesis of the transition beyond the fourth into a fifth dimension."}, {"ru": "Образ · не доказательство", "en": "A picture · not a proof"}, {"ru": "\n            <span class=\"grow\">Тянуть — вращать · колесо — масштаб · клик по точке открывает её · <b>иллюстрирует:</b> исток и возвращение, 0,999… у горловины</span>\n            <a class=\"openlink\" href=\"Realitaet_Strudel_3D.html\" target=\"_blank\" rel=\"noopener\">Открыть на весь экран ↗</a>\n          ", "en": "\n            <span class=\"grow\">Drag to rotate · wheel to zoom · clicking a point opens it · <b>illustrates:</b> origin and return, 0,999… at the throat</span>\n            <a class=\"openlink\" href=\"Realitaet_Strudel_3D.html\" target=\"_blank\" rel=\"noopener\">Open fullscreen ↗</a>\n          "}, {"ru": "Водоворот как карта, в 2D", "en": "The vortex as a map, in 2D"}, {"ru": "Та же идея как плоский обзор: спираль от существования внутрь к нулю, снова наружу сквозь уровни до максимального развёртывания и обратно. Полёт камеры вдоль всего космического движения — хорошо, чтобы увидеть дугу целиком.", "en": "The same idea as a flat overview: a spiral from existence inward to the zero, back out through the levels to maximal unfolding and back again. A camera flight along the whole cosmic movement, good for seeing the arc as a whole."}, {"ru": "Образ · не доказательство", "en": "A picture · not a proof"}, {"ru": "\n            <span class=\"grow\">Ползунок — это путешествие сквозь водоворот · клик по станции открывает её · <b>иллюстрирует:</b> всю дугу как карту</span>\n            <a class=\"openlink\" href=\"Realitaet_Strudel_Modell.html\" target=\"_blank\" rel=\"noopener\">Открыть на весь экран ↗</a>\n          ", "en": "\n            <span class=\"grow\">The slider is the journey through the vortex · clicking a station opens it · <b>illustrates:</b> the whole arc as a map</span>\n            <a class=\"openlink\" href=\"Realitaet_Strudel_Modell.html\" target=\"_blank\" rel=\"noopener\">Open fullscreen ↗</a>\n          "}, {"ru": "IV · Две части: Абсолютное и нисхождение", "en": "IV · The two parts, the Absolute and the Descent"}, {"ru": "Новейшее уточнение, проверенное учёным и философом. Два аспекта ОДНОЙ вещи, в линии Спинозы, <i>natura naturans / naturata</i>: неопределённое Абсолютное (ΔI = 0) и нисходящее проявление, которое открыто только вперёд.", "en": "The latest sharpening, reviewed by a scientist and a philosopher. Two aspects of ONE thing, in the line of Spinoza's <i>natura naturans / naturata</i>: the undecided Absolute (ΔI = 0) and the descending manifestation, which is open only forward."}, {"ru": "Абсолютное и нисхождение", "en": "The Absolute and the Descent"}, {"ru": "Вытяни из лишённого направления абсолютного ядра первое различие. Цепочка идёт только вперёд и застывает, скреплённая штампом (# h(Sₙ)), будущее пульсирует открытым. Два честных столбца: ΔI растёт (точно лишь 0/1/2), риск дикого скачка остаётся постоянным. Клик по золотым ∞ открывает бесконечный промежуток.", "en": "Draw the first difference out of the directionless Absolute core. The chain runs only forward and freezes in, stamped (# h(Sₙ)), while the future pulses open. Two honest bars: ΔI rises (only 0/1/2 exactly), the risk of a wild jump stays constant. Clicking the golden ∞ opens the infinite in-between."}, {"ru": "Образ · не доказательство", "en": "A picture · not a proof"}, {"ru": "\n            <span class=\"grow\">Задать первое различие · открыть промежуток · <b>иллюстрирует:</b> часть A (Ω, ΔI = 0) и часть B (открыта только вперёд)</span>\n            <a class=\"openlink\" href=\"Realitaet_Zwei_Teile_Modell.html\" target=\"_blank\" rel=\"noopener\">Открыть на весь экран ↗</a>\n          ", "en": "\n            <span class=\"grow\">Set the first difference · open the in-between · <b>illustrates:</b> Part A (Ω, ΔI = 0) and Part B (open only forward)</span>\n            <a class=\"openlink\" href=\"Realitaet_Zwei_Teile_Modell.html\" target=\"_blank\" rel=\"noopener\">Open fullscreen ↗</a>\n          "}, {"ru": "Читать гипотезу", "en": "Reading the hypothesis"}, {"ru": "В своём темпе, так глубоко, как захочешь.", "en": "At your own pace, as deep as you like."}, {"ru": "От лёгкой читательской версии до академической рукописи — одна и та же идея на разных высотах полёта.", "en": "From the light reading edition to the academic manuscript, the same idea at different altitudes."}, {"ru": "📖", "en": "📖"}, {"ru": "Книга", "en": "The book"}, {"ru": "Восемь глав: от древнейшего вопроса мира через формализм и переходы до честного статуса. Читательская версия.", "en": "Eight chapters: from the world's oldest question, through the formalism and the transitions, to the honest status. The reading edition."}, {"ru": "\n              <a class=\"rlink\" aria-disabled=\"true\" title=\"Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets\">Открыть →</a>\n            ", "en": "\n              <a class=\"rlink\" aria-disabled=\"true\" title=\"Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets\">Open →</a>\n            "}, {"ru": "📄", "en": "📄"}, {"ru": "Рукопись", "en": "The manuscript"}, {"ru": "Подробная академическая версия для университета, с полным выводом и включением в научный контекст.", "en": "The detailed, academic version for the university, with full derivation and contextualization."}, {"ru": "\n              <a class=\"rlink\" aria-disabled=\"true\" title=\"Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets\">HTML</a>\n              <a class=\"rlink sub\" aria-disabled=\"true\" title=\"Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets\">PDF</a>\n            ", "en": "\n              <a class=\"rlink\" aria-disabled=\"true\" title=\"Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets\">HTML</a>\n              <a class=\"rlink sub\" aria-disabled=\"true\" title=\"Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets\">PDF</a>\n            "}, {"ru": "📃", "en": "📃"}, {"ru": "Краткая статья", "en": "The short paper"}, {"ru": "Гипотеза компактно на нескольких страницах — быстрый вход для всех, кто торопится.", "en": "The hypothesis in compact form on a few pages, the quick entry point for anyone in a hurry."}, {"ru": "\n              <a class=\"rlink\" aria-disabled=\"true\" title=\"Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets\">HTML</a>\n              <a class=\"rlink sub\" aria-disabled=\"true\" title=\"Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets\">PDF</a>\n            ", "en": "\n              <a class=\"rlink\" aria-disabled=\"true\" title=\"Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets\">HTML</a>\n              <a class=\"rlink sub\" aria-disabled=\"true\" title=\"Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets\">PDF</a>\n            "}, {"ru": "🎬", "en": "🎬"}, {"ru": "Лестница измерений", "en": "The dimensional ladder"}, {"ru": "Лестница смысла (b → книга → «я был там»), материал для презентации и видео. Где лестница опирается на настоящую науку.", "en": "The staircase of meaning (b → book → \"I was there\"), material for presentation and video. Where the ladder rests on real science."}, {"ru": "\n              <a class=\"rlink\" aria-disabled=\"true\" title=\"Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets\">Читать →</a>\n            ", "en": "\n              <a class=\"rlink\" aria-disabled=\"true\" title=\"Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets\">Read →</a>\n            "}, {"ru": "⚛", "en": "⚛"}, {"ru": "Две части", "en": "The two parts"}, {"ru": "Абсолютное (ΔI = 0) и нисходящее проявление, точно и честно, с настоящими якорями: Спиноза, Плотин, Николай Кузанский, нарушение симметрии, стрела времени. Новейшее уточнение.", "en": "The Absolute (ΔI = 0) and the descending manifestation, precise and honest, with the real anchors: Spinoza, Plotinus, Nicholas of Cusa, symmetry breaking, arrow of time. The latest sharpening."}, {"ru": "\n              <a class=\"rlink\" aria-disabled=\"true\" title=\"Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets\">Читать →</a>\n            ", "en": "\n              <a class=\"rlink\" aria-disabled=\"true\" title=\"Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets\">Read →</a>\n            "}, {"ru": "📜", "en": "📜"}, {"ru": "Честное размышление", "en": "An honest reflection"}, {"ru": "Древние истории и первое различение. <b>Явно спекуляция, а не доказательство</b>: быть может, мифы о происхождении тянутся к той же форме? С уважением, не осуждая ничью веру.", "en": "The old stories and the first distinction. <b>Explicitly speculation, not a proof</b>: do origin myths perhaps reach for the same form? Respectful, without judging any faith."}, {"ru": "\n              <a class=\"rlink\" aria-disabled=\"true\" title=\"Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets\">Читать →</a>\n            ", "en": "\n              <a class=\"rlink\" aria-disabled=\"true\" title=\"Derzeit nicht Teil des ver&ouml;ffentlichten Website-Pakets\">Read →</a>\n            "}, {"ru": "Честная почва", "en": "The honest ground"}, {"ru": "Что это такое, и что — нет.", "en": "What this is, and what it is not."}, {"ru": "Гипотеза · не измерено", "en": "A hypothesis · not measured"}, {"ru": "«Реальность как состояние» — это <b>гипотеза</b> и концептуальная рамка, <b>не</b> эмпирическое или математическое доказательство. Строго аргументировано и пристыковано к настоящей науке: фрактальная размерность, пространство-время Минковского, энтропийная стрела времени, языковые уровни.", "en": "\"Reality as a State\" is a <b>hypothesis</b> and a conceptual framework, <b>not</b> an empirical or mathematical proof. Rigorously argued and docked onto real science: fractal dimension, Minkowski spacetime, the entropic arrow of time, the levels of language."}, {"ru": "Модель здесь — <b>иллюстрация</b>, а не закон природы. Для каждого проверяемого утверждения мы записываем гипотезу, две альтернативные модели, наблюдение, которое их различает, и минимальные доказательства, заданные заранее. Время события, наблюдения, записи и прогноз на будущее остаются разными. Результат показывает открытый остаток и то, какое наблюдение изменило бы нашу оценку.", "en": "A model here is an <b>illustration</b>, not a law of nature. For each testable claim we record the hypothesis, two alternative models, an observation that distinguishes them, and the minimum evidence set in advance. Event time, observation time, recording time and future prediction stay separate. The result also shows what remains open and what observation would change our assessment."}, {"ru": "<b>Честно о самом авторе:</b> автор не является дипломированным учёным. Формулы возникли из собственной логики и созерцания, без академической подготовки в высшей математике, а затем были пристыкованы к устоявшейся науке и проверены. Всё, что здесь несёт нагрузку, несёт её из ясности мысли, а не из титула.", "en": "<b>Honest about the person:</b> The author is not a trained scientist. The formulas arose from his own logic and intuition, without prior academic schooling in higher mathematics, and were afterward docked onto established science and checked. What holds here holds from the clarity of the thought, not from a title."}, {"ru": "Когда форма что-то строит", "en": "When the form builds something"}, {"ru": "HALVETH, идея как построенная вещь.", "en": "HALVETH, the idea as a built thing."}, {"ru": "Та же базовая форма в совершенно другой области, в безопасности: если смысл лежит в переходе и состояние считается лишь как допустимое продолжение, то именно это можно построить.", "en": "The same basic form in an entirely different field, security: if meaning lies in the transition and a state only counts as a valid continuation, then exactly that can be built."}, {"ru": "Применение · не доказательство гипотезы", "en": "Application · not a proof of the hypothesis"}, {"ru": "HALVETH принимает всерьёз одну-единственную фразу, «выполнение ещё не есть окончательность», и превращает её в конкретный механизм безопасности: изменение считается не потому, что оно произошло, а лишь когда оно является допустимым, подтверждённым переходом. Проверено в лаборатории против трёх слепых волн атак.", "en": "HALVETH takes a single sentence seriously, \"execution is not finality\", and turns it into a concrete security mechanism: a change does not count because it happened, but only once it is a valid, evidenced transition. Tested in the lab against three blind waves of attack."}, {"ru": "<b>Честно разделяя:</b> HALVETH не доказывает гипотезу, инженерная вещь не может подтвердить метафизику. Он лишь показывает, что форма плодотворна: из неё в чужой области возникло нечто конкретное, что можно атаковать и измерить. Связь есть вдохновение, а не доказательство.", "en": "<b>Honestly separated:</b> HALVETH does not prove the hypothesis, an engineering artifact cannot verify a metaphysics. It only shows the form is fruitful: out of it, in a foreign field, something concrete arose that can be attacked and measured. The connection is inspiration, not proof."}, {"ru": "\n          <a class=\"cta\" href=\"https://halveth.de/index.html\" target=\"_blank\" rel=\"noopener\">Посмотреть HALVETH →</a>\n          <a class=\"cta ghost\" href=\"https://halveth.de/modell.html\" target=\"_blank\" rel=\"noopener\">Модели за этим</a>\n        ", "en": "\n          <a class=\"cta\" href=\"https://halveth.de/index.html\" target=\"_blank\" rel=\"noopener\">View HALVETH →</a>\n          <a class=\"cta ghost\" href=\"https://halveth.de/modell.html\" target=\"_blank\" rel=\"noopener\">The models behind it</a>\n        "}, {"ru": "\n      <span class=\"grow\"><b>Реальность как состояние</b> · гипотеза Juri Janovski · 2026</span>\n      <span>Гипотеза / концептуальная рамка, не доказательство 🤍</span>\n    ", "en": "\n      <span class=\"grow\"><b>Reality as a State</b> · a hypothesis by Juri Janovski · 2026</span>\n      <span>A hypothesis / conceptual framework, not a proof 🤍</span>\n    "}]};</script>
+<script>
+/* ==========================================================================
+   Realität als Zustand — i18n runtime (append-only, changes nothing existing)
+   --------------------------------------------------------------------------
+   Finds "translation units" (leaf text blocks) with the SAME rule the Python
+   extractor uses, so unit i in the DOM lines up with RAZ_I18N.units[i].
+   German = the original text already in the page. RU/EN swapped in on click.
+   ========================================================================== */
+(function () {
+  "use strict";
+
+  /* RAZ_I18N and RAZ_CFG are injected right before this script. */
+  var DATA = (typeof RAZ_I18N !== "undefined") ? RAZ_I18N : { units: [], title: null };
+  var CFG  = (typeof RAZ_CFG  !== "undefined") ? RAZ_CFG  : { place: "float", pos: "top-right" };
+  var LS_KEY = "raz_lang";
+
+  /* ---- element classification (must match the Python extractor) ---------- */
+  var INLINE = {
+    A:1, ABBR:1, B:1, BDI:1, BDO:1, BR:1, CITE:1, CODE:1, DATA:1, DFN:1, EM:1,
+    I:1, KBD:1, MARK:1, Q:1, RP:1, RT:1, RUBY:1, S:1, SAMP:1, SMALL:1, SPAN:1,
+    STRONG:1, SUB:1, SUP:1, TIME:1, U:1, VAR:1, WBR:1, DEL:1, INS:1
+  };
+  /* tags we never treat as text and never descend into.
+     Note: SVG is intentionally NOT opaque — we DO translate <text>/<tspan> labels
+     inside inline SVG. Opaque tags inside SVG (script/style/title/desc) still skipped. */
+  var OPAQUE = {
+    SCRIPT:1, STYLE:1, CANVAS:1, IFRAME:1, NOSCRIPT:1, TEMPLATE:1,
+    IMG:1, VIDEO:1, AUDIO:1, INPUT:1, TEXTAREA:1, OBJECT:1,
+    TITLE:1, HEAD:1, META:1, LINK:1, BASE:1, DESC:1, DEFS:1, SYMBOL:1
+  };
+
+  function TAG(el) { return (el.tagName || "").toUpperCase(); }
+  function isOpaque(el) { return OPAQUE[TAG(el)] === 1; }
+
+  function hasNonWsText(el) {
+    var w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
+    var n;
+    while ((n = w.nextNode())) {
+      if (n.nodeValue && /\S/.test(n.nodeValue)) return true;
+    }
+    return false;
+  }
+
+  /* true if some descendant ELEMENT is block-level (i.e. not inline & not opaque-inline) */
+  function hasBlockDesc(el) {
+    var kids = el.getElementsByTagName("*");
+    for (var i = 0; i < kids.length; i++) {
+      if (INLINE[TAG(kids[i])] !== 1) return true; /* non-inline => block => won't wrap */
+    }
+    return false;
+  }
+
+  function inSkippedZone(el) {
+    var p = el;
+    while (p && p.nodeType === 1) {
+      if (p.id === "raz-langbar") return true;
+      if (p.getAttribute && p.getAttribute("data-raz-skip") !== null &&
+          p.getAttribute("data-raz-skip") !== undefined &&
+          p.hasAttribute("data-raz-skip")) return true;
+      p = p.parentNode;
+    }
+    return false;
+  }
+
+  /* collect units top-down, in document order; do not descend into a found unit */
+  function collectUnits(root) {
+    var out = [];
+    (function walk(el) {
+      for (var c = el.firstElementChild; c; c = c.nextElementSibling) {
+        if (isOpaque(c)) continue;
+        if (c.id === "raz-langbar") continue;
+        if (c.hasAttribute && c.hasAttribute("data-raz-skip")) continue;
+        if (hasNonWsText(c) && !hasBlockDesc(c)) {
+          out.push(c);            /* c is a translation unit */
+        } else {
+          walk(c);                /* descend */
+        }
+      }
+    })(root);
+    return out;
+  }
+
+  var units = collectUnits(document.body);
+  var originals = units.map(function (el) { return el.innerHTML; });
+  var origTitle = document.title;
+
+  var countOk = (DATA.units && DATA.units.length === units.length);
+  if (!countOk && DATA.units && DATA.units.length) {
+    /* Safety: never show a misaligned page. Stay German, warn in console. */
+    console.warn("[raz-i18n] unit count mismatch: DOM=" + units.length +
+                 " dict=" + DATA.units.length + ", staying DE.");
+  }
+
+  function apply(lang) {
+    if (lang !== "de" && countOk) {
+      for (var i = 0; i < units.length; i++) {
+        var tr = DATA.units[i] && DATA.units[i][lang];
+        units[i].innerHTML = (tr != null && tr !== "") ? tr : originals[i];
+      }
+    } else {
+      for (var j = 0; j < units.length; j++) units[j].innerHTML = originals[j];
+      lang = (lang === "de") ? "de" : "de";
+    }
+    /* title + <html lang> */
+    document.documentElement.setAttribute("lang", lang);
+    if (lang !== "de" && DATA.title && DATA.title[lang]) document.title = DATA.title[lang];
+    else document.title = origTitle;
+
+    /* remember + reflect in buttons */
+    try { localStorage.setItem(LS_KEY, lang); } catch (e) {}
+    var btns = document.querySelectorAll("#raz-langbar [data-lang]");
+    for (var k = 0; k < btns.length; k++) {
+      var on = btns[k].getAttribute("data-lang") === lang;
+      btns[k].setAttribute("aria-pressed", on ? "true" : "false");
+      btns[k].className = on ? "raz-lb-btn raz-on" : "raz-lb-btn";
+    }
+    /* broadcast to any iframes (hub -> models) */
+    var frames = document.getElementsByTagName("iframe");
+    for (var f = 0; f < frames.length; f++) {
+      try { frames[f].contentWindow.postMessage({ razLang: lang }, "*"); } catch (e) {}
+    }
+    if (typeof window.RAZ_onLang === "function") { try { window.RAZ_onLang(lang); } catch (e) {} }
+  }
+
+  function getInitial() {
+    try {
+      var s = localStorage.getItem(LS_KEY);
+      if (s === "ru" || s === "en" || s === "de") return s;
+    } catch (e) {}
+    return "de";
+  }
+
+  /* ---- switcher UI ------------------------------------------------------- */
+  function buildBar() {
+    var style = document.createElement("style");
+    style.id = "raz-lang-style";
+    style.textContent =
+      "#raz-langbar{position:fixed;z-index:2147483000;display:inline-flex;gap:2px;" +
+      "padding:3px;border-radius:999px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;" +
+      "font-size:12px;font-weight:700;letter-spacing:.02em;line-height:1;" +
+      "background:rgba(20,21,29,.72);border:1px solid rgba(150,150,180,.28);" +
+      "box-shadow:0 6px 22px rgba(0,0,0,.35);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);}" +
+      "#raz-langbar.raz-nav{position:static;box-shadow:none;background:transparent;border:1px solid var(--edge,rgba(150,150,180,.3));backdrop-filter:none;}" +
+      "#raz-langbar .raz-lb-btn{appearance:none;border:0;background:transparent;cursor:pointer;" +
+      "color:#c9cee0;border-radius:999px;padding:.4em .62em;font:inherit;transition:background .15s,color .15s;}" +
+      "#raz-langbar.raz-nav .raz-lb-btn{color:var(--ink2,#7a7f90);}" +
+      "#raz-langbar .raz-lb-btn:hover{color:#fff;}" +
+      "#raz-langbar.raz-nav .raz-lb-btn:hover{color:var(--ink,#111);}" +
+      "#raz-langbar .raz-lb-btn.raz-on{background:rgba(230,181,74,.92);color:#141019;}" +
+      "@media (prefers-color-scheme:light){#raz-langbar:not(.raz-nav){background:rgba(250,248,242,.86);border-color:rgba(60,60,80,.18);}" +
+      "#raz-langbar:not(.raz-nav) .raz-lb-btn{color:#43485a;} #raz-langbar:not(.raz-nav) .raz-lb-btn:hover{color:#111;}}";
+    document.head.appendChild(style);
+
+    var bar = document.createElement("div");
+    bar.id = "raz-langbar";
+    bar.setAttribute("role", "group");
+    bar.setAttribute("aria-label", "Sprache / Language / Язык");
+    var langs = [["de", "DE"], ["ru", "RU"], ["en", "EN"]];
+    for (var i = 0; i < langs.length; i++) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "raz-lb-btn";
+      b.setAttribute("data-lang", langs[i][0]);
+      b.setAttribute("aria-pressed", "false");
+      b.title = { de: "Deutsch (Original)", ru: "Русский", en: "English" }[langs[i][0]];
+      b.textContent = langs[i][1];
+      (function (code) {
+        b.addEventListener("click", function () { apply(code); });
+      })(langs[i][0]);
+      bar.appendChild(b);
+    }
+
+    if (CFG.place === "nav") {
+      var host = document.querySelector(CFG.navSelector || ".nav-in");
+      if (host) { bar.className = "raz-nav"; host.appendChild(bar); }
+      else { placeFloat(bar); }
+    } else {
+      placeFloat(bar);
+    }
+    return bar;
+  }
+
+  function placeFloat(bar) {
+    var pos = CFG.pos || "top-right";
+    var top = "max(12px, env(safe-area-inset-top))";
+    var side = "max(12px, env(safe-area-inset-right))";
+    if (pos.indexOf("bottom") === 0) { bar.style.bottom = "max(12px, env(safe-area-inset-bottom))"; }
+    else { bar.style.top = CFG.top || top; }
+    if (pos.indexOf("left") >= 0) { bar.style.left = CFG.side || "max(12px, env(safe-area-inset-left))"; }
+    else { bar.style.right = CFG.side || side; }
+    document.body.appendChild(bar);
+  }
+
+  buildBar();
+
+  /* listen for parent broadcast (models embedded as iframes) */
+  window.addEventListener("message", function (e) {
+    if (e && e.source === window.parent && e.origin === window.location.origin && e.data && (e.data.razLang === "de" || e.data.razLang === "ru" || e.data.razLang === "en")) {
+      apply(e.data.razLang);
+    }
+  });
+
+  /* initial language */
+  apply(getInitial());
+})();
+
+</script>
+<div class="hv-release hv-edition" data-raz-skip><span>HALVETH · Web-Edition 2026.11</span><div><a href="werkstatt.html"><span data-hv-i18n="work">Werkstatt</span></a> · <a href="systemstand.html"><span data-hv-i18n="state">Systemstand</span></a> · <a href="edition.html"><span data-hv-i18n="changes">Änderungen & Quellenstand</span></a></div></div>
+<script src="assets/restauration.js?v=20261116-r2" defer></script>
+<aside data-historical-banner style="padding:10px 18px;background:#172637;color:#e7d3a1;font:14px system-ui">ARCHIV · ARCHIVE · АРХИВ — 16.11.2026 · <a href="../../forschung.html">HALVETH — 17.11.2026</a></aside></body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "EHT_MANIFEST.json": "d61cc6b46a9ba35df2715877e57e3a9fcd53a08384b1b257430b030d6229b992",
+  "experiment.json": "f367a2a61bdca1252fcf2302313af73ed421eb8a3a4ce7f09cbfa097951eebeb",
+  "lab.py": "1bd237e8f97c4ee56577ebe676f37c7dd8b397d921a0f606c4a3d86f227fc932",
+  "LICENSE.txt": "68ac19efa2e22e6f28b231a59ca08f3d2f0df53d72ba0a16b2ef4a2d350df3eb",
+  "physics.py": "a362a040e0c15f316e4ef82ab05858756c2a88d5a34d2d3c0a1c6e483725e36d",
+  "README_DE.md": "31f874e275fd5aeb9d60e9dfe54d936ef2e6e73caf4572cc3d9a73c7a06afd5d",
+  "SOURCES.json": "c38b6dcea804a12b1b8af60a83ebc27702cabde66ec074763c541df81ab94a78",
+  "START.sh": "9d8739b5f613cd04dc461e16ee8a1794a7c051255d2354a3af8d688c3152a2af",
+  "test_lab.py": "cb7740f9a6fff79770bbeb6398beae3237a421a83d0e7504b0256ad5467c7a79",
+  "VORSCHAU.html": "a3b1edddde75d527a3bbd5472409314f6eb321a465d60f0f2f55a3c3014e846f",
+  "fixtures/eht_besttime_excerpt.csv": "509ad413ea1fd9b8739fbf9efb6ce35b210b53f2e15ff503fc00cb57d92be0c5",
+  "fixtures/README.md": "ff930ca51ba4a2925a6284368a3b509ee2bce0478f935ca41698eb7e32618e71",
+  "validation/test_focus.cjs": "34215f80d320009c0ee28a20f3c1a5030fd7f4907030ba2dbc58181fd3cbb4a1",
+  "web/app.js": "968e19b99124a5b4364debf7f24f13532e558841e05db8436db73d9d77d85f35",
+  "web/template.html": "f23ac6405e2c1e4f4fea407dd13f0952ce480ef1102855d581c2a598c81caabc"
+}
