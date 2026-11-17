@@ -24,6 +24,12 @@ test('the current project filter also searches the network in every portfolio la
   await page.goto('/'+prefix+'arbeiten/');
   await page.locator('#project-search').fill('GG24');
   await expect(page.locator('[data-network-id="module:console-only:gg24"]')).toBeVisible();
+  await page.locator('#project-clear').click();
+  await expect(page.locator('[data-network-bridge-results] [data-network-id]')).toHaveCount(0);
+  await expect(page.locator('[data-network-all]')).not.toHaveAttribute('href',/q=/);
+  await expect(page.locator('[data-project]:visible')).toHaveCount(13);
+  await page.locator('#project-search').fill('GG24');
+  await expect(page.locator('[data-network-id="module:console-only:gg24"]')).toBeVisible();
   await page.locator('[data-network-all]').click();
   await expect(page).toHaveURL(new RegExp('/'+prefix+'suche/\\?q=GG24'));
   await expect(page.locator('#network-query')).toHaveValue('GG24');

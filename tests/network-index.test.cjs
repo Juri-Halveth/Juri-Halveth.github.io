@@ -57,7 +57,9 @@ test('shared query finds recent entry points and keeps withdrawn presentations o
 test('a newer HEAD cannot inherit the old reviewed README description or test claims', t => {
   const temporary = fixture(t), value = structuredClone(inventory);
   const changed = value.repositories.find(repo => repo.name === 'halveth-scarlet');
-  const oldRevision = changed.head.revision, newRevision = 'e'.repeat(40);
+  const reviewed = JSON.parse(fs.readFileSync(path.join(temporary, 'data/network-readme-descriptions.json'), 'utf8'));
+  const oldRevision = reviewed.documents.find(doc => doc.repositoryId === changed.repositoryId).source.revision;
+  const newRevision = 'e'.repeat(40);
   changed.head.revision = newRevision; changed.head.url = `${changed.url}/commit/${newRevision}`;
   changed.readme.revision = newRevision; changed.readme.url = `${changed.url}/blob/${newRevision}/README.md`;
   changed.readme.excerpt = 'A newly observed source description with an independent evidence boundary.';

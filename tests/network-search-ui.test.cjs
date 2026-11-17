@@ -30,13 +30,15 @@ test('the existing card search exposes GG24 from the wider network even with zer
  const {mountProjectFinder}=await import('../project-finder.mjs');
  for(const prefix of ['','en/','ru/']){
   const dom=new JSDOM(read(prefix+'arbeiten/index.html'),{url:'https://juri-halveth.github.io/'+prefix+'arbeiten/'});
-  const doc=dom.window.document;mountProjectFinder(doc);mountNetworkBridges(doc,index);
+  const doc=dom.window.document;mountNetworkBridges(doc,index);mountProjectFinder(doc);
   const input=doc.getElementById('project-search');input.value='GG24';input.dispatchEvent(new dom.window.Event('input'));
   assert.equal(doc.querySelectorAll('[data-project]:not([hidden])').length,0);
   assert.ok(doc.querySelector('[data-network-id="module:console-only:gg24"]'));
   assert.equal(new URL(doc.querySelector('[data-network-all]').href).searchParams.get('q'),'GG24');
   doc.getElementById('project-clear').click();
+  await Promise.resolve();
   assert.equal(doc.querySelectorAll('[data-network-id]').length,0);
+  assert.equal(new URL(doc.querySelector('[data-network-all]').href).searchParams.has('q'),false);
   assert.equal(doc.querySelectorAll('[data-project]:not([hidden])').length,13);
   dom.window.close();
  }
@@ -60,6 +62,7 @@ test('every generated language has canonical search, machine-readable sources an
   const dom=new JSDOM(read(prefix+'suche/index.html'),{url:'https://juri-halveth.github.io/'+prefix+'suche/'}),doc=dom.window.document;
   assert.equal(doc.querySelector('link[rel=canonical]').href,'https://juri-halveth.github.io/'+prefix+'suche/');
   assert.ok(doc.querySelector('noscript').textContent.includes('GG24'));
+  assert.deepEqual([...doc.querySelectorAll('noscript a')].map(a=>a.getAttribute('href')).sort(),index.documents.filter(d=>!d.historical&&d.editorialState==='CURRENT').map(d=>d.url).sort());
   assert.ok(doc.querySelector('script[src$="network-search-ui.mjs"]'));
   assert.match(doc.querySelector('meta[http-equiv="Content-Security-Policy"]').content,/connect-src 'none'/);
   assert.ok(doc.querySelector('a[href$="universum/api/search.json"]'));

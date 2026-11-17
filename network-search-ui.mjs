@@ -62,7 +62,7 @@ export function mountNetworkBridges(doc=globalThis.document,data=index){
   }
   input.addEventListener('input',refresh);
   // The local card filter resets its own field on a button click.
-  doc.getElementById('project-clear')?.addEventListener('click',refresh);
+  doc.getElementById('project-clear')?.addEventListener('click',()=>queueMicrotask(refresh));
   refresh();mounted.push({refresh});
  }
  return mounted;
