@@ -46,3 +46,19 @@ Quellmigration. Diese lokale Prüfung zeichnet kein Browserbild auf.
 Zwei zusätzliche Chromium-Fälle in `tests/browser/doppelacht.spec.cjs` prüfen
 die Ereignisschleife und den Modellwechsel über die laufende Website; der
 bestehende Pages-Workflow führt sie mit den bisherigen Browserfällen aus.
+
+## Notizen während eines Neustarts
+
+Die Kommunikationsansicht wartet beim Neustart auf eine bereits abgegebene
+Notiz, bevor sie den bisherigen Lauf archiviert. Dadurch enthält das Archiv
+auch den Eintrag, dessen SHA-256-Prüfung beim Klick noch ausstand. Weitere
+Abgaben und doppelte Neustarts sind währenddessen gesperrt; das Textfeld
+bleibt für den nächsten Entwurf bearbeitbar. Ein inzwischen geänderter Text
+wird nach Abschluss der ersten Notiz nicht gelöscht. Bei einem Fehler bleibt
+der Entwurf erhalten und die Fehlermeldung sichtbar.
+
+Drei DOM-Gegenproben in `tests/communication-notes.test.cjs` steuern eine
+verzögerte beziehungsweise fehlgeschlagene Prüfsumme. Zwei Fälle reproduzierten
+den verworfenen Ziel-Lauf vor der Korrektur; alle drei bestehen danach.
+`tests/browser/communication-notes.spec.cjs` prüft denselben Ablauf mit den
+sichtbaren Bedienelementen im vorhandenen Chromium-CI-Lauf.
