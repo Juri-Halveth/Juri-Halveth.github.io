@@ -164,9 +164,9 @@
     ctx.restore();return{observations};
   }
   const labels={
-    de:['Familienkopplung beim Neustart','Gekoppelt','Entkoppelt','Kamera','Schräg','Vorne','Seite','Oben','Zellnummer','Zelle folgen','Startform','Lichtpunkt · Rundumblick','Doppelacht · zwei Ebenen','Blickabstand (Modelleinheiten)'],
-    en:['Coupling on restart','Coupled','Uncoupled','Camera','Oblique','Front','Side','Top','Cell number','Track cell','Initial shape','Point of light · full sphere','Double eight · two planes','Viewing distance (model units)'],
-    ru:['Связь при перезапуске','Включена','Отключена','Камера','Под углом','Спереди','Сбоку','Сверху','Номер ячейки','Следить за ячейкой','Начальная форма','Светящаяся точка · вся сфера','Две восьмёрки · две плоскости','Расстояние (единицы модели)']
+    de:['Familienkopplung beim Neustart','Gekoppelt','Entkoppelt','Kamera','Schräg','Vorne','Seite','Oben','Zellnummer','Zelle folgen','Startform','Lichtpunkt · Rundumblick (sechsfache Zeitlupe)','Doppelacht · zwei Ebenen','Blickabstand (Modelleinheiten)'],
+    en:['Coupling on restart','Coupled','Uncoupled','Camera','Oblique','Front','Side','Top','Cell number','Track cell','Initial shape','Point of light · full sphere (1/6 speed)','Double eight · two planes','Viewing distance (model units)'],
+    ru:['Связь при перезапуске','Включена','Отключена','Камера','Под углом','Спереди','Сбоку','Сверху','Номер ячейки','Следить за ячейкой','Начальная форма','Светящаяся точка · вся сфера (1/6 скорости)','Две восьмёрки · две плоскости','Расстояние (единицы модели)']
   };
   function controls(host,handlers){
     if(!host)return {sync(){},meter(){},manual(){},pick(){},translate(){}};
@@ -209,6 +209,6 @@
       follow.checked=!!id;if(id)index.value=String(Number(id.slice(1)));},translate,meter,
       pick(id){index.value=String(Number(id.slice(1)));follow.checked=true;focus();},manual(){camera.value='';}};
   }
-  const api=Object.freeze({presets,projector,draw,controls,approach,distanceControls,validDistance,farDistance,innerDistance,overviewDistance});root.HALVETHDoubleEightView=api;
+  const api=Object.freeze({presets,presentationRate:1/6,projector,draw,controls,approach,distanceControls,validDistance,farDistance,innerDistance,overviewDistance});root.HALVETHDoubleEightView=api;
   if(typeof module!=='undefined'&&module.exports)module.exports=api;
 })(globalThis);

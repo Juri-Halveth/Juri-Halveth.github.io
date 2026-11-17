@@ -89,7 +89,8 @@ for(const canvas of canvases){
  function frame(time){const dt=last===null?0:Math.max(0,(time-last)/1000);last=time;
   if(running&&!document.hidden&&params.speed>0){
     if(selectedModel==='doppelacht'&&approach.update(view,dt))spatialTools?.meter(view.distance);
-    clock.advance(dt*(params.speed/75));
+    const rate=selectedModel==='doppelacht'&&spatialConfig.layout==='shell'?spatialView.presentationRate:1;
+    clock.advance(dt*(params.speed/75)*rate);
   }
   if(!document.hidden)draw();showStatus();requestAnimationFrame(frame);
  }

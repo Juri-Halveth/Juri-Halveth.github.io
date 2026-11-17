@@ -66,7 +66,7 @@ function showMotionStatus(){const limit=particleModel.diagnostics().status==='MO
 function setPlaying(value){if(value&&particleModel.diagnostics().status==='MODEL_LIMIT')return;playing=value;if(value)hasStarted=true;prev=null;showMotionStatus();}
 function frame(now){if(playing&&!document.hidden){if(prev!==null){const elapsed=Math.max(0,(now-prev)/1000);
  if(selectedModel==='doppelacht'&&mode==='pair'&&approach.update(view,elapsed))spatialTools?.meter(view.distance);
- timing.advance(elapsed);}prev=now;}else prev=null;
+ timing.advance(elapsed*(selectedModel==='doppelacht'&&spatialConfig.layout==='shell'?spatialView.presentationRate:1));}prev=now;}else prev=null;
  clock=selectedModel==='doppelacht'?particleModel.time:particleModel.snapshot({field:false}).time;draw();const debt=timing.snapshot().backlogSeconds;
  $('studio-readout').textContent=`t=${clock.toFixed(2)} s · ${seen.size} Ereignisse · ${n} Quellen · Seed ${seed}`+(debt>=1/120?` · Rückstand ${debt.toFixed(2)} s`:'');showMotionStatus();requestAnimationFrame(frame);}
 function closeFlightRun(reason){
