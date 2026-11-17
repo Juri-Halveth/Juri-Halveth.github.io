@@ -13,11 +13,12 @@ permissions:
 
 concurrency:
   group: website-pages-${{ github.event_name == 'pull_request' && github.ref || 'production' }}
-  cancel-in-progress: false
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:
     runs-on: ubuntu-24.04
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -35,8 +36,11 @@ jobs:
           node tools/refresh-network-inventory.cjs
           npm run build
       - run: npm test
-      - name: Install Chromium for visitor flows
-        run: npx playwright install --with-deps --only-shell chromium
+      - name: Install pinned Chromium for visitor flows
+        timeout-minutes: 5
+        # The GitHub Ubuntu 24.04 image already supplies the browser libraries.
+        # Avoid an unrelated apt mirror update on every six-hour inventory refresh.
+        run: npx playwright install --only-shell chromium
       - name: Check browser input, results and recovery links
         run: npm run test:browser
       - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
