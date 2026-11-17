@@ -30,8 +30,9 @@ jobs:
       - run: npm ci --ignore-scripts --no-audit --no-fund
       - run: npm run build
       - run: git diff --exit-code
-      - name: Refresh anonymous public inventory
-        if: github.event_name != 'pull_request'
+      - name: Refresh public inventory and verify anonymous README access
+        env:
+          NETWORK_PUBLIC_READ_TOKEN: ${{ github.token }}
         run: |
           node tools/refresh-network-inventory.cjs
           npm run build

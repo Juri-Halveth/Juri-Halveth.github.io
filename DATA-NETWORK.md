@@ -35,7 +35,7 @@ Standardauswahl und den aktuellen Portfolio-Karten ausgeschlossen. Ihre
 
 | Datei | Rolle |
 | --- | --- |
-| `data/network-inventory.json` | Vollständiger anonymer öffentlicher Account-Abruf zu seinem Beobachtungszeitpunkt, mit HEAD und README-Digest |
+| `data/network-inventory.json` | Vollständiger öffentlicher Account-Abruf zu seinem Beobachtungszeitpunkt, mit HEAD und README-Digest |
 | `data/network-readme-descriptions.json` | Redaktionell gelesene Kurzbeschreibungen an genau bezeichneten README-Revisionen |
 | `data/network-entries.json` | Geprüfte zusätzliche öffentliche Module und ein bytegebundener Zusammenhang zwischen den Doppelacht-Quellen |
 | `data/network-sites.json` | Unabhängige öffentliche Websites; ohne belegte Commitbindung |
@@ -99,11 +99,22 @@ npm run build
 npm test
 ```
 
-Der Refresh benötigt keinen Token. Er sendet ausschließlich anonyme GETs an
-die öffentliche GitHub-API, verarbeitet die Pagination und begrenzt die
-Parallelität auf drei Repository-Abrufe. Der aktuelle öffentliche Account-Abruf
-bildet die Allowlist. Eine entfernte oder inzwischen private Quelle erhält
-keinen aktiven Suchdatensatz oder Graph-Endpunkt aus einem früheren Inventar.
+Der Refresh funktioniert lokal ohne Token. Im Workflow verwendet er das bereits
+vorhandene, lesende `github.token` über `NETWORK_PUBLIC_READ_TOKEN`, damit die
+öffentlichen API-Abrufe nicht vom gemeinsamen anonymen Runner-Kontingent abhängen.
+Der Token wird ausschließlich an `api.github.com` gesendet, weder gespeichert
+noch ausgegeben. Der feste Endpunkt `/users/Juri-Halveth/repos` liefert laut
+[GitHub-Dokumentation](https://docs.github.com/en/rest/repos/repos#list-repositories-for-a-user)
+öffentliche Repositories; `/user/repos` wird nicht verwendet. Jede Antwort muss
+zusätzlich `private: false` und `visibility: public` ausweisen.
+
+Bei Token-Nutzung wird jedes gebundene README zusätzlich ohne Anmeldung von
+`raw.githubusercontent.com` abgerufen und byteweise verglichen. Fehlende öffentliche
+Lesbarkeit oder abweichende Bytes verhindern die Veröffentlichung. Der Abruf folgt
+keinen Weiterleitungen, verarbeitet die Pagination und begrenzt die Parallelität
+auf drei Repositories. Die aktuelle öffentliche Liste bildet die Allowlist. Eine
+entfernte oder inzwischen private Quelle erhält keinen aktiven Suchdatensatz oder
+Graph-Endpunkt aus einem früheren Inventar.
 
 Fehlen ein HEAD, README-Bytes, eine paginierte Antwort oder eine gültige
 Quellenbindung, endet der Refresh mit Fehlerstatus. Die bestehende Inventardatei
