@@ -1,0 +1,196 @@
+{
+  "schema": "halveth.public-network-sites.v1",
+  "documents": [
+    {
+      "id": "site:halveth-domain",
+      "repositoryId": null,
+      "kind": "site",
+      "visibility": "public",
+      "title": {
+        "de": "HALVETH · Forschungswebsite",
+        "en": "HALVETH · research website",
+        "ru": "HALVETH · исследовательский сайт"
+      },
+      "summary": {
+        "de": "Eigene Domain für Modelle und Forschungsdarstellung. Separater Veröffentlichungsstand gegenüber der GitHub-Vorschau.",
+        "en": "Independent domain for models and research presentations, published separately from the GitHub preview.",
+        "ru": "Отдельный домен для моделей и исследований; публикация отделена от версии на GitHub."
+      },
+      "url": "https://halveth.de/",
+      "source": {
+        "url": "https://halveth.de/",
+        "revision": null,
+        "observedAt": "2026-11-17T22:24:11.837497+00:00",
+        "scope": "PUBLIC_WEBSITE_DESCRIPTION_NO_COMMIT_BINDING"
+      },
+      "aliases": [
+        "halveth.de",
+        "Forschung",
+        "Modelle",
+        "Information"
+      ],
+      "text": "halveth.de Forschung Modelle Information Eigene Domain für Modelle und Forschungsdarstellung. Separater Veröffentlichungsstand gegenüber der GitHub-Vorschau. Independent domain for models and research presentations, published separately from the GitHub preview. Отдельный домен для моделей и исследований; публикация отделена от версии на GitHub.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    },
+    {
+      "id": "site:juri-portfolio",
+      "repositoryId": null,
+      "kind": "site",
+      "visibility": "public",
+      "title": {
+        "de": "Juri Janovski · Portfolio auf eigener Domain",
+        "en": "Juri Janovski · independent portfolio",
+        "ru": "Juri Janovski · отдельное портфолио"
+      },
+      "summary": {
+        "de": "Projektübersicht mit einzeln ausgewiesenen Reifegraden. Eigener Veröffentlichungsweg neben dem GitHub-Portfolio.",
+        "en": "Project overview with individual maturity descriptions, maintained separately from the GitHub portfolio.",
+        "ru": "Обзор проектов с отдельными описаниями готовности; публикуется отдельно от портфолио GitHub."
+      },
+      "url": "https://juri.halveth.de/",
+      "source": {
+        "url": "https://juri.halveth.de/",
+        "revision": null,
+        "observedAt": "2026-11-17T22:24:13.653552+00:00",
+        "scope": "PUBLIC_WEBSITE_DESCRIPTION_NO_COMMIT_BINDING"
+      },
+      "aliases": [
+        "juri.halveth.de",
+        "Juri",
+        "Portfolio"
+      ],
+      "text": "juri.halveth.de Juri Portfolio Projektübersicht mit einzeln ausgewiesenen Reifegraden. Eigener Veröffentlichungsweg neben dem GitHub-Portfolio. Project overview with individual maturity descriptions, maintained separately from the GitHub portfolio. Обзор проектов с отдельными описаниями готовности; публикуется отдельно от портфолио GitHub.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    },
+    {
+      "id": "site:gratis-lernen",
+      "repositoryId": null,
+      "kind": "site",
+      "visibility": "public",
+      "title": {
+        "de": "Gratis lernen · gemeinsamer Lerneinstieg",
+        "en": "Gratis lernen · learning gateway",
+        "ru": "Gratis lernen · вход в учебные проекты"
+      },
+      "summary": {
+        "de": "Einstiegsseite mit Verweisen auf Lernstudio und Mein Lernportal. Die beiden Lernangebote bleiben eigenständige Anwendungen.",
+        "en": "Gateway linking to Lernstudio and Mein Lernportal as separate learning applications.",
+        "ru": "Входная страница со ссылками на Lernstudio и Mein Lernportal как отдельные учебные приложения."
+      },
+      "url": "https://gratis-lernen.de/",
+      "source": {
+        "url": "https://gratis-lernen.de/",
+        "revision": null,
+        "observedAt": "2026-11-17T22:24:11.463901+00:00",
+        "scope": "PUBLIC_WEBSITE_DESCRIPTION_NO_COMMIT_BINDING"
+      },
+      "aliases": [
+        "gratis-lernen.de",
+        "Lernstudio",
+        "Mein Lernportal",
+        "Lernen"
+      ],
+      "text": "gratis-lernen.de Lernstudio Mein Lernportal Lernen Einstiegsseite mit Verweisen auf Lernstudio und Mein Lernportal. Die beiden Lernangebote bleiben eigenständige Anwendungen. Gateway linking to Lernstudio and Mein Lernportal as separate learning applications. Входная страница со ссылками на Lernstudio и Mein Lernportal как отдельные учебные приложения.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    },
+    {
+      "id": "site:schuelervz-mantel",
+      "repositoryId": null,
+      "kind": "site",
+      "visibility": "public",
+      "title": {
+        "de": "SchülerVZ Mantel · öffentliche Nachbildung",
+        "en": "SchülerVZ Mantel · public recreation",
+        "ru": "SchülerVZ Mantel · открытая реконструкция"
+      },
+      "summary": {
+        "de": "Bedienbare Nachbildung der historischen Oberfläche mit neuen Konten. Eigene Veröffentlichung ohne hier geprüfte Git-Commitbindung.",
+        "en": "An interactive recreation of the historical interface with new accounts, separately published without a verified Git commit binding here.",
+        "ru": "Интерактивная реконструкция исторического интерфейса с новыми аккаунтами; отдельная публикация без установленной привязки к Git."
+      },
+      "url": "https://schuelervz-mantel.juri-janovski.chatgpt.site",
+      "source": {
+        "url": "https://schuelervz-mantel.juri-janovski.chatgpt.site",
+        "revision": null,
+        "observedAt": "2026-11-17T22:24:17.674962+00:00",
+        "scope": "PUBLIC_WEBSITE_DESCRIPTION_NO_COMMIT_BINDING"
+      },
+      "aliases": [
+        "SchülerVZ",
+        "SchuelerVZ",
+        "Mantel",
+        "soziales Netzwerk"
+      ],
+      "text": "SchülerVZ SchuelerVZ Mantel soziales Netzwerk Bedienbare Nachbildung der historischen Oberfläche mit neuen Konten. Eigene Veröffentlichung ohne hier geprüfte Git-Commitbindung. An interactive recreation of the historical interface with new accounts, separately published without a verified Git commit binding here. Интерактивная реконструкция исторического интерфейса с новыми аккаунтами; отдельная публикация без установленной привязки к Git.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    },
+    {
+      "id": "site:scarlet-question",
+      "repositoryId": null,
+      "kind": "site",
+      "visibility": "public",
+      "title": {
+        "de": "SCARLET Question · veröffentlichte Simulation",
+        "en": "SCARLET Question · published simulation",
+        "ru": "SCARLET Question · опубликованная симуляция"
+      },
+      "summary": {
+        "de": "Öffentliches HALVETH-Gedankenspiel mit einer interaktiven Welt. Dieser veröffentlichte Stand ist separat vom Repository-Katalog erfasst.",
+        "en": "A public HALVETH interactive thought experiment, recorded separately from repository snapshots.",
+        "ru": "Открытый интерактивный мысленный эксперимент HALVETH, учтённый отдельно от снимков репозитория."
+      },
+      "url": "https://halveth-scarlet-question.juri-janovski.chatgpt.site",
+      "source": {
+        "url": "https://halveth-scarlet-question.juri-janovski.chatgpt.site",
+        "revision": null,
+        "observedAt": "2026-11-17T22:24:18.539017+00:00",
+        "scope": "PUBLIC_WEBSITE_DESCRIPTION_NO_COMMIT_BINDING"
+      },
+      "aliases": [
+        "SCARLET",
+        "Question",
+        "Simulation",
+        "Welt"
+      ],
+      "text": "SCARLET Question Simulation Welt Öffentliches HALVETH-Gedankenspiel mit einer interaktiven Welt. Dieser veröffentlichte Stand ist separat vom Repository-Katalog erfasst. A public HALVETH interactive thought experiment, recorded separately from repository snapshots. Открытый интерактивный мысленный эксперимент HALVETH, учтённый отдельно от снимков репозитория.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    },
+    {
+      "id": "site:lernstudio-hosted",
+      "repositoryId": null,
+      "kind": "site",
+      "visibility": "public",
+      "title": {
+        "de": "Lernstudio · separate Veröffentlichung",
+        "en": "Lernstudio · separate publication",
+        "ru": "Lernstudio · отдельная публикация"
+      },
+      "summary": {
+        "de": "Öffentlicher Lerneinstieg für Programmierung, Mathematik und Computerwissen. Versionsgleichheit mit GitHub Pages wird hier nicht behauptet.",
+        "en": "A public learning entry for programming, mathematics and computing. Version parity with GitHub Pages has not been established.",
+        "ru": "Открытый учебный вход для программирования, математики и компьютеров. Совпадение версий с GitHub Pages не установлено."
+      },
+      "url": "https://lernstudio-wissen-fuer-alle.juri-janovski.chatgpt.site",
+      "source": {
+        "url": "https://lernstudio-wissen-fuer-alle.juri-janovski.chatgpt.site",
+        "revision": null,
+        "observedAt": "2026-11-17T22:24:19.921360+00:00",
+        "scope": "PUBLIC_WEBSITE_DESCRIPTION_NO_COMMIT_BINDING"
+      },
+      "aliases": [
+        "Lernstudio",
+        "Lernen",
+        "Programmieren",
+        "Mathematik"
+      ],
+      "text": "Lernstudio Lernen Programmieren Mathematik Öffentlicher Lerneinstieg für Programmierung, Mathematik und Computerwissen. Versionsgleichheit mit GitHub Pages wird hier nicht behauptet. A public learning entry for programming, mathematics and computing. Version parity with GitHub Pages has not been established. Открытый учебный вход для программирования, математики и компьютеров. Совпадение версий с GitHub Pages не установлено.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    }
+  ]
+}

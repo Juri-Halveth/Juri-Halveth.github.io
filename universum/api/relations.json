@@ -2,12 +2,16 @@
   "schema": "halveth.public-relation-graph.v1",
   "source": {
     "indexPath": "api/space.json",
-    "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+    "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
     "sourceDate": "2026-11-02",
     "claimCeiling": "STATIC_SOURCE_DESCRIPTIONS_NOT_RUNTIME_PROOF_OR_AUTOMATIC_UNDERSTANDING"
   },
   "coverage": {
-    "projectCount": 18,
+    "repositoryCount": 18,
+    "projectCount": 16,
+    "metaCount": 2,
+    "currentProjectCount": 13,
+    "withdrawnProjectCount": 3,
     "categoryCount": 6,
     "relationCount": 26,
     "visibility": "PUBLIC_INDEX_ONLY",
@@ -17,146 +21,182 @@
     {
       "id": "project:halveth-scarlet",
       "kind": "PUBLIC_PROJECT",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "label": "SCARLET",
       "contextPath": "api/projects/halveth-scarlet.json",
-      "contextBytes": 2935,
-      "contextSha256": "587d02747695041892890b0f2537eb4be4fd965be21006ad002c0db29f015d68"
+      "contextBytes": 2992,
+      "contextSha256": "30cb182f5af5218b282d0ad563dfa19024d855f0e9f7ca567de47753efddb2ce"
     },
     {
       "id": "project:lucinet-seedspace",
       "kind": "PUBLIC_PROJECT",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "label": "LUCINET / NOVA",
       "contextPath": "api/projects/lucinet-seedspace.json",
-      "contextBytes": 2234,
-      "contextSha256": "5f2d21a1e4dff28c62002d12fb0b1a4554b2fc8bad2511b3258ae54d9694177e"
+      "contextBytes": 2291,
+      "contextSha256": "87be6d9c7d5a1525b23c3e807e46a3a5dc5136bcb6882572a8aa31825ff70fd9"
     },
     {
       "id": "project:halveth-forschungslabor",
       "kind": "PUBLIC_PROJECT",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "label": "FORSCHUNGSLABOR",
       "contextPath": "api/projects/halveth-forschungslabor.json",
-      "contextBytes": 2219,
-      "contextSha256": "99c1eb6e821d7865b04dee22994cb0ff9aa45f696324a742d99d2a420207db97"
+      "contextBytes": 2276,
+      "contextSha256": "777615a1048bf18a40018518e588696e9c4cf136726cd6940476f1ea2d0aaa24"
     },
     {
       "id": "project:halveth-tresor",
       "kind": "PUBLIC_PROJECT",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "label": "TRESOR",
       "contextPath": "api/projects/halveth-tresor.json",
-      "contextBytes": 1168,
-      "contextSha256": "346d71fc81c0dc9bc58e1fcad0921bfe422b4474cd8519be02506c1d4e38608c"
+      "contextBytes": 1225,
+      "contextSha256": "3d2f9c53a2cfad6839857406c5a613ee3d06bffbd2f652dee13cb71688fa85c2"
     },
     {
       "id": "project:mein-lernportal",
       "kind": "PUBLIC_PROJECT",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "label": "LERNPORTAL",
       "contextPath": "api/projects/mein-lernportal.json",
-      "contextBytes": 1075,
-      "contextSha256": "d49630db0d8c0ffaf0da81ed66d6529fa2826cf50858229c9016b38c866e6094"
+      "contextBytes": 1132,
+      "contextSha256": "8edde274aa29b09aefde07c54d2e20673f6140b711b072fe62b0a12b54bdd423"
     },
     {
       "id": "project:halveth-field-difference-lab",
       "kind": "PUBLIC_PROJECT",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "label": "FIELD DIFFERENCE",
       "contextPath": "api/projects/halveth-field-difference-lab.json",
-      "contextBytes": 1175,
-      "contextSha256": "e4d685ad8a8392e3bc6f9c7d5eb1790adf2d3acf2ba67b8a6e2b23d148f537c3"
+      "contextBytes": 1232,
+      "contextSha256": "e4bad21c4e880301dbd7345cd0ddc4b5e57117edd127a51169d46873c28bd147"
     },
     {
       "id": "project:c-drohne-red-room",
       "kind": "PUBLIC_PROJECT",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "label": "C-DROHNE / RED ROOM",
       "contextPath": "api/projects/c-drohne-red-room.json",
-      "contextBytes": 1125,
-      "contextSha256": "a1a9e6a3182cf3b43d7847062c5018fa622c25845081a3f668f7e8e3d6ca98ec"
+      "contextBytes": 1182,
+      "contextSha256": "d336757a8cedcb90c38f3b614f7d1e9703c593213c388926325a6c6cfa903e9e"
     },
     {
       "id": "project:halveth-realms",
       "kind": "PUBLIC_PROJECT",
+      "entryType": "PROJECT",
+      "editorialState": "WITHDRAWN_FROM_PORTFOLIO",
       "label": "HALVETH REALMS",
       "contextPath": "api/projects/halveth-realms.json",
-      "contextBytes": 1107,
-      "contextSha256": "73146f85d21a40c04a60b4083f1466ba71b51e605b7b492c84f0ad13c163e136"
+      "contextBytes": 1181,
+      "contextSha256": "95462695524eeda424bcd2f8223ad57233eafba3e14185ff2ed293e349abe543"
     },
     {
       "id": "project:halveth-cannabis-reform-forschung",
       "kind": "PUBLIC_PROJECT",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "label": "QUELLEN & REFORM",
       "contextPath": "api/projects/halveth-cannabis-reform-forschung.json",
-      "contextBytes": 1101,
-      "contextSha256": "b989f4f590f13ea14dd96e6ab283bcdae8d1714eea73d71b47ae73ddcbba1b8f"
+      "contextBytes": 1158,
+      "contextSha256": "92eaa1f75daa57687cf2c8ca640fd8c1afad1bfb6017464183288f06552b5902"
     },
     {
       "id": "project:lernstudio",
       "kind": "PUBLIC_PROJECT",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "label": "LERNSTUDIO",
       "contextPath": "api/projects/lernstudio.json",
-      "contextBytes": 1128,
-      "contextSha256": "18112dd273583d9b5dba6103c9cda2918bd09d8aae4f932062da0b9ec9e5d3cc"
+      "contextBytes": 1185,
+      "contextSha256": "1b01972ed7b883d23d81716d6ffeea561e0bd0de29d01a8c6bf0d63d11f88dfe"
     },
     {
       "id": "project:fortuna",
       "kind": "PUBLIC_PROJECT",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "label": "FORTUNA",
       "contextPath": "api/projects/fortuna.json",
-      "contextBytes": 2433,
-      "contextSha256": "02db8ab43cad7117d714321a3834d91b4fc9ccf2894e3304139c8907dcf04cfe"
+      "contextBytes": 2490,
+      "contextSha256": "daec5fd075ef329a19afb5a1ccf298a98ff32ee72f19fcbf604749cf259294f9"
     },
     {
       "id": "project:halveth-project0-keeper",
       "kind": "PUBLIC_PROJECT",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "label": "PROJECT0 KEEPER",
       "contextPath": "api/projects/halveth-project0-keeper.json",
-      "contextBytes": 1129,
-      "contextSha256": "da5d8bc399becb30ac0e4290c23f9e86fa0914ec5373b0875103553d02a34db7"
+      "contextBytes": 1186,
+      "contextSha256": "b79358fdaaf4977d8b7879a9806578c80efcf12c05f1c78bdca61c5020b70b81"
     },
     {
       "id": "project:halveth-morrowind-genesis",
       "kind": "PUBLIC_PROJECT",
+      "entryType": "PROJECT",
+      "editorialState": "WITHDRAWN_FROM_PORTFOLIO",
       "label": "MORROWIND GENESIS",
       "contextPath": "api/projects/halveth-morrowind-genesis.json",
-      "contextBytes": 1150,
-      "contextSha256": "c2dbce10ae4b8703931cbbb96a60dd921b09f772119762e2ff2869f1a53300cd"
+      "contextBytes": 1224,
+      "contextSha256": "df4ff5afa0eb8dd3b0d5379fbc9cde5c2cb665efdf6bb2b88f5b572f6e6fd4c8"
     },
     {
       "id": "project:halveth-unreal",
       "kind": "PUBLIC_PROJECT",
+      "entryType": "PROJECT",
+      "editorialState": "WITHDRAWN_FROM_PORTFOLIO",
       "label": "HALVETH UNREAL",
       "contextPath": "api/projects/halveth-unreal.json",
-      "contextBytes": 1093,
-      "contextSha256": "c0414ff055848f926203cc437a6b06c4d5df5ad0f68ff954324e405376265f2a"
+      "contextBytes": 1167,
+      "contextSha256": "8456112d7d976acce92d0786e318d9ac10fb8d6b6fe8e337a4c9d308400b5231"
     },
     {
       "id": "project:halveth-tron-security-lab",
       "kind": "PUBLIC_PROJECT",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "label": "TRON SECURITY LAB",
       "contextPath": "api/projects/halveth-tron-security-lab.json",
-      "contextBytes": 1193,
-      "contextSha256": "cbfaa3a3f03b57c8a1aacddcba901b909bd0207d188cf2d246d384531c345e83"
+      "contextBytes": 1250,
+      "contextSha256": "4b05d4f66c018519ced7c045dd98649ab3b6976f35d7f090fc79115c8e8b77d3"
     },
     {
       "id": "project:leviathan-wallet-portal",
       "kind": "PUBLIC_PROJECT",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "label": "LEVIATHAN PORTAL",
       "contextPath": "api/projects/leviathan-wallet-portal.json",
-      "contextBytes": 1165,
-      "contextSha256": "1e03ab29898a6522d9b994134efff952e5958e8f591ab57b68e0a61e27db1b3d"
+      "contextBytes": 1222,
+      "contextSha256": "5318da5cb408fcef76cd7992a174b86729d893438e774b136b770cdd844cdb39"
     },
     {
       "id": "project:Juri-Halveth.github.io",
-      "kind": "PUBLIC_PROJECT",
+      "kind": "PUBLIC_META",
+      "entryType": "META",
+      "editorialState": "CURRENT",
       "label": "WEB-EINGANG",
       "contextPath": "api/projects/Juri-Halveth.github.io.json",
-      "contextBytes": 1062,
-      "contextSha256": "1c6ea7324d6ab3037e6cbda2cf88c7b1a5ad80a503cda7f3842b4b3d79ef7e92"
+      "contextBytes": 1116,
+      "contextSha256": "01fd7f0b28e032b36a7157335ad4929839bf347d800569201baed28ce85b99c0"
     },
     {
       "id": "project:Juri-Halveth",
-      "kind": "PUBLIC_PROJECT",
+      "kind": "PUBLIC_META",
+      "entryType": "META",
+      "editorialState": "CURRENT",
       "label": "PROFILQUELLE",
       "contextPath": "api/projects/Juri-Halveth.json",
-      "contextBytes": 1032,
-      "contextSha256": "845735fe164a5ecc9c959dfb7e5327e896a78afe5f943d189eae900d3c5f1993"
+      "contextBytes": 1086,
+      "contextSha256": "1c0476b45da02ae978a8438696e37f5fb23fe7339ff4557e9c76756f2968c3a3"
     },
     {
       "id": "category:learning",
@@ -196,11 +236,11 @@
       "from": "project:c-drohne-red-room",
       "to": "category:models",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/c-drohne-red-room.json",
-        "contextSha256": "a1a9e6a3182cf3b43d7847062c5018fa622c25845081a3f668f7e8e3d6ca98ec"
+        "contextSha256": "d336757a8cedcb90c38f3b614f7d1e9703c593213c388926325a6c6cfa903e9e"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     },
     {
@@ -209,11 +249,11 @@
       "from": "project:c-drohne-red-room",
       "to": "category:security",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/c-drohne-red-room.json",
-        "contextSha256": "a1a9e6a3182cf3b43d7847062c5018fa622c25845081a3f668f7e8e3d6ca98ec"
+        "contextSha256": "d336757a8cedcb90c38f3b614f7d1e9703c593213c388926325a6c6cfa903e9e"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     },
     {
@@ -222,11 +262,11 @@
       "from": "project:c-drohne-red-room",
       "to": "category:worlds",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/c-drohne-red-room.json",
-        "contextSha256": "a1a9e6a3182cf3b43d7847062c5018fa622c25845081a3f668f7e8e3d6ca98ec"
+        "contextSha256": "d336757a8cedcb90c38f3b614f7d1e9703c593213c388926325a6c6cfa903e9e"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     },
     {
@@ -235,11 +275,11 @@
       "from": "project:fortuna",
       "to": "category:models",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/fortuna.json",
-        "contextSha256": "02db8ab43cad7117d714321a3834d91b4fc9ccf2894e3304139c8907dcf04cfe"
+        "contextSha256": "daec5fd075ef329a19afb5a1ccf298a98ff32ee72f19fcbf604749cf259294f9"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     },
     {
@@ -248,11 +288,11 @@
       "from": "project:fortuna",
       "to": "category:software",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/fortuna.json",
-        "contextSha256": "02db8ab43cad7117d714321a3834d91b4fc9ccf2894e3304139c8907dcf04cfe"
+        "contextSha256": "daec5fd075ef329a19afb5a1ccf298a98ff32ee72f19fcbf604749cf259294f9"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     },
     {
@@ -261,11 +301,11 @@
       "from": "project:halveth-cannabis-reform-forschung",
       "to": "category:society",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/halveth-cannabis-reform-forschung.json",
-        "contextSha256": "b989f4f590f13ea14dd96e6ab283bcdae8d1714eea73d71b47ae73ddcbba1b8f"
+        "contextSha256": "92eaa1f75daa57687cf2c8ca640fd8c1afad1bfb6017464183288f06552b5902"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     },
     {
@@ -274,11 +314,11 @@
       "from": "project:halveth-field-difference-lab",
       "to": "category:models",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/halveth-field-difference-lab.json",
-        "contextSha256": "e4d685ad8a8392e3bc6f9c7d5eb1790adf2d3acf2ba67b8a6e2b23d148f537c3"
+        "contextSha256": "e4bad21c4e880301dbd7345cd0ddc4b5e57117edd127a51169d46873c28bd147"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     },
     {
@@ -287,11 +327,11 @@
       "from": "project:halveth-forschungslabor",
       "to": "category:models",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/halveth-forschungslabor.json",
-        "contextSha256": "99c1eb6e821d7865b04dee22994cb0ff9aa45f696324a742d99d2a420207db97"
+        "contextSha256": "777615a1048bf18a40018518e588696e9c4cf136726cd6940476f1ea2d0aaa24"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     },
     {
@@ -300,11 +340,11 @@
       "from": "project:halveth-forschungslabor",
       "to": "category:security",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/halveth-forschungslabor.json",
-        "contextSha256": "99c1eb6e821d7865b04dee22994cb0ff9aa45f696324a742d99d2a420207db97"
+        "contextSha256": "777615a1048bf18a40018518e588696e9c4cf136726cd6940476f1ea2d0aaa24"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     },
     {
@@ -313,11 +353,11 @@
       "from": "project:halveth-forschungslabor",
       "to": "category:software",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/halveth-forschungslabor.json",
-        "contextSha256": "99c1eb6e821d7865b04dee22994cb0ff9aa45f696324a742d99d2a420207db97"
+        "contextSha256": "777615a1048bf18a40018518e588696e9c4cf136726cd6940476f1ea2d0aaa24"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     },
     {
@@ -326,11 +366,11 @@
       "from": "project:halveth-morrowind-genesis",
       "to": "category:worlds",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/halveth-morrowind-genesis.json",
-        "contextSha256": "c2dbce10ae4b8703931cbbb96a60dd921b09f772119762e2ff2869f1a53300cd"
+        "contextSha256": "df4ff5afa0eb8dd3b0d5379fbc9cde5c2cb665efdf6bb2b88f5b572f6e6fd4c8"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     },
     {
@@ -339,11 +379,11 @@
       "from": "project:halveth-project0-keeper",
       "to": "category:software",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/halveth-project0-keeper.json",
-        "contextSha256": "da5d8bc399becb30ac0e4290c23f9e86fa0914ec5373b0875103553d02a34db7"
+        "contextSha256": "b79358fdaaf4977d8b7879a9806578c80efcf12c05f1c78bdca61c5020b70b81"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     },
     {
@@ -352,11 +392,11 @@
       "from": "project:halveth-realms",
       "to": "category:worlds",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/halveth-realms.json",
-        "contextSha256": "73146f85d21a40c04a60b4083f1466ba71b51e605b7b492c84f0ad13c163e136"
+        "contextSha256": "95462695524eeda424bcd2f8223ad57233eafba3e14185ff2ed293e349abe543"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     },
     {
@@ -365,11 +405,11 @@
       "from": "project:halveth-scarlet",
       "to": "category:models",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/halveth-scarlet.json",
-        "contextSha256": "587d02747695041892890b0f2537eb4be4fd965be21006ad002c0db29f015d68"
+        "contextSha256": "30cb182f5af5218b282d0ad563dfa19024d855f0e9f7ca567de47753efddb2ce"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     },
     {
@@ -378,11 +418,11 @@
       "from": "project:halveth-scarlet",
       "to": "category:worlds",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/halveth-scarlet.json",
-        "contextSha256": "587d02747695041892890b0f2537eb4be4fd965be21006ad002c0db29f015d68"
+        "contextSha256": "30cb182f5af5218b282d0ad563dfa19024d855f0e9f7ca567de47753efddb2ce"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     },
     {
@@ -391,11 +431,11 @@
       "from": "project:halveth-tresor",
       "to": "category:security",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/halveth-tresor.json",
-        "contextSha256": "346d71fc81c0dc9bc58e1fcad0921bfe422b4474cd8519be02506c1d4e38608c"
+        "contextSha256": "3d2f9c53a2cfad6839857406c5a613ee3d06bffbd2f652dee13cb71688fa85c2"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     },
     {
@@ -404,11 +444,11 @@
       "from": "project:halveth-tresor",
       "to": "category:software",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/halveth-tresor.json",
-        "contextSha256": "346d71fc81c0dc9bc58e1fcad0921bfe422b4474cd8519be02506c1d4e38608c"
+        "contextSha256": "3d2f9c53a2cfad6839857406c5a613ee3d06bffbd2f652dee13cb71688fa85c2"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     },
     {
@@ -417,11 +457,11 @@
       "from": "project:halveth-tron-security-lab",
       "to": "category:security",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/halveth-tron-security-lab.json",
-        "contextSha256": "cbfaa3a3f03b57c8a1aacddcba901b909bd0207d188cf2d246d384531c345e83"
+        "contextSha256": "4b05d4f66c018519ced7c045dd98649ab3b6976f35d7f090fc79115c8e8b77d3"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     },
     {
@@ -430,11 +470,11 @@
       "from": "project:halveth-unreal",
       "to": "category:worlds",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/halveth-unreal.json",
-        "contextSha256": "c0414ff055848f926203cc437a6b06c4d5df5ad0f68ff954324e405376265f2a"
+        "contextSha256": "8456112d7d976acce92d0786e318d9ac10fb8d6b6fe8e337a4c9d308400b5231"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     },
     {
@@ -443,11 +483,11 @@
       "from": "project:Juri-Halveth",
       "to": "category:software",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/Juri-Halveth.json",
-        "contextSha256": "845735fe164a5ecc9c959dfb7e5327e896a78afe5f943d189eae900d3c5f1993"
+        "contextSha256": "1c0476b45da02ae978a8438696e37f5fb23fe7339ff4557e9c76756f2968c3a3"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     },
     {
@@ -456,11 +496,11 @@
       "from": "project:Juri-Halveth.github.io",
       "to": "category:software",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/Juri-Halveth.github.io.json",
-        "contextSha256": "1c6ea7324d6ab3037e6cbda2cf88c7b1a5ad80a503cda7f3842b4b3d79ef7e92"
+        "contextSha256": "01fd7f0b28e032b36a7157335ad4929839bf347d800569201baed28ce85b99c0"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     },
     {
@@ -469,11 +509,11 @@
       "from": "project:lernstudio",
       "to": "category:learning",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/lernstudio.json",
-        "contextSha256": "18112dd273583d9b5dba6103c9cda2918bd09d8aae4f932062da0b9ec9e5d3cc"
+        "contextSha256": "1b01972ed7b883d23d81716d6ffeea561e0bd0de29d01a8c6bf0d63d11f88dfe"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     },
     {
@@ -482,11 +522,11 @@
       "from": "project:leviathan-wallet-portal",
       "to": "category:software",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/leviathan-wallet-portal.json",
-        "contextSha256": "1e03ab29898a6522d9b994134efff952e5958e8f591ab57b68e0a61e27db1b3d"
+        "contextSha256": "5318da5cb408fcef76cd7992a174b86729d893438e774b136b770cdd844cdb39"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     },
     {
@@ -495,11 +535,11 @@
       "from": "project:lucinet-seedspace",
       "to": "category:security",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/lucinet-seedspace.json",
-        "contextSha256": "5f2d21a1e4dff28c62002d12fb0b1a4554b2fc8bad2511b3258ae54d9694177e"
+        "contextSha256": "87be6d9c7d5a1525b23c3e807e46a3a5dc5136bcb6882572a8aa31825ff70fd9"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     },
     {
@@ -508,11 +548,11 @@
       "from": "project:lucinet-seedspace",
       "to": "category:software",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/lucinet-seedspace.json",
-        "contextSha256": "5f2d21a1e4dff28c62002d12fb0b1a4554b2fc8bad2511b3258ae54d9694177e"
+        "contextSha256": "87be6d9c7d5a1525b23c3e807e46a3a5dc5136bcb6882572a8aa31825ff70fd9"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     },
     {
@@ -521,11 +561,11 @@
       "from": "project:mein-lernportal",
       "to": "category:learning",
       "evidence": {
-        "indexRevision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+        "indexRevision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
         "contextPath": "api/projects/mein-lernportal.json",
-        "contextSha256": "d49630db0d8c0ffaf0da81ed66d6529fa2826cf50858229c9016b38c866e6094"
+        "contextSha256": "8edde274aa29b09aefde07c54d2e20673f6140b711b072fe62b0a12b54bdd423"
       },
-      "direction": "PROJECT_TO_CATEGORY",
+      "direction": "CATALOG_ENTRY_TO_CATEGORY",
       "claimCeiling": "DECLARED_PUBLIC_INDEX_MEMBERSHIP"
     }
   ]

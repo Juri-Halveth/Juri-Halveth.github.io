@@ -2,6 +2,8 @@
   "schema": "halveth.project-context.v1",
   "id": "halveth-project0-keeper",
   "title": "PROJECT0 KEEPER",
+  "entryType": "PROJECT",
+  "editorialState": "CURRENT",
   "categories": [
     "software"
   ],

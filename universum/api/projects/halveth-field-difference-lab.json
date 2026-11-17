@@ -2,6 +2,8 @@
   "schema": "halveth.project-context.v1",
   "id": "halveth-field-difference-lab",
   "title": "FIELD DIFFERENCE",
+  "entryType": "PROJECT",
+  "editorialState": "CURRENT",
   "categories": [
     "models"
   ],

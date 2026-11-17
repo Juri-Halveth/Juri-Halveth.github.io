@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="scarlet-delta-ui.css">
   <link rel="stylesheet" href="endeck-path-ui.css">
   <link rel="stylesheet" href="scarlet-reshape-ui.css">
+<link rel="stylesheet" href="../network-search.css">
+<script type="module" src="../network-search-ui.mjs"></script>
 </head>
 <body>
   <a class="skip-link" href="#cockpit">Zum Cockpit</a>
@@ -69,16 +71,17 @@
           <h1>Flieg durch<br><em>das Werden.</em></h1>
           <p>Ein Projekt ist der sichtbare Knoten. Sein Weg dorthin bleibt als eigene Spur lesbar.</p>
           <div class="rail-line"></div>
-          <div class="micro-grid"><span>RAUM</span><strong>18 öffentliche Einstiege</strong><span>NETZ</span><strong>Modell- &amp; Quellspur mit Zeit</strong><span>AKTION</span><strong>Öffnen erst nach Auswahl</strong><span>KI</span><strong><a href="api/space.json">Quellgebundener Datenindex ↗</a></strong></div>
+          <div class="micro-grid"><span>RAUM</span><strong>18 kuratierte Katalogeinträge</strong><span>NETZ</span><strong>Modell- &amp; Quellspur mit Zeit</strong><span>AKTION</span><strong>Öffnen erst nach Auswahl</strong><span>KI</span><strong><a href="api/space.json">Quellgebundener Datenindex ↗</a></strong></div>
         </section>
 
         <section class="rail-projects">
           <div class="section-head"><div><div class="eyebrow">NAVIGATION / 02</div><h2>Projektportale</h2></div><span id="visibleCount">18 / 18</span></div>
-          <label class="field-label" for="projectSearch">Projekt finden</label>
+          <label class="field-label" for="projectSearch">Katalogeinträge filtern</label>
           <input id="projectSearch" type="search" placeholder="Name, Thema, Repository …" autocomplete="off">
           <label class="field-label" for="categoryFilter">Themenraum</label>
           <select id="categoryFilter"><option value="all">Alle Themen</option></select>
           <div id="projectList" class="project-list"></div>
+<section class="network-bridge" data-network-bridge data-language="de" data-input-id="projectSearch"><h3>Im öffentlichen Netz suchen</h3><p>Weitere Repositories und Module zum selben Suchwort.</p><p data-network-bridge-count role="status" aria-live="polite"></p><div data-network-bridge-results></div><a class="subtle-link" data-network-all href="../suche/">Alle Netztreffer öffnen ↗</a></section>
         </section>
       </aside>
 

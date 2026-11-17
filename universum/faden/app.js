@@ -15,6 +15,7 @@
   let observedAt = null;
   let width = 1;
   let height = 1;
+  const isRepositoryNode = node => node.kind === 'PUBLIC_PROJECT' || node.kind === 'PUBLIC_META';
 
   function hash(text) {
     let value = 2166136261;
@@ -70,13 +71,13 @@
     renderList();
     if (selectedId && !fresh.has(selectedId)) closeCard();
     else if (selectedId) void select(selectedId);
-    status.textContent = `${next.coverage.projectCount} Projekte · ${next.coverage.categoryCount} Themen · ${next.coverage.relationCount} belegte Zuordnungen${context ? '' : ' · Grafik nicht verfügbar, Projektliste bedienbar'}`;
+    status.textContent = `${next.coverage.repositoryCount} Repository-Einträge · ${next.coverage.projectCount} Projektquellen + ${next.coverage.metaCount} Meta-Einstiege · ${next.coverage.categoryCount} Themen · ${next.coverage.relationCount} belegte Zuordnungen${context ? '' : ' · Grafik nicht verfügbar, Projektliste bedienbar'}`;
     sourceNote.textContent = `Index ${next.source.indexRevision.slice(0, 12)} · Quellenstand ${next.source.sourceDate} · hier gesehen ${new Date(observedAt).toLocaleString('de-DE')}`;
   }
   function renderList() {
     const focusedId = list.contains(document.activeElement) ? document.activeElement.dataset.nodeId : null;
     list.replaceChildren();
-    for (const node of graph.nodes.filter(item => item.kind === 'PUBLIC_PROJECT')) {
+    for (const node of graph.nodes.filter(isRepositoryNode)) {
       const button = document.createElement('button');
       button.type = 'button';
       button.textContent = node.label;
@@ -132,7 +133,7 @@
     return value;
   }
   async function select(id, fromDirectory = false) {
-    const node = graph?.nodes.find(item => item.id === id && item.kind === 'PUBLIC_PROJECT');
+    const node = graph?.nodes.find(item => item.id === id && isRepositoryNode(item));
     if (!node) return;
     selectedId = id;
     renderList();
@@ -304,7 +305,7 @@
     const x = event.clientX - rect.left, y = event.clientY - rect.top;
     let nearest = null, distance = 24;
     for (const point of particles.values()) {
-      if (point.kind !== 'PUBLIC_PROJECT') continue;
+      if (!isRepositoryNode(point)) continue;
       const candidate = Math.hypot(point.x - x, point.y - y);
       if (candidate < distance) { nearest = point.id; distance = candidate; }
     }

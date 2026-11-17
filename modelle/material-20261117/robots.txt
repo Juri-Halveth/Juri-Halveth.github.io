@@ -1,3 +1,4 @@
+# This nested file documents the preview sitemap; crawler rules are read at the host root.
 User-agent: *
 Allow: /
-Sitemap: https://halveth.de/sitemap.xml
+Sitemap: https://juri-halveth.github.io/modelle/material-20261117/sitemap.xml

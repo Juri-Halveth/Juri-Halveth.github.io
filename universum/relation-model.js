@@ -25,6 +25,7 @@
     const categories = new Set();
     const nodes = [];
     const relations = [];
+    let projectCount = 0, metaCount = 0, currentProjectCount = 0, withdrawnProjectCount = 0;
     for (const project of space.projects) {
       assert(project && typeof project.id === 'string' && ID.test(project.id) && !projects.has(project.id), 'Project ID invalid or repeated');
       assert(typeof project.title === 'string' && project.title.trim() && project.title.length <= 160 &&
@@ -34,6 +35,11 @@
       'Project context address invalid');
       assert(Array.isArray(project.categories) && project.categories.length > 0 && project.categories.length <= 12,
         'Project categories invalid');
+      // Keep older v1 snapshots readable while preserving the two known metadata identities.
+      const entryType = project.entryType ?? (['Juri-Halveth', 'Juri-Halveth.github.io'].includes(project.id) ? 'META' : 'PROJECT');
+      assert(['PROJECT', 'META'].includes(entryType), 'Repository entry type invalid');
+      if (entryType === 'META') metaCount += 1;
+      else { projectCount += 1; if (project.editorialState === 'CURRENT') currentProjectCount += 1; if (project.editorialState === 'WITHDRAWN_FROM_PORTFOLIO') withdrawnProjectCount += 1; }
       const ownCategories = new Set();
       for (const category of project.categories) {
         assert(typeof category === 'string' && ID.test(category) && !ownCategories.has(category), 'Category ID invalid or repeated');
@@ -45,12 +51,12 @@
           from: `project:${project.id}`,
           to: `category:${category}`,
           evidence: { indexRevision: space.revision, contextPath: project.path, contextSha256: project.sha256 },
-          direction: 'PROJECT_TO_CATEGORY',
+          direction: 'CATALOG_ENTRY_TO_CATEGORY',
           claimCeiling: 'DECLARED_PUBLIC_INDEX_MEMBERSHIP'
         });
       }
       projects.add(project.id);
-      nodes.push({ id: `project:${project.id}`, kind: 'PUBLIC_PROJECT', label: project.title,
+      nodes.push({ id: `project:${project.id}`, kind: entryType === 'META' ? 'PUBLIC_META' : 'PUBLIC_PROJECT', entryType, editorialState: project.editorialState ?? 'UNKNOWN', label: project.title,
         contextPath: project.path, contextBytes: project.bytes, contextSha256: project.sha256 });
     }
     for (const category of [...categories].sort()) {
@@ -61,7 +67,7 @@
       schema: SCHEMA,
       source: { indexPath: 'api/space.json', indexRevision: space.revision,
         sourceDate: space.sourceDate, claimCeiling: space.claimCeiling },
-      coverage: { projectCount: projects.size, categoryCount: categories.size,
+      coverage: { repositoryCount: projects.size, projectCount, metaCount, currentProjectCount, withdrawnProjectCount, categoryCount: categories.size,
         relationCount: relations.length, visibility: 'PUBLIC_INDEX_ONLY',
         temporalStatus: 'SNAPSHOT_NOT_LIVE_RUNTIME' },
       nodes, relations

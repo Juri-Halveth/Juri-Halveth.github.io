@@ -1,0 +1,135 @@
+{
+  "schema": "halveth.public-network-entries.v1",
+  "reviewedAt": "2026-11-17T22:22:49.772Z",
+  "coverage": "Reviewed additive public entry points. Modules are not additional repositories or portfolio cards.",
+  "documents": [
+    {
+      "id": "module:console-only:korridot",
+      "repositoryId": "repo:juri-halveth/console-only",
+      "kind": "module",
+      "title": {
+        "de": "KORRIDOT · räumlicher Zeitkorridor",
+        "en": "KORRIDOT · spatial timeline",
+        "ru": "KORRIDOT · пространственная шкала времени"
+      },
+      "summary": {
+        "de": "Ereignisse, Zeitpunkte und Herkunft in einer räumlichen Browseransicht erkunden. Die Standardspur enthält Beispieldaten; die GG24-Spur führt zu öffentlichen Quellen.",
+        "en": "Explore events, times and provenance in a spatial browser view. The default track uses sample data; the GG24 track links public sources.",
+        "ru": "Исследуйте события, время и происхождение в пространственном браузерном представлении. Основная шкала использует примеры; шкала GG24 ведёт к публичным источникам."
+      },
+      "url": "https://juri-halveth.github.io/console-only/",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/console-only/blob/9fb4e0ec8d94ef464f369f0c1e70082b61a12732/README.md",
+        "revision": "9fb4e0ec8d94ef464f369f0c1e70082b61a12732",
+        "observedAt": "2026-11-17T22:22:49.772Z",
+        "scope": "REVIEWED_PUBLIC_ENTRY_DESCRIPTION_NOT_RUNTIME_OR_SCIENTIFIC_PROOF"
+      },
+      "aliases": [
+        "KORRIDOT",
+        "Console Only",
+        "Console Zero",
+        "Zeitkorridor",
+        "Zeitspur"
+      ],
+      "text": "KORRIDOT räumlicher Zeitkorridor lokale Ereignisse Herkunft Quellenbelege Browsermodell",
+      "historical": false,
+      "editorialState": "CURRENT",
+      "relatedRepositoryIds": []
+    },
+    {
+      "id": "module:console-only:gg24",
+      "repositoryId": "repo:juri-halveth/console-only",
+      "kind": "module",
+      "title": {
+        "de": "GG24 · Förder-Zeitspur",
+        "en": "GG24 · funding timeline",
+        "ru": "GG24 · шкала финансирования"
+      },
+      "summary": {
+        "de": "Vier Stationen verbinden Antrag, Zwischenbericht, Auszahlung und Rückblick für das Taiwan Hypercerts Dashboard. Quellen und lokale Prüfwerkzeuge sind offen verlinkt.",
+        "en": "Four stations connect registration, progress report, distribution and retrospective for the Taiwan Hypercerts Dashboard. Sources and local verification tools are linked.",
+        "ru": "Четыре этапа связывают заявку, промежуточный отчёт, выплату и итоговый обзор Taiwan Hypercerts Dashboard. Доступны источники и локальные инструменты проверки."
+      },
+      "url": "https://juri-halveth.github.io/console-only/?spur=gg24",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/console-only/blob/9fb4e0ec8d94ef464f369f0c1e70082b61a12732/tools/gg24/README.md",
+        "revision": "9fb4e0ec8d94ef464f369f0c1e70082b61a12732",
+        "observedAt": "2026-11-17T22:22:49.772Z",
+        "scope": "REVIEWED_PUBLIC_ENTRY_DESCRIPTION_NOT_RUNTIME_OR_SCIENTIFIC_PROOF"
+      },
+      "aliases": [
+        "GG24",
+        "Gitcoin",
+        "Hypercerts",
+        "Taiwan Hypercerts Dashboard",
+        "Gardens",
+        "Optimism",
+        "Förderung",
+        "Public Goods"
+      ],
+      "text": "GG24 Gitcoin Public Goods Ethereum Optimism OP Mainnet Gardens Pool 178 Proposal 7 Taiwan Hypercerts Dashboard DAI Antrag Zwischenbericht Auszahlung Rückblick",
+      "historical": false,
+      "editorialState": "CURRENT",
+      "relatedRepositoryIds": []
+    },
+    {
+      "id": "module:website:lichtpunkt",
+      "repositoryId": "repo:juri-halveth/juri-halveth.github.io",
+      "kind": "module",
+      "title": {
+        "de": "Lichtpunkt · bewegliche Doppelachten",
+        "en": "Light point · moving double loops",
+        "ru": "Световая точка · движущиеся двойные петли"
+      },
+      "summary": {
+        "de": "Ein berechneter Modellzustand mit 960 beweglichen Zellen und zwölf anfänglichen Doppelachten. Anflug und Rundumblick zeigen denselben Zustand aus verschiedenen Perspektiven.",
+        "en": "A computed model with 960 moving cells and twelve initial double loops. Approach and orbit views show the same state from different perspectives.",
+        "ru": "Вычисляемая модель с 960 движущимися ячейками и двенадцатью начальными двойными петлями. Приближение и вращение показывают одно состояние с разных сторон."
+      },
+      "url": "https://juri-halveth.github.io/modelle/material-20261117/forschung.html?modell=doppelacht",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/e1ae68ac6428caa30dfc12739b1c0dfecd6fb8a1/modelle/material-20261117/DOPPELACHT.md",
+        "revision": "e1ae68ac6428caa30dfc12739b1c0dfecd6fb8a1",
+        "observedAt": "2026-11-17T22:22:49.772Z",
+        "scope": "REVIEWED_PUBLIC_ENTRY_DESCRIPTION_NOT_RUNTIME_OR_SCIENTIFIC_PROOF"
+      },
+      "aliases": [
+        "Lichtpunkt",
+        "Doppelacht",
+        "Doppelachten",
+        "D8",
+        "960",
+        "Materialmodell",
+        "360"
+      ],
+      "text": "Lichtpunkt Doppelacht 960 Zellen zwölf Doppelachten Materialmodell Solver Anflug 360 Projektion dimensionslos",
+      "historical": false,
+      "editorialState": "CURRENT",
+      "relatedRepositoryIds": [
+        "repo:juri-halveth/console-only"
+      ]
+    }
+  ],
+  "sharedSources": [
+    {
+      "id": "shared-source:doppelacht",
+      "repositoryIds": [
+        "repo:juri-halveth/juri-halveth.github.io",
+        "repo:juri-halveth/console-only"
+      ],
+      "sha256": "4627f85f955c913e588b323569dbd45081bcb55464878909eb9645574d4e102f",
+      "sources": [
+        {
+          "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/e1ae68ac6428caa30dfc12739b1c0dfecd6fb8a1/modelle/material-20261117/assets/doppelacht.js",
+          "revision": "e1ae68ac6428caa30dfc12739b1c0dfecd6fb8a1"
+        },
+        {
+          "url": "https://github.com/Juri-Halveth/console-only/blob/9fb4e0ec8d94ef464f369f0c1e70082b61a12732/src/doppelacht.js",
+          "revision": "9fb4e0ec8d94ef464f369f0c1e70082b61a12732"
+        }
+      ],
+      "observedAt": "2026-11-17T22:22:49.772Z",
+      "claimCeiling": "IDENTICAL_SOURCE_BYTES_NOT_SCIENTIFIC_VALIDATION"
+    }
+  ]
+}

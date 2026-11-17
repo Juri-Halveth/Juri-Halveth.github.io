@@ -2,6 +2,8 @@
   "schema": "halveth.project-context.v1",
   "id": "halveth-unreal",
   "title": "HALVETH UNREAL",
+  "entryType": "PROJECT",
+  "editorialState": "WITHDRAWN_FROM_PORTFOLIO",
   "categories": [
     "worlds"
   ],

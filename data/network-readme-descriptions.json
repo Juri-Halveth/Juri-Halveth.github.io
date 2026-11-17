@@ -1,0 +1,765 @@
+{
+  "schema": "halveth.reviewed-public-descriptions.v1",
+  "observedAt": "2026-11-17T22:18:46.486202+00:00",
+  "coverage": "Reviewed descriptions of the 21 public root READMEs at their bound revisions; not repository full text.",
+  "documents": [
+    {
+      "id": "readme:repo:juri-halveth/c-drohne-red-room:1b6f8a5aa1132c56e066c2c2cddc3bbbe5c36319",
+      "repositoryId": "repo:juri-halveth/c-drohne-red-room",
+      "githubRepositoryId": 1424940249,
+      "repositoryType": "project",
+      "kind": "repository",
+      "title": {
+        "de": "C-Drohne · visuelles Konzept",
+        "en": "C-Drohne · visuelles Konzept",
+        "ru": "C-Drohne · visuelles Konzept"
+      },
+      "summary": {
+        "de": "Visuelles Konzept für Beobachtung und Zusammenarbeit mit dokumentierten Forschungsfragen. Präsentationsprototyp.",
+        "en": "Visuelles Konzept für Beobachtung und Zusammenarbeit mit dokumentierten Forschungsfragen. Präsentationsprototyp.",
+        "ru": "Visuelles Konzept für Beobachtung und Zusammenarbeit mit dokumentierten Forschungsfragen. Präsentationsprototyp."
+      },
+      "url": "https://juri-halveth.github.io/c-drohne-red-room/",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/c-drohne-red-room/blob/1b6f8a5aa1132c56e066c2c2cddc3bbbe5c36319/README.md",
+        "revision": "1b6f8a5aa1132c56e066c2c2cddc3bbbe5c36319",
+        "observedAt": "2026-11-17T22:18:24.042511+00:00",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY"
+      },
+      "aliases": [
+        "C-Drohne",
+        "Präsentationsprototyp",
+        "Beobachtung",
+        "Zusammenarbeit",
+        "c-drohne-red-room"
+      ],
+      "text": "C-Drohne · visuelles Konzept. Visuelles Konzept für Beobachtung und Zusammenarbeit mit dokumentierten Forschungsfragen. Präsentationsprototyp. Stichworte: C-Drohne, Präsentationsprototyp, Beobachtung, Zusammenarbeit.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    },
+    {
+      "id": "readme:repo:juri-halveth/console-only:9fb4e0ec8d94ef464f369f0c1e70082b61a12732",
+      "repositoryId": "repo:juri-halveth/console-only",
+      "githubRepositoryId": 1457178606,
+      "repositoryType": "project",
+      "kind": "repository",
+      "title": {
+        "de": "Console Only · KORRIDOT",
+        "en": "Console Only · KORRIDOT",
+        "ru": "Console Only · KORRIDOT"
+      },
+      "summary": {
+        "de": "Lokale Quellen- und Sitzungswerkzeuge sowie räumliche Browsermodelle. KORRIDOT verbindet Ereignisse mit Zeitpunkten und Belegen; die GG24-Zeitspur verweist auf öffentliche Förderquellen.",
+        "en": "Lokale Quellen- und Sitzungswerkzeuge sowie räumliche Browsermodelle. KORRIDOT verbindet Ereignisse mit Zeitpunkten und Belegen; die GG24-Zeitspur verweist auf öffentliche Förderquellen.",
+        "ru": "Lokale Quellen- und Sitzungswerkzeuge sowie räumliche Browsermodelle. KORRIDOT verbindet Ereignisse mit Zeitpunkten und Belegen; die GG24-Zeitspur verweist auf öffentliche Förderquellen."
+      },
+      "url": "https://juri-halveth.github.io/console-only/",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/console-only/blob/9fb4e0ec8d94ef464f369f0c1e70082b61a12732/README.md",
+        "revision": "9fb4e0ec8d94ef464f369f0c1e70082b61a12732",
+        "observedAt": "2026-11-17T22:18:23.987425+00:00",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY"
+      },
+      "aliases": [
+        "Console Zero",
+        "KORRIDOT",
+        "Doppelacht",
+        "Lichtpunkt",
+        "GG24",
+        "Materialzellen",
+        "Quellensuche",
+        "Zeitspur",
+        "console-only"
+      ],
+      "text": "Console Only · KORRIDOT. Lokale Quellen- und Sitzungswerkzeuge sowie räumliche Browsermodelle. KORRIDOT verbindet Ereignisse mit Zeitpunkten und Belegen; die GG24-Zeitspur verweist auf öffentliche Förderquellen. Stichworte: Console Zero, KORRIDOT, Doppelacht, Lichtpunkt, GG24, Materialzellen, Quellensuche, Zeitspur.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    },
+    {
+      "id": "readme:repo:juri-halveth/fortuna:2b94cb4a23b9d96b088004d9f5da62e91975e20b",
+      "repositoryId": "repo:juri-halveth/fortuna",
+      "githubRepositoryId": 1402270501,
+      "repositoryType": "project",
+      "kind": "repository",
+      "title": {
+        "de": "Fortuna · Möglichkeiten vergleichen",
+        "en": "Fortuna · Möglichkeiten vergleichen",
+        "ru": "Fortuna · Möglichkeiten vergleichen"
+      },
+      "summary": {
+        "de": "Browserprototyp zum Vergleichen eigener Optionen, Wahrscheinlichkeiten und lokaler Modellzustände.",
+        "en": "Browserprototyp zum Vergleichen eigener Optionen, Wahrscheinlichkeiten und lokaler Modellzustände.",
+        "ru": "Browserprototyp zum Vergleichen eigener Optionen, Wahrscheinlichkeiten und lokaler Modellzustände."
+      },
+      "url": "https://juri-halveth.github.io/fortuna/",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/fortuna/blob/2b94cb4a23b9d96b088004d9f5da62e91975e20b/README.md",
+        "revision": "2b94cb4a23b9d96b088004d9f5da62e91975e20b",
+        "observedAt": "2026-11-17T22:18:23.940639+00:00",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY"
+      },
+      "aliases": [
+        "Fortuna",
+        "Wahrscheinlichkeiten",
+        "Möglichkeiten",
+        "Browsermodell",
+        "fortuna"
+      ],
+      "text": "Fortuna · Möglichkeiten vergleichen. Browserprototyp zum Vergleichen eigener Optionen, Wahrscheinlichkeiten und lokaler Modellzustände. Stichworte: Fortuna, Wahrscheinlichkeiten, Möglichkeiten, Browsermodell.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    },
+    {
+      "id": "readme:repo:juri-halveth/gitcoin_co_30:6579e523287aa268ff89dea2666e82bb27c75e4b",
+      "repositoryId": "repo:juri-halveth/gitcoin_co_30",
+      "githubRepositoryId": 1461981935,
+      "repositoryType": "fork",
+      "kind": "repository",
+      "title": {
+        "de": "Gitcoin Funding Directory · Fork",
+        "en": "Gitcoin Funding Directory · Fork",
+        "ru": "Gitcoin Funding Directory · Fork"
+      },
+      "summary": {
+        "de": "Fork des öffentlichen Gitcoin-Funding-Verzeichnisses für Beiträge zum Upstream-Projekt. Die enthaltene Funding-Dokumentation stammt aus dem Gitcoin-Projekt; der Fork ist keine zusätzliche eigene Funding-Plattform.",
+        "en": "Fork des öffentlichen Gitcoin-Funding-Verzeichnisses für Beiträge zum Upstream-Projekt. Die enthaltene Funding-Dokumentation stammt aus dem Gitcoin-Projekt; der Fork ist keine zusätzliche eigene Funding-Plattform.",
+        "ru": "Fork des öffentlichen Gitcoin-Funding-Verzeichnisses für Beiträge zum Upstream-Projekt. Die enthaltene Funding-Dokumentation stammt aus dem Gitcoin-Projekt; der Fork ist keine zusätzliche eigene Funding-Plattform."
+      },
+      "url": "https://github.com/Juri-Halveth/gitcoin_co_30",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/gitcoin_co_30/blob/6579e523287aa268ff89dea2666e82bb27c75e4b/README.md",
+        "revision": "6579e523287aa268ff89dea2666e82bb27c75e4b",
+        "observedAt": "2026-11-17T22:18:23.986627+00:00",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY"
+      },
+      "aliases": [
+        "Gitcoin",
+        "Public Goods Funding",
+        "Grants",
+        "GG24",
+        "Funding-Verzeichnis",
+        "Upstream-Beitrag",
+        "gitcoin_co_30"
+      ],
+      "text": "Gitcoin Funding Directory · Fork. Fork des öffentlichen Gitcoin-Funding-Verzeichnisses für Beiträge zum Upstream-Projekt. Die enthaltene Funding-Dokumentation stammt aus dem Gitcoin-Projekt; der Fork ist keine zusätzliche eigene Funding-Plattform. Stichworte: Gitcoin, Public Goods Funding, Grants, GG24, Funding-Verzeichnis, Upstream-Beitrag.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    },
+    {
+      "id": "readme:repo:juri-halveth/halveth-bio-universe:165f5cbe7a66dadcc22e2c93573a2677ecaaf701",
+      "repositoryId": "repo:juri-halveth/halveth-bio-universe",
+      "githubRepositoryId": 1446977120,
+      "repositoryType": "project",
+      "kind": "repository",
+      "title": {
+        "de": "HALVETH Bio-Universe",
+        "en": "HALVETH Bio-Universe",
+        "ru": "HALVETH Bio-Universe"
+      },
+      "summary": {
+        "de": "Lokales Forschungszentrum mit einem begrenzten, datierten Belegkatalog und einer Grundlage für Forschungsplugins. Die öffentliche Repository-Beschreibung dokumentiert Umfang, Start und Grenzen.",
+        "en": "Lokales Forschungszentrum mit einem begrenzten, datierten Belegkatalog und einer Grundlage für Forschungsplugins. Die öffentliche Repository-Beschreibung dokumentiert Umfang, Start und Grenzen.",
+        "ru": "Lokales Forschungszentrum mit einem begrenzten, datierten Belegkatalog und einer Grundlage für Forschungsplugins. Die öffentliche Repository-Beschreibung dokumentiert Umfang, Start und Grenzen."
+      },
+      "url": "https://github.com/Juri-Halveth/halveth-bio-universe",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/halveth-bio-universe/blob/165f5cbe7a66dadcc22e2c93573a2677ecaaf701/README.md",
+        "revision": "165f5cbe7a66dadcc22e2c93573a2677ecaaf701",
+        "observedAt": "2026-11-17T22:18:24.026462+00:00",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY"
+      },
+      "aliases": [
+        "Bio-Universe",
+        "Forschungszentrum",
+        "Belegkatalog",
+        "Forschungsplugins",
+        "NOVA",
+        "halveth-bio-universe"
+      ],
+      "text": "HALVETH Bio-Universe. Lokales Forschungszentrum mit einem begrenzten, datierten Belegkatalog und einer Grundlage für Forschungsplugins. Die öffentliche Repository-Beschreibung dokumentiert Umfang, Start und Grenzen. Stichworte: Bio-Universe, Forschungszentrum, Belegkatalog, Forschungsplugins, NOVA.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    },
+    {
+      "id": "readme:repo:juri-halveth/halveth-cannabis-reform-forschung:274fe89f4bd9e6360f25b69a7bdb416c5da898c0",
+      "repositoryId": "repo:juri-halveth/halveth-cannabis-reform-forschung",
+      "githubRepositoryId": 1426105921,
+      "repositoryType": "project",
+      "kind": "repository",
+      "title": {
+        "de": "Cannabisreform · Quellen und Forschung",
+        "en": "Cannabisreform · Quellen und Forschung",
+        "ru": "Cannabisreform · Quellen und Forschung"
+      },
+      "summary": {
+        "de": "Öffentliche Quellen, klar gekennzeichnete Reformvorschläge und ein technischer Messplan zu Verdampfung und Verbrennung.",
+        "en": "Öffentliche Quellen, klar gekennzeichnete Reformvorschläge und ein technischer Messplan zu Verdampfung und Verbrennung.",
+        "ru": "Öffentliche Quellen, klar gekennzeichnete Reformvorschläge und ein technischer Messplan zu Verdampfung und Verbrennung."
+      },
+      "url": "https://juri-halveth.github.io/halveth-cannabis-reform-forschung/",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/halveth-cannabis-reform-forschung/blob/274fe89f4bd9e6360f25b69a7bdb416c5da898c0/README.md",
+        "revision": "274fe89f4bd9e6360f25b69a7bdb416c5da898c0",
+        "observedAt": "2026-11-17T22:18:23.971246+00:00",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY"
+      },
+      "aliases": [
+        "Cannabisreform",
+        "Quellen",
+        "Verkehrsregeln",
+        "Reformvorschläge",
+        "Messplan",
+        "halveth-cannabis-reform-forschung"
+      ],
+      "text": "Cannabisreform · Quellen und Forschung. Öffentliche Quellen, klar gekennzeichnete Reformvorschläge und ein technischer Messplan zu Verdampfung und Verbrennung. Stichworte: Cannabisreform, Quellen, Verkehrsregeln, Reformvorschläge, Messplan.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    },
+    {
+      "id": "readme:repo:juri-halveth/halveth-field-difference-lab:8c6e1ab0f68d5dcc38d0e3068853beaec06067ab",
+      "repositoryId": "repo:juri-halveth/halveth-field-difference-lab",
+      "githubRepositoryId": 1426048848,
+      "repositoryType": "project",
+      "kind": "repository",
+      "title": {
+        "de": "Field Difference Lab",
+        "en": "Field Difference Lab",
+        "ru": "Field Difference Lab"
+      },
+      "summary": {
+        "de": "Interaktives Modelllabor, das Bewegungen aus derselben Ausgangslage unter verschiedenen Regeln vergleicht.",
+        "en": "Interaktives Modelllabor, das Bewegungen aus derselben Ausgangslage unter verschiedenen Regeln vergleicht.",
+        "ru": "Interaktives Modelllabor, das Bewegungen aus derselben Ausgangslage unter verschiedenen Regeln vergleicht."
+      },
+      "url": "https://juri-halveth.github.io/halveth-field-difference-lab/",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/halveth-field-difference-lab/blob/8c6e1ab0f68d5dcc38d0e3068853beaec06067ab/README.md",
+        "revision": "8c6e1ab0f68d5dcc38d0e3068853beaec06067ab",
+        "observedAt": "2026-11-17T22:18:28.721330+00:00",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY"
+      },
+      "aliases": [
+        "Field Difference Lab",
+        "Modellvergleich",
+        "Perspektive",
+        "Bewegung",
+        "Zustandsunterschiede",
+        "halveth-field-difference-lab"
+      ],
+      "text": "Field Difference Lab. Interaktives Modelllabor, das Bewegungen aus derselben Ausgangslage unter verschiedenen Regeln vergleicht. Stichworte: Field Difference Lab, Modellvergleich, Perspektive, Bewegung, Zustandsunterschiede.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    },
+    {
+      "id": "readme:repo:juri-halveth/halveth-forschungslabor:8e6b49c78c5ed8fbdf5d5010e11b4040b9013fff",
+      "repositoryId": "repo:juri-halveth/halveth-forschungslabor",
+      "githubRepositoryId": 1426932134,
+      "repositoryType": "project",
+      "kind": "repository",
+      "title": {
+        "de": "HALVETH Forschungslabor",
+        "en": "HALVETH Forschungslabor",
+        "ru": "HALVETH Forschungslabor"
+      },
+      "summary": {
+        "de": "Lokale Werkzeuge und Browsermodelle für Bildvergleich, Quellenpakete, Optik, Ereignisse und Regelprüfung. Enthält den eigenständigen Forschungsraum 1001 Türen.",
+        "en": "Lokale Werkzeuge und Browsermodelle für Bildvergleich, Quellenpakete, Optik, Ereignisse und Regelprüfung. Enthält den eigenständigen Forschungsraum 1001 Türen.",
+        "ru": "Lokale Werkzeuge und Browsermodelle für Bildvergleich, Quellenpakete, Optik, Ereignisse und Regelprüfung. Enthält den eigenständigen Forschungsraum 1001 Türen."
+      },
+      "url": "https://juri-halveth.github.io/halveth-forschungslabor/",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/8e6b49c78c5ed8fbdf5d5010e11b4040b9013fff/README.md",
+        "revision": "8e6b49c78c5ed8fbdf5d5010e11b4040b9013fff",
+        "observedAt": "2026-11-17T22:18:29.030422+00:00",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY"
+      },
+      "aliases": [
+        "Forschungslabor",
+        "1001 Türen",
+        "Optik",
+        "Bildvergleich",
+        "Quellenpakete",
+        "Ereignisse",
+        "Regelprüfung",
+        "halveth-forschungslabor"
+      ],
+      "text": "HALVETH Forschungslabor. Lokale Werkzeuge und Browsermodelle für Bildvergleich, Quellenpakete, Optik, Ereignisse und Regelprüfung. Enthält den eigenständigen Forschungsraum 1001 Türen. Stichworte: Forschungslabor, 1001 Türen, Optik, Bildvergleich, Quellenpakete, Ereignisse, Regelprüfung.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    },
+    {
+      "id": "readme:repo:juri-halveth/halveth-morrowind-genesis:4a882611f0a41224760952a0a54e91be862a43bd",
+      "repositoryId": "repo:juri-halveth/halveth-morrowind-genesis",
+      "githubRepositoryId": 1382552343,
+      "repositoryType": "project",
+      "kind": "repository",
+      "title": {
+        "de": "Morrowind Genesis",
+        "en": "Morrowind Genesis",
+        "ru": "Morrowind Genesis"
+      },
+      "summary": {
+        "de": "OpenMW-Erweiterung mit lokalen NPC-Dialogen, Figurengedächtnis und Spielwerkzeugen sowie getrennten Weltprototypen. Öffentliche Quelle; aus der aktuellen Portfolioauswahl zurückgezogen.",
+        "en": "OpenMW-Erweiterung mit lokalen NPC-Dialogen, Figurengedächtnis und Spielwerkzeugen sowie getrennten Weltprototypen. Öffentliche Quelle; aus der aktuellen Portfolioauswahl zurückgezogen.",
+        "ru": "OpenMW-Erweiterung mit lokalen NPC-Dialogen, Figurengedächtnis und Spielwerkzeugen sowie getrennten Weltprototypen. Öffentliche Quelle; aus der aktuellen Portfolioauswahl zurückgezogen."
+      },
+      "url": "https://github.com/Juri-Halveth/halveth-morrowind-genesis",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/halveth-morrowind-genesis/blob/4a882611f0a41224760952a0a54e91be862a43bd/README.md",
+        "revision": "4a882611f0a41224760952a0a54e91be862a43bd",
+        "observedAt": "2026-11-17T22:18:28.798616+00:00",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY"
+      },
+      "aliases": [
+        "Morrowind Genesis",
+        "OpenMW",
+        "NPC-Dialoge",
+        "Figurengedächtnis",
+        "Spielwerkzeuge",
+        "halveth-morrowind-genesis"
+      ],
+      "text": "Morrowind Genesis. OpenMW-Erweiterung mit lokalen NPC-Dialogen, Figurengedächtnis und Spielwerkzeugen sowie getrennten Weltprototypen. Öffentliche Quelle; aus der aktuellen Portfolioauswahl zurückgezogen. Stichworte: Morrowind Genesis, OpenMW, NPC-Dialoge, Figurengedächtnis, Spielwerkzeuge.",
+      "historical": false,
+      "editorialState": "WITHDRAWN_FROM_PORTFOLIO"
+    },
+    {
+      "id": "readme:repo:juri-halveth/halveth-project0-keeper:e927394b0d465fd8034ce6b7ecc1ab13875e1fba",
+      "repositoryId": "repo:juri-halveth/halveth-project0-keeper",
+      "githubRepositoryId": 1379571182,
+      "repositoryType": "project",
+      "kind": "repository",
+      "title": {
+        "de": "TRIAD · lokale Projektsteuerung",
+        "en": "TRIAD · lokale Projektsteuerung",
+        "ru": "TRIAD · lokale Projektsteuerung"
+      },
+      "summary": {
+        "de": "Experimentelle lokale Projektsteuerung mit PowerShell-Werkzeugen und Zustandsdateien. Quellprototyp; kein gehosteter Dienst.",
+        "en": "Experimentelle lokale Projektsteuerung mit PowerShell-Werkzeugen und Zustandsdateien. Quellprototyp; kein gehosteter Dienst.",
+        "ru": "Experimentelle lokale Projektsteuerung mit PowerShell-Werkzeugen und Zustandsdateien. Quellprototyp; kein gehosteter Dienst."
+      },
+      "url": "https://github.com/Juri-Halveth/halveth-project0-keeper",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/halveth-project0-keeper/blob/e927394b0d465fd8034ce6b7ecc1ab13875e1fba/README.md",
+        "revision": "e927394b0d465fd8034ce6b7ecc1ab13875e1fba",
+        "observedAt": "2026-11-17T22:18:28.762302+00:00",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY"
+      },
+      "aliases": [
+        "TRIAD",
+        "Projektsteuerung",
+        "PowerShell",
+        "ASTER",
+        "RACHEL",
+        "SHELLA",
+        "halveth-project0-keeper"
+      ],
+      "text": "TRIAD · lokale Projektsteuerung. Experimentelle lokale Projektsteuerung mit PowerShell-Werkzeugen und Zustandsdateien. Quellprototyp; kein gehosteter Dienst. Stichworte: TRIAD, Projektsteuerung, PowerShell, ASTER, RACHEL, SHELLA.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    },
+    {
+      "id": "readme:repo:juri-halveth/halveth-realms:22f3a706f88b0e186d9f6dc2807540e857ad2136",
+      "repositoryId": "repo:juri-halveth/halveth-realms",
+      "githubRepositoryId": 1376541745,
+      "repositoryType": "project",
+      "kind": "repository",
+      "title": {
+        "de": "Scarlet Garden · Fantasywelten",
+        "en": "Scarlet Garden · Fantasywelten",
+        "ru": "Scarlet Garden · Fantasywelten"
+      },
+      "summary": {
+        "de": "Eigenständiger Fantasy-Spielprototyp mit prozeduralen Welten und lokalen Figurendialogen. Öffentliche Quelle; aus der aktuellen Portfolioauswahl zurückgezogen.",
+        "en": "Eigenständiger Fantasy-Spielprototyp mit prozeduralen Welten und lokalen Figurendialogen. Öffentliche Quelle; aus der aktuellen Portfolioauswahl zurückgezogen.",
+        "ru": "Eigenständiger Fantasy-Spielprototyp mit prozeduralen Welten und lokalen Figurendialogen. Öffentliche Quelle; aus der aktuellen Portfolioauswahl zurückgezogen."
+      },
+      "url": "https://github.com/Juri-Halveth/halveth-realms",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/halveth-realms/blob/22f3a706f88b0e186d9f6dc2807540e857ad2136/README.md",
+        "revision": "22f3a706f88b0e186d9f6dc2807540e857ad2136",
+        "observedAt": "2026-11-17T22:18:28.842405+00:00",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY"
+      },
+      "aliases": [
+        "Scarlet Garden",
+        "Fantasywelten",
+        "Prozedurale Welten",
+        "Figurendialoge",
+        "Optional Blockchain",
+        "halveth-realms"
+      ],
+      "text": "Scarlet Garden · Fantasywelten. Eigenständiger Fantasy-Spielprototyp mit prozeduralen Welten und lokalen Figurendialogen. Öffentliche Quelle; aus der aktuellen Portfolioauswahl zurückgezogen. Stichworte: Scarlet Garden, Fantasywelten, Prozedurale Welten, Figurendialoge, Optional Blockchain.",
+      "historical": false,
+      "editorialState": "WITHDRAWN_FROM_PORTFOLIO"
+    },
+    {
+      "id": "readme:repo:juri-halveth/halveth-scarlet:f4aa107a0fc73906c16442d11214d37f34e4f78b",
+      "repositoryId": "repo:juri-halveth/halveth-scarlet",
+      "githubRepositoryId": 1366710812,
+      "repositoryType": "project",
+      "kind": "repository",
+      "title": {
+        "de": "SCARLET · Zustände, Zeit und Varianten",
+        "en": "SCARLET · Zustände, Zeit und Varianten",
+        "ru": "SCARLET · Zustände, Zeit und Varianten"
+      },
+      "summary": {
+        "de": "Browsermodell für lokale Textzustände, Varianten, ein nachvollziehbares Ledger und JSON-Export. Regelbasierte Zellbewegung und die Konstellation mit Entitäten sind getrennt beschriebene Modelle.",
+        "en": "Browsermodell für lokale Textzustände, Varianten, ein nachvollziehbares Ledger und JSON-Export. Regelbasierte Zellbewegung und die Konstellation mit Entitäten sind getrennt beschriebene Modelle.",
+        "ru": "Browsermodell für lokale Textzustände, Varianten, ein nachvollziehbares Ledger und JSON-Export. Regelbasierte Zellbewegung und die Konstellation mit Entitäten sind getrennt beschriebene Modelle."
+      },
+      "url": "https://juri-halveth.github.io/halveth-scarlet/",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/f4aa107a0fc73906c16442d11214d37f34e4f78b/README.md",
+        "revision": "f4aa107a0fc73906c16442d11214d37f34e4f78b",
+        "observedAt": "2026-11-17T22:18:28.794560+00:00",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY"
+      },
+      "aliases": [
+        "SCARLET",
+        "GStar",
+        "GStarLiving",
+        "Ledger",
+        "Zustände",
+        "Konstellation",
+        "1001",
+        "Entitäten",
+        "ASHBOUND",
+        "halveth-scarlet"
+      ],
+      "text": "SCARLET · Zustände, Zeit und Varianten. Browsermodell für lokale Textzustände, Varianten, ein nachvollziehbares Ledger und JSON-Export. Regelbasierte Zellbewegung und die Konstellation mit Entitäten sind getrennt beschriebene Modelle. Stichworte: SCARLET, GStar, GStarLiving, Ledger, Zustände, Konstellation, 1001, Entitäten, ASHBOUND.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    },
+    {
+      "id": "readme:repo:juri-halveth/halveth-tresor:17d0429d98de364aa779cb057dc02f6f9363f9f3",
+      "repositoryId": "repo:juri-halveth/halveth-tresor",
+      "githubRepositoryId": 1296788100,
+      "repositoryType": "project",
+      "kind": "repository",
+      "title": {
+        "de": "Tresor · lokale Zugangsdaten",
+        "en": "Tresor · lokale Zugangsdaten",
+        "ru": "Tresor · lokale Zugangsdaten"
+      },
+      "summary": {
+        "de": "Lokaler Zugangsdaten-Tresor für Windows mit Python, AES-GCM, Recovery-Key und versionierten Releases.",
+        "en": "Lokaler Zugangsdaten-Tresor für Windows mit Python, AES-GCM, Recovery-Key und versionierten Releases.",
+        "ru": "Lokaler Zugangsdaten-Tresor für Windows mit Python, AES-GCM, Recovery-Key und versionierten Releases."
+      },
+      "url": "https://github.com/Juri-Halveth/halveth-tresor",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/halveth-tresor/blob/17d0429d98de364aa779cb057dc02f6f9363f9f3/README.md",
+        "revision": "17d0429d98de364aa779cb057dc02f6f9363f9f3",
+        "observedAt": "2026-11-17T22:18:40.194285+00:00",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY"
+      },
+      "aliases": [
+        "Tresor",
+        "Zugangsdaten",
+        "Windows",
+        "AES-GCM",
+        "Recovery-Key",
+        "halveth-tresor"
+      ],
+      "text": "Tresor · lokale Zugangsdaten. Lokaler Zugangsdaten-Tresor für Windows mit Python, AES-GCM, Recovery-Key und versionierten Releases. Stichworte: Tresor, Zugangsdaten, Windows, AES-GCM, Recovery-Key.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    },
+    {
+      "id": "readme:repo:juri-halveth/halveth-tron-security-lab:a4116f6dfe1505651d3c135007342c9bbb857c56",
+      "repositoryId": "repo:juri-halveth/halveth-tron-security-lab",
+      "githubRepositoryId": 1416252068,
+      "repositoryType": "fork",
+      "kind": "repository",
+      "title": {
+        "de": "TRON-Protokolllabor · Forschungsfork",
+        "en": "TRON-Protokolllabor · Forschungsfork",
+        "ru": "TRON-Protokolllabor · Forschungsfork"
+      },
+      "summary": {
+        "de": "Forschungsfork von tronprotocol/java-tron für lokale Protokollprüfungen und nachvollziehbare Experimente. Kein offizielles TRON-Produkt.",
+        "en": "Forschungsfork von tronprotocol/java-tron für lokale Protokollprüfungen und nachvollziehbare Experimente. Kein offizielles TRON-Produkt.",
+        "ru": "Forschungsfork von tronprotocol/java-tron für lokale Protokollprüfungen und nachvollziehbare Experimente. Kein offizielles TRON-Produkt."
+      },
+      "url": "https://github.com/Juri-Halveth/halveth-tron-security-lab",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/halveth-tron-security-lab/blob/a4116f6dfe1505651d3c135007342c9bbb857c56/README.md",
+        "revision": "a4116f6dfe1505651d3c135007342c9bbb857c56",
+        "observedAt": "2026-11-17T22:18:40.126617+00:00",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY"
+      },
+      "aliases": [
+        "TRON",
+        "java-tron",
+        "Protokolllabor",
+        "Forschungsfork",
+        "Blockchain",
+        "halveth-tron-security-lab"
+      ],
+      "text": "TRON-Protokolllabor · Forschungsfork. Forschungsfork von tronprotocol/java-tron für lokale Protokollprüfungen und nachvollziehbare Experimente. Kein offizielles TRON-Produkt. Stichworte: TRON, java-tron, Protokolllabor, Forschungsfork, Blockchain.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    },
+    {
+      "id": "readme:repo:juri-halveth/halveth-unreal:5dcd5ad655bcaa73e672618f0829100989484c65",
+      "repositoryId": "repo:juri-halveth/halveth-unreal",
+      "githubRepositoryId": 1382570846,
+      "repositoryType": "project",
+      "kind": "repository",
+      "title": {
+        "de": "Portal Garden · Unreal-Prototyp",
+        "en": "Portal Garden · Unreal-Prototyp",
+        "ru": "Portal Garden · Unreal-Prototyp"
+      },
+      "summary": {
+        "de": "Eigenständiger C++-Spielprototyp für Unreal Engine mit Portalwelten, Bibliothek, Rezepten und Bauen. Öffentliche Quelle; aus der aktuellen Portfolioauswahl zurückgezogen.",
+        "en": "Eigenständiger C++-Spielprototyp für Unreal Engine mit Portalwelten, Bibliothek, Rezepten und Bauen. Öffentliche Quelle; aus der aktuellen Portfolioauswahl zurückgezogen.",
+        "ru": "Eigenständiger C++-Spielprototyp für Unreal Engine mit Portalwelten, Bibliothek, Rezepten und Bauen. Öffentliche Quelle; aus der aktuellen Portfolioauswahl zurückgezogen."
+      },
+      "url": "https://github.com/Juri-Halveth/halveth-unreal",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/halveth-unreal/blob/5dcd5ad655bcaa73e672618f0829100989484c65/README.md",
+        "revision": "5dcd5ad655bcaa73e672618f0829100989484c65",
+        "observedAt": "2026-11-17T22:18:40.609321+00:00",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY"
+      },
+      "aliases": [
+        "Portal Garden",
+        "Unreal Engine",
+        "C++",
+        "Portalwelten",
+        "Bibliothek",
+        "Windows-Vorschau",
+        "halveth-unreal"
+      ],
+      "text": "Portal Garden · Unreal-Prototyp. Eigenständiger C++-Spielprototyp für Unreal Engine mit Portalwelten, Bibliothek, Rezepten und Bauen. Öffentliche Quelle; aus der aktuellen Portfolioauswahl zurückgezogen. Stichworte: Portal Garden, Unreal Engine, C++, Portalwelten, Bibliothek, Windows-Vorschau.",
+      "historical": false,
+      "editorialState": "WITHDRAWN_FROM_PORTFOLIO"
+    },
+    {
+      "id": "readme:repo:juri-halveth/juri-halveth:ce748ae23d951c35f510481738a1c91efacd57f0",
+      "repositoryId": "repo:juri-halveth/juri-halveth",
+      "githubRepositoryId": 1392595220,
+      "repositoryType": "meta",
+      "kind": "repository",
+      "title": {
+        "de": "Juri · Entwicklerprofil",
+        "en": "Juri · Entwicklerprofil",
+        "ru": "Juri · Entwicklerprofil"
+      },
+      "summary": {
+        "de": "Öffentliches GitHub-Profil mit vier ausgewählten Arbeiten, datiertem Katalogbezug, interaktiven Beispielen und einer Schnittstellenkarte.",
+        "en": "Öffentliches GitHub-Profil mit vier ausgewählten Arbeiten, datiertem Katalogbezug, interaktiven Beispielen und einer Schnittstellenkarte.",
+        "ru": "Öffentliches GitHub-Profil mit vier ausgewählten Arbeiten, datiertem Katalogbezug, interaktiven Beispielen und einer Schnittstellenkarte."
+      },
+      "url": "https://github.com/Juri-Halveth",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth/blob/ce748ae23d951c35f510481738a1c91efacd57f0/README.md",
+        "revision": "ce748ae23d951c35f510481738a1c91efacd57f0",
+        "observedAt": "2026-11-17T22:18:40.170520+00:00",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY"
+      },
+      "aliases": [
+        "Juri",
+        "HALVETH",
+        "Entwicklerprofil",
+        "Starship Lab",
+        "NOVA",
+        "Tresor",
+        "Technikkarte",
+        "Juri-Halveth"
+      ],
+      "text": "Juri · Entwicklerprofil. Öffentliches GitHub-Profil mit vier ausgewählten Arbeiten, datiertem Katalogbezug, interaktiven Beispielen und einer Schnittstellenkarte. Stichworte: Juri, HALVETH, Entwicklerprofil, Starship Lab, NOVA, Tresor, Technikkarte.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    },
+    {
+      "id": "readme:repo:juri-halveth/juri-halveth.github.io:e1ae68ac6428caa30dfc12739b1c0dfecd6fb8a1",
+      "repositoryId": "repo:juri-halveth/juri-halveth.github.io",
+      "githubRepositoryId": 1373139655,
+      "repositoryType": "meta",
+      "kind": "repository",
+      "title": {
+        "de": "HALVETH · zentrale Website",
+        "en": "HALVETH · zentrale Website",
+        "ru": "HALVETH · zentrale Website"
+      },
+      "summary": {
+        "de": "Zentrale öffentliche Website mit ausgewählten Projekten, Quellzuordnung, datierten Belegen und dem interaktiven Starship Lab. Unterschiedliche Kataloge beschreiben unterschiedliche Auswahlumfänge.",
+        "en": "Zentrale öffentliche Website mit ausgewählten Projekten, Quellzuordnung, datierten Belegen und dem interaktiven Starship Lab. Unterschiedliche Kataloge beschreiben unterschiedliche Auswahlumfänge.",
+        "ru": "Zentrale öffentliche Website mit ausgewählten Projekten, Quellzuordnung, datierten Belegen und dem interaktiven Starship Lab. Unterschiedliche Kataloge beschreiben unterschiedliche Auswahlumfänge."
+      },
+      "url": "https://juri-halveth.github.io/",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/e1ae68ac6428caa30dfc12739b1c0dfecd6fb8a1/README.md",
+        "revision": "e1ae68ac6428caa30dfc12739b1c0dfecd6fb8a1",
+        "observedAt": "2026-11-17T22:18:40.190753+00:00",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY"
+      },
+      "aliases": [
+        "HALVETH",
+        "Website",
+        "Starship Lab",
+        "Universum",
+        "Quellenkatalog",
+        "Belege",
+        "Materialvorschau",
+        "Juri-Halveth.github.io"
+      ],
+      "text": "HALVETH · zentrale Website. Zentrale öffentliche Website mit ausgewählten Projekten, Quellzuordnung, datierten Belegen und dem interaktiven Starship Lab. Unterschiedliche Kataloge beschreiben unterschiedliche Auswahlumfänge. Stichworte: HALVETH, Website, Starship Lab, Universum, Quellenkatalog, Belege, Materialvorschau.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    },
+    {
+      "id": "readme:repo:juri-halveth/lernstudio:a464093d95e50fcb685c6f2db0c386739cc5fc9e",
+      "repositoryId": "repo:juri-halveth/lernstudio",
+      "githubRepositoryId": 1361254877,
+      "repositoryType": "project",
+      "kind": "repository",
+      "title": {
+        "de": "Lernstudio",
+        "en": "Lernstudio",
+        "ru": "Lernstudio"
+      },
+      "summary": {
+        "de": "Lernplattform mit interaktiven Missionen und Lernpfaden. Die optionale Wallet-Anbindung zeigt freigegebene Adresse und Chain; das getrennte EVE-Vertragsprojekt ist ein lokal getesteter Forschungskandidat ohne Live-Adresse.",
+        "en": "Lernplattform mit interaktiven Missionen und Lernpfaden. Die optionale Wallet-Anbindung zeigt freigegebene Adresse und Chain; das getrennte EVE-Vertragsprojekt ist ein lokal getesteter Forschungskandidat ohne Live-Adresse.",
+        "ru": "Lernplattform mit interaktiven Missionen und Lernpfaden. Die optionale Wallet-Anbindung zeigt freigegebene Adresse und Chain; das getrennte EVE-Vertragsprojekt ist ein lokal getesteter Forschungskandidat ohne Live-Adresse."
+      },
+      "url": "https://juri-halveth.github.io/lernstudio/",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/lernstudio/blob/a464093d95e50fcb685c6f2db0c386739cc5fc9e/README.md",
+        "revision": "a464093d95e50fcb685c6f2db0c386739cc5fc9e",
+        "observedAt": "2026-11-17T22:18:40.206261+00:00",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY"
+      },
+      "aliases": [
+        "Lernstudio",
+        "Lernpfade",
+        "Missionen",
+        "Wallet",
+        "EIP-1193",
+        "EVE",
+        "Vertragsforschung",
+        "lernstudio"
+      ],
+      "text": "Lernstudio. Lernplattform mit interaktiven Missionen und Lernpfaden. Die optionale Wallet-Anbindung zeigt freigegebene Adresse und Chain; das getrennte EVE-Vertragsprojekt ist ein lokal getesteter Forschungskandidat ohne Live-Adresse. Stichworte: Lernstudio, Lernpfade, Missionen, Wallet, EIP-1193, EVE, Vertragsforschung.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    },
+    {
+      "id": "readme:repo:juri-halveth/leviathan-wallet-portal:0e821023b7344e73e8f7a09f8ebe92ba54cbcbd6",
+      "repositoryId": "repo:juri-halveth/leviathan-wallet-portal",
+      "githubRepositoryId": 1427582529,
+      "repositoryType": "project",
+      "kind": "repository",
+      "title": {
+        "de": "LEVIATHAN Wallet Portal",
+        "en": "LEVIATHAN Wallet Portal",
+        "ru": "LEVIATHAN Wallet Portal"
+      },
+      "summary": {
+        "de": "Browseroberfläche für Cosmos- und EVM-Positionen, Wallet-Anbindung und sichtbare Datenabdeckung. Unterstützt die Prüfung von ETH und GTC vor dem Senden.",
+        "en": "Browseroberfläche für Cosmos- und EVM-Positionen, Wallet-Anbindung und sichtbare Datenabdeckung. Unterstützt die Prüfung von ETH und GTC vor dem Senden.",
+        "ru": "Browseroberfläche für Cosmos- und EVM-Positionen, Wallet-Anbindung und sichtbare Datenabdeckung. Unterstützt die Prüfung von ETH und GTC vor dem Senden."
+      },
+      "url": "https://juri-halveth.github.io/leviathan-wallet-portal/",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/leviathan-wallet-portal/blob/0e821023b7344e73e8f7a09f8ebe92ba54cbcbd6/README.md",
+        "revision": "0e821023b7344e73e8f7a09f8ebe92ba54cbcbd6",
+        "observedAt": "2026-11-17T22:18:46.409744+00:00",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY"
+      },
+      "aliases": [
+        "LEVIATHAN",
+        "Wallet",
+        "Cosmos",
+        "EVM",
+        "Ethereum",
+        "ETH",
+        "GTC",
+        "Gitcoin",
+        "Oraichain",
+        "Blockchain",
+        "leviathan-wallet-portal"
+      ],
+      "text": "LEVIATHAN Wallet Portal. Browseroberfläche für Cosmos- und EVM-Positionen, Wallet-Anbindung und sichtbare Datenabdeckung. Unterstützt die Prüfung von ETH und GTC vor dem Senden. Stichworte: LEVIATHAN, Wallet, Cosmos, EVM, Ethereum, ETH, GTC, Gitcoin, Oraichain, Blockchain.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    },
+    {
+      "id": "readme:repo:juri-halveth/lucinet-seedspace:6151152eafa90c18dc64563872879dfc9da341f7",
+      "repositoryId": "repo:juri-halveth/lucinet-seedspace",
+      "githubRepositoryId": 1427050044,
+      "repositoryType": "project",
+      "kind": "repository",
+      "title": {
+        "de": "NOVA · lokale Quellen wiederfinden",
+        "en": "NOVA · lokale Quellen wiederfinden",
+        "ru": "NOVA · lokale Quellen wiederfinden"
+      },
+      "summary": {
+        "de": "Lokale Python-Werkzeuge zum Wiederfinden früherer Notizen und Code, zum Bewahren von Korrekturen und zum nachvollziehbaren Fortsetzen von Forschung. Mit Offline-Demo.",
+        "en": "Lokale Python-Werkzeuge zum Wiederfinden früherer Notizen und Code, zum Bewahren von Korrekturen und zum nachvollziehbaren Fortsetzen von Forschung. Mit Offline-Demo.",
+        "ru": "Lokale Python-Werkzeuge zum Wiederfinden früherer Notizen und Code, zum Bewahren von Korrekturen und zum nachvollziehbaren Fortsetzen von Forschung. Mit Offline-Demo."
+      },
+      "url": "https://github.com/Juri-Halveth/lucinet-seedspace",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/lucinet-seedspace/blob/6151152eafa90c18dc64563872879dfc9da341f7/README.md",
+        "revision": "6151152eafa90c18dc64563872879dfc9da341f7",
+        "observedAt": "2026-11-17T22:18:46.442843+00:00",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY"
+      },
+      "aliases": [
+        "NOVA",
+        "LUCINET",
+        "Quellensuche",
+        "Offline-Demo",
+        "Korrekturen",
+        "Forschungsfortsetzung",
+        "lucinet-seedspace"
+      ],
+      "text": "NOVA · lokale Quellen wiederfinden. Lokale Python-Werkzeuge zum Wiederfinden früherer Notizen und Code, zum Bewahren von Korrekturen und zum nachvollziehbaren Fortsetzen von Forschung. Mit Offline-Demo. Stichworte: NOVA, LUCINET, Quellensuche, Offline-Demo, Korrekturen, Forschungsfortsetzung.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    },
+    {
+      "id": "readme:repo:juri-halveth/mein-lernportal:e0c57497ecfc09a47fa78b8152a0b398157c653a",
+      "repositoryId": "repo:juri-halveth/mein-lernportal",
+      "githubRepositoryId": 1373622499,
+      "repositoryType": "project",
+      "kind": "repository",
+      "title": {
+        "de": "Mein Lernportal",
+        "en": "Mein Lernportal",
+        "ru": "Mein Lernportal"
+      },
+      "summary": {
+        "de": "Digitale Grundlagen, Programmierung und Mathematik im Browser lernen, ohne Pflichtkonto und mit lokal gespeicherten Fortschritten.",
+        "en": "Digitale Grundlagen, Programmierung und Mathematik im Browser lernen, ohne Pflichtkonto und mit lokal gespeicherten Fortschritten.",
+        "ru": "Digitale Grundlagen, Programmierung und Mathematik im Browser lernen, ohne Pflichtkonto und mit lokal gespeicherten Fortschritten."
+      },
+      "url": "https://juri-halveth.github.io/mein-lernportal/",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/mein-lernportal/blob/e0c57497ecfc09a47fa78b8152a0b398157c653a/README.md",
+        "revision": "e0c57497ecfc09a47fa78b8152a0b398157c653a",
+        "observedAt": "2026-11-17T22:18:46.486202+00:00",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY"
+      },
+      "aliases": [
+        "Mein Lernportal",
+        "Digitale Grundlagen",
+        "Programmierung",
+        "Mathematik",
+        "Lernfortschritt",
+        "Pyodide",
+        "mein-lernportal"
+      ],
+      "text": "Mein Lernportal. Digitale Grundlagen, Programmierung und Mathematik im Browser lernen, ohne Pflichtkonto und mit lokal gespeicherten Fortschritten. Stichworte: Mein Lernportal, Digitale Grundlagen, Programmierung, Mathematik, Lernfortschritt, Pyodide.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    }
+  ]
+}
