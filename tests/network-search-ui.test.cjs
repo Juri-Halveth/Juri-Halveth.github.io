@@ -35,8 +35,9 @@ test('the existing card search exposes GG24 from the wider network even with zer
   assert.equal(doc.querySelectorAll('[data-project]:not([hidden])').length,0);
   assert.ok(doc.querySelector('[data-network-id="module:console-only:gg24"]'));
   assert.equal(new URL(doc.querySelector('[data-network-all]').href).searchParams.get('q'),'GG24');
+  let resetInputs=0;input.addEventListener('input',()=>{if(input.value==='')resetInputs++;});
   doc.getElementById('project-clear').click();
-  await Promise.resolve();
+  assert.equal(resetInputs,1);
   assert.equal(doc.querySelectorAll('[data-network-id]').length,0);
   assert.equal(new URL(doc.querySelector('[data-network-all]').href).searchParams.has('q'),false);
   assert.equal(doc.querySelectorAll('[data-project]:not([hidden])').length,13);

@@ -16,7 +16,8 @@ export function mountProjectFinder(doc){
  }
  input.addEventListener('input',refresh);
  for(const button of buttons)button.addEventListener('click',()=>{kind=button.dataset.projectFilter;refresh();});
- doc.getElementById('project-clear').addEventListener('click',()=>{kind='all';input.value='';refresh();input.focus();});
+ // Notify every view after changing the shared field, independent of click-listener order.
+ doc.getElementById('project-clear').addEventListener('click',()=>{kind='all';input.value='';input.dispatchEvent(new doc.defaultView.Event('input',{bubbles:true}));input.focus();});
  refresh();return {refresh};
 }
 if(typeof document!=='undefined')mountProjectFinder(document);
