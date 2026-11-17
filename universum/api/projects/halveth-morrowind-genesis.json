@@ -2,6 +2,8 @@
   "schema": "halveth.project-context.v1",
   "id": "halveth-morrowind-genesis",
   "title": "MORROWIND GENESIS",
+  "entryType": "PROJECT",
+  "editorialState": "WITHDRAWN_FROM_PORTFOLIO",
   "categories": [
     "worlds"
   ],

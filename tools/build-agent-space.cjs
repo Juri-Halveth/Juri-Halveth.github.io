@@ -55,6 +55,7 @@ function buildAgentSpace(root, catalog) {
     const publicSubspaces = publishedSubspaces(project);
     const context = {
       schema: 'halveth.project-context.v1', id: project.id, title: project.title,
+      entryType: project.site.entry_type, editorialState: project.site.editorial_state,
       categories: project.categories, state: brief.state,
       publicEntry: {url: project.url, action: project.action},
       ...(publicSubspaces.length ? {publicSubspaces: publicSubspaces.map(space => ({
@@ -82,6 +83,7 @@ function buildAgentSpace(root, catalog) {
     const relativePath = 'api/projects/' + fileName;
     fs.writeFileSync(path.join(projectDir, fileName), bytes);
     indexed.push({id: project.id, title: project.title, state: brief.state,
+      entryType: project.site.entry_type, editorialState: project.site.editorial_state,
       categories: project.categories, path: relativePath, bytes: bytes.length,
       sha256: sha256(bytes)});
   }
@@ -94,6 +96,10 @@ function buildAgentSpace(root, catalog) {
     access: {mode: 'READ_PUBLIC', transport: 'HTTPS_GET', writes: false,
       usage: 'READ_OVERVIEW_THEN_ONLY_RELEVANT_PROJECT_CONTEXTS'},
     claimCeiling: 'STATIC_SOURCE_DESCRIPTIONS_NOT_RUNTIME_PROOF_OR_AUTOMATIC_UNDERSTANDING',
+    coverage: {mode: 'DATED_EDITORIAL_SELECTION', countKind: 'REPOSITORY_ENTRIES',
+      projectEntries: catalog.projects.filter(project => project.site.entry_type === 'PROJECT').length,
+      metaEntries: catalog.projects.filter(project => project.site.entry_type === 'META').length},
+    broaderPublicNetwork: {index: 'api/network.json', search: 'api/search.json', human: 'https://juri-halveth.github.io/suche/'},
     projects: indexed
   };
   fs.mkdirSync(path.join(output, 'api'), {recursive: true});
@@ -102,9 +108,13 @@ function buildAgentSpace(root, catalog) {
   fs.writeFileSync(path.join(output, 'llms.txt'), [
     '# HALVETH / NETZ Starship Lab',
     '',
-    'Public read-only project index: https://juri-halveth.github.io/universum/api/space.json',
+    'Current observed public inventory, entry descriptions and coverage: https://juri-halveth.github.io/universum/api/network.json',
+    'Shared public description search data: https://juri-halveth.github.io/universum/api/search.json',
+    'Search entrance: https://juri-halveth.github.io/suche/',
+    `Dated editorial selection (${indexed.length} repository entries; source ${briefs.source_date}): https://juri-halveth.github.io/universum/api/space.json`,
     'Typed public project-topic relations: https://juri-halveth.github.io/universum/api/relations.json',
     'Relations are catalog membership snapshots, not causal links or live process events.',
+    'The broader index states its exact coverage; it does not search every repository file, private source or external site.',
     'Read the compact overview first, then only the relevant project context listed in projects[].path.',
     'Check projects[].sha256 against the exact downloaded UTF-8 bytes. Use revision to detect index changes.',
     'Each context separates public capability, any separate local and loopback prototypes, and an unpublished user goal.',

@@ -2,6 +2,8 @@
   "schema": "halveth.project-context.v1",
   "id": "halveth-tron-security-lab",
   "title": "TRON SECURITY LAB",
+  "entryType": "PROJECT",
+  "editorialState": "CURRENT",
   "categories": [
     "security"
   ],

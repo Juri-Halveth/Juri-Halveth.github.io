@@ -176,13 +176,13 @@ test('release, research PR and browser vault actions lead to their stated destin
  }
 });
 
-test('home has one hero, four distinct direct cards and four primary navigation links in each language',()=>{
+test('home has one hero, four distinct direct cards and five primary navigation links in each language',()=>{
  for(const lang of ['','en/','ru/']){
   const doc=read(lang);
   assert.equal(doc.querySelectorAll('main .service-hero').length,1);
   assert.equal(doc.querySelectorAll('main h1').length,1);
   assert.equal(doc.querySelectorAll('main .universe-gateway,main .scene-hero,main .scene-demo-band,main .map-teaser').length,0);
-  assert.equal(doc.querySelectorAll('header .primary-nav a').length,4);
+  assert.equal(doc.querySelectorAll('header .primary-nav a').length,5);
   const cards=[...doc.querySelectorAll('[data-featured-project]')];
   assert.equal(cards.length,4);
   assert.equal(new Set(cards.map(c=>c.dataset.featuredProject)).size,4);

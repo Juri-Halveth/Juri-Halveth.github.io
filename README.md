@@ -208,3 +208,46 @@ behalten MIT samt vollständigem Hinweis; Portal- und neue Narrativelemente
 unterliegen der bestehenden pfadgebundenen PIRL-Zuordnung. Übernommene Module
 und externe Quellen behalten ihre eigenen Rechte. Private Ausgangsdokumente,
 Originalgespräche und lokale Journale sind nicht Teil dieser Webvorschau.
+
+## Öffentliche Netzsuche und Aktualität
+
+`/suche/`, `/en/suche/` und `/ru/suche/` durchsuchen denselben öffentlichen
+Bestand. Die Eingabefelder in `/arbeiten/` und im Starship Lab zeigen
+zusätzlich Treffer aus diesem Index. KORRIDOT, die GG24-Zeitspur und der
+Lichtpunkt sind eigene Einstiege mit einer Repository-Zuordnung. Weitere
+öffentliche Websites werden als getrennte Veröffentlichungen erfasst; eine
+gleiche Bezeichnung belegt keine gleiche Codeversion.
+
+Die anonyme GitHub-Inventur in `data/network-inventory.json` erfasst den
+öffentlichen Repository-Bestand mit Beobachtungszeit, Branch und HEAD.
+`data/network-entries.json` beschreibt geprüfte zusätzliche Module,
+`data/network-sites.json` getrennte öffentliche Websites. Die erzeugten
+Dateien `universum/api/network.json` und `universum/api/search.json` sind
+lesende Schnittstellen mit Quellen und eindeutigem Umfang. Die Suche
+verwendet Metadaten, öffentliche README-Auszüge und geprüfte Beschreibungen;
+sie ist kein Volltextindex sämtlicher Dateien oder privater Archive.
+
+Der bisherige Katalog bleibt eine datierte redaktionelle Auswahl. Seine
+18 Repository-Einträge, 16 Projektzuordnungen und 13 aktiven Projektkarten
+sind keine Gesamtzählung des heutigen Kontos. Zurückgezogene Karten
+werden durch die Netzsuche nicht wieder als aktuelle Portfoliokarten
+veröffentlicht. Historische Beschreibungen sind bewusst zuschaltbar.
+
+```bash
+node tools/refresh-network-inventory.cjs
+npm run build
+npm test
+```
+
+Der Pages-Workflow prüft zuerst den committeten Stand auf reproduzierbare
+Generierung. Bei manuellem Start und alle sechs Stunden erneuert er danach
+die anonyme öffentliche Inventur, baut die Ansichten und prüft den
+resultierenden Stand vor Veröffentlichung. Er erzeugt keine automatischen
+Git-Commits und übernimmt keine alten Testergebnisse auf neue HEADs. Bei
+einem fehlgeschlagenen Abruf wird nicht veröffentlicht. Ein älterer Index
+bleibt mit seinem tatsächlichen Beobachtungszeitpunkt erkennbar; nach zwei
+Tagen erscheint in der Netzsuche ein Altershinweis. Die Termine sind ein
+Aktualisierungsintervall und keine Echtzeitgarantie.
+
+Weitere Details: [Datenvertrag](DATA-NETWORK.md) und
+[getrennte Domain-Veröffentlichungen](PUBLICATION-DOMAINS.md).

@@ -2,6 +2,8 @@
   "schema": "halveth.project-context.v1",
   "id": "halveth-cannabis-reform-forschung",
   "title": "QUELLEN & REFORM",
+  "entryType": "PROJECT",
+  "editorialState": "CURRENT",
   "categories": [
     "society"
   ],

@@ -13,7 +13,11 @@ const source = require('../universum/api/space.json');
 test('public graph binds each edge to one explicit project-category membership', () => {
   const graph = fromSpace(source);
   const expected = source.projects.reduce((count, project) => count + project.categories.length, 0);
-  assert.equal(graph.coverage.projectCount, source.projects.length);
+  assert.equal(graph.coverage.repositoryCount, source.projects.length);
+  assert.equal(graph.coverage.projectCount, source.projects.filter(project => project.entryType === 'PROJECT').length);
+  assert.equal(graph.coverage.metaCount, source.projects.filter(project => project.entryType === 'META').length);
+  assert.equal(graph.coverage.currentProjectCount, source.projects.filter(project => project.entryType === 'PROJECT' && project.editorialState === 'CURRENT').length);
+  assert.equal(graph.nodes.filter(node => node.kind === 'PUBLIC_META').length, graph.coverage.metaCount);
   assert.equal(graph.coverage.relationCount, expected);
   assert.equal(graph.relations.length, expected);
   assert.equal(graph.nodes.length, source.projects.length + new Set(source.projects.flatMap(item => item.categories)).size);
@@ -39,7 +43,8 @@ test('new projects and previously unseen categories enter without a fixed count'
   assert.ok(graph.nodes.some(node => node.id === 'project:new-lab'));
   assert.ok(graph.nodes.some(node => node.id === 'category:new-topic'));
   assert.ok(graph.relations.some(edge => edge.from === 'project:new-lab' && edge.to === 'category:new-topic'));
-  assert.equal(graph.coverage.projectCount, source.count + 1);
+  assert.equal(graph.coverage.repositoryCount, source.count + 1);
+  assert.equal(graph.coverage.projectCount, fromSpace(source).coverage.projectCount + 1);
 });
 
 test('ambiguous or escaping source addresses and duplicate identities are rejected', () => {

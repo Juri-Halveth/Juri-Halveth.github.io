@@ -2,3 +2,6 @@
 node_modules/
 test-results/
 playwright-report/
+
+# Local dependency installation; shared by isolated worktrees when needed.
+/node_modules

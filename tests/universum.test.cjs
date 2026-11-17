@@ -61,15 +61,16 @@ test('public history JSON matches browser manifests and both Node adapters load 
   }
 });
 
-test('Starship static document has no broken same-route resources or credits links', () => {
+test('Starship static document resolves local resources and the explicit shared search links', () => {
   const nodes = document.querySelectorAll('script[src], link[href], img[src], a[href]');
   for (const node of nodes) {
     const raw = node.getAttribute('src') || node.getAttribute('href');
     if (!raw || raw.startsWith('#') || /^(https?:|mailto:|data:|blob:)/i.test(raw)) continue;
     const url = new URL(raw, 'https://juri-halveth.github.io/universum/');
     assert.equal(url.origin, 'https://juri-halveth.github.io');
-    assert.ok(url.pathname.startsWith('/universum/'), `${raw} escapes the route`);
-    const target = path.join(route, decodeURIComponent(url.pathname.slice('/universum/'.length)));
+    const sharedSearchPaths = new Set(['/network-search.css', '/network-search-ui.mjs', '/suche/']);
+    assert.ok(url.pathname.startsWith('/universum/') || sharedSearchPaths.has(url.pathname), `${raw} escapes the published route and shared search allowlist`);
+    const target = path.join(route, '..', decodeURIComponent(url.pathname));
     assert.ok(fs.existsSync(target), `Missing ${raw}`);
   }
 });
@@ -321,7 +322,7 @@ test('portfolio entrances retain an optional working Starship Lab route and site
     const doc = new JSDOM(fs.readFileSync(path.join(root, page), 'utf8')).window.document;
     const links = [...doc.querySelectorAll('footer nav a')].filter(a => a.textContent.includes('Starship Lab'));
     assert.equal(links.length, 1, page);
-    assert.equal(doc.querySelectorAll('header .primary-nav a').length, 4, page);
+    assert.equal(doc.querySelectorAll('header .primary-nav a').length, 5, page);
     const target = new URL(links[0].getAttribute('href'), `https://juri-halveth.github.io/${page}`);
     assert.equal(target.pathname, '/universum/', page);
   }

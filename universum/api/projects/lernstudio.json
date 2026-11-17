@@ -2,6 +2,8 @@
   "schema": "halveth.project-context.v1",
   "id": "lernstudio",
   "title": "LERNSTUDIO",
+  "entryType": "PROJECT",
+  "editorialState": "CURRENT",
   "categories": [
     "learning"
   ],

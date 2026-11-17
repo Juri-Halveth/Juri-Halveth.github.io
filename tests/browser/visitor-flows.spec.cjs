@@ -18,7 +18,7 @@ test('search and category input produce visible results and an empty state with 
    expect((await moduleResponse).status()).toBe(200);
    const search=page.getByRole('searchbox');
    const visibleCards=page.locator('[data-project]:visible');
-   const countLabel=page.getByRole('status');
+   const countLabel=page.locator('#project-filter-count');
    const empty=page.locator('#project-empty');
    await expect(visibleCards).toHaveCount(13);
    // The generated HTML has different text; this confirms browser initialization.

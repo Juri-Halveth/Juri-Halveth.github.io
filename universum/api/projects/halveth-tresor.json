@@ -2,6 +2,8 @@
   "schema": "halveth.project-context.v1",
   "id": "halveth-tresor",
   "title": "TRESOR",
+  "entryType": "PROJECT",
+  "editorialState": "CURRENT",
   "categories": [
     "software",
     "security"

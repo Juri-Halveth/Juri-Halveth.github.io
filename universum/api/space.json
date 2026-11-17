@@ -1,7 +1,7 @@
 {
   "schema": "halveth.agent-space.v1",
   "baseURL": "https://juri-halveth.github.io/universum/",
-  "revision": "8c52481a415f676f3961e9f51122c5a00cc20a76f8a2a60a020058025942a5c5",
+  "revision": "16baaf3baa535ec33768cb5fad88701f26e35654f0172c2439aefdd9773527d8",
   "sourceDate": "2026-11-02",
   "catalogSha256": "3b2ec3967fdc5a9c399bfbf4649d4138846c6560a80171cd185257b56c97c5f3",
   "briefSha256": "d8f7206c88e072c5c1fecabdbf86db60d6c3e426f430f37b47c4c23c87269059",
@@ -13,212 +13,259 @@
     "usage": "READ_OVERVIEW_THEN_ONLY_RELEVANT_PROJECT_CONTEXTS"
   },
   "claimCeiling": "STATIC_SOURCE_DESCRIPTIONS_NOT_RUNTIME_PROOF_OR_AUTOMATIC_UNDERSTANDING",
+  "coverage": {
+    "mode": "DATED_EDITORIAL_SELECTION",
+    "countKind": "REPOSITORY_ENTRIES",
+    "projectEntries": 16,
+    "metaEntries": 2
+  },
+  "broaderPublicNetwork": {
+    "index": "api/network.json",
+    "search": "api/search.json",
+    "human": "https://juri-halveth.github.io/suche/"
+  },
   "projects": [
     {
       "id": "halveth-scarlet",
       "title": "SCARLET",
       "state": "Browsermodell",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "categories": [
         "models",
         "worlds"
       ],
       "path": "api/projects/halveth-scarlet.json",
-      "bytes": 2935,
-      "sha256": "587d02747695041892890b0f2537eb4be4fd965be21006ad002c0db29f015d68"
+      "bytes": 2992,
+      "sha256": "30cb182f5af5218b282d0ad563dfa19024d855f0e9f7ca567de47753efddb2ce"
     },
     {
       "id": "lucinet-seedspace",
       "title": "LUCINET / NOVA",
       "state": "Lokales Werkzeug",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "categories": [
         "software",
         "security"
       ],
       "path": "api/projects/lucinet-seedspace.json",
-      "bytes": 2234,
-      "sha256": "5f2d21a1e4dff28c62002d12fb0b1a4554b2fc8bad2511b3258ae54d9694177e"
+      "bytes": 2291,
+      "sha256": "87be6d9c7d5a1525b23c3e807e46a3a5dc5136bcb6882572a8aa31825ff70fd9"
     },
     {
       "id": "halveth-forschungslabor",
       "title": "FORSCHUNGSLABOR",
       "state": "Modellsammlung",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "categories": [
         "models",
         "security",
         "software"
       ],
       "path": "api/projects/halveth-forschungslabor.json",
-      "bytes": 2219,
-      "sha256": "99c1eb6e821d7865b04dee22994cb0ff9aa45f696324a742d99d2a420207db97"
+      "bytes": 2276,
+      "sha256": "777615a1048bf18a40018518e588696e9c4cf136726cd6940476f1ea2d0aaa24"
     },
     {
       "id": "halveth-tresor",
       "title": "TRESOR",
       "state": "Windows-Release",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "categories": [
         "software",
         "security"
       ],
       "path": "api/projects/halveth-tresor.json",
-      "bytes": 1168,
-      "sha256": "346d71fc81c0dc9bc58e1fcad0921bfe422b4474cd8519be02506c1d4e38608c"
+      "bytes": 1225,
+      "sha256": "3d2f9c53a2cfad6839857406c5a613ee3d06bffbd2f652dee13cb71688fa85c2"
     },
     {
       "id": "mein-lernportal",
       "title": "LERNPORTAL",
       "state": "Webanwendung",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "categories": [
         "learning"
       ],
       "path": "api/projects/mein-lernportal.json",
-      "bytes": 1075,
-      "sha256": "d49630db0d8c0ffaf0da81ed66d6529fa2826cf50858229c9016b38c866e6094"
+      "bytes": 1132,
+      "sha256": "8edde274aa29b09aefde07c54d2e20673f6140b711b072fe62b0a12b54bdd423"
     },
     {
       "id": "halveth-field-difference-lab",
       "title": "FIELD DIFFERENCE",
       "state": "Browserlabor",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "categories": [
         "models"
       ],
       "path": "api/projects/halveth-field-difference-lab.json",
-      "bytes": 1175,
-      "sha256": "e4d685ad8a8392e3bc6f9c7d5eb1790adf2d3acf2ba67b8a6e2b23d148f537c3"
+      "bytes": 1232,
+      "sha256": "e4bad21c4e880301dbd7345cd0ddc4b5e57117edd127a51169d46873c28bd147"
     },
     {
       "id": "c-drohne-red-room",
       "title": "C-DROHNE / RED ROOM",
       "state": "Szenenprototyp",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "categories": [
         "models",
         "security",
         "worlds"
       ],
       "path": "api/projects/c-drohne-red-room.json",
-      "bytes": 1125,
-      "sha256": "a1a9e6a3182cf3b43d7847062c5018fa622c25845081a3f668f7e8e3d6ca98ec"
+      "bytes": 1182,
+      "sha256": "d336757a8cedcb90c38f3b614f7d1e9703c593213c388926325a6c6cfa903e9e"
     },
     {
       "id": "halveth-realms",
       "title": "HALVETH REALMS",
       "state": "Desktop-Release",
+      "entryType": "PROJECT",
+      "editorialState": "WITHDRAWN_FROM_PORTFOLIO",
       "categories": [
         "worlds"
       ],
       "path": "api/projects/halveth-realms.json",
-      "bytes": 1107,
-      "sha256": "73146f85d21a40c04a60b4083f1466ba71b51e605b7b492c84f0ad13c163e136"
+      "bytes": 1181,
+      "sha256": "95462695524eeda424bcd2f8223ad57233eafba3e14185ff2ed293e349abe543"
     },
     {
       "id": "halveth-cannabis-reform-forschung",
       "title": "QUELLEN & REFORM",
       "state": "Quellenprojekt",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "categories": [
         "society"
       ],
       "path": "api/projects/halveth-cannabis-reform-forschung.json",
-      "bytes": 1101,
-      "sha256": "b989f4f590f13ea14dd96e6ab283bcdae8d1714eea73d71b47ae73ddcbba1b8f"
+      "bytes": 1158,
+      "sha256": "92eaa1f75daa57687cf2c8ca640fd8c1afad1bfb6017464183288f06552b5902"
     },
     {
       "id": "lernstudio",
       "title": "LERNSTUDIO",
       "state": "Webanwendung",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "categories": [
         "learning"
       ],
       "path": "api/projects/lernstudio.json",
-      "bytes": 1128,
-      "sha256": "18112dd273583d9b5dba6103c9cda2918bd09d8aae4f932062da0b9ec9e5d3cc"
+      "bytes": 1185,
+      "sha256": "1b01972ed7b883d23d81716d6ffeea561e0bd0de29d01a8c6bf0d63d11f88dfe"
     },
     {
       "id": "fortuna",
       "title": "FORTUNA",
       "state": "Browserlabor",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "categories": [
         "software",
         "models"
       ],
       "path": "api/projects/fortuna.json",
-      "bytes": 2433,
-      "sha256": "02db8ab43cad7117d714321a3834d91b4fc9ccf2894e3304139c8907dcf04cfe"
+      "bytes": 2490,
+      "sha256": "daec5fd075ef329a19afb5a1ccf298a98ff32ee72f19fcbf604749cf259294f9"
     },
     {
       "id": "halveth-project0-keeper",
       "title": "PROJECT0 KEEPER",
       "state": "Lokaler Prototyp",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "categories": [
         "software"
       ],
       "path": "api/projects/halveth-project0-keeper.json",
-      "bytes": 1129,
-      "sha256": "da5d8bc399becb30ac0e4290c23f9e86fa0914ec5373b0875103553d02a34db7"
+      "bytes": 1186,
+      "sha256": "b79358fdaaf4977d8b7879a9806578c80efcf12c05f1c78bdca61c5020b70b81"
     },
     {
       "id": "halveth-morrowind-genesis",
       "title": "MORROWIND GENESIS",
       "state": "OpenMW-Erweiterung",
+      "entryType": "PROJECT",
+      "editorialState": "WITHDRAWN_FROM_PORTFOLIO",
       "categories": [
         "worlds"
       ],
       "path": "api/projects/halveth-morrowind-genesis.json",
-      "bytes": 1150,
-      "sha256": "c2dbce10ae4b8703931cbbb96a60dd921b09f772119762e2ff2869f1a53300cd"
+      "bytes": 1224,
+      "sha256": "df4ff5afa0eb8dd3b0d5379fbc9cde5c2cb665efdf6bb2b88f5b572f6e6fd4c8"
     },
     {
       "id": "halveth-unreal",
       "title": "HALVETH UNREAL",
       "state": "Windows-Vorschau",
+      "entryType": "PROJECT",
+      "editorialState": "WITHDRAWN_FROM_PORTFOLIO",
       "categories": [
         "worlds"
       ],
       "path": "api/projects/halveth-unreal.json",
-      "bytes": 1093,
-      "sha256": "c0414ff055848f926203cc437a6b06c4d5df5ad0f68ff954324e405376265f2a"
+      "bytes": 1167,
+      "sha256": "8456112d7d976acce92d0786e318d9ac10fb8d6b6fe8e337a4c9d308400b5231"
     },
     {
       "id": "halveth-tron-security-lab",
       "title": "TRON SECURITY LAB",
       "state": "Forschungsentwurf",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "categories": [
         "security"
       ],
       "path": "api/projects/halveth-tron-security-lab.json",
-      "bytes": 1193,
-      "sha256": "cbfaa3a3f03b57c8a1aacddcba901b909bd0207d188cf2d246d384531c345e83"
+      "bytes": 1250,
+      "sha256": "4b05d4f66c018519ced7c045dd98649ab3b6976f35d7f090fc79115c8e8b77d3"
     },
     {
       "id": "leviathan-wallet-portal",
       "title": "LEVIATHAN PORTAL",
       "state": "Browserprototyp",
+      "entryType": "PROJECT",
+      "editorialState": "CURRENT",
       "categories": [
         "software"
       ],
       "path": "api/projects/leviathan-wallet-portal.json",
-      "bytes": 1165,
-      "sha256": "1e03ab29898a6522d9b994134efff952e5958e8f591ab57b68e0a61e27db1b3d"
+      "bytes": 1222,
+      "sha256": "5318da5cb408fcef76cd7992a174b86729d893438e774b136b770cdd844cdb39"
     },
     {
       "id": "Juri-Halveth.github.io",
       "title": "WEB-EINGANG",
       "state": "Portfolio",
+      "entryType": "META",
+      "editorialState": "CURRENT",
       "categories": [
         "software"
       ],
       "path": "api/projects/Juri-Halveth.github.io.json",
-      "bytes": 1062,
-      "sha256": "1c6ea7324d6ab3037e6cbda2cf88c7b1a5ad80a503cda7f3842b4b3d79ef7e92"
+      "bytes": 1116,
+      "sha256": "01fd7f0b28e032b36a7157335ad4929839bf347d800569201baed28ce85b99c0"
     },
     {
       "id": "Juri-Halveth",
       "title": "PROFILQUELLE",
       "state": "Profilquelle",
+      "entryType": "META",
+      "editorialState": "CURRENT",
       "categories": [
         "software"
       ],
       "path": "api/projects/Juri-Halveth.json",
-      "bytes": 1032,
-      "sha256": "845735fe164a5ecc9c959dfb7e5327e896a78afe5f943d189eae900d3c5f1993"
+      "bytes": 1086,
+      "sha256": "1c0476b45da02ae978a8438696e37f5fb23fe7339ff4557e9c76756f2968c3a3"
     }
   ]
 }
