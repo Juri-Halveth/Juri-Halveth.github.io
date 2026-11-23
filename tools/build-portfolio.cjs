@@ -129,6 +129,6 @@ put('llms.txt',[
  'Static source descriptions do not prove runtime behavior or grant an agent authority.',
  ''
 ].join('\n'));
-put('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+Object.keys(copy).flatMap(l=>routes.filter(r=>!['pulsar/','zertifikate/','werkzertifikate/'].includes(r)).map(r=>'<url><loc>https://juri-halveth.github.io/'+(l==='de'?'':l+'/')+r+'</loc></url>')).join('')+'<url><loc>https://juri-halveth.github.io/universum/</loc></url></urlset>\n');
+put('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+Object.keys(copy).flatMap(l=>routes.filter(r=>!['pulsar/','zertifikate/','werkzertifikate/'].includes(r)).map(r=>'<url><loc>https://juri-halveth.github.io/'+(l==='de'?'':l+'/')+r+'</loc></url>')).join('')+'<url><loc>https://juri-halveth.github.io/universum/</loc></url><url><loc>https://juri-halveth.github.io/universum/lucineta/</loc></url></urlset>\n');
 put('profil/CV-Juri-Halveth.md','# Juri\n\nSoftwareentwicklung · interaktive Grafik · Lernangebote\n\nEntwicklung mit KI-Unterstützung.\n\n[Projekte und Arbeitsproben](https://juri-halveth.github.io/profil/)\n\nKontakt: juri@halveth.de\n');
 console.log(`Built ${routes.length*3+1} public pages with 13 curated projects from 18 public source entries.`);
