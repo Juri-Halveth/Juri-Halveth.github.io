@@ -30,7 +30,7 @@ konfiguriert. Der öffentliche Katalog zeigt weiterhin nur die 18 öffentlichen
 Einträge. Sein redaktionelles `source_date` vom 2. November ist ein anderer
 Zeitstand als dieser Inventarabruf; private Namen werden nicht exportiert.
 
-[Starship Lab öffnen](https://juri-halveth.github.io/universum/) ·
+[Starship Lab öffnen](https://juri-halveth.github.io/universum/) · [LUCINET × LUCINETA Gegenprüflabor](https://juri-halveth.github.io/universum/lucineta/) ·
 [Szenen und Modelle ansehen](https://juri-halveth.github.io/modelle/) ·
 [Technische Karte](https://juri-halveth.github.io/koennen/)
 
