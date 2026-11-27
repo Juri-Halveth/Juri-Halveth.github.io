@@ -59,6 +59,17 @@ if(fs.existsSync(materialPreviewDir)){
  put('modelle/material-20261117/assets/build-info.js','globalThis.HALVETH_BUILD=Object.freeze('+JSON.stringify(build)+');\n');
 }
 put('universum/data/catalog.js','window.HALVETH_CATALOG =\n'+JSON.stringify(siteCatalog,null,2)+';\n');
+// Keep the two browser entry URLs bound to the exact file bytes served by Pages.
+const starshipIndex='universum/index.html';
+let starshipHtml=fs.readFileSync(path.join(root,starshipIndex),'utf8');
+for(const asset of ['data/catalog.js','app.js']){
+ const currentDigest=createHash('sha256').update(fs.readFileSync(path.join(root,'universum',asset))).digest('hex').slice(0,12);
+ const prefix='src="'+asset+'?v=';
+ const chunks=starshipHtml.split(prefix);
+ if(chunks.length!==2||!/^[0-9a-f]{12}"/.test(chunks[1]))throw Error('Expected one versioned Starship script: '+asset);
+ starshipHtml=chunks[0]+prefix+currentDigest+chunks[1].slice(12);
+}
+put(starshipIndex,starshipHtml);
 const {buildAgentSpace}=require('./build-agent-space.cjs');
 buildAgentSpace(root,siteCatalog);
 const {search:networkSearch}=require('./build-network-index.cjs').buildNetworkIndex(root);

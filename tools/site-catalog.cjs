@@ -91,6 +91,14 @@ function validateSiteCatalog(catalog){
   }else if(p.site.pr_number!==undefined&&p.site.pr_number!==null)throw Error('PR number without PR entry');
   if((p.site.editorial_state==='WITHDRAWN_FROM_PORTFOLIO')!==withdrawnFromPortfolio.has(p.id))throw Error('Portfolio editorial state mismatch');
   validateSubspaces(p);
+  if(p.site.entry_type==='PROJECT' && p.site.editorial_state==='CURRENT'){
+   for(const lang of languages){
+    for(const key of ['audience','start','scope']){
+     const value=p.site.visitor_guide?.[lang]?.[key];
+     if(typeof value!=='string'||!value.trim())throw Error('Missing visitor guide '+p.id+' '+lang+' '+key);
+    }
+   }
+  }
   if(p.site.entry_type==='PROJECT')projectCount++;else metaCount++;
   for(const field of ['title','summary','action'])for(const lang of languages)if(typeof p.site[field]?.[lang]!=='string'||!p.site[field][lang].trim())throw Error('Localized '+field+' required');
   if(p.site.revision!==null&&!/^[0-9a-f]{40}$/.test(p.site.revision))throw Error('Invalid optional pinned revision');
@@ -144,9 +152,22 @@ function renderHome(catalog,lang,networkSearch){
  const title={de:'Vier Projekte zum Anfangen',en:'Four projects to start with',ru:'Четыре проекта для начала'}[lang];
  return renderProjectEntrance(networkSearch,lang)+`<section class="shell service-featured" id="featured"><h2>${title}</h2><div class="service-featured-grid">${featured.map(p=>featureCard(p,lang)).join('')}</div><div class="service-actions"><a class="text-link" href="${prefix}arbeiten/">${t.all}</a>${guideLink(lang)}</div></section><section class="service-method"><div class="shell"><h2>${t.method}</h2><p>${t.methodText}</p><a class="text-link" href="${prefix}belege/">${t.cases}</a></div></section>`;
 }
+const visitorGuideLabels={
+ de:{summary:'Einstieg und Quellcode',audience:'Für wen',start:'Erster Versuch',scope:'Was du hier siehst'},
+ en:{summary:'Getting started and source code',audience:'Who it helps',start:'First step',scope:'What to expect'},
+ ru:{summary:'С чего начать и где найти код',audience:'Для кого',start:'Первый шаг',scope:'Чего ожидать'}
+};
+function renderVisitorGuide(project, lang){
+ const labels=visitorGuideLabels[lang];
+ const guide=project.site.visitor_guide[lang];
+ const fields=['audience','start','scope'].map(key=>
+  `<dt>${escape(labels[key])}</dt><dd>${escape(guide[key])}</dd>`
+ );
+ return `<summary>${escape(labels.summary)}</summary><dl class="visitor-guide">${fields.join('')}</dl>`;
+}
 function directoryCard(project,lang){
  const t=copy[lang],s=project.site;
- return `<article class="directory-project" data-project="${escape(project.id)}" data-category="${escape(s.primary_category)}"><p class="work-kind">${escape(entryStatus(project,lang))}</p><h3>${escape(s.title[lang])}</h3><p>${escape(s.summary[lang])}</p>${renderSubspaces(project,lang)}${project.id==='halveth-scarlet'?renderVisitorCorridor(lang):''}<div class="directory-actions"><a class="button" href="${escape(entryHref(project,lang))}">${escape(s.action[lang])} ↗</a><details class="source-fold"><summary>${t.source}</summary><a class="text-link" href="https://github.com/${escape(project.repository)}">${t.guide}</a><br><a class="text-link" data-pinned-source href="${escape(project.source_url)}">${escape(sourceAction(project,lang))}</a></details></div><p class="source-caption">${escape(project.title)} · ${escape(project.repository)}</p></article>`;
+ return `<article class="directory-project" data-project="${escape(project.id)}" data-category="${escape(s.primary_category)}"><p class="work-kind">${escape(entryStatus(project,lang))}</p><h3>${escape(s.title[lang])}</h3><p>${escape(s.summary[lang])}</p>${renderSubspaces(project,lang)}${project.id==='halveth-scarlet'?renderVisitorCorridor(lang):''}<div class="directory-actions"><a class="button" href="${escape(entryHref(project,lang))}">${escape(s.action[lang])} ↗</a><details class="source-fold">${renderVisitorGuide(project,lang)}<a class="text-link" href="https://github.com/${escape(project.repository)}">${t.guide}</a><br><a class="text-link" data-pinned-source href="${escape(project.source_url)}">${escape(sourceAction(project,lang))}</a></details></div><p class="source-caption">${escape(project.title)} · ${escape(project.repository)}</p></article>`;
 }
 function renderDirectory(catalog,lang){
  validateSiteCatalog(catalog);const t=copy[lang];if(!t)throw Error('Unknown site language');
