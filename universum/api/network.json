@@ -1,6 +1,6 @@
 {
   "schema": "halveth.public-network.v1",
-  "revision": "cc74bdf4e545e77a63b95f277393690d42481d11ad86c7836617f8afbc79f2ef",
+  "revision": "e1e753fe759863c928900d1b168fad1c6c28e14491b886e499b69851a781a703",
   "observedAt": "2026-11-27T15:30:42.210Z",
   "coverage": {
     "mode": "PUBLIC_METADATA_AND_REVIEWED_ENTRY_DESCRIPTIONS",
@@ -79,12 +79,12 @@
     },
     {
       "path": "data/network-readme-descriptions.json",
-      "sha256": "42e4000639ca30c09bb532be6bef35136e15bf50be2449c2866c8c0da0b0f799",
+      "sha256": "ad090ad50b702d6583a8b1f2b342379e7e7d113052486da4dc7224f61596b5de",
       "role": "REVIEWED_PUBLIC_README_DESCRIPTIONS"
     },
     {
       "path": "data/network-entries.json",
-      "sha256": "0b8badeccb2345424055bae682aa918ef59a0e6a2527dcdeda2a8bbcbb3f6858",
+      "sha256": "9399b2b5fedc970d6137c69634e388ab047e2f90ea976283c8e7793c248593d9",
       "role": "REVIEWED_ADDITIVE_PUBLIC_ENTRIES"
     },
     {
@@ -116,7 +116,7 @@
   "search": {
     "json": "search.json",
     "module": "search.mjs",
-    "sha256": "135d2aecda3a3cb2da2bac3017e931162ee88f7af81dbde8767315d930a512bc",
+    "sha256": "9f6334ce3a844052e81f599deef480c374b0b9ab76ebc826cc4baf7b8779d557",
     "queryModule": "../../network-search.mjs"
   },
   "repositories": [

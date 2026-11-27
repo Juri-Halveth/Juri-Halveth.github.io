@@ -17,6 +17,10 @@ test('public entrance uses the inventory observation rather than relabelling the
   assert.ok(doc.querySelector(`a[href="${prefix}profil/"]`));
   assert.ok(doc.querySelector('a[href="https://juri-halveth.github.io/console-only/"]'));
   assert.ok(doc.querySelector('a[href="/universum/faden/"]'));
+  const page=new JSDOM(fs.readFileSync(path.join(root,prefix.slice(1),'index.html'),'utf8')).window.document;
+  for(const id of ['contact','featured']) assert.ok(page.querySelector('a[href="#'+id+'"]') && page.getElementById(id), id);
+  for(const code of ['de','en','ru','x-default']) assert.equal(page.querySelector(`link[hreflang="${code}"]`).href,'https://juri-halveth.github.io/'+(['de','x-default'].includes(code)?'':code+'/'));
+  for(const file of ['impressum','datenschutz']) assert.ok(page.querySelector('footer a[href="https://halveth.de/'+file+'.html"]'));
  }
  const later=structuredClone(search);later.counts.repositories+=1;later.observedAt='2026-12-01T10:00:00Z';
  const doc=new JSDOM(renderProjectEntrance(later,'de')).window.document;

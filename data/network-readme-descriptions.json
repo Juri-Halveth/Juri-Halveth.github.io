@@ -1,7 +1,7 @@
 {
   "schema": "halveth.reviewed-public-descriptions.v1",
   "observedAt": "2026-11-17T22:18:46.486202+00:00",
-  "coverage": "Reviewed descriptions of the 21 public root READMEs at their bound revisions; not repository full text.",
+  "coverage": "Reviewed public root README descriptions at the revisions listed on each document.",
   "documents": [
     {
       "id": "readme:repo:juri-halveth/c-drohne-red-room:1b6f8a5aa1132c56e066c2c2cddc3bbbe5c36319",
@@ -758,6 +758,102 @@
         "mein-lernportal"
       ],
       "text": "Mein Lernportal. Digitale Grundlagen, Programmierung und Mathematik im Browser lernen, ohne Pflichtkonto und mit lokal gespeicherten Fortschritten. Stichworte: Mein Lernportal, Digitale Grundlagen, Programmierung, Mathematik, Lernfortschritt, Pyodide.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    },
+    {
+      "id": "readme:repo:juri-halveth/halveth-bio-universe:29fc9a4ca07a2673ca13a34161d07a60ed8cb64f",
+      "repositoryId": "repo:juri-halveth/halveth-bio-universe",
+      "githubRepositoryId": 1446977120,
+      "kind": "repository",
+      "title": {
+        "de": "Bio-Universe · lokaler Forschungskatalog",
+        "en": "Bio-Universe · local research catalog",
+        "ru": "Bio-Universe · локальный каталог исследований"
+      },
+      "summary": {
+        "de": "Durchsuche die Softwarezweige im lokalen Katalog und sieh dir ihre Beziehungen und ein synthetisches Beispielergebnis an.",
+        "en": "Browse software projects in a local catalog, explore their relationships and inspect a synthetic example result.",
+        "ru": "Откройте локальный каталог программных проектов, изучите их связи и пример результата на синтетических данных."
+      },
+      "url": "https://github.com/Juri-Halveth/halveth-bio-universe",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/halveth-bio-universe/blob/29fc9a4ca07a2673ca13a34161d07a60ed8cb64f/README.md",
+        "revision": "29fc9a4ca07a2673ca13a34161d07a60ed8cb64f",
+        "observedAt": "2026-11-27T22:02:25Z",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY",
+        "readmeSha256": "fa2f321d0ae02b99d943d6ef861663462ebb70aefb439aa46f347061d795f9a8"
+      },
+      "aliases": [
+        "halveth-bio-universe",
+        "Bio-Universe",
+        "HALVETH Bio-Universe"
+      ],
+      "text": "Bio-Universe · lokaler Forschungskatalog Bio-Universe · local research catalog Bio-Universe · локальный каталог исследований Durchsuche die Softwarezweige im lokalen Katalog und sieh dir ihre Beziehungen und ein synthetisches Beispielergebnis an. Browse software projects in a local catalog, explore their relationships and inspect a synthetic example result. Откройте локальный каталог программных проектов, изучите их связи и пример результата на синтетических данных.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    },
+    {
+      "id": "readme:repo:juri-halveth/jbl-wan-proof:939bf986e6064ba3c24f7d74957a4ac950912526",
+      "repositoryId": "repo:juri-halveth/jbl-wan-proof",
+      "githubRepositoryId": 1332363317,
+      "kind": "repository",
+      "title": {
+        "de": "JBL · ergänzende Netzwerkprüfungen",
+        "en": "JBL · supplementary network checks",
+        "ru": "JBL · дополнительные сетевые проверки"
+      },
+      "summary": {
+        "de": "Der Bericht zu QuantumENGINE ordnet den lokalen, laut CERT@VDE validierten Befund und die ergänzenden Tunnel- und WAN-Beobachtungen ein.",
+        "en": "The QuantumENGINE report describes the local issue validated according to CERT@VDE and the observations from separate tunnel and WAN checks.",
+        "ru": "Отчёт о QuantumENGINE описывает локальную проблему, подтверждённую согласно переписке с CERT@VDE, и результаты отдельных проверок туннеля и WAN."
+      },
+      "url": "https://github.com/Juri-Halveth/jbl-wan-proof",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/jbl-wan-proof/blob/939bf986e6064ba3c24f7d74957a4ac950912526/README.md",
+        "revision": "939bf986e6064ba3c24f7d74957a4ac950912526",
+        "observedAt": "2026-11-27T22:02:25Z",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY",
+        "readmeSha256": "491090cfbd21946971de22c85b9700f72fee55033968a2f41fd825c0685da0c7"
+      },
+      "aliases": [
+        "jbl-wan-proof",
+        "JBL WAN",
+        "JBL WAN Proof"
+      ],
+      "text": "JBL · ergänzende Netzwerkprüfungen JBL · supplementary network checks JBL · дополнительные сетевые проверки Der Bericht zu QuantumENGINE ordnet den lokalen, laut CERT@VDE validierten Befund und die ergänzenden Tunnel- und WAN-Beobachtungen ein. The QuantumENGINE report describes the local issue validated according to CERT@VDE and the observations from separate tunnel and WAN checks. Отчёт о QuantumENGINE описывает локальную проблему, подтверждённую согласно переписке с CERT@VDE, и результаты отдельных проверок туннеля и WAN.",
+      "historical": false,
+      "editorialState": "CURRENT"
+    },
+    {
+      "id": "readme:repo:juri-halveth/lucinet-seedspace:5301a3fb26f78f1e4fd167b5524d027fec8c88ee",
+      "repositoryId": "repo:juri-halveth/lucinet-seedspace",
+      "githubRepositoryId": 1427050044,
+      "kind": "repository",
+      "title": {
+        "de": "NOVA · Quellen wiederfinden",
+        "en": "NOVA · find your sources",
+        "ru": "NOVA · поиск источников"
+      },
+      "summary": {
+        "de": "NOVA findet frühere Notizen und Quelltexte auf dem eigenen Rechner. Die Python-Demo zeigt, wie Korrekturen erhalten bleiben und ein früherer Arbeitsstand wieder geöffnet wird.",
+        "en": "NOVA finds earlier notes and source files on your computer. The Python demo shows how it preserves corrections and resumes earlier work.",
+        "ru": "NOVA находит прежние заметки и исходные файлы на вашем компьютере. Демоверсия на Python показывает, как сохранить исправления и продолжить работу."
+      },
+      "url": "https://github.com/Juri-Halveth/lucinet-seedspace",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/lucinet-seedspace/blob/5301a3fb26f78f1e4fd167b5524d027fec8c88ee/README.md",
+        "revision": "5301a3fb26f78f1e4fd167b5524d027fec8c88ee",
+        "observedAt": "2026-11-27T22:02:25Z",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY",
+        "readmeSha256": "0289328ffdc3a522b48fff290c0d39769eb6eff4c313165301101078cd985f4b"
+      },
+      "aliases": [
+        "lucinet-seedspace",
+        "NOVA",
+        "Seedspace"
+      ],
+      "text": "NOVA · Quellen wiederfinden NOVA · find your sources NOVA · поиск источников NOVA findet frühere Notizen und Quelltexte auf dem eigenen Rechner. Die Python-Demo zeigt, wie Korrekturen erhalten bleiben und ein früherer Arbeitsstand wieder geöffnet wird. NOVA finds earlier notes and source files on your computer. The Python demo shows how it preserves corrections and resumes earlier work. NOVA находит прежние заметки и исходные файлы на вашем компьютере. Демоверсия на Python показывает, как сохранить исправления и продолжить работу.",
       "historical": false,
       "editorialState": "CURRENT"
     }
