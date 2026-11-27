@@ -5,7 +5,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const {webcrypto} = require('node:crypto');
 const {JSDOM} = require('jsdom');
-const {fromSpace} = require('../universum/relation-model.js');
+const {fromNetwork, fromSpace} = require('../universum/relation-model.js');
 const root = path.join(__dirname, '..', 'universum');
 const source = require('../universum/api/space.json');
 
@@ -15,7 +15,7 @@ async function waitFor(predicate) {
   assert.ok(predicate(), 'expected UI state before timeout');
 }
 
-async function fixture(t, reducedMotion = true) {
+async function fixture(t, reducedMotion = true, network = null) {
   const dom = new JSDOM(fs.readFileSync(path.join(root, 'faden/index.html'), 'utf8'), {
     url: 'https://juri-halveth.github.io/universum/faden/', runScripts: 'outside-only'
   });
@@ -25,12 +25,14 @@ async function fixture(t, reducedMotion = true) {
   const style = document.createElement('style');
   style.textContent = fs.readFileSync(path.join(root, 'faden/style.css'), 'utf8');
   document.head.append(style);
-  const state = {width: 1400, height: 700, index: structuredClone(source), arcs: [], pending: null};
+  const state = {width: 1400, height: 700, index: structuredClone(network || source), arcs: [], labels: new Map(), pending: null};
   const drawing = {
     setTransform() {}, measureText(value) { return {width: value.length * 7}; },
     createLinearGradient() { return {addColorStop() {}}; }, beginPath() {}, moveTo() {},
     lineTo() {}, quadraticCurveTo() {}, stroke() {}, arc(x, y, radius) { state.arcs.push({x, y, radius}); },
-    fill() {}, fillRect() {}, fillText() {}
+    fill() {}, fillRect() {}, fillText(text) {
+      if (state.arcs.length) state.labels.set(text, state.arcs.at(-1));
+    }
   };
   window.HTMLCanvasElement.prototype.getContext = () => drawing;
   document.querySelector('.stage').getBoundingClientRect = () => ({width: state.width, height: state.height});
@@ -42,14 +44,16 @@ async function fixture(t, reducedMotion = true) {
   window.requestAnimationFrame = callback => { state.frame = callback; return 1; };
   window.setTimeout = callback => { state.refresh = callback; return 1; };
   window.fetch = async address => {
+    if (network && address.includes('network.json')) return {ok: true, json: async () => state.index};
     if (address.includes('space.json')) return {ok: true, json: async () => state.index};
     if (state.pending) return state.pending;
     const bytes = fs.readFileSync(path.join(root, address.slice(3)));
     return {ok: true, arrayBuffer: async () => Uint8Array.from(bytes).buffer};
   };
-  window.HALVETH_RELATION_MODEL = {fromSpace};
+  window.HALVETH_RELATION_MODEL = network ? {fromNetwork} : {fromSpace};
   window.eval(fs.readFileSync(path.join(root, 'faden/app.js'), 'utf8'));
-  await waitFor(() => document.querySelectorAll('#projectList button').length === source.count);
+  const count = network ? fromNetwork(network).nodes.length : source.count;
+  await waitFor(() => document.querySelectorAll('#projectList button').length === count);
   return {window, document, state, preference};
 }
 
@@ -69,6 +73,34 @@ test('project switch removes old destinations and keeps links hidden on pending 
   for (const anchor of document.querySelectorAll('.detail-links a')) {
     assert.equal(window.getComputedStyle(anchor).display, 'none');
     assert.equal(anchor.hasAttribute('href'), false);
+  }
+});
+
+test('modules stay near their repository and a separately linked pair stays together during drift', async t => {
+  const network = require('../universum/api/network.json');
+  const {state} = await fixture(t, false, network);
+  const graph = fromNetwork(network);
+  const repo = name => 'repo:juri-halveth/' + name;
+  const consoleId = repo('console-only'), websiteId = repo('juri-halveth.github.io');
+  const jbl = [repo('jbl-owner-external-witness-20260901'), repo('jbl-wan-proof')];
+  const single = repo('gitcoin_co_30');
+  const distance = (first, second) => {
+    const point = id => state.labels.get(graph.nodes.find(node => node.id === id).label);
+    const a = point(first), b = point(second);
+    assert.ok(a && b, 'expected both node labels on the desktop canvas');
+    return Math.hypot(a.x - b.x, a.y - b.y);
+  };
+  for (let frame = 0; frame <= 600; frame++) {
+    state.arcs = []; state.labels.clear();
+    state.frame(frame * 100);
+    if (frame % 300) continue;
+    for (const {id, repositoryId} of graph.nodes.filter(n => [consoleId, websiteId].includes(n.repositoryId))) {
+      const other = repositoryId === consoleId ? websiteId : consoleId;
+      assert.ok(distance(id, repositoryId) < distance(id, other), 'module closer to its recorded owner: ' + id);
+    }
+    for (const member of jbl) {
+      assert.ok(distance(...jbl) < distance(member, single), 'independent project separate from the linked pair');
+    }
   }
 });
 
