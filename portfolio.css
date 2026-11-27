@@ -134,7 +134,7 @@
 .entrance-contract p{max-width:850px;margin-top:18px}
 .project-entrance~.service-featured .service-featured-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 .service-card p:not(.work-kind):not(.source-caption),.directory-project p:not(.work-kind):not(.source-caption){font-size:16px}
-.source-fold{flex-basis:100%;font-size:14px;overflow-wrap:anywhere}
+.source-fold{width:100%;min-width:0;font-size:14px;overflow-wrap:anywhere}
 .source-fold summary{cursor:pointer;padding-block:4px;color:var(--muted)}
 .source-fold a{display:inline-block;margin-top:12px}
 .evidence-entry{padding-block:60px 35px}
