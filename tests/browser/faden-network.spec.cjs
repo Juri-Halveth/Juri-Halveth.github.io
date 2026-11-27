@@ -23,5 +23,28 @@ for (const viewport of [{width: 1280, height: 900}, {width: 375, height: 812}]) 
     await page.locator('#close').press('Enter');
     await expect(moduleButton).toBeFocused();
     await expect(moduleButton).toBeInViewport({ratio: 1});
+
+    const canvas = page.locator('#network');
+    await canvas.scrollIntoViewIfNeeded();
+    const point = await canvas.evaluate(surface => {
+      const {width, height} = surface;
+      const bounds = surface.getBoundingClientRect();
+      const {data} = surface.getContext('2d').getImageData(0, 0, width, height);
+      // Pick a painted project dot in this layout (#9af2f3), as a pointer visitor would.
+      for (let pixel = Math.floor(height / 2) * width; pixel < width * height; pixel++) {
+        const i = pixel * 4;
+        if (data[i] === 154 && data[i + 1] === 242 && data[i + 2] === 243) {
+          return {x: (pixel % width) * bounds.width / width, y: Math.floor(pixel / width) * bounds.height / height};
+        }
+      }
+      throw new Error('No painted project dot found');
+    });
+    await canvas.click({position: point});
+    const close = page.locator('#close');
+    await close.scrollIntoViewIfNeeded();
+    const graphScroll = await page.evaluate(() => scrollY);
+    await close.click();
+    await expect(page.locator('#detail')).toBeHidden();
+    expect(await page.evaluate(() => scrollY)).toBe(graphScroll);
   });
 }
