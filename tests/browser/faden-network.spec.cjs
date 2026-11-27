@@ -23,4 +23,3 @@ for (const viewport of [{width: 1280, height: 900}, {width: 375, height: 812}]) 
     await expect(page.locator('button[data-node-id="module:console-only:korridot"]')).toBeFocused();
   });
 }
-

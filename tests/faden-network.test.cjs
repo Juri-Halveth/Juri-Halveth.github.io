@@ -148,4 +148,3 @@ test('Faden exposes source-linked module cards and updates the directory from th
   assert.ok([...document.querySelectorAll('#projectList button')].some(item => item.dataset.nodeId === 'repo:juri-halveth/faden-new-source'));
   assert.ok(state.requests.every(address => address === '../api/network.json'));
 });
-
