@@ -17,7 +17,9 @@ function plain(text) {
 }
 function summarizeReadme(text) {
   const paragraphs = text.replace(/```[\s\S]*?```/g, '').split(/\n\s*\n/)
-    .filter(value => !/^\s*(?:#|!\[|\||\[!|<!--)/.test(value)).map(plain)
+    .filter(value => !/^\s*(?:#|!\[|\||\[!|<!--)/.test(value))
+    .filter(value => !/^\s*(?:\*\*)?(?:public HALVETH context|öffentlicher HALVETH-Kontext|finder|author|autor|автор)\s*:/iu.test(value))
+    .map(plain)
     .filter(value => value.length >= 45 && !/(?:https?:\/\/|@|private|privat|confidential)/i.test(value));
   const excerpt = (paragraphs[0] || 'Public README observed; no suitable short description extracted.').slice(0, 480);
   const terms = ['NOVA', 'Seedspace', 'SCARLET', 'KORRIDOT', 'GG24', 'Gitcoin', 'Hypercerts', 'Ethereum', 'Cosmos', 'EVM', 'GTC', 'Leviathan', 'IMBA', 'Doppelacht', 'Lichtpunkt', '1001', 'EVE', 'Oraichain', 'Quellensuche', 'Materialzellen'];

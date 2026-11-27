@@ -165,5 +165,19 @@
       "observedAt": "2026-11-17T22:22:49.772Z",
       "claimCeiling": "IDENTICAL_SOURCE_BYTES_NOT_SCIENTIFIC_VALIDATION"
     }
-  ]
+  ],
+  "primaryRepositoryNames": {
+    "repo:juri-halveth/halveth-bio-universe": [
+      "Bio-Universe",
+      "HALVETH Bio-Universe"
+    ],
+    "repo:juri-halveth/jbl-wan-proof": [
+      "JBL WAN",
+      "JBL WAN Proof"
+    ],
+    "repo:juri-halveth/lucinet-seedspace": [
+      "NOVA",
+      "Seedspace"
+    ]
+  }
 }
