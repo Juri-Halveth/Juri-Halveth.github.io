@@ -856,6 +856,38 @@
       "text": "NOVA · Quellen wiederfinden NOVA · find your sources NOVA · поиск источников NOVA findet frühere Notizen und Quelltexte auf dem eigenen Rechner. Die Python-Demo zeigt, wie Korrekturen erhalten bleiben und ein früherer Arbeitsstand wieder geöffnet wird. NOVA finds earlier notes and source files on your computer. The Python demo shows how it preserves corrections and resumes earlier work. NOVA находит прежние заметки и исходные файлы на вашем компьютере. Демоверсия на Python показывает, как сохранить исправления и продолжить работу.",
       "historical": false,
       "editorialState": "CURRENT"
+    },
+    {
+      "id": "readme:repo:juri-halveth/jbl-wan-proof:1f8a7c3a181e43b0858d176075dd98852157a9bc",
+      "repositoryId": "repo:juri-halveth/jbl-wan-proof",
+      "githubRepositoryId": 1332363317,
+      "kind": "repository",
+      "title": {
+        "de": "JBL · ergänzende Netzwerkprüfungen",
+        "en": "JBL · supplementary network checks",
+        "ru": "JBL · дополнительные сетевые проверки"
+      },
+      "summary": {
+        "de": "Die vom Finder dokumentierte CERT@VDE-Mitteilung bestätigt den lokalen QuantumENGINE-Befund. Das Repository beschreibt ergänzende Tunnel- und WAN-Beobachtungen.",
+        "en": "The CERT@VDE message documented by the finder validates the local QuantumENGINE issue. This repository describes the supplementary tunnel and WAN observations.",
+        "ru": "В переписке с CERT@VDE, приведённой автором сообщения, подтверждена локальная проблема QuantumENGINE. В репозитории описаны отдельные наблюдения за туннелем и WAN."
+      },
+      "url": "https://github.com/Juri-Halveth/jbl-wan-proof",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/jbl-wan-proof/blob/1f8a7c3a181e43b0858d176075dd98852157a9bc/README.md",
+        "revision": "1f8a7c3a181e43b0858d176075dd98852157a9bc",
+        "observedAt": "2026-11-27T22:10:58Z",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY",
+        "readmeSha256": "b186c6e030b84386bc4835a1b806622c84eb980b68e98f9b9da97e287fb26d94"
+      },
+      "aliases": [
+        "jbl-wan-proof",
+        "JBL WAN",
+        "JBL WAN Proof"
+      ],
+      "text": "JBL · ergänzende Netzwerkprüfungen JBL · supplementary network checks JBL · дополнительные сетевые проверки Die vom Finder dokumentierte CERT@VDE-Mitteilung bestätigt den lokalen QuantumENGINE-Befund. Das Repository beschreibt ergänzende Tunnel- und WAN-Beobachtungen. The CERT@VDE message documented by the finder validates the local QuantumENGINE issue. This repository describes the supplementary tunnel and WAN observations. В переписке с CERT@VDE, приведённой автором сообщения, подтверждена локальная проблема QuantumENGINE. В репозитории описаны отдельные наблюдения за туннелем и WAN.",
+      "historical": false,
+      "editorialState": "CURRENT"
     }
   ]
 }

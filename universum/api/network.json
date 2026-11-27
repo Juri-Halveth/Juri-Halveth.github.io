@@ -1,6 +1,6 @@
 {
   "schema": "halveth.public-network.v1",
-  "revision": "e1e753fe759863c928900d1b168fad1c6c28e14491b886e499b69851a781a703",
+  "revision": "c7864d670a38da63a819113790d4a5f0c280f4947818d32159cbb7567a862f35",
   "observedAt": "2026-11-27T15:30:42.210Z",
   "coverage": {
     "mode": "PUBLIC_METADATA_AND_REVIEWED_ENTRY_DESCRIPTIONS",
@@ -51,10 +51,10 @@
     "catalogEntries": 18,
     "catalogProjectEntries": 16,
     "portfolioCards": 13,
-    "documents": 71,
+    "documents": 72,
     "currentSearchDocuments": 29,
-    "historicalDocuments": 39,
-    "defaultHiddenDocuments": 42,
+    "historicalDocuments": 40,
+    "defaultHiddenDocuments": 43,
     "withdrawnRepositoryEntries": 3,
     "uncataloguedPublicRepositories": 5,
     "modules": 4,
@@ -79,7 +79,7 @@
     },
     {
       "path": "data/network-readme-descriptions.json",
-      "sha256": "ad090ad50b702d6583a8b1f2b342379e7e7d113052486da4dc7224f61596b5de",
+      "sha256": "a094d2ffcffc44ab2a06f440b98a0d896753df145890ce45d6e671600e864f0c",
       "role": "REVIEWED_PUBLIC_README_DESCRIPTIONS"
     },
     {
@@ -116,7 +116,7 @@
   "search": {
     "json": "search.json",
     "module": "search.mjs",
-    "sha256": "9f6334ce3a844052e81f599deef480c374b0b9ab76ebc826cc4baf7b8779d557",
+    "sha256": "2cf6c8a64644d96e00457a007fd4e51d8d213a8f7ec86b91a9d4b4be7934248f",
     "queryModule": "../../network-search.mjs"
   },
   "repositories": [

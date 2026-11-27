@@ -1,6 +1,6 @@
 {
   "schema": "halveth.network-search.v1",
-  "revision": "e1e753fe759863c928900d1b168fad1c6c28e14491b886e499b69851a781a703",
+  "revision": "c7864d670a38da63a819113790d4a5f0c280f4947818d32159cbb7567a862f35",
   "observedAt": "2026-11-27T15:30:42.210Z",
   "coverage": {
     "mode": "PUBLIC_METADATA_AND_REVIEWED_ENTRY_DESCRIPTIONS",
@@ -51,10 +51,10 @@
     "catalogEntries": 18,
     "catalogProjectEntries": 16,
     "portfolioCards": 13,
-    "documents": 71,
+    "documents": 72,
     "currentSearchDocuments": 29,
-    "historicalDocuments": 39,
-    "defaultHiddenDocuments": 42,
+    "historicalDocuments": 40,
+    "defaultHiddenDocuments": 43,
     "withdrawnRepositoryEntries": 3,
     "uncataloguedPublicRepositories": 5,
     "modules": 4,
@@ -1607,6 +1607,43 @@
       "freshness": {
         "state": "MATCHES_OBSERVED_HEAD",
         "observedHead": "551f6d614e4ff4bd4ad426868ad887e52b9ee7ec",
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
+      }
+    },
+    {
+      "id": "readme:repo:juri-halveth/jbl-wan-proof:1f8a7c3a181e43b0858d176075dd98852157a9bc",
+      "repositoryId": "repo:juri-halveth/jbl-wan-proof",
+      "githubRepositoryId": 1332363317,
+      "kind": "repository",
+      "title": {
+        "de": "JBL · ergänzende Netzwerkprüfungen",
+        "en": "JBL · supplementary network checks",
+        "ru": "JBL · дополнительные сетевые проверки"
+      },
+      "summary": {
+        "de": "Die vom Finder dokumentierte CERT@VDE-Mitteilung bestätigt den lokalen QuantumENGINE-Befund. Das Repository beschreibt ergänzende Tunnel- und WAN-Beobachtungen.",
+        "en": "The CERT@VDE message documented by the finder validates the local QuantumENGINE issue. This repository describes the supplementary tunnel and WAN observations.",
+        "ru": "В переписке с CERT@VDE, приведённой автором сообщения, подтверждена локальная проблема QuantumENGINE. В репозитории описаны отдельные наблюдения за туннелем и WAN."
+      },
+      "url": "https://github.com/Juri-Halveth/jbl-wan-proof",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/jbl-wan-proof/blob/1f8a7c3a181e43b0858d176075dd98852157a9bc/README.md",
+        "revision": "1f8a7c3a181e43b0858d176075dd98852157a9bc",
+        "observedAt": "2026-11-27T22:10:58Z",
+        "scope": "PUBLIC_README_DESCRIPTION_ONLY",
+        "readmeSha256": "b186c6e030b84386bc4835a1b806622c84eb980b68e98f9b9da97e287fb26d94"
+      },
+      "aliases": [
+        "jbl-wan-proof",
+        "JBL WAN",
+        "JBL WAN Proof"
+      ],
+      "text": "JBL · ergänzende Netzwerkprüfungen JBL · supplementary network checks JBL · дополнительные сетевые проверки Die vom Finder dokumentierte CERT@VDE-Mitteilung bestätigt den lokalen QuantumENGINE-Befund. Das Repository beschreibt ergänzende Tunnel- und WAN-Beobachtungen. The CERT@VDE message documented by the finder validates the local QuantumENGINE issue. This repository describes the supplementary tunnel and WAN observations. В переписке с CERT@VDE, приведённой автором сообщения, подтверждена локальная проблема QuantumENGINE. В репозитории описаны отдельные наблюдения за туннелем и WAN.",
+      "historical": true,
+      "editorialState": "ARCHIVE",
+      "freshness": {
+        "state": "OLDER_REVIEWED_REVISION",
+        "observedHead": "939bf986e6064ba3c24f7d74957a4ac950912526",
         "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
