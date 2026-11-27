@@ -189,12 +189,12 @@
       button.addEventListener('click', () => select(node.id, true));
       list.append(button);
     }
-    if (focusedId) focusProject(focusedId);
+    if (focusedId) focusProject(focusedId, { preventScroll: true });
   }
-  function focusProject(id) {
+  function focusProject(id, options) {
     const buttons = [...list.querySelectorAll('button')];
     const target = buttons.find(button => button.dataset.nodeId === id) || buttons[0] || document.getElementById('directoryTitle');
-    target.focus({ preventScroll: true });
+    target.focus(options);
   }
   function clearLinks() {
     for (const name of ['detailOpen', 'detailSource']) {

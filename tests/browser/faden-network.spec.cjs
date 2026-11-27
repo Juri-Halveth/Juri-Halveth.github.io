@@ -11,7 +11,8 @@ for (const viewport of [{width: 1280, height: 900}, {width: 375, height: 812}]) 
     await page.goto('/universum/faden/');
     await expect(page.locator('#projectList button')).toHaveCount(graph.nodes.length);
     await expect(page.locator('#status')).toContainText(network.repositories.length + ' Repository-Einträge');
-    await page.locator('button[data-node-id="module:console-only:korridot"]').click();
+    const moduleButton = page.locator('button[data-node-id="module:console-only:korridot"]');
+    await moduleButton.press('Enter');
     await expect(page.locator('#detail')).toBeVisible();
     await expect(page.locator('#detailOpen')).toHaveAttribute('href', 'https://juri-halveth.github.io/console-only/');
     await expect(page.locator('#detailState')).toHaveText('VERZEICHNETER MODULEINSTIEG');
@@ -19,7 +20,8 @@ for (const viewport of [{width: 1280, height: 900}, {width: 375, height: 812}]) 
     await expect(page.locator('#detailRelations')).toContainText('Moduleinstieg');
     await expect(page.locator('#detailRelations a').first()).toHaveAttribute('href', /github\.com\/Juri-Halveth\/console-only\/blob\//);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-    await page.locator('#close').click();
-    await expect(page.locator('button[data-node-id="module:console-only:korridot"]')).toBeFocused();
+    await page.locator('#close').press('Enter');
+    await expect(moduleButton).toBeFocused();
+    await expect(moduleButton).toBeInViewport({ratio: 1});
   });
 }
