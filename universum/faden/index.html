@@ -6,10 +6,10 @@
   <meta name="theme-color" content="#06111d">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'none'; font-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
   <title>HALVETH · öffentliches Fadennetz</title>
-  <meta name="description" content="Quellgebundene Beziehungen zwischen öffentlichen HALVETH-Projekten und Themen, als bewegliches Netz und lesbare Liste.">
-  <link rel="stylesheet" href="style.css?v=20261106-1">
-  <script defer src="../relation-model.js"></script>
-  <script defer src="app.js?v=20261106-1"></script>
+  <meta name="description" content="Öffentliche HALVETH-Repositories, Module und belegte Quellenverweise als bewegliches Netz und direkt bedienbare Liste.">
+  <link rel="stylesheet" href="style.css?v=20261127-1">
+  <script defer src="../relation-model.js?v=20261127-1"></script>
+  <script defer src="app.js?v=20261127-1"></script>
 </head>
 <body>
   <a class="skip" href="#projects">Zur Projektliste</a>
@@ -17,14 +17,14 @@
     <a href="../">← Starship Lab</a>
     <span>HALVETH / NETZ</span>
     <a href="../../suche/">Netz durchsuchen ↗</a>
-    <a href="../api/relations.json">Relationen als JSON ↗</a>
+    <a href="../api/network.json">Quellnetz als JSON ↗</a>
   </header>
   <main>
     <section class="intro">
       <p class="eyebrow">ÖFFENTLICHE PROJEKTE · QUELLGEBUNDENE RELATIONEN</p>
       <h1>Ein lebendiges <em>Fadennetz.</em></h1>
-      <p>Jeder helle Punkt ist ein öffentlicher Repository-Eintrag. Die blauen Fäden verbinden es mit den Themen, denen es im öffentlichen Index zugeordnet ist. Neue Indexfassungen werden während des Besuchs erkannt.</p>
-      <p class="boundary">Die Bewegung ist eine Darstellung der Beziehungen, keine Messung von Raumzeit, Kausalität oder laufenden Projektprozessen.</p>
+      <p>Öffentliche Repositories und ihre Module werden zu einem gemeinsamen Netz. Wähle einen Punkt oder einen Eintrag in der Liste: Seine Karte zeigt den Einstieg und die Quellen seiner Verbindungen.</p>
+      <p class="boundary">Fäden zeigen README-Verweise, zugehörige Module oder gleiche Quellbytes an gebundenen Revisionen. Die Bewegung ist eine Darstellung dieser Quellenbeziehungen; sie misst keine laufenden Projektprozesse. Der Browser prüft alle 30 Sekunden den veröffentlichten Index.</p>
     </section>
     <section class="stage" aria-label="Bewegliche Darstellung der öffentlichen Projektzuordnungen">
       <canvas id="network" aria-hidden="true"></canvas>
@@ -37,13 +37,14 @@
         <p id="detailValue"></p>
         <p class="boundary" id="detailBoundary"></p>
         <div class="detail-links"><a id="detailOpen" hidden target="_blank" rel="noopener noreferrer">Projekt öffnen ↗</a><a id="detailSource" hidden target="_blank" rel="noopener noreferrer">Quellstand ↗</a></div>
+        <details class="relation-details"><summary>Verbindungen und ihre Quellen</summary><ul id="detailRelations"></ul></details>
       </article>
     </section>
     <section class="directory" id="projects" aria-labelledby="directoryTitle">
-      <div><p class="eyebrow">DIESELBEN KNOTEN, DIREKT BEDIENBAR</p><h2 id="directoryTitle" tabindex="-1">Projekte</h2><p>Die Liste ist die Tastatur- und Textansicht des Netzes. Auswahl öffnet die Karte direkt am Projektpunkt.</p></div>
+      <div><p class="eyebrow">DIESELBEN KNOTEN, DIREKT BEDIENBAR</p><h2 id="directoryTitle" tabindex="-1">Projekte und Module</h2><p>Die Liste ist die Tastatur- und Textansicht des Netzes. Auswahl öffnet die Karte direkt am Projektpunkt. Weitere unabhängige Websites findest du in der Netzsuche.</p></div>
       <div class="project-list" id="projectList"></div>
     </section>
-    <footer><span id="sourceNote">Quellstand wird geladen.</span><span>Projektkategorien aus dem öffentlichen HALVETH-Index. Kein privater VERACHEL-Verlauf.</span></footer>
+    <footer><span id="sourceNote">Quellstand wird geladen.</span><span>Öffentliche GitHub-Inventur und verzeichnete Module. <a href="../api/relations.json">Ältere Projekt-Themen-Auswahl</a> bleibt separat erhalten.</span></footer>
   </main>
 </body>
 </html>

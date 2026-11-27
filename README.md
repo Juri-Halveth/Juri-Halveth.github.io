@@ -2,12 +2,20 @@
 
 [Deutsch](README.md) · [English](README.en.md) · [Русский](README.ru.md)
 
-Ich entwickle lokale Werkzeuge, Webanwendungen und interaktive Modelle. Die
-[Portfolio-Startseite](https://juri-halveth.github.io/) zeigt direkt nutzbare
-Ergebnisse; die [Projektübersicht](https://juri-halveth.github.io/arbeiten/)
-führt zu Anwendung oder Anleitung und daneben zum Quellcode. Zwei
-[Arbeitsproben](https://juri-halveth.github.io/belege/) zeigen Eingabe, Ergebnis
-und Gegenprobe. **Person: Juri. Projekt: HALVETH.**
+Ich entwickle lokale Werkzeuge, Webanwendungen und interaktive Modelle.
+
+**Direkt einsteigen:** [Startseite](https://juri-halveth.github.io/) ·
+[Projektuniversum / Starship Lab](https://juri-halveth.github.io/universum/) ·
+[KORRIDOT · Zeitspur](https://juri-halveth.github.io/console-only/) ·
+[Öffentlichen Bestand durchsuchen](https://juri-halveth.github.io/suche/) ·
+[Profil und Zusammenarbeit](https://juri-halveth.github.io/profil/).
+
+Das Projektuniversum erschließt die ausgewählten Räume. KORRIDOT zeigt
+Ereignisse und Herkunft als Zeitspur; die Netzsuche führt zu öffentlichen
+Repositories und weiteren Quellen. Die [Projektübersicht](https://juri-halveth.github.io/arbeiten/)
+öffnet Anwendung oder Anleitung und den zugehörigen Code. Vertiefende
+[Arbeitsproben](https://juri-halveth.github.io/belege/) bleiben daneben erreichbar.
+**Person: Juri. Projekt: HALVETH.**
 [Namenszuordnung](IDENTITY.md).
 
 **Mit einem Beispiel starten:** Der [geführte Variantenlauf](https://juri-halveth.github.io/arbeiten/#beispiel-scarlet)
@@ -17,18 +25,35 @@ führen zur jeweiligen Sprache der bestehenden Anwendung. Der native aufklappbar
 Leitfaden funktioniert ohne JavaScript; der Modellraum benötigt JavaScript.
 [Prüfumfang und Herkunft](docs/review/2026-11-11/VISITOR-CORRIDOR.md).
 
-Der öffentliche Quellenkatalog bindet **18 Repository-Einträge**: **16
-Projektrepositories**, die Website und das GitHub-Profil. Auf der
-Projektübersicht stehen **13 aktuelle Projektkarten**. Drei früher
+## Öffentlicher Bestand und kuratierte Auswahl
+
+Die Gesamtzählung und ihr Beobachtungszeitpunkt stehen in
+[`data/network-inventory.json`](data/network-inventory.json). Der Prüfabzug
+vom **27. November 2026, 15:30 UTC** erfasst **23 öffentliche Repositories**,
+darunter zwei Forks; zwölf Repositories sind als Pages konfiguriert.
+Die Netzsuche zeigt den zuletzt beobachteten Stand. Der Pages-Workflow
+erneuert das öffentliche Inventar beim Build und veröffentlicht die daraus
+erzeugten, geprüften Ansichten; die Quellenzeiten bleiben getrennt erhalten.
+
+Der kuratierte Quellenkatalog vom **2. November 2026** bindet **18
+Repository-Einträge**: **16 Projektrepositories**, die Website und das
+GitHub-Profil. Die Projektübersicht zeigt daraus **13 ausgewählte Projektkarten**. Drei früher
 zurückgezogene Spielpräsentationen sind weiterhin nur im Quellenbestand und
 im optionalen Lab erfasst; die redaktionelle Sperre aus
 `tools/validate-portfolio-selection.cjs` bleibt bestehen.
 
-Ein lesender Account-Bestandsabruf vom 3. November zählt 29 eigene Repositories:
+<details>
+<summary>Historischer Auswahl- und Bestandsstand</summary>
+
+Ein lesender Account-Bestandsabruf vom 3. November 2026 zählte 29 eigene Repositories:
 18 öffentliche und 11 private; für 11 öffentliche Repositories ist Pages
 konfiguriert. Der öffentliche Katalog zeigt weiterhin nur die 18 öffentlichen
-Einträge. Sein redaktionelles `source_date` vom 2. November ist ein anderer
-Zeitstand als dieser Inventarabruf; private Namen werden nicht exportiert.
+Einträge dieses historischen Auswahlstands. Sein redaktionelles `source_date`
+vom 2. November ist ein anderer Zeitstand als dieser Inventarabruf. Der
+öffentliche Bestand vom 27. November steht oben und im Netzinventar; private
+Repository-Namen werden nicht exportiert.
+
+</details>
 
 [Starship Lab öffnen](https://juri-halveth.github.io/universum/) ·
 [Szenen und Modelle ansehen](https://juri-halveth.github.io/modelle/) ·
@@ -38,12 +63,12 @@ Die Portfolio-Oberfläche ist auf Deutsch, Englisch und Russisch verfügbar; das
 und Auswahl: Juri / HALVETH; Entwicklung mit KI-Unterstützung.
 
 Das [Starship Lab](universum/) ist ein eigenständiger interaktiver Browserraum
-für 18 öffentliche Repository-Einträge. Er verbindet räumliche Navigation,
+für die 18 kuratierten Repository-Einträge. Er verbindet räumliche Navigation,
 synthetische Modelle und drei ausgewählte Quellspuren. Die Kategorien bleiben
 im Lab getrennt: Software, Sicherheit, Modelle und Visualisierung, Welten,
 Lernen sowie gesellschaftliche Quellen. Seine Berechnungen laufen im Browser;
 die [Quellen- und Lizenzkarte](universum/CREDITS.md) benennt die eingebundenen
-Module und Bilder. Das Lab ist über die Projektübersicht und den Footer erreichbar.
+Module und Bilder. Das Lab ist direkt über die Startseite, die Projektübersicht und den Footer erreichbar.
 Im Flugraum führt Scrollen vorwärts und rückwärts entlang einer festen Blickachse;
 auf Touchgeräten dienen vertikales Wischen und Pinch der Tiefenbewegung.
 Projekt- und Themensymbole behalten eigene Identitäten. Der Stern- und
@@ -77,7 +102,7 @@ stehen getrennt vom älteren Quellstand der NOVA-Hauptkarte.
 
 ## Lokal bauen
 
-Auf der Projektübersicht lassen sich die 13 aktuell präsentierten Projekte nach
+Auf der Projektübersicht lassen sich die 13 ausgewählten Projekte nach
 Aufgabe durchsuchen und auf Werkzeuge, Visualisierung, Lernen oder Modelle begrenzen.
 Ein leeres Ergebnis besitzt einen direkten Rückweg zu allen Projekten.
 Suche und Filter arbeiten lokal, ohne Navigation oder automatisches Scrollen.
@@ -218,7 +243,7 @@ Lichtpunkt sind eigene Einstiege mit einer Repository-Zuordnung. Weitere
 öffentliche Websites werden als getrennte Veröffentlichungen erfasst; eine
 gleiche Bezeichnung belegt keine gleiche Codeversion.
 
-Die anonyme GitHub-Inventur in `data/network-inventory.json` erfasst den
+Die öffentliche GitHub-Inventur in `data/network-inventory.json` erfasst den
 öffentlichen Repository-Bestand mit Beobachtungszeit, Branch und HEAD.
 `data/network-entries.json` beschreibt geprüfte zusätzliche Module,
 `data/network-sites.json` getrennte öffentliche Websites. Die erzeugten

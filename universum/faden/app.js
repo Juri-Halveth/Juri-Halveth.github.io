@@ -15,7 +15,16 @@
   let observedAt = null;
   let width = 1;
   let height = 1;
-  const isRepositoryNode = node => node.kind === 'PUBLIC_PROJECT' || node.kind === 'PUBLIC_META';
+  const isRepositoryNode = node => ['PUBLIC_PROJECT', 'PUBLIC_META', 'PUBLIC_MODULE'].includes(node.kind);
+
+  function renderStatus() {
+    if (!graph) return;
+    const coverage = graph.coverage;
+    status.textContent = Number.isInteger(coverage.moduleCount)
+      ? `${coverage.repositoryCount} Repository-Einträge · ${coverage.moduleCount} Module · ${coverage.relationCount} Quellbeziehungen${context ? '' : ' · Grafik nicht verfügbar, Projektliste bedienbar'}`
+      : `${coverage.repositoryCount} Repository-Einträge · ${coverage.projectCount} Projektquellen + ${coverage.metaCount} Meta-Einstiege · ${coverage.categoryCount} Themen · ${coverage.relationCount} belegte Zuordnungen${context ? '' : ' · Grafik nicht verfügbar, Projektliste bedienbar'}`;
+    sourceNote.textContent = `Index ${graph.source.indexRevision.slice(0, 12)} · Quellenstand ${graph.source.sourceDate} · hier zuletzt geprüft ${new Date(observedAt).toLocaleString('de-DE')}`;
+  }
 
   function hash(text) {
     let value = 2166136261;
@@ -71,8 +80,7 @@
     renderList();
     if (selectedId && !fresh.has(selectedId)) closeCard();
     else if (selectedId) void select(selectedId);
-    status.textContent = `${next.coverage.repositoryCount} Repository-Einträge · ${next.coverage.projectCount} Projektquellen + ${next.coverage.metaCount} Meta-Einstiege · ${next.coverage.categoryCount} Themen · ${next.coverage.relationCount} belegte Zuordnungen${context ? '' : ' · Grafik nicht verfügbar, Projektliste bedienbar'}`;
-    sourceNote.textContent = `Index ${next.source.indexRevision.slice(0, 12)} · Quellenstand ${next.source.sourceDate} · hier gesehen ${new Date(observedAt).toLocaleString('de-DE')}`;
+    renderStatus();
   }
   function renderList() {
     const focusedId = list.contains(document.activeElement) ? document.activeElement.dataset.nodeId : null;
@@ -80,7 +88,7 @@
     for (const node of graph.nodes.filter(isRepositoryNode)) {
       const button = document.createElement('button');
       button.type = 'button';
-      button.textContent = node.label;
+      button.textContent = node.kind === 'PUBLIC_MODULE' ? `Modul · ${node.label}` : node.label;
       button.dataset.nodeId = node.id;
       button.setAttribute('aria-pressed', String(node.id === selectedId));
       button.addEventListener('click', () => select(node.id, true));
@@ -120,6 +128,7 @@
     } catch { return null; }
   }
   async function projectContext(node) {
+    if (node.context) return node.context;
     const response = await fetch(`../${node.contextPath}`, { cache: 'no-store' });
     if (!response.ok) throw Error(`Kontext HTTP ${response.status}`);
     const bytes = new Uint8Array(await response.arrayBuffer());
@@ -132,6 +141,35 @@
     if (value.schema !== 'halveth.project-context.v1' || `project:${value.id}` !== node.id) throw Error('Projektidentität stimmt nicht');
     return value;
   }
+  function renderRelations(id) {
+    const container = document.getElementById('detailRelations');
+    if (!container) return;
+    container.replaceChildren();
+    const edges = graph.relations.filter(edge => edge.from === id || edge.to === id);
+    for (const edge of edges) {
+      const other = graph.nodes.find(node => node.id === (edge.from === id ? edge.to : edge.from));
+      const item = document.createElement('li');
+      const label = document.createElement('span');
+      const direction = edge.type === 'PUBLIC_README_LINK' ? (edge.from === id ? 'README-Verweis auf' : 'README-Verweis von')
+        : edge.type === 'PUBLIC_ENTRY_OF_REPOSITORY' && edge.to === id ? 'Moduleinstieg aus Repository'
+        : edge.label || 'Themenzuordnung';
+      label.textContent = `${direction} · ${other?.label || 'Quelle'}`;
+      item.append(label);
+      for (const [index, source] of (edge.sources || []).entries()) {
+        const href = safeLink(source.url);
+        if (!href) continue;
+        const link = document.createElement('a');
+        link.href = href; link.target = '_blank'; link.rel = 'noopener noreferrer';
+        link.textContent = `Quelle ${index + 1} ↗`;
+        item.append(' ', link);
+      }
+      container.append(item);
+    }
+    if (!edges.length) {
+      const item = document.createElement('li'); item.textContent = 'Keine zusätzlichen Quellbeziehungen im beobachteten Index.';
+      container.append(item);
+    }
+  }
   async function select(id, fromDirectory = false) {
     const node = graph?.nodes.find(item => item.id === id && isRepositoryNode(item));
     if (!node) return;
@@ -142,6 +180,7 @@
     document.getElementById('detailState').textContent = 'ÖFFENTLICHER PROJEKTKONTEXT LADEN …';
     document.getElementById('detailTitle').textContent = node.label;
     for (const name of ['detailCore', 'detailValue', 'detailBoundary']) document.getElementById(name).textContent = '';
+    document.getElementById('detailRelations')?.replaceChildren();
     clearLinks();
     placeCard();
     if (fromDirectory) document.getElementById('close').focus({ preventScroll: true });
@@ -153,12 +192,14 @@
       document.getElementById('detailCore').textContent = value.capability.core;
       document.getElementById('detailValue').textContent = value.capability.value;
       document.getElementById('detailBoundary').textContent = value.capability.boundary;
+      document.getElementById('detailOpen').textContent = value.publicEntry.label || 'Projekt öffnen ↗';
       for (const [name, link] of [['detailOpen', value.publicEntry.url], ['detailSource', value.source.url]]) {
         const anchor = document.getElementById(name);
         const href = safeLink(link);
         anchor.hidden = !href;
         if (href) anchor.href = href;
       }
+      renderRelations(id);
       placeCard();
     } catch (error) {
       if (selectedId === id && generation === requestGeneration) document.getElementById('detailState').textContent = `QUELLE NICHT VERIFIZIERT · ${error.message}`;
@@ -286,13 +327,15 @@
   }
   async function refresh() {
     try {
-      const response = await fetch('../api/space.json', { cache: 'no-store' });
+      const useNetwork = typeof window.HALVETH_RELATION_MODEL.fromNetwork === 'function';
+      const response = await fetch(useNetwork ? '../api/network.json' : '../api/space.json', { cache: 'no-store' });
       if (!response.ok) throw Error(`Index HTTP ${response.status}`);
-      const next = window.HALVETH_RELATION_MODEL.fromSpace(await response.json());
+      const payload = await response.json();
+      const next = useNetwork ? window.HALVETH_RELATION_MODEL.fromNetwork(payload) : window.HALVETH_RELATION_MODEL.fromSpace(payload);
+      observedAt = new Date().toISOString();
       if (!graph || graph.source.indexRevision !== next.source.indexRevision) {
-        observedAt = new Date().toISOString();
         adopt(next);
-      }
+      } else renderStatus(); // A recovered fetch clears an earlier error even at the same revision.
     } catch (error) {
       status.textContent = graph ? `Indexabruf gestört · letzter beobachteter Stand bleibt sichtbar` : `Öffentlicher Index nicht verfügbar: ${error.message}`;
     } finally {

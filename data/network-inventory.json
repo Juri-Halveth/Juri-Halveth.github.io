@@ -1,13 +1,30 @@
 {
   "schema": "halveth.public-network-inventory.v1",
   "owner": "Juri-Halveth",
-  "observedAt": "2026-11-17T22:18:46.486202+00:00",
+  "observedAt": "2026-11-27T15:30:42.210Z",
   "sourceUrl": "https://api.github.com/users/Juri-Halveth/repos?type=owner&sort=full_name&per_page=100",
   "complete": true,
-  "access": "ANONYMOUS_PUBLIC_GET_ONLY",
+  "access": "CONNECTED_OWNER_LIST_WITH_ANONYMOUS_PUBLIC_LIST_AND_README_VERIFICATION",
   "claimCeiling": "PUBLIC_METADATA_AND_README_BYTES_NOT_RUNTIME_OR_IMPACT_VERIFICATION",
+  "provenance": {
+    "sourceUrlRole": "Canonical public owner API reference; this review candidate used the retrieval methods below after anonymous API rate limiting.",
+    "inventoryMethod": "GITHUB_CONNECTOR_LIST_REPOSITORIES_OWNER",
+    "inventoryObservedAt": "2026-11-27T15:29:51.000Z",
+    "pageSize": 100,
+    "publicVisibilityFilter": true,
+    "anonymousInventoryUrl": "https://github.com/Juri-Halveth?tab=repositories",
+    "anonymousInventoryObservedAt": "2026-11-27T15:30:42.210Z",
+    "anonymousPublicNamesMatch": true,
+    "metadataMethod": "GITHUB_CONNECTOR_REPOSITORY_METADATA_AND_DEFAULT_BRANCH_HEAD",
+    "metadataObservationStart": "2026-11-27T15:13:49.000Z",
+    "metadataObservationEnd": "2026-11-27T15:14:04.000Z",
+    "readmeMethod": "GITHUB_CONNECTOR_FETCH_FILE_BASE64_AT_PINNED_HEAD_THEN_ANONYMOUS_RAW_BYTE_AND_GIT_BLOB_CHECK",
+    "privateRepositoryNamesExported": false,
+    "deployed": false,
+    "limitation": "Sequential source-bound observations, not a simultaneous snapshot or runtime verification. No scheduled refresh was triggered."
+  },
   "counts": {
-    "repositories": 21,
+    "repositories": 23,
     "forks": 2,
     "pagesConfigured": 12
   },
@@ -28,10 +45,11 @@
       "createdAt": "2026-10-19T00:21:33Z",
       "updatedAt": "2026-11-02T11:27:16Z",
       "pushedAt": "2026-11-02T11:27:13Z",
+      "metadataObservedAt": "2026-11-27T15:14:04.000Z",
       "head": {
         "revision": "1b6f8a5aa1132c56e066c2c2cddc3bbbe5c36319",
         "url": "https://github.com/Juri-Halveth/c-drohne-red-room/commit/1b6f8a5aa1132c56e066c2c2cddc3bbbe5c36319",
-        "observedAt": "2026-11-17T22:17:54.636Z",
+        "observedAt": "2026-11-27T15:14:04.000Z",
         "committedAt": "2026-11-02T11:27:11Z"
       },
       "readme": {
@@ -41,7 +59,10 @@
         "revision": "1b6f8a5aa1132c56e066c2c2cddc3bbbe5c36319",
         "sha256": "51c1a63ee8d6929bd2efc8d8ab3f59fbb94232ba68756424817b9307fb98fa58",
         "bytes": 11530,
-        "observedAt": "2026-11-17T22:18:24.042511+00:00",
+        "observedAt": "2026-11-27T15:29:56.785Z",
+        "connectorObservedAt": "2026-11-27T15:28:47.000Z",
+        "anonymousByteVerifiedAt": "2026-11-27T15:29:56.785Z",
+        "gitBlobSha1": "b7a6eb86dc4ebdb674a7102a581bea911ad5c67d",
         "excerpt": "Ein Präsentationsprototyp mit einer steuerbaren, synthetischen 3D-Fallszene, älterem Konzeptfilm und Forschungsdokumentation. Er zeigt keinen realen Drohneneinsatz und keine operative Steuerung.",
         "aliases": [],
         "mentionedRepositories": [
@@ -64,28 +85,33 @@
       "homepage": "",
       "hasPages": true,
       "createdAt": "2026-11-13T22:52:37Z",
-      "updatedAt": "2026-11-13T22:52:47Z",
-      "pushedAt": "2026-11-17T21:44:08Z",
+      "updatedAt": "2026-11-17T22:37:55Z",
+      "pushedAt": "2026-11-27T11:08:30Z",
+      "metadataObservedAt": "2026-11-27T15:14:04.000Z",
       "head": {
-        "revision": "9fb4e0ec8d94ef464f369f0c1e70082b61a12732",
-        "url": "https://github.com/Juri-Halveth/console-only/commit/9fb4e0ec8d94ef464f369f0c1e70082b61a12732",
-        "observedAt": "2026-11-17T22:17:54.595Z",
-        "committedAt": "2026-11-17T21:44:07Z"
+        "revision": "c09cbac93c78152c68a29347131814257bf0975f",
+        "url": "https://github.com/Juri-Halveth/console-only/commit/c09cbac93c78152c68a29347131814257bf0975f",
+        "observedAt": "2026-11-27T15:14:04.000Z",
+        "committedAt": "2026-11-17T22:56:46Z"
       },
       "readme": {
         "status": "AVAILABLE",
         "path": "README.md",
-        "url": "https://github.com/Juri-Halveth/console-only/blob/9fb4e0ec8d94ef464f369f0c1e70082b61a12732/README.md",
-        "revision": "9fb4e0ec8d94ef464f369f0c1e70082b61a12732",
-        "sha256": "62975b921a9b0d06cc0f68f868ec51aa8b0662023f5d44aad77081874dbdf7a2",
-        "bytes": 10450,
-        "observedAt": "2026-11-17T22:18:23.987425+00:00",
+        "url": "https://github.com/Juri-Halveth/console-only/blob/c09cbac93c78152c68a29347131814257bf0975f/README.md",
+        "revision": "c09cbac93c78152c68a29347131814257bf0975f",
+        "sha256": "35af711a348390ece3f2d535453889d24e3c3fa914cca839cde377330ecfe2cd",
+        "bytes": 10993,
+        "observedAt": "2026-11-27T15:30:02.889Z",
+        "connectorObservedAt": "2026-11-27T15:28:47.000Z",
+        "anonymousByteVerifiedAt": "2026-11-27T15:30:02.889Z",
+        "gitBlobSha1": "4053d2f5db6f29ae6824068e20db3b2b4cd28a7f",
         "excerpt": "Die neue Standardansicht zeigt 960 bewegliche Materialzellen mit eigenen Positionen, Geschwindigkeiten, Orientierungen und Winkelgeschwindigkeiten. Nachbarkopplung erzeugt Kräfte und Drehmomente aus einem nematischen Paarpotential. Die ursprünglichen expliziten Kern-/Medium- und Speicherregeln bleiben erhalten. Die Kernmarkierungen sind zunächst ausgeschaltet.",
         "aliases": [
           "KORRIDOT",
           "GG24",
           "Doppelacht",
           "Lichtpunkt",
+          "Quellensuche",
           "Materialzellen"
         ],
         "mentionedRepositories": [
@@ -110,10 +136,11 @@
       "createdAt": "2026-10-02T19:31:47Z",
       "updatedAt": "2026-11-02T17:19:32Z",
       "pushedAt": "2026-11-02T17:19:29Z",
+      "metadataObservedAt": "2026-11-27T15:13:56.000Z",
       "head": {
         "revision": "2b94cb4a23b9d96b088004d9f5da62e91975e20b",
         "url": "https://github.com/Juri-Halveth/fortuna/commit/2b94cb4a23b9d96b088004d9f5da62e91975e20b",
-        "observedAt": "2026-11-17T22:17:54.607Z",
+        "observedAt": "2026-11-27T15:13:56.000Z",
         "committedAt": "2026-11-02T17:19:26Z"
       },
       "readme": {
@@ -123,7 +150,10 @@
         "revision": "2b94cb4a23b9d96b088004d9f5da62e91975e20b",
         "sha256": "aef90bdce1d1834094835fd5d0b3a2f075ba3dcc25f3a3e5400f7ba70696342c",
         "bytes": 4157,
-        "observedAt": "2026-11-17T22:18:23.940639+00:00",
+        "observedAt": "2026-11-27T15:29:56.075Z",
+        "connectorObservedAt": "2026-11-27T15:28:47.000Z",
+        "anonymousByteVerifiedAt": "2026-11-27T15:29:56.075Z",
+        "gitBlobSha1": "730884eb4d59b1aedab0123e402030919d18de08",
         "excerpt": "Ein lokales Wahrscheinlichkeitslabor und ein getrennter Optionenvergleich. Der Glücksversuch zieht mit Web Crypto bis zu 999.999-mal je Serie . Er vergleicht eine Ausgangschance mit einer selbst gesetzten Szenariochance und zeigt die beobachteten Treffer. Daneben lassen sich eigene Optionen eingeben, Gewichtungen ansehen und die resultierende Rangfolge nachvollziehen. Die Figuren im Browserraum folgen lokalen Regeln.",
         "aliases": [
           "SCARLET"
@@ -150,10 +180,11 @@
       "createdAt": "2026-11-17T21:17:34Z",
       "updatedAt": "2026-11-17T21:17:34Z",
       "pushedAt": "2026-11-17T21:18:35Z",
+      "metadataObservedAt": "2026-11-27T15:14:04.000Z",
       "head": {
         "revision": "6579e523287aa268ff89dea2666e82bb27c75e4b",
         "url": "https://github.com/Juri-Halveth/gitcoin_co_30/commit/6579e523287aa268ff89dea2666e82bb27c75e4b",
-        "observedAt": "2026-11-17T22:17:54.928Z",
+        "observedAt": "2026-11-27T15:14:04.000Z",
         "committedAt": "2026-11-03T23:36:27Z"
       },
       "readme": {
@@ -163,7 +194,10 @@
         "revision": "6579e523287aa268ff89dea2666e82bb27c75e4b",
         "sha256": "6ac4e3a6025fcf693397911a04622a696a0908bc325e5196ad13af15b8339f8f",
         "bytes": 9189,
-        "observedAt": "2026-11-17T22:18:23.986627+00:00",
+        "observedAt": "2026-11-27T15:30:02.873Z",
+        "connectorObservedAt": "2026-11-27T15:28:47.000Z",
+        "anonymousByteVerifiedAt": "2026-11-27T15:30:02.873Z",
+        "gitBlobSha1": "8904abdb5ad61a46695a29312e5e5711af80fceb",
         "excerpt": "A comprehensive directory of funding mechanisms, apps, campaigns, research, and case studies for public goods funding in the Ethereum ecosystem.",
         "aliases": [
           "GG24",
@@ -188,26 +222,32 @@
       "hasPages": false,
       "createdAt": "2026-11-05T12:33:01Z",
       "updatedAt": "2026-11-11T02:49:56Z",
-      "pushedAt": "2026-11-11T01:49:52Z",
+      "pushedAt": "2026-11-17T22:37:03Z",
+      "metadataObservedAt": "2026-11-27T15:14:04.000Z",
       "head": {
-        "revision": "165f5cbe7a66dadcc22e2c93573a2677ecaaf701",
-        "url": "https://github.com/Juri-Halveth/halveth-bio-universe/commit/165f5cbe7a66dadcc22e2c93573a2677ecaaf701",
-        "observedAt": "2026-11-17T22:17:54.802Z",
-        "committedAt": "2026-11-11T01:49:51Z"
+        "revision": "29fc9a4ca07a2673ca13a34161d07a60ed8cb64f",
+        "url": "https://github.com/Juri-Halveth/halveth-bio-universe/commit/29fc9a4ca07a2673ca13a34161d07a60ed8cb64f",
+        "observedAt": "2026-11-27T15:14:04.000Z",
+        "committedAt": "2026-11-17T22:37:03Z"
       },
       "readme": {
         "status": "AVAILABLE",
         "path": "README.md",
-        "url": "https://github.com/Juri-Halveth/halveth-bio-universe/blob/165f5cbe7a66dadcc22e2c93573a2677ecaaf701/README.md",
-        "revision": "165f5cbe7a66dadcc22e2c93573a2677ecaaf701",
-        "sha256": "57e5af22ca8f2244436a885534393f4e6f705ab80ec9bc35f33589be3b17e104",
-        "bytes": 6086,
-        "observedAt": "2026-11-17T22:18:24.026462+00:00",
-        "excerpt": "Requires Node.js 20 or newer. No packages to install and no network connection is needed.",
+        "url": "https://github.com/Juri-Halveth/halveth-bio-universe/blob/29fc9a4ca07a2673ca13a34161d07a60ed8cb64f/README.md",
+        "revision": "29fc9a4ca07a2673ca13a34161d07a60ed8cb64f",
+        "sha256": "fa2f321d0ae02b99d943d6ef861663462ebb70aefb439aa46f347061d795f9a8",
+        "bytes": 6455,
+        "observedAt": "2026-11-27T15:30:02.802Z",
+        "connectorObservedAt": "2026-11-27T15:28:47.000Z",
+        "anonymousByteVerifiedAt": "2026-11-27T15:30:02.802Z",
+        "gitBlobSha1": "c6f9dac8629980649f1267c0e031eaff2bca698d",
+        "excerpt": "Public HALVETH context: Network search · Portfolio. The shared search covers public repository metadata, reviewed source descriptions and selected public entry points. Its coverage and source dates are stated in the index; dated descriptions are available through the archive selection.",
         "aliases": [
           "NOVA"
         ],
-        "mentionedRepositories": []
+        "mentionedRepositories": [
+          "Juri-Halveth.github.io"
+        ]
       }
     },
     {
@@ -226,10 +266,11 @@
       "createdAt": "2026-10-19T19:54:53Z",
       "updatedAt": "2026-11-02T11:25:40Z",
       "pushedAt": "2026-11-02T11:25:37Z",
+      "metadataObservedAt": "2026-11-27T15:14:04.000Z",
       "head": {
         "revision": "274fe89f4bd9e6360f25b69a7bdb416c5da898c0",
         "url": "https://github.com/Juri-Halveth/halveth-cannabis-reform-forschung/commit/274fe89f4bd9e6360f25b69a7bdb416c5da898c0",
-        "observedAt": "2026-11-17T22:17:54.675Z",
+        "observedAt": "2026-11-27T15:14:04.000Z",
         "committedAt": "2026-11-02T11:25:35Z"
       },
       "readme": {
@@ -239,7 +280,10 @@
         "revision": "274fe89f4bd9e6360f25b69a7bdb416c5da898c0",
         "sha256": "a37770a8446d2eae251a2f68b451758a9fb603a2be0206b8c37cc459e0be1b00",
         "bytes": 2971,
-        "observedAt": "2026-11-17T22:18:23.971246+00:00",
+        "observedAt": "2026-11-27T15:29:59.550Z",
+        "connectorObservedAt": "2026-11-27T15:28:47.000Z",
+        "anonymousByteVerifiedAt": "2026-11-27T15:29:59.550Z",
+        "gitBlobSha1": "0475803a24a342aac55d20c8fe8610415bd2a852",
         "excerpt": "Öffentliche, eigenständige Fassung von Juris vorsorglichem Forschungsprojekt. Die Website verbindet politische Reformvorschläge mit verlinkten Originalquellen und benennt die Grenzen einzelner Studien. Sie enthält keine eigenen Humanmessungen oder individuelle Rechts- und Medizinberatung.",
         "aliases": [],
         "mentionedRepositories": [
@@ -264,10 +308,11 @@
       "createdAt": "2026-10-19T18:57:20Z",
       "updatedAt": "2026-11-02T11:26:37Z",
       "pushedAt": "2026-11-02T11:26:35Z",
+      "metadataObservedAt": "2026-11-27T15:14:04.000Z",
       "head": {
         "revision": "8c6e1ab0f68d5dcc38d0e3068853beaec06067ab",
         "url": "https://github.com/Juri-Halveth/halveth-field-difference-lab/commit/8c6e1ab0f68d5dcc38d0e3068853beaec06067ab",
-        "observedAt": "2026-11-17T22:17:54.699Z",
+        "observedAt": "2026-11-27T15:14:04.000Z",
         "committedAt": "2026-11-02T11:26:32Z"
       },
       "readme": {
@@ -277,7 +322,10 @@
         "revision": "8c6e1ab0f68d5dcc38d0e3068853beaec06067ab",
         "sha256": "572aa37e01c27b82688ae6d573df670a393f6cca163c9626d9d6b371b0659ede",
         "bytes": 3868,
-        "observedAt": "2026-11-17T22:18:28.721330+00:00",
+        "observedAt": "2026-11-27T15:29:56.070Z",
+        "connectorObservedAt": "2026-11-27T15:28:47.000Z",
+        "anonymousByteVerifiedAt": "2026-11-27T15:29:56.070Z",
+        "gitBlobSha1": "e175999dbbe290c64ad702c74a537c1095e7cdaa",
         "excerpt": "Was verändert sich, wenn dieselbe Bewegung unter einer anderen Modellregel abläuft? Dieses Browserlabor stellt die Verläufe nebeneinander: drei Experimente auf der Startseite und zwei eigenständige Forschungsräume. Die Werte sind dimensionslos; die Anzeige ist eine Modellsimulation, keine Messreihe.",
         "aliases": [],
         "mentionedRepositories": [
@@ -302,10 +350,11 @@
       "createdAt": "2026-10-20T11:32:06Z",
       "updatedAt": "2026-11-03T09:37:04Z",
       "pushedAt": "2026-11-03T09:37:02Z",
+      "metadataObservedAt": "2026-11-27T15:14:04.000Z",
       "head": {
         "revision": "8e6b49c78c5ed8fbdf5d5010e11b4040b9013fff",
         "url": "https://github.com/Juri-Halveth/halveth-forschungslabor/commit/8e6b49c78c5ed8fbdf5d5010e11b4040b9013fff",
-        "observedAt": "2026-11-17T22:17:54.572Z",
+        "observedAt": "2026-11-27T15:14:04.000Z",
         "committedAt": "2026-11-03T09:37:00Z"
       },
       "readme": {
@@ -315,7 +364,10 @@
         "revision": "8e6b49c78c5ed8fbdf5d5010e11b4040b9013fff",
         "sha256": "d55424e3d4d8fa67df4e78800ab394d7e7415ee8e5edb870746062cca5603891",
         "bytes": 10427,
-        "observedAt": "2026-11-17T22:18:29.030422+00:00",
+        "observedAt": "2026-11-27T15:29:59.625Z",
+        "connectorObservedAt": "2026-11-27T15:28:47.000Z",
+        "anonymousByteVerifiedAt": "2026-11-27T15:29:59.625Z",
+        "gitBlobSha1": "9a11111b0f64568d22b0a24b985e3bd6bf5cbfbf",
         "excerpt": "Kleine Werkzeuge. Konkrete Modelle. Nachvollziehbare Prüfungen. Dieses Repository enthält ausgewählte lokale JavaScript- und Python-Bausteine sowie Browserexperimente von Juri im Projekt HALVETH. Eingaben, Grenzen und Gegenproben stehen bei den jeweiligen Modulen.",
         "aliases": [
           "NOVA",
@@ -343,10 +395,11 @@
       "createdAt": "2026-09-23T01:25:35Z",
       "updatedAt": "2026-11-04T12:49:05Z",
       "pushedAt": "2026-11-04T12:49:02Z",
+      "metadataObservedAt": "2026-11-27T15:13:56.000Z",
       "head": {
         "revision": "4a882611f0a41224760952a0a54e91be862a43bd",
         "url": "https://github.com/Juri-Halveth/halveth-morrowind-genesis/commit/4a882611f0a41224760952a0a54e91be862a43bd",
-        "observedAt": "2026-11-17T22:17:54.679Z",
+        "observedAt": "2026-11-27T15:13:56.000Z",
         "committedAt": "2026-11-04T12:49:00Z"
       },
       "readme": {
@@ -356,7 +409,10 @@
         "revision": "4a882611f0a41224760952a0a54e91be862a43bd",
         "sha256": "b4daa89feb4ed4e3c95cc62d795405377cf9d093b2e4172934e2445fae1c9aa2",
         "bytes": 19706,
-        "observedAt": "2026-11-17T22:18:28.798616+00:00",
+        "observedAt": "2026-11-27T15:29:53.029Z",
+        "connectorObservedAt": "2026-11-27T15:28:47.000Z",
+        "anonymousByteVerifiedAt": "2026-11-27T15:29:53.029Z",
+        "gitBlobSha1": "5a65e3ef162429d95e595cb3ceedded26170858c",
         "excerpt": "Elder Scrolls technology portfolio: OpenMW gameplay, persistent NPC encounters, local dialogue and original world prototypes. This is a source-bound overview for a possible one-time acquisition conversation; it does not bundle Bethesda assets or imply Bethesda endorsement.",
         "aliases": [
           "SCARLET"
@@ -383,10 +439,11 @@
       "createdAt": "2026-09-21T11:10:20Z",
       "updatedAt": "2026-11-11T10:12:15Z",
       "pushedAt": "2026-11-09T23:16:28Z",
+      "metadataObservedAt": "2026-11-27T15:13:56.000Z",
       "head": {
         "revision": "e927394b0d465fd8034ce6b7ecc1ab13875e1fba",
         "url": "https://github.com/Juri-Halveth/halveth-project0-keeper/commit/e927394b0d465fd8034ce6b7ecc1ab13875e1fba",
-        "observedAt": "2026-11-17T22:17:54.651Z",
+        "observedAt": "2026-11-27T15:13:56.000Z",
         "committedAt": "2026-11-02T11:19:33Z"
       },
       "readme": {
@@ -396,7 +453,10 @@
         "revision": "e927394b0d465fd8034ce6b7ecc1ab13875e1fba",
         "sha256": "052c4ab1793065fe45830ae331f3476634cbb08cbeefb39ab7608a1be121c1bd",
         "bytes": 720,
-        "observedAt": "2026-11-17T22:18:28.762302+00:00",
+        "observedAt": "2026-11-27T15:29:52.953Z",
+        "connectorObservedAt": "2026-11-27T15:28:47.000Z",
+        "anonymousByteVerifiedAt": "2026-11-27T15:29:52.953Z",
+        "gitBlobSha1": "63bb799360bcb1e26dee84bef657b09ade2b9ec3",
         "excerpt": "PowerShell-Werkzeuge und Zustandsdateien für die experimentelle Steuerung von ASTER, RACHEL und SHELLA. Der aktuelle Quellstand dokumentiert Beobachtung, Kontinuität, Entscheidungen und Prüfungen; ein Handels- oder Ertragsdienst ist darin nicht enthalten.",
         "aliases": [],
         "mentionedRepositories": [
@@ -419,11 +479,12 @@
       "hasPages": false,
       "createdAt": "2026-09-18T23:49:52Z",
       "updatedAt": "2026-11-02T11:19:49Z",
-      "pushedAt": "2026-11-14T13:23:15Z",
+      "pushedAt": "2026-11-21T13:23:23Z",
+      "metadataObservedAt": "2026-11-27T15:13:49.000Z",
       "head": {
         "revision": "22f3a706f88b0e186d9f6dc2807540e857ad2136",
         "url": "https://github.com/Juri-Halveth/halveth-realms/commit/22f3a706f88b0e186d9f6dc2807540e857ad2136",
-        "observedAt": "2026-11-17T22:17:54.741Z",
+        "observedAt": "2026-11-27T15:13:49.000Z",
         "committedAt": "2026-11-02T11:19:44Z"
       },
       "readme": {
@@ -433,7 +494,10 @@
         "revision": "22f3a706f88b0e186d9f6dc2807540e857ad2136",
         "sha256": "1e55f93e4fbd5c116b4fcee6905d9950303d2ac5d4a8ab01b717d8a9834edd4c",
         "bytes": 8912,
-        "observedAt": "2026-11-17T22:18:28.842405+00:00",
+        "observedAt": "2026-11-27T15:29:49.329Z",
+        "connectorObservedAt": "2026-11-27T15:28:47.000Z",
+        "anonymousByteVerifiedAt": "2026-11-27T15:29:49.329Z",
+        "gitBlobSha1": "fd67b1d8400b448190c7ca292eb423b6111fd0b1",
         "excerpt": "Ein eigenständiger Fantasy-Sandbox-Prototyp mit prozeduralen Welten. Der Quellcode und die Startanleitung zeigen den jeweiligen Spiel- und Distributionsstand.",
         "aliases": [
           "SCARLET"
@@ -459,11 +523,12 @@
       "hasPages": true,
       "createdAt": "2026-09-11T21:35:19Z",
       "updatedAt": "2026-11-11T11:24:55Z",
-      "pushedAt": "2026-11-11T10:24:52Z",
+      "pushedAt": "2026-11-25T02:32:17Z",
+      "metadataObservedAt": "2026-11-27T15:13:49.000Z",
       "head": {
         "revision": "f4aa107a0fc73906c16442d11214d37f34e4f78b",
         "url": "https://github.com/Juri-Halveth/halveth-scarlet/commit/f4aa107a0fc73906c16442d11214d37f34e4f78b",
-        "observedAt": "2026-11-17T22:17:54.618Z",
+        "observedAt": "2026-11-27T15:13:49.000Z",
         "committedAt": "2026-11-11T10:24:50Z"
       },
       "readme": {
@@ -473,7 +538,10 @@
         "revision": "f4aa107a0fc73906c16442d11214d37f34e4f78b",
         "sha256": "4d39cfb22e29cadbce7311edc2423a66ff010c36851561807162f7c9b79650c8",
         "bytes": 8090,
-        "observedAt": "2026-11-17T22:18:28.794560+00:00",
+        "observedAt": "2026-11-27T15:29:49.281Z",
+        "connectorObservedAt": "2026-11-27T15:28:47.000Z",
+        "anonymousByteVerifiedAt": "2026-11-27T15:29:49.281Z",
+        "gitBlobSha1": "acfa1f08caf349a3c9a143d058345a3a234c5239",
         "excerpt": "SCARLET ist ein browserlokaler Prototyp für Textzustände und Varianten. Der Funktionsraum führt die vorhandenen GStar-Operationen aus und zeigt daneben eine endliche regelbasierte Zellensimulation.",
         "aliases": [
           "SCARLET",
@@ -500,11 +568,12 @@
       "hasPages": false,
       "createdAt": "2026-07-10T18:17:42Z",
       "updatedAt": "2026-11-02T11:19:27Z",
-      "pushedAt": "2026-11-02T11:19:25Z",
+      "pushedAt": "2026-11-27T11:08:49Z",
+      "metadataObservedAt": "2026-11-27T15:13:49.000Z",
       "head": {
         "revision": "17d0429d98de364aa779cb057dc02f6f9363f9f3",
         "url": "https://github.com/Juri-Halveth/halveth-tresor/commit/17d0429d98de364aa779cb057dc02f6f9363f9f3",
-        "observedAt": "2026-11-17T22:17:54.822Z",
+        "observedAt": "2026-11-27T15:13:49.000Z",
         "committedAt": "2026-11-02T11:19:22Z"
       },
       "readme": {
@@ -514,7 +583,10 @@
         "revision": "17d0429d98de364aa779cb057dc02f6f9363f9f3",
         "sha256": "df953a31d28e5c6f4d9923c8f5833febfa841099a0a9c5f028da8970609ce61b",
         "bytes": 4173,
-        "observedAt": "2026-11-17T22:18:40.194285+00:00",
+        "observedAt": "2026-11-27T15:29:45.677Z",
+        "connectorObservedAt": "2026-11-27T15:28:47.000Z",
+        "anonymousByteVerifiedAt": "2026-11-27T15:29:45.677Z",
+        "gitBlobSha1": "42e0c4b8e5405b51d270961142b4b1fcf493f9f2",
         "excerpt": "Passwörter, Schlüssel und Verbindungsdaten in einer verschlüsselten lokalen Datei verwalten — mit Suche, Zwischenablage und einem gesondert aufzubewahrenden Recovery-Key.",
         "aliases": [],
         "mentionedRepositories": [
@@ -539,10 +611,11 @@
       "createdAt": "2026-10-13T00:02:07Z",
       "updatedAt": "2026-11-02T11:21:33Z",
       "pushedAt": "2026-11-02T11:21:27Z",
+      "metadataObservedAt": "2026-11-27T15:13:56.000Z",
       "head": {
         "revision": "a4116f6dfe1505651d3c135007342c9bbb857c56",
         "url": "https://github.com/Juri-Halveth/halveth-tron-security-lab/commit/a4116f6dfe1505651d3c135007342c9bbb857c56",
-        "observedAt": "2026-11-17T22:17:54.796Z",
+        "observedAt": "2026-11-27T15:13:56.000Z",
         "committedAt": "2026-11-02T11:21:27Z"
       },
       "readme": {
@@ -552,7 +625,10 @@
         "revision": "a4116f6dfe1505651d3c135007342c9bbb857c56",
         "sha256": "f0cf6aca219e809170780757501570a157a1b55a20ed1d20ff3e5747720ff19f",
         "bytes": 14013,
-        "observedAt": "2026-11-17T22:18:40.126617+00:00",
+        "observedAt": "2026-11-27T15:29:56.121Z",
+        "connectorObservedAt": "2026-11-27T15:28:47.000Z",
+        "anonymousByteVerifiedAt": "2026-11-27T15:29:56.121Z",
+        "gitBlobSha1": "dac729cc920911d007f8607870adc527f9194651",
         "excerpt": "Dieses Repository ist ein Forschungsfork der Java-Implementierung von TRON. Die erhaltene Upstream-Dokumentation beschreibt java-tron; eigene Beiträge sind nur über die gebundene Commit- und Branch-Historie zuzuordnen. Ein lauffertiges HALVETH-Produkt oder ein Sicherheitsimpact wird hier nicht behauptet.",
         "aliases": [
           "Ethereum",
@@ -580,10 +656,11 @@
       "createdAt": "2026-09-23T01:49:20Z",
       "updatedAt": "2026-11-02T11:19:41Z",
       "pushedAt": "2026-11-02T11:19:39Z",
+      "metadataObservedAt": "2026-11-27T15:13:56.000Z",
       "head": {
         "revision": "5dcd5ad655bcaa73e672618f0829100989484c65",
         "url": "https://github.com/Juri-Halveth/halveth-unreal/commit/5dcd5ad655bcaa73e672618f0829100989484c65",
-        "observedAt": "2026-11-17T22:17:54.600Z",
+        "observedAt": "2026-11-27T15:13:56.000Z",
         "committedAt": "2026-11-02T11:19:36Z"
       },
       "readme": {
@@ -593,7 +670,10 @@
         "revision": "5dcd5ad655bcaa73e672618f0829100989484c65",
         "sha256": "b609dc6f8a976b61f03fd3b423da9620e8e728d20b769d400c3a1d7ea545f548",
         "bytes": 15556,
-        "observedAt": "2026-11-17T22:18:40.609321+00:00",
+        "observedAt": "2026-11-27T15:29:53.001Z",
+        "connectorObservedAt": "2026-11-27T15:28:47.000Z",
+        "anonymousByteVerifiedAt": "2026-11-27T15:29:53.001Z",
+        "gitBlobSha1": "8037a9e789021f542d8daafcf0f2dc329b819b0a",
         "excerpt": "Ein eigenständiger C++-Spielprototyp für Unreal Engine. Portalwelten, eine interaktive Bibliothek und Bau- und Rezeptsysteme verbinden Gestaltung mit nativer Spielentwicklung.",
         "aliases": [
           "SCARLET"
@@ -601,6 +681,89 @@
         "mentionedRepositories": [
           "halveth-unreal",
           "Juri-Halveth.github.io"
+        ]
+      }
+    },
+    {
+      "repositoryId": "repo:juri-halveth/jbl-owner-external-witness-20260901",
+      "githubRepositoryId": 1353813791,
+      "name": "jbl-owner-external-witness-20260901",
+      "fullName": "Juri-Halveth/jbl-owner-external-witness-20260901",
+      "url": "https://github.com/Juri-Halveth/jbl-owner-external-witness-20260901",
+      "defaultBranch": "main",
+      "visibility": "public",
+      "fork": false,
+      "archived": false,
+      "description": "",
+      "homepage": "",
+      "hasPages": false,
+      "createdAt": "2026-09-01T16:54:27Z",
+      "updatedAt": "2026-11-27T11:57:58Z",
+      "pushedAt": "2026-11-27T12:21:05Z",
+      "metadataObservedAt": "2026-11-27T15:13:49.000Z",
+      "head": {
+        "revision": "551f6d614e4ff4bd4ad426868ad887e52b9ee7ec",
+        "url": "https://github.com/Juri-Halveth/jbl-owner-external-witness-20260901/commit/551f6d614e4ff4bd4ad426868ad887e52b9ee7ec",
+        "observedAt": "2026-11-27T15:13:49.000Z",
+        "committedAt": "2026-11-27T12:16:46Z"
+      },
+      "readme": {
+        "status": "AVAILABLE",
+        "path": "README.md",
+        "url": "https://github.com/Juri-Halveth/jbl-owner-external-witness-20260901/blob/551f6d614e4ff4bd4ad426868ad887e52b9ee7ec/README.md",
+        "revision": "551f6d614e4ff4bd4ad426868ad887e52b9ee7ec",
+        "sha256": "ffdfdea9d045a941f3556ff1c3df6577fadffd3c44d76200b8599929b4f47311",
+        "bytes": 2811,
+        "observedAt": "2026-11-27T15:29:45.681Z",
+        "connectorObservedAt": "2026-11-27T15:28:47.000Z",
+        "anonymousByteVerifiedAt": "2026-11-27T15:29:45.681Z",
+        "gitBlobSha1": "a7e5fd2a410241266cbd924e4f8d95f1b13150f1",
+        "excerpt": "Vollständiger Forschungsbericht · Bestätigung und Korrespondenz · Korrektur der ersten Fassung",
+        "aliases": [],
+        "mentionedRepositories": [
+          "jbl-wan-proof"
+        ]
+      }
+    },
+    {
+      "repositoryId": "repo:juri-halveth/jbl-wan-proof",
+      "githubRepositoryId": 1332363317,
+      "name": "jbl-wan-proof",
+      "fullName": "Juri-Halveth/jbl-wan-proof",
+      "url": "https://github.com/Juri-Halveth/jbl-wan-proof",
+      "defaultBranch": "main",
+      "visibility": "public",
+      "fork": false,
+      "archived": false,
+      "description": "Owner-authorized JBL WAN exposure proof",
+      "homepage": "",
+      "hasPages": false,
+      "createdAt": "2026-08-12T19:07:55Z",
+      "updatedAt": "2026-11-27T11:58:51Z",
+      "pushedAt": "2026-11-27T12:21:04Z",
+      "metadataObservedAt": "2026-11-27T15:13:49.000Z",
+      "head": {
+        "revision": "939bf986e6064ba3c24f7d74957a4ac950912526",
+        "url": "https://github.com/Juri-Halveth/jbl-wan-proof/commit/939bf986e6064ba3c24f7d74957a4ac950912526",
+        "observedAt": "2026-11-27T15:13:49.000Z",
+        "committedAt": "2026-11-27T12:17:01Z"
+      },
+      "readme": {
+        "status": "AVAILABLE",
+        "path": "README.md",
+        "url": "https://github.com/Juri-Halveth/jbl-wan-proof/blob/939bf986e6064ba3c24f7d74957a4ac950912526/README.md",
+        "revision": "939bf986e6064ba3c24f7d74957a4ac950912526",
+        "sha256": "491090cfbd21946971de22c85b9700f72fee55033968a2f41fd825c0685da0c7",
+        "bytes": 2838,
+        "observedAt": "2026-11-27T15:29:45.679Z",
+        "connectorObservedAt": "2026-11-27T15:28:25.000Z",
+        "anonymousByteVerifiedAt": "2026-11-27T15:29:45.679Z",
+        "gitBlobSha1": "8e18806a5f14329d791ddd36e305376d791da372",
+        "excerpt": "Finder: Juri Janovski — HALVETH · Stand: 27. November 2026",
+        "aliases": [],
+        "mentionedRepositories": [
+          "jbl-owner-external-witness-20260901",
+          "jbl-wan-proof"
         ]
       }
     },
@@ -619,21 +782,25 @@
       "hasPages": false,
       "createdAt": "2026-09-28T12:00:31Z",
       "updatedAt": "2026-11-02T23:30:15Z",
-      "pushedAt": "2026-11-02T23:30:13Z",
+      "pushedAt": "2026-11-17T22:36:59Z",
+      "metadataObservedAt": "2026-11-27T15:13:56.000Z",
       "head": {
-        "revision": "ce748ae23d951c35f510481738a1c91efacd57f0",
-        "url": "https://github.com/Juri-Halveth/Juri-Halveth/commit/ce748ae23d951c35f510481738a1c91efacd57f0",
-        "observedAt": "2026-11-17T22:17:54.521Z",
-        "committedAt": "2026-11-02T23:30:10Z"
+        "revision": "7cf2f3851cbc71755b6c97993f49c25359047d4e",
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth/commit/7cf2f3851cbc71755b6c97993f49c25359047d4e",
+        "observedAt": "2026-11-27T15:13:56.000Z",
+        "committedAt": "2026-11-17T22:36:56Z"
       },
       "readme": {
         "status": "AVAILABLE",
         "path": "README.md",
-        "url": "https://github.com/Juri-Halveth/Juri-Halveth/blob/ce748ae23d951c35f510481738a1c91efacd57f0/README.md",
-        "revision": "ce748ae23d951c35f510481738a1c91efacd57f0",
-        "sha256": "df1efbbe986c7d99d13d7a8871b65a623b70f82651e11f0670b57bff4871c7ce",
-        "bytes": 5369,
-        "observedAt": "2026-11-17T22:18:40.170520+00:00",
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth/blob/7cf2f3851cbc71755b6c97993f49c25359047d4e/README.md",
+        "revision": "7cf2f3851cbc71755b6c97993f49c25359047d4e",
+        "sha256": "b65dfa0627c6d2723a0421cbca2a6141964797fc8567a09f56544775cd0023d8",
+        "bytes": 5625,
+        "observedAt": "2026-11-27T15:29:52.844Z",
+        "connectorObservedAt": "2026-11-27T15:28:47.000Z",
+        "anonymousByteVerifiedAt": "2026-11-27T15:29:52.844Z",
+        "gitBlobSha1": "051fdc56c6e67fb1aa3c86db06e6d68220fb83ff",
         "excerpt": "Ich entwickle lokale Werkzeuge, Webanwendungen und interaktive Modelle. HALVETH verbindet diese Arbeiten mit ihren Quellständen und Prüfungen. Python · JavaScript · Windows · browserlokale Anwendungen.",
         "aliases": [
           "NOVA",
@@ -666,27 +833,34 @@
       "homepage": "https://juri-halveth.github.io/",
       "hasPages": true,
       "createdAt": "2026-09-16T14:14:14Z",
-      "updatedAt": "2026-11-11T11:19:53Z",
-      "pushedAt": "2026-11-17T21:33:28Z",
+      "updatedAt": "2026-11-17T22:33:33Z",
+      "pushedAt": "2026-11-27T00:38:30Z",
+      "metadataObservedAt": "2026-11-27T15:13:49.000Z",
       "head": {
-        "revision": "e1ae68ac6428caa30dfc12739b1c0dfecd6fb8a1",
-        "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/commit/e1ae68ac6428caa30dfc12739b1c0dfecd6fb8a1",
-        "observedAt": "2026-11-17T22:17:54.675Z",
-        "committedAt": "2026-11-17T21:33:25Z"
+        "revision": "13672e980c0b41c6624c679e5b15449e7da0269c",
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/commit/13672e980c0b41c6624c679e5b15449e7da0269c",
+        "observedAt": "2026-11-27T15:13:49.000Z",
+        "committedAt": "2026-11-27T00:38:27Z"
       },
       "readme": {
         "status": "AVAILABLE",
         "path": "README.md",
-        "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/e1ae68ac6428caa30dfc12739b1c0dfecd6fb8a1/README.md",
-        "revision": "e1ae68ac6428caa30dfc12739b1c0dfecd6fb8a1",
-        "sha256": "6eb0186ae558d05efad87cb77828f54c31b989ad0c4dc3c2f1184ca0f7709693",
-        "bytes": 12338,
-        "observedAt": "2026-11-17T22:18:40.190753+00:00",
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/13672e980c0b41c6624c679e5b15449e7da0269c/README.md",
+        "revision": "13672e980c0b41c6624c679e5b15449e7da0269c",
+        "sha256": "a530387757796f3a6a5d51f407991c73bc64c7a2310bdc49d0a52910db9481cb",
+        "bytes": 14618,
+        "observedAt": "2026-11-27T15:29:49.289Z",
+        "connectorObservedAt": "2026-11-27T15:28:47.000Z",
+        "anonymousByteVerifiedAt": "2026-11-27T15:29:49.289Z",
+        "gitBlobSha1": "411954a2c94b63b455fb35eb101f285dff04a26c",
         "excerpt": "Ich entwickle lokale Werkzeuge, Webanwendungen und interaktive Modelle. Die Portfolio-Startseite zeigt direkt nutzbare Ergebnisse; die Projektübersicht führt zu Anwendung oder Anleitung und daneben zum Quellcode. Zwei Arbeitsproben zeigen Eingabe, Ergebnis und Gegenprobe. Person: Juri. Projekt: HALVETH. Namenszuordnung.",
         "aliases": [
           "NOVA",
           "Seedspace",
           "SCARLET",
+          "KORRIDOT",
+          "GG24",
+          "Lichtpunkt",
           "1001"
         ],
         "mentionedRepositories": [
@@ -710,11 +884,12 @@
       "hasPages": true,
       "createdAt": "2026-09-08T10:47:47Z",
       "updatedAt": "2026-11-02T12:01:55Z",
-      "pushedAt": "2026-11-02T12:01:52Z",
+      "pushedAt": "2026-11-27T11:08:52Z",
+      "metadataObservedAt": "2026-11-27T15:13:49.000Z",
       "head": {
         "revision": "a464093d95e50fcb685c6f2db0c386739cc5fc9e",
         "url": "https://github.com/Juri-Halveth/lernstudio/commit/a464093d95e50fcb685c6f2db0c386739cc5fc9e",
-        "observedAt": "2026-11-17T22:17:54.635Z",
+        "observedAt": "2026-11-27T15:13:49.000Z",
         "committedAt": "2026-11-02T12:01:49Z"
       },
       "readme": {
@@ -724,7 +899,10 @@
         "revision": "a464093d95e50fcb685c6f2db0c386739cc5fc9e",
         "sha256": "a40ffb19f1d967faf49a615dc8fc326f3666c61f92796e4b53cc1ec2488df8bc",
         "bytes": 8443,
-        "observedAt": "2026-11-17T22:18:40.206261+00:00",
+        "observedAt": "2026-11-27T15:29:45.761Z",
+        "connectorObservedAt": "2026-11-27T15:28:47.000Z",
+        "anonymousByteVerifiedAt": "2026-11-27T15:29:45.761Z",
+        "gitBlobSha1": "5b8bb6adfdc30aae3f5d00dbf0d5d95d0f93b13a",
         "excerpt": "Kostenlose Lernplattform mit interaktiven Lektionen und eigenen Lernpfaden. Veröffentlichte Inhalte sind ohne Pflichtkonto oder Kauf direkt zugänglich; bestehende Konten bleiben optional. Ohne Konto liegt der Lernfortschritt im Browser.",
         "aliases": [
           "EVE"
@@ -751,11 +929,12 @@
       "hasPages": true,
       "createdAt": "2026-10-20T21:27:48Z",
       "updatedAt": "2026-11-02T11:19:52Z",
-      "pushedAt": "2026-11-02T11:19:50Z",
+      "pushedAt": "2026-11-22T14:46:27Z",
+      "metadataObservedAt": "2026-11-27T15:14:04.000Z",
       "head": {
         "revision": "0e821023b7344e73e8f7a09f8ebe92ba54cbcbd6",
         "url": "https://github.com/Juri-Halveth/leviathan-wallet-portal/commit/0e821023b7344e73e8f7a09f8ebe92ba54cbcbd6",
-        "observedAt": "2026-11-17T22:17:54.702Z",
+        "observedAt": "2026-11-27T15:14:04.000Z",
         "committedAt": "2026-11-02T11:19:48Z"
       },
       "readme": {
@@ -765,7 +944,10 @@
         "revision": "0e821023b7344e73e8f7a09f8ebe92ba54cbcbd6",
         "sha256": "841e401ebad16bfc6583f9011521e904ce12462c314be6f56f14809039272bb1",
         "bytes": 5503,
-        "observedAt": "2026-11-17T22:18:46.409744+00:00",
+        "observedAt": "2026-11-27T15:29:59.531Z",
+        "connectorObservedAt": "2026-11-27T15:28:47.000Z",
+        "anonymousByteVerifiedAt": "2026-11-27T15:29:59.531Z",
+        "gitBlobSha1": "08b071e375827b0431da0c23d14480603c9e9047",
         "excerpt": "Öffentlicher Browser Vault von Juri Janovski (Projekt HALVETH) : Wallets auswählen, unterstützte Netzwerke lesen und Positionen mit Quellen und Abdeckungslücken anzeigen. ETH- und GTC-Aktionen sind direkt in der Vault-Oberfläche integriert. Die Oraichain-Konsole bleibt als Fachbaustein über passende Positionsdetails erreichbar.",
         "aliases": [
           "Gitcoin",
@@ -797,21 +979,25 @@
       "hasPages": true,
       "createdAt": "2026-10-20T13:16:11Z",
       "updatedAt": "2026-11-06T00:25:42Z",
-      "pushedAt": "2026-11-06T00:26:02Z",
+      "pushedAt": "2026-11-27T11:08:22Z",
+      "metadataObservedAt": "2026-11-27T15:14:04.000Z",
       "head": {
-        "revision": "6151152eafa90c18dc64563872879dfc9da341f7",
-        "url": "https://github.com/Juri-Halveth/lucinet-seedspace/commit/6151152eafa90c18dc64563872879dfc9da341f7",
-        "observedAt": "2026-11-17T22:17:54.694Z",
-        "committedAt": "2026-11-06T00:25:36Z"
+        "revision": "5301a3fb26f78f1e4fd167b5524d027fec8c88ee",
+        "url": "https://github.com/Juri-Halveth/lucinet-seedspace/commit/5301a3fb26f78f1e4fd167b5524d027fec8c88ee",
+        "observedAt": "2026-11-27T15:14:04.000Z",
+        "committedAt": "2026-11-24T23:53:01Z"
       },
       "readme": {
         "status": "AVAILABLE",
         "path": "README.md",
-        "url": "https://github.com/Juri-Halveth/lucinet-seedspace/blob/6151152eafa90c18dc64563872879dfc9da341f7/README.md",
-        "revision": "6151152eafa90c18dc64563872879dfc9da341f7",
-        "sha256": "4116f493b4184365d65f7369b1bc521b7c3972b27e1fb90cca0af55e357cfe0a",
-        "bytes": 4689,
-        "observedAt": "2026-11-17T22:18:46.442843+00:00",
+        "url": "https://github.com/Juri-Halveth/lucinet-seedspace/blob/5301a3fb26f78f1e4fd167b5524d027fec8c88ee/README.md",
+        "revision": "5301a3fb26f78f1e4fd167b5524d027fec8c88ee",
+        "sha256": "0289328ffdc3a522b48fff290c0d39769eb6eff4c313165301101078cd985f4b",
+        "bytes": 4466,
+        "observedAt": "2026-11-27T15:29:59.605Z",
+        "connectorObservedAt": "2026-11-27T15:28:47.000Z",
+        "anonymousByteVerifiedAt": "2026-11-27T15:29:59.605Z",
+        "gitBlobSha1": "c4a3e313ff2493f18c37f15e26b02df1e6f00c2f",
         "excerpt": "NOVA ist ein lokales Python-Werkzeug für Menschen, die mit vielen Notizen, Quelltexten und Forschungsständen arbeiten: Es findet Quellen wieder, erhält Korrekturen und schreibt auf, worauf ein Ergebnis beruht und was als Nächstes ansteht.",
         "aliases": [
           "NOVA",
@@ -840,10 +1026,11 @@
       "createdAt": "2026-09-16T20:45:41Z",
       "updatedAt": "2026-11-02T11:26:41Z",
       "pushedAt": "2026-11-02T11:26:38Z",
+      "metadataObservedAt": "2026-11-27T15:13:49.000Z",
       "head": {
         "revision": "e0c57497ecfc09a47fa78b8152a0b398157c653a",
         "url": "https://github.com/Juri-Halveth/mein-lernportal/commit/e0c57497ecfc09a47fa78b8152a0b398157c653a",
-        "observedAt": "2026-11-17T22:17:54.712Z",
+        "observedAt": "2026-11-27T15:13:49.000Z",
         "committedAt": "2026-11-02T11:26:36Z"
       },
       "readme": {
@@ -853,7 +1040,10 @@
         "revision": "e0c57497ecfc09a47fa78b8152a0b398157c653a",
         "sha256": "401feeb07f639bcef66bc9f0ed6112c9a829df65a9a859f2ab1cf4ee79233db0",
         "bytes": 3628,
-        "observedAt": "2026-11-17T22:18:46.486202+00:00",
+        "observedAt": "2026-11-27T15:29:49.247Z",
+        "connectorObservedAt": "2026-11-27T15:28:47.000Z",
+        "anonymousByteVerifiedAt": "2026-11-27T15:29:49.247Z",
+        "gitBlobSha1": "0f2d353e7f49df4ae9ed8b8542ff54d82cf46ad2",
         "excerpt": "Öffnen. Suchen. Lernen. Der freie, statische Katalog enthält 702 Lektionen in 13 Themenwelten. Lektionen, Suche und Übungen sind ohne Pflichtkonto direkt zugänglich; der Fortschritt liegt im Browser und kann exportiert oder importiert werden.",
         "aliases": [],
         "mentionedRepositories": [

@@ -1,6 +1,6 @@
 {
   "schema": "halveth.public-network-entries.v1",
-  "reviewedAt": "2026-11-17T22:22:49.772Z",
+  "reviewedAt": "2026-11-27T15:26:02Z",
   "coverage": "Reviewed additive public entry points. Modules are not additional repositories or portfolio cards.",
   "documents": [
     {
@@ -29,7 +29,9 @@
         "Console Only",
         "Console Zero",
         "Zeitkorridor",
-        "Zeitspur"
+        "Zeitspur",
+        "KORRIDOR",
+        "Korridor"
       ],
       "text": "KORRIDOT räumlicher Zeitkorridor lokale Ereignisse Herkunft Quellenbelege Browsermodell",
       "historical": false,
@@ -108,6 +110,38 @@
       "relatedRepositoryIds": [
         "repo:juri-halveth/console-only"
       ]
+    },
+    {
+      "id": "module:website:lucineta-draft",
+      "repositoryId": "repo:juri-halveth/juri-halveth.github.io",
+      "kind": "module",
+      "title": {
+        "de": "LUCINETA · Entwicklungsentwurf",
+        "en": "LUCINETA · development draft",
+        "ru": "LUCINETA · проект разработки"
+      },
+      "summary": {
+        "de": "Offener Entwurf eines lokalen Doppelwelten-Modells mit Gegenproben. Quellcode und Diskussion stehen in Pull Request 83; der Raum ist noch nicht veröffentlicht.",
+        "en": "Open draft of a local twin-world model with counterchecks. Source and discussion are in pull request 83; the space has not been published.",
+        "ru": "Открытый проект локальной модели двух миров с проверками. Код и обсуждение в pull request 83; пространство ещё не опубликовано."
+      },
+      "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/pull/83",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/fdd654282227529548d3df45a21d80a08fbf4cda/universum/lucineta/index.html",
+        "revision": "fdd654282227529548d3df45a21d80a08fbf4cda",
+        "observedAt": "2026-11-27T15:26:02Z",
+        "scope": "PUBLIC_OPEN_DRAFT_NOT_PUBLISHED_OR_RUNTIME_INTEGRATION"
+      },
+      "aliases": [
+        "LUCINETA",
+        "Doppelwelten",
+        "twin world",
+        "Gegenprobe"
+      ],
+      "text": "LUCINETA offener Entwicklungsentwurf Pull Request 83 B3/S23 Doppelwelten Kontrollwelten lokal synthetisches Modell noch nicht veröffentlicht",
+      "historical": false,
+      "editorialState": "CURRENT",
+      "relatedRepositoryIds": []
     }
   ],
   "sharedSources": [

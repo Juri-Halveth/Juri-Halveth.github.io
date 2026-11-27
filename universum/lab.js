@@ -260,6 +260,15 @@
   ledgerExport.type = "button"; ledgerExport.id = "ledgerExport"; ledgerExport.textContent = "Ledger-JSON herunterladen";
   ledgerExport.disabled = true;
   ledgerBlock.querySelector(".lab-controls").appendChild(ledgerExport);
+  const ledgerImport = document.createElement("button");
+  ledgerImport.type = "button"; ledgerImport.id = "ledgerImport"; ledgerImport.textContent = "JSON öffnen & fortsetzen";
+  const ledgerFile = document.createElement("input");
+  ledgerFile.type = "file"; ledgerFile.id = "ledgerFile"; ledgerFile.accept = ".json,application/json"; ledgerFile.hidden = true;
+  ledgerBlock.querySelector(".lab-controls").append(ledgerImport, ledgerFile);
+  const ledgerStorageNote = document.createElement("p");
+  ledgerStorageNote.className = "lab-note";
+  ledgerStorageNote.textContent = "Lokale Browsersitzung: JSON herunterladen und später öffnen (höchstens 4 MiB). Die Datei wird im Browser geprüft und ersetzt erst danach den aktuellen Ledger. Die nächste Variante setzt am zuletzt erzeugten Textzustand an.";
+  ledgerBlock.appendChild(ledgerStorageNote);
   const ledgerHistory = document.createElement("div");
   ledgerHistory.id = "ledgerHistory"; ledgerHistory.className = "ledger-history";
   ledgerBlock.appendChild(ledgerHistory);
@@ -292,13 +301,43 @@
   async function ledgerAction(task) {
     if (ledgerBusy) return;
     ledgerBusy = true;
+    ledgerImport.disabled = true;
     try { await task(); }
     catch (error) {
       if (ledger) updateLedgerStatus("Operation unterbrochen: " + error.message + " · aktueller Ledger-Stand");
       else byId("ledgerStatus").textContent = "Lokale Operation fehlgeschlagen: " + error.message;
     }
-    finally { ledgerBusy = false; }
+    finally { ledgerBusy = false; ledgerImport.disabled = false; }
   }
+  ledgerImport.addEventListener("click", () => { if (!ledgerBusy) ledgerFile.click(); });
+  ledgerFile.addEventListener("change", () => {
+    const file = ledgerFile.files?.[0];
+    ledgerFile.value = ""; // The same file can be selected again after a rejected import.
+    if (!file) return;
+    void ledgerAction(async () => {
+      if (!window.GStar) throw new Error("GStar nicht geladen");
+      const limit = window.GStar.LIMITS.maxExportBytes;
+      if (!Number.isSafeInteger(file.size) || file.size < 1 || file.size > limit) {
+        throw new Error("Ledger-Datei muss 1 bis " + limit + " Bytes enthalten");
+      }
+      const bytes = new Uint8Array(await file.arrayBuffer());
+      if (bytes.byteLength !== file.size || bytes.byteLength > limit) throw new Error("Dateigröße stimmt nicht mit den gelesenen Bytes überein");
+      const saved = JSON.parse(new TextDecoder("utf-8", { fatal: true }).decode(bytes));
+      const nextLedger = await window.GStar.restore(saved);
+      const nextView = nextLedger.view();
+      const nextStateId = nextView.states.at(-1)?.id || null;
+      const importedRun = /^NETZ_STARSHIP_([1-9][0-9]*)$/.exec(nextView.runId);
+      const importedRunNumber = importedRun ? Number(importedRun[1]) : 0;
+      // Adopt only the completely replayed candidate. A failed read or replay
+      // leaves the current ledger, its parent selection and run counter intact.
+      ledger = nextLedger; latestStateId = nextStateId;
+      branchCounter = nextView.states.filter(state => state.mode === "DERIVE_CHILD").length;
+      if (Number.isSafeInteger(importedRunNumber)) ledgerRunNumber = Math.max(ledgerRunNumber, importedRunNumber);
+      byId("ledgerBranch").disabled = !latestStateId;
+      byId("ledgerSnapshot").disabled = false; byId("ledgerVerify").disabled = false;
+      updateLedgerStatus("JSON geladen · Replay und Selbstkonsistenz geprüft");
+    });
+  });
   byId("ledgerSeed").addEventListener("click", () => ledgerAction(async () => {
     if (!window.GStar) throw new Error("GStar nicht geladen");
     const label = checkedLedgerText(byId("ledgerSeedLabel").value, 160, "Seed-Name");
@@ -347,11 +386,15 @@
   }));
   ledgerExport.addEventListener("click", () => {
     if (!ledger) return;
-    const blob = new Blob([JSON.stringify(ledger.export(), null, 2) + "\n"], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a"); link.href = url; link.download = ledger.export().runId + ".json";
-    link.click(); setTimeout(() => URL.revokeObjectURL(url), 5000);
-    updateLedgerStatus("Lokaler JSON-Download angeboten; bitte vor externer Verwendung prüfen");
+    try {
+      const bytes = new TextEncoder().encode(window.GStar.canonical(ledger.export()));
+      if (bytes.byteLength > window.GStar.LIMITS.maxExportBytes) throw new Error("Export überschreitet die Dateigrenze");
+      const blob = new Blob([bytes], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a"); link.href = url; link.download = ledger.export().runId + ".json";
+      link.click(); setTimeout(() => URL.revokeObjectURL(url), 5000);
+      updateLedgerStatus("Lokaler JSON-Download angeboten · " + bytes.byteLength + " Bytes");
+    } catch (error) { updateLedgerStatus("Download nicht erstellt: " + error.message); }
   });
 
   async function loadEndeck() {

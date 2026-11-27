@@ -37,7 +37,7 @@ test('current directory cards name their scope and preserve direct source links'
   for(const p of site.projects.filter(p=>p.site.entry_type==='PROJECT'&&p.site.editorial_state==='CURRENT')){
    const card=doc.querySelector(`[data-project="${p.id}"]`);assert.ok(card,p.id);
    assert.ok(card.querySelector('.work-kind').textContent.trim());
-   assert.equal(card.querySelector('.directory-actions a:nth-child(2)').getAttribute('href'),p.source_url);
+   assert.equal(card.querySelector('.directory-actions [data-pinned-source]').getAttribute('href'),p.source_url);
   }
  }
 });

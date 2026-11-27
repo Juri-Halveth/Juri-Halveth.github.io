@@ -1,10 +1,14 @@
 # HALVETH / NETZ: lesbarer Projekteinstieg für KI-Systeme
 
-Das Starship Lab hat zwei Ansichten derselben öffentlichen Auswahl: den Flugraum für Menschen und einen statischen, lesenden JSON-Index für Programme. Der Einstieg ist [`api/space.json`](api/space.json). Er nennt die zum jeweiligen Build öffentlich katalogisierten Projekt-IDs, Themen, den Revisionsdigest und für jedes Projekt den Pfad, die Bytelänge und den SHA-256-Digest eines kleinen Kontextdokuments. Der Index ist ein datierter Auswahlstand, kein automatisches Inventar aller GitHub-Repositories.
+Das Starship Lab zeigt eine kuratierte öffentliche Auswahl. Sein lesender JSON-Einstieg [`api/space.json`](api/space.json) nennt Projekt-IDs, Themen, den Revisionsdigest und für jedes Projekt den Pfad, die Bytelänge und den SHA-256-Digest eines kleinen Kontextdokuments. Dieser datierte Auswahlstand bleibt von der vollständigen öffentlichen GitHub-Inventur getrennt.
 
-[`api/relations.json`](api/relations.json) leitet aus dem jeweils gebauten öffentlichen Index eine typisierte Projekt-zu-Thema-Relation pro deklarierter Zugehörigkeit ab. Der [Fadennetz-Raum](faden/) zeigt dieselben Relationen als bewegliche Darstellung und als Tastaturliste. Er prüft beim Aufruf einer Projektkarte die exakten Kontextbytes gegen den Index und erkennt neue Indexrevisionen während eines geöffneten Besuchs. Die Animation ist keine Messung von laufenden Prozessen oder Raumzeit. Private VERACHEL-Daten sind keine Quelle dieser öffentlichen Relationendatei.
+Der [Fadennetz-Raum](faden/) verwendet den umfassenderen [`api/network.json`](api/network.json): alle beim Abruf erfassten öffentlichen Repositories sowie ausdrücklich eingetragene Module. Die Kanten unterscheiden README-Verweise, Moduleinstiege und gleiche Quellbytes an gebundenen Revisionen. Jede Kante führt zu ihren Quellen. Ein Pull-Request-Einstieg wird als Quellvorschlag gekennzeichnet; zurückgezogene Präsentationen bleiben als solche markiert. Das Netz lässt sich als Grafik oder über die Tastaturliste bedienen.
 
-## Leseweg
+Der Fadennetz-Browser prüft alle 30 Sekunden, ob eine neue veröffentlichte Indexrevision vorliegt. Nach einem vorübergehenden Abruffehler zeigt auch eine unveränderte, wieder erreichbare Revision den erfolgreichen Abruf an. Die eigentliche GitHub-Inventur entsteht im Pages-Build; die Browserabfrage startet keinen GitHub-Sync. README-Verweise und gleiche Bytes beschreiben Quellenbeziehungen, keine laufende Kommunikation zwischen Anwendungen.
+
+[`api/relations.json`](api/relations.json) erhält weiterhin das ältere, eigenständige Format der Projekt-zu-Thema-Zuordnungen aus `api/space.json`. Der gemeinsame Adapter unterstützt beide Formate. Beim älteren Projektkontext werden die exakt abgerufenen Bytes gegen Länge und SHA-256 im Index geprüft; der umfassendere Netzwerkindex trägt die gebundenen Kontextangaben direkt mit. Private VERACHEL-Daten sind keine Quelle dieser öffentlichen Dateien.
+
+## Leseweg für die kuratierte Auswahl
 
 1. `api/space.json` per HTTPS GET laden und `revision` mit einer früheren Fassung vergleichen.
 2. Nur für die gerade benötigten Projekt-IDs `projects[].path` abrufen. Der Pfad ist relativ zu `/universum/`.

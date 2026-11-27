@@ -9,7 +9,7 @@ test('all language entrances lead with one service hero, four directly usable pr
   const doc=new JSDOM(fs.readFileSync(path.join(__dirname,'..',prefix,'index.html'),'utf8')).window.document;
   assert.equal(doc.querySelectorAll('.service-hero').length,1);
   assert.deepEqual([...doc.querySelectorAll('[data-featured-project]')].map(n=>n.dataset.featuredProject),['mein-lernportal','lucinet-seedspace','halveth-tresor','halveth-field-difference-lab']);
-  assert.ok(doc.querySelector('.service-hero a[href$="arbeiten/"]'));
+  assert.ok(doc.querySelector('.service-hero a[href$="suche/"]'));
   assert.equal(doc.querySelector('.scene-wall'),null);
   assert.ok(doc.querySelector('#contact a[href="mailto:juri@halveth.de"]'));
   assert.ok(doc.querySelector('a[href="mailto:security@halveth.de"]'));
