@@ -84,5 +84,7 @@ test('a translated product description keeps a visible revision link when its RE
  assert.ok(article.textContent.includes('Проверенное описание проекта'));
  assert.ok([...article.querySelectorAll('a')].some(a=>a.href.includes(revision) && a.textContent.includes('2026-11-17')));
  assert.ok(article.querySelector('details').textContent.includes('Fresh README excerpt'));
+ assert.ok(article.querySelector('details').textContent.includes('языке оригинала'));
+ assert.equal(article.querySelector('details p').getAttribute('lang'),'');
  dom.window.close();
 });

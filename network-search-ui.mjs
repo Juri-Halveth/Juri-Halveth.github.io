@@ -12,13 +12,17 @@ const localized=(value,lang)=>typeof value==='string'?value:value?.[lang]||value
 function add(doc,parent,tag,text,className){const el=doc.createElement(tag);if(text!==undefined)el.textContent=text;if(className)el.className=className;parent.append(el);return el;}
 function renderResults(doc,target,results,lang){
  const w=words[lang];target.replaceChildren();
+ const excerptLabel={de:'README-Auszug in der Quellsprache',en:'README excerpt in the source language',ru:'Фрагмент README на языке оригинала'}[lang];
  const reviewLabel={de:'Redaktioneller Stand',en:'Reviewed description',ru:'Описание проверено'}[lang];
  for(const item of results){
   const url=safeURL(item.url);if(!url)continue;
   const article=add(doc,target,'article',undefined,'network-result');article.dataset.networkId=item.id;
   add(doc,article,'p',`${w[item.kind]||w.entry}${item.historical?' · '+w.historic:''}`,'network-kind');
   const title=add(doc,article,'h3');const link=add(doc,title,'a',localized(item.priorDescription?.title || item.title,lang));link.href=url;
-  add(doc,article,'p',localized(item.priorDescription?.summary || item.summary,lang));
+  const automatic=item.source?.scope==='PUBLIC_README_AUTOMATIC_EXCERPT_NOT_EDITORIAL_REVIEW';
+  if(automatic && !item.priorDescription)add(doc,article,'small',excerptLabel);
+  const description=add(doc,article,'p',localized(item.priorDescription?.summary || item.summary,lang));
+  if(automatic && !item.priorDescription){description.setAttribute('lang','');description.dir='auto';}
   if(item.priorDescription){
    const source=safeURL(item.priorDescription.url);
    if(source){
@@ -27,7 +31,10 @@ function renderResults(doc,target,results,lang){
    }
   }
   const details=add(doc,article,'details');add(doc,details,'summary',w.source);
-  if(item.priorDescription)add(doc,details,'p',localized(item.summary,lang));
+  if(item.priorDescription){
+   add(doc,details,'small',excerptLabel);
+   const excerpt=add(doc,details,'p',localized(item.summary,lang));excerpt.setAttribute('lang','');excerpt.dir='auto';
+  }
   const sourceURL=safeURL(item.source?.url);if(sourceURL){const source=add(doc,details,'a',item.repositoryId?.replace('repo:','')||w.source);source.href=sourceURL;}
   if(item.source?.revision)add(doc,details,'p',`${w.revision}: ${item.source.revision}`,'network-revision');
   if(item.source?.observedAt)add(doc,details,'p',`${w.observed}: ${item.source.observedAt}`);
