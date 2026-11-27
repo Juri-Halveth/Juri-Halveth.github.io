@@ -70,3 +70,19 @@ test('every generated language has canonical search, machine-readable sources an
   dom.window.close();
  }
 });
+
+test('a translated product description keeps a visible revision link when its README advances',async()=>{
+ const {mountNetworkSearch}=await import('../network-search-ui.mjs');
+ const dom=new JSDOM(read('ru/suche/index.html'),{url:'https://juri-halveth.github.io/ru/suche/?q=NOVA'});
+ const item=structuredClone(index.documents.find(d=>!d.historical && d.repositoryId==='repo:juri-halveth/lucinet-seedspace' && d.kind==='repository'));
+ const revision=item.source.revision;
+ item.priorDescription={title:{ru:'NOVA · Источники'},summary:{ru:'Проверенное описание проекта'},observedAt:'2026-11-17T18:00:00Z',revision,url:item.source.url};
+ item.summary={de:'Fresh README excerpt',en:'Fresh README excerpt',ru:'Fresh README excerpt'};
+ mountNetworkSearch(dom.window.document,{...index,documents:[item]});
+ const article=dom.window.document.querySelector('article.network-result');
+ assert.equal(article.querySelector('h3 a').textContent,'NOVA · Источники');
+ assert.ok(article.textContent.includes('Проверенное описание проекта'));
+ assert.ok([...article.querySelectorAll('a')].some(a=>a.href.includes(revision) && a.textContent.includes('2026-11-17')));
+ assert.ok(article.querySelector('details').textContent.includes('Fresh README excerpt'));
+ dom.window.close();
+});

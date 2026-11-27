@@ -14,7 +14,7 @@ export function searchNetwork(index, query, options = {}) {
     const title = normalizeSearch(Object.values(document.title).join(' '));
     const primaryNames = (document.primaryNames || []).map(normalizeSearch);
     const aliases = normalizeSearch([...primaryNames, ...document.aliases].join(' '));
-    const body = normalizeSearch([Object.values(document.summary).join(' '), document.text, document.repositoryId || '', document.id].join(' '));
+    const body = normalizeSearch([Object.values(document.summary).join(' '), document.text, ...Object.values(document.priorDescription?.title || {}), ...Object.values(document.priorDescription?.summary || {}), document.repositoryId || '', document.id].join(' '));
     if (!tokens.every(token => title.includes(token) || aliases.includes(token) || body.includes(token))) continue;
     const score = tokens.reduce((sum, token) => sum + (title.includes(token) ? 12 : aliases.includes(token) ? 7 : 2), 0) + (document.kind === 'module' && tokens.length ? 1 : 0);
     const exactProduct = tokens.length > 0 && primaryNames.includes(tokens.join(' '));
