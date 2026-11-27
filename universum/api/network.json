@@ -1,6 +1,6 @@
 {
   "schema": "halveth.public-network.v1",
-  "revision": "4c3d670603c26a88ad45b21d626295a2c21509531030affaef865540986da015",
+  "revision": "3781eede2c3643322808a18a664c2012d9627b9b11522e12394b693a88ae996b",
   "observedAt": "2026-11-17T22:18:46.486202+00:00",
   "coverage": {
     "mode": "PUBLIC_METADATA_AND_REVIEWED_ENTRY_DESCRIPTIONS",
@@ -51,14 +51,14 @@
     "catalogEntries": 18,
     "catalogProjectEntries": 16,
     "portfolioCards": 13,
-    "documents": 64,
-    "currentSearchDocuments": 27,
+    "documents": 63,
+    "currentSearchDocuments": 26,
     "historicalDocuments": 34,
     "defaultHiddenDocuments": 37,
     "withdrawnRepositoryEntries": 3,
     "uncataloguedPublicRepositories": 3,
     "modules": 3,
-    "independentSites": 6,
+    "independentSites": 5,
     "relations": 32
   },
   "sources": [
@@ -109,14 +109,14 @@
     },
     {
       "path": "data/network-sites.json",
-      "sha256": "91d695e611518ffb268123bc4c486f4020ae96423ba33ac8fb4c2a8cb45fed2b",
+      "sha256": "b114ec2521538ff2d9da52b616a719c1049a091361f4327dd9281d30420110c3",
       "role": "REVIEWED_INDEPENDENT_PUBLIC_SITES"
     }
   ],
   "search": {
     "json": "search.json",
     "module": "search.mjs",
-    "sha256": "97d04adab5a730760ee57aefd76714bf38f744629cc2cad5695401c0baced50f",
+    "sha256": "a5ea8672be753615595113d8f200ef46eca7744eeb53bade7fa16f64d75daa76",
     "queryModule": "../../network-search.mjs"
   },
   "repositories": [
@@ -849,23 +849,6 @@
         "url": "https://halveth-scarlet-question.juri-janovski.chatgpt.site",
         "revision": null,
         "observedAt": "2026-11-17T22:24:18.539017+00:00",
-        "scope": "PUBLIC_WEBSITE_DESCRIPTION_NO_COMMIT_BINDING"
-      }
-    },
-    {
-      "id": "site:schuelervz-mantel",
-      "kind": "site",
-      "repositoryId": null,
-      "title": {
-        "de": "SchülerVZ Mantel · öffentliche Nachbildung",
-        "en": "SchülerVZ Mantel · public recreation",
-        "ru": "SchülerVZ Mantel · открытая реконструкция"
-      },
-      "url": "https://schuelervz-mantel.juri-janovski.chatgpt.site",
-      "source": {
-        "url": "https://schuelervz-mantel.juri-janovski.chatgpt.site",
-        "revision": null,
-        "observedAt": "2026-11-17T22:24:17.674962+00:00",
         "scope": "PUBLIC_WEBSITE_DESCRIPTION_NO_COMMIT_BINDING"
       }
     }

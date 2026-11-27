@@ -1,6 +1,6 @@
 {
   "schema": "halveth.network-search.v1",
-  "revision": "4c3d670603c26a88ad45b21d626295a2c21509531030affaef865540986da015",
+  "revision": "3781eede2c3643322808a18a664c2012d9627b9b11522e12394b693a88ae996b",
   "observedAt": "2026-11-17T22:18:46.486202+00:00",
   "coverage": {
     "mode": "PUBLIC_METADATA_AND_REVIEWED_ENTRY_DESCRIPTIONS",
@@ -51,14 +51,14 @@
     "catalogEntries": 18,
     "catalogProjectEntries": 16,
     "portfolioCards": 13,
-    "documents": 64,
-    "currentSearchDocuments": 27,
+    "documents": 63,
+    "currentSearchDocuments": 26,
     "historicalDocuments": 34,
     "defaultHiddenDocuments": 37,
     "withdrawnRepositoryEntries": 3,
     "uncataloguedPublicRepositories": 3,
     "modules": 3,
-    "independentSites": 6,
+    "independentSites": 5,
     "relations": 32
   },
   "documents": [
@@ -2441,43 +2441,6 @@
         "Welt"
       ],
       "text": "SCARLET Question Simulation Welt Öffentliches HALVETH-Gedankenspiel mit einer interaktiven Welt. Dieser veröffentlichte Stand ist separat vom Repository-Katalog erfasst. A public HALVETH interactive thought experiment, recorded separately from repository snapshots. Открытый интерактивный мысленный эксперимент HALVETH, учтённый отдельно от снимков репозитория.",
-      "historical": false,
-      "editorialState": "CURRENT",
-      "freshness": {
-        "state": "NO_COMMIT_BINDING",
-        "observedHead": null,
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
-      }
-    },
-    {
-      "id": "site:schuelervz-mantel",
-      "repositoryId": null,
-      "kind": "site",
-      "visibility": "public",
-      "title": {
-        "de": "SchülerVZ Mantel · öffentliche Nachbildung",
-        "en": "SchülerVZ Mantel · public recreation",
-        "ru": "SchülerVZ Mantel · открытая реконструкция"
-      },
-      "summary": {
-        "de": "Bedienbare Nachbildung der historischen Oberfläche mit neuen Konten. Eigene Veröffentlichung ohne hier geprüfte Git-Commitbindung.",
-        "en": "An interactive recreation of the historical interface with new accounts, separately published without a verified Git commit binding here.",
-        "ru": "Интерактивная реконструкция исторического интерфейса с новыми аккаунтами; отдельная публикация без установленной привязки к Git."
-      },
-      "url": "https://schuelervz-mantel.juri-janovski.chatgpt.site",
-      "source": {
-        "url": "https://schuelervz-mantel.juri-janovski.chatgpt.site",
-        "revision": null,
-        "observedAt": "2026-11-17T22:24:17.674962+00:00",
-        "scope": "PUBLIC_WEBSITE_DESCRIPTION_NO_COMMIT_BINDING"
-      },
-      "aliases": [
-        "SchülerVZ",
-        "SchuelerVZ",
-        "Mantel",
-        "soziales Netzwerk"
-      ],
-      "text": "SchülerVZ SchuelerVZ Mantel soziales Netzwerk Bedienbare Nachbildung der historischen Oberfläche mit neuen Konten. Eigene Veröffentlichung ohne hier geprüfte Git-Commitbindung. An interactive recreation of the historical interface with new accounts, separately published without a verified Git commit binding here. Интерактивная реконструкция исторического интерфейса с новыми аккаунтами; отдельная публикация без установленной привязки к Git.",
       "historical": false,
       "editorialState": "CURRENT",
       "freshness": {
