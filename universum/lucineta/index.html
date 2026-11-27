@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#080d19">
+  <meta name="description" content="LUCINET baut, LUCINETA prüft: Zwei deterministische GHOST-Zellwelten mit schaltbarem Portal und isolierter Gegenprobe. Kostenlose lokale Browserdemo von HALVETH.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; font-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
+  <link rel="canonical" href="https://juri-halveth.github.io/universum/lucineta/">
+  <link rel="icon" href="../assets/mark.svg">
+  <link rel="stylesheet" href="./lab.css">
+  <script type="module" src="./lab.mjs"></script>
+  <title>LUCINET × LUCINETA | Zwei Welten, eine Gegenprobe · HALVETH</title>
+</head>
+<body>
+  <a class="skip" href="#labor">Zum Labor</a>
+  <header class="topbar">
+    <a href="../" class="brand">◇ HALVETH <span>/ STARSHIP LAB</span></a>
+    <a href="../" class="return">← Zurück ins Universum</a>
+  </header>
+  <main id="labor">
+    <section class="intro">
+      <p class="eyebrow">HALVETH · EXPERIMENT 01 · LOKALE BROWSERBERECHNUNG</p>
+      <h1><span>LUCINET</span> <b>×</b> <em>LUCINETA</em></h1>
+      <p class="lead">Einer baut. Eine versucht, ihn zu widerlegen. Zwei kleine Welten beginnen identisch zum Kontrollversuch. Ein schaltbares Portal verändert nur ihre Nachbarschaftsregeln. Was entsteht, muss sich gegen den isolierten Verlauf behaupten.</p>
+      <p class="scope">Synthetisches Zellmodell (Conway B3/S23). Kein Live-Zugriff auf LUCINETA, den Raspberry Pi, URSTERN-Schlüssel, Wallets oder reale Betreiber. Keine Blockchain, kein externes Tracking.</p>
+    </section>
+    <section class="labor" aria-labelledby="worlds-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">ZWEI AUSFÜHRUNGEN · EINE GEGENPROBE</p><h2 id="worlds-title">Die GHOST-Welten</h2></div>
+        <div class="state-readout"><span>GENERATION</span><strong id="generation">0</strong></div>
+      </div>
+      <div class="world-grid">
+        <article class="world world-a">
+          <div class="world-header"><h3>01 / LUCINET</h3><span>WELT A · CYAN</span></div>
+          <canvas id="canvasA" width="440" height="320" aria-label="Welt A, lebende Zellen und markierte Abweichungen zur isolierten Kontrolle">Die visuelle Simulation benötigt Canvas.</canvas>
+          <p class="world-footer">Lebende Zellen <strong id="countA">0</strong></p>
+        </article>
+        <article class="world world-b">
+          <div class="world-header"><h3>02 / LUCINETA</h3><span>WELT B · VIOLETT</span></div>
+          <canvas id="canvasB" width="440" height="320" aria-label="Welt B, lebende Zellen und markierte Abweichungen zur isolierten Kontrolle">Die visuelle Simulation benötigt Canvas.</canvas>
+          <p class="world-footer">Lebende Zellen <strong id="countB">0</strong></p>
+        </article>
+      </div>
+      <div class="controls" aria-label="Simulationssteuerung">
+        <button type="button" id="portal" aria-pressed="false">Portal öffnen</button>
+        <button type="button" id="pause" aria-pressed="true">Starten</button>
+        <button type="button" id="step">Ein Schritt</button>
+        <button type="button" id="reset">Auf Anfang</button>
+        <label class="seed-label" for="seed">Seed <input type="number" id="seed" min="1" max="999999999" step="1" value="777" inputmode="numeric"></label>
+      </div>
+      <div class="summary">
+        <div><span>PORTAL</span><strong id="portalState">GESCHLOSSEN</strong></div>
+        <div><span>ABWEICHENDE ZELLEN</span><strong id="different">0</strong></div>
+        <div><span>ERSTE ABWEICHUNG</span><strong id="firstDifference">Noch keine</strong></div>
+      </div>
+      <div id="feedback" role="status" aria-live="polite" class="feedback">Bereit. Öffne das Portal und gehe einen Schritt weiter.</div>
+      <p class="legend"><span class="cyan">■</span> Welt A · <span class="violet">■</span> Welt B · <span class="gold">▣</span> anders als isolierte Kontrolle. Die Kontrolle läuft intern mit demselben Anfangszustand, aber ohne Verbindung.</p>
+    </section>
+    <section class="explain" aria-labelledby="explain-title">
+      <h2 id="explain-title">Was prüft LUCINETA?</h2>
+      <div class="explain-grid">
+        <article><h3>Behauptung</h3><p>Die Verbindung verändert eine zukünftige Welt, obwohl jede Zelle nur die Anzahl ihrer Nachbarn auswertet.</p></article>
+        <article><h3>Kontrollversuch</h3><p>Beide Welten werden gleichzeitig ein zweites Mal ohne Portal berechnet. Seed und Regeln bleiben unverändert.</p></article>
+        <article><h3>Widerlegung</h3><p>Wenn bei geschlossenem Portal Unterschiede auftreten, wäre das Modell inkonsistent. Bei offenem Portal zeigt die goldene Markierung die tatsächlichen Unterschiede.</p></article>
+      </div>
+      <p><strong>Geltungsgrenze:</strong> Ein erfolgreicher Browsergegenversuch belegt die implementierten B3/S23-Regeln dieses Modells, nicht die Sicherheit, Geschwindigkeit oder Funktionsfähigkeit des verteilten LEVIATHAN-Systems. Die beiden Welten werden hier in einem Browserprozess berechnet; sie sind keine getrennten Pi-Operatoren.</p>
+      <p class="source-links"><a href="./README.md">Versuchsaufbau und Grenzen</a> · <a href="https://github.com/Juri-Halveth/Juri-Halveth.github.io">Quellcode und Tests auf GitHub</a> · <a href="../faden/">Öffentliches Fadennetz</a></p>
+    </section>
+  </main>
+  <footer>HALVETH · LUCINET × LUCINETA · Synthetisches Modell mit offener Gegenprobe · <a href="../../LICENSES.md">Quellen & Rechte</a></footer>
+</body>
+</html>

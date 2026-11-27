@@ -86,10 +86,10 @@ test('pull request entries remain explicitly proposals rather than deployed prog
   const node = fromNetwork(copy).nodes.find(item => item.id === entry.id);
   assert.equal(node.context.state, 'PULL REQUEST · QUELLVORSCHLAG');
   assert.match(node.context.publicEntry.label, /Pull Request/);
-  const draft = fromNetwork(network).nodes.find(item => item.id === 'module:website:lucineta-draft');
-  assert.ok(draft, 'the actual LUCINETA source proposal is represented');
+  entry.source.scope = 'PUBLIC_OPEN_DRAFT_NOT_PUBLISHED_OR_RUNTIME_INTEGRATION';
+  const draft = fromNetwork(copy).nodes.find(item => item.id === entry.id);
   assert.equal(draft.context.state, 'ENTWURF · PULL REQUEST');
-  assert.equal(draft.context.publicEntry.url, 'https://github.com/Juri-Halveth/Juri-Halveth.github.io/pull/83');
+  assert.equal(draft.context.publicEntry.url, entry.url);
   assert.match(draft.context.capability.boundary, /Änderungsvorschlag/);
 });
 

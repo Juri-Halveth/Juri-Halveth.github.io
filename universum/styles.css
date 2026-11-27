@@ -380,3 +380,6 @@
   left:0;bottom:-23px;max-width:100%;padding:2px 0;border:0;background:transparent;
   color:#a9c4d1;font-size:9px;white-space:normal;text-overflow:clip;
 }
+
+/* Public LUCINETA room remains reachable from the atlas on narrow displays. */
+@media(max-width:740px){.topbar-actions .lucineta-link{display:none}}

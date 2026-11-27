@@ -44,12 +44,13 @@ test('the historical evidence URL keeps its records and offers direct project an
  }
 });
 
-test('visitor names find an existing corridor or the clearly unpublished LUCINETA draft',async()=>{
+test('visitor names find an existing corridor and the LUCINETA cellular laboratory',async()=>{
  const {searchNetwork}=await import('../network-search.mjs');
  const {search}=makeNetworkIndex(root);
  assert.ok(searchNetwork(search,'Korridor').some(row=>row.id==='module:console-only:korridot'));
- const draft=searchNetwork(search,'LUCINETA').find(row=>row.id==='module:website:lucineta-draft');
- assert.ok(draft);
- assert.equal(draft.url,'https://github.com/Juri-Halveth/Juri-Halveth.github.io/pull/83');
- assert.match(draft.summary.de,/noch nicht veröffentlicht/);
+ const lab=searchNetwork(search,'LUCINETA').find(row=>row.id==='module:website:lucineta-draft');
+ assert.ok(lab);
+ assert.equal(lab.url,'https://juri-halveth.github.io/universum/lucineta/');
+ assert.match(lab.summary.de,/Zellautomaten/);
+ assert.ok(fs.existsSync(path.join(root,'universum/lucineta/index.html')));
 });

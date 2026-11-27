@@ -55,7 +55,7 @@ Repository-Namen werden nicht exportiert.
 
 </details>
 
-[Starship Lab öffnen](https://juri-halveth.github.io/universum/) ·
+[Starship Lab öffnen](https://juri-halveth.github.io/universum/) · [LUCINET × LUCINETA Gegenprüflabor](https://juri-halveth.github.io/universum/lucineta/) ·
 [Szenen und Modelle ansehen](https://juri-halveth.github.io/modelle/) ·
 [Technische Karte](https://juri-halveth.github.io/koennen/)
 
