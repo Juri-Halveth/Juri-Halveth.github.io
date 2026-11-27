@@ -1,6 +1,6 @@
 {
   "schema": "halveth.public-network.v1",
-  "revision": "c7864d670a38da63a819113790d4a5f0c280f4947818d32159cbb7567a862f35",
+  "revision": "6decd10823a36f1b7a0877a402708c5e3c67236a17e8e730f75c64a0de89354a",
   "observedAt": "2026-11-27T15:30:42.210Z",
   "coverage": {
     "mode": "PUBLIC_METADATA_AND_REVIEWED_ENTRY_DESCRIPTIONS",
@@ -84,7 +84,7 @@
     },
     {
       "path": "data/network-entries.json",
-      "sha256": "9399b2b5fedc970d6137c69634e388ab047e2f90ea976283c8e7793c248593d9",
+      "sha256": "33b27fb3b4282efc32abbac406059c5895d4a4f7610e21e474f9303196dfd2ee",
       "role": "REVIEWED_ADDITIVE_PUBLIC_ENTRIES"
     },
     {
@@ -116,7 +116,7 @@
   "search": {
     "json": "search.json",
     "module": "search.mjs",
-    "sha256": "2cf6c8a64644d96e00457a007fd4e51d8d213a8f7ec86b91a9d4b4be7934248f",
+    "sha256": "cea1adc2966efda1527e936a96c639b87e10eedea51f691d0e6029e36b7d714e",
     "queryModule": "../../network-search.mjs"
   },
   "repositories": [
@@ -820,16 +820,16 @@
       "kind": "module",
       "repositoryId": "repo:juri-halveth/juri-halveth.github.io",
       "title": {
-        "de": "LUCINETA · Entwicklungsentwurf",
-        "en": "LUCINETA · development draft",
-        "ru": "LUCINETA · проект разработки"
+        "de": "LUCINETA · Zwei Zellwelten vergleichen",
+        "en": "LUCINETA · compare two cell worlds",
+        "ru": "LUCINETA · сравнение двух клеточных миров"
       },
-      "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/pull/83",
+      "url": "https://juri-halveth.github.io/universum/lucineta/",
       "source": {
         "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/fdd654282227529548d3df45a21d80a08fbf4cda/universum/lucineta/index.html",
         "revision": "fdd654282227529548d3df45a21d80a08fbf4cda",
-        "observedAt": "2026-11-27T15:26:02Z",
-        "scope": "PUBLIC_OPEN_DRAFT_NOT_PUBLISHED_OR_RUNTIME_INTEGRATION"
+        "observedAt": "2026-11-27T22:27:48Z",
+        "scope": "REVIEWED_PUBLIC_ENTRY_DESCRIPTION_NOT_RUNTIME_OR_SCIENTIFIC_PROOF"
       }
     },
     {
@@ -984,8 +984,8 @@
       "source": {
         "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/fdd654282227529548d3df45a21d80a08fbf4cda/universum/lucineta/index.html",
         "revision": "fdd654282227529548d3df45a21d80a08fbf4cda",
-        "observedAt": "2026-11-27T15:26:02Z",
-        "scope": "PUBLIC_OPEN_DRAFT_NOT_PUBLISHED_OR_RUNTIME_INTEGRATION"
+        "observedAt": "2026-11-27T22:27:48Z",
+        "scope": "REVIEWED_PUBLIC_ENTRY_DESCRIPTION_NOT_RUNTIME_OR_SCIENTIFIC_PROOF"
       },
       "claimCeiling": "REVIEWED_PUBLIC_NAVIGATION_ENTRY"
     },
