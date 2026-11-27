@@ -11,6 +11,7 @@
   let graph = null;
   let particles = new Map();
   let selectedId = null;
+  let returnToDirectory = false;
   let generation = 0;
   let observedAt = null;
   let width = 1;
@@ -186,7 +187,7 @@
       button.textContent = node.kind === 'PUBLIC_MODULE' ? `Modul · ${node.label}` : node.label;
       button.dataset.nodeId = node.id;
       button.setAttribute('aria-pressed', String(node.id === selectedId));
-      button.addEventListener('click', () => select(node.id, true));
+      button.addEventListener('click', () => select(node.id, 'directory'));
       list.append(button);
     }
     if (focusedId) focusProject(focusedId, { preventScroll: true });
@@ -265,9 +266,11 @@
       container.append(item);
     }
   }
-  async function select(id, fromDirectory = false) {
+  async function select(id, origin = 'refresh') {
     const node = graph?.nodes.find(item => item.id === id && isRepositoryNode(item));
     if (!node) return;
+    const fromDirectory = origin === 'directory';
+    if (origin !== 'refresh') returnToDirectory = fromDirectory;
     selectedId = id;
     renderList();
     detail.hidden = false;
@@ -308,7 +311,8 @@
     detail.hidden = true;
     clearLinks();
     if (graph) renderList();
-    if (returnFocus) focusProject(returnId);
+    if (returnFocus) focusProject(returnId, { preventScroll: !returnToDirectory });
+    returnToDirectory = false;
   }
   function draw(now) {
     if (!context) return;
@@ -424,7 +428,7 @@
       const candidate = Math.hypot(point.x - x, point.y - y);
       if (candidate < distance) { nearest = point.id; distance = candidate; }
     }
-    if (nearest) select(nearest);
+    if (nearest) select(nearest, 'canvas');
   });
   document.getElementById('close').addEventListener('click', closeCard);
   document.addEventListener('visibilitychange', () => { lastFrame = null; });
