@@ -5,7 +5,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const {webcrypto} = require('node:crypto');
 const {JSDOM} = require('jsdom');
-const {fromSpace} = require('../universum/relation-model.js');
+const {fromNetwork, fromSpace} = require('../universum/relation-model.js');
 const root = path.join(__dirname, '..', 'universum');
 const source = require('../universum/api/space.json');
 
@@ -15,7 +15,7 @@ async function waitFor(predicate) {
   assert.ok(predicate(), 'expected UI state before timeout');
 }
 
-async function fixture(t) {
+async function fixture(t, reducedMotion = true, network = null) {
   const dom = new JSDOM(fs.readFileSync(path.join(root, 'faden/index.html'), 'utf8'), {
     url: 'https://juri-halveth.github.io/universum/faden/', runScripts: 'outside-only'
   });
@@ -25,30 +25,36 @@ async function fixture(t) {
   const style = document.createElement('style');
   style.textContent = fs.readFileSync(path.join(root, 'faden/style.css'), 'utf8');
   document.head.append(style);
-  const state = {width: 1400, height: 700, index: structuredClone(source), arcs: [], pending: null};
+  const state = {width: 1400, height: 700, index: structuredClone(network || source), arcs: [], labels: new Map(), pending: null};
   const drawing = {
     setTransform() {}, measureText(value) { return {width: value.length * 7}; },
     createLinearGradient() { return {addColorStop() {}}; }, beginPath() {}, moveTo() {},
-    lineTo() {}, stroke() {}, arc(x, y, radius) { state.arcs.push({x, y, radius}); },
-    fill() {}, fillRect() {}, fillText() {}
+    lineTo() {}, quadraticCurveTo() {}, stroke() {}, arc(x, y, radius) { state.arcs.push({x, y, radius}); },
+    fill() {}, fillRect() {}, fillText(text) {
+      if (state.arcs.length) state.labels.set(text, state.arcs.at(-1));
+    }
   };
   window.HTMLCanvasElement.prototype.getContext = () => drawing;
   document.querySelector('.stage').getBoundingClientRect = () => ({width: state.width, height: state.height});
   document.querySelector('.stage').scrollIntoView = () => {};
-  window.matchMedia = () => ({matches: true});
+  const preference = {matches: reducedMotion};
+  window.matchMedia = () => preference;
+  Object.defineProperty(document, 'hidden', {configurable: true, value: false});
   Object.defineProperty(window.crypto, 'subtle', {value: webcrypto.subtle});
   window.requestAnimationFrame = callback => { state.frame = callback; return 1; };
   window.setTimeout = callback => { state.refresh = callback; return 1; };
   window.fetch = async address => {
+    if (network && address.includes('network.json')) return {ok: true, json: async () => state.index};
     if (address.includes('space.json')) return {ok: true, json: async () => state.index};
     if (state.pending) return state.pending;
     const bytes = fs.readFileSync(path.join(root, address.slice(3)));
     return {ok: true, arrayBuffer: async () => Uint8Array.from(bytes).buffer};
   };
-  window.HALVETH_RELATION_MODEL = {fromSpace};
+  window.HALVETH_RELATION_MODEL = network ? {fromNetwork} : {fromSpace};
   window.eval(fs.readFileSync(path.join(root, 'faden/app.js'), 'utf8'));
-  await waitFor(() => document.querySelectorAll('#projectList button').length === source.count);
-  return {window, document, state};
+  const count = network ? fromNetwork(network).nodes.length : source.count;
+  await waitFor(() => document.querySelectorAll('#projectList button').length === count);
+  return {window, document, state, preference};
 }
 
 test('project switch removes old destinations and keeps links hidden on pending or failed verification', async t => {
@@ -67,6 +73,34 @@ test('project switch removes old destinations and keeps links hidden on pending 
   for (const anchor of document.querySelectorAll('.detail-links a')) {
     assert.equal(window.getComputedStyle(anchor).display, 'none');
     assert.equal(anchor.hasAttribute('href'), false);
+  }
+});
+
+test('modules stay near their repository and a separately linked pair stays together during drift', async t => {
+  const network = require('../universum/api/network.json');
+  const {state} = await fixture(t, false, network);
+  const graph = fromNetwork(network);
+  const repo = name => 'repo:juri-halveth/' + name;
+  const consoleId = repo('console-only'), websiteId = repo('juri-halveth.github.io');
+  const jbl = [repo('jbl-owner-external-witness-20260901'), repo('jbl-wan-proof')];
+  const single = repo('gitcoin_co_30');
+  const distance = (first, second) => {
+    const point = id => state.labels.get(graph.nodes.find(node => node.id === id).label);
+    const a = point(first), b = point(second);
+    assert.ok(a && b, 'expected both node labels on the desktop canvas');
+    return Math.hypot(a.x - b.x, a.y - b.y);
+  };
+  for (let frame = 0; frame <= 600; frame++) {
+    state.arcs = []; state.labels.clear();
+    state.frame(frame * 100);
+    if (frame % 300) continue;
+    for (const {id, repositoryId} of graph.nodes.filter(n => [consoleId, websiteId].includes(n.repositoryId))) {
+      const other = repositoryId === consoleId ? websiteId : consoleId;
+      assert.ok(distance(id, repositoryId) < distance(id, other), 'module closer to its recorded owner: ' + id);
+    }
+    for (const member of jbl) {
+      assert.ok(distance(...jbl) < distance(member, single), 'independent project separate from the linked pair');
+    }
   }
 });
 
@@ -111,4 +145,34 @@ test('reduced-motion resize keeps every node visible and project hit targets usa
     assert.equal(document.getElementById('detail').hidden, false, 'resized project remains selectable');
     document.getElementById('close').click();
   }
+});
+
+test('thread drift stays slow across frame rates, pauses and source refreshes', async t => {
+  function positions(state, time) {
+    state.arcs = [];
+    state.frame(time);
+    return state.arcs.filter(point => point.radius === 5 || point.radius === 8);
+  }
+  const runs = [];
+  for (const fps of [30, 120]) {
+    const {state, preference, document} = await fixture(t, false);
+    const initial = positions(state, 0);
+    let prior = initial;
+    for (let frame = 1; frame <= fps; frame++) {
+      const points = positions(state, frame * 1000 / fps);
+      points.forEach((p, i) => assert.ok(Math.hypot(p.x - prior[i].x, p.y - prior[i].y) <= 2.71 / fps));
+      prior = points;
+    }
+    assert.ok(prior.some((p, i) => Math.hypot(p.x - initial[i].x, p.y - initial[i].y) > 0.5));
+    runs.push(prior);
+    preference.matches = true;
+    assert.deepEqual(positions(state, 1100), prior, 'reduced motion freezes the current layout');
+    state.index.revision = 'd'.repeat(64);
+    await state.refresh();
+    assert.deepEqual(positions(state, 1200), prior, 'an index revision does not rearrange retained nodes');
+    preference.matches = false;
+    document.dispatchEvent(new document.defaultView.Event('visibilitychange'));
+    assert.deepEqual(positions(state, 3600000), prior, 'no jump when returning to the tab');
+  }
+  runs[0].forEach((p, i) => assert.ok(Math.hypot(p.x - runs[1][i].x, p.y - runs[1][i].y) < 1e-8));
 });
