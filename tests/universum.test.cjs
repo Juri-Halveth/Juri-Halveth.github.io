@@ -333,9 +333,9 @@ test('portfolio entrances retain an optional working Starship Lab route and site
 test('three language homepages lead with one service hero and direct project actions', () => {
   const root = path.join(__dirname, '..');
   const expectedTitles = {
-    'index.html': 'Software bauen. Ergebnisse prüfen.',
-    'en/index.html': 'Build software. Check results.',
-    'ru/index.html': 'Создавать программы. Проверять результат.'
+    'index.html': 'Ideen entwickeln.Zusammenhänge sichtbar machen.',
+    'en/index.html': 'Develop ideas.Make connections visible.',
+    'ru/index.html': 'Развивать идеи.Делать связи видимыми.'
   };
   for (const [page, title] of Object.entries(expectedTitles)) {
     const doc = new JSDOM(fs.readFileSync(path.join(root, page), 'utf8'), {
@@ -349,6 +349,6 @@ test('three language homepages lead with one service hero and direct project act
     assert.equal(main.querySelectorAll('[data-featured-project]').length,4,page);
     assert.equal(main.querySelector('.universe-gateway'),null,page);
     assert.equal(main.querySelector('.scene-wall'),null,page);
-    assert.ok(hero.querySelector('.service-card-first a.button')?.href.startsWith('https://'),page);
+    assert.equal(new URL(hero.querySelector('[data-primary-entrance]').href).pathname,'/universum/',page);
   }
 });

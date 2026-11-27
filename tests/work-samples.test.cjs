@@ -16,7 +16,7 @@ test('two complete case studies expose implementation, counterexample and same-r
   const doc=new JSDOM(renderWorkSamples(data,lang)).window.document;
   assert.equal(doc.querySelectorAll('.evidence-case').length,2);
   assert.equal(doc.querySelectorAll('.evidence-grid>div').length,12);
-  assert.equal(doc.querySelectorAll('details').length,2);
+  assert.equal(doc.querySelectorAll('.evidence-detail').length,2);
   for(const s of data.samples){const item=doc.getElementById(s.id);assert.ok(item.querySelector(`a[href*="/blob/${s.revision}/"]`));assert.ok(item.querySelector(`a[href$="/actions/runs/${s.ci.id}"]`));}
  }
 });

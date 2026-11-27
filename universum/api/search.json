@@ -1,7 +1,7 @@
 {
   "schema": "halveth.network-search.v1",
-  "revision": "3781eede2c3643322808a18a664c2012d9627b9b11522e12394b693a88ae996b",
-  "observedAt": "2026-11-17T22:18:46.486202+00:00",
+  "revision": "cc74bdf4e545e77a63b95f277393690d42481d11ad86c7836617f8afbc79f2ef",
+  "observedAt": "2026-11-27T15:30:42.210Z",
   "coverage": {
     "mode": "PUBLIC_METADATA_AND_REVIEWED_ENTRY_DESCRIPTIONS",
     "repositoryScope": "Complete public owner inventory at observedAt, including forks and metadata repositories; README bytes are anonymously accessible.",
@@ -18,7 +18,7 @@
       "Unlisted external websites or their full text"
     ],
     "archiveDefault": false,
-    "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00",
+    "inventoryObservedAt": "2026-11-27T15:30:42.210Z",
     "selectedProjectSnapshot": {
       "date": "2026-10-27",
       "records": 11
@@ -43,23 +43,23 @@
     "sourceChangedDoesNotInvalidateHistoricalEvidence": true
   },
   "counts": {
-    "repositories": 21,
+    "repositories": 23,
     "forks": 2,
-    "nonForkRepositories": 19,
+    "nonForkRepositories": 21,
     "metaRepositories": 2,
     "pagesConfigured": 12,
     "catalogEntries": 18,
     "catalogProjectEntries": 16,
     "portfolioCards": 13,
-    "documents": 63,
-    "currentSearchDocuments": 26,
-    "historicalDocuments": 34,
-    "defaultHiddenDocuments": 37,
+    "documents": 71,
+    "currentSearchDocuments": 29,
+    "historicalDocuments": 39,
+    "defaultHiddenDocuments": 42,
     "withdrawnRepositoryEntries": 3,
-    "uncataloguedPublicRepositories": 3,
-    "modules": 3,
+    "uncataloguedPublicRepositories": 5,
+    "modules": 4,
     "independentSites": 5,
-    "relations": 32
+    "relations": 36
   },
   "documents": [
     {
@@ -95,7 +95,7 @@
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
         "observedHead": "1b6f8a5aa1132c56e066c2c2cddc3bbbe5c36319",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -131,7 +131,7 @@
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
         "observedHead": "2b94cb4a23b9d96b088004d9f5da62e91975e20b",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -167,7 +167,7 @@
       "freshness": {
         "state": "UNPINNED_SOURCE",
         "observedHead": "274fe89f4bd9e6360f25b69a7bdb416c5da898c0",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -203,7 +203,7 @@
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
         "observedHead": "8c6e1ab0f68d5dcc38d0e3068853beaec06067ab",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -239,7 +239,7 @@
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
         "observedHead": "8e6b49c78c5ed8fbdf5d5010e11b4040b9013fff",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -275,7 +275,7 @@
       "freshness": {
         "state": "UNPINNED_SOURCE",
         "observedHead": "4a882611f0a41224760952a0a54e91be862a43bd",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -311,7 +311,7 @@
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
         "observedHead": "e927394b0d465fd8034ce6b7ecc1ab13875e1fba",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -347,7 +347,7 @@
       "freshness": {
         "state": "UNPINNED_SOURCE",
         "observedHead": "22f3a706f88b0e186d9f6dc2807540e857ad2136",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -383,7 +383,7 @@
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
         "observedHead": "f4aa107a0fc73906c16442d11214d37f34e4f78b",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -419,7 +419,7 @@
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
         "observedHead": "17d0429d98de364aa779cb057dc02f6f9363f9f3",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -455,7 +455,7 @@
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
         "observedHead": "a4116f6dfe1505651d3c135007342c9bbb857c56",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -491,7 +491,7 @@
       "freshness": {
         "state": "UNPINNED_SOURCE",
         "observedHead": "5dcd5ad655bcaa73e672618f0829100989484c65",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -526,8 +526,8 @@
       "editorialState": "ARCHIVE",
       "freshness": {
         "state": "UNPINNED_SOURCE",
-        "observedHead": "ce748ae23d951c35f510481738a1c91efacd57f0",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "observedHead": "7cf2f3851cbc71755b6c97993f49c25359047d4e",
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -562,8 +562,8 @@
       "editorialState": "ARCHIVE",
       "freshness": {
         "state": "UNPINNED_SOURCE",
-        "observedHead": "e1ae68ac6428caa30dfc12739b1c0dfecd6fb8a1",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "observedHead": "13672e980c0b41c6624c679e5b15449e7da0269c",
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -599,7 +599,7 @@
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
         "observedHead": "a464093d95e50fcb685c6f2db0c386739cc5fc9e",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -635,7 +635,7 @@
       "freshness": {
         "state": "UNPINNED_SOURCE",
         "observedHead": "0e821023b7344e73e8f7a09f8ebe92ba54cbcbd6",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -670,8 +670,8 @@
       "editorialState": "ARCHIVE",
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
-        "observedHead": "6151152eafa90c18dc64563872879dfc9da341f7",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "observedHead": "5301a3fb26f78f1e4fd167b5524d027fec8c88ee",
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -707,7 +707,7 @@
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
         "observedHead": "e0c57497ecfc09a47fa78b8152a0b398157c653a",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -746,9 +746,9 @@
       "editorialState": "CURRENT",
       "relatedRepositoryIds": [],
       "freshness": {
-        "state": "MATCHES_OBSERVED_HEAD",
-        "observedHead": "9fb4e0ec8d94ef464f369f0c1e70082b61a12732",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "state": "OLDER_REVIEWED_REVISION",
+        "observedHead": "c09cbac93c78152c68a29347131814257bf0975f",
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -777,16 +777,18 @@
         "Console Only",
         "Console Zero",
         "Zeitkorridor",
-        "Zeitspur"
+        "Zeitspur",
+        "KORRIDOR",
+        "Korridor"
       ],
       "text": "KORRIDOT räumlicher Zeitkorridor lokale Ereignisse Herkunft Quellenbelege Browsermodell",
       "historical": false,
       "editorialState": "CURRENT",
       "relatedRepositoryIds": [],
       "freshness": {
-        "state": "MATCHES_OBSERVED_HEAD",
-        "observedHead": "9fb4e0ec8d94ef464f369f0c1e70082b61a12732",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "state": "OLDER_REVIEWED_REVISION",
+        "observedHead": "c09cbac93c78152c68a29347131814257bf0975f",
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -826,9 +828,46 @@
         "repo:juri-halveth/console-only"
       ],
       "freshness": {
-        "state": "MATCHES_OBSERVED_HEAD",
-        "observedHead": "e1ae68ac6428caa30dfc12739b1c0dfecd6fb8a1",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "state": "OLDER_REVIEWED_REVISION",
+        "observedHead": "13672e980c0b41c6624c679e5b15449e7da0269c",
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
+      }
+    },
+    {
+      "id": "module:website:lucineta-draft",
+      "repositoryId": "repo:juri-halveth/juri-halveth.github.io",
+      "kind": "module",
+      "title": {
+        "de": "LUCINETA · Entwicklungsentwurf",
+        "en": "LUCINETA · development draft",
+        "ru": "LUCINETA · проект разработки"
+      },
+      "summary": {
+        "de": "Offener Entwurf eines lokalen Doppelwelten-Modells mit Gegenproben. Quellcode und Diskussion stehen in Pull Request 83; der Raum ist noch nicht veröffentlicht.",
+        "en": "Open draft of a local twin-world model with counterchecks. Source and discussion are in pull request 83; the space has not been published.",
+        "ru": "Открытый проект локальной модели двух миров с проверками. Код и обсуждение в pull request 83; пространство ещё не опубликовано."
+      },
+      "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/pull/83",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/fdd654282227529548d3df45a21d80a08fbf4cda/universum/lucineta/index.html",
+        "revision": "fdd654282227529548d3df45a21d80a08fbf4cda",
+        "observedAt": "2026-11-27T15:26:02Z",
+        "scope": "PUBLIC_OPEN_DRAFT_NOT_PUBLISHED_OR_RUNTIME_INTEGRATION"
+      },
+      "aliases": [
+        "LUCINETA",
+        "Doppelwelten",
+        "twin world",
+        "Gegenprobe"
+      ],
+      "text": "LUCINETA offener Entwicklungsentwurf Pull Request 83 B3/S23 Doppelwelten Kontrollwelten lokal synthetisches Modell noch nicht veröffentlicht",
+      "historical": false,
+      "editorialState": "CURRENT",
+      "relatedRepositoryIds": [],
+      "freshness": {
+        "state": "OLDER_REVIEWED_REVISION",
+        "observedHead": "13672e980c0b41c6624c679e5b15449e7da0269c",
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -867,7 +906,7 @@
       "freshness": {
         "state": "MATCHES_OBSERVED_HEAD",
         "observedHead": "1b6f8a5aa1132c56e066c2c2cddc3bbbe5c36319",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -905,12 +944,52 @@
         "console-only"
       ],
       "text": "Console Only · KORRIDOT. Lokale Quellen- und Sitzungswerkzeuge sowie räumliche Browsermodelle. KORRIDOT verbindet Ereignisse mit Zeitpunkten und Belegen; die GG24-Zeitspur verweist auf öffentliche Förderquellen. Stichworte: Console Zero, KORRIDOT, Doppelacht, Lichtpunkt, GG24, Materialzellen, Quellensuche, Zeitspur.",
+      "historical": true,
+      "editorialState": "ARCHIVE",
+      "freshness": {
+        "state": "OLDER_REVIEWED_REVISION",
+        "observedHead": "c09cbac93c78152c68a29347131814257bf0975f",
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
+      }
+    },
+    {
+      "id": "readme:repo:juri-halveth/console-only:c09cbac93c78152c68a29347131814257bf0975f",
+      "repositoryId": "repo:juri-halveth/console-only",
+      "githubRepositoryId": 1457178606,
+      "kind": "repository",
+      "title": {
+        "de": "console-only",
+        "en": "console-only",
+        "ru": "console-only"
+      },
+      "summary": {
+        "de": "Die neue Standardansicht zeigt 960 bewegliche Materialzellen mit eigenen Positionen, Geschwindigkeiten, Orientierungen und Winkelgeschwindigkeiten. Nachbarkopplung erzeugt Kräfte und Drehmomente aus einem nematischen Paarpotential. Die ursprünglichen expliziten Kern-/Medium- und Speicherregeln bleiben erhalten. Die Kernmarkierungen sind zunächst ausgeschaltet.",
+        "en": "Die neue Standardansicht zeigt 960 bewegliche Materialzellen mit eigenen Positionen, Geschwindigkeiten, Orientierungen und Winkelgeschwindigkeiten. Nachbarkopplung erzeugt Kräfte und Drehmomente aus einem nematischen Paarpotential. Die ursprünglichen expliziten Kern-/Medium- und Speicherregeln bleiben erhalten. Die Kernmarkierungen sind zunächst ausgeschaltet.",
+        "ru": "Die neue Standardansicht zeigt 960 bewegliche Materialzellen mit eigenen Positionen, Geschwindigkeiten, Orientierungen und Winkelgeschwindigkeiten. Nachbarkopplung erzeugt Kräfte und Drehmomente aus einem nematischen Paarpotential. Die ursprünglichen expliziten Kern-/Medium- und Speicherregeln bleiben erhalten. Die Kernmarkierungen sind zunächst ausgeschaltet."
+      },
+      "url": "https://github.com/Juri-Halveth/console-only",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/console-only/blob/c09cbac93c78152c68a29347131814257bf0975f/README.md",
+        "revision": "c09cbac93c78152c68a29347131814257bf0975f",
+        "observedAt": "2026-11-27T15:30:02.889Z",
+        "scope": "PUBLIC_README_AUTOMATIC_EXCERPT_NOT_EDITORIAL_REVIEW"
+      },
+      "aliases": [
+        "console-only",
+        "KORRIDOT",
+        "GG24",
+        "Doppelacht",
+        "Lichtpunkt",
+        "Quellensuche",
+        "Materialzellen"
+      ],
+      "text": "console-only Console-first local source, session and spacetime garden prototype Die neue Standardansicht zeigt 960 bewegliche Materialzellen mit eigenen Positionen, Geschwindigkeiten, Orientierungen und Winkelgeschwindigkeiten. Nachbarkopplung erzeugt Kräfte und Drehmomente aus einem nematischen Paarpotential. Die ursprünglichen expliziten Kern-/Medium- und Speicherregeln bleiben erhalten. Die Kernmarkierungen sind zunächst ausgeschaltet. KORRIDOT GG24 Doppelacht Lichtpunkt Quellensuche Materialzellen",
       "historical": false,
       "editorialState": "CURRENT",
       "freshness": {
         "state": "MATCHES_OBSERVED_HEAD",
-        "observedHead": "9fb4e0ec8d94ef464f369f0c1e70082b61a12732",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "observedHead": "c09cbac93c78152c68a29347131814257bf0975f",
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -949,7 +1028,7 @@
       "freshness": {
         "state": "MATCHES_OBSERVED_HEAD",
         "observedHead": "2b94cb4a23b9d96b088004d9f5da62e91975e20b",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -990,7 +1069,7 @@
       "freshness": {
         "state": "MATCHES_OBSERVED_HEAD",
         "observedHead": "6579e523287aa268ff89dea2666e82bb27c75e4b",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -1025,12 +1104,47 @@
         "halveth-bio-universe"
       ],
       "text": "HALVETH Bio-Universe. Lokales Forschungszentrum mit einem begrenzten, datierten Belegkatalog und einer Grundlage für Forschungsplugins. Die öffentliche Repository-Beschreibung dokumentiert Umfang, Start und Grenzen. Stichworte: Bio-Universe, Forschungszentrum, Belegkatalog, Forschungsplugins, NOVA.",
+      "historical": true,
+      "editorialState": "ARCHIVE",
+      "freshness": {
+        "state": "OLDER_REVIEWED_REVISION",
+        "observedHead": "29fc9a4ca07a2673ca13a34161d07a60ed8cb64f",
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
+      }
+    },
+    {
+      "id": "readme:repo:juri-halveth/halveth-bio-universe:29fc9a4ca07a2673ca13a34161d07a60ed8cb64f",
+      "repositoryId": "repo:juri-halveth/halveth-bio-universe",
+      "githubRepositoryId": 1446977120,
+      "kind": "repository",
+      "title": {
+        "de": "halveth-bio-universe",
+        "en": "halveth-bio-universe",
+        "ru": "halveth-bio-universe"
+      },
+      "summary": {
+        "de": "Public HALVETH context: Network search · Portfolio. The shared search covers public repository metadata, reviewed source descriptions and selected public entry points. Its coverage and source dates are stated in the index; dated descriptions are available through the archive selection.",
+        "en": "Public HALVETH context: Network search · Portfolio. The shared search covers public repository metadata, reviewed source descriptions and selected public entry points. Its coverage and source dates are stated in the index; dated descriptions are available through the archive selection.",
+        "ru": "Public HALVETH context: Network search · Portfolio. The shared search covers public repository metadata, reviewed source descriptions and selected public entry points. Its coverage and source dates are stated in the index; dated descriptions are available through the archive selection."
+      },
+      "url": "https://github.com/Juri-Halveth/halveth-bio-universe",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/halveth-bio-universe/blob/29fc9a4ca07a2673ca13a34161d07a60ed8cb64f/README.md",
+        "revision": "29fc9a4ca07a2673ca13a34161d07a60ed8cb64f",
+        "observedAt": "2026-11-27T15:30:02.802Z",
+        "scope": "PUBLIC_README_AUTOMATIC_EXCERPT_NOT_EDITORIAL_REVIEW"
+      },
+      "aliases": [
+        "halveth-bio-universe",
+        "NOVA"
+      ],
+      "text": "halveth-bio-universe Local, evidence-bound HALVETH Bio-Universe research center and plugin foundation Public HALVETH context: Network search · Portfolio. The shared search covers public repository metadata, reviewed source descriptions and selected public entry points. Its coverage and source dates are stated in the index; dated descriptions are available through the archive selection. NOVA",
       "historical": false,
       "editorialState": "CURRENT",
       "freshness": {
         "state": "MATCHES_OBSERVED_HEAD",
-        "observedHead": "165f5cbe7a66dadcc22e2c93573a2677ecaaf701",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "observedHead": "29fc9a4ca07a2673ca13a34161d07a60ed8cb64f",
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -1070,7 +1184,7 @@
       "freshness": {
         "state": "MATCHES_OBSERVED_HEAD",
         "observedHead": "274fe89f4bd9e6360f25b69a7bdb416c5da898c0",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -1110,7 +1224,7 @@
       "freshness": {
         "state": "MATCHES_OBSERVED_HEAD",
         "observedHead": "8c6e1ab0f68d5dcc38d0e3068853beaec06067ab",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -1152,7 +1266,7 @@
       "freshness": {
         "state": "MATCHES_OBSERVED_HEAD",
         "observedHead": "8e6b49c78c5ed8fbdf5d5010e11b4040b9013fff",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -1192,7 +1306,7 @@
       "freshness": {
         "state": "MATCHES_OBSERVED_HEAD",
         "observedHead": "4a882611f0a41224760952a0a54e91be862a43bd",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -1233,7 +1347,7 @@
       "freshness": {
         "state": "MATCHES_OBSERVED_HEAD",
         "observedHead": "e927394b0d465fd8034ce6b7ecc1ab13875e1fba",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -1273,7 +1387,7 @@
       "freshness": {
         "state": "MATCHES_OBSERVED_HEAD",
         "observedHead": "22f3a706f88b0e186d9f6dc2807540e857ad2136",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -1317,7 +1431,7 @@
       "freshness": {
         "state": "MATCHES_OBSERVED_HEAD",
         "observedHead": "f4aa107a0fc73906c16442d11214d37f34e4f78b",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -1357,7 +1471,7 @@
       "freshness": {
         "state": "MATCHES_OBSERVED_HEAD",
         "observedHead": "17d0429d98de364aa779cb057dc02f6f9363f9f3",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -1397,7 +1511,7 @@
       "freshness": {
         "state": "MATCHES_OBSERVED_HEAD",
         "observedHead": "a4116f6dfe1505651d3c135007342c9bbb857c56",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -1438,7 +1552,113 @@
       "freshness": {
         "state": "MATCHES_OBSERVED_HEAD",
         "observedHead": "5dcd5ad655bcaa73e672618f0829100989484c65",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
+      }
+    },
+    {
+      "id": "readme:repo:juri-halveth/jbl-owner-external-witness-20260901:551f6d614e4ff4bd4ad426868ad887e52b9ee7ec",
+      "repositoryId": "repo:juri-halveth/jbl-owner-external-witness-20260901",
+      "githubRepositoryId": 1353813791,
+      "kind": "repository",
+      "title": {
+        "de": "jbl-owner-external-witness-20260901",
+        "en": "jbl-owner-external-witness-20260901",
+        "ru": "jbl-owner-external-witness-20260901"
+      },
+      "summary": {
+        "de": "Vollständiger Forschungsbericht · Bestätigung und Korrespondenz · Korrektur der ersten Fassung",
+        "en": "Vollständiger Forschungsbericht · Bestätigung und Korrespondenz · Korrektur der ersten Fassung",
+        "ru": "Vollständiger Forschungsbericht · Bestätigung und Korrespondenz · Korrektur der ersten Fassung"
+      },
+      "url": "https://github.com/Juri-Halveth/jbl-owner-external-witness-20260901",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/jbl-owner-external-witness-20260901/blob/551f6d614e4ff4bd4ad426868ad887e52b9ee7ec/README.md",
+        "revision": "551f6d614e4ff4bd4ad426868ad887e52b9ee7ec",
+        "observedAt": "2026-11-27T15:29:45.681Z",
+        "scope": "PUBLIC_README_AUTOMATIC_EXCERPT_NOT_EDITORIAL_REVIEW"
+      },
+      "aliases": [
+        "jbl-owner-external-witness-20260901"
+      ],
+      "text": "jbl-owner-external-witness-20260901  Vollständiger Forschungsbericht · Bestätigung und Korrespondenz · Korrektur der ersten Fassung",
+      "historical": false,
+      "editorialState": "CURRENT",
+      "freshness": {
+        "state": "MATCHES_OBSERVED_HEAD",
+        "observedHead": "551f6d614e4ff4bd4ad426868ad887e52b9ee7ec",
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
+      }
+    },
+    {
+      "id": "readme:repo:juri-halveth/jbl-wan-proof:939bf986e6064ba3c24f7d74957a4ac950912526",
+      "repositoryId": "repo:juri-halveth/jbl-wan-proof",
+      "githubRepositoryId": 1332363317,
+      "kind": "repository",
+      "title": {
+        "de": "jbl-wan-proof",
+        "en": "jbl-wan-proof",
+        "ru": "jbl-wan-proof"
+      },
+      "summary": {
+        "de": "Finder: Juri Janovski — HALVETH · Stand: 27. November 2026",
+        "en": "Finder: Juri Janovski — HALVETH · Stand: 27. November 2026",
+        "ru": "Finder: Juri Janovski — HALVETH · Stand: 27. November 2026"
+      },
+      "url": "https://github.com/Juri-Halveth/jbl-wan-proof",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/jbl-wan-proof/blob/939bf986e6064ba3c24f7d74957a4ac950912526/README.md",
+        "revision": "939bf986e6064ba3c24f7d74957a4ac950912526",
+        "observedAt": "2026-11-27T15:29:45.679Z",
+        "scope": "PUBLIC_README_AUTOMATIC_EXCERPT_NOT_EDITORIAL_REVIEW"
+      },
+      "aliases": [
+        "jbl-wan-proof"
+      ],
+      "text": "jbl-wan-proof Owner-authorized JBL WAN exposure proof Finder: Juri Janovski — HALVETH · Stand: 27. November 2026",
+      "historical": false,
+      "editorialState": "CURRENT",
+      "freshness": {
+        "state": "MATCHES_OBSERVED_HEAD",
+        "observedHead": "939bf986e6064ba3c24f7d74957a4ac950912526",
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
+      }
+    },
+    {
+      "id": "readme:repo:juri-halveth/juri-halveth:7cf2f3851cbc71755b6c97993f49c25359047d4e",
+      "repositoryId": "repo:juri-halveth/juri-halveth",
+      "githubRepositoryId": 1392595220,
+      "kind": "repository",
+      "title": {
+        "de": "Juri-Halveth",
+        "en": "Juri-Halveth",
+        "ru": "Juri-Halveth"
+      },
+      "summary": {
+        "de": "Ich entwickle lokale Werkzeuge, Webanwendungen und interaktive Modelle. HALVETH verbindet diese Arbeiten mit ihren Quellständen und Prüfungen. Python · JavaScript · Windows · browserlokale Anwendungen.",
+        "en": "Ich entwickle lokale Werkzeuge, Webanwendungen und interaktive Modelle. HALVETH verbindet diese Arbeiten mit ihren Quellständen und Prüfungen. Python · JavaScript · Windows · browserlokale Anwendungen.",
+        "ru": "Ich entwickle lokale Werkzeuge, Webanwendungen und interaktive Modelle. HALVETH verbindet diese Arbeiten mit ihren Quellständen und Prüfungen. Python · JavaScript · Windows · browserlokale Anwendungen."
+      },
+      "url": "https://github.com/Juri-Halveth/Juri-Halveth",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth/blob/7cf2f3851cbc71755b6c97993f49c25359047d4e/README.md",
+        "revision": "7cf2f3851cbc71755b6c97993f49c25359047d4e",
+        "observedAt": "2026-11-27T15:29:52.844Z",
+        "scope": "PUBLIC_README_AUTOMATIC_EXCERPT_NOT_EDITORIAL_REVIEW"
+      },
+      "aliases": [
+        "Juri-Halveth",
+        "NOVA",
+        "Seedspace",
+        "SCARLET",
+        "1001"
+      ],
+      "text": "Juri-Halveth Juri · Projekt HALVETH: Softwarewerkzeuge, Zustandsmodelle und interaktive Erklärungen. Bedienbare Beispiele, Quellcode und Zusammenarbeit. Ich entwickle lokale Werkzeuge, Webanwendungen und interaktive Modelle. HALVETH verbindet diese Arbeiten mit ihren Quellständen und Prüfungen. Python · JavaScript · Windows · browserlokale Anwendungen. NOVA Seedspace SCARLET 1001",
+      "historical": false,
+      "editorialState": "CURRENT",
+      "freshness": {
+        "state": "MATCHES_OBSERVED_HEAD",
+        "observedHead": "7cf2f3851cbc71755b6c97993f49c25359047d4e",
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -1475,12 +1695,53 @@
         "Juri-Halveth"
       ],
       "text": "Juri · Entwicklerprofil. Öffentliches GitHub-Profil mit vier ausgewählten Arbeiten, datiertem Katalogbezug, interaktiven Beispielen und einer Schnittstellenkarte. Stichworte: Juri, HALVETH, Entwicklerprofil, Starship Lab, NOVA, Tresor, Technikkarte.",
+      "historical": true,
+      "editorialState": "ARCHIVE",
+      "freshness": {
+        "state": "OLDER_REVIEWED_REVISION",
+        "observedHead": "7cf2f3851cbc71755b6c97993f49c25359047d4e",
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
+      }
+    },
+    {
+      "id": "readme:repo:juri-halveth/juri-halveth.github.io:13672e980c0b41c6624c679e5b15449e7da0269c",
+      "repositoryId": "repo:juri-halveth/juri-halveth.github.io",
+      "githubRepositoryId": 1373139655,
+      "kind": "repository",
+      "title": {
+        "de": "Juri-Halveth.github.io",
+        "en": "Juri-Halveth.github.io",
+        "ru": "Juri-Halveth.github.io"
+      },
+      "summary": {
+        "de": "Ich entwickle lokale Werkzeuge, Webanwendungen und interaktive Modelle. Die Portfolio-Startseite zeigt direkt nutzbare Ergebnisse; die Projektübersicht führt zu Anwendung oder Anleitung und daneben zum Quellcode. Zwei Arbeitsproben zeigen Eingabe, Ergebnis und Gegenprobe. Person: Juri. Projekt: HALVETH. Namenszuordnung.",
+        "en": "Ich entwickle lokale Werkzeuge, Webanwendungen und interaktive Modelle. Die Portfolio-Startseite zeigt direkt nutzbare Ergebnisse; die Projektübersicht führt zu Anwendung oder Anleitung und daneben zum Quellcode. Zwei Arbeitsproben zeigen Eingabe, Ergebnis und Gegenprobe. Person: Juri. Projekt: HALVETH. Namenszuordnung.",
+        "ru": "Ich entwickle lokale Werkzeuge, Webanwendungen und interaktive Modelle. Die Portfolio-Startseite zeigt direkt nutzbare Ergebnisse; die Projektübersicht führt zu Anwendung oder Anleitung und daneben zum Quellcode. Zwei Arbeitsproben zeigen Eingabe, Ergebnis und Gegenprobe. Person: Juri. Projekt: HALVETH. Namenszuordnung."
+      },
+      "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/13672e980c0b41c6624c679e5b15449e7da0269c/README.md",
+        "revision": "13672e980c0b41c6624c679e5b15449e7da0269c",
+        "observedAt": "2026-11-27T15:29:49.289Z",
+        "scope": "PUBLIC_README_AUTOMATIC_EXCERPT_NOT_EDITORIAL_REVIEW"
+      },
+      "aliases": [
+        "Juri-Halveth.github.io",
+        "NOVA",
+        "Seedspace",
+        "SCARLET",
+        "KORRIDOT",
+        "GG24",
+        "Lichtpunkt",
+        "1001"
+      ],
+      "text": "Juri-Halveth.github.io Juri: lokale Software, nachvollziehbare Forschungswerkzeuge und interaktive Lernangebote. Vier Projekte zum direkten Einstieg. Ich entwickle lokale Werkzeuge, Webanwendungen und interaktive Modelle. Die Portfolio-Startseite zeigt direkt nutzbare Ergebnisse; die Projektübersicht führt zu Anwendung oder Anleitung und daneben zum Quellcode. Zwei Arbeitsproben zeigen Eingabe, Ergebnis und Gegenprobe. Person: Juri. Projekt: HALVETH. Namenszuordnung. NOVA Seedspace SCARLET KORRIDOT GG24 Lichtpunkt 1001",
       "historical": false,
       "editorialState": "CURRENT",
       "freshness": {
         "state": "MATCHES_OBSERVED_HEAD",
-        "observedHead": "ce748ae23d951c35f510481738a1c91efacd57f0",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "observedHead": "13672e980c0b41c6624c679e5b15449e7da0269c",
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -1517,12 +1778,12 @@
         "Juri-Halveth.github.io"
       ],
       "text": "HALVETH · zentrale Website. Zentrale öffentliche Website mit ausgewählten Projekten, Quellzuordnung, datierten Belegen und dem interaktiven Starship Lab. Unterschiedliche Kataloge beschreiben unterschiedliche Auswahlumfänge. Stichworte: HALVETH, Website, Starship Lab, Universum, Quellenkatalog, Belege, Materialvorschau.",
-      "historical": false,
-      "editorialState": "CURRENT",
+      "historical": true,
+      "editorialState": "ARCHIVE",
       "freshness": {
-        "state": "MATCHES_OBSERVED_HEAD",
-        "observedHead": "e1ae68ac6428caa30dfc12739b1c0dfecd6fb8a1",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "state": "OLDER_REVIEWED_REVISION",
+        "observedHead": "13672e980c0b41c6624c679e5b15449e7da0269c",
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -1564,7 +1825,7 @@
       "freshness": {
         "state": "MATCHES_OBSERVED_HEAD",
         "observedHead": "a464093d95e50fcb685c6f2db0c386739cc5fc9e",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -1609,7 +1870,43 @@
       "freshness": {
         "state": "MATCHES_OBSERVED_HEAD",
         "observedHead": "0e821023b7344e73e8f7a09f8ebe92ba54cbcbd6",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
+      }
+    },
+    {
+      "id": "readme:repo:juri-halveth/lucinet-seedspace:5301a3fb26f78f1e4fd167b5524d027fec8c88ee",
+      "repositoryId": "repo:juri-halveth/lucinet-seedspace",
+      "githubRepositoryId": 1427050044,
+      "kind": "repository",
+      "title": {
+        "de": "lucinet-seedspace",
+        "en": "lucinet-seedspace",
+        "ru": "lucinet-seedspace"
+      },
+      "summary": {
+        "de": "NOVA ist ein lokales Python-Werkzeug für Menschen, die mit vielen Notizen, Quelltexten und Forschungsständen arbeiten: Es findet Quellen wieder, erhält Korrekturen und schreibt auf, worauf ein Ergebnis beruht und was als Nächstes ansteht.",
+        "en": "NOVA ist ein lokales Python-Werkzeug für Menschen, die mit vielen Notizen, Quelltexten und Forschungsständen arbeiten: Es findet Quellen wieder, erhält Korrekturen und schreibt auf, worauf ein Ergebnis beruht und was als Nächstes ansteht.",
+        "ru": "NOVA ist ein lokales Python-Werkzeug für Menschen, die mit vielen Notizen, Quelltexten und Forschungsständen arbeiten: Es findet Quellen wieder, erhält Korrekturen und schreibt auf, worauf ein Ergebnis beruht und was als Nächstes ansteht."
+      },
+      "url": "https://github.com/Juri-Halveth/lucinet-seedspace",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/lucinet-seedspace/blob/5301a3fb26f78f1e4fd167b5524d027fec8c88ee/README.md",
+        "revision": "5301a3fb26f78f1e4fd167b5524d027fec8c88ee",
+        "observedAt": "2026-11-27T15:29:59.605Z",
+        "scope": "PUBLIC_README_AUTOMATIC_EXCERPT_NOT_EDITORIAL_REVIEW"
+      },
+      "aliases": [
+        "lucinet-seedspace",
+        "NOVA",
+        "Seedspace"
+      ],
+      "text": "lucinet-seedspace NOVA: lokale Quellen wiederfinden, Korrekturen erhalten und Forschung nachvollziehbar fortsetzen. Python-CLI mit Offline-Demo. NOVA ist ein lokales Python-Werkzeug für Menschen, die mit vielen Notizen, Quelltexten und Forschungsständen arbeiten: Es findet Quellen wieder, erhält Korrekturen und schreibt auf, worauf ein Ergebnis beruht und was als Nächstes ansteht. NOVA Seedspace",
+      "historical": false,
+      "editorialState": "CURRENT",
+      "freshness": {
+        "state": "MATCHES_OBSERVED_HEAD",
+        "observedHead": "5301a3fb26f78f1e4fd167b5524d027fec8c88ee",
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -1645,12 +1942,12 @@
         "lucinet-seedspace"
       ],
       "text": "NOVA · lokale Quellen wiederfinden. Lokale Python-Werkzeuge zum Wiederfinden früherer Notizen und Code, zum Bewahren von Korrekturen und zum nachvollziehbaren Fortsetzen von Forschung. Mit Offline-Demo. Stichworte: NOVA, LUCINET, Quellensuche, Offline-Demo, Korrekturen, Forschungsfortsetzung.",
-      "historical": false,
-      "editorialState": "CURRENT",
+      "historical": true,
+      "editorialState": "ARCHIVE",
       "freshness": {
-        "state": "MATCHES_OBSERVED_HEAD",
-        "observedHead": "6151152eafa90c18dc64563872879dfc9da341f7",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "state": "OLDER_REVIEWED_REVISION",
+        "observedHead": "5301a3fb26f78f1e4fd167b5524d027fec8c88ee",
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -1691,7 +1988,7 @@
       "freshness": {
         "state": "MATCHES_OBSERVED_HEAD",
         "observedHead": "e0c57497ecfc09a47fa78b8152a0b398157c653a",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -1725,7 +2022,7 @@
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
         "observedHead": "1b6f8a5aa1132c56e066c2c2cddc3bbbe5c36319",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -1759,7 +2056,7 @@
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
         "observedHead": "8c6e1ab0f68d5dcc38d0e3068853beaec06067ab",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -1792,8 +2089,8 @@
       "editorialState": "ARCHIVE",
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
-        "observedHead": "e1ae68ac6428caa30dfc12739b1c0dfecd6fb8a1",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "observedHead": "13672e980c0b41c6624c679e5b15449e7da0269c",
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -1826,8 +2123,8 @@
       "editorialState": "ARCHIVE",
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
-        "observedHead": "6151152eafa90c18dc64563872879dfc9da341f7",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "observedHead": "5301a3fb26f78f1e4fd167b5524d027fec8c88ee",
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -1864,7 +2161,7 @@
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
         "observedHead": "f4aa107a0fc73906c16442d11214d37f34e4f78b",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -1899,8 +2196,8 @@
       "editorialState": "ARCHIVE",
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
-        "observedHead": "e1ae68ac6428caa30dfc12739b1c0dfecd6fb8a1",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "observedHead": "13672e980c0b41c6624c679e5b15449e7da0269c",
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -1936,7 +2233,7 @@
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
         "observedHead": "2b94cb4a23b9d96b088004d9f5da62e91975e20b",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -1972,7 +2269,7 @@
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
         "observedHead": "17d0429d98de364aa779cb057dc02f6f9363f9f3",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -2009,7 +2306,7 @@
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
         "observedHead": "a4116f6dfe1505651d3c135007342c9bbb857c56",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -2046,7 +2343,7 @@
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
         "observedHead": "8e6b49c78c5ed8fbdf5d5010e11b4040b9013fff",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -2082,7 +2379,7 @@
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
         "observedHead": "8e6b49c78c5ed8fbdf5d5010e11b4040b9013fff",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -2117,8 +2414,8 @@
       "editorialState": "ARCHIVE",
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
-        "observedHead": "e1ae68ac6428caa30dfc12739b1c0dfecd6fb8a1",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "observedHead": "13672e980c0b41c6624c679e5b15449e7da0269c",
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -2154,7 +2451,7 @@
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
         "observedHead": "8e6b49c78c5ed8fbdf5d5010e11b4040b9013fff",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -2190,7 +2487,7 @@
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
         "observedHead": "8e6b49c78c5ed8fbdf5d5010e11b4040b9013fff",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -2226,7 +2523,7 @@
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
         "observedHead": "8e6b49c78c5ed8fbdf5d5010e11b4040b9013fff",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -2262,7 +2559,7 @@
       "freshness": {
         "state": "OLDER_REVIEWED_REVISION",
         "observedHead": "8e6b49c78c5ed8fbdf5d5010e11b4040b9013fff",
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -2299,7 +2596,7 @@
       "freshness": {
         "state": "NO_COMMIT_BINDING",
         "observedHead": null,
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -2336,7 +2633,7 @@
       "freshness": {
         "state": "NO_COMMIT_BINDING",
         "observedHead": null,
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -2372,7 +2669,7 @@
       "freshness": {
         "state": "NO_COMMIT_BINDING",
         "observedHead": null,
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -2409,7 +2706,7 @@
       "freshness": {
         "state": "NO_COMMIT_BINDING",
         "observedHead": null,
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     },
     {
@@ -2446,7 +2743,7 @@
       "freshness": {
         "state": "NO_COMMIT_BINDING",
         "observedHead": null,
-        "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00"
+        "inventoryObservedAt": "2026-11-27T15:30:42.210Z"
       }
     }
   ]
