@@ -1,6 +1,6 @@
 {
   "schema": "halveth.public-network.v1",
-  "revision": "6decd10823a36f1b7a0877a402708c5e3c67236a17e8e730f75c64a0de89354a",
+  "revision": "7120902a3f32db24d127ba13372a3231567ac36416484a2de3b68db2dd196ef4",
   "observedAt": "2026-11-27T15:30:42.210Z",
   "coverage": {
     "mode": "PUBLIC_METADATA_AND_REVIEWED_ENTRY_DESCRIPTIONS",
@@ -69,7 +69,7 @@
     },
     {
       "path": "data/site-catalog.json",
-      "sha256": "3b2ec3967fdc5a9c399bfbf4649d4138846c6560a80171cd185257b56c97c5f3",
+      "sha256": "5c435ec727675003cb45d4bd84424480e7681c39a42c4166eff5667566bdd14a",
       "role": "DATED_EDITORIAL_SELECTION"
     },
     {
@@ -116,7 +116,7 @@
   "search": {
     "json": "search.json",
     "module": "search.mjs",
-    "sha256": "cea1adc2966efda1527e936a96c639b87e10eedea51f691d0e6029e36b7d714e",
+    "sha256": "21bec5ad6c34114cd68865c0d475e9bf013dc92969e5c1af7b3445caba2e960a",
     "queryModule": "../../network-search.mjs"
   },
   "repositories": [

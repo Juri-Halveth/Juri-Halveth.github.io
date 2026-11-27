@@ -124,7 +124,24 @@
             "source_url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/c36150b55fe9ed4207f185d7092b3184c353df93/assets/entity-world.mjs",
             "observed_at": "2026-11-03"
           }
-        ]
+        ],
+        "visitor_guide": {
+          "de": {
+            "audience": "Für Menschen, die Textvarianten nachvollziehen wollen.",
+            "start": "Im Browser einen Keim setzen und daraus eine Variante erzeugen.",
+            "scope": "Der Verlauf gehört zu diesem Modell. Über den JSON-Export kannst du ihn aufheben."
+          },
+          "en": {
+            "audience": "For anyone tracing changes to a text.",
+            "start": "Set a seed in the browser, then create a variant from it.",
+            "scope": "The history belongs to this model. Export it as JSON to keep it."
+          },
+          "ru": {
+            "audience": "Для тех, кто хочет проследить изменения текста.",
+            "start": "Задайте начальный текст в браузере и создайте его вариант.",
+            "scope": "История относится к этой модели. Её можно сохранить в JSON."
+          }
+        }
       }
     },
     {
@@ -187,7 +204,24 @@
             "availability": "PUBLISHED",
             "published_at": "2026-11-02"
           }
-        ]
+        ],
+        "visitor_guide": {
+          "de": {
+            "audience": "Für Menschen mit Notizen und Code auf dem eigenen Rechner.",
+            "start": "Python und eine lokale Kopie von NOVA genügen für die mitgelieferte Offline-Demo.",
+            "scope": "Die Demo nutzt ihren eigenen Arbeitsordner. Eigene Dateien werden über den Import hinzugefügt."
+          },
+          "en": {
+            "audience": "For people with notes and code on their computer.",
+            "start": "With Python and a local copy of NOVA, run the bundled offline demo.",
+            "scope": "The demo uses its own workspace. Add your own files through the import command."
+          },
+          "ru": {
+            "audience": "Для тех, кто хранит заметки и код на своём компьютере.",
+            "start": "Для встроенной офлайн-демонстрации нужны Python и локальная копия NOVA.",
+            "scope": "Демонстрация использует отдельную рабочую папку. Свои файлы можно добавить командой импорта."
+          }
+        }
       }
     },
     {
@@ -251,7 +285,24 @@
             "availability": "PUBLISHED",
             "published_at": "2026-11-03"
           }
-        ]
+        ],
+        "visitor_guide": {
+          "de": {
+            "audience": "Für Lernende, die Modellannahmen selbst prüfen möchten.",
+            "start": "In der Werkzeugauswahl »Direkt ausprobieren« wählen und ein Browsermodell öffnen.",
+            "scope": "Jedes Werkzeug nennt seine eigenen Regeln. Für die herunterladbaren Codebeispiele gelten die Voraussetzungen im jeweiligen Projekt."
+          },
+          "en": {
+            "audience": "For learners who want to test a model’s assumptions.",
+            "start": "In the tool directory select an interactive entry and open its browser model.",
+            "scope": "Each tool has its own rules. Downloadable examples list their requirements in the corresponding project."
+          },
+          "ru": {
+            "audience": "Для тех, кто хочет самостоятельно проверить допущения модели.",
+            "start": "Выберите интерактивный инструмент в каталоге и откройте его в браузере.",
+            "scope": "У каждого инструмента свои правила. Требования к запускаемым локально примерам указаны в соответствующем проекте."
+          }
+        }
       }
     },
     {
@@ -281,9 +332,9 @@
           "ru": "Локально управлять учётными данными"
         },
         "summary": {
-        "de": "Passwörter, Schlüssel und Verbindungsdaten in einer verschlüsselten lokalen Datei verwalten. Die Windows-EXE v1.8.0 ist derzeit nicht code-signiert.",
-        "en": "Manage passwords, keys and connection details in an encrypted local file. The Windows executable v1.8.0 is currently not code signed.",
-        "ru": "Храните пароли, ключи и параметры подключения в зашифрованном локальном файле. Исполняемый файл Windows v1.8.0 сейчас не подписан кодовой подписью."
+          "de": "Passwörter, Schlüssel und Verbindungsdaten in einer verschlüsselten lokalen Datei verwalten. Die Windows-EXE v1.8.0 ist derzeit nicht code-signiert.",
+          "en": "Manage passwords, keys and connection details in an encrypted local file. The Windows executable v1.8.0 is currently not code signed.",
+          "ru": "Храните пароли, ключи и параметры подключения в зашифрованном локальном файле. Исполняемый файл Windows v1.8.0 сейчас не подписан кодовой подписью."
         },
         "action": {
           "de": "Windows-Release v1.8.0",
@@ -294,7 +345,24 @@
         "revision": "e1ca9830e84099f0e4a9a4bfdede919a5ab0eee6",
         "editorial_state": "CURRENT",
         "revision_observed_at": "2026-10-27",
-        "release_tag": "v1.8.0"
+        "release_tag": "v1.8.0",
+        "visitor_guide": {
+          "de": {
+            "audience": "Für Windows-Nutzer, die Zugangsdaten lokal verwalten.",
+            "start": "Vom verlinkten Release die Windows-Datei laden und zuerst einen leeren Testtresor anlegen.",
+            "scope": "Der Download gehört zur angegebenen Version. Spätere Quelländerungen werden erst mit einem neuen Release ausgeliefert."
+          },
+          "en": {
+            "audience": "For Windows users managing credentials locally.",
+            "start": "Download the Windows file from the linked release and create an empty test vault first.",
+            "scope": "This download belongs to the listed version. Later source changes ship in a subsequent release."
+          },
+          "ru": {
+            "audience": "Для пользователей Windows, которые хранят учётные данные локально.",
+            "start": "Загрузите файл для Windows со страницы выпуска и сначала создайте пустое тестовое хранилище.",
+            "scope": "Файл соответствует указанному выпуску. Более поздние изменения кода попадут в следующий выпуск."
+          }
+        }
       }
     },
     {
@@ -335,7 +403,24 @@
         "status": "BROWSER_ENTRY",
         "revision": "8ff9c2fa3e4fbf3a5795b06d1d9c77819b592292",
         "editorial_state": "CURRENT",
-        "revision_observed_at": "2026-10-27"
+        "revision_observed_at": "2026-10-27",
+        "visitor_guide": {
+          "de": {
+            "audience": "Für Einsteiger in digitale Grundlagen.",
+            "start": "Im Browser den Lernkatalog öffnen und ein Thema auswählen.",
+            "scope": "Du kannst die Inhalte ohne Konto lesen."
+          },
+          "en": {
+            "audience": "For beginners learning digital skills.",
+            "start": "Open the learning catalog in a browser and choose a topic.",
+            "scope": "You can read the material without an account."
+          },
+          "ru": {
+            "audience": "Для начинающих осваивать цифровые навыки.",
+            "start": "Откройте каталог в браузере и выберите тему.",
+            "scope": "Материалы можно читать без учётной записи."
+          }
+        }
       }
     },
     {
@@ -376,7 +461,24 @@
         "status": "BROWSER_ENTRY",
         "revision": "572734742951819993b10d89b22591951a49dbc8",
         "editorial_state": "CURRENT",
-        "revision_observed_at": "2026-10-27"
+        "revision_observed_at": "2026-10-27",
+        "visitor_guide": {
+          "de": {
+            "audience": "Für Menschen, die Bewegungsregeln vergleichen möchten.",
+            "start": "Im Browser »Vier Welten« öffnen und dieselbe Ausgangslage unter verschiedenen Regeln beobachten.",
+            "scope": "Die Bewegungen und Werte sind Ergebnisse dimensionsloser Modellrechnungen."
+          },
+          "en": {
+            "audience": "For people comparing rules of motion.",
+            "start": "Open the four worlds in your browser and watch different rules act on the same starting state.",
+            "scope": "The motion and values come from dimensionless model calculations."
+          },
+          "ru": {
+            "audience": "Для тех, кто сравнивает правила движения.",
+            "start": "Откройте четыре мира в браузере и сравните разные правила при одинаковом начальном состоянии.",
+            "scope": "Движения и значения получены в безразмерной расчётной модели."
+          }
+        }
       }
     },
     {
@@ -419,7 +521,24 @@
         "status": "BROWSER_ENTRY",
         "revision": "f0b072571ccb1a7894a32b1ba03c9a8620995352",
         "editorial_state": "CURRENT",
-        "revision_observed_at": "2026-10-27"
+        "revision_observed_at": "2026-10-27",
+        "visitor_guide": {
+          "de": {
+            "audience": "Für Menschen, die den Umgang mit widersprüchlichen Meldungen üben möchten.",
+            "start": "Das Falllabor im Browser öffnen und bei den drei Meldungen Herkunft und Zeitpunkt vergleichen.",
+            "scope": "Die Szene arbeitet mit einem dargestellten Fall."
+          },
+          "en": {
+            "audience": "For readers practising how to assess conflicting reports.",
+            "start": "Open the case lab in a browser and compare the sources and times of the three reports.",
+            "scope": "The scene works through an illustrative case."
+          },
+          "ru": {
+            "audience": "Для тех, кто учится сопоставлять противоречивые сообщения.",
+            "start": "Откройте разбор в браузере и сравните источники и время трёх сообщений.",
+            "scope": "Сцена представляет учебный случай."
+          }
+        }
       }
     },
     {
@@ -502,7 +621,24 @@
         "status": "BROWSER_ENTRY",
         "revision": null,
         "editorial_state": "CURRENT",
-        "revision_observed_at": null
+        "revision_observed_at": null,
+        "visitor_guide": {
+          "de": {
+            "audience": "Für Leser, die den Quellen einer Reformdebatte nachgehen möchten.",
+            "start": "Im Browser eine Aussage auswählen und die verknüpfte Veröffentlichung lesen.",
+            "scope": "Der Messplan beschreibt, welche Daten zur Prüfung der Reformfragen nötig wären."
+          },
+          "en": {
+            "audience": "For readers tracing the sources behind a policy debate.",
+            "start": "Choose a claim in the browser and read the linked publication.",
+            "scope": "The measurement plan describes the data needed to evaluate the policy questions."
+          },
+          "ru": {
+            "audience": "Для читателей, изучающих источники дискуссии о реформе.",
+            "start": "Выберите утверждение в браузере и прочитайте связанную с ним публикацию.",
+            "scope": "План измерений описывает данные, необходимые для оценки вопросов реформы."
+          }
+        }
       }
     },
     {
@@ -543,7 +679,24 @@
         "status": "BROWSER_ENTRY",
         "revision": "9309f69883e9ae66290829722012deda5ed982c9",
         "editorial_state": "CURRENT",
-        "revision_observed_at": "2026-10-27"
+        "revision_observed_at": "2026-10-27",
+        "visitor_guide": {
+          "de": {
+            "audience": "Für Lernende, die eine Übung selbst ausprobieren wollen.",
+            "start": "Im Browser als Gast ein Thema öffnen, eine Übung bearbeiten und die Seite neu laden.",
+            "scope": "Gastübungen liegen in diesem Browser. Der Gastfortschritt bleibt vom angemeldeten Konto getrennt."
+          },
+          "en": {
+            "audience": "For learners who want to try an exercise.",
+            "start": "Open a topic as a guest in the browser, complete an exercise, then reload the page.",
+            "scope": "Guest exercises are stored in that browser. Signed-in progress is kept separately."
+          },
+          "ru": {
+            "audience": "Для тех, кто хочет самостоятельно выполнить упражнение.",
+            "start": "Откройте тему в браузере как гость, выполните упражнение и перезагрузите страницу.",
+            "scope": "Гостевые упражнения сохраняются в этом браузере отдельно от данных учётной записи."
+          }
+        }
       }
     },
     {
@@ -585,7 +738,24 @@
         "status": "BROWSER_ENTRY",
         "revision": "5d735c8fa3b052c00feca3b55f5e7122bc5e5686",
         "editorial_state": "CURRENT",
-        "revision_observed_at": "2026-11-02"
+        "revision_observed_at": "2026-11-02",
+        "visitor_guide": {
+          "de": {
+            "audience": "Für Menschen, die Zufallsserien oder eigene Optionen vergleichen.",
+            "start": "Im Browser den Glücksversuch starten oder im Optionenvergleich zwei Möglichkeiten eingeben.",
+            "scope": "Der Versuch berechnet neue Modellziehungen. Die Optionenbewertung verwendet deine Eingaben."
+          },
+          "en": {
+            "audience": "For people comparing random series or personal options.",
+            "start": "Start a random trial in the browser or enter two alternatives in the options comparison.",
+            "scope": "The trial generates model draws. The options comparison uses your inputs."
+          },
+          "ru": {
+            "audience": "Для тех, кто сравнивает случайные серии или собственные варианты.",
+            "start": "Запустите случайный опыт в браузере или введите две альтернативы для сравнения.",
+            "scope": "Опыт генерирует модельные выборки. Сравнение вариантов использует введённые вами данные."
+          }
+        }
       }
     },
     {
@@ -626,7 +796,24 @@
         "status": "SOURCE_AND_GUIDE",
         "revision": "f4349d013efb7105e2875784a0c7c16d2026e3da",
         "editorial_state": "CURRENT",
-        "revision_observed_at": "2026-10-27"
+        "revision_observed_at": "2026-10-27",
+        "visitor_guide": {
+          "de": {
+            "audience": "Für Entwickler mit einem lokalen Git-Arbeitsstand.",
+            "start": "Mit Git und PowerShell 7 den Beispielzyklus aus der Anleitung im Test-Repository starten.",
+            "scope": "Die Ausgabe beschreibt Branch, Commit und lokale Änderungen zum Zeitpunkt des Zyklus."
+          },
+          "en": {
+            "audience": "For developers working with a local Git checkout.",
+            "start": "With Git and PowerShell 7, run the example cycle from the guide in a test repository.",
+            "scope": "The result describes the branch, commit and local changes observed during that cycle."
+          },
+          "ru": {
+            "audience": "Для разработчиков, работающих с локальной копией Git.",
+            "start": "Установив Git и PowerShell 7, запустите пример цикла из руководства в тестовом репозитории.",
+            "scope": "Результат описывает ветку, коммит и локальные изменения на момент цикла."
+          }
+        }
       }
     },
     {
@@ -751,7 +938,24 @@
         "revision": "0d25fb9945d01629c85beeb0768e102eb247c8d1",
         "editorial_state": "CURRENT",
         "revision_observed_at": "2026-10-27",
-        "pr_number": 1
+        "pr_number": 1,
+        "visitor_guide": {
+          "de": {
+            "audience": "Für Leser, die Quorumschnittmengen verstehen möchten.",
+            "start": "Im verlinkten Forschungsentwurf die Annahmen des Offline-Modells lesen.",
+            "scope": "Die Ergebnisse beziehen sich auf die dort gewählten Parameter."
+          },
+          "en": {
+            "audience": "For readers exploring quorum intersections.",
+            "start": "Read the offline model’s assumptions in the linked research draft.",
+            "scope": "Its results apply to the parameters chosen in the model."
+          },
+          "ru": {
+            "audience": "Для читателей, изучающих пересечения кворумов.",
+            "start": "Прочитайте допущения офлайн-модели в связанном исследовательском черновике.",
+            "scope": "Результаты относятся к выбранным параметрам модели."
+          }
+        }
       }
     },
     {
@@ -780,9 +984,9 @@
           "ru": "Изучить интерфейс кошелька"
         },
         "summary": {
-        "de": "Öffentliche Adressen ohne Wallet ansehen oder unterstützte Wallets verbinden. Senden benötigt gesonderte Wallet-Freigabe und kann Netzwerkgebühren auslösen; die Abdeckung bleibt begrenzt.",
-        "en": "View public addresses without a wallet or connect supported wallets. Sending needs separate wallet approval and may incur network fees; coverage remains limited.",
-        "ru": "Просматривайте публичные адреса без кошелька или подключайте поддерживаемые кошельки. Для отправки нужно отдельное подтверждение в кошельке, возможны сетевые комиссии; охват ограничен."
+          "de": "Öffentliche Adressen ohne Wallet ansehen oder unterstützte Wallets verbinden. Senden benötigt gesonderte Wallet-Freigabe und kann Netzwerkgebühren auslösen; die Abdeckung bleibt begrenzt.",
+          "en": "View public addresses without a wallet or connect supported wallets. Sending needs separate wallet approval and may incur network fees; coverage remains limited.",
+          "ru": "Просматривайте публичные адреса без кошелька или подключайте поддерживаемые кошельки. Для отправки нужно отдельное подтверждение в кошельке, возможны сетевые комиссии; охват ограничен."
         },
         "action": {
           "de": "Browser-Vault öffnen",
@@ -792,7 +996,24 @@
         "status": "BROWSER_ENTRY",
         "revision": null,
         "editorial_state": "CURRENT",
-        "revision_observed_at": null
+        "revision_observed_at": null,
+        "visitor_guide": {
+          "de": {
+            "audience": "Für Menschen, die eine öffentliche Adresse ansehen möchten.",
+            "start": "Das Portal im Browser öffnen und zuerst die Leseansicht ohne Wallet-Verbindung verwenden.",
+            "scope": "Die angezeigten Daten hängen vom gewählten Netz und seiner verfügbaren Datenquelle ab."
+          },
+          "en": {
+            "audience": "For people looking up a public address.",
+            "start": "Open the portal in a browser and start with the read-only view without connecting a wallet.",
+            "scope": "The displayed data depends on the network and its available data source."
+          },
+          "ru": {
+            "audience": "Для тех, кто хочет посмотреть публичный адрес.",
+            "start": "Откройте портал в браузере и начните с режима просмотра без подключения кошелька.",
+            "scope": "Отображаемые данные зависят от выбранной сети и доступного источника."
+          }
+        }
       }
     },
     {

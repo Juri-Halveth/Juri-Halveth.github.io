@@ -136,6 +136,9 @@
 .service-card p:not(.work-kind):not(.source-caption),.directory-project p:not(.work-kind):not(.source-caption){font-size:16px}
 .source-fold{width:100%;min-width:0;font-size:14px;overflow-wrap:anywhere}
 .source-fold summary{cursor:pointer;padding-block:4px;color:var(--muted)}
+.visitor-guide{margin:10px 0;line-height:1.5}
+.visitor-guide dt{font-weight:650;margin-top:9px}
+.visitor-guide dd{margin:0}
 .source-fold a{display:inline-block;margin-top:12px}
 .evidence-entry{padding-block:60px 35px}
 .evidence-entry h1{font-size:clamp(39px,5vw,65px)}

@@ -29,6 +29,9 @@ test('one public source binds 18 repository entries, 16 projects and the 13 acti
   for(const card of cards){
    const p=catalog.projects.find(row=>row.id===card.dataset.project);
    assert.equal(p.site.editorial_state,'CURRENT');
+   const values=Array.from(card.querySelectorAll('.visitor-guide dd'),node=>node.textContent);
+   const guide=p.site.visitor_guide[lang.slice(0,2)||'de'];
+   assert.deepEqual(values,[guide.audience,guide.start,guide.scope]);
    const expected=p.id==='halveth-scarlet'&&lang?`${p.url}?lang=${lang.slice(0,2)}`:p.url;
    assert.equal(card.querySelector('.directory-actions .button').getAttribute('href'),expected);
    const source=card.querySelector('.directory-actions [data-pinned-source]');

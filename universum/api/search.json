@@ -1,6 +1,6 @@
 {
   "schema": "halveth.network-search.v1",
-  "revision": "6decd10823a36f1b7a0877a402708c5e3c67236a17e8e730f75c64a0de89354a",
+  "revision": "7120902a3f32db24d127ba13372a3231567ac36416484a2de3b68db2dd196ef4",
   "observedAt": "2026-11-27T15:30:42.210Z",
   "coverage": {
     "mode": "PUBLIC_METADATA_AND_REVIEWED_ENTRY_DESCRIPTIONS",
