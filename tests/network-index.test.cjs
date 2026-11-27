@@ -46,7 +46,8 @@ test('shared query finds recent entry points and keeps withdrawn presentations o
   for (const name of ['NOVA','Bio-Universe','JBL WAN']) {
     const product = searchNetwork(search, name)[0];
     assert.ok(product.primaryNames.includes(name));
-    assert.equal(new Set(Object.values(product.summary)).size, 3);
+    const reviewed = require('../data/network-readme-descriptions.json').documents.find(row => row.repositoryId === product.repositoryId && row.source.readmeSha256);
+    assert.equal(new Set(Object.values(reviewed.summary)).size, 3);
   }
   assert.ok(searchNetwork(search, 'Leviathan').some(doc => doc.repositoryId === 'repo:juri-halveth/leviathan-wallet-portal'));
   assert.deepEqual(searchNetwork(search, 'missing-public-description-7d2731'), []);
@@ -110,9 +111,10 @@ test('JSON and CSP-safe static module contain the same source-bound query data',
 test('a byte-identical README keeps its reviewed descriptions across commits', t => {
   const temporary = fixture(t), value = structuredClone(inventory);
   const repo = value.repositories.find(item => item.name === 'lucinet-seedspace');
-  const previous = repo.head.revision, revision = 'a'.repeat(40);
+  const bound = require('../data/network-readme-descriptions.json').documents.find(row => row.repositoryId === repo.repositoryId && row.source.readmeSha256);
+  const previous = bound.source.revision, revision = 'a'.repeat(40);
   repo.head = {...repo.head, revision, url: `${repo.url}/commit/${revision}`};
-  repo.readme = {...repo.readme, revision, url: `${repo.url}/blob/${revision}/README.md`};
+  repo.readme = {...repo.readme, sha256: bound.source.readmeSha256, revision, url: `${repo.url}/blob/${revision}/README.md`};
   saveInventory(temporary, value);
   const current = () => makeNetworkIndex(temporary).search.documents.find(item => item.repositoryId === repo.repositoryId && item.kind === 'repository' && !item.historical);
   assert.equal(current().source.reviewedRevision, previous);
