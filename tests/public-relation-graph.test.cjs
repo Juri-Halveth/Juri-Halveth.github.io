@@ -108,7 +108,7 @@ test('a new index revision updates an existing node label and revalidates its op
   const drawing = {
     setTransform() {}, measureText(value) { return {width: value.length * 7}; },
     createLinearGradient() { return {addColorStop() {}}; }, beginPath() {}, moveTo() {},
-    lineTo() {}, stroke() {}, arc() {}, fill() {}, fillRect() {}, fillText(value) { labels.push(value); }
+    lineTo() {}, quadraticCurveTo() {}, stroke() {}, arc() {}, fill() {}, fillRect() {}, fillText(value) { labels.push(value); }
   };
   window.HTMLCanvasElement.prototype.getContext = () => drawing;
   window.document.querySelector('.stage').getBoundingClientRect = () => ({width: 900, height: 600});

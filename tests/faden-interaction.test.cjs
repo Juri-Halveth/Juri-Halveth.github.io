@@ -15,7 +15,7 @@ async function waitFor(predicate) {
   assert.ok(predicate(), 'expected UI state before timeout');
 }
 
-async function fixture(t) {
+async function fixture(t, reducedMotion = true) {
   const dom = new JSDOM(fs.readFileSync(path.join(root, 'faden/index.html'), 'utf8'), {
     url: 'https://juri-halveth.github.io/universum/faden/', runScripts: 'outside-only'
   });
@@ -29,13 +29,15 @@ async function fixture(t) {
   const drawing = {
     setTransform() {}, measureText(value) { return {width: value.length * 7}; },
     createLinearGradient() { return {addColorStop() {}}; }, beginPath() {}, moveTo() {},
-    lineTo() {}, stroke() {}, arc(x, y, radius) { state.arcs.push({x, y, radius}); },
+    lineTo() {}, quadraticCurveTo() {}, stroke() {}, arc(x, y, radius) { state.arcs.push({x, y, radius}); },
     fill() {}, fillRect() {}, fillText() {}
   };
   window.HTMLCanvasElement.prototype.getContext = () => drawing;
   document.querySelector('.stage').getBoundingClientRect = () => ({width: state.width, height: state.height});
   document.querySelector('.stage').scrollIntoView = () => {};
-  window.matchMedia = () => ({matches: true});
+  const preference = {matches: reducedMotion};
+  window.matchMedia = () => preference;
+  Object.defineProperty(document, 'hidden', {configurable: true, value: false});
   Object.defineProperty(window.crypto, 'subtle', {value: webcrypto.subtle});
   window.requestAnimationFrame = callback => { state.frame = callback; return 1; };
   window.setTimeout = callback => { state.refresh = callback; return 1; };
@@ -48,7 +50,7 @@ async function fixture(t) {
   window.HALVETH_RELATION_MODEL = {fromSpace};
   window.eval(fs.readFileSync(path.join(root, 'faden/app.js'), 'utf8'));
   await waitFor(() => document.querySelectorAll('#projectList button').length === source.count);
-  return {window, document, state};
+  return {window, document, state, preference};
 }
 
 test('project switch removes old destinations and keeps links hidden on pending or failed verification', async t => {
@@ -111,4 +113,34 @@ test('reduced-motion resize keeps every node visible and project hit targets usa
     assert.equal(document.getElementById('detail').hidden, false, 'resized project remains selectable');
     document.getElementById('close').click();
   }
+});
+
+test('thread drift stays slow across frame rates, pauses and source refreshes', async t => {
+  function positions(state, time) {
+    state.arcs = [];
+    state.frame(time);
+    return state.arcs.filter(point => point.radius === 5 || point.radius === 8);
+  }
+  const runs = [];
+  for (const fps of [30, 120]) {
+    const {state, preference, document} = await fixture(t, false);
+    const initial = positions(state, 0);
+    let prior = initial;
+    for (let frame = 1; frame <= fps; frame++) {
+      const points = positions(state, frame * 1000 / fps);
+      points.forEach((p, i) => assert.ok(Math.hypot(p.x - prior[i].x, p.y - prior[i].y) <= 2.71 / fps));
+      prior = points;
+    }
+    assert.ok(prior.some((p, i) => Math.hypot(p.x - initial[i].x, p.y - initial[i].y) > 0.5));
+    runs.push(prior);
+    preference.matches = true;
+    assert.deepEqual(positions(state, 1100), prior, 'reduced motion freezes the current layout');
+    state.index.revision = 'd'.repeat(64);
+    await state.refresh();
+    assert.deepEqual(positions(state, 1200), prior, 'an index revision does not rearrange retained nodes');
+    preference.matches = false;
+    document.dispatchEvent(new document.defaultView.Event('visibilitychange'));
+    assert.deepEqual(positions(state, 3600000), prior, 'no jump when returning to the tab');
+  }
+  runs[0].forEach((p, i) => assert.ok(Math.hypot(p.x - runs[1][i].x, p.y - runs[1][i].y) < 1e-8));
 });

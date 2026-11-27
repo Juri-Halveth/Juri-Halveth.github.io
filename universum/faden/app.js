@@ -15,6 +15,9 @@
   let observedAt = null;
   let width = 1;
   let height = 1;
+  let nextSlot = 1;
+  let lastFrame = null;
+  let motionSeconds = 0;
   const isRepositoryNode = node => ['PUBLIC_PROJECT', 'PUBLIC_META', 'PUBLIC_MODULE'].includes(node.kind);
 
   function renderStatus() {
@@ -32,7 +35,6 @@
     return value >>> 0;
   }
   function resize() {
-    const previousWidth = width, previousHeight = height;
     const rect = stage.getBoundingClientRect();
     width = Math.max(1, rect.width);
     height = Math.max(1, rect.height);
@@ -42,24 +44,30 @@
     if (context) {
       context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
       context.font = '12px Segoe UI, sans-serif';
-      for (const point of particles.values()) {
-        point.x *= width / previousWidth;
-        point.y *= height / previousHeight;
-        point.vx *= width / previousWidth;
-        point.vy *= height / previousHeight;
-        confine(point);
-      }
+      for (const point of particles.values()) position(point);
     }
     placeCard();
   }
   function particle(node) {
     const seed = hash(node.id);
-    const angle = (seed % 3600) / 3600 * Math.PI * 2;
-    const radius = node.kind === 'PUBLIC_CATEGORY' ? 0.24 : 0.36 + ((seed >>> 9) % 100) / 900;
+    // A low-discrepancy starting layout keeps new nodes spread across the stage.
+    const slot = nextSlot++;
+    const u = (0.5 + slot * 0.754877666) % 1;
+    const v = (0.5 + slot * 0.569840291) % 1;
     return { id: node.id, kind: node.kind, label: node.label,
-      x: width / 2 + Math.cos(angle) * Math.min(width, height) * radius,
-      y: height / 2 + Math.sin(angle) * Math.min(width, height) * radius,
-      vx: 0, vy: 0 };
+      phaseX: Math.asin(2 * u - 1), phaseY: Math.asin(2 * v - 1),
+      speedX: (seed & 1 ? 1 : -1) * (1.1 + ((seed >>> 1) % 100) / 100),
+      speedY: (seed & 256 ? 1 : -1) * (0.7 + ((seed >>> 9) % 100) / 100) };
+  }
+  function position(point, seconds = 0) {
+    // Two independent smooth axes turn at the edges. Speeds are in CSS pixels/s.
+    const spanX = Math.max(0, width / 2 - point.margin);
+    const top = Math.min(62, height / 3), bottom = Math.min(38, height / 3);
+    const spanY = (height - top - bottom) / 2;
+    point.phaseX += seconds * point.speedX / Math.max(1, spanX);
+    point.phaseY += seconds * point.speedY / Math.max(1, spanY);
+    point.x = width / 2 + spanX * Math.sin(point.phaseX);
+    point.y = top + spanY * (1 + Math.sin(point.phaseY));
   }
   function adopt(next) {
     const previous = particles;
@@ -74,7 +82,10 @@
     particles = fresh;
     if (context) {
       context.font = '12px Segoe UI, sans-serif';
-      for (let step = 0; step < 110; step += 1) evolve();
+      for (const point of particles.values()) {
+        point.margin = Math.min(105, Math.max(35, context.measureText(point.label).width / 2 + 10));
+        position(point);
+      }
     }
     generation += 1;
     renderList();
@@ -215,59 +226,14 @@
     if (graph) renderList();
     if (returnFocus) focusProject(returnId);
   }
-  function confine(point) {
-    const margin = Math.min(width / 2, 105, Math.max(35, context.measureText(point.label).width / 2 + 10));
-    point.x = Math.max(margin, Math.min(width - margin, point.x));
-    point.y = Math.max(Math.min(35, height / 2), Math.min(Math.max(height / 2, height - 42), point.y));
-  }
-  function evolve() {
-    if (!graph) return;
-    const points = [...particles.values()];
-    for (const relation of graph.relations) {
-      const from = particles.get(relation.from), to = particles.get(relation.to);
-      if (!from || !to) continue;
-      const dx = to.x - from.x, dy = to.y - from.y;
-      const length = Math.max(1, Math.hypot(dx, dy));
-      const pull = (length - 132) * 0.00022;
-      from.vx += dx * pull; from.vy += dy * pull;
-      to.vx -= dx * pull; to.vy -= dy * pull;
-    }
-    for (let i = 0; i < points.length; i += 1) {
-      for (let j = i + 1; j < points.length; j += 1) {
-        const a = points[i], b = points[j];
-        const dx = a.x - b.x, dy = a.y - b.y;
-        const square = dx * dx + dy * dy + 250;
-        const push = Math.min(2.2, 1900 / square);
-        a.vx += dx * push / Math.sqrt(square); a.vy += dy * push / Math.sqrt(square);
-        b.vx -= dx * push / Math.sqrt(square); b.vy -= dy * push / Math.sqrt(square);
-        // Labels remain attached to their nodes. Repel overlapping label boxes,
-        // including nodes from separate graph components that merely look near.
-        const labelWidthA = Math.min(190, Math.max(55, context.measureText(a.label).width));
-        const labelWidthB = Math.min(190, Math.max(55, context.measureText(b.label).width));
-        const overlapX = (labelWidthA + labelWidthB) / 2 + 14 - Math.abs(dx);
-        const overlapY = 29 - Math.abs(dy);
-        if (overlapX > 0 && overlapY > 0) {
-          const direction = dx === 0 ? (hash(a.id + b.id) % 2 ? 1 : -1) : Math.sign(dx);
-          const correction = Math.min(3.4, overlapX * 0.055);
-          a.vx += direction * correction; b.vx -= direction * correction;
-          const vertical = dy === 0 ? 1 : Math.sign(dy);
-          a.vy += vertical * Math.min(1.2, overlapY * 0.02);
-          b.vy -= vertical * Math.min(1.2, overlapY * 0.02);
-        }
-      }
-    }
-    for (const point of points) {
-      point.vx += (width / 2 - point.x) * 0.00008;
-      point.vy += (height / 2 - point.y) * 0.00008;
-      point.vx *= 0.91; point.vy *= 0.91;
-      point.x += point.vx;
-      point.y += point.vy;
-      confine(point);
-    }
-  }
   function draw(now) {
     if (!context) return;
-    if (!reduced.matches && !document.hidden) evolve();
+    const elapsed = lastFrame === null ? 0 : Math.max(0, Math.min(0.1, (now - lastFrame) / 1000));
+    lastFrame = now;
+    if (!reduced.matches && !document.hidden) {
+      motionSeconds += elapsed;
+      for (const point of particles.values()) position(point, elapsed);
+    }
     context.fillStyle = '#04111d'; context.fillRect(0, 0, width, height);
     if (graph) {
       for (const relation of graph.relations) {
@@ -275,12 +241,17 @@
         if (!a || !b) continue;
         const gradient = context.createLinearGradient(a.x, a.y, b.x, b.y);
         gradient.addColorStop(0, '#1d708d'); gradient.addColorStop(.5, '#3ab7db'); gradient.addColorStop(1, '#69e8f0');
-        context.beginPath(); context.moveTo(a.x, a.y); context.lineTo(b.x, b.y);
+        const seed = hash(relation.id), phase = (seed % 1000) / 1000;
+        const dx = b.x - a.x, dy = b.y - a.y, distance = Math.max(1, Math.hypot(dx, dy));
+        const bend = Math.min(12, distance * 0.045) * Math.sin(phase * 2 * Math.PI + motionSeconds * 0.045);
+        const cx = (a.x + b.x) / 2 - dy * bend / distance, cy = (a.y + b.y) / 2 + dx * bend / distance;
+        context.beginPath(); context.moveTo(a.x, a.y); context.quadraticCurveTo(cx, cy, b.x, b.y);
         context.strokeStyle = gradient; context.lineWidth = selectedId === a.id ? 2.3 : 1.1; context.stroke();
         if (!reduced.matches) {
-          const phase = ((now / 2800 + (hash(relation.id) % 1000) / 1000) % 1);
-          context.beginPath(); context.arc(a.x + (b.x - a.x) * phase, a.y + (b.y - a.y) * phase, 1.7, 0, Math.PI * 2);
-          context.fillStyle = '#e5b778'; context.fill();
+          const t = (phase + motionSeconds / (95 + seed % 40)) % 1, u = 1 - t;
+          context.beginPath(); context.arc(u*u*a.x + 2*u*t*cx + t*t*b.x, u*u*a.y + 2*u*t*cy + t*t*b.y, 1.7, 0, Math.PI * 2);
+          context.globalAlpha = Math.min(1, t * 15, u * 15);
+          context.fillStyle = '#e5b778'; context.fill(); context.globalAlpha = 1;
         }
       }
       context.textAlign = 'center'; context.textBaseline = 'top'; context.font = '12px Segoe UI, sans-serif';
@@ -305,7 +276,7 @@
         for (const [index, [x, y]] of choices.entries()) {
           const rect = { left: x - labelWidth / 2 - 3, right: x + labelWidth / 2 + 3,
             top: y - 2, bottom: y + 16 };
-          let score = index * 3 +
+          let score = index * 3 + (point.labelSide !== undefined && point.labelSide !== index ? 120 : 0) +
             (rect.left < 5 ? 1000 : 0) + (rect.right > width - 5 ? 1000 : 0) +
             (rect.top < 5 ? 1000 : 0) + (rect.bottom > height - 5 ? 1000 : 0);
           for (const prior of labels) {
@@ -313,8 +284,9 @@
             const overlapY = Math.max(0, Math.min(rect.bottom, prior.bottom) - Math.max(rect.top, prior.top));
             score += overlapX * overlapY;
           }
-          if (!best || score < best.score) best = { x, y, rect, score };
+          if (!best || score < best.score) best = { x, y, rect, score, index };
         }
+        point.labelSide = best.index;
         labels.push(best.rect);
         context.fillStyle = '#04111dde';
         context.fillRect(best.rect.left, best.rect.top, best.rect.right - best.rect.left, best.rect.bottom - best.rect.top);
@@ -355,6 +327,7 @@
     if (nearest) select(nearest);
   });
   document.getElementById('close').addEventListener('click', closeCard);
+  document.addEventListener('visibilitychange', () => { lastFrame = null; });
   addEventListener('resize', resize);
   resize();
   requestAnimationFrame(draw);
