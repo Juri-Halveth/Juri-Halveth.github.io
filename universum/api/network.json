@@ -1,7 +1,7 @@
 {
   "schema": "halveth.public-network.v1",
-  "revision": "4c3d670603c26a88ad45b21d626295a2c21509531030affaef865540986da015",
-  "observedAt": "2026-11-17T22:18:46.486202+00:00",
+  "revision": "c7864d670a38da63a819113790d4a5f0c280f4947818d32159cbb7567a862f35",
+  "observedAt": "2026-11-27T15:30:42.210Z",
   "coverage": {
     "mode": "PUBLIC_METADATA_AND_REVIEWED_ENTRY_DESCRIPTIONS",
     "repositoryScope": "Complete public owner inventory at observedAt, including forks and metadata repositories; README bytes are anonymously accessible.",
@@ -18,7 +18,7 @@
       "Unlisted external websites or their full text"
     ],
     "archiveDefault": false,
-    "inventoryObservedAt": "2026-11-17T22:18:46.486202+00:00",
+    "inventoryObservedAt": "2026-11-27T15:30:42.210Z",
     "selectedProjectSnapshot": {
       "date": "2026-10-27",
       "records": 11
@@ -43,28 +43,28 @@
     "sourceChangedDoesNotInvalidateHistoricalEvidence": true
   },
   "counts": {
-    "repositories": 21,
+    "repositories": 23,
     "forks": 2,
-    "nonForkRepositories": 19,
+    "nonForkRepositories": 21,
     "metaRepositories": 2,
     "pagesConfigured": 12,
     "catalogEntries": 18,
     "catalogProjectEntries": 16,
     "portfolioCards": 13,
-    "documents": 64,
-    "currentSearchDocuments": 27,
-    "historicalDocuments": 34,
-    "defaultHiddenDocuments": 37,
+    "documents": 72,
+    "currentSearchDocuments": 29,
+    "historicalDocuments": 40,
+    "defaultHiddenDocuments": 43,
     "withdrawnRepositoryEntries": 3,
-    "uncataloguedPublicRepositories": 3,
-    "modules": 3,
-    "independentSites": 6,
-    "relations": 32
+    "uncataloguedPublicRepositories": 5,
+    "modules": 4,
+    "independentSites": 5,
+    "relations": 36
   },
   "sources": [
     {
       "path": "data/network-inventory.json",
-      "sha256": "de6eee6b48cfb87c3552fa14cea3d5833bea993c3b4aa43b981ee391d736338e",
+      "sha256": "b39e8b19eca17c9e440535ff05747e97c4f912f39303658c6f28cd521c76bc9a",
       "role": "CURRENT_PUBLIC_INVENTORY"
     },
     {
@@ -79,12 +79,12 @@
     },
     {
       "path": "data/network-readme-descriptions.json",
-      "sha256": "42e4000639ca30c09bb532be6bef35136e15bf50be2449c2866c8c0da0b0f799",
+      "sha256": "a094d2ffcffc44ab2a06f440b98a0d896753df145890ce45d6e671600e864f0c",
       "role": "REVIEWED_PUBLIC_README_DESCRIPTIONS"
     },
     {
       "path": "data/network-entries.json",
-      "sha256": "b799adafb019ac97e879f68b091fed80286724497d3e0e52733ac459fd0b1c5d",
+      "sha256": "9399b2b5fedc970d6137c69634e388ab047e2f90ea976283c8e7793c248593d9",
       "role": "REVIEWED_ADDITIVE_PUBLIC_ENTRIES"
     },
     {
@@ -109,14 +109,14 @@
     },
     {
       "path": "data/network-sites.json",
-      "sha256": "91d695e611518ffb268123bc4c486f4020ae96423ba33ac8fb4c2a8cb45fed2b",
+      "sha256": "b114ec2521538ff2d9da52b616a719c1049a091361f4327dd9281d30420110c3",
       "role": "REVIEWED_INDEPENDENT_PUBLIC_SITES"
     }
   ],
   "search": {
     "json": "search.json",
     "module": "search.mjs",
-    "sha256": "97d04adab5a730760ee57aefd76714bf38f744629cc2cad5695401c0baced50f",
+    "sha256": "2cf6c8a64644d96e00457a007fd4e51d8d213a8f7ec86b91a9d4b4be7934248f",
     "queryModule": "../../network-search.mjs"
   },
   "repositories": [
@@ -133,14 +133,14 @@
       "head": {
         "revision": "1b6f8a5aa1132c56e066c2c2cddc3bbbe5c36319",
         "url": "https://github.com/Juri-Halveth/c-drohne-red-room/commit/1b6f8a5aa1132c56e066c2c2cddc3bbbe5c36319",
-        "observedAt": "2026-11-17T22:17:54.636Z",
+        "observedAt": "2026-11-27T15:14:04.000Z",
         "committedAt": "2026-11-02T11:27:11Z"
       },
       "readme": {
         "url": "https://github.com/Juri-Halveth/c-drohne-red-room/blob/1b6f8a5aa1132c56e066c2c2cddc3bbbe5c36319/README.md",
         "revision": "1b6f8a5aa1132c56e066c2c2cddc3bbbe5c36319",
         "sha256": "51c1a63ee8d6929bd2efc8d8ab3f59fbb94232ba68756424817b9307fb98fa58",
-        "observedAt": "2026-11-17T22:18:24.042511+00:00"
+        "observedAt": "2026-11-27T15:29:56.785Z"
       },
       "catalogSource": {
         "url": "https://github.com/Juri-Halveth/c-drohne-red-room/tree/f0b072571ccb1a7894a32b1ba03c9a8620995352",
@@ -160,16 +160,16 @@
       "archived": false,
       "editorialState": "CURRENT",
       "head": {
-        "revision": "9fb4e0ec8d94ef464f369f0c1e70082b61a12732",
-        "url": "https://github.com/Juri-Halveth/console-only/commit/9fb4e0ec8d94ef464f369f0c1e70082b61a12732",
-        "observedAt": "2026-11-17T22:17:54.595Z",
-        "committedAt": "2026-11-17T21:44:07Z"
+        "revision": "c09cbac93c78152c68a29347131814257bf0975f",
+        "url": "https://github.com/Juri-Halveth/console-only/commit/c09cbac93c78152c68a29347131814257bf0975f",
+        "observedAt": "2026-11-27T15:14:04.000Z",
+        "committedAt": "2026-11-17T22:56:46Z"
       },
       "readme": {
-        "url": "https://github.com/Juri-Halveth/console-only/blob/9fb4e0ec8d94ef464f369f0c1e70082b61a12732/README.md",
-        "revision": "9fb4e0ec8d94ef464f369f0c1e70082b61a12732",
-        "sha256": "62975b921a9b0d06cc0f68f868ec51aa8b0662023f5d44aad77081874dbdf7a2",
-        "observedAt": "2026-11-17T22:18:23.987425+00:00"
+        "url": "https://github.com/Juri-Halveth/console-only/blob/c09cbac93c78152c68a29347131814257bf0975f/README.md",
+        "revision": "c09cbac93c78152c68a29347131814257bf0975f",
+        "sha256": "35af711a348390ece3f2d535453889d24e3c3fa914cca839cde377330ecfe2cd",
+        "observedAt": "2026-11-27T15:30:02.889Z"
       },
       "catalogSource": null
     },
@@ -186,14 +186,14 @@
       "head": {
         "revision": "2b94cb4a23b9d96b088004d9f5da62e91975e20b",
         "url": "https://github.com/Juri-Halveth/fortuna/commit/2b94cb4a23b9d96b088004d9f5da62e91975e20b",
-        "observedAt": "2026-11-17T22:17:54.607Z",
+        "observedAt": "2026-11-27T15:13:56.000Z",
         "committedAt": "2026-11-02T17:19:26Z"
       },
       "readme": {
         "url": "https://github.com/Juri-Halveth/fortuna/blob/2b94cb4a23b9d96b088004d9f5da62e91975e20b/README.md",
         "revision": "2b94cb4a23b9d96b088004d9f5da62e91975e20b",
         "sha256": "aef90bdce1d1834094835fd5d0b3a2f075ba3dcc25f3a3e5400f7ba70696342c",
-        "observedAt": "2026-11-17T22:18:23.940639+00:00"
+        "observedAt": "2026-11-27T15:29:56.075Z"
       },
       "catalogSource": {
         "url": "https://github.com/Juri-Halveth/fortuna/tree/5d735c8fa3b052c00feca3b55f5e7122bc5e5686",
@@ -215,14 +215,14 @@
       "head": {
         "revision": "6579e523287aa268ff89dea2666e82bb27c75e4b",
         "url": "https://github.com/Juri-Halveth/gitcoin_co_30/commit/6579e523287aa268ff89dea2666e82bb27c75e4b",
-        "observedAt": "2026-11-17T22:17:54.928Z",
+        "observedAt": "2026-11-27T15:14:04.000Z",
         "committedAt": "2026-11-03T23:36:27Z"
       },
       "readme": {
         "url": "https://github.com/Juri-Halveth/gitcoin_co_30/blob/6579e523287aa268ff89dea2666e82bb27c75e4b/README.md",
         "revision": "6579e523287aa268ff89dea2666e82bb27c75e4b",
         "sha256": "6ac4e3a6025fcf693397911a04622a696a0908bc325e5196ad13af15b8339f8f",
-        "observedAt": "2026-11-17T22:18:23.986627+00:00"
+        "observedAt": "2026-11-27T15:30:02.873Z"
       },
       "catalogSource": null
     },
@@ -237,16 +237,16 @@
       "archived": false,
       "editorialState": "CURRENT",
       "head": {
-        "revision": "165f5cbe7a66dadcc22e2c93573a2677ecaaf701",
-        "url": "https://github.com/Juri-Halveth/halveth-bio-universe/commit/165f5cbe7a66dadcc22e2c93573a2677ecaaf701",
-        "observedAt": "2026-11-17T22:17:54.802Z",
-        "committedAt": "2026-11-11T01:49:51Z"
+        "revision": "29fc9a4ca07a2673ca13a34161d07a60ed8cb64f",
+        "url": "https://github.com/Juri-Halveth/halveth-bio-universe/commit/29fc9a4ca07a2673ca13a34161d07a60ed8cb64f",
+        "observedAt": "2026-11-27T15:14:04.000Z",
+        "committedAt": "2026-11-17T22:37:03Z"
       },
       "readme": {
-        "url": "https://github.com/Juri-Halveth/halveth-bio-universe/blob/165f5cbe7a66dadcc22e2c93573a2677ecaaf701/README.md",
-        "revision": "165f5cbe7a66dadcc22e2c93573a2677ecaaf701",
-        "sha256": "57e5af22ca8f2244436a885534393f4e6f705ab80ec9bc35f33589be3b17e104",
-        "observedAt": "2026-11-17T22:18:24.026462+00:00"
+        "url": "https://github.com/Juri-Halveth/halveth-bio-universe/blob/29fc9a4ca07a2673ca13a34161d07a60ed8cb64f/README.md",
+        "revision": "29fc9a4ca07a2673ca13a34161d07a60ed8cb64f",
+        "sha256": "fa2f321d0ae02b99d943d6ef861663462ebb70aefb439aa46f347061d795f9a8",
+        "observedAt": "2026-11-27T15:30:02.802Z"
       },
       "catalogSource": null
     },
@@ -263,14 +263,14 @@
       "head": {
         "revision": "274fe89f4bd9e6360f25b69a7bdb416c5da898c0",
         "url": "https://github.com/Juri-Halveth/halveth-cannabis-reform-forschung/commit/274fe89f4bd9e6360f25b69a7bdb416c5da898c0",
-        "observedAt": "2026-11-17T22:17:54.675Z",
+        "observedAt": "2026-11-27T15:14:04.000Z",
         "committedAt": "2026-11-02T11:25:35Z"
       },
       "readme": {
         "url": "https://github.com/Juri-Halveth/halveth-cannabis-reform-forschung/blob/274fe89f4bd9e6360f25b69a7bdb416c5da898c0/README.md",
         "revision": "274fe89f4bd9e6360f25b69a7bdb416c5da898c0",
         "sha256": "a37770a8446d2eae251a2f68b451758a9fb603a2be0206b8c37cc459e0be1b00",
-        "observedAt": "2026-11-17T22:18:23.971246+00:00"
+        "observedAt": "2026-11-27T15:29:59.550Z"
       },
       "catalogSource": {
         "url": "https://github.com/Juri-Halveth/halveth-cannabis-reform-forschung/blob/main/README.md",
@@ -292,14 +292,14 @@
       "head": {
         "revision": "8c6e1ab0f68d5dcc38d0e3068853beaec06067ab",
         "url": "https://github.com/Juri-Halveth/halveth-field-difference-lab/commit/8c6e1ab0f68d5dcc38d0e3068853beaec06067ab",
-        "observedAt": "2026-11-17T22:17:54.699Z",
+        "observedAt": "2026-11-27T15:14:04.000Z",
         "committedAt": "2026-11-02T11:26:32Z"
       },
       "readme": {
         "url": "https://github.com/Juri-Halveth/halveth-field-difference-lab/blob/8c6e1ab0f68d5dcc38d0e3068853beaec06067ab/README.md",
         "revision": "8c6e1ab0f68d5dcc38d0e3068853beaec06067ab",
         "sha256": "572aa37e01c27b82688ae6d573df670a393f6cca163c9626d9d6b371b0659ede",
-        "observedAt": "2026-11-17T22:18:28.721330+00:00"
+        "observedAt": "2026-11-27T15:29:56.070Z"
       },
       "catalogSource": {
         "url": "https://github.com/Juri-Halveth/halveth-field-difference-lab/tree/572734742951819993b10d89b22591951a49dbc8",
@@ -321,14 +321,14 @@
       "head": {
         "revision": "8e6b49c78c5ed8fbdf5d5010e11b4040b9013fff",
         "url": "https://github.com/Juri-Halveth/halveth-forschungslabor/commit/8e6b49c78c5ed8fbdf5d5010e11b4040b9013fff",
-        "observedAt": "2026-11-17T22:17:54.572Z",
+        "observedAt": "2026-11-27T15:14:04.000Z",
         "committedAt": "2026-11-03T09:37:00Z"
       },
       "readme": {
         "url": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/8e6b49c78c5ed8fbdf5d5010e11b4040b9013fff/README.md",
         "revision": "8e6b49c78c5ed8fbdf5d5010e11b4040b9013fff",
         "sha256": "d55424e3d4d8fa67df4e78800ab394d7e7415ee8e5edb870746062cca5603891",
-        "observedAt": "2026-11-17T22:18:29.030422+00:00"
+        "observedAt": "2026-11-27T15:29:59.625Z"
       },
       "catalogSource": {
         "url": "https://github.com/Juri-Halveth/halveth-forschungslabor/tree/07417d3cdadda426c2b51cc98bcbae72d7b5d651",
@@ -350,14 +350,14 @@
       "head": {
         "revision": "4a882611f0a41224760952a0a54e91be862a43bd",
         "url": "https://github.com/Juri-Halveth/halveth-morrowind-genesis/commit/4a882611f0a41224760952a0a54e91be862a43bd",
-        "observedAt": "2026-11-17T22:17:54.679Z",
+        "observedAt": "2026-11-27T15:13:56.000Z",
         "committedAt": "2026-11-04T12:49:00Z"
       },
       "readme": {
         "url": "https://github.com/Juri-Halveth/halveth-morrowind-genesis/blob/4a882611f0a41224760952a0a54e91be862a43bd/README.md",
         "revision": "4a882611f0a41224760952a0a54e91be862a43bd",
         "sha256": "b4daa89feb4ed4e3c95cc62d795405377cf9d093b2e4172934e2445fae1c9aa2",
-        "observedAt": "2026-11-17T22:18:28.798616+00:00"
+        "observedAt": "2026-11-27T15:29:53.029Z"
       },
       "catalogSource": {
         "url": "https://github.com/Juri-Halveth/halveth-morrowind-genesis/blob/main/README.md",
@@ -379,14 +379,14 @@
       "head": {
         "revision": "e927394b0d465fd8034ce6b7ecc1ab13875e1fba",
         "url": "https://github.com/Juri-Halveth/halveth-project0-keeper/commit/e927394b0d465fd8034ce6b7ecc1ab13875e1fba",
-        "observedAt": "2026-11-17T22:17:54.651Z",
+        "observedAt": "2026-11-27T15:13:56.000Z",
         "committedAt": "2026-11-02T11:19:33Z"
       },
       "readme": {
         "url": "https://github.com/Juri-Halveth/halveth-project0-keeper/blob/e927394b0d465fd8034ce6b7ecc1ab13875e1fba/README.md",
         "revision": "e927394b0d465fd8034ce6b7ecc1ab13875e1fba",
         "sha256": "052c4ab1793065fe45830ae331f3476634cbb08cbeefb39ab7608a1be121c1bd",
-        "observedAt": "2026-11-17T22:18:28.762302+00:00"
+        "observedAt": "2026-11-27T15:29:52.953Z"
       },
       "catalogSource": {
         "url": "https://github.com/Juri-Halveth/halveth-project0-keeper/tree/f4349d013efb7105e2875784a0c7c16d2026e3da",
@@ -408,14 +408,14 @@
       "head": {
         "revision": "22f3a706f88b0e186d9f6dc2807540e857ad2136",
         "url": "https://github.com/Juri-Halveth/halveth-realms/commit/22f3a706f88b0e186d9f6dc2807540e857ad2136",
-        "observedAt": "2026-11-17T22:17:54.741Z",
+        "observedAt": "2026-11-27T15:13:49.000Z",
         "committedAt": "2026-11-02T11:19:44Z"
       },
       "readme": {
         "url": "https://github.com/Juri-Halveth/halveth-realms/blob/22f3a706f88b0e186d9f6dc2807540e857ad2136/README.md",
         "revision": "22f3a706f88b0e186d9f6dc2807540e857ad2136",
         "sha256": "1e55f93e4fbd5c116b4fcee6905d9950303d2ac5d4a8ab01b717d8a9834edd4c",
-        "observedAt": "2026-11-17T22:18:28.842405+00:00"
+        "observedAt": "2026-11-27T15:29:49.329Z"
       },
       "catalogSource": {
         "url": "https://github.com/Juri-Halveth/halveth-realms/blob/main/README.md",
@@ -437,14 +437,14 @@
       "head": {
         "revision": "f4aa107a0fc73906c16442d11214d37f34e4f78b",
         "url": "https://github.com/Juri-Halveth/halveth-scarlet/commit/f4aa107a0fc73906c16442d11214d37f34e4f78b",
-        "observedAt": "2026-11-17T22:17:54.618Z",
+        "observedAt": "2026-11-27T15:13:49.000Z",
         "committedAt": "2026-11-11T10:24:50Z"
       },
       "readme": {
         "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/f4aa107a0fc73906c16442d11214d37f34e4f78b/README.md",
         "revision": "f4aa107a0fc73906c16442d11214d37f34e4f78b",
         "sha256": "4d39cfb22e29cadbce7311edc2423a66ff010c36851561807162f7c9b79650c8",
-        "observedAt": "2026-11-17T22:18:28.794560+00:00"
+        "observedAt": "2026-11-27T15:29:49.281Z"
       },
       "catalogSource": {
         "url": "https://github.com/Juri-Halveth/halveth-scarlet/tree/9f706b9f6bba255f30cde703f851ba80cd64d9bc",
@@ -466,14 +466,14 @@
       "head": {
         "revision": "17d0429d98de364aa779cb057dc02f6f9363f9f3",
         "url": "https://github.com/Juri-Halveth/halveth-tresor/commit/17d0429d98de364aa779cb057dc02f6f9363f9f3",
-        "observedAt": "2026-11-17T22:17:54.822Z",
+        "observedAt": "2026-11-27T15:13:49.000Z",
         "committedAt": "2026-11-02T11:19:22Z"
       },
       "readme": {
         "url": "https://github.com/Juri-Halveth/halveth-tresor/blob/17d0429d98de364aa779cb057dc02f6f9363f9f3/README.md",
         "revision": "17d0429d98de364aa779cb057dc02f6f9363f9f3",
         "sha256": "df953a31d28e5c6f4d9923c8f5833febfa841099a0a9c5f028da8970609ce61b",
-        "observedAt": "2026-11-17T22:18:40.194285+00:00"
+        "observedAt": "2026-11-27T15:29:45.677Z"
       },
       "catalogSource": {
         "url": "https://github.com/Juri-Halveth/halveth-tresor/tree/e1ca9830e84099f0e4a9a4bfdede919a5ab0eee6",
@@ -495,14 +495,14 @@
       "head": {
         "revision": "a4116f6dfe1505651d3c135007342c9bbb857c56",
         "url": "https://github.com/Juri-Halveth/halveth-tron-security-lab/commit/a4116f6dfe1505651d3c135007342c9bbb857c56",
-        "observedAt": "2026-11-17T22:17:54.796Z",
+        "observedAt": "2026-11-27T15:13:56.000Z",
         "committedAt": "2026-11-02T11:21:27Z"
       },
       "readme": {
         "url": "https://github.com/Juri-Halveth/halveth-tron-security-lab/blob/a4116f6dfe1505651d3c135007342c9bbb857c56/README.md",
         "revision": "a4116f6dfe1505651d3c135007342c9bbb857c56",
         "sha256": "f0cf6aca219e809170780757501570a157a1b55a20ed1d20ff3e5747720ff19f",
-        "observedAt": "2026-11-17T22:18:40.126617+00:00"
+        "observedAt": "2026-11-27T15:29:56.121Z"
       },
       "catalogSource": {
         "url": "https://github.com/Juri-Halveth/halveth-tron-security-lab/tree/0d25fb9945d01629c85beeb0768e102eb247c8d1",
@@ -524,14 +524,14 @@
       "head": {
         "revision": "5dcd5ad655bcaa73e672618f0829100989484c65",
         "url": "https://github.com/Juri-Halveth/halveth-unreal/commit/5dcd5ad655bcaa73e672618f0829100989484c65",
-        "observedAt": "2026-11-17T22:17:54.600Z",
+        "observedAt": "2026-11-27T15:13:56.000Z",
         "committedAt": "2026-11-02T11:19:36Z"
       },
       "readme": {
         "url": "https://github.com/Juri-Halveth/halveth-unreal/blob/5dcd5ad655bcaa73e672618f0829100989484c65/README.md",
         "revision": "5dcd5ad655bcaa73e672618f0829100989484c65",
         "sha256": "b609dc6f8a976b61f03fd3b423da9620e8e728d20b769d400c3a1d7ea545f548",
-        "observedAt": "2026-11-17T22:18:40.609321+00:00"
+        "observedAt": "2026-11-27T15:29:53.001Z"
       },
       "catalogSource": {
         "url": "https://github.com/Juri-Halveth/halveth-unreal/blob/main/README.md",
@@ -539,6 +539,54 @@
         "reviewedAt": "2026-11-02",
         "freshness": "UNPINNED_SOURCE"
       }
+    },
+    {
+      "id": "repo:juri-halveth/jbl-owner-external-witness-20260901",
+      "githubRepositoryId": 1353813791,
+      "name": "jbl-owner-external-witness-20260901",
+      "fullName": "Juri-Halveth/jbl-owner-external-witness-20260901",
+      "url": "https://github.com/Juri-Halveth/jbl-owner-external-witness-20260901",
+      "role": "PROJECT_SOURCE",
+      "fork": false,
+      "archived": false,
+      "editorialState": "CURRENT",
+      "head": {
+        "revision": "551f6d614e4ff4bd4ad426868ad887e52b9ee7ec",
+        "url": "https://github.com/Juri-Halveth/jbl-owner-external-witness-20260901/commit/551f6d614e4ff4bd4ad426868ad887e52b9ee7ec",
+        "observedAt": "2026-11-27T15:13:49.000Z",
+        "committedAt": "2026-11-27T12:16:46Z"
+      },
+      "readme": {
+        "url": "https://github.com/Juri-Halveth/jbl-owner-external-witness-20260901/blob/551f6d614e4ff4bd4ad426868ad887e52b9ee7ec/README.md",
+        "revision": "551f6d614e4ff4bd4ad426868ad887e52b9ee7ec",
+        "sha256": "ffdfdea9d045a941f3556ff1c3df6577fadffd3c44d76200b8599929b4f47311",
+        "observedAt": "2026-11-27T15:29:45.681Z"
+      },
+      "catalogSource": null
+    },
+    {
+      "id": "repo:juri-halveth/jbl-wan-proof",
+      "githubRepositoryId": 1332363317,
+      "name": "jbl-wan-proof",
+      "fullName": "Juri-Halveth/jbl-wan-proof",
+      "url": "https://github.com/Juri-Halveth/jbl-wan-proof",
+      "role": "PROJECT_SOURCE",
+      "fork": false,
+      "archived": false,
+      "editorialState": "CURRENT",
+      "head": {
+        "revision": "939bf986e6064ba3c24f7d74957a4ac950912526",
+        "url": "https://github.com/Juri-Halveth/jbl-wan-proof/commit/939bf986e6064ba3c24f7d74957a4ac950912526",
+        "observedAt": "2026-11-27T15:13:49.000Z",
+        "committedAt": "2026-11-27T12:17:01Z"
+      },
+      "readme": {
+        "url": "https://github.com/Juri-Halveth/jbl-wan-proof/blob/939bf986e6064ba3c24f7d74957a4ac950912526/README.md",
+        "revision": "939bf986e6064ba3c24f7d74957a4ac950912526",
+        "sha256": "491090cfbd21946971de22c85b9700f72fee55033968a2f41fd825c0685da0c7",
+        "observedAt": "2026-11-27T15:29:45.679Z"
+      },
+      "catalogSource": null
     },
     {
       "id": "repo:juri-halveth/juri-halveth",
@@ -551,16 +599,16 @@
       "archived": false,
       "editorialState": "CURRENT",
       "head": {
-        "revision": "ce748ae23d951c35f510481738a1c91efacd57f0",
-        "url": "https://github.com/Juri-Halveth/Juri-Halveth/commit/ce748ae23d951c35f510481738a1c91efacd57f0",
-        "observedAt": "2026-11-17T22:17:54.521Z",
-        "committedAt": "2026-11-02T23:30:10Z"
+        "revision": "7cf2f3851cbc71755b6c97993f49c25359047d4e",
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth/commit/7cf2f3851cbc71755b6c97993f49c25359047d4e",
+        "observedAt": "2026-11-27T15:13:56.000Z",
+        "committedAt": "2026-11-17T22:36:56Z"
       },
       "readme": {
-        "url": "https://github.com/Juri-Halveth/Juri-Halveth/blob/ce748ae23d951c35f510481738a1c91efacd57f0/README.md",
-        "revision": "ce748ae23d951c35f510481738a1c91efacd57f0",
-        "sha256": "df1efbbe986c7d99d13d7a8871b65a623b70f82651e11f0670b57bff4871c7ce",
-        "observedAt": "2026-11-17T22:18:40.170520+00:00"
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth/blob/7cf2f3851cbc71755b6c97993f49c25359047d4e/README.md",
+        "revision": "7cf2f3851cbc71755b6c97993f49c25359047d4e",
+        "sha256": "b65dfa0627c6d2723a0421cbca2a6141964797fc8567a09f56544775cd0023d8",
+        "observedAt": "2026-11-27T15:29:52.844Z"
       },
       "catalogSource": {
         "url": "https://github.com/Juri-Halveth/Juri-Halveth/blob/main/README.md",
@@ -580,16 +628,16 @@
       "archived": false,
       "editorialState": "CURRENT",
       "head": {
-        "revision": "e1ae68ac6428caa30dfc12739b1c0dfecd6fb8a1",
-        "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/commit/e1ae68ac6428caa30dfc12739b1c0dfecd6fb8a1",
-        "observedAt": "2026-11-17T22:17:54.675Z",
-        "committedAt": "2026-11-17T21:33:25Z"
+        "revision": "13672e980c0b41c6624c679e5b15449e7da0269c",
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/commit/13672e980c0b41c6624c679e5b15449e7da0269c",
+        "observedAt": "2026-11-27T15:13:49.000Z",
+        "committedAt": "2026-11-27T00:38:27Z"
       },
       "readme": {
-        "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/e1ae68ac6428caa30dfc12739b1c0dfecd6fb8a1/README.md",
-        "revision": "e1ae68ac6428caa30dfc12739b1c0dfecd6fb8a1",
-        "sha256": "6eb0186ae558d05efad87cb77828f54c31b989ad0c4dc3c2f1184ca0f7709693",
-        "observedAt": "2026-11-17T22:18:40.190753+00:00"
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/13672e980c0b41c6624c679e5b15449e7da0269c/README.md",
+        "revision": "13672e980c0b41c6624c679e5b15449e7da0269c",
+        "sha256": "a530387757796f3a6a5d51f407991c73bc64c7a2310bdc49d0a52910db9481cb",
+        "observedAt": "2026-11-27T15:29:49.289Z"
       },
       "catalogSource": {
         "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/main/README.md",
@@ -611,14 +659,14 @@
       "head": {
         "revision": "a464093d95e50fcb685c6f2db0c386739cc5fc9e",
         "url": "https://github.com/Juri-Halveth/lernstudio/commit/a464093d95e50fcb685c6f2db0c386739cc5fc9e",
-        "observedAt": "2026-11-17T22:17:54.635Z",
+        "observedAt": "2026-11-27T15:13:49.000Z",
         "committedAt": "2026-11-02T12:01:49Z"
       },
       "readme": {
         "url": "https://github.com/Juri-Halveth/lernstudio/blob/a464093d95e50fcb685c6f2db0c386739cc5fc9e/README.md",
         "revision": "a464093d95e50fcb685c6f2db0c386739cc5fc9e",
         "sha256": "a40ffb19f1d967faf49a615dc8fc326f3666c61f92796e4b53cc1ec2488df8bc",
-        "observedAt": "2026-11-17T22:18:40.206261+00:00"
+        "observedAt": "2026-11-27T15:29:45.761Z"
       },
       "catalogSource": {
         "url": "https://github.com/Juri-Halveth/lernstudio/tree/9309f69883e9ae66290829722012deda5ed982c9",
@@ -640,14 +688,14 @@
       "head": {
         "revision": "0e821023b7344e73e8f7a09f8ebe92ba54cbcbd6",
         "url": "https://github.com/Juri-Halveth/leviathan-wallet-portal/commit/0e821023b7344e73e8f7a09f8ebe92ba54cbcbd6",
-        "observedAt": "2026-11-17T22:17:54.702Z",
+        "observedAt": "2026-11-27T15:14:04.000Z",
         "committedAt": "2026-11-02T11:19:48Z"
       },
       "readme": {
         "url": "https://github.com/Juri-Halveth/leviathan-wallet-portal/blob/0e821023b7344e73e8f7a09f8ebe92ba54cbcbd6/README.md",
         "revision": "0e821023b7344e73e8f7a09f8ebe92ba54cbcbd6",
         "sha256": "841e401ebad16bfc6583f9011521e904ce12462c314be6f56f14809039272bb1",
-        "observedAt": "2026-11-17T22:18:46.409744+00:00"
+        "observedAt": "2026-11-27T15:29:59.531Z"
       },
       "catalogSource": {
         "url": "https://github.com/Juri-Halveth/leviathan-wallet-portal/blob/main/README.md",
@@ -667,16 +715,16 @@
       "archived": false,
       "editorialState": "CURRENT",
       "head": {
-        "revision": "6151152eafa90c18dc64563872879dfc9da341f7",
-        "url": "https://github.com/Juri-Halveth/lucinet-seedspace/commit/6151152eafa90c18dc64563872879dfc9da341f7",
-        "observedAt": "2026-11-17T22:17:54.694Z",
-        "committedAt": "2026-11-06T00:25:36Z"
+        "revision": "5301a3fb26f78f1e4fd167b5524d027fec8c88ee",
+        "url": "https://github.com/Juri-Halveth/lucinet-seedspace/commit/5301a3fb26f78f1e4fd167b5524d027fec8c88ee",
+        "observedAt": "2026-11-27T15:14:04.000Z",
+        "committedAt": "2026-11-24T23:53:01Z"
       },
       "readme": {
-        "url": "https://github.com/Juri-Halveth/lucinet-seedspace/blob/6151152eafa90c18dc64563872879dfc9da341f7/README.md",
-        "revision": "6151152eafa90c18dc64563872879dfc9da341f7",
-        "sha256": "4116f493b4184365d65f7369b1bc521b7c3972b27e1fb90cca0af55e357cfe0a",
-        "observedAt": "2026-11-17T22:18:46.442843+00:00"
+        "url": "https://github.com/Juri-Halveth/lucinet-seedspace/blob/5301a3fb26f78f1e4fd167b5524d027fec8c88ee/README.md",
+        "revision": "5301a3fb26f78f1e4fd167b5524d027fec8c88ee",
+        "sha256": "0289328ffdc3a522b48fff290c0d39769eb6eff4c313165301101078cd985f4b",
+        "observedAt": "2026-11-27T15:29:59.605Z"
       },
       "catalogSource": {
         "url": "https://github.com/Juri-Halveth/lucinet-seedspace/tree/6d0e91c056caee46e2ca2d4faaf7bcdd1975dddc",
@@ -698,14 +746,14 @@
       "head": {
         "revision": "e0c57497ecfc09a47fa78b8152a0b398157c653a",
         "url": "https://github.com/Juri-Halveth/mein-lernportal/commit/e0c57497ecfc09a47fa78b8152a0b398157c653a",
-        "observedAt": "2026-11-17T22:17:54.712Z",
+        "observedAt": "2026-11-27T15:13:49.000Z",
         "committedAt": "2026-11-02T11:26:36Z"
       },
       "readme": {
         "url": "https://github.com/Juri-Halveth/mein-lernportal/blob/e0c57497ecfc09a47fa78b8152a0b398157c653a/README.md",
         "revision": "e0c57497ecfc09a47fa78b8152a0b398157c653a",
         "sha256": "401feeb07f639bcef66bc9f0ed6112c9a829df65a9a859f2ab1cf4ee79233db0",
-        "observedAt": "2026-11-17T22:18:46.486202+00:00"
+        "observedAt": "2026-11-27T15:29:49.247Z"
       },
       "catalogSource": {
         "url": "https://github.com/Juri-Halveth/mein-lernportal/tree/8ff9c2fa3e4fbf3a5795b06d1d9c77819b592292",
@@ -765,6 +813,23 @@
         "revision": "e1ae68ac6428caa30dfc12739b1c0dfecd6fb8a1",
         "observedAt": "2026-11-17T22:22:49.772Z",
         "scope": "REVIEWED_PUBLIC_ENTRY_DESCRIPTION_NOT_RUNTIME_OR_SCIENTIFIC_PROOF"
+      }
+    },
+    {
+      "id": "module:website:lucineta-draft",
+      "kind": "module",
+      "repositoryId": "repo:juri-halveth/juri-halveth.github.io",
+      "title": {
+        "de": "LUCINETA · Entwicklungsentwurf",
+        "en": "LUCINETA · development draft",
+        "ru": "LUCINETA · проект разработки"
+      },
+      "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/pull/83",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/fdd654282227529548d3df45a21d80a08fbf4cda/universum/lucineta/index.html",
+        "revision": "fdd654282227529548d3df45a21d80a08fbf4cda",
+        "observedAt": "2026-11-27T15:26:02Z",
+        "scope": "PUBLIC_OPEN_DRAFT_NOT_PUBLISHED_OR_RUNTIME_INTEGRATION"
       }
     },
     {
@@ -851,23 +916,6 @@
         "observedAt": "2026-11-17T22:24:18.539017+00:00",
         "scope": "PUBLIC_WEBSITE_DESCRIPTION_NO_COMMIT_BINDING"
       }
-    },
-    {
-      "id": "site:schuelervz-mantel",
-      "kind": "site",
-      "repositoryId": null,
-      "title": {
-        "de": "SchülerVZ Mantel · öffentliche Nachbildung",
-        "en": "SchülerVZ Mantel · public recreation",
-        "ru": "SchülerVZ Mantel · открытая реконструкция"
-      },
-      "url": "https://schuelervz-mantel.juri-janovski.chatgpt.site",
-      "source": {
-        "url": "https://schuelervz-mantel.juri-janovski.chatgpt.site",
-        "revision": null,
-        "observedAt": "2026-11-17T22:24:17.674962+00:00",
-        "scope": "PUBLIC_WEBSITE_DESCRIPTION_NO_COMMIT_BINDING"
-      }
     }
   ],
   "aliases": [
@@ -929,6 +977,19 @@
       "claimCeiling": "REVIEWED_PUBLIC_NAVIGATION_ENTRY"
     },
     {
+      "id": "entry:module:website:lucineta-draft",
+      "type": "PUBLIC_ENTRY_OF_REPOSITORY",
+      "from": "repo:juri-halveth/juri-halveth.github.io",
+      "to": "module:website:lucineta-draft",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/fdd654282227529548d3df45a21d80a08fbf4cda/universum/lucineta/index.html",
+        "revision": "fdd654282227529548d3df45a21d80a08fbf4cda",
+        "observedAt": "2026-11-27T15:26:02Z",
+        "scope": "PUBLIC_OPEN_DRAFT_NOT_PUBLISHED_OR_RUNTIME_INTEGRATION"
+      },
+      "claimCeiling": "REVIEWED_PUBLIC_NAVIGATION_ENTRY"
+    },
+    {
       "id": "readme-link:repo:juri-halveth/c-drohne-red-room:repo:juri-halveth/juri-halveth.github.io",
       "type": "PUBLIC_README_LINK",
       "from": "repo:juri-halveth/c-drohne-red-room",
@@ -937,7 +998,7 @@
         "url": "https://github.com/Juri-Halveth/c-drohne-red-room/blob/1b6f8a5aa1132c56e066c2c2cddc3bbbe5c36319/README.md",
         "revision": "1b6f8a5aa1132c56e066c2c2cddc3bbbe5c36319",
         "sha256": "51c1a63ee8d6929bd2efc8d8ab3f59fbb94232ba68756424817b9307fb98fa58",
-        "observedAt": "2026-11-17T22:18:24.042511+00:00"
+        "observedAt": "2026-11-27T15:29:56.785Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -947,10 +1008,10 @@
       "from": "repo:juri-halveth/console-only",
       "to": "repo:juri-halveth/juri-halveth.github.io",
       "source": {
-        "url": "https://github.com/Juri-Halveth/console-only/blob/9fb4e0ec8d94ef464f369f0c1e70082b61a12732/README.md",
-        "revision": "9fb4e0ec8d94ef464f369f0c1e70082b61a12732",
-        "sha256": "62975b921a9b0d06cc0f68f868ec51aa8b0662023f5d44aad77081874dbdf7a2",
-        "observedAt": "2026-11-17T22:18:23.987425+00:00"
+        "url": "https://github.com/Juri-Halveth/console-only/blob/c09cbac93c78152c68a29347131814257bf0975f/README.md",
+        "revision": "c09cbac93c78152c68a29347131814257bf0975f",
+        "sha256": "35af711a348390ece3f2d535453889d24e3c3fa914cca839cde377330ecfe2cd",
+        "observedAt": "2026-11-27T15:30:02.889Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -963,7 +1024,20 @@
         "url": "https://github.com/Juri-Halveth/fortuna/blob/2b94cb4a23b9d96b088004d9f5da62e91975e20b/README.md",
         "revision": "2b94cb4a23b9d96b088004d9f5da62e91975e20b",
         "sha256": "aef90bdce1d1834094835fd5d0b3a2f075ba3dcc25f3a3e5400f7ba70696342c",
-        "observedAt": "2026-11-17T22:18:23.940639+00:00"
+        "observedAt": "2026-11-27T15:29:56.075Z"
+      },
+      "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
+    },
+    {
+      "id": "readme-link:repo:juri-halveth/halveth-bio-universe:repo:juri-halveth/juri-halveth.github.io",
+      "type": "PUBLIC_README_LINK",
+      "from": "repo:juri-halveth/halveth-bio-universe",
+      "to": "repo:juri-halveth/juri-halveth.github.io",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/halveth-bio-universe/blob/29fc9a4ca07a2673ca13a34161d07a60ed8cb64f/README.md",
+        "revision": "29fc9a4ca07a2673ca13a34161d07a60ed8cb64f",
+        "sha256": "fa2f321d0ae02b99d943d6ef861663462ebb70aefb439aa46f347061d795f9a8",
+        "observedAt": "2026-11-27T15:30:02.802Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -976,7 +1050,7 @@
         "url": "https://github.com/Juri-Halveth/halveth-cannabis-reform-forschung/blob/274fe89f4bd9e6360f25b69a7bdb416c5da898c0/README.md",
         "revision": "274fe89f4bd9e6360f25b69a7bdb416c5da898c0",
         "sha256": "a37770a8446d2eae251a2f68b451758a9fb603a2be0206b8c37cc459e0be1b00",
-        "observedAt": "2026-11-17T22:18:23.971246+00:00"
+        "observedAt": "2026-11-27T15:29:59.550Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -989,7 +1063,7 @@
         "url": "https://github.com/Juri-Halveth/halveth-field-difference-lab/blob/8c6e1ab0f68d5dcc38d0e3068853beaec06067ab/README.md",
         "revision": "8c6e1ab0f68d5dcc38d0e3068853beaec06067ab",
         "sha256": "572aa37e01c27b82688ae6d573df670a393f6cca163c9626d9d6b371b0659ede",
-        "observedAt": "2026-11-17T22:18:28.721330+00:00"
+        "observedAt": "2026-11-27T15:29:56.070Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -1002,7 +1076,7 @@
         "url": "https://github.com/Juri-Halveth/halveth-forschungslabor/blob/8e6b49c78c5ed8fbdf5d5010e11b4040b9013fff/README.md",
         "revision": "8e6b49c78c5ed8fbdf5d5010e11b4040b9013fff",
         "sha256": "d55424e3d4d8fa67df4e78800ab394d7e7415ee8e5edb870746062cca5603891",
-        "observedAt": "2026-11-17T22:18:29.030422+00:00"
+        "observedAt": "2026-11-27T15:29:59.625Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -1015,7 +1089,7 @@
         "url": "https://github.com/Juri-Halveth/halveth-morrowind-genesis/blob/4a882611f0a41224760952a0a54e91be862a43bd/README.md",
         "revision": "4a882611f0a41224760952a0a54e91be862a43bd",
         "sha256": "b4daa89feb4ed4e3c95cc62d795405377cf9d093b2e4172934e2445fae1c9aa2",
-        "observedAt": "2026-11-17T22:18:28.798616+00:00"
+        "observedAt": "2026-11-27T15:29:53.029Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -1028,7 +1102,7 @@
         "url": "https://github.com/Juri-Halveth/halveth-project0-keeper/blob/e927394b0d465fd8034ce6b7ecc1ab13875e1fba/README.md",
         "revision": "e927394b0d465fd8034ce6b7ecc1ab13875e1fba",
         "sha256": "052c4ab1793065fe45830ae331f3476634cbb08cbeefb39ab7608a1be121c1bd",
-        "observedAt": "2026-11-17T22:18:28.762302+00:00"
+        "observedAt": "2026-11-27T15:29:52.953Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -1041,7 +1115,7 @@
         "url": "https://github.com/Juri-Halveth/halveth-realms/blob/22f3a706f88b0e186d9f6dc2807540e857ad2136/README.md",
         "revision": "22f3a706f88b0e186d9f6dc2807540e857ad2136",
         "sha256": "1e55f93e4fbd5c116b4fcee6905d9950303d2ac5d4a8ab01b717d8a9834edd4c",
-        "observedAt": "2026-11-17T22:18:28.842405+00:00"
+        "observedAt": "2026-11-27T15:29:49.329Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -1054,7 +1128,7 @@
         "url": "https://github.com/Juri-Halveth/halveth-scarlet/blob/f4aa107a0fc73906c16442d11214d37f34e4f78b/README.md",
         "revision": "f4aa107a0fc73906c16442d11214d37f34e4f78b",
         "sha256": "4d39cfb22e29cadbce7311edc2423a66ff010c36851561807162f7c9b79650c8",
-        "observedAt": "2026-11-17T22:18:28.794560+00:00"
+        "observedAt": "2026-11-27T15:29:49.281Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -1067,7 +1141,7 @@
         "url": "https://github.com/Juri-Halveth/halveth-tresor/blob/17d0429d98de364aa779cb057dc02f6f9363f9f3/README.md",
         "revision": "17d0429d98de364aa779cb057dc02f6f9363f9f3",
         "sha256": "df953a31d28e5c6f4d9923c8f5833febfa841099a0a9c5f028da8970609ce61b",
-        "observedAt": "2026-11-17T22:18:40.194285+00:00"
+        "observedAt": "2026-11-27T15:29:45.677Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -1080,7 +1154,7 @@
         "url": "https://github.com/Juri-Halveth/halveth-tron-security-lab/blob/a4116f6dfe1505651d3c135007342c9bbb857c56/README.md",
         "revision": "a4116f6dfe1505651d3c135007342c9bbb857c56",
         "sha256": "f0cf6aca219e809170780757501570a157a1b55a20ed1d20ff3e5747720ff19f",
-        "observedAt": "2026-11-17T22:18:40.126617+00:00"
+        "observedAt": "2026-11-27T15:29:56.121Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -1093,7 +1167,33 @@
         "url": "https://github.com/Juri-Halveth/halveth-unreal/blob/5dcd5ad655bcaa73e672618f0829100989484c65/README.md",
         "revision": "5dcd5ad655bcaa73e672618f0829100989484c65",
         "sha256": "b609dc6f8a976b61f03fd3b423da9620e8e728d20b769d400c3a1d7ea545f548",
-        "observedAt": "2026-11-17T22:18:40.609321+00:00"
+        "observedAt": "2026-11-27T15:29:53.001Z"
+      },
+      "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
+    },
+    {
+      "id": "readme-link:repo:juri-halveth/jbl-owner-external-witness-20260901:repo:juri-halveth/jbl-wan-proof",
+      "type": "PUBLIC_README_LINK",
+      "from": "repo:juri-halveth/jbl-owner-external-witness-20260901",
+      "to": "repo:juri-halveth/jbl-wan-proof",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/jbl-owner-external-witness-20260901/blob/551f6d614e4ff4bd4ad426868ad887e52b9ee7ec/README.md",
+        "revision": "551f6d614e4ff4bd4ad426868ad887e52b9ee7ec",
+        "sha256": "ffdfdea9d045a941f3556ff1c3df6577fadffd3c44d76200b8599929b4f47311",
+        "observedAt": "2026-11-27T15:29:45.681Z"
+      },
+      "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
+    },
+    {
+      "id": "readme-link:repo:juri-halveth/jbl-wan-proof:repo:juri-halveth/jbl-owner-external-witness-20260901",
+      "type": "PUBLIC_README_LINK",
+      "from": "repo:juri-halveth/jbl-wan-proof",
+      "to": "repo:juri-halveth/jbl-owner-external-witness-20260901",
+      "source": {
+        "url": "https://github.com/Juri-Halveth/jbl-wan-proof/blob/939bf986e6064ba3c24f7d74957a4ac950912526/README.md",
+        "revision": "939bf986e6064ba3c24f7d74957a4ac950912526",
+        "sha256": "491090cfbd21946971de22c85b9700f72fee55033968a2f41fd825c0685da0c7",
+        "observedAt": "2026-11-27T15:29:45.679Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -1103,10 +1203,10 @@
       "from": "repo:juri-halveth/juri-halveth",
       "to": "repo:juri-halveth/halveth-field-difference-lab",
       "source": {
-        "url": "https://github.com/Juri-Halveth/Juri-Halveth/blob/ce748ae23d951c35f510481738a1c91efacd57f0/README.md",
-        "revision": "ce748ae23d951c35f510481738a1c91efacd57f0",
-        "sha256": "df1efbbe986c7d99d13d7a8871b65a623b70f82651e11f0670b57bff4871c7ce",
-        "observedAt": "2026-11-17T22:18:40.170520+00:00"
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth/blob/7cf2f3851cbc71755b6c97993f49c25359047d4e/README.md",
+        "revision": "7cf2f3851cbc71755b6c97993f49c25359047d4e",
+        "sha256": "b65dfa0627c6d2723a0421cbca2a6141964797fc8567a09f56544775cd0023d8",
+        "observedAt": "2026-11-27T15:29:52.844Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -1116,10 +1216,10 @@
       "from": "repo:juri-halveth/juri-halveth",
       "to": "repo:juri-halveth/halveth-forschungslabor",
       "source": {
-        "url": "https://github.com/Juri-Halveth/Juri-Halveth/blob/ce748ae23d951c35f510481738a1c91efacd57f0/README.md",
-        "revision": "ce748ae23d951c35f510481738a1c91efacd57f0",
-        "sha256": "df1efbbe986c7d99d13d7a8871b65a623b70f82651e11f0670b57bff4871c7ce",
-        "observedAt": "2026-11-17T22:18:40.170520+00:00"
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth/blob/7cf2f3851cbc71755b6c97993f49c25359047d4e/README.md",
+        "revision": "7cf2f3851cbc71755b6c97993f49c25359047d4e",
+        "sha256": "b65dfa0627c6d2723a0421cbca2a6141964797fc8567a09f56544775cd0023d8",
+        "observedAt": "2026-11-27T15:29:52.844Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -1129,10 +1229,10 @@
       "from": "repo:juri-halveth/juri-halveth",
       "to": "repo:juri-halveth/halveth-scarlet",
       "source": {
-        "url": "https://github.com/Juri-Halveth/Juri-Halveth/blob/ce748ae23d951c35f510481738a1c91efacd57f0/README.md",
-        "revision": "ce748ae23d951c35f510481738a1c91efacd57f0",
-        "sha256": "df1efbbe986c7d99d13d7a8871b65a623b70f82651e11f0670b57bff4871c7ce",
-        "observedAt": "2026-11-17T22:18:40.170520+00:00"
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth/blob/7cf2f3851cbc71755b6c97993f49c25359047d4e/README.md",
+        "revision": "7cf2f3851cbc71755b6c97993f49c25359047d4e",
+        "sha256": "b65dfa0627c6d2723a0421cbca2a6141964797fc8567a09f56544775cd0023d8",
+        "observedAt": "2026-11-27T15:29:52.844Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -1142,10 +1242,10 @@
       "from": "repo:juri-halveth/juri-halveth",
       "to": "repo:juri-halveth/halveth-tresor",
       "source": {
-        "url": "https://github.com/Juri-Halveth/Juri-Halveth/blob/ce748ae23d951c35f510481738a1c91efacd57f0/README.md",
-        "revision": "ce748ae23d951c35f510481738a1c91efacd57f0",
-        "sha256": "df1efbbe986c7d99d13d7a8871b65a623b70f82651e11f0670b57bff4871c7ce",
-        "observedAt": "2026-11-17T22:18:40.170520+00:00"
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth/blob/7cf2f3851cbc71755b6c97993f49c25359047d4e/README.md",
+        "revision": "7cf2f3851cbc71755b6c97993f49c25359047d4e",
+        "sha256": "b65dfa0627c6d2723a0421cbca2a6141964797fc8567a09f56544775cd0023d8",
+        "observedAt": "2026-11-27T15:29:52.844Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -1155,10 +1255,10 @@
       "from": "repo:juri-halveth/juri-halveth",
       "to": "repo:juri-halveth/juri-halveth.github.io",
       "source": {
-        "url": "https://github.com/Juri-Halveth/Juri-Halveth/blob/ce748ae23d951c35f510481738a1c91efacd57f0/README.md",
-        "revision": "ce748ae23d951c35f510481738a1c91efacd57f0",
-        "sha256": "df1efbbe986c7d99d13d7a8871b65a623b70f82651e11f0670b57bff4871c7ce",
-        "observedAt": "2026-11-17T22:18:40.170520+00:00"
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth/blob/7cf2f3851cbc71755b6c97993f49c25359047d4e/README.md",
+        "revision": "7cf2f3851cbc71755b6c97993f49c25359047d4e",
+        "sha256": "b65dfa0627c6d2723a0421cbca2a6141964797fc8567a09f56544775cd0023d8",
+        "observedAt": "2026-11-27T15:29:52.844Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -1168,10 +1268,10 @@
       "from": "repo:juri-halveth/juri-halveth",
       "to": "repo:juri-halveth/lucinet-seedspace",
       "source": {
-        "url": "https://github.com/Juri-Halveth/Juri-Halveth/blob/ce748ae23d951c35f510481738a1c91efacd57f0/README.md",
-        "revision": "ce748ae23d951c35f510481738a1c91efacd57f0",
-        "sha256": "df1efbbe986c7d99d13d7a8871b65a623b70f82651e11f0670b57bff4871c7ce",
-        "observedAt": "2026-11-17T22:18:40.170520+00:00"
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth/blob/7cf2f3851cbc71755b6c97993f49c25359047d4e/README.md",
+        "revision": "7cf2f3851cbc71755b6c97993f49c25359047d4e",
+        "sha256": "b65dfa0627c6d2723a0421cbca2a6141964797fc8567a09f56544775cd0023d8",
+        "observedAt": "2026-11-27T15:29:52.844Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -1181,10 +1281,10 @@
       "from": "repo:juri-halveth/juri-halveth",
       "to": "repo:juri-halveth/mein-lernportal",
       "source": {
-        "url": "https://github.com/Juri-Halveth/Juri-Halveth/blob/ce748ae23d951c35f510481738a1c91efacd57f0/README.md",
-        "revision": "ce748ae23d951c35f510481738a1c91efacd57f0",
-        "sha256": "df1efbbe986c7d99d13d7a8871b65a623b70f82651e11f0670b57bff4871c7ce",
-        "observedAt": "2026-11-17T22:18:40.170520+00:00"
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth/blob/7cf2f3851cbc71755b6c97993f49c25359047d4e/README.md",
+        "revision": "7cf2f3851cbc71755b6c97993f49c25359047d4e",
+        "sha256": "b65dfa0627c6d2723a0421cbca2a6141964797fc8567a09f56544775cd0023d8",
+        "observedAt": "2026-11-27T15:29:52.844Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -1194,10 +1294,10 @@
       "from": "repo:juri-halveth/juri-halveth.github.io",
       "to": "repo:juri-halveth/lucinet-seedspace",
       "source": {
-        "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/e1ae68ac6428caa30dfc12739b1c0dfecd6fb8a1/README.md",
-        "revision": "e1ae68ac6428caa30dfc12739b1c0dfecd6fb8a1",
-        "sha256": "6eb0186ae558d05efad87cb77828f54c31b989ad0c4dc3c2f1184ca0f7709693",
-        "observedAt": "2026-11-17T22:18:40.190753+00:00"
+        "url": "https://github.com/Juri-Halveth/Juri-Halveth.github.io/blob/13672e980c0b41c6624c679e5b15449e7da0269c/README.md",
+        "revision": "13672e980c0b41c6624c679e5b15449e7da0269c",
+        "sha256": "a530387757796f3a6a5d51f407991c73bc64c7a2310bdc49d0a52910db9481cb",
+        "observedAt": "2026-11-27T15:29:49.289Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -1210,7 +1310,7 @@
         "url": "https://github.com/Juri-Halveth/lernstudio/blob/a464093d95e50fcb685c6f2db0c386739cc5fc9e/README.md",
         "revision": "a464093d95e50fcb685c6f2db0c386739cc5fc9e",
         "sha256": "a40ffb19f1d967faf49a615dc8fc326f3666c61f92796e4b53cc1ec2488df8bc",
-        "observedAt": "2026-11-17T22:18:40.206261+00:00"
+        "observedAt": "2026-11-27T15:29:45.761Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -1223,7 +1323,7 @@
         "url": "https://github.com/Juri-Halveth/lernstudio/blob/a464093d95e50fcb685c6f2db0c386739cc5fc9e/README.md",
         "revision": "a464093d95e50fcb685c6f2db0c386739cc5fc9e",
         "sha256": "a40ffb19f1d967faf49a615dc8fc326f3666c61f92796e4b53cc1ec2488df8bc",
-        "observedAt": "2026-11-17T22:18:40.206261+00:00"
+        "observedAt": "2026-11-27T15:29:45.761Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -1236,7 +1336,7 @@
         "url": "https://github.com/Juri-Halveth/leviathan-wallet-portal/blob/0e821023b7344e73e8f7a09f8ebe92ba54cbcbd6/README.md",
         "revision": "0e821023b7344e73e8f7a09f8ebe92ba54cbcbd6",
         "sha256": "841e401ebad16bfc6583f9011521e904ce12462c314be6f56f14809039272bb1",
-        "observedAt": "2026-11-17T22:18:46.409744+00:00"
+        "observedAt": "2026-11-27T15:29:59.531Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -1246,10 +1346,10 @@
       "from": "repo:juri-halveth/lucinet-seedspace",
       "to": "repo:juri-halveth/halveth-forschungslabor",
       "source": {
-        "url": "https://github.com/Juri-Halveth/lucinet-seedspace/blob/6151152eafa90c18dc64563872879dfc9da341f7/README.md",
-        "revision": "6151152eafa90c18dc64563872879dfc9da341f7",
-        "sha256": "4116f493b4184365d65f7369b1bc521b7c3972b27e1fb90cca0af55e357cfe0a",
-        "observedAt": "2026-11-17T22:18:46.442843+00:00"
+        "url": "https://github.com/Juri-Halveth/lucinet-seedspace/blob/5301a3fb26f78f1e4fd167b5524d027fec8c88ee/README.md",
+        "revision": "5301a3fb26f78f1e4fd167b5524d027fec8c88ee",
+        "sha256": "0289328ffdc3a522b48fff290c0d39769eb6eff4c313165301101078cd985f4b",
+        "observedAt": "2026-11-27T15:29:59.605Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -1259,10 +1359,10 @@
       "from": "repo:juri-halveth/lucinet-seedspace",
       "to": "repo:juri-halveth/juri-halveth.github.io",
       "source": {
-        "url": "https://github.com/Juri-Halveth/lucinet-seedspace/blob/6151152eafa90c18dc64563872879dfc9da341f7/README.md",
-        "revision": "6151152eafa90c18dc64563872879dfc9da341f7",
-        "sha256": "4116f493b4184365d65f7369b1bc521b7c3972b27e1fb90cca0af55e357cfe0a",
-        "observedAt": "2026-11-17T22:18:46.442843+00:00"
+        "url": "https://github.com/Juri-Halveth/lucinet-seedspace/blob/5301a3fb26f78f1e4fd167b5524d027fec8c88ee/README.md",
+        "revision": "5301a3fb26f78f1e4fd167b5524d027fec8c88ee",
+        "sha256": "0289328ffdc3a522b48fff290c0d39769eb6eff4c313165301101078cd985f4b",
+        "observedAt": "2026-11-27T15:29:59.605Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -1275,7 +1375,7 @@
         "url": "https://github.com/Juri-Halveth/mein-lernportal/blob/e0c57497ecfc09a47fa78b8152a0b398157c653a/README.md",
         "revision": "e0c57497ecfc09a47fa78b8152a0b398157c653a",
         "sha256": "401feeb07f639bcef66bc9f0ed6112c9a829df65a9a859f2ab1cf4ee79233db0",
-        "observedAt": "2026-11-17T22:18:46.486202+00:00"
+        "observedAt": "2026-11-27T15:29:49.247Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },
@@ -1288,7 +1388,7 @@
         "url": "https://github.com/Juri-Halveth/mein-lernportal/blob/e0c57497ecfc09a47fa78b8152a0b398157c653a/README.md",
         "revision": "e0c57497ecfc09a47fa78b8152a0b398157c653a",
         "sha256": "401feeb07f639bcef66bc9f0ed6112c9a829df65a9a859f2ab1cf4ee79233db0",
-        "observedAt": "2026-11-17T22:18:46.486202+00:00"
+        "observedAt": "2026-11-27T15:29:49.247Z"
       },
       "claimCeiling": "EXPLICIT_LINK_NOT_DEPENDENCY_OR_CAUSATION"
     },

@@ -2,18 +2,35 @@
 
 [Deutsch](README.md) · [English](README.en.md) · [Русский](README.ru.md)
 
-I build local tools, web applications and interactive models. Start with the
-[portfolio](https://juri-halveth.github.io/en/) or the
-[project directory](https://juri-halveth.github.io/en/arbeiten/), where each
-project leads to its application or guide alongside its source code. Two
-[work samples](https://juri-halveth.github.io/en/belege/) show input, result
-and counterexample.
+I build local tools, web applications and interactive models.
+
+**Start here:** [Home](https://juri-halveth.github.io/en/) ·
+[Project universe / Starship Lab](https://juri-halveth.github.io/universum/) ·
+[KORRIDOT · Timeline](https://juri-halveth.github.io/console-only/) ·
+[Search the public collection](https://juri-halveth.github.io/en/suche/) ·
+[Profile and collaboration](https://juri-halveth.github.io/en/profil/).
+
+The project universe opens the selected spaces. KORRIDOT presents events
+and provenance as a timeline; network search leads to public repositories
+and additional sources. The [project directory](https://juri-halveth.github.io/en/arbeiten/)
+opens each application or guide with its source code. Detailed
+[work samples](https://juri-halveth.github.io/en/belege/) remain available alongside them.
 
 Person: **Juri**. Project: **HALVETH**. [Identity](IDENTITY.md).
 
-The homepage presents four selected projects. The directory contains **13
-current project cards** from a public catalog of **18 repository entries**:
-16 project repositories, this website and the GitHub profile. Three withdrawn
+## Public collection and curated selection
+
+The collection count and observation time are recorded in
+[`data/network-inventory.json`](data/network-inventory.json). The review snapshot
+from **27 November 2026, 15:30 UTC** contains **23 public repositories**, including
+two forks; twelve repositories are configured for Pages. Network search presents
+the latest observed snapshot. The Pages workflow refreshes the public inventory
+at build time and publishes the generated, checked views while retaining the
+individual source timestamps.
+
+The curated catalog dated **2 November 2026** contains **18 repository entries**:
+16 project repositories, this website and the GitHub profile. The directory
+presents **13 selected project cards** from that selection. Three withdrawn
 game presentations remain in the source catalog and optional Lab; they are
 excluded from the current portfolio.
 
@@ -26,14 +43,14 @@ tests and build definitions.
 Project lead and curation: Juri / HALVETH. AI-assisted development. The portfolio
 has German, English and Russian interfaces; Starship Lab currently uses German.
 
-## Optional Starship Lab
+## Project universe · Starship Lab
 
 [![HALVETH NETZ: six connected themes](universum/assets/system-banner.svg)](https://juri-halveth.github.io/universum/)
 
 **[Open Starship Lab →](https://juri-halveth.github.io/universum/)** · Software · Security · Models and visualization · Worlds · Learning · Public research
 
-This separate browser space is linked from the directory and footer. It covers
-the same 18 public repository entries; its local models and source links have
+This separate browser space is linked directly from the homepage, directory
+and footer. It covers the 18 curated repository entries; its local models and source links have
 their own stated scope. [Sources and licences](universum/CREDITS.md).
 
 ## Build locally

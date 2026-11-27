@@ -15,7 +15,19 @@
   let observedAt = null;
   let width = 1;
   let height = 1;
-  const isRepositoryNode = node => node.kind === 'PUBLIC_PROJECT' || node.kind === 'PUBLIC_META';
+  let components = [];
+  let lastFrame = null;
+  let motionSeconds = 0;
+  const isRepositoryNode = node => ['PUBLIC_PROJECT', 'PUBLIC_META', 'PUBLIC_MODULE'].includes(node.kind);
+
+  function renderStatus() {
+    if (!graph) return;
+    const coverage = graph.coverage;
+    status.textContent = Number.isInteger(coverage.moduleCount)
+      ? `${coverage.repositoryCount} Repository-Einträge · ${coverage.moduleCount} Module · ${coverage.relationCount} Quellbeziehungen${context ? '' : ' · Grafik nicht verfügbar, Projektliste bedienbar'}`
+      : `${coverage.repositoryCount} Repository-Einträge · ${coverage.projectCount} Projektquellen + ${coverage.metaCount} Meta-Einstiege · ${coverage.categoryCount} Themen · ${coverage.relationCount} belegte Zuordnungen${context ? '' : ' · Grafik nicht verfügbar, Projektliste bedienbar'}`;
+    sourceNote.textContent = `Index ${graph.source.indexRevision.slice(0, 12)} · Quellenstand ${graph.source.sourceDate} · hier zuletzt geprüft ${new Date(observedAt).toLocaleString('de-DE')}`;
+  }
 
   function hash(text) {
     let value = 2166136261;
@@ -23,7 +35,6 @@
     return value >>> 0;
   }
   function resize() {
-    const previousWidth = width, previousHeight = height;
     const rect = stage.getBoundingClientRect();
     width = Math.max(1, rect.width);
     height = Math.max(1, rect.height);
@@ -33,46 +44,138 @@
     if (context) {
       context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
       context.font = '12px Segoe UI, sans-serif';
-      for (const point of particles.values()) {
-        point.x *= width / previousWidth;
-        point.y *= height / previousHeight;
-        point.vx *= width / previousWidth;
-        point.vy *= height / previousHeight;
-        confine(point);
-      }
+      layoutGroups();
     }
     placeCard();
   }
-  function particle(node) {
-    const seed = hash(node.id);
-    const angle = (seed % 3600) / 3600 * Math.PI * 2;
-    const radius = node.kind === 'PUBLIC_CATEGORY' ? 0.24 : 0.36 + ((seed >>> 9) % 100) / 900;
-    return { id: node.id, kind: node.kind, label: node.label,
-      x: width / 2 + Math.cos(angle) * Math.min(width, height) * radius,
-      y: height / 2 + Math.sin(angle) * Math.min(width, height) * radius,
-      vx: 0, vy: 0 };
+  // Use every source edge for the outer islands. Inside an island a module
+  // stays with its owner. A link to the portfolio or profile connects groups
+  // without turning all linked projects into members of the same family.
+  function groupTopology(nodes, relations) {
+    const byId = new Map(nodes.map(node => [node.id, node]));
+    const neighbors = new Map(nodes.map(node => [node.id, []]));
+    for (const edge of relations) {
+      neighbors.get(edge.from).push(edge.to);
+      neighbors.get(edge.to).push(edge.from);
+    }
+    const familyLinks = new Map(nodes.map(node => [node.id, []]));
+    const addFamilyLink = (a, b) => { familyLinks.get(a).push(b); familyLinks.get(b).push(a); };
+    for (const edge of relations) {
+      if (edge.type === 'PUBLIC_ENTRY_OF_REPOSITORY' ||
+          (edge.type === 'PUBLIC_README_LINK' && [edge.from, edge.to].every(id => byId.get(id).kind !== 'PUBLIC_META'))) {
+        addFamilyLink(edge.from, edge.to);
+      }
+    }
+    // The older topic index can declare several memberships per project.
+    // Use its smallest declared topic as the layout anchor, keeping all edges.
+    for (const node of nodes) {
+      if (node.kind === 'PUBLIC_CATEGORY') continue;
+      const categories = neighbors.get(node.id).filter(id => byId.get(id).kind === 'PUBLIC_CATEGORY');
+      categories.sort((a, b) => neighbors.get(a).length - neighbors.get(b).length || a.localeCompare(b, 'en'));
+      if (categories.length) addFamilyLink(node.id, categories[0]);
+    }
+    function islands(ids, links) {
+      const remaining = new Set(ids.slice().sort());
+      const sets = [];
+      for (const first of remaining) {
+        const members = [first];
+        remaining.delete(first);
+        for (let i = 0; i < members.length; i++) {
+          for (const neighbor of links.get(members[i])) if (remaining.delete(neighbor)) members.push(neighbor);
+        }
+        sets.push(members);
+      }
+      return sets;
+    }
+    return islands(nodes.map(n => n.id), neighbors).map(component => {
+      const families = islands(component, familyLinks).map(members => {
+        members.sort((a, b) => familyLinks.get(b).length - familyLinks.get(a).length ||
+          neighbors.get(b).length - neighbors.get(a).length || a.localeCompare(b, 'en'));
+        return {members, weight: members.length, phase: hash(members[0]) % 628 / 100};
+      });
+      families.sort((a, b) => b.weight - a.weight || a.members[0].localeCompare(b.members[0], 'en'));
+      return {families, weight: component.length + 2};
+    }).sort((a, b) => b.weight - a.weight);
+  }
+
+  // Divide the available canvas at group boundaries. A disconnected island
+  // keeps its own patch on portrait screens as well as on wide displays.
+  function partition(items, box, visit, gap) {
+    if (!items.length) return;
+    if (items.length === 1) { visit(items[0], box); return; }
+    const total = items.reduce((sum, item) => sum + item.weight, 0);
+    let cut = 1, left = items[0].weight;
+    while (cut < items.length - 1 && Math.abs(left + items[cut].weight - total / 2) < Math.abs(left - total / 2)) {
+      left += items[cut++].weight;
+    }
+    const horizontal = box.w >= box.h;
+    const span = horizontal ? box.w : box.h;
+    const gutter = Math.min(span * .12, gap), first = (span - gutter) * left / total;
+    const a = {...box}, b = {...box};
+    if (horizontal) { a.w = first; b.x += first + gutter; b.w -= first + gutter; }
+    else { a.h = first; b.y += first + gutter; b.h -= first + gutter; }
+    partition(items.slice(0, cut), a, visit, gap);
+    partition(items.slice(cut), b, visit, gap);
+  }
+  function placeFamily(family, box) {
+    const centerX = box.x + box.w / 2, centerY = box.y + box.h / 2;
+    const inwardX = width / 2 - centerX, inwardY = height / 2 - centerY;
+    const offset = Math.min(1, 12 / Math.max(1, Math.hypot(inwardX, inwardY)));
+    family.startX = inwardX * offset;
+    family.startY = inwardY * offset;
+    const satellites = family.members.length - 1;
+    const spreadX = Math.min(box.w * .32, 50 + satellites * 5);
+    const spreadY = Math.min(box.h * .32, 44 + satellites * 4);
+    family.members.forEach((id, i) => {
+      const point = particles.get(id);
+      const angle = satellites > 1 ? Math.PI * 2 * (i - 1) / satellites - Math.PI * .75 : 0;
+      let dx = 0, dy = 0;
+      if (satellites === 1) {
+        // Orient pairs along the longer side of their own region.
+        if (box.w > box.h) dx = (i ? 1 : -1) * spreadX * .6;
+        else dy = (i ? 1 : -1) * spreadY * .6;
+      } else if (i) { dx = Math.cos(angle) * spreadX; dy = Math.sin(angle) * spreadY; }
+      point.homeX = centerX + dx;
+      point.homeY = centerY + dy;
+      point.family = family;
+      position(point);
+    });
+  }
+  function layoutGroups() {
+    const side = Math.min(58, width * .09), top = Math.min(76, height * .16);
+    const box = {x:side, y:top, w:width - 2 * side, h:height - top - Math.min(35, height * .12)};
+    partition(components, box, (component, area) => {
+      partition(component.families, area, placeFamily, 7);
+    }, Math.min(50, width * .06));
+  }
+  function position(point) {
+    const t = motionSeconds, phase = point.phase, family = point.family.phase;
+    // The groups start nearly in place and unfurl another twelve pixels.
+    // Elapsed display time drives this short opening and both drift scales.
+    const opening = Math.exp(-t / 18);
+    point.x = point.homeX + point.family.startX * opening + 7 * Math.sin(.10 * t + family) + 3 * Math.sin(.16 * t + phase);
+    point.y = point.homeY + point.family.startY * opening + 6 * Math.sin(.095 * t + family * 2) + 3 * Math.sin(.18 * t + phase * 2);
+    point.x = Math.max(6, Math.min(width - 6, point.x));
+    point.y = Math.max(6, Math.min(height - 6, point.y));
   }
   function adopt(next) {
     const previous = particles;
     const fresh = new Map();
     for (const node of next.nodes) {
-      const point = previous.get(node.id) || particle(node);
+      const point = previous.get(node.id) || {id:node.id, phase:hash(node.id) % 628 / 100};
       point.kind = node.kind;
       point.label = node.label;
       fresh.set(node.id, point);
     }
     graph = next;
     particles = fresh;
-    if (context) {
-      context.font = '12px Segoe UI, sans-serif';
-      for (let step = 0; step < 110; step += 1) evolve();
-    }
+    components = groupTopology(next.nodes, next.relations);
+    if (context) layoutGroups();
     generation += 1;
     renderList();
     if (selectedId && !fresh.has(selectedId)) closeCard();
     else if (selectedId) void select(selectedId);
-    status.textContent = `${next.coverage.repositoryCount} Repository-Einträge · ${next.coverage.projectCount} Projektquellen + ${next.coverage.metaCount} Meta-Einstiege · ${next.coverage.categoryCount} Themen · ${next.coverage.relationCount} belegte Zuordnungen${context ? '' : ' · Grafik nicht verfügbar, Projektliste bedienbar'}`;
-    sourceNote.textContent = `Index ${next.source.indexRevision.slice(0, 12)} · Quellenstand ${next.source.sourceDate} · hier gesehen ${new Date(observedAt).toLocaleString('de-DE')}`;
+    renderStatus();
   }
   function renderList() {
     const focusedId = list.contains(document.activeElement) ? document.activeElement.dataset.nodeId : null;
@@ -80,7 +183,7 @@
     for (const node of graph.nodes.filter(isRepositoryNode)) {
       const button = document.createElement('button');
       button.type = 'button';
-      button.textContent = node.label;
+      button.textContent = node.kind === 'PUBLIC_MODULE' ? `Modul · ${node.label}` : node.label;
       button.dataset.nodeId = node.id;
       button.setAttribute('aria-pressed', String(node.id === selectedId));
       button.addEventListener('click', () => select(node.id, true));
@@ -120,6 +223,7 @@
     } catch { return null; }
   }
   async function projectContext(node) {
+    if (node.context) return node.context;
     const response = await fetch(`../${node.contextPath}`, { cache: 'no-store' });
     if (!response.ok) throw Error(`Kontext HTTP ${response.status}`);
     const bytes = new Uint8Array(await response.arrayBuffer());
@@ -132,6 +236,35 @@
     if (value.schema !== 'halveth.project-context.v1' || `project:${value.id}` !== node.id) throw Error('Projektidentität stimmt nicht');
     return value;
   }
+  function renderRelations(id) {
+    const container = document.getElementById('detailRelations');
+    if (!container) return;
+    container.replaceChildren();
+    const edges = graph.relations.filter(edge => edge.from === id || edge.to === id);
+    for (const edge of edges) {
+      const other = graph.nodes.find(node => node.id === (edge.from === id ? edge.to : edge.from));
+      const item = document.createElement('li');
+      const label = document.createElement('span');
+      const direction = edge.type === 'PUBLIC_README_LINK' ? (edge.from === id ? 'README-Verweis auf' : 'README-Verweis von')
+        : edge.type === 'PUBLIC_ENTRY_OF_REPOSITORY' && edge.to === id ? 'Moduleinstieg aus Repository'
+        : edge.label || 'Themenzuordnung';
+      label.textContent = `${direction} · ${other?.label || 'Quelle'}`;
+      item.append(label);
+      for (const [index, source] of (edge.sources || []).entries()) {
+        const href = safeLink(source.url);
+        if (!href) continue;
+        const link = document.createElement('a');
+        link.href = href; link.target = '_blank'; link.rel = 'noopener noreferrer';
+        link.textContent = `Quelle ${index + 1} ↗`;
+        item.append(' ', link);
+      }
+      container.append(item);
+    }
+    if (!edges.length) {
+      const item = document.createElement('li'); item.textContent = 'Keine zusätzlichen Quellbeziehungen im beobachteten Index.';
+      container.append(item);
+    }
+  }
   async function select(id, fromDirectory = false) {
     const node = graph?.nodes.find(item => item.id === id && isRepositoryNode(item));
     if (!node) return;
@@ -142,6 +275,7 @@
     document.getElementById('detailState').textContent = 'ÖFFENTLICHER PROJEKTKONTEXT LADEN …';
     document.getElementById('detailTitle').textContent = node.label;
     for (const name of ['detailCore', 'detailValue', 'detailBoundary']) document.getElementById(name).textContent = '';
+    document.getElementById('detailRelations')?.replaceChildren();
     clearLinks();
     placeCard();
     if (fromDirectory) document.getElementById('close').focus({ preventScroll: true });
@@ -153,12 +287,14 @@
       document.getElementById('detailCore').textContent = value.capability.core;
       document.getElementById('detailValue').textContent = value.capability.value;
       document.getElementById('detailBoundary').textContent = value.capability.boundary;
+      document.getElementById('detailOpen').textContent = value.publicEntry.label || 'Projekt öffnen ↗';
       for (const [name, link] of [['detailOpen', value.publicEntry.url], ['detailSource', value.source.url]]) {
         const anchor = document.getElementById(name);
         const href = safeLink(link);
         anchor.hidden = !href;
         if (href) anchor.href = href;
       }
+      renderRelations(id);
       placeCard();
     } catch (error) {
       if (selectedId === id && generation === requestGeneration) document.getElementById('detailState').textContent = `QUELLE NICHT VERIFIZIERT · ${error.message}`;
@@ -174,59 +310,14 @@
     if (graph) renderList();
     if (returnFocus) focusProject(returnId);
   }
-  function confine(point) {
-    const margin = Math.min(width / 2, 105, Math.max(35, context.measureText(point.label).width / 2 + 10));
-    point.x = Math.max(margin, Math.min(width - margin, point.x));
-    point.y = Math.max(Math.min(35, height / 2), Math.min(Math.max(height / 2, height - 42), point.y));
-  }
-  function evolve() {
-    if (!graph) return;
-    const points = [...particles.values()];
-    for (const relation of graph.relations) {
-      const from = particles.get(relation.from), to = particles.get(relation.to);
-      if (!from || !to) continue;
-      const dx = to.x - from.x, dy = to.y - from.y;
-      const length = Math.max(1, Math.hypot(dx, dy));
-      const pull = (length - 132) * 0.00022;
-      from.vx += dx * pull; from.vy += dy * pull;
-      to.vx -= dx * pull; to.vy -= dy * pull;
-    }
-    for (let i = 0; i < points.length; i += 1) {
-      for (let j = i + 1; j < points.length; j += 1) {
-        const a = points[i], b = points[j];
-        const dx = a.x - b.x, dy = a.y - b.y;
-        const square = dx * dx + dy * dy + 250;
-        const push = Math.min(2.2, 1900 / square);
-        a.vx += dx * push / Math.sqrt(square); a.vy += dy * push / Math.sqrt(square);
-        b.vx -= dx * push / Math.sqrt(square); b.vy -= dy * push / Math.sqrt(square);
-        // Labels remain attached to their nodes. Repel overlapping label boxes,
-        // including nodes from separate graph components that merely look near.
-        const labelWidthA = Math.min(190, Math.max(55, context.measureText(a.label).width));
-        const labelWidthB = Math.min(190, Math.max(55, context.measureText(b.label).width));
-        const overlapX = (labelWidthA + labelWidthB) / 2 + 14 - Math.abs(dx);
-        const overlapY = 29 - Math.abs(dy);
-        if (overlapX > 0 && overlapY > 0) {
-          const direction = dx === 0 ? (hash(a.id + b.id) % 2 ? 1 : -1) : Math.sign(dx);
-          const correction = Math.min(3.4, overlapX * 0.055);
-          a.vx += direction * correction; b.vx -= direction * correction;
-          const vertical = dy === 0 ? 1 : Math.sign(dy);
-          a.vy += vertical * Math.min(1.2, overlapY * 0.02);
-          b.vy -= vertical * Math.min(1.2, overlapY * 0.02);
-        }
-      }
-    }
-    for (const point of points) {
-      point.vx += (width / 2 - point.x) * 0.00008;
-      point.vy += (height / 2 - point.y) * 0.00008;
-      point.vx *= 0.91; point.vy *= 0.91;
-      point.x += point.vx;
-      point.y += point.vy;
-      confine(point);
-    }
-  }
   function draw(now) {
     if (!context) return;
-    if (!reduced.matches && !document.hidden) evolve();
+    const elapsed = lastFrame === null ? 0 : Math.max(0, Math.min(0.1, (now - lastFrame) / 1000));
+    lastFrame = now;
+    if (!reduced.matches && !document.hidden) {
+      motionSeconds += elapsed;
+      for (const point of particles.values()) position(point);
+    }
     context.fillStyle = '#04111d'; context.fillRect(0, 0, width, height);
     if (graph) {
       for (const relation of graph.relations) {
@@ -234,17 +325,26 @@
         if (!a || !b) continue;
         const gradient = context.createLinearGradient(a.x, a.y, b.x, b.y);
         gradient.addColorStop(0, '#1d708d'); gradient.addColorStop(.5, '#3ab7db'); gradient.addColorStop(1, '#69e8f0');
-        context.beginPath(); context.moveTo(a.x, a.y); context.lineTo(b.x, b.y);
-        context.strokeStyle = gradient; context.lineWidth = selectedId === a.id ? 2.3 : 1.1; context.stroke();
+        const seed = hash(relation.id), phase = (seed % 1000) / 1000;
+        const dx = b.x - a.x, dy = b.y - a.y, distance = Math.max(1, Math.hypot(dx, dy));
+        const bend = Math.min(12, distance * 0.045) * Math.sin(phase * 2 * Math.PI + motionSeconds * 0.045);
+        const cx = (a.x + b.x) / 2 - dy * bend / distance, cy = (a.y + b.y) / 2 + dx * bend / distance;
+        context.beginPath(); context.moveTo(a.x, a.y); context.quadraticCurveTo(cx, cy, b.x, b.y);
+        const highlighted = selectedId && (selectedId === a.id || selectedId === b.id);
+        context.globalAlpha = highlighted ? 1 : selectedId ? .22 : a.family === b.family ? .90 : .48;
+        context.strokeStyle = gradient; context.lineWidth = highlighted ? 2.3 : 1.1; context.stroke();
+        context.globalAlpha = 1;
         if (!reduced.matches) {
-          const phase = ((now / 2800 + (hash(relation.id) % 1000) / 1000) % 1);
-          context.beginPath(); context.arc(a.x + (b.x - a.x) * phase, a.y + (b.y - a.y) * phase, 1.7, 0, Math.PI * 2);
-          context.fillStyle = '#e5b778'; context.fill();
+          const t = (phase + motionSeconds / (95 + seed % 40)) % 1, u = 1 - t;
+          context.beginPath(); context.arc(u*u*a.x + 2*u*t*cx + t*t*b.x, u*u*a.y + 2*u*t*cy + t*t*b.y, 1.7, 0, Math.PI * 2);
+          context.globalAlpha = Math.min(1, t * 15, u * 15);
+          context.fillStyle = '#e5b778'; context.fill(); context.globalAlpha = 1;
         }
       }
       context.textAlign = 'center'; context.textBaseline = 'top'; context.font = '12px Segoe UI, sans-serif';
       const labels = [];
-      for (const point of particles.values()) {
+      const points = [...particles.values()];
+      for (const point of points) {
         const category = point.kind === 'PUBLIC_CATEGORY';
         const chosen = point.id === selectedId;
         const radius = category ? 8 : chosen ? 9 : 5;
@@ -253,32 +353,45 @@
         context.beginPath(); context.arc(point.x, point.y, radius, 0, Math.PI * 2);
         context.fillStyle = category ? '#e5bc7d' : chosen ? '#ffffff' : '#9af2f3'; context.fill();
         const label = category ? point.label.toUpperCase() : point.label;
-        const labelWidth = context.measureText(label).width;
+        const labelWidth = Math.min(context.measureText(label).width, Math.max(1, width - 18));
+        const below = point.y + radius + 7, above = point.y - radius - 20;
+        const shift = Math.min(40, labelWidth * .3);
         const choices = [
-          [point.x, point.y + radius + 7],
-          [point.x, point.y - radius - 20],
+          [point.x, below], [point.x, above],
           [point.x + radius + 9 + labelWidth / 2, point.y - 7],
-          [point.x - radius - 9 - labelWidth / 2, point.y - 7]
+          [point.x - radius - 9 - labelWidth / 2, point.y - 7],
+          [point.x + shift, below], [point.x - shift, below],
+          [point.x + shift, above], [point.x - shift, above],
+          [point.x, below + 14], [point.x, above - 14]
         ];
         let best = null;
-        for (const [index, [x, y]] of choices.entries()) {
+        for (const [index, [cx, cy]] of choices.entries()) {
+          const edge = labelWidth / 2 + 8;
+          const x = Math.max(edge, Math.min(width - edge, cx));
+          const y = Math.max(7, Math.min(height - 21, cy));
           const rect = { left: x - labelWidth / 2 - 3, right: x + labelWidth / 2 + 3,
             top: y - 2, bottom: y + 16 };
-          let score = index * 3 +
-            (rect.left < 5 ? 1000 : 0) + (rect.right > width - 5 ? 1000 : 0) +
-            (rect.top < 5 ? 1000 : 0) + (rect.bottom > height - 5 ? 1000 : 0);
+          let score = index * 3 + (point.labelSide !== undefined && point.labelSide !== index ? 32 : 0);
+          for (const other of points) {
+            const dx = Math.max(0, rect.left - other.x, other.x - rect.right);
+            const dy = Math.max(0, rect.top - other.y, other.y - rect.bottom);
+            const clearance = other.kind === 'PUBLIC_CATEGORY' || other.id === selectedId ? 10 : 7;
+            if (dx * dx + dy * dy < clearance * clearance) score += 3000;
+          }
           for (const prior of labels) {
             const overlapX = Math.max(0, Math.min(rect.right, prior.right) - Math.max(rect.left, prior.left));
             const overlapY = Math.max(0, Math.min(rect.bottom, prior.bottom) - Math.max(rect.top, prior.top));
-            score += overlapX * overlapY;
+            score += 4 * overlapX * overlapY;
           }
-          if (!best || score < best.score) best = { x, y, rect, score };
+          if (!best || score < best.score) best = { x, y, rect, score, index };
+          if (score === 0) break;
         }
+        point.labelSide = best.index;
         labels.push(best.rect);
         context.fillStyle = '#04111dde';
         context.fillRect(best.rect.left, best.rect.top, best.rect.right - best.rect.left, best.rect.bottom - best.rect.top);
         context.fillStyle = category ? '#e4bf87' : '#c9f6fb';
-        context.fillText(label, best.x, best.y);
+        context.fillText(label, best.x, best.y, labelWidth);
       }
       if (selectedId) placeCard();
     }
@@ -286,13 +399,15 @@
   }
   async function refresh() {
     try {
-      const response = await fetch('../api/space.json', { cache: 'no-store' });
+      const useNetwork = typeof window.HALVETH_RELATION_MODEL.fromNetwork === 'function';
+      const response = await fetch(useNetwork ? '../api/network.json' : '../api/space.json', { cache: 'no-store' });
       if (!response.ok) throw Error(`Index HTTP ${response.status}`);
-      const next = window.HALVETH_RELATION_MODEL.fromSpace(await response.json());
+      const payload = await response.json();
+      const next = useNetwork ? window.HALVETH_RELATION_MODEL.fromNetwork(payload) : window.HALVETH_RELATION_MODEL.fromSpace(payload);
+      observedAt = new Date().toISOString();
       if (!graph || graph.source.indexRevision !== next.source.indexRevision) {
-        observedAt = new Date().toISOString();
         adopt(next);
-      }
+      } else renderStatus(); // A recovered fetch clears an earlier error even at the same revision.
     } catch (error) {
       status.textContent = graph ? `Indexabruf gestört · letzter beobachteter Stand bleibt sichtbar` : `Öffentlicher Index nicht verfügbar: ${error.message}`;
     } finally {
@@ -312,6 +427,7 @@
     if (nearest) select(nearest);
   });
   document.getElementById('close').addEventListener('click', closeCard);
+  document.addEventListener('visibilitychange', () => { lastFrame = null; });
   addEventListener('resize', resize);
   resize();
   requestAnimationFrame(draw);

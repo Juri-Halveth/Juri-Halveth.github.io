@@ -97,38 +97,6 @@
       "editorialState": "CURRENT"
     },
     {
-      "id": "site:schuelervz-mantel",
-      "repositoryId": null,
-      "kind": "site",
-      "visibility": "public",
-      "title": {
-        "de": "SchülerVZ Mantel · öffentliche Nachbildung",
-        "en": "SchülerVZ Mantel · public recreation",
-        "ru": "SchülerVZ Mantel · открытая реконструкция"
-      },
-      "summary": {
-        "de": "Bedienbare Nachbildung der historischen Oberfläche mit neuen Konten. Eigene Veröffentlichung ohne hier geprüfte Git-Commitbindung.",
-        "en": "An interactive recreation of the historical interface with new accounts, separately published without a verified Git commit binding here.",
-        "ru": "Интерактивная реконструкция исторического интерфейса с новыми аккаунтами; отдельная публикация без установленной привязки к Git."
-      },
-      "url": "https://schuelervz-mantel.juri-janovski.chatgpt.site",
-      "source": {
-        "url": "https://schuelervz-mantel.juri-janovski.chatgpt.site",
-        "revision": null,
-        "observedAt": "2026-11-17T22:24:17.674962+00:00",
-        "scope": "PUBLIC_WEBSITE_DESCRIPTION_NO_COMMIT_BINDING"
-      },
-      "aliases": [
-        "SchülerVZ",
-        "SchuelerVZ",
-        "Mantel",
-        "soziales Netzwerk"
-      ],
-      "text": "SchülerVZ SchuelerVZ Mantel soziales Netzwerk Bedienbare Nachbildung der historischen Oberfläche mit neuen Konten. Eigene Veröffentlichung ohne hier geprüfte Git-Commitbindung. An interactive recreation of the historical interface with new accounts, separately published without a verified Git commit binding here. Интерактивная реконструкция исторического интерфейса с новыми аккаунтами; отдельная публикация без установленной привязки к Git.",
-      "historical": false,
-      "editorialState": "CURRENT"
-    },
-    {
       "id": "site:scarlet-question",
       "repositoryId": null,
       "kind": "site",

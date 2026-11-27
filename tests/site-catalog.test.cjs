@@ -31,7 +31,7 @@ test('one public source binds 18 repository entries, 16 projects and the 13 acti
    assert.equal(p.site.editorial_state,'CURRENT');
    const expected=p.id==='halveth-scarlet'&&lang?`${p.url}?lang=${lang.slice(0,2)}`:p.url;
    assert.equal(card.querySelector('.directory-actions .button').getAttribute('href'),expected);
-   const source=card.querySelector('.directory-actions .text-link');
+   const source=card.querySelector('.directory-actions [data-pinned-source]');
    assert.equal(source.getAttribute('href'),p.source_url);
    if(p.site.revision){assert.ok(source.textContent.includes(p.site.revision.slice(0,7)));assert.ok(source.textContent.includes(p.site.revision_observed_at));}
    else assert.ok(source.textContent.length>12);

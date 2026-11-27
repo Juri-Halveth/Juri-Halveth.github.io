@@ -12,11 +12,13 @@ export function searchNetwork(index, query, options = {}) {
     if (!options.includeArchive && (document.historical || document.editorialState !== 'CURRENT')) continue;
     if (kinds && !kinds.has(document.kind)) continue;
     const title = normalizeSearch(Object.values(document.title).join(' '));
-    const aliases = normalizeSearch(document.aliases.join(' '));
-    const body = normalizeSearch([Object.values(document.summary).join(' '), document.text, document.repositoryId || '', document.id].join(' '));
+    const primaryNames = (document.primaryNames || []).map(normalizeSearch);
+    const aliases = normalizeSearch([...primaryNames, ...document.aliases].join(' '));
+    const body = normalizeSearch([Object.values(document.summary).join(' '), document.text, ...Object.values(document.priorDescription?.title || {}), ...Object.values(document.priorDescription?.summary || {}), document.repositoryId || '', document.id].join(' '));
     if (!tokens.every(token => title.includes(token) || aliases.includes(token) || body.includes(token))) continue;
     const score = tokens.reduce((sum, token) => sum + (title.includes(token) ? 12 : aliases.includes(token) ? 7 : 2), 0) + (document.kind === 'module' && tokens.length ? 1 : 0);
-    results.push({...document, score});
+    const exactProduct = tokens.length > 0 && primaryNames.includes(tokens.join(' '));
+    results.push({...document, score: score + (exactProduct ? 32 : 0)});
   }
   return results.sort((a, b) => b.score - a.score || a.title.de.localeCompare(b.title.de, 'de') || a.id.localeCompare(b.id, 'en')).slice(0, limit);
 }
