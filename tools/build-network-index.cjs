@@ -84,11 +84,21 @@ function makeNetworkIndex(root) {
         source: {...sameReadme.source, url: repo.readme.url, revision: repo.head.revision, observedAt: repo.readme.observedAt,
           reviewedRevision: sameReadme.source.revision, scope: 'SAME_PUBLIC_README_BYTES_AS_REVIEWED_REVISION'}});
     }
-    else add({id: `readme:${repo.repositoryId}:${repo.head.revision}`, repositoryId: repo.repositoryId, githubRepositoryId: repo.githubRepositoryId, kind: 'repository',
+    else {
+      const latestReview = candidates
+        .filter(doc => doc.source?.readmeSha256 && Date.parse(doc.source.observedAt) <= Date.parse(inventory.observedAt))
+        .sort((a, b) => Date.parse(b.source.observedAt) - Date.parse(a.source.observedAt))[0];
+      const priorDescription = latestReview && {
+        title: latestReview.title, summary: latestReview.summary,
+        url: latestReview.source.url, revision: latestReview.source.revision, observedAt: latestReview.source.observedAt
+      };
+      add({id: `readme:${repo.repositoryId}:${repo.head.revision}`, repositoryId: repo.repositoryId, githubRepositoryId: repo.githubRepositoryId, kind: 'repository',
       title: localized(repo.name), summary: localized(repo.readme.excerpt), url: repo.url,
       source: {url: repo.readme.url, revision: repo.head.revision, observedAt: repo.readme.observedAt, scope: 'PUBLIC_README_AUTOMATIC_EXCERPT_NOT_EDITORIAL_REVIEW'},
       aliases: [repo.name, ...repo.readme.aliases], text: [repo.name, repo.description, repo.readme.excerpt, ...repo.readme.aliases].join(' '), historical: false,
+      ...(priorDescription ? {priorDescription} : {}),
       editorialState: withdrawn.has(repo.name) ? 'WITHDRAWN_FROM_PORTFOLIO' : 'CURRENT'});
+    }
     for (const old of candidates.filter(doc => doc !== reviewed)) add({...old, historical: true, editorialState: withdrawn.has(repo.name) ? 'WITHDRAWN_FROM_PORTFOLIO' : 'ARCHIVE'});
   }
   for (const entry of [...entries.documents, ...externalSites.documents]) add(entry);

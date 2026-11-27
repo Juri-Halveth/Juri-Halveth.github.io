@@ -119,7 +119,13 @@ test('a byte-identical README keeps its reviewed descriptions across commits', t
   const current = () => makeNetworkIndex(temporary).search.documents.find(item => item.repositoryId === repo.repositoryId && item.kind === 'repository' && !item.historical);
   assert.equal(current().source.reviewedRevision, previous);
   assert.equal(current().source.revision, revision);
+  value.observedAt = new Date(Date.parse(bound.source.observedAt) + 86400000).toISOString();
   repo.readme.sha256 = '3'.repeat(64);
   saveInventory(temporary, value);
-  assert.equal(current().source.scope, 'PUBLIC_README_AUTOMATIC_EXCERPT_NOT_EDITORIAL_REVIEW');
+  const updated = current();
+  assert.equal(updated.source.scope, 'PUBLIC_README_AUTOMATIC_EXCERPT_NOT_EDITORIAL_REVIEW');
+  assert.equal(updated.summary.en, repo.readme.excerpt);
+  assert.equal(updated.priorDescription.revision, previous);
+  assert.equal(updated.priorDescription.url, bound.source.url);
+  assert.equal(updated.priorDescription.summary.ru, bound.summary.ru);
 });
